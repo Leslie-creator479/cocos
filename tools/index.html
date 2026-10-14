@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>코코스 선생님 자료함</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* 선생님 자료함: 남색 머리 → 목록 페이지 세 개 → 원고 검색과 회차별 목록 */
+:root{color-scheme:light;--night:#0A1424;--night-line:rgba(214,222,236,.14);--on-night:#ECEEF2;--on-night-muted:#97A2B4;
+  --white:#F7F7F5;--ink:#0B1323;--muted:#5A616E;--line:#DADAD4;--gold:#C3A46C;--gold-deep:#8A6C3C;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;--latin:"Jost","Futura","Avenir Next",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+a{color:inherit}
+a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,5vw,64px)}
+.cap{font-family:var(--latin);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+header{background:var(--night);color:var(--on-night)}
+header .wrap{padding-block:22px 40px;display:flex;flex-direction:column;gap:14px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
+.logo{display:inline-block;width:104px;height:23px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAABYCAMAAADsrVGTAAAASFBMVEUAAAADn+b84QP8/v1Vttuj4O7Z+/1uxuGs+/uP1uh7/P1ttrZutv606fIA//9UsJcpoq8Afn6hz2bI+Pysrf3R30scs7MAAP9bmX4PAAAAGHRSTlMA/v8Q9aFa7QPWAgMDbgH//wL/jQP/AwFd6OpIAAAQGklEQVR42tUd55rjII6MwGBc0pP3f9Oj2IltBAjIfnfH/tidmY1GoF4QjCUXAKhhHBl7+a/H1wAazLdZ3TLQtl++5lHBzH6xQCn1Zi+73NeDUtVYOnDjFtNxHNqg6QWtdWmDbjkcPb93YNd/XFUNVrPS7w+Z3Vp3q6CRGDCM6A8GpavA6T2eK3pKQxVp2QEcrMdYhB6oqwPSCSHs15zLvhdiWuCVHqL/lAPXS8ndkg6co4muJ4cevpD9d6QBLDqP6FjK2aBWcP2CqJS9mDoPR9dB6yYh1l1bgMICdCwDJYDgLnrOT/vFeS8csBnK8IKuEzIEJz04VUkSh6ehRQCZfxAt4R2LhqUFAk4KRxRVvG1Li1OwDFUcUa4UgFavgz2+E744d1ulsgsMluXi4GTvoNVoFyPFMPXyFENUOhGkqli37zg4QxMHjWr1wJ/iKboMM3q5I9D13vNTalnkiDt1bJIBZ6ENxWrQELoTacAnbql9pSKaPL8VmqaTQ2awO3nWTu7cCm0Gre8hXrNnaMHds3h5aKzEW4CRiKg5RApkeJPAOWhE6vaEU1xYWye2aeh6oq38TkERmHhFzPAKXUgc33AantxsOa1fwSI60fbNe9i4nBF4mo6dYUazc4hvsycD8jvNiC0dLwuNAdWY0/nGbTkN2dgGEHRod2CPjLqiiceHtSMUMdu881MRpC6JF5ThlWCV/RpZ1xchmmadRwnfLNASwgxXo6VPp3aK6CLxWHDrog4wFJPXWZJ85GC8oTJCL1vWUb1QvO+kyAEr3ffpJBDlryq2aeU3Et6oQrZbEINssGR+Xr5hJ8wQpUcxNH5nDx1Tf50sP8ZARIxZq4Dj5XfA5aOvAWc4OeMoVBHaU0SjbkzVvq3aApy+VfAQ3V9HD4PahByhrqRH3MC10sNxoUZiy8p9RyhiDEgVPMGGo/2tpIdBDX4mH1mKQIWd20Cew3z2vXbfOEUeTJzqCHK0Q9X0cBuFn9HDgovaEcN/opoe5gj3bGjjhYZ9G3AjYojr8Jt2qGUPkPOMqwWHfcbZ5HK5nM26XJLiC7H4I71fnkb0KHxGscoGcGbfobIWUVDSZ3xjWkaRFL5PmtrVTTYLGiOv2ocJU4wa59vzb1m3W4wqXEQMe8KBsdl8X26YLKJR5Qo0Q+fT0Mu+43nR0AMBjrrz07cc0mHosa2wgY6Fqby/b8MCiGUvp53s6hgbn29/h2VoQhG5rCDbjPEO0QnVbHuCGEUraOC6KUKTHo7pPBHLILIUembDj50ekBGrBa60Bdqspf4GWMpnx9E64meE5IiTBHOIbHpXxDOTzChhDQbV0ZdfO4QP9wSJ6b9l3+qhDTRQ48vRpCc4R4CpwB58uXFZ+nF1/1VsnBM5URw1X6ZQcMjBIW7nXpcq9NguX121X8/bBQ8QEQcGPUCX7WOwY2ml0DPchV8QUS/rAZJSy3zH/BiJbWAFRwmxzQXwSbvyO7w3/wPnO5fqQxI22uImE4yHK6zL7S+6nmeSvYwYEHnHS6EKYZ0dP4+ownL5tDB9A7F8+s5PQHgRNfxr6dkQWa5lqowdkvH8mcHtoMq37GwUM3Js5+ffXxlFeuRURCQjoiJtFcdgV25M02w4lKPgrpq4bUyWAxT7aNLL6Rvf9LAVIfONHpdESCW/+6OS/PKxKKWHWeecoxDTMDKVdzWaZhtm7CI5oyQkyu/xXJpCc/T8a+4wL1rAmKyKBe0JqGUzfmcyf7GjyC5rh3r2WXpgFOFHBwY7Ddnl6hzf3R0j66k4kYZ7eSJl02Ma6yOoWs/H3AH2OyBTu/tWxA6VBsyDvuTpgVFkH9wYVchPp8Lt+lIR94HFfWfRAWEcmQOHaq2vBUWEOIshEmrx0vzeWgychO2sOvKQLLHnG/f3gmijXbApsBx4tuNgdG1RviVIbz2ZrgacwvTmJ4Oiw5/KUoLMrC9nlLXn49DS6FAKj439kRYL2X8etyeBefhDSQ/XzoFHwCGpKVLu5uNMPxAqd/NQJiAoYqQ6qjYR0zgeyBsyEElhoa4W2zipWHBD5D7j9F/fB1sdO9d8tXJAdPK0SBYahpR1nI0oYtfqbts5BHf7I64bYiF0knFAseolUHD5jSNq6aPiUTJ3DFoRY7X7hDkEd6HSAxERATrh8xar5/SpSlqDBeYFrQUhFTHIY0n/KYJYdes9tk+ygCAi8s1oaTZxSuhIbgnuajyZ6KkvPIwnx2yYNpJRQ4DDPFcTJABHtSBuXUKdteRA30hOAlh10/w1BEcUEOd/9xFiajw75gKgNxG8SCjucgsSonouoEfoaImFIJgJ6ZskOYyo2Uy2u1MkHoqWB6SPDgiXI0LEyJxCC2RvJQQJYpE+qSYGVq+xggBuInsIGHcsfla8UuratG38A5mmVv47k45hevkrWpeIWsKYMtPOWcrjBXx4DT3fJYRJVph57+ssts8fyATh3Vv9kPHOZQQ5RxMP4oeSjBUcSsAhH+e03gQu10tjsTuGTZxCYDxWRpAb3ouRsKO1q0UBYhrPY0Pp2V7vYuF3FjFOmesJIppMCGJE/DkBaoR1g2pFcoBj4+cVpY3lU5X0Ram3zhKkZy1LVOUVN7HhBdXNSAaU3+ttemtSFlFM5vNDNPURsyjoHcOaBFtsvQNwRVEIZtWjXRi8PkzHTWcbQT59bqDoLYLcy8nuF8f8t185WaUEOaO29oGcYJMJ6UhdLiW6WazDFVRR06a1J7uLgTxXOG3TBIVOFuJmuXM3m/yl8zG0EuSVIIir3ZX0o+4vBgYEafDu/yVBQhvC6p2PB0qQkuvsGEF2Gq2kv3d3exYhiP7fI8gDJQj8EFHBShJ4Q5Ig5VfHNvexeKZL939XQuCnBJmKfLYMQVwlv+zS4qfeL/8vbMivjXpwoIVh/5yyIUv/ERRdS/22+fzbeOsfqqwWggTNfN9KWL0NGYImkI4VkET4OzYZShf2SwQO3+Xvrzm7CL9przkWbmRDGgYlCOYMGcXFyTLiOjZE2Fhwrd5mWPYpjUOeeP4da0BrCJhs4WZzg884nsW0lbFIfddc8fJjXoihu2OxQBX8OIl6a0wuimiFTzSNPYPZdvrxk58YVPphoAqsayNNDVYK+tB+aiyHf5XtxUjdmO31Q4qmyWXDdamxxExarAeJeZoQBMWWSzCCPOr3CD+uh6yNJQipZSNBmF51c/HkvkJs/JQ/yAuKFZEw7yLeLVnUH1cM5dJj/HOr7inxGAddPvERcmEIpuT8X90kU9l5gRZE2LuBID+vqfvzmtGCyMj+KwvrEcvH0wCjm2LZJWbDScbQvHatKpiRO0nnFo31bQW5hi3IslFlVS8kFcYBaE2ty4zI+CVhtL2mJm2n1XBF+7J+U1JXBXY0dyZfwboOD/iJHrDa//q+EqwRuGESsdl1HaqzurnwRoNa5+YCcs/y1mRCEjcvyv2sGe0seBVaEeyqo1itBKVp1N34xC/1GjU8Yw1PY5mJWxw7O5E3tFnnBgnZ5CMUxjmsaGbrsNjVSTCLqGRuvO/qA7eE6SfJuQVnoZFmEJtDQ0eECBuz8pbaj+2QtLRIONm3eqO+yXSirXL06yGwKu8DopwzX9om667IZeq1oYTYxwt4wxDDe+16NtCsiHrbdE2f7rMoSJ8c+t+3VgJrPCG3iiwTjSNhQNEYYhOli0xKir007VoDMtggslFSR8fsxhgTJqueayN1sfttyCVNCeODTA6e7JWaiFOr89N+pKCF/pjq447kAgsZVV50yVUYutJ6xu9/zPjtPoqOoUw09uM5ss3QOqGwtkJCGJ2u3iFpOUOLPxQHxl7/ohbFCpTWOawQJFKX9jp9hq1BkcjhGcA4/OmDhJHUwGAv/CqoMEbc/0Cg5h4yaStBn/x1flborOMFKdSayowZgaJBxLmp1XAljotzc0kyzxWgl8K86GBSKNJz9gonxrFneUFEwMGpH9A5Ch2M8CO+cQeZeGnl8aY3+DiSXFPypnWosqJtX6fknFs7lrtwjh1ZRli8domPsbUdG5h6sH6TLh+Yabb9iox4MaJYAq3PPJYxotc73W/SEBlzg+/0XTMXlNrl+xURDtf30ePEumscL4a8o2FkrGJAqCWwjg0XKoK0dorifA0JJ2XAXTnnCmoI88hd1YBLVmjWw/w6vHEV7nhx7yDN7i2QmnnLnsAHfQ36XTW2VS6pgKP35uD1WBU37hKfPtew3ANbdhSaTcvZwKhyjucZHWH2PHyXbUT02LwWa/b3L62M6mEfkNLMv+gFXe1gVNl5cHbP5o9aBtRVTRuVvX8l6mVO0R2jgaeGiLh9IuHoxR87c3FP2q5+ai425O/JjIo6n2+b0ZipKlx0muPxWY/Uiz4EIZHih9te317aAUS5WiQzmJ+8gui6dZwma6CGsyRn9j365+123vzEU2WbPUGKlyqqx/3FpBVR2YioiQjE/QNNNEMz4D5zSbvoOd7fG9ZLDBReB87ynHBOnVlTpp7vx/bayb0IvXbfZWGPWHKCOV9n4+bY3+Zl7ctpPDcD2MDjvJUaO/RS4ORuaiTcm37ZViptWUT+YgfYrHbW9S0w5bQbljnJVkHqDXmF/AnVdkN/oMzJRjW4tVtK6bHZ1mz7YpDsXj1FFtswKvVQo34xxqpdlA24H7HgwWY2TFXn9/0kVOOPNe401Vyj6ufK29DqsR3I7170q35swXfYvcbBD/YVjZvtgiGTlTIikbfBQLFG3bIIsWK/o4gtVYQRQd3zML51Uj1WKJa0bfpPwLEKBW/o6l6uwbJJVe8ShSw9A04RXsXQgCeCKl5IsPcHdnkMgFfLSxpogr3mcRMeH+Spm96sWEPXyAz4YoW4n4F5vF4jK7TCI8xO1T9GEnn+Zyg9Q5f5T+RaO9kqIvgzNhXPycWnvsCjlLd7vG1SsYbnmCCWV59K3jFMvw+oi9L0JqINHsSITVMreyExNaf7c5VDFmw7KmxQ5c1YNaMTpQ7qTq3cputY9mrXRIbmUoQwbb36aAeMewiXuHP3+nF2vi912+mnXEkP9B4hTsniE/E5KpfveWVL7w/iTv1buMPq1S+xFhdp8SO+hUt4QRSI+UP/PHFymvbr8BYFQTwybK1sBJvLPzgnHPKN2aRHhH0/E/iHHF4rVaZpSqJKUdn+bXDSo+WEW4Gc9NK42zLxNptLcWSfbsy8uL00Mg3U99Sv7j3w6FtFvL93O2izzVCTGopdX1i8w9/mWYn9nYs0M8g+I08i7kC7OSVdikPTANr0W0hkvs5FUwXXjlZwIX7r8KjwzIysLE/lJM/QP4wSPo7FP7PCClp3/fsR2G0nzpdaE5W4ermlM/WRPBdft07Ez98TtiaW8XVJn0O2jd6Fbc4A1xXcCs/11q6ZvoaLBQszWqLIFU/5gaxLb4bCqi6NFZMfRCc/cuwFJfcCbFlwtYjsg9yK4PLIVcEgT/0YPrVsvz7tEnX3AIZtdfwD7vWYG+95aPXa4wnrZYOasaUA23bpDbhRVVxd2EzIh25ZH4jvEMH/ALSCwBQf90eyAAAAAElFTkSuQmCC) left center/contain no-repeat;filter:brightness(0) invert(1)}
+.top a.home{color:var(--on-night-muted);font-size:14px;text-decoration:none}
+h1{margin:0;font-weight:600;font-size:clamp(30px,5vw,52px);line-height:1.15;letter-spacing:-.03em}
+header p{margin:0;color:var(--on-night-muted);font-weight:300;max-width:40em}
+main .wrap{padding-block:40px 72px;display:flex;flex-direction:column;gap:48px}
+.lists{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.lists{grid-template-columns:1fr}}
+.lists a{display:flex;flex-direction:column;gap:4px;padding:20px 22px;background:#fff;border:1px solid var(--line);text-decoration:none}
+.lists a:hover{border-color:var(--gold-deep)}
+.lists b{font-size:18px;font-weight:600}
+.lists span{font-size:14px;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--ink);padding-bottom:12px}
+.tools h2{margin:0;font-size:24px;font-weight:600;letter-spacing:-.02em}
+.tools small{color:var(--muted);font-size:14px;margin-left:8px}
+.search{flex:1 1 220px;max-width:320px;font:inherit;font-size:15px;background:transparent;border:0;border-bottom:1px solid var(--line);padding:8px 2px;color:var(--ink)}
+section.kind{display:flex;flex-direction:column;gap:22px}
+section.kind h3{margin:0;font-size:19px;font-weight:600}
+.grp{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 24px;align-items:baseline;padding-top:14px;border-top:1px solid var(--line)}
+@media (max-width:640px){.grp{grid-template-columns:1fr}}
+.grp .g{font-size:14px;color:var(--muted)}
+.items{display:flex;flex-wrap:wrap;gap:8px}
+.items a{font-size:14.5px;padding:6px 12px;border:1px solid var(--line);background:#fff;text-decoration:none;white-space:nowrap}
+.items a:hover{border-color:var(--gold-deep);color:var(--gold-deep)}
+.empty{color:var(--muted)}
+footer{color:var(--muted);font-size:13px}
+footer .wrap{padding-block:0 40px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top"><span class="logo" role="img" aria-label="COCOS"></span><a class="home" href="../">홈페이지</a></div>
+    <p class="cap">For Teachers</p>
+    <h1>선생님 자료함</h1>
+    <p>블로그에 글을 올릴 때 쓰는 페이지를 모아 두었어요. 검색에는 나오지 않는 선생님용 페이지예요. 이 주소를 즐겨찾기에 넣어 두세요: cocosedu.kr/tools</p>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="lists" id="lists"></div>
+    <div>
+      <div class="tools"><h2>블로그 원고<small>81개</small></h2>
+        <input class="search" id="q" type="search" placeholder="찾기 (예: 2025 3월, 고2, 동광고)" aria-label="원고 찾기"></div>
+    </div>
+    <div id="sections" style="display:flex;flex-direction:column;gap:48px"></div>
+  </div>
+</main>
+<footer><div class="wrap">원고나 목록이 새로 생기면 Claude가 이 페이지도 함께 고쳐요.</div></footer>
+<script>
+var D = {"lists": [{"t": "블로그 수록 지문 목록", "d": "회차마다 학습지·동의어·단어게임 링크를 링크째 복사", "href": "blog-list/"}, {"t": "교과서 지문 목록", "d": "교과서 과별 학습지·동의어 링크 복사", "href": "textbook-list/"}, {"t": "학생용 자료실", "d": "학생에게 보내는 주소 cocosedu.kr/library", "href": "../library/"}], "sections": [{"name": "단어게임 블로그 원고", "groups": [{"g": "2026년", "items": [{"t": "3월 고1", "href": "game-blog/2026-03-g1/"}, {"t": "3월 고2", "href": "game-blog/2026-03-g2/"}, {"t": "6월 고1", "href": "game-blog/2026-06-g1/"}, {"t": "6월 고2", "href": "game-blog/2026-06-g2/"}, {"t": "9월 고1", "href": "game-blog/2026-09-g1/"}, {"t": "9월 고2", "href": "game-blog/2026-09-g2/"}]}, {"g": "2025년", "items": [{"t": "3월 고1", "href": "game-blog/2025-03-g1/"}, {"t": "3월 고2", "href": "game-blog/2025-03-g2/"}, {"t": "6월 고1", "href": "game-blog/2025-06-g1/"}, {"t": "6월 고2", "href": "game-blog/2025-06-g2/"}, {"t": "9월 고1", "href": "game-blog/2025-09-g1/"}, {"t": "9월 고2", "href": "game-blog/2025-09-g2/"}, {"t": "10월 고1", "href": "game-blog/2025-10-g1/"}, {"t": "10월 고2", "href": "game-blog/2025-10-g2/"}]}, {"g": "2024년", "items": [{"t": "3월 고1", "href": "game-blog/2024-03-g1/"}, {"t": "3월 고2", "href": "game-blog/2024-03-g2/"}, {"t": "6월 고1", "href": "game-blog/2024-06-g1/"}, {"t": "6월 고2", "href": "game-blog/2024-06-g2/"}, {"t": "9월 고1", "href": "game-blog/2024-09-g1/"}, {"t": "9월 고2", "href": "game-blog/2024-09-g2/"}, {"t": "10월 고1", "href": "game-blog/2024-10-g1/"}, {"t": "10월 고2", "href": "game-blog/2024-10-g2/"}]}, {"g": "2023년", "items": [{"t": "3월 고1", "href": "game-blog/2023-03-g1/"}, {"t": "3월 고2", "href": "game-blog/2023-03-g2/"}, {"t": "6월 고1", "href": "game-blog/2023-06-g1/"}, {"t": "6월 고2", "href": "game-blog/2023-06-g2/"}, {"t": "9월 고1", "href": "game-blog/2023-09-g1/"}, {"t": "9월 고2", "href": "game-blog/2023-09-g2/"}, {"t": "11월 고1", "href": "game-blog/2023-11-g1/"}, {"t": "11월 고2", "href": "game-blog/2023-11-g2/"}]}, {"g": "2022년", "items": [{"t": "3월 고1", "href": "game-blog/2022-03-g1/"}, {"t": "6월 고1", "href": "game-blog/2022-06-g1/"}, {"t": "9월 고1", "href": "game-blog/2022-09-g1/"}, {"t": "11월 고1", "href": "game-blog/2022-11-g1/"}]}]}, {"name": "동의어·반의어 블로그 원고", "groups": [{"g": "2026년 2학기 중간고사 · 학교별", "items": [{"t": "동광고 1학년", "href": "syn-blog/2026-2-mid-dongkwang-g1/"}, {"t": "동광고 2학년", "href": "syn-blog/2026-2-mid-dongkwang-g2/"}, {"t": "풍생고 1학년", "href": "syn-blog/2026-2-mid-pungsaeng-g1/"}, {"t": "풍생고 2학년", "href": "syn-blog/2026-2-mid-pungsaeng-g2/"}, {"t": "성일고 1학년", "href": "syn-blog/2026-2-mid-seongil-g1/"}, {"t": "성남고 1학년", "href": "syn-blog/2026-2-mid-seongnam-g1/"}, {"t": "성남고 2학년", "href": "syn-blog/2026-2-mid-seongnam-g2/"}, {"t": "성남여고 1학년", "href": "syn-blog/2026-2-mid-seongnam-girls-g1/"}, {"t": "성남여고 2학년", "href": "syn-blog/2026-2-mid-seongnam-girls-g2/"}]}, {"g": "2026년", "items": [{"t": "3월 고1", "href": "syn-blog/2026-03-g1/"}, {"t": "3월 고2", "href": "syn-blog/2026-03-g2/"}, {"t": "6월 고1", "href": "syn-blog/2026-06-g1/"}, {"t": "6월 고2", "href": "syn-blog/2026-06-g2/"}, {"t": "9월 고1", "href": "syn-blog/2026-09-g1/"}, {"t": "9월 고2", "href": "syn-blog/2026-09-g2/"}]}, {"g": "2025년", "items": [{"t": "3월 고1", "href": "syn-blog/2025-03-g1/"}, {"t": "3월 고2", "href": "syn-blog/2025-03-g2/"}, {"t": "6월 고1", "href": "syn-blog/2025-06-g1/"}, {"t": "6월 고1 (예전 판)", "href": "syn-blog/2025-06-g1-old/"}, {"t": "6월 고2", "href": "syn-blog/2025-06-g2/"}, {"t": "6월 고2 (예전 판)", "href": "syn-blog/2025-06-g2-old/"}, {"t": "9월 고1", "href": "syn-blog/2025-09-g1/"}, {"t": "9월 고1 (예전 판)", "href": "syn-blog/2025-09-g1-old/"}, {"t": "9월 고2", "href": "syn-blog/2025-09-g2/"}, {"t": "9월 고2 (예전 판)", "href": "syn-blog/2025-09-g2-old/"}, {"t": "10월 고1", "href": "syn-blog/2025-10-g1/"}, {"t": "10월 고2", "href": "syn-blog/2025-10-g2/"}]}, {"g": "2024년", "items": [{"t": "3월 고1", "href": "syn-blog/2024-03-g1/"}, {"t": "3월 고2", "href": "syn-blog/2024-03-g2/"}, {"t": "6월 고1", "href": "syn-blog/2024-06-g1/"}, {"t": "6월 고2", "href": "syn-blog/2024-06-g2/"}, {"t": "9월 고1", "href": "syn-blog/2024-09-g1/"}, {"t": "9월 고2", "href": "syn-blog/2024-09-g2/"}, {"t": "10월 고1", "href": "syn-blog/2024-10-g1/"}, {"t": "10월 고2", "href": "syn-blog/2024-10-g2/"}]}, {"g": "2023년", "items": [{"t": "3월 고1", "href": "syn-blog/2023-03-g1/"}, {"t": "3월 고2", "href": "syn-blog/2023-03-g2/"}, {"t": "6월 고1", "href": "syn-blog/2023-06-g1/"}, {"t": "6월 고2", "href": "syn-blog/2023-06-g2/"}, {"t": "9월 고1", "href": "syn-blog/2023-09-g1/"}, {"t": "9월 고2", "href": "syn-blog/2023-09-g2/"}, {"t": "11월 고1", "href": "syn-blog/2023-11-g1/"}, {"t": "11월 고2", "href": "syn-blog/2023-11-g2/"}]}, {"g": "2022년", "items": [{"t": "3월 고1", "href": "syn-blog/2022-03-g1/"}, {"t": "6월 고1", "href": "syn-blog/2022-06-g1/"}, {"t": "9월 고1", "href": "syn-blog/2022-09-g1/"}, {"t": "11월 고1", "href": "syn-blog/2022-11-g1/"}]}]}]};
+(function(){
+  function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+  document.getElementById('lists').innerHTML=D.lists.map(function(l){return '<a href="'+esc(l.href)+'"><b>'+esc(l.t)+'</b><span>'+esc(l.d)+'</span></a>'}).join('');
+  function render(){
+    var q=document.getElementById('q').value.trim().toLowerCase().replace(/\s+/g,'');
+    var out=D.sections.map(function(s){
+      var gs=s.groups.map(function(g){
+        var it=g.items.filter(function(x){return !q||(g.g+x.t).toLowerCase().replace(/\s+/g,'').indexOf(q)>-1});
+        if(!it.length) return '';
+        return '<div class="grp"><span class="g">'+esc(g.g)+'</span><div class="items">'+it.map(function(x){return '<a href="'+esc(x.href)+'">'+esc(x.t)+'</a>'}).join('')+'</div></div>';
+      }).join('');
+      return gs?'<section class="kind"><h3>'+esc(s.name)+'</h3>'+gs+'</section>':'';
+    }).join('');
+    document.getElementById('sections').innerHTML=out||'<p class="empty">찾는 원고가 없어요.</p>';
+  }
+  document.getElementById('q').addEventListener('input',render);
+  render();
+})();
+</script>
+</body>
+</html>

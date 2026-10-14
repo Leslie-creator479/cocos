@@ -14,9 +14,9 @@ GitHub Pages로 공개되는 코코스학원 홈페이지·온라인 학습지 �
 | `school/2026-2-mid/<학교>-g<학년>/` | 학교별 시험 범위 목차(학교: dongkwang, seongnam, seongnam-girls, seongil, pungsaeng) |
 | `syn/<회차>/` | 동의어·반의어 (회차 이름은 study와 같다. 교과서는 `syn/neo2-1-3`처럼) |
 | `game/<회차>/` | 단어게임 |
-| `tools/` | 선생님용 페이지(블로그 원고 등). 반드시 noindex로 감싼다 |
+| `tools/` | 선생님 자료함(검색 제외). `tools/index.html` 첫 화면은 `_tools/build_tools_index.py`로만 만든다. `tools/blog-list/` 블로그 수록 지문 목록(이게 기준판, 옛 아티팩트판은 더 고치지 않음), `tools/textbook-list/` 교과서 지문 목록, `tools/game-blog/<회차>/`·`tools/syn-blog/<회차>/` 블로그 원고, `tools/templates/` 틀 |
 | `preview/` | 홈페이지 디자인 시안(noindex) |
-| `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `fix_links.py`(claude.ai 링크 → 홈페이지 주소), `add_library.py`(자료실 카드), `artifact_map.json`(옛 아티팩트 id → 저장소 경로) |
+| `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `fix_links.py`(claude.ai 링크 → 홈페이지 주소), `add_library.py`(자료실 카드), `build_tools_index.py`(선생님 자료함 첫 화면), `artifact_map.json`(옛 아티팩트 id → 저장소 경로) |
 
 ## 규칙
 - 모든 페이지는 `<폴더>/index.html` 하나. 파일 이름이 아니라 폴더 주소로 연다.
@@ -26,3 +26,4 @@ GitHub Pages로 공개되는 코코스학원 홈페이지·온라인 학습지 �
 - 저장소는 공개다. 학생 이름·전화번호 같은 개인정보, 코코 키우기·100일 습관 같은 기록 페이지는 올리지 않는다.
 - 올리기: `git add -A && git commit -m "<무엇을>" && git push origin main`. 한 번에 50MB가 넘으면 회차별로 나눠 커밋·푸시한다. 푸시 전 `git pull --rebase origin main`.
 - 올린 뒤 1~2분 기다렸다가 WebFetch로 새 주소를 열어 제목이 맞는지 확인하고 링크를 드린다(공유 설정은 필요 없다. 모두 공개).
+- 블로그 원고를 넣거나 블로그 수록 지문 목록·교과서 지문 목록에 회차를 더한 뒤에는 `python3 _tools/build_tools_index.py`를 돌린다. 블로그 수록 지문 목록은 `tools/blog-list/index.html`을 고친다(blog_kit.py의 목록 페이지 파일로 이 파일을 넘긴다). 링크는 모두 `https://cocosedu.kr/…` 전체 주소.

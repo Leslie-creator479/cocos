@@ -1,0 +1,212 @@
+<!doctype html><html><head><meta charset=utf8><meta name="robots" content="noindex"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>교과서 지문 목록</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: same as 블로그 수록 지문 목록 — steps, overview, then one card per textbook lesson with copy buttons above a live preview */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA; --game:#B0540C; --game-soft:#FDEEDF;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; --game:#F7B06A; --game-soft:#3A2614; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; --game:#F7B06A; --game-soft:#3A2614; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85}
+.preview p{margin:0}
+.preview .grp{margin-top:14px;font-weight:700}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.preview a:hover{background:var(--accent-soft)}
+.jump{display:flex;flex-wrap:wrap;gap:8px}
+.jump a{font-size:14.5px;font-weight:500;text-decoration:none;color:var(--accent-ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-variant-numeric:tabular-nums}
+.jump a:hover{border-color:var(--accent)}
+.exams{display:flex;flex-direction:column;gap:24px}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+.cat{display:flex;flex-direction:column;gap:24px}
+.cat-head{display:flex;align-items:baseline;gap:10px;margin:8px 0 -8px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.cat-head h2{font-size:26px}
+.cat-head span{font-size:14px;color:var(--muted)}
+.sub-head{font-size:15px;font-weight:700;color:var(--accent-ink);margin:4px 0 -12px;letter-spacing:.02em}
+.jump{flex-direction:column;gap:10px}
+.jrow{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.jrow b{font-size:13px;color:var(--muted);min-width:7.5em}
+.jump a{font-size:14px;padding:4px 12px}
+.overview{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px clamp(14px,3vw,24px);display:flex;flex-direction:column;gap:12px}
+.overview h2{font-size:20px}
+.overview p{margin:0;font-size:14px;color:var(--muted)}
+.ov-wrap{overflow-x:auto}
+.ov{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+.ov th,.ov td{border-bottom:1px solid var(--line);padding:8px 3px;text-align:center}
+.ov thead th{color:var(--muted);font-weight:500;font-size:13px}
+.ov tbody th{text-align:left;white-space:nowrap}
+.ov td a,.ov td .no{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 8px;margin:1px;text-decoration:none}
+.ov td a.s{background:var(--accent-soft);color:var(--accent-ink)}
+.ov td a.y{background:var(--ok-soft);color:var(--ok)}
+.ov td a.w{background:var(--game-soft);color:var(--game)}
+.ov td .no{color:var(--line);font-weight:400}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.warn{background:var(--game-soft);color:var(--game);border-radius:12px;padding:12px 16px;font-size:14.5px;font-weight:500;margin:0}
+.warn b{font-weight:700}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 교과서 온라인 학습지 관리</span>
+    <h1>교과서 지문 목록</h1>
+    <p>교과서 본문으로 만든 온라인 학습지와 동의어·반의어 학습지를 교재·과별로 모았어요. 줄마다 해당 본문의 온라인 학습지 링크가 걸려 있어요. 복사해서 학생에게 보내면 번호를 눌러 바로 공부를 시작할 수 있어요.</p>
+  </header>
+
+  <p class="warn"><b>블로그에 올리지 않아요.</b> 교과서 본문은 저작권이 있어 블로그 게시용이 아니에요. 학원 학생에게만 카카오톡·클래스 공지 등으로 따로 보내 주세요.</p>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>보낼 과에서 ‘링크 포함 복사’나 ‘카톡용 텍스트 복사’를 눌러요.</li>
+    <li>카카오톡·클래스 공지 등 학생에게 보낼 곳에 붙여 넣어요.</li>
+    <li>목차 하나만 보내려면 ‘목차 링크 복사’를 눌러요.</li>
+  </ol>
+
+  <section class="overview" aria-labelledby="ov-h"><h2 id="ov-h">작업 현황</h2><p>교재·과별로 만든 자료예요. 칸을 누르면 그 자료로 이동해요. <b style="color:var(--accent-ink)">학습지</b> = 본문 온라인 학습지, <b style="color:var(--ok)">동의어</b> = 동의어·반의어. 빈칸(—)은 아직 안 만든 과예요.</p><div class="ov-wrap" id="ov"></div></section>
+
+  <nav class="jump" id="jump" aria-label="교재·과 바로가기"></nav>
+
+  <div id="exams" class="exams"></div>
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 아래 미리보기 목록을 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. 카카오톡에는 ‘카톡용 텍스트 복사’가 주소까지 함께 들어가서 더 편해요.</p>
+</div>
+
+<script>
+var EXAMS=[
+{"id": "neo2l1", "kind": 0, "book": "영어II NE능률(오선영)", "lessons": [1], "title": "영어II NE능률(오선영) 1과", "toc": "https://cocosedu.kr/textbook/neo2/1/", "groups": [{"g": "1과 Two Heroes Who Fought a Deadly Disease", "items": [["본문 1번", "치명적인 질병 백일해: 대공황의 겨울밤, 두 과학자는 왜 아픈 아이들의 집을 찾아다녔을까?", "https://cocosedu.kr/textbook/neo2/1/1/"], ["본문 2번", "두 과학자의 동기: Kendrick과 Eldering은 왜 보수도 없이 백신을 연구했을까?", "https://cocosedu.kr/textbook/neo2/1/2/"], ["본문 3번", "백신 개발과 첫 실험: 두 과학자는 어떻게 안전하고 효과적인 백신을 만들었을까?", "https://cocosedu.kr/textbook/neo2/1/3/"], ["본문 4번", "위기와 뜻밖의 도움: 자금이 바닥난 백신 연구는 어떻게 다시 움직였을까?", "https://cocosedu.kr/textbook/neo2/1/4/"], ["본문 5번", "겸손한 영웅: 백신으로 수많은 생명을 구한 두 과학자는 왜 부와 명예를 마다했을까?", "https://cocosedu.kr/textbook/neo2/1/5/"]]}]},
+{"id": "neo2l2", "kind": 0, "book": "영어II NE능률(오선영)", "lessons": [2], "title": "영어II NE능률(오선영) 2과", "toc": "https://cocosedu.kr/textbook/neo2/2/", "groups": [{"g": "2과 Science Is for Everyone", "items": [["본문 1번", "시민 과학: 과학은 정말 과학자들만의 것일까?", "https://cocosedu.kr/textbook/neo2/2/1/"], ["본문 2번", "Galaxy Zoo: 혼자서는 수십 년 걸릴 은하 분류를 어떻게 해냈을까?", "https://cocosedu.kr/textbook/neo2/2/2/"], ["본문 3번", "STEVE: 평범한 오로라 추적자들은 어떻게 새로운 현상을 발견했을까?", "https://cocosedu.kr/textbook/neo2/2/3/"], ["본문 4번", "시민 과학자: 학위나 흰 가운이 없어도 과학에 기여할 수 있을까", "https://cocosedu.kr/textbook/neo2/2/4/"]]}]},
+{"id": "neo2l3", "kind": 0, "book": "영어II NE능률(오선영)", "lessons": [3], "title": "영어II NE능률(오선영) 3과", "toc": "https://cocosedu.kr/textbook/neo2/3/", "groups": [{"g": "3과 There’s More than One Way to Vote", "items": [["본문 1번", "집단 의사 결정과 투표: 투표 방식이 다르면 결과도 달라질까?", "https://cocosedu.kr/textbook/neo2/3/1/"], ["본문 2번", "단순 다수결(FPTP) 방식: 표를 가장 많이 받으면 과반수의 지지를 받은 걸까?", "https://cocosedu.kr/textbook/neo2/3/2/"], ["본문 3번", "대안 투표(AV) 방식: 과반이 나올 때까지 다시 세면 결과는 어떻게 달라질까", "https://cocosedu.kr/textbook/neo2/3/3/"], ["본문 4번", "콩도르세 방식: 모든 선택지를 일대일로 맞붙이면 누가 이길까", "https://cocosedu.kr/textbook/neo2/3/4/"], ["본문 5번", "완벽한 투표 방법은 없다: 그런데도 왜 여러 투표 방법을 알아야 할까", "https://cocosedu.kr/textbook/neo2/3/5/"]]}]},
+{"id": "neo2syn13", "kind": 1, "book": "영어II NE능률(오선영)", "lessons": [1, 2, 3], "title": "영어II NE능률(오선영) 1~3과 동의어·반의어", "toc": "https://cocosedu.kr/syn/neo2-1-3/", "tocLabel": "학습지 링크 복사", "tocNote": "동의어·반의어 온라인 학습지 주소를 복사했어요. 링크 하나에 1~3과 본문 14개가 들어 있어요.", "groups": [{"g": "1과 Two Heroes Who Fought a Deadly Disease", "items": [["본문 1번", "치명적인 질병 백일해: 대공황의 겨울밤, 두 과학자는 왜 아픈 아이들의 집을 찾아다녔을까?", "https://cocosedu.kr/syn/neo2-1-3/#p1-1"], ["본문 2번", "두 과학자의 동기: Kendrick과 Eldering은 왜 보수도 없이 백신을 연구했을까?", "https://cocosedu.kr/syn/neo2-1-3/#p1-2"], ["본문 3번", "백신 개발과 첫 실험: 두 과학자는 어떻게 안전하고 효과적인 백신을 만들었을까?", "https://cocosedu.kr/syn/neo2-1-3/#p1-3"], ["본문 4번", "위기와 뜻밖의 도움: 자금이 바닥난 백신 연구는 어떻게 다시 움직였을까?", "https://cocosedu.kr/syn/neo2-1-3/#p1-4"], ["본문 5번", "겸손한 영웅: 백신으로 수많은 생명을 구한 두 과학자는 왜 부와 명예를 마다했을까?", "https://cocosedu.kr/syn/neo2-1-3/#p1-5"]]}, {"g": "2과 Science Is for Everyone", "items": [["본문 1번", "시민 과학: 과학은 정말 과학자들만의 것일까?", "https://cocosedu.kr/syn/neo2-1-3/#p2-1"], ["본문 2번", "Galaxy Zoo: 혼자서는 수십 년 걸릴 은하 분류를 어떻게 해냈을까?", "https://cocosedu.kr/syn/neo2-1-3/#p2-2"], ["본문 3번", "STEVE: 평범한 오로라 추적자들은 어떻게 새로운 현상을 발견했을까?", "https://cocosedu.kr/syn/neo2-1-3/#p2-3"], ["본문 4번", "시민 과학자: 학위나 흰 가운이 없어도 과학에 기여할 수 있을까", "https://cocosedu.kr/syn/neo2-1-3/#p2-4"]]}, {"g": "3과 There’s More than One Way to Vote", "items": [["본문 1번", "집단 의사 결정과 투표: 투표 방식이 다르면 결과도 달라질까?", "https://cocosedu.kr/syn/neo2-1-3/#p3-1"], ["본문 2번", "단순 다수결(FPTP) 방식: 표를 가장 많이 받으면 과반수의 지지를 받은 걸까?", "https://cocosedu.kr/syn/neo2-1-3/#p3-2"], ["본문 3번", "대안 투표(AV) 방식: 과반이 나올 때까지 다시 세면 결과는 어떻게 달라질까", "https://cocosedu.kr/syn/neo2-1-3/#p3-3"], ["본문 4번", "콩도르세 방식: 모든 선택지를 일대일로 맞붙이면 누가 이길까", "https://cocosedu.kr/syn/neo2-1-3/#p3-4"], ["본문 5번", "완벽한 투표 방법은 없다: 그런데도 왜 여러 투표 방법을 알아야 할까", "https://cocosedu.kr/syn/neo2-1-3/#p3-5"]]}]}
+];
+
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function count(ex){return ex.groups.reduce(function(n,g){return n+g.items.length},0)}
+function buildHTML(ex){
+  var h='<p><b>■ 수록 지문 ('+count(ex)+'개)</b></p>';
+  ex.groups.forEach(function(g){
+    h+='<p><br></p><p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){ h+='<p><a href="'+esc(it[2])+'" target="_blank" rel="noopener">'+esc(it[0]+' · '+it[1])+'</a></p>'; });
+  });
+  return h;
+}
+function buildText(ex){
+  var t='■ 수록 지문 ('+count(ex)+'개)\n';
+  ex.groups.forEach(function(g){ t+='\n['+g.g+']\n'; g.items.forEach(function(it){ t+=it[0]+' · '+it[1]+'\n'+it[2]+'\n'; }); });
+  return t;
+}
+function flash(btn,msg,status,note){
+  var old=btn.textContent; btn.textContent=msg; btn.classList.add('done');
+  status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange(); r.selectNodeContents(node);
+  var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  var ok=false; try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+function copyRich(ex,btn,status,preview){
+  var html=buildHTML(ex), text=buildText(ex);
+  if(window.ClipboardItem && navigator.clipboard && navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,'복사했어요',status,'학생에게 보낼 곳(카카오톡·클래스 공지 등)에 붙여 넣으세요.')})
+      .catch(function(){
+        if(copyFromSelection(preview)) flash(btn,'복사했어요',status,'학생에게 보낼 곳(카카오톡·클래스 공지 등)에 붙여 넣으세요.');
+        else {status.textContent='자동 복사가 막혀 있어요. 선택된 목록을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';}
+      });
+  } else if(copyFromSelection(preview)) flash(btn,'복사했어요',status,'학생에게 보낼 곳(카카오톡·클래스 공지 등)에 붙여 넣으세요.');
+  else status.textContent='자동 복사가 막혀 있어요. 선택된 목록을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+}
+function copyPlain(str,btn,status,label){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,'복사했어요',status,label)}).catch(function(){status.textContent='자동 복사가 막혀 있어요. 주소: '+str});
+  } else status.textContent='주소: '+str;
+}
+
+
+var root=document.getElementById('exams');
+var CATS=['교과서 온라인 학습지','동의어·반의어 온라인 학습지'], KIND=['학습지','동의어'];
+var BOOKS=[]; EXAMS.forEach(function(ex){ if(BOOKS.indexOf(ex.book)<0) BOOKS.push(ex.book); });
+EXAMS.sort(function(a,b){ return a.kind-b.kind || BOOKS.indexOf(a.book)-BOOKS.indexOf(b.book) || a.lessons[0]-b.lessons[0]; });
+function lab(ex){ return ex.lessons.length>1? ex.lessons[0]+'~'+ex.lessons[ex.lessons.length-1]+'과' : ex.lessons[0]+'과'; }
+// 작업 현황 표: 교재마다 한 줄, 과마다 한 칸 (학습지·동의어)
+(function(){
+  var max=EXAMS.reduce(function(m,ex){return Math.max.apply(null,[m].concat(ex.lessons))},0), cols=[];
+  for(var i=1;i<=max;i++) cols.push(i);
+  var h='<table class="ov"><thead><tr><th scope="col">교재</th>'+cols.map(function(n){return '<th scope="col">'+n+'과</th>'}).join('')+'</tr></thead><tbody>';
+  BOOKS.forEach(function(bk){
+    h+='<tr><th scope="row">'+esc(bk)+'</th>'+cols.map(function(n){
+      var c=EXAMS.filter(function(e){return e.book===bk&&e.lessons.indexOf(n)>-1}).map(function(ex){
+        return ex.kind===0?'<a class="s" href="#'+ex.id+'">학습지</a>':'<a class="y" href="#'+ex.id+'">동의어</a>'}).join('');
+      return '<td>'+(c||'<span class="no">—</span>')+'</td>';}).join('')+'</tr>';
+  });
+  document.getElementById('ov').innerHTML=h+'</tbody></table>';
+})();
+// 바로가기
+(function(){
+  var h='';
+  [0,1].forEach(function(k){ BOOKS.forEach(function(bk){
+    var list=EXAMS.filter(function(e){return e.kind===k&&e.book===bk}); if(!list.length) return;
+    h+='<div class="jrow"><b>'+KIND[k]+' · '+esc(bk)+'</b>'+list.map(function(ex){return '<a href="#'+ex.id+'">'+lab(ex)+'</a>'}).join('')+'</div>';
+  });});
+  document.getElementById('jump').innerHTML=h;
+})();
+[0,1].forEach(function(k){
+  var list=EXAMS.filter(function(e){return e.kind===k}); if(!list.length) return;
+  var catBox=document.createElement('div'); catBox.className='cat';
+  catBox.innerHTML='<div class="cat-head"><h2>'+CATS[k]+'</h2><span>'+list.length+'개</span></div>';
+  root.appendChild(catBox);
+  var curBook='';
+  list.forEach(function(ex){
+    if(ex.book!==curBook){ curBook=ex.book; var sh=document.createElement('p'); sh.className='sub-head'; sh.textContent=ex.book; catBox.appendChild(sh); }
+    var sec=document.createElement('section'); sec.className='exam'; sec.id=ex.id;
+    var meta=k===0? esc(ex.groups[0].g)+' · '+count(ex)+'개 본문 · 목차 온라인 학습지 연결' : count(ex)+'개 본문 · 줄마다 그 본문 탭으로 바로 열림';
+    sec.innerHTML='<div class="exam-head"><div><h2>'+esc(ex.title)+'</h2><p class="meta">'+meta+'</p></div>'+
+      '<div class="acts"><button type="button" class="btn primary" id="rich-'+ex.id+'">링크 포함 복사</button><button type="button" class="btn" id="txt-'+ex.id+'">카톡용 텍스트 복사</button><button type="button" class="btn" id="toc-'+ex.id+'">'+esc(ex.tocLabel||'목차 링크 복사')+'</button></div></div>'+
+      '<p class="status" id="st-'+ex.id+'" role="status" aria-live="polite"></p>'+
+      '<div class="preview" id="pv-'+ex.id+'" aria-label="붙여 넣을 목록 미리보기">'+buildHTML(ex)+'</div>';
+    catBox.appendChild(sec);
+    var st=document.getElementById('st-'+ex.id), pv=document.getElementById('pv-'+ex.id);
+    document.getElementById('rich-'+ex.id).addEventListener('click',function(e){copyRich(ex,e.currentTarget,st,pv)});
+    document.getElementById('txt-'+ex.id).addEventListener('click',function(e){copyPlain(buildText(ex),e.currentTarget,st,'제목과 주소를 함께 복사했어요. 카카오톡에 붙여 넣으세요.')});
+    document.getElementById('toc-'+ex.id).addEventListener('click',function(e){copyPlain(ex.toc,e.currentTarget,st,ex.tocNote||'목차 주소를 복사했어요. 이 링크 하나로 그 과의 본문 학습지를 모두 열 수 있어요.')});
+  });
+});
+</script>
+
+</body></html>
