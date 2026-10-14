@@ -10,10 +10,10 @@ GitHub Pages로 공개되는 코코스학원 홈페이지·온라인 학습지 �
 | `library/` | 자료실(탭: 학력평가·교과서·학교별 시험 범위·동의어·반의어·단어게임). `_tools/add_library.py`로만 고친다 |
 | `study/<연도>-<월2자리>-g<학년>/` | 학력평가 회차 목차. 지문은 `.../<번호>/` (예 `study/2026-06-g2/23/`, 장문 `41-42`, `43-45`) |
 | `study/olympos1/`, `study/olympos2/` | 올림포스 기출 지문 `<강>-<번호>/` (예 `study/olympos2/7-3/`) |
-| `textbook/<교재>/<과>/` | 교과서 과별 목차, 본문 `.../<번호>/` (예 `textbook/neo2/1/3/` = 영어II 능률(오선영) 1과 본문 3번) |
+| `textbook/<교재>/<과>/` | 교과서 과별 목차, 본문 `.../<번호>/` (예 `textbook/neo2/1/3/` = 영어II 능률(오선영) 1과 본문 3번). 교재: `neo2` 영어II 능률(오선영), `ce1min` 공통영어1 능률(민병천) |
 | `school/2026-2-mid/<학교>-g<학년>/` | 학교별 시험 범위 목차(학교: dongkwang, seongnam, seongnam-girls, seongil, pungsaeng) |
-| `syn/<회차>/` | 동의어·반의어 (회차 이름은 study와 같다. 교과서는 `syn/neo2-1-3`처럼) |
-| `game/<회차>/` | 단어게임 |
+| `syn/<회차>/` | 동의어·반의어 (회차 이름은 study와 같다. 교과서는 `syn/neo2-1-3`, `syn/ce1min-1`처럼) |
+| `game/<회차>/` | 단어게임 (교과서는 `game/ce1min-1`처럼 syn과 같은 이름) |
 | `tools/` | 선생님 자료함(검색 제외). `tools/index.html` 첫 화면은 `_tools/build_tools_index.py`로만 만든다. `tools/blog-list/` 블로그 수록 지문 목록(이게 기준판, 옛 아티팩트판은 더 고치지 않음), `tools/textbook-list/` 교과서 지문 목록, `tools/game-blog/<회차>/`·`tools/syn-blog/<회차>/` 블로그 원고, `tools/templates/` 틀 |
 | `preview/` | 홈페이지 디자인 시안(noindex) |
 | `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `fix_links.py`(claude.ai 링크 → 홈페이지 주소), `add_library.py`(자료실 카드), `build_tools_index.py`(선생님 자료함 첫 화면), `artifact_map.json`(옛 아티팩트 id → 저장소 경로) |
