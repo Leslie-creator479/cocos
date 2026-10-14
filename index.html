@@ -242,11 +242,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* 상담 예약 */
 .contact{display:flex;flex-direction:column;border-top:1px solid var(--ink)}
-.row-link{display:grid;grid-template-columns:90px minmax(0,1fr);gap:4px 24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.row-link{display:grid;grid-template-columns:118px minmax(0,1fr);gap:4px 24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
 .row-link .cap{grid-row:1 / span 2;color:var(--gold-deep);margin:0}
 .row-link b{font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .row-link span:last-child{grid-column:2;color:var(--muted);font-size:14.5px;font-weight:300}
-.row-link:hover b{color:var(--gold-deep)}
+a.row-link:hover b{color:var(--gold-deep)}
 @media (max-width:480px){.row-link{grid-template-columns:1fr}.row-link .cap{grid-row:auto}.row-link span:last-child{grid-column:1}}
 .ask{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px clamp(48px,7vw,120px)}
 @media (max-width:900px){.ask{grid-template-columns:1fr}}
@@ -443,7 +443,8 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
       </div>
       <div class="contact">
         <a class="row-link" href="tel:031-752-3334"><span class="cap">Call</span><b>031-752-3334</b><span>전화 상담 · 레벨 테스트 예약</span></a>
-        <a class="row-link" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><span class="cap">Visit</span><b>오시는 길</b><span>네이버 지도에서 위치와 길찾기</span></a>
+        <div class="row-link"><span class="cap">Hours</span><b>운영 시간</b><span>평일 오후 3시 ~ 밤 10시 · 토요일 오전 11시 ~ 오후 4시</span></div>
+        <a class="row-link" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><span class="cap">Visit</span><b>오시는 길</b><span>경기도 성남시 중원구 광명로 124, 2층 (수진역 성일중고 사거리) · 네이버 지도에서 길찾기</span></a>
         <a class="row-link" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener"><span class="cap">Blog</span><b>코코스학원 블로그</b><span>학원 소식과 온라인 학습지</span></a>
         <a class="row-link" href="https://www.instagram.com/cocos_sujin/" target="_blank" rel="noopener"><span class="cap">Instagram</span><b>@cocos_sujin</b><span>학원 일상과 소식</span></a>
         <a class="row-link" href="library/"><span class="cap">Library</span><b>온라인 학습지 자료실</b><span>지문별 해석·듣기·단어·변형 문제</span></a>
