@@ -3,6 +3,7 @@
 - 위쪽 로고(a.brand): 그 페이지 맨 아래 카드(#academy)로 내려가던 것을 → 홈페이지 첫 화면으로
 - 학원 안내 카드 버튼: 자료실에서 다른 학습지 보기(파란 버튼) · 블로그에서 수업 소식 보기 · 인스타그램 보기 ·
   학원 홈페이지 · 상담·위치(네이버 플레이스). 다섯 버튼은 같은 크기(굵은 제목 + 작은 설명 두 줄). 블로그 방문도 적극 권하므로 다른 버튼과 같은 크기로 둔다(선생님 결정 2026-10-14)
+- 공유 안내 줄('친구에게도 … 공유해 주세요!')이 없으면 넣는다(단어게임). 잠그는 교과서·부교재 페이지는 lock.mjs가 배포 금지 문구로 바꾼다.
 - 카드 안내 문구를 지금 상황에 맞게 고침. 학원명·등록번호·교습비 표시는 그대로.
 링크는 상대 경로라 페이지 위치에서 계산한다. 몇 번 실행해도 결과가 같다(이미 바뀐 페이지는 건너뜀).
 
@@ -20,6 +21,7 @@ CTA_CSS = ('/* brand-ctas */'
            '.promo .ctas a{flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:2px;min-height:66px;padding:10px 6px;line-height:1.35}'
            '.promo .ctas a b{font-size:15px;font-weight:700;white-space:nowrap}'
            '.promo .ctas a small{font-size:12.5px;font-weight:400;opacity:.85;white-space:nowrap}'
+           '.promo .share{font-size:13.5px;color:var(--muted)}'
            '@media (max-width:720px){.promo .ctas{grid-template-columns:repeat(2,minmax(0,1fr))}.promo .ctas a.primary{grid-column:1 / -1}}')
 
 
@@ -50,6 +52,10 @@ def convert(path):
                 + btn('ghost', PLACE, '네이버 플레이스', '상담·위치 보기', True, 'go-place')
                 + '    </div>')
     s, k = re.subn(r'<div class="ctas">\s*<a class="primary"[\s\S]*?</div>(?:\s*<p class="more">[\s\S]*?</p>)?', lambda m: new_ctas, s, count=1); n += k
+    # 공유 안내 줄: 단어게임 템플릿에는 빠져 있어서 넣는다(교과서·부교재 페이지는 lock.mjs가 '학원 밖 배포 금지' 문구로 바꾼다)
+    if 'class="share"' not in s:
+        thing = '단어게임' if what != '온라인 학습지' else '온라인 학습지'
+        s, k = re.subn(r'(<div class="ctas">[\s\S]*?</div>)', lambda m: m.group(1) + f'\n    <p class="share">도움이 됐다면 친구에게도 이 {thing} 링크를 공유해 주세요!</p>', s, count=1)
     css = CTA_CSS
     if '/* brand-ctas */' in s:
         s = re.sub(r'/\* brand-ctas \*/[^\n]*', lambda m: css, s, count=1)
