@@ -13,7 +13,7 @@
 """
 import json, os, re, sys
 
-BASE = 'https://leslie-creator479.github.io/cocos/'
+BASE = 'https://cocosedu.kr/'
 HERE = os.path.dirname(os.path.abspath(__file__))
 MAP = json.load(open(os.path.join(HERE, 'artifact_map.json'), encoding='utf8'))
 
