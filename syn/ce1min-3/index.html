@@ -1,0 +1,577 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>[코코스학원] 공통영어1 능률(민병천) 3과 교과서 본문 4개 · 동의어·반의어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-soft:#E2F3FC; --accent-ink:#065A88;
+  --ex:#A84A24; --ex-soft:#FBEDE6; --ex-ink:#7A3316;
+  --mark:#FFE766; --mark-ink:#1B2033;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA; --bad:#B3261E; --bad-soft:#FBE7E5;
+  --serif-ko:"Gowun Batang","Nanum Myeongjo","AppleMyungjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --serif-en:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-soft:#10293A; --accent-ink:#BCE5FA;
+    --ex:#F0A07E; --ex-soft:#35231C; --ex-ink:#F7C7B2;
+    --mark:rgba(255,214,64,.30); --mark-ink:#FFF4C9;
+    --ok:#6FCF9B; --ok-soft:#18301F; --bad:#F2918A; --bad-soft:#3A1D1B;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-soft:#10293A; --accent-ink:#BCE5FA;
+  --ex:#F0A07E; --ex-soft:#35231C; --ex-ink:#F7C7B2;
+  --mark:rgba(255,214,64,.30); --mark-ink:#FFF4C9;
+  --ok:#6FCF9B; --ok-soft:#18301F; --bad:#F2918A; --bad-soft:#3A1D1B;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;margin:0;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:32px 64px;display:flex;flex-direction:column;gap:40px}
+h1,h2{font-family:var(--serif-ko);font-weight:700;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.25}
+h2{font-size:24px;line-height:1.3}
+header{display:flex;flex-direction:column;gap:10px}
+.src{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-weight:500}
+.en-title{font-family:var(--serif-en);font-style:italic;color:var(--muted);font-size:17px;margin:0}
+.gist{margin:6px 0 0;max-width:62ch}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 14px;font-size:14px}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.passage{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px clamp(18px,4vw,32px)}
+.sents{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.sent{display:grid;grid-template-columns:1.6em minmax(0,1fr);gap:0 10px;padding:12px 10px;border-radius:0;transition:background-color .25s}
+.sent + .sent{border-top:1px dashed var(--line)}
+.sent.hl{background:var(--mark);color:var(--mark-ink)}
+.sn{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:5px}
+.sent.hl .sn{color:inherit}
+.se{font-family:var(--serif-en);font-size:18px;line-height:1.75;margin:0}
+.kbtn{margin-top:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--accent)}
+.kbtn:hover{border-color:var(--accent)}
+.ko{display:none;margin:8px 0 2px;font-size:15px;line-height:1.7;color:var(--accent-ink);background:var(--accent-soft);padding:8px 12px;border-radius:8px}
+.sent.open .ko{display:block}
+.sent.open .kbtn{color:var(--muted)}
+.listen{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 6px}
+.lbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent);color:var(--card);border-radius:999px;padding:7px 16px 7px 12px;font-size:14px;font-weight:700}
+.lbtn svg,.lstop svg,.lbar button svg{width:15px;height:15px}
+.lbtn.on{background:var(--card);color:var(--accent)}
+.lstop{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:0}
+.lstop[hidden]{display:none}
+.listen .seg button{padding:6px 12px}
+.listen .btn{border-radius:999px;font-size:13px;padding:6px 12px}
+.lhint{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.sacts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sacts .kbtn{margin-top:0}
+.sbtn{display:inline-flex;align-items:center;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 12px 2px 9px;font-size:13px;color:var(--accent)}
+.sbtn svg{width:14px;height:14px}
+.sbtn:hover{border-color:var(--accent)}
+.sbtn.on{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.sent.now{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.sent.now.hl{background:var(--mark)}
+.cue{display:none;align-items:center;gap:10px;margin-top:8px;font-size:13px;font-weight:700;color:var(--accent-ink)}
+.cue i{flex:1;max-width:180px;height:5px;border-radius:999px;background:var(--line);overflow:hidden}
+.cue b{display:block;height:100%;width:100%;background:var(--accent)}
+.sent.wait .cue{display:flex}
+.lbar{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:999px;background:var(--ink);color:var(--paper);box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:13px;font-weight:700;white-space:nowrap}
+.lbar[hidden]{display:none}
+.lbar button{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;border:0;background:rgba(255,255,255,.14);color:inherit;padding:0}
+.lbar .go{background:none;width:auto;padding:0 6px;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.gloss{margin:18px 0 0;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 16px}
+.gloss i{font-family:var(--serif-en)}
+.map{position:relative;display:grid;grid-template-columns:1fr 1.05fr 1fr;grid-template-areas:"l c r" "l k r";gap:28px 44px;align-items:center}
+.map svg.links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.map svg path{fill:none;stroke:var(--line);stroke-width:1.5;transition:stroke .2s}
+.map svg path.on{stroke:var(--accent)}
+.col{display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
+.col.l{grid-area:l}.col.r{grid-area:r}
+.node{position:relative;z-index:1;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;transition:border-color .2s,background-color .2s}
+.node .t{font-weight:700;font-size:15px}
+.node .s{font-size:13.5px;color:var(--muted)}
+.node .k{font-family:var(--serif-en);font-style:italic;font-size:13.5px;color:var(--muted)}
+.node.concept{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.node.concept .t{color:var(--accent-ink)}
+.node.example{border-color:color-mix(in srgb,var(--ex) 35%,var(--line))}
+.node.example .t{color:var(--ex-ink)}
+.node.concept.active{background:var(--accent-soft);border-color:var(--accent)}
+.node.example.active{background:var(--ex-soft);border-color:var(--ex)}
+.node.core{grid-area:c;align-items:center;text-align:center;background:var(--ink);border-color:var(--ink);color:var(--paper);padding:18px 16px}
+.node.core .t{font-family:var(--serif-ko);font-size:21px;color:var(--paper)}
+.node.core .k{color:color-mix(in srgb,var(--paper) 75%,transparent)}
+.node.core.active{outline:3px solid var(--mark);outline-offset:2px}
+.node.conclusion{grid-area:k;align-self:start}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:14px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1.5px solid var(--accent);background:var(--accent-soft)}
+.legend span.e::before{border-color:var(--ex);background:var(--ex-soft)}
+.note{margin-top:14px;min-height:3.4em;font-size:14.5px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+@media (max-width:760px){
+  .map{grid-template-columns:1fr;grid-template-areas:"c" "l" "r" "k";gap:14px}
+  .map svg.links{display:none}
+  .col{gap:10px;padding-left:14px;border-left:2px solid var(--line);border-radius:0}
+  .node.conclusion{margin-left:16px}
+}
+.score{font-family:var(--serif-ko);font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.score b{color:var(--ink);font-size:20px}
+.qs{display:flex;flex-direction:column;gap:16px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px clamp(16px,3.5vw,24px);display:flex;flex-direction:column;gap:12px}
+.q .num{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+.q .type{font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.q .type.var{border-color:var(--ex);background:var(--ex-soft);color:var(--ex-ink)}
+.q .prompt{font-weight:500;margin:0}
+.q .quote{font-family:var(--serif-en);font-size:16px;background:var(--paper);border-radius:8px;padding:10px 14px;margin:0;line-height:1.75}
+.q .quote u{text-decoration-thickness:2px;text-underline-offset:3px}
+.q .quote .box{display:block;border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin-bottom:10px;background:var(--card)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px;line-height:1.55;transition:border-color .15s,background-color .15s}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .n{flex:none;width:1.4em;font-variant-numeric:tabular-nums;color:var(--muted)}
+.opt.en-o{font-family:var(--serif-en);font-size:16px}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.right .n,.opt.wrong .n{color:inherit;font-weight:700}
+.fb{font-size:14.5px;border-radius:8px;padding:10px 14px;background:var(--paper)}
+.fb b.ok{color:var(--ok)} .fb b.no{color:var(--bad)}
+.hint{align-self:flex-start;background:none;border:0;padding:0;font-size:13.5px;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.hint-text{font-size:14px;color:var(--muted);margin:0}
+div.done{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:var(--accent-soft);color:var(--accent-ink);border-radius:12px;padding:16px 20px;font-weight:500}
+.jump{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;margin-top:4px}
+.jump a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.jump a:hover{border-bottom-color:var(--accent)}
+.vocab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.vrow{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:2px 8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.say{display:inline-flex;text-decoration:none;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--accent);padding:0;flex:none}
+.say:hover{border-color:var(--accent);background:var(--accent-soft)}
+.say svg{width:15px;height:15px}
+.say.on{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.vrow .w{font-family:var(--serif-en);font-size:17px;font-weight:600}
+.vrow .mp{display:inline-block;font-size:12px;line-height:1.5;color:var(--accent-ink);background:var(--accent-soft);border-radius:4px;padding:0 5px;margin-right:6px;vertical-align:1px}
+.vrow .m{grid-column:1 / -1;font-size:14.5px;color:var(--muted);transition:filter .2s,opacity .2s;background:none;border:0;padding:0;text-align:left;cursor:default}
+.vocab.hide-m .vrow .m{cursor:pointer}
+.vocab.hide-m .vrow:not(.open) .mt{filter:blur(6px);opacity:.55}
+.vrow .mt{transition:filter .2s,opacity .2s}
+@media (max-width:640px){.vocab{grid-template-columns:1fr}}
+.wq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:14px}
+.wq-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:var(--card);padding:5px 12px;font-size:13px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+.bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.wq-q{font-size:26px;font-weight:600;line-height:1.35;margin:4px 0 2px}
+.wq-q.en{font-family:var(--serif-en)}
+.wq-q .say{vertical-align:middle;margin-left:8px;width:32px;height:32px}
+.wq-q small{display:block;font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}
+.wq-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.wq-opts{grid-template-columns:1fr}}
+.wq-opts .opt.en-o{font-size:16.5px}
+.wq-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;min-height:36px;font-size:14.5px}
+.wq-foot b.ok{color:var(--ok)} .wq-foot b.no{color:var(--bad)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--muted);font-size:13px;margin-bottom:4px}
+.logo{display:inline-block;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAABYCAMAAADsrVGTAAAASFBMVEUAAAADn+b84QP8/v1Vttuj4O7Z+/1uxuGs+/uP1uh7/P1ttrZutv606fIA//9UsJcpoq8Afn6hz2bI+Pysrf3R30scs7MAAP9bmX4PAAAAGHRSTlMA/v8Q9aFa7QPWAgMDbgH//wL/jQP/AwFd6OpIAAAQGklEQVR42tUd55rjII6MwGBc0pP3f9Oj2IltBAjIfnfH/tidmY1GoF4QjCUXAKhhHBl7+a/H1wAazLdZ3TLQtl++5lHBzH6xQCn1Zi+73NeDUtVYOnDjFtNxHNqg6QWtdWmDbjkcPb93YNd/XFUNVrPS7w+Z3Vp3q6CRGDCM6A8GpavA6T2eK3pKQxVp2QEcrMdYhB6oqwPSCSHs15zLvhdiWuCVHqL/lAPXS8ndkg6co4muJ4cevpD9d6QBLDqP6FjK2aBWcP2CqJS9mDoPR9dB6yYh1l1bgMICdCwDJYDgLnrOT/vFeS8csBnK8IKuEzIEJz04VUkSh6ehRQCZfxAt4R2LhqUFAk4KRxRVvG1Li1OwDFUcUa4UgFavgz2+E744d1ulsgsMluXi4GTvoNVoFyPFMPXyFENUOhGkqli37zg4QxMHjWr1wJ/iKboMM3q5I9D13vNTalnkiDt1bJIBZ6ENxWrQELoTacAnbql9pSKaPL8VmqaTQ2awO3nWTu7cCm0Gre8hXrNnaMHds3h5aKzEW4CRiKg5RApkeJPAOWhE6vaEU1xYWye2aeh6oq38TkERmHhFzPAKXUgc33AantxsOa1fwSI60fbNe9i4nBF4mo6dYUazc4hvsycD8jvNiC0dLwuNAdWY0/nGbTkN2dgGEHRod2CPjLqiiceHtSMUMdu881MRpC6JF5ThlWCV/RpZ1xchmmadRwnfLNASwgxXo6VPp3aK6CLxWHDrog4wFJPXWZJ85GC8oTJCL1vWUb1QvO+kyAEr3ffpJBDlryq2aeU3Et6oQrZbEINssGR+Xr5hJ8wQpUcxNH5nDx1Tf50sP8ZARIxZq4Dj5XfA5aOvAWc4OeMoVBHaU0SjbkzVvq3aApy+VfAQ3V9HD4PahByhrqRH3MC10sNxoUZiy8p9RyhiDEgVPMGGo/2tpIdBDX4mH1mKQIWd20Cew3z2vXbfOEUeTJzqCHK0Q9X0cBuFn9HDgovaEcN/opoe5gj3bGjjhYZ9G3AjYojr8Jt2qGUPkPOMqwWHfcbZ5HK5nM26XJLiC7H4I71fnkb0KHxGscoGcGbfobIWUVDSZ3xjWkaRFL5PmtrVTTYLGiOv2ocJU4wa59vzb1m3W4wqXEQMe8KBsdl8X26YLKJR5Qo0Q+fT0Mu+43nR0AMBjrrz07cc0mHosa2wgY6Fqby/b8MCiGUvp53s6hgbn29/h2VoQhG5rCDbjPEO0QnVbHuCGEUraOC6KUKTHo7pPBHLILIUembDj50ekBGrBa60Bdqspf4GWMpnx9E64meE5IiTBHOIbHpXxDOTzChhDQbV0ZdfO4QP9wSJ6b9l3+qhDTRQ48vRpCc4R4CpwB58uXFZ+nF1/1VsnBM5URw1X6ZQcMjBIW7nXpcq9NguX121X8/bBQ8QEQcGPUCX7WOwY2ml0DPchV8QUS/rAZJSy3zH/BiJbWAFRwmxzQXwSbvyO7w3/wPnO5fqQxI22uImE4yHK6zL7S+6nmeSvYwYEHnHS6EKYZ0dP4+ownL5tDB9A7F8+s5PQHgRNfxr6dkQWa5lqowdkvH8mcHtoMq37GwUM3Js5+ffXxlFeuRURCQjoiJtFcdgV25M02w4lKPgrpq4bUyWAxT7aNLL6Rvf9LAVIfONHpdESCW/+6OS/PKxKKWHWeecoxDTMDKVdzWaZhtm7CI5oyQkyu/xXJpCc/T8a+4wL1rAmKyKBe0JqGUzfmcyf7GjyC5rh3r2WXpgFOFHBwY7Ddnl6hzf3R0j66k4kYZ7eSJl02Ma6yOoWs/H3AH2OyBTu/tWxA6VBsyDvuTpgVFkH9wYVchPp8Lt+lIR94HFfWfRAWEcmQOHaq2vBUWEOIshEmrx0vzeWgychO2sOvKQLLHnG/f3gmijXbApsBx4tuNgdG1RviVIbz2ZrgacwvTmJ4Oiw5/KUoLMrC9nlLXn49DS6FAKj439kRYL2X8etyeBefhDSQ/XzoFHwCGpKVLu5uNMPxAqd/NQJiAoYqQ6qjYR0zgeyBsyEElhoa4W2zipWHBD5D7j9F/fB1sdO9d8tXJAdPK0SBYahpR1nI0oYtfqbts5BHf7I64bYiF0knFAseolUHD5jSNq6aPiUTJ3DFoRY7X7hDkEd6HSAxERATrh8xar5/SpSlqDBeYFrQUhFTHIY0n/KYJYdes9tk+ygCAi8s1oaTZxSuhIbgnuajyZ6KkvPIwnx2yYNpJRQ4DDPFcTJABHtSBuXUKdteRA30hOAlh10/w1BEcUEOd/9xFiajw75gKgNxG8SCjucgsSonouoEfoaImFIJgJ6ZskOYyo2Uy2u1MkHoqWB6SPDgiXI0LEyJxCC2RvJQQJYpE+qSYGVq+xggBuInsIGHcsfla8UuratG38A5mmVv47k45hevkrWpeIWsKYMtPOWcrjBXx4DT3fJYRJVph57+ssts8fyATh3Vv9kPHOZQQ5RxMP4oeSjBUcSsAhH+e03gQu10tjsTuGTZxCYDxWRpAb3ouRsKO1q0UBYhrPY0Pp2V7vYuF3FjFOmesJIppMCGJE/DkBaoR1g2pFcoBj4+cVpY3lU5X0Ram3zhKkZy1LVOUVN7HhBdXNSAaU3+ttemtSFlFM5vNDNPURsyjoHcOaBFtsvQNwRVEIZtWjXRi8PkzHTWcbQT59bqDoLYLcy8nuF8f8t185WaUEOaO29oGcYJMJ6UhdLiW6WazDFVRR06a1J7uLgTxXOG3TBIVOFuJmuXM3m/yl8zG0EuSVIIir3ZX0o+4vBgYEafDu/yVBQhvC6p2PB0qQkuvsGEF2Gq2kv3d3exYhiP7fI8gDJQj8EFHBShJ4Q5Ig5VfHNvexeKZL939XQuCnBJmKfLYMQVwlv+zS4qfeL/8vbMivjXpwoIVh/5yyIUv/ERRdS/22+fzbeOsfqqwWggTNfN9KWL0NGYImkI4VkET4OzYZShf2SwQO3+Xvrzm7CL9przkWbmRDGgYlCOYMGcXFyTLiOjZE2Fhwrd5mWPYpjUOeeP4da0BrCJhs4WZzg884nsW0lbFIfddc8fJjXoihu2OxQBX8OIl6a0wuimiFTzSNPYPZdvrxk58YVPphoAqsayNNDVYK+tB+aiyHf5XtxUjdmO31Q4qmyWXDdamxxExarAeJeZoQBMWWSzCCPOr3CD+uh6yNJQipZSNBmF51c/HkvkJs/JQ/yAuKFZEw7yLeLVnUH1cM5dJj/HOr7inxGAddPvERcmEIpuT8X90kU9l5gRZE2LuBID+vqfvzmtGCyMj+KwvrEcvH0wCjm2LZJWbDScbQvHatKpiRO0nnFo31bQW5hi3IslFlVS8kFcYBaE2ty4zI+CVhtL2mJm2n1XBF+7J+U1JXBXY0dyZfwboOD/iJHrDa//q+EqwRuGESsdl1HaqzurnwRoNa5+YCcs/y1mRCEjcvyv2sGe0seBVaEeyqo1itBKVp1N34xC/1GjU8Yw1PY5mJWxw7O5E3tFnnBgnZ5CMUxjmsaGbrsNjVSTCLqGRuvO/qA7eE6SfJuQVnoZFmEJtDQ0eECBuz8pbaj+2QtLRIONm3eqO+yXSirXL06yGwKu8DopwzX9om667IZeq1oYTYxwt4wxDDe+16NtCsiHrbdE2f7rMoSJ8c+t+3VgJrPCG3iiwTjSNhQNEYYhOli0xKir007VoDMtggslFSR8fsxhgTJqueayN1sfttyCVNCeODTA6e7JWaiFOr89N+pKCF/pjq447kAgsZVV50yVUYutJ6xu9/zPjtPoqOoUw09uM5ss3QOqGwtkJCGJ2u3iFpOUOLPxQHxl7/ohbFCpTWOawQJFKX9jp9hq1BkcjhGcA4/OmDhJHUwGAv/CqoMEbc/0Cg5h4yaStBn/x1flborOMFKdSayowZgaJBxLmp1XAljotzc0kyzxWgl8K86GBSKNJz9gonxrFneUFEwMGpH9A5Ch2M8CO+cQeZeGnl8aY3+DiSXFPypnWosqJtX6fknFs7lrtwjh1ZRli8domPsbUdG5h6sH6TLh+Yabb9iox4MaJYAq3PPJYxotc73W/SEBlzg+/0XTMXlNrl+xURDtf30ePEumscL4a8o2FkrGJAqCWwjg0XKoK0dorifA0JJ2XAXTnnCmoI88hd1YBLVmjWw/w6vHEV7nhx7yDN7i2QmnnLnsAHfQ36XTW2VS6pgKP35uD1WBU37hKfPtew3ANbdhSaTcvZwKhyjucZHWH2PHyXbUT02LwWa/b3L62M6mEfkNLMv+gFXe1gVNl5cHbP5o9aBtRVTRuVvX8l6mVO0R2jgaeGiLh9IuHoxR87c3FP2q5+ai425O/JjIo6n2+b0ZipKlx0muPxWY/Uiz4EIZHih9te317aAUS5WiQzmJ+8gui6dZwma6CGsyRn9j365+123vzEU2WbPUGKlyqqx/3FpBVR2YioiQjE/QNNNEMz4D5zSbvoOd7fG9ZLDBReB87ynHBOnVlTpp7vx/bayb0IvXbfZWGPWHKCOV9n4+bY3+Zl7ctpPDcD2MDjvJUaO/RS4ORuaiTcm37ZViptWUT+YgfYrHbW9S0w5bQbljnJVkHqDXmF/AnVdkN/oMzJRjW4tVtK6bHZ1mz7YpDsXj1FFtswKvVQo34xxqpdlA24H7HgwWY2TFXn9/0kVOOPNe401Vyj6ufK29DqsR3I7170q35swXfYvcbBD/YVjZvtgiGTlTIikbfBQLFG3bIIsWK/o4gtVYQRQd3zML51Uj1WKJa0bfpPwLEKBW/o6l6uwbJJVe8ShSw9A04RXsXQgCeCKl5IsPcHdnkMgFfLSxpogr3mcRMeH+Spm96sWEPXyAz4YoW4n4F5vF4jK7TCI8xO1T9GEnn+Zyg9Q5f5T+RaO9kqIvgzNhXPycWnvsCjlLd7vG1SsYbnmCCWV59K3jFMvw+oi9L0JqINHsSITVMreyExNaf7c5VDFmw7KmxQ5c1YNaMTpQ7qTq3cputY9mrXRIbmUoQwbb36aAeMewiXuHP3+nF2vi912+mnXEkP9B4hTsniE/E5KpfveWVL7w/iTv1buMPq1S+xFhdp8SO+hUt4QRSI+UP/PHFymvbr8BYFQTwybK1sBJvLPzgnHPKN2aRHhH0/E/iHHF4rVaZpSqJKUdn+bXDSo+WEW4Gc9NK42zLxNptLcWSfbsy8uL00Mg3U99Sv7j3w6FtFvL93O2izzVCTGopdX1i8w9/mWYn9nYs0M8g+I08i7kC7OSVdikPTANr0W0hkvs5FUwXXjlZwIX7r8KjwzIysLE/lJM/QP4wSPo7FP7PCClp3/fsR2G0nzpdaE5W4ermlM/WRPBdft07Ez98TtiaW8XVJn0O2jd6Fbc4A1xXcCs/11q6ZvoaLBQszWqLIFU/5gaxLb4bCqi6NFZMfRCc/cuwFJfcCbFlwtYjsg9yK4PLIVcEgT/0YPrVsvz7tEnX3AIZtdfwD7vWYG+95aPXa4wnrZYOasaUA23bpDbhRVVxd2EzIh25ZH4jvEMH/ALSCwBQf90eyAAAAAElFTkSuQmCC) no-repeat left center/contain}
+.brand .logo{width:120px;height:27px}
+.promo{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:16px;padding:28px clamp(18px,4vw,36px);display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.promo::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:#FEE101;opacity:.35}
+.promo > *{position:relative;z-index:1}
+.promo .logo{width:180px;height:40px}
+.promo .tag{margin:0;font-size:14px;font-weight:700;color:var(--accent-ink);letter-spacing:.02em}
+.promo h2{font-size:22px}
+.promo p{margin:0;max-width:60ch}
+.promo .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.promo .ctas a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:15px;font-weight:500;padding:10px 18px;border-radius:10px;border:1px solid var(--accent)}
+.promo .ctas a.primary{background:var(--accent);color:var(--card)}
+.promo .ctas a.ghost{background:var(--card);color:var(--accent-ink)}
+.promo .ctas a:hover{filter:brightness(1.05)}
+.promo .share{font-size:13.5px;color:var(--muted)}
+.done a{color:inherit;font-weight:700}
+.acad-info{margin:4px 0 0;padding-top:12px;border-top:1px dashed color-mix(in srgb,var(--accent) 35%,transparent);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px;color:var(--muted)}
+.acad-info dt{font-weight:500;color:var(--accent-ink)}
+.acad-info dd{margin:0;font-variant-numeric:tabular-nums}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+footer p{margin:0}
+footer .copy{color:var(--ink);font-weight:500}
+.ord{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:14px}
+.ord-ko{font-family:var(--serif-ko);font-size:19px;line-height:1.6;margin:2px 0 0}
+.ord-ko small{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);margin-bottom:4px}
+.tray,.bank{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.tray{min-height:64px;border:1.5px dashed var(--line);border-radius:10px;padding:10px;transition:border-color .2s,background-color .2s}
+.tray.ok{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
+.tray-empty{font-size:14px;color:var(--muted);align-self:center}
+.tok{font-family:var(--serif-en);font-size:16.5px;line-height:1.35;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px;text-align:left;transition:border-color .15s,background-color .15s,opacity .15s}
+.tok:hover:not(:disabled){border-color:var(--accent)}
+.tray .tok{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent-ink)}
+.tray .tok.bad{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.tray.shown{border-style:solid;border-color:var(--accent)}
+.tray.ok .tok{background:var(--card);border-color:var(--ok);color:var(--ok)}
+.tok:disabled{cursor:default}
+.tray .tok:not(:disabled)::after{content:"✕";font-family:var(--sans);font-size:11px;margin-left:7px;opacity:.55;vertical-align:1px}
+.bank .tok.used{opacity:.22;border-style:dashed}
+.tray .tok{touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.tray .tok.lift{opacity:.3;border-style:dashed}
+.tray.sorting{border-color:var(--accent)}
+.tok.ghost{position:fixed;left:0;top:0;z-index:50;margin:0;pointer-events:none;background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.ord-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.ord-acts .l,.ord-acts .r{display:flex;flex-wrap:wrap;gap:8px}
+.btn:disabled{opacity:.45;cursor:default}
+.ord-msg{font-size:14.5px;min-height:1.6em;margin:0}
+.ord-msg b.ok{color:var(--ok)} .ord-msg b.no{color:var(--bad)}
+.ord-full{font-family:var(--serif-en);font-size:17px;background:var(--paper);border-radius:8px;padding:10px 14px;margin:0}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dots button{width:26px;height:26px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12px;padding:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.dots button.cur{border-color:var(--accent);color:var(--accent);font-weight:700}
+.dots button.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* 동의어·반의어 훈련: 지문 탭, 원지문, 어휘 정리, 1~3단계 */
+:root{--star:#B3261E;--topic:#C25A12;--topic-soft:#FCEBDD}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--star:#FF8A80;--topic:#FFB27A;--topic-soft:#3A2414}}
+:root[data-theme="dark"]{--star:#FF8A80;--topic:#FFB27A;--topic-soft:#3A2414}
+.ptabs{display:flex;flex-wrap:wrap;gap:8px}
+.ptabs button{font:inherit;font-size:15px;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 16px;font-variant-numeric:tabular-nums}
+.ptabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.ptitle{display:flex;flex-direction:column;gap:2px;margin-top:4px}
+.ptitle b{font-family:var(--serif-ko);font-size:19px}
+.ptitle i{font-family:var(--serif-en);color:var(--muted);font-size:15px}
+.ptitle small{font-size:14px;color:var(--muted);line-height:1.6}
+.keys{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted)}
+.keys .s{color:var(--star);font-weight:700}.keys .t{color:var(--topic);font-weight:700}.keys .b{color:var(--accent-ink);font-weight:700}
+.om{font:inherit;font-weight:700;color:var(--accent-ink);background:none;border:0;padding:0 1px;border-radius:4px;cursor:pointer}
+.om.s{color:var(--star)}
+.om.t .cw{text-decoration:underline;text-decoration-color:var(--topic);text-decoration-thickness:2px;text-underline-offset:4px}
+.om sup{font-family:var(--sans);font-size:10px;margin-left:1px}
+.om:hover,.om.on{background:var(--mark);color:var(--mark-ink)}
+.oinfo{background:var(--paper);border-radius:10px;padding:10px 14px;font-size:14.5px;line-height:1.7;min-height:44px}
+.oinfo i,.oinfo b.en{font-family:var(--serif-en)}
+.otr-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.otr-head h3{margin:0;font-family:var(--serif-ko);font-size:17px}
+.otr{font-size:15.5px;line-height:1.85;color:var(--accent-ink);background:var(--accent-soft);border-radius:12px;padding:14px clamp(14px,3vw,22px);display:flex;flex-direction:column;gap:8px}
+.otr p{margin:0}
+.otr .om{color:var(--accent-ink)}.otr .om.s{color:var(--star)}
+.otr.hide p{filter:blur(5px);user-select:none}
+.vt-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table.vt{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+.vt th{background:var(--accent-soft);color:var(--accent-ink);font-weight:700;text-align:left;padding:8px 10px;font-size:13px}
+.vt td{border-top:1px solid var(--line);padding:7px 10px;vertical-align:top}
+.vt tr.both td{background:var(--topic-soft)}
+.vt .no{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vt .no.s{color:var(--star)}
+.vt .w{font-family:var(--serif-en);font-weight:600;font-size:16px;white-space:nowrap}
+.vt .en{font-family:var(--serif-en)}
+.mk{font-weight:700;margin-left:3px}.mk.s{color:var(--star)}.mk.t{color:var(--topic)}
+.wq-ctx{font-family:var(--serif-en);font-size:17px;line-height:1.75;background:var(--paper);border-radius:8px;padding:10px 14px;margin:0}
+.wq-ctx u{text-decoration-thickness:2px;text-underline-offset:4px;font-weight:600}
+.wq-ask{font-weight:700;font-size:16px;margin:0}
+.wq-big{font-family:var(--serif-en);font-size:26px;font-weight:600;margin:0}
+.ptext{font-family:var(--serif-en);font-size:17.5px;line-height:2.25;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px clamp(14px,3vw,24px);margin:0}
+.ptext p{margin:0}.ptext .arrow{text-align:center}
+.ptext .fn{text-align:right;font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.6}
+.pick{display:inline-flex;vertical-align:baseline;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:0 1px;line-height:1.35}
+.pick button{font:inherit;font-size:16px;border:0;background:var(--paper);color:var(--ink);padding:1px 8px}
+.pick button+button{border-left:1px solid var(--line)}
+.pick button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+.pick.ok{border-color:var(--ok)}.pick.ok button[aria-pressed="true"]{background:var(--ok)}
+.pick.bad{border-color:var(--bad)}.pick.bad button[aria-pressed="true"]{background:var(--bad)}
+.pick.miss{border-color:var(--bad);border-style:dashed}
+.pick sup{font-family:var(--sans);font-size:10px;color:var(--muted);padding:0 3px 0 4px;align-self:flex-start;background:var(--card)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.res{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.pkfb{display:flex;flex-direction:column;gap:6px;font-size:14.5px;margin:0;padding:0;list-style:none}
+.pkfb li{background:var(--bad-soft);border-radius:8px;padding:8px 12px;line-height:1.6}
+.pkfb li.good{background:var(--ok-soft)}
+.pkfb i,.pkfb b.en,.exl i,.exl b.en{font-family:var(--serif-en)}
+.ul{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;font-weight:600}
+.ul .n{font-family:var(--sans);font-weight:700;color:var(--accent-ink);margin-right:2px;text-decoration:none;display:inline-block}
+.ul.wrong{background:var(--bad-soft)}
+.sets{display:flex;gap:6px;flex-wrap:wrap}
+.sets button{font:inherit;font-size:14px;font-weight:700;width:auto;height:auto;white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 12px;font-variant-numeric:tabular-nums}
+.sets button.cur{border-color:var(--accent);color:var(--accent)}
+.sets button.o{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.sets button.x{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.sets button.cur.o,.sets button.cur.x{box-shadow:0 0 0 2px var(--accent)}
+.opts5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;max-width:420px}
+.opts5 button{font:inherit;font-size:18px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 0}
+.opts5 button:hover:not(:disabled){border-color:var(--accent)}
+.opts5 button.ok{background:var(--ok);border-color:var(--ok);color:var(--card)}
+.opts5 button.no{background:var(--bad);border-color:var(--bad);color:var(--card)}
+.ex{background:var(--paper);border-radius:10px;padding:12px 14px;font-size:14.5px;line-height:1.7;display:flex;flex-direction:column;gap:6px}
+.exl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.exl li.bad{color:var(--bad);font-weight:500}
+.stem{font-weight:700;margin:0}
+</style>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#academy"><span class="logo" role="img" aria-label="코코스학원"></span><span>코코스학원 온라인 학습지 · 학습과 컨설팅을 하나로</span></a>
+    <div class="src" id="chips"></div>
+    <h1 id="h1"></h1>
+    <p class="en-title" id="en-title"></p>
+    <p class="gist" id="gist"></p>
+    <nav class="jump" aria-label="바로가기"><a href="#orig">원지문</a><a href="#vocab">어휘 정리</a><a href="#wordquiz">동의어·반의어 퀴즈</a><a href="#pick">문맥 속 고르기</a><a href="#infer">어휘 추론 · 변형</a><a href="#academy">코코스학원</a></nav>
+  </header>
+
+  <section id="choose" aria-label="지문 고르기">
+    <div class="ptabs" id="ptabs" role="group" aria-label="지문 번호"></div>
+    <div class="ptitle" id="ptitle"></div>
+  </section>
+
+  <section id="orig" aria-labelledby="h-orig">
+    <div class="sec-head"><div><h2 id="h-orig">원지문</h2><p>색칠한 낱말이 시험에서 동의어나 반의어로 바뀌어 나오는 자리예요. 먼저 위치를 익히고, 낱말을 누르면 뜻과 동의어·반의어가 나와요. 해석에도 같은 번호로 표시했어요. ‘해석 가리기’로 가리고 스스로 해석해 볼 수 있어요.</p></div></div>
+    <div class="keys"><span><b class="s">빨강 ★</b> 반의어로 바뀌기 쉬운 어휘</span><span><b class="t">밑줄 ◆</b> 주제 연관 어휘</span><span><b class="b">파랑</b> 동의어로 바뀌기 좋은 어휘</span></div>
+    <div class="ptext" id="or-text"></div>
+    <div class="oinfo" id="or-info" aria-live="polite">낱말을 눌러 보세요.</div>
+    <div class="otr-head"><h3>해석</h3><button class="btn" id="or-ko-toggle" type="button" aria-pressed="false">해석 가리기</button></div>
+    <div class="otr" id="or-ko"></div>
+  </section>
+
+  <section id="vocab" aria-labelledby="h-vocab">
+    <div class="sec-head"><div><h2 id="h-vocab">어휘 정리</h2><p>번호는 원지문의 번호와 같아요. 시험에서는 본문 낱말 자리에 이 동의어(≒)와 반의어(↔)가 들어와요.</p></div></div>
+    <div class="keys"><span><b class="s">★</b> 반의어로 바뀌기 쉬운 어휘</span><span><b class="t">◆</b> 주제 연관 어휘</span><span><b class="s">★</b><b class="t">◆</b> 빈칸·어휘 추론 최우선(음영)</span></div>
+    <div class="vt-wrap"><table class="vt" id="vt"></table></div>
+  </section>
+
+  <section id="wordquiz" aria-labelledby="h-wq">
+    <div class="sec-head">
+      <div><h2 id="h-wq">1단계 · 동의어·반의어 퀴즈</h2><p>본문 문장 속 낱말과 뜻이 같은 말, 반대인 말을 골라요. 동의어를 보고 원래 본문 낱말을 찾는 문제도 섞여 있어요. 10문제, 풀 때마다 바뀌어요.</p></div>
+    </div>
+    <div class="wq" id="wq"></div>
+  </section>
+
+  <section id="pick" aria-labelledby="h-pick">
+    <div class="sec-head">
+      <div><h2 id="h-pick">2단계 · 문맥 속 고르기</h2><p>원문 낱말 대신 동의어와 반의어가 나란히 들어 있어요. 문맥에 맞는 쪽을 고르고 ‘채점하기’를 누르세요. ‘다시 섞기’를 누르면 다른 동의어로 바뀌어요.</p></div>
+    </div>
+    <div class="ptext" id="pk-text"></div>
+    <div class="row"><button class="btn primary" id="pk-check" type="button">채점하기</button><button class="btn" id="pk-reset" type="button">다시 섞기</button><span class="res" id="pk-res" aria-live="polite"></span></div>
+    <ul class="pkfb" id="pk-fb"></ul>
+  </section>
+
+  <section id="infer" aria-labelledby="h-infer">
+    <div class="sec-head">
+      <div><h2 id="h-infer">3단계 · 어휘 추론 · 변형</h2><p>밑줄 친 다섯 곳은 모두 원문 대신 다른 낱말로 바꿔 넣었어요. 네 곳은 뜻이 같은 말이고, 한 곳만 문맥에 맞지 않아요.</p></div>
+      <div class="score" id="in-score"></div>
+    </div>
+    <div class="sets" id="in-sets" role="group" aria-label="세트"></div>
+    <p class="stem" id="in-stem"></p>
+    <div class="ptext" id="in-text"></div>
+    <div class="opts5" id="in-opts"></div>
+    <div class="ex" id="in-ex" hidden></div>
+    <div class="row"><button class="btn primary" id="in-next" type="button" hidden>다음 세트</button></div>
+  </section>
+
+  <section id="academy" class="promo" aria-labelledby="h-academy">
+    <span class="logo" role="img" aria-label="코코스학원"></span>
+    <p class="tag">학습과 컨설팅을 하나로</p>
+    <h2 id="h-academy">이 온라인 학습지는 코코스학원이 만들었어요</h2>
+    <p>시험 범위 지문마다 해석·단어·마인드맵·변형 문제까지 담은 온라인 학습지를 만들고 있어요. 더 많은 자료와 수업 소식은 블로그에서, 상담과 위치는 네이버 플레이스에서 확인하세요.</p>
+    <div class="ctas">
+      <a class="primary" id="go-blog" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener">블로그에서 자료 더 보기</a>
+      <a class="ghost" id="go-place" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener">상담·위치 보기 (네이버 플레이스)</a>
+    </div>
+    <p class="share">도움이 됐다면 친구에게도 이 온라인 학습지 링크를 공유해 주세요!</p>
+    <dl class="acad-info" aria-label="학원 정보">
+      <dt>학원명</dt><dd>코코스학원</dd>
+      <dt>등록번호</dt><dd>제4760호</dd>
+      <dt>교습과목</dt><dd>중·고등 영어</dd>
+      <dt>교습비</dt><dd>중등부 300,000원 · 고등부 360,000원</dd>
+      <dt>추가 경비</dt><dd>없음</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p class="copy">© <span id="yr">2026</span> 코코스학원. 이 온라인 학습지의 문제·해설·단어 정리·마인드맵은 코코스학원이 만들었어요.</p>
+    <p>링크는 누구에게나 자유롭게 공유해도 좋아요. 다만 내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요.</p>
+    <p id="footer"></p>
+  </footer>
+</div>
+<script>
+var DATA = {"chips": ["2022 개정 공통영어1 · NE능률(민병천)", "3과 교과서 본문 4개 · 동의어·반의어"], "h1": "동의어·반의어 어휘 훈련", "en": "Synonyms and Antonyms in Context", "gist": "내신 시험은 지문을 그대로 내지 않고, 본문 낱말을 동의어로 바꾸거나 반의어로 뒤집어 출제해요. 지문 변형 출제에 대비하려면 원문 낱말만 외워서는 부족하고, 그 자리에 올 수 있는 동의어와 반의어까지 훈련해야 해요.", "footer": "지문 출처: 2022 개정 공통영어1 NE능률(민병천) 3과 교과서 본문 4개", "passages": [{"no": "3-1", "lab": "3과 본문 1번", "kr": "식사 직후 운동: 밥 먹고 바로 운동하면 왜 배가 아플까?", "en": "Why You Shouldn’t Exercise Right After Eating", "sum": "식사 직후에 운동하면 음식을 소화하기 위해 소화 기관으로 몰렸던 혈액이 근육에 산소와 영양분을 공급하기 위해 근육으로 이동하면서 소화 과정이 중단되어 복통 같은 위장 문제가 생길 수 있다. 따라서 어떤 운동이든 배가 부른 상태로 해서는 안 된다.", "kolines": [["진행자: ‘오늘의 건강’에 돌아오신 것을 환영합니다. 오늘 우리는 운동에 대해 이야기할 것입니다. Victoria Hill 박사님이 여기 나와 계시며 ", 0, " 조언을 공유해 줄 것입니다. 자, Hill 박사님, 지난달 제 경험에 관한 질문으로 시작합시다. 저는 저녁을 먹은 후에 바로 운동을 했고 복통을 느꼈습니다. 그 일이 왜 일어났나요? Hill 박사: 음, 문제는 당신이 식사 후 너무 ", 1, " 운동을 한 것입니다. 이는 ", 2, " 위장 문제를 일으킬 수 있습니다. 당신이 식사를 할 때 혈액은 음식을 분해하고 음식의 영양분을 ", 4, " 것을 돕기 위해 소화 기관으로 ", 3, ". 그러나 당신이 운동을 시작하면 혈액은 소화 기관에서 당신의 근육으로 이동합니다. 이는 당신의 근육에게 그것이 필요로 하는 산소와 영양분을 공급하기 위해 일어납니다. 그 결과, 소화 과정은 혈액이 ", 6, " 때까지 ", 5, ". 따라서 당신이 역기를 들든 조깅을 하러 가든, 당신은 위장에 음식이 ", 7, " 채로 (운동을) 하면 안 됩니다."]], "lines": [["Host: Welcome back to Today’s Health. Today we’re going to be talking about exercise. Dr. Victoria Hill is here, and she is going to share some ", 0, " tips. So, Dr. Hill, let’s start with a question about my experience last month. I worked out right after dinner and got a stomachache. Why did that happen? Dr. Hill: Well, the problem is that you exercised too ", 1, " after eating. This can cause ", 2, " stomach issues. When you eat, blood ", 3, " to the digestive system to help break down the food and ", 4, " its nutrients. But when you start to exercise, blood moves from the digestive system to your muscles. This happens in order to supply your muscles with the oxygen and nutrients they require. As a result, the digestion process is ", 5, " until the blood ", 6, ". So, whether you’re lifting weights or going for a jog, you shouldn’t do it with a stomach ", 7, " of food."]], "foot": "*stomachache: 복통  *digestive system: 소화 기관  *nutrient: 영양분  *lift weights: 역기를 들다", "words": [{"h": "useful", "t": "useful", "c": "useful", "st": ["helpful", "valuable"], "x": "useless", "ko": "유용한", "syn": ["helpful", "valuable"], "ant": ["useless", "worthless"], "star": true, "topic": false, "kc": "유용한", "ctx": "Victoria Hill is here, and she is going to share some useful tips.", "dA": ["useless", "worthless", "different", "diverse", "filled", "packed", "damaging", "dangerous", "depleted", "disagreeable", "hard", "reduced", "severe", "uncomfortable", "vigorous"], "dB": ["helpful", "valuable", "empty", "few", "limited", "elevated", "enjoyable", "gentle", "harmless", "high", "light", "mild", "minor", "pleasant"], "dC": ["various", "full", "harmful", "unpleasant", "low", "intense"], "p": "a"}, {"h": "soon", "t": "soon", "c": "soon", "st": ["quickly", "early"], "x": "late", "ko": "빨리, 일찍", "syn": ["quickly", "early"], "ant": ["late"], "star": true, "topic": true, "kc": "빨리", "ctx": "Hill: Well, the problem is that you exercised too soon after eating.", "dA": ["late", "highly", "very", "absolutely", "accidentally", "briefly", "carefully", "deliberately", "eagerly", "entirely", "eventually", "frankly", "gently", "gradually", "honestly", "immediately", "merely", "nearly", "occasionally", "partly", "politely", "precisely", "rarely", "roughly", "silently", "suddenly", "temporarily", "thoroughly", "unexpectedly", "vaguely", "widely"], "dB": ["quickly", "early", "mildly", "slightly", "absolutely", "accidentally", "briefly", "carefully", "deliberately", "eagerly", "entirely", "eventually", "frankly", "gently", "gradually", "honestly", "immediately", "merely", "nearly", "occasionally", "partly", "politely", "precisely", "rarely", "roughly", "silently", "suddenly", "temporarily", "thoroughly", "unexpectedly", "vaguely", "widely"], "dC": ["extremely"], "p": "r"}, {"h": "various", "t": "various", "c": "various", "st": ["different", "diverse"], "x": "few", "ko": "다양한", "syn": ["different", "diverse"], "ant": ["few", "limited"], "star": false, "topic": false, "kc": "다양한", "ctx": "This can cause various stomach issues.", "dA": ["few", "limited", "filled", "helpful", "packed", "valuable", "damaging", "dangerous", "depleted", "disagreeable", "grave", "hard", "reduced", "severe", "uncomfortable", "vigorous"], "dB": ["different", "diverse", "empty", "useless", "worthless", "beneficial", "elevated", "enjoyable", "gentle", "harmless", "high", "light", "pleasant"], "dC": ["useful", "full", "harmful", "unpleasant", "low", "serious", "intense"], "p": "a"}, {"h": "rush", "t": "rushes", "c": "rushes", "st": ["hurries", "races"], "x": "crawls", "ko": "급히 움직이다", "syn": ["hurry", "race"], "ant": ["crawl", "creep"], "star": false, "topic": true, "kc": "급히 움직입니다", "ctx": "When you eat, blood rushes to the digestive system to help break down the food and absorb its nutrients.", "dA": ["crawl", "creep", "come back", "go back", "halt", "soak up", "stop", "take in"], "dB": ["hurry", "race", "depart", "give off", "leave", "release", "speed up", "have plenty of", "remove", "spend", "take away", "use up"], "dC": ["absorb", "pause", "provide", "store", "lack", "contain", "replace", "lose", "consume"], "p": "v"}, {"h": "absorb", "t": "absorb", "c": "absorb", "st": ["take in", "soak up"], "x": "release", "ko": "흡수하다", "syn": ["take in", "soak up"], "ant": ["release", "give off"], "star": true, "topic": false, "kc": "흡수하는", "ctx": "When you eat, blood rushes to the digestive system to help break down the food and absorb its nutrients.", "dA": ["release", "give off", "come back", "go back", "halt", "hurry", "race", "stop"], "dB": ["take in", "soak up", "continue", "crawl", "creep", "depart", "speed up", "remove", "spend", "take away", "use up"], "dC": ["rush", "pause", "return", "provide", "store", "lack"], "p": "v"}, {"h": "pause", "t": "paused", "c": "paused", "st": ["stopped", "halted"], "x": "continued", "ko": "중단시키다", "syn": ["stop", "halt"], "ant": ["continue", "speed up"], "star": true, "topic": true, "kc": "중단됩니다", "ctx": "As a result, the digestion process is paused until the blood returns.", "dA": ["continue", "speed up", "come back", "go back", "hurry", "race", "soak up", "take in"], "dB": ["stop", "halt", "depart", "give off", "leave", "release", "have plenty of", "remove", "spend", "take away", "use up"], "dC": ["rush", "absorb", "return", "provide", "store", "lack"], "p": "v"}, {"h": "return", "t": "returns", "c": "returns", "st": ["comes back", "goes back"], "x": "leaves", "ko": "돌아오다", "syn": ["come back", "go back"], "ant": ["leave", "depart"], "star": true, "topic": false, "kc": "돌아올", "ctx": "As a result, the digestion process is paused until the blood returns.", "dA": ["leave", "depart", "halt", "soak up", "stop", "take in", "be low on", "be short of", "keep", "save"], "dB": ["come back", "go back", "continue", "crawl", "creep", "give off", "speed up", "remove", "spend", "take away", "use up"], "dC": ["rush", "absorb", "pause", "provide", "store", "lack"], "p": "v"}, {"h": "full", "t": "full", "c": "full", "st": ["filled", "packed"], "x": "empty", "ko": "가득 찬", "syn": ["filled", "packed"], "ant": ["empty"], "star": true, "topic": true, "kc": "가득한", "ctx": "So, whether you’re lifting weights or going for a jog, you shouldn’t do it with a stomach full of food.", "dA": ["empty", "different", "diverse", "helpful", "valuable", "dangerous", "depleted", "disagreeable", "grave", "hard", "severe", "uncomfortable", "vigorous"], "dB": ["filled", "packed", "few", "limited", "useless", "worthless", "beneficial", "enjoyable", "gentle", "harmless", "high", "light", "mild", "minor", "pleasant"], "dC": ["useful", "various", "harmful", "unpleasant", "low", "serious", "intense"], "p": "a"}], "sets": [{"idx": [0, 1, 3, 6, 7], "wrong": 4, "show": ["helpful", "quickly", "hurries", "comes back", "empty"]}, {"idx": [1, 2, 4, 5, 7], "wrong": 0, "show": ["late", "different", "take in", "stopped", "packed"]}, {"idx": [3, 4, 5, 6, 7], "wrong": 2, "show": ["races", "soak up", "continued", "goes back", "filled"]}, {"idx": [0, 2, 5, 6, 7], "wrong": 3, "show": ["valuable", "diverse", "stopped", "leaves", "packed"]}, {"idx": [3, 4, 5, 6, 7], "wrong": 1, "show": ["hurries", "release", "halted", "goes back", "filled"]}]}, {"no": "3-2", "lab": "3과 본문 2번", "kr": "빈속 운동: 아무것도 안 먹고 운동하면 왜 힘들까?", "en": "The Trouble with Exercising on an Empty Stomach", "sum": "빈속에 운동하는 것도 해롭다. 운동에 필요한 에너지는 탄수화물이 분해된 포도당이 근육과 간에 저장된 글리코겐에서 오는데, 빈속에는 혈당이 낮고 글리코겐이 부족해 에너지가 모자라고 피곤하며, 심하면 구역감·두통·실신까지 겪을 수 있다.", "kolines": [["진행자: 그렇군요. 말이 되네요. 그렇다면 그것은 제가 빈속에 운동을 해야 한다는 것을 의미하나요? Hill 박사: 아니요, 그렇지 않습니다. 그것 또한 ", 0, " ", 1, " 수 있습니다. 이는 신체가 운동하기 위해서는 에너지가 필요하기 때문입니다. 이 에너지를 ", 2, " 연료는 글리코겐입니다. 우리가 먹는 음식의 탄수화물은 글루코스(포도당)라고 불리는 일종의 당분으로 분해됩니다. 이 글루코스(포도당)가 근육과 간과 같은 신체의 일부에 ", 3, " 그것은 글리코겐이라 불립니다. 이것이 당신이 아침에 처음 일어났을 때와 같이 완전히 빈속에 운동하는 것이 그렇게나 힘들 수 있는 이유입니다. 당신의 혈당 수치는 ", 4, ", 당신은 신체에 저장된 글리코겐을 충분히 갖고 있지 않습니다. 만일 당신이 빈속에 운동한다면, 당신은 아마 에너지가 ", 5, " 유난히 피곤하게 느낄 것입니다. 또한 더 ", 6, " 결과가 있을 수 있습니다. 어떤 사람들은 결국 구역감과 두통을 겪고, 다른 사람들은 실신하기도 합니다. 이는 ", 7, " 운동이 당신의 근육에 있는 모든 글리코겐을 다 써 버리기 때문입니다."]], "lines": [["Host: I see. That makes sense. So, does that mean I should exercise on an empty stomach? Dr. Hill: No, it doesn’t. That can also be ", 0, " and ", 1, ". This is because the body needs energy to exercise. The fuel that ", 2, " this energy is glycogen. Carbohydrates in the food we eat are broken down into a kind of sugar called glucose. When this glucose is ", 3, " in parts of the body, such as the muscles and the liver, it is called glycogen. This is why exercising on a completely empty stomach — such as when you first wake up in the morning — can be such a challenge. Your blood sugar levels are ", 4, ", and you don’t have enough glycogen stored in your body. If you exercise on an empty stomach, you will most likely ", 5, " energy and feel unusually tired. There can also be more ", 6, " outcomes. Some people end up suffering from nausea and headaches, and others even faint. This is because ", 7, " exercise uses up all the glycogen in your muscles."]], "foot": "*glycogen: 글리코겐(근육·간에 저장된 당분)  *carbohydrate: 탄수화물  *glucose: 글루코스, 포도당  *nausea: 구역감, 메스꺼움", "words": [{"h": "harmful", "t": "harmful", "c": "harmful", "st": ["damaging", "dangerous"], "x": "beneficial", "ko": "해로운", "syn": ["damaging", "dangerous"], "ant": ["harmless", "beneficial"], "star": true, "topic": true, "kc": "해롭고", "ctx": "That can also be harmful and unpleasant.", "dA": ["harmless", "beneficial", "depleted", "disagreeable", "hard", "uncomfortable", "vigorous", "different", "diverse", "equivalent", "packed", "the same", "true", "valuable"], "dB": ["damaging", "dangerous", "elevated", "enjoyable", "gentle", "high", "light", "mild", "minor", "pleasant"], "dC": ["unpleasant", "low", "intense", "various", "active", "casual", "fascinating"], "p": "a"}, {"h": "unpleasant", "t": "unpleasant", "c": "unpleasant", "st": ["uncomfortable", "disagreeable"], "x": "pleasant", "ko": "불쾌한", "syn": ["uncomfortable", "disagreeable"], "ant": ["pleasant", "enjoyable"], "star": true, "topic": false, "kc": "불쾌할", "ctx": "That can also be harmful and unpleasant.", "dA": ["pleasant", "enjoyable", "damaging", "dangerous", "depleted", "grave", "hard", "reduced", "severe", "vigorous"], "dB": ["uncomfortable", "disagreeable", "beneficial", "elevated", "gentle", "harmless", "high", "light", "mild", "minor"], "dC": ["harmful", "low", "serious", "intense", "useful", "various", "full", "correct", "equal"], "p": "a"}, {"h": "provide", "t": "provides", "c": "provides", "st": ["supplies", "gives"], "x": "takes away", "ko": "제공하다", "syn": ["supply", "give"], "ant": ["remove", "take away"], "star": false, "topic": false, "kc": "제공하는", "ctx": "The fuel that provides this energy is glycogen.", "dA": ["remove", "take away", "be low on", "be short of", "keep", "save", "be rich in", "come back", "eat", "go back", "halt", "hurry", "race", "restore", "soak up", "stop", "take in", "use up"], "dB": ["supply", "give", "spend", "use up", "avoid", "be free of", "continue", "crawl", "creep", "depart", "gain", "give off", "leave", "release", "skip", "speed up", "store"], "dC": ["store", "rush", "absorb", "pause", "replace", "lose", "consume"], "p": "v"}, {"h": "store", "t": "stored", "c": "stored", "st": ["kept", "saved"], "x": "used up", "ko": "저장하다", "syn": ["keep", "save"], "ant": ["use up", "spend"], "star": true, "topic": true, "kc": "저장되면", "ctx": "When this glucose is stored in parts of the body, such as the muscles and the liver, it is called glycogen.", "dA": ["use up", "spend", "give", "supply", "come back", "go back", "include", "soak up", "take in"], "dB": ["keep", "save", "have plenty of", "remove", "take away", "avoid", "continue", "crawl", "creep", "depart", "gain", "give off", "lack", "leave", "release", "skip", "speed up"], "dC": ["provide", "lack", "absorb", "pause", "return", "replace"], "p": "v"}, {"h": "low", "t": "low", "c": "low", "st": ["reduced", "depleted"], "x": "high", "ko": "낮은", "syn": ["reduced", "depleted"], "ant": ["high", "elevated"], "star": true, "topic": true, "kc": "낮고", "ctx": "Your blood sugar levels are low, and you don’t have enough glycogen stored in your body.", "dA": ["high", "elevated", "dangerous", "disagreeable", "grave", "hard", "severe", "uncomfortable", "vigorous"], "dB": ["reduced", "depleted", "beneficial", "enjoyable", "harmless", "light", "mild", "minor", "pleasant"], "dC": ["harmful", "unpleasant", "serious", "intense", "useful", "various", "full", "correct", "equal"], "p": "a"}, {"h": "lack", "t": "lack", "c": "lack", "st": ["be short of", "be low on"], "x": "have plenty of", "ko": "~이 부족하다", "syn": ["be short of", "be low on"], "ant": ["have plenty of"], "star": true, "topic": true, "kc": "부족하고", "ctx": "If you exercise on an empty stomach, you will most likely lack energy and feel unusually tired.", "dA": ["have plenty of", "give", "save", "supply", "burn", "come back", "go back", "halt", "hurry", "include", "race", "restore", "soak up", "stop", "take in"], "dB": ["be short of", "be low on", "remove", "spend", "use up", "avoid", "continue", "crawl", "creep", "drain", "release", "skip", "speed up"], "dC": ["provide", "store", "rush", "absorb", "pause", "return", "replace", "lose"], "p": "v"}, {"h": "serious", "t": "serious", "c": "serious", "st": ["severe", "grave"], "x": "minor", "ko": "심각한", "syn": ["severe", "grave"], "ant": ["minor", "mild"], "star": true, "topic": false, "kc": "심각한", "ctx": "There can also be more serious outcomes.", "dA": ["minor", "mild", "depleted", "disagreeable", "reduced", "uncomfortable", "vigorous", "different", "diverse", "equivalent", "filled", "helpful", "packed", "right", "the same", "true"], "dB": ["severe", "grave", "beneficial", "elevated", "enjoyable", "harmless", "high", "pleasant"], "dC": ["unpleasant", "low", "useful", "various", "full", "correct", "equal"], "p": "a"}, {"h": "intense", "t": "intense", "c": "intense", "st": ["vigorous", "hard"], "x": "light", "ko": "강한, 격렬한", "syn": ["vigorous", "hard"], "ant": ["light", "gentle"], "star": true, "topic": false, "kc": "강한", "ctx": "This is because intense exercise uses up all the glycogen in your muscles.", "dA": ["light", "gentle", "damaging", "dangerous", "depleted", "disagreeable", "reduced", "uncomfortable"], "dB": ["vigorous", "hard", "beneficial", "enjoyable", "harmless", "high", "pleasant", "different", "empty", "few", "incorrect", "limited", "useless", "worthless", "wrong"], "dC": ["harmful", "unpleasant", "low", "useful", "various", "full", "correct", "equal"], "p": "a"}], "sets": [{"idx": [0, 1, 3, 4, 5], "wrong": 3, "show": ["damaging", "uncomfortable", "kept", "high", "be short of"]}, {"idx": [1, 2, 3, 4, 5], "wrong": 4, "show": ["disagreeable", "supplies", "saved", "depleted", "have plenty of"]}, {"idx": [0, 2, 4, 6, 7], "wrong": 0, "show": ["beneficial", "gives", "reduced", "severe", "vigorous"]}, {"idx": [1, 2, 3, 6, 7], "wrong": 2, "show": ["uncomfortable", "supplies", "used up", "grave", "hard"]}, {"idx": [0, 1, 5, 6, 7], "wrong": 1, "show": ["damaging", "pleasant", "be short of", "severe", "vigorous"]}]}, {"no": "3-3", "lab": "3과 본문 3번", "kr": "운동 후 탄수화물 섭취: 운동 뒤에는 무엇을 얼마나 먹어야 할까?", "en": "Refueling After Exercise: How Many Carbohydrates You Need", "sum": "운동으로 잃은 근육 글리코겐을 채우기 위해 운동 후 30분 이내에 탄수화물이 든 음식을 먹어야 한다. 체중 1kg당 1~1.5g의 탄수화물이 필요하므로, 60kg인 사람은 흰 쌀밥 한 그릇이나 바나나 세 개 정도인 60~90g을 먹으면 된다.", "kolines": [["진행자: 그렇다면, 우리가 낮은 수준의 에너지를 갖도록 만드는 것이 바로 글리코겐의 ", 0, "인가요? Hill 박사: ", 1, ". 이러한 이유로 의사들은 사람들에게 운동 후 30분 이내에 탄수화물을 ", 2, " 음식을 먹을 것을 권장합니다. 이것이 당신이 ", 4, " 근육 글리코겐을 ", 3, ". 기본적으로 당신의 체중 1kg당 1에서 1.5g 사이의 탄수화물이 필요합니다. 산수를 해봅시다. 만일 당신이 60kg이라면 당신은 운동한 후에 60에서 90g 사이의 탄수화물을 ", 5, " 노력해야 합니다. 이는 대략 흰 쌀밥 한 그릇 또는 바나나 세 개와 ", 6, "."]], "lines": [["Host: So, is it the ", 0, " of glycogen that causes us to have low levels of energy? Dr. Hill: That’s ", 1, ". For this reason, doctors recommend that people eat food ", 2, " carbohydrates within thirty minutes after working out. This ", 3, " the muscle glycogen you have ", 4, ". Basically, you need between one and one and a half grams of carbohydrates for every kilogram you weigh. Let’s do the math. If you weigh 60 kilograms, you should try to ", 5, " between 60 and 90 grams of carbohydrates after you exercise. This is ", 6, " about one bowl of white rice or three bananas."]], "foot": "*glycogen: 글리코겐  *carbohydrate: 탄수화물  *do the math: 계산해 보다  *consume: 섭취하다", "words": [{"h": "loss", "t": "loss", "c": "loss", "st": ["decrease", "reduction"], "x": "gain", "ko": "손실", "syn": ["decrease", "reduction"], "ant": ["gain", "increase"], "star": true, "topic": true, "kc": "손실", "ctx": "Host: So, is it the loss of glycogen that causes us to have low levels of energy?", "dA": ["gain", "increase", "pain", "unease", "ambition", "anxiety", "authority", "barrier", "caution", "conflict", "courage", "curiosity", "debt", "dignity", "estimate", "evidence", "fame", "harmony", "hostility", "illusion", "income", "landscape", "loyalty", "mercy", "obligation", "patience", "poverty", "prejudice", "privilege", "rumor", "talent", "theory", "tradition"], "dB": ["decrease", "reduction", "comfort", "ease", "ambition", "anxiety", "authority", "barrier", "caution", "conflict", "courage", "curiosity", "debt", "dignity", "estimate", "evidence", "fame", "harmony", "hostility", "illusion", "landscape", "loyalty", "mercy", "obligation", "patience", "poverty", "prejudice", "rumor", "talent", "theory", "tradition"], "dC": ["discomfort"], "p": "n"}, {"h": "correct", "t": "correct", "c": "correct", "st": ["right", "true"], "x": "wrong", "ko": "맞는", "syn": ["right", "true"], "ant": ["wrong", "incorrect"], "star": false, "topic": false, "kc": "맞습니다", "ctx": "Hill: That’s correct.", "dA": ["wrong", "incorrect", "equivalent", "the same", "beneficial", "dangerous", "depleted", "disagreeable", "energetic", "grave", "hard", "interesting", "intriguing", "reduced", "severe", "uncomfortable", "useful", "vigorous"], "dB": ["right", "true", "different", "beneficial", "boring", "demanding", "dull", "elevated", "enjoyable", "gentle", "harmless", "high", "inactive", "intense", "light", "mild", "minor", "pleasant", "unhelpful", "useless"], "dC": ["harmful", "unpleasant", "low", "serious", "intense", "active", "casual", "fascinating", "helpful"], "p": "a"}, {"h": "contain", "t": "containing", "c": "containing", "st": ["including", "rich in"], "x": "lacking", "ko": "함유하다", "syn": ["include", "be rich in"], "ant": ["lack", "be free of"], "star": true, "topic": true, "kc": "함유한", "ctx": "For this reason, doctors recommend that people eat food containing carbohydrates within thirty minutes after working out.", "dA": ["lack", "be free of", "burn", "restore", "take in", "save", "come back", "go back", "halt", "hurry", "race", "soak up"], "dB": ["include", "be rich in", "avoid", "gain", "skip", "store", "spend", "take away"], "dC": ["replace", "lose", "store", "lack", "rush", "absorb", "pause", "return"], "p": "v"}, {"h": "replace", "t": "replaces", "c": "replaces", "st": ["restores", "makes up for"], "x": "removes", "ko": "대체하다, 채우다", "syn": ["restore", "make up for"], "ant": ["remove", "drain"], "star": true, "topic": true, "kc": "대체합니다", "ctx": "This replaces the muscle glycogen you have lost.", "dA": ["remove", "drain", "eat", "save", "supply", "halt", "hurry", "race", "soak up", "stop"], "dB": ["restore", "make up for", "avoid", "be free of", "gain", "skip", "store", "have plenty of"], "dC": ["consume", "provide", "store", "absorb", "pause"], "p": "v"}, {"h": "lose", "t": "lost", "c": "lost", "st": ["used up", "burned"], "x": "gained", "ko": "잃다", "syn": ["use up", "burn"], "ant": ["gain", "store"], "star": true, "topic": false, "kc": "잃어버린", "ctx": "This replaces the muscle glycogen you have lost.", "dA": ["gain", "store", "include", "take in", "supply", "come back", "go back", "halt", "hurry", "race", "soak up", "stop"], "dB": ["use up", "burn", "avoid", "be free of", "lack", "remove", "skip", "take away"], "dC": ["contain", "replace", "provide", "lack", "rush", "absorb", "pause"], "p": "v"}, {"h": "consume", "t": "consume", "c": "consume", "st": ["eat", "take in"], "x": "avoid", "ko": "섭취하다", "syn": ["eat", "take in"], "ant": ["avoid", "skip"], "star": true, "topic": false, "kc": "섭취하려고", "ctx": "If you weigh 60 kilograms, you should try to consume between 60 and 90 grams of carbohydrates after you exercise.", "dA": ["avoid", "skip", "include", "restore", "give", "keep", "supply", "come back", "go back", "halt", "hurry", "race", "stop"], "dB": ["eat", "take in", "be free of", "drain", "gain", "lack", "remove", "store"], "dC": ["contain", "replace", "lose", "provide", "store", "lack"], "p": "v"}, {"h": "equal", "t": "equal to", "c": "equal", "st": ["the same as", "equivalent to"], "x": "different from", "ko": "같은", "syn": ["the same", "equivalent"], "ant": ["different"], "star": false, "topic": false, "kc": "동일합니다", "ctx": "This is equal to about one bowl of white rice or three bananas.", "dA": ["different", "true", "beneficial", "dangerous", "depleted", "disagreeable", "energetic", "grave", "hard", "interesting", "intriguing", "light", "reduced", "severe", "uncomfortable", "useful", "vigorous"], "dB": ["the same", "equivalent", "incorrect", "wrong", "beneficial", "boring", "demanding", "dull", "elevated", "enjoyable", "gentle", "harmless", "high", "inactive", "intense", "light", "mild", "minor", "pleasant", "unhelpful", "useless"], "dC": ["correct", "harmful", "unpleasant", "low", "serious", "intense", "active", "casual", "fascinating", "helpful"], "p": "a"}], "sets": [{"idx": [0, 2, 3, 4, 5], "wrong": 1, "show": ["decrease", "lacking", "restores", "used up", "eat"]}, {"idx": [0, 1, 3, 5, 6], "wrong": 0, "show": ["gain", "right", "makes up for", "take in", "the same as"]}, {"idx": [1, 2, 3, 4, 6], "wrong": 2, "show": ["true", "rich in", "removes", "burned", "equivalent to"]}, {"idx": [0, 2, 4, 5, 6], "wrong": 3, "show": ["decrease", "including", "used up", "avoid", "the same as"]}, {"idx": [0, 1, 2, 3, 4], "wrong": 4, "show": ["reduction", "right", "rich in", "makes up for", "gained"]}]}, {"no": "3-4", "lab": "3과 본문 4번", "kr": "운동 전 식사 시간: 밥 먹고 얼마나 기다렸다가 운동해야 할까?", "en": "How Long to Wait Between Eating and Exercising", "sum": "식사 직후에 운동하면 불편하고, 너무 오래 기다리면 에너지가 부족해지므로 운동 전 식사 시간은 1~3시간이 알맞다. 이 시간은 음식의 종류와 양, 체구·나이·성별, 운동의 종류에 따라 달라서, 사이클링 같은 격한 운동은 1시간 30분~3시간, 골프 같은 가벼운 운동은 1시간이면 충분하고, 간식 후에는 덜 기다려도 된다.", "kolines": [["진행자: 정말 흥미롭네요. 그런데 운동하기 전에 식사하는 것은 어떤가요? 우리가 식사 후에 얼마나 오래 기다려야 하는지 설명해 주시겠어요? Hill 박사: 음, 제가 전에 말했던 것처럼, 식사 직후에 운동하는 것은 ", 0, " 느낌을 유발할 수 있습니다. 그러나 식사 후 운동하기 위해 너무 오래 기다린다면 당신은 에너지 ", 1, "으로 고통받을 것입니다. 운동 전에 식사할 가장 좋은 시간은 1시간에서 3시간으로 다릅니다. 기본적으로 그것은 체구, 나이, 성별뿐만 아니라 음식의 종류와 양과 같은 여러 요소에 의해 결정됩니다. 운동의 종류 또한 중요합니다. 사이클링과 같은 ", 2, " ", 3, " 운동의 경우, 저는 적정량의 식사를 한 후 1시간 30분에서 3시간 사이를 기다릴 것을 권장합니다. 그러나 골프 치기와 같이 좀 더 ", 4, " 운동의 경우, 식사 후 1시간을 기다리는 것으로 충분합니다. 분명히, 간식을 먹은 후에는 덜 기다려도 됩니다. 진행자: Hill 박사님, 대단히 ", 5, " 이 정보에 정말 감사드립니다. 저는 그것이 모든 우리 시청자들에게 매우 ", 6, " 것이라고 확신합니다."]], "lines": [["Host: That’s very interesting. But what about eating before we exercise? Can you explain how long we should wait after eating? Dr. Hill: Well, as I said before, exercising right after you eat will cause feelings of ", 0, ". But, if you wait too long to exercise after eating, you’ll suffer from ", 1, " of energy. The best time to eat before you exercise varies from one to three hours. Basically, it depends on several factors such as the type and amount of food as well as body size, age, and gender. The type of exercise also matters. For ", 2, " ", 3, " exercise like cycling, I suggest that you wait between one and a half and three hours after eating a moderate-sized meal. But for something more ", 4, ", such as golfing, waiting for one hour after a meal should be enough. Clearly, you can wait less after eating a snack. Host: Thank you very much for this ", 5, " information, Dr. Hill. I’m sure it will be very ", 6, " for all of our viewers."]], "foot": "*discomfort: 불편함  *vary: 다르다, 달라지다  *moderate-sized: 적당한 양의  *casual: 가벼운, 일상적인", "words": [{"h": "discomfort", "t": "discomfort", "c": "discomfort", "st": ["unease", "pain"], "x": "comfort", "ko": "불편함", "syn": ["unease", "pain"], "ant": ["comfort", "ease"], "star": true, "topic": true, "kc": "불편한", "ctx": "Hill: Well, as I said before, exercising right after you eat will cause feelings of discomfort.", "dA": ["comfort", "ease", "absence", "shortage", "decrease", "reduction", "ambition", "anxiety", "authority", "barrier", "caution", "conflict", "courage", "curiosity", "debt", "dignity", "estimate", "fame", "harmony", "hostility", "illusion", "income", "landscape", "loyalty", "mercy", "obligation", "patience", "poverty", "prejudice", "privilege", "rumor", "talent", "theory", "tradition"], "dB": ["unease", "pain", "abundance", "plenty", "gain", "increase", "ambition", "anxiety", "authority", "barrier", "caution", "conflict", "courage", "curiosity", "debt", "dignity", "estimate", "evidence", "fame", "harmony", "hostility", "illusion", "income", "landscape", "loyalty", "obligation", "patience", "poverty", "prejudice", "privilege", "rumor", "shortage", "talent", "theory", "tradition"], "dC": ["lack", "loss"], "p": "n"}, {"h": "lack", "t": "a lack", "c": "lack", "st": ["a shortage", "an absence"], "x": "an abundance", "ko": "부족", "syn": ["shortage", "absence"], "ant": ["abundance", "plenty"], "star": true, "topic": true, "kc": "부족", "ctx": "But, if you wait too long to exercise after eating, you’ll suffer from a lack of energy.", "dA": ["abundance", "plenty", "pain", "unease", "ambition", "anxiety", "authority", "barrier", "caution", "conflict", "courage", "curiosity", "debt", "dignity", "estimate", "evidence", "fame", "harmony", "hostility", "illusion", "income", "landscape", "loyalty", "mercy", "obligation", "patience", "poverty", "prejudice", "privilege", "rumor", "talent", "theory", "tradition"], "dB": ["shortage", "absence", "comfort", "ease", "ambition", "anxiety", "authority", "barrier", "caution", "conflict", "courage", "curiosity", "debt", "dignity", "estimate", "evidence", "fame", "harmony", "hostility", "illusion", "income", "landscape", "loyalty", "mercy", "obligation", "patience", "poverty", "prejudice", "privilege", "rumor", "talent", "theory", "tradition"], "dC": ["discomfort"], "p": "n"}, {"h": "extremely", "t": "extremely", "c": "extremely", "st": ["highly", "very"], "x": "slightly", "ko": "매우", "syn": ["highly", "very"], "ant": ["slightly", "mildly"], "star": true, "topic": false, "kc": "매우", "ctx": "For extremely active exercise like cycling, I suggest that you wait between one and a half and three hours after eating a moderate-sized meal.", "dA": ["slightly", "mildly", "early", "quickly", "accidentally", "briefly", "carefully", "deliberately", "eagerly", "eventually", "frankly", "gently", "gradually", "honestly", "immediately", "merely", "nearly", "occasionally", "partly", "politely", "precisely", "rarely", "roughly", "silently", "suddenly", "temporarily", "thoroughly", "unexpectedly", "vaguely", "widely"], "dB": ["highly", "very", "late", "accidentally", "briefly", "carefully", "deliberately", "eagerly", "eventually", "frankly", "gradually", "honestly", "immediately", "merely", "nearly", "occasionally", "partly", "politely", "precisely", "rarely", "roughly", "silently", "suddenly", "temporarily", "thoroughly", "unexpectedly", "vaguely", "widely"], "dC": ["soon"], "p": "r"}, {"h": "active", "t": "active", "c": "active", "st": ["energetic", "vigorous"], "x": "gentle", "ko": "활동적인", "syn": ["energetic", "vigorous"], "ant": ["gentle", "inactive"], "star": true, "topic": true, "kc": "활동적인", "ctx": "For extremely active exercise like cycling, I suggest that you wait between one and a half and three hours after eating a moderate-sized meal.", "dA": ["gentle", "inactive", "beneficial", "interesting", "intriguing", "useful", "equivalent", "right", "the same", "true"], "dB": ["energetic", "vigorous", "boring", "unhelpful", "useless", "different", "incorrect", "wrong"], "dC": ["fascinating", "helpful", "correct", "equal", "harmful", "unpleasant", "low", "serious"], "p": "a"}, {"h": "casual", "t": "casual", "c": "casual", "st": ["light", "relaxed"], "x": "intense", "ko": "가벼운, 일상적인", "syn": ["light", "relaxed"], "ant": ["intense", "demanding"], "star": true, "topic": true, "kc": "일상적인", "ctx": "But for something more casual, such as golfing, waiting for one hour after a meal should be enough.", "dA": ["intense", "demanding", "beneficial", "interesting", "intriguing", "useful", "equivalent", "the same", "true"], "dB": ["light", "relaxed", "boring", "dull", "inactive", "unhelpful", "useless", "different", "incorrect", "wrong"], "dC": ["fascinating", "helpful", "harmful", "unpleasant", "serious", "useful", "various"], "p": "a"}, {"h": "fascinating", "t": "fascinating", "c": "fascinating", "st": ["interesting", "intriguing"], "x": "boring", "ko": "대단히 흥미로운", "syn": ["interesting", "intriguing"], "ant": ["boring", "dull"], "star": true, "topic": false, "kc": "흥미로운", "ctx": "Host: Thank you very much for this fascinating information, Dr.", "dA": ["boring", "dull", "beneficial", "energetic", "light", "relaxed", "useful", "vigorous"], "dB": ["interesting", "intriguing", "demanding", "intense", "unhelpful", "useless", "different", "incorrect", "wrong"], "dC": ["active", "casual", "helpful", "correct", "equal", "harmful", "unpleasant", "low", "serious", "intense"], "p": "a"}, {"h": "helpful", "t": "helpful", "c": "helpful", "st": ["useful", "beneficial"], "x": "useless", "ko": "도움이 되는", "syn": ["useful", "beneficial"], "ant": ["useless", "unhelpful"], "star": true, "topic": false, "kc": "도움이 될", "ctx": "I’m sure it will be very helpful for all of our viewers.", "dA": ["useless", "unhelpful", "energetic", "interesting", "intriguing", "light", "relaxed", "vigorous"], "dB": ["useful", "beneficial", "boring", "demanding", "dull", "gentle", "inactive", "intense"], "dC": ["active", "casual", "fascinating", "correct", "equal", "unpleasant", "low", "serious", "intense"], "p": "a"}], "sets": [{"idx": [0, 1, 2, 3, 6], "wrong": 0, "show": ["comfort", "a shortage", "highly", "energetic", "useful"]}, {"idx": [1, 2, 4, 5, 6], "wrong": 2, "show": ["an absence", "very", "intense", "interesting", "beneficial"]}, {"idx": [0, 1, 3, 4, 5], "wrong": 1, "show": ["pain", "an abundance", "vigorous", "relaxed", "intriguing"]}, {"idx": [0, 1, 2, 3, 6], "wrong": 3, "show": ["unease", "an absence", "highly", "gentle", "useful"]}, {"idx": [0, 2, 3, 4, 5], "wrong": 4, "show": ["pain", "very", "vigorous", "light", "boring"]}]}], "pm": {"useful": "a", "helpful": "a", "valuable": "a", "useless": "a", "worthless": "a", "soon": "r", "quickly": "r", "early": "r", "late": "r", "various": "a", "different": "a", "diverse": "a", "few": "a", "limited": "a", "rush": "v", "hurry": "v", "race": "v", "crawl": "v", "creep": "v", "absorb": "v", "take in": "v", "soak up": "v", "release": "v", "give off": "v", "pause": "v", "stop": "v", "halt": "v", "continue": "v", "speed up": "v", "return": "v", "come back": "v", "go back": "v", "leave": "v", "depart": "v", "full": "a", "filled": "a", "packed": "a", "empty": "a", "harmful": "a", "damaging": "a", "dangerous": "a", "harmless": "a", "beneficial": "a", "unpleasant": "a", "uncomfortable": "a", "disagreeable": "a", "pleasant": "a", "enjoyable": "a", "provide": "v", "supply": "v", "give": "v", "remove": "v", "take away": "v", "store": "v", "keep": "v", "save": "v", "use up": "v", "spend": "v", "low": "a", "reduced": "a", "depleted": "a", "high": "a", "elevated": "a", "lack": "nv", "be short of": "v", "be low on": "v", "have plenty of": "v", "serious": "a", "severe": "a", "grave": "a", "minor": "a", "mild": "a", "intense": "a", "vigorous": "a", "hard": "a", "light": "a", "gentle": "a", "loss": "n", "decrease": "n", "reduction": "n", "gain": "nv", "increase": "n", "correct": "a", "right": "a", "true": "a", "wrong": "a", "incorrect": "a", "contain": "v", "include": "v", "be rich in": "v", "be free of": "v", "replace": "v", "restore": "v", "make up for": "v", "drain": "v", "lose": "v", "burn": "v", "consume": "v", "eat": "v", "avoid": "v", "skip": "v", "equal": "a", "the same": "a", "equivalent": "a", "discomfort": "n", "unease": "n", "pain": "n", "comfort": "n", "ease": "n", "shortage": "n", "absence": "n", "abundance": "n", "plenty": "n", "extremely": "r", "highly": "r", "very": "r", "slightly": "r", "mildly": "r", "active": "a", "energetic": "a", "inactive": "a", "casual": "a", "relaxed": "a", "demanding": "a", "fascinating": "a", "interesting": "a", "intriguing": "a", "boring": "a", "dull": "a", "unhelpful": "a", "accurate": "a", "ancient": "a", "anxious": "a", "artificial": "a", "brief": "a", "careless": "a", "cautious": "a", "curious": "a", "domestic": "a", "eager": "a", "elegant": "a", "enormous": "a", "fragile": "a", "generous": "a", "genuine": "a", "hostile": "a", "humble": "a", "loyal": "a", "mature": "a", "modest": "a", "nervous": "a", "obvious": "a", "polite": "a", "rapid": "a", "rigid": "a", "rural": "a", "sincere": "a", "tiny": "a", "urgent": "a", "vague": "a", "visible": "a", "wealthy": "a", "abandon": "v", "admire": "v", "borrow": "v", "compete": "v", "confess": "v", "decorate": "v", "deny": "v", "deserve": "v", "dismiss": "v", "donate": "v", "emphasize": "v", "escape": "v", "exaggerate": "v", "forgive": "v", "hesitate": "v", "imitate": "v", "invade": "v", "persuade": "v", "postpone": "v", "pretend": "v", "punish": "v", "recover": "v", "rescue": "v", "resign": "v", "scatter": "v", "surrender": "v", "tolerate": "v", "translate": "v", "vanish": "v", "wander": "v", "ambition": "n", "anxiety": "n", "authority": "n", "barrier": "n", "caution": "n", "conflict": "n", "courage": "n", "curiosity": "n", "debt": "n", "dignity": "n", "estimate": "n", "evidence": "n", "fame": "n", "harmony": "n", "hostility": "n", "illusion": "n", "income": "n", "landscape": "n", "loyalty": "n", "mercy": "n", "obligation": "n", "patience": "n", "poverty": "n", "prejudice": "n", "privilege": "n", "rumor": "n", "talent": "n", "theory": "n", "tradition": "n", "absolutely": "r", "accidentally": "r", "briefly": "r", "carefully": "r", "deliberately": "r", "eagerly": "r", "entirely": "r", "eventually": "r", "frankly": "r", "gently": "r", "gradually": "r", "honestly": "r", "immediately": "r", "merely": "r", "nearly": "r", "occasionally": "r", "partly": "r", "politely": "r", "precisely": "r", "rarely": "r", "roughly": "r", "silently": "r", "suddenly": "r", "temporarily": "r", "thoroughly": "r", "unexpectedly": "r", "vaguely": "r", "widely": "r"}};
+
+var $=function(id){return document.getElementById(id)};
+var NUM=['①','②','③','④','⑤'];
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function pickOne(a){return a[Math.floor(Math.random()*a.length)]}
+function marks(w){return (w.star?'<span class="mk s">★</span>':'')+(w.topic?'<span class="mk t">◆</span>':'')}
+function rx(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function ctxHTML(w,tag){return esc(w.ctx).replace(new RegExp('(^|[^A-Za-z’\'-])('+rx(esc(w.t))+')(?![A-Za-z’\'-])'),'$1<'+tag+'>$2</'+tag+'>')}
+var cur=0, PK={}, IN={};
+
+$('h1').textContent=DATA.h1; $('en-title').textContent=DATA.en; $('gist').textContent=DATA.gist; $('footer').textContent=DATA.footer;
+$('chips').innerHTML=DATA.chips.map(function(c){return '<span class="chip">'+esc(c)+'</span>'}).join('');
+try{$('yr').textContent=new Date().getFullYear()}catch(e){}
+
+function tabs(){
+  $('ptabs').innerHTML=DATA.passages.map(function(p,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===cur)+'">'+esc(p.lab)+'</button>'}).join('');
+}
+$('ptabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;cur=+b.dataset.i;render()});
+
+function lineHTML(p, fn){
+  var out=p.lines.map(function(segs){
+    if(segs.length===1&&segs[0]==='↓')return '<p class="arrow">↓</p>';
+    return '<p>'+segs.map(function(s){return typeof s==='number'?fn(s):esc(s)}).join('')+'</p>';
+  }).join('');
+  if(p.foot)out+='<p class="fn">'+esc(p.foot)+'</p>';
+  return out;
+}
+function renderHead(p){
+  $('ptitle').innerHTML='<b>'+esc(p.lab)+' · '+esc(p.kr)+'</b><i>'+esc(p.en)+'</i><small>'+esc(p.sum)+'</small>';
+}
+
+/* ---------- 원지문: 인쇄 자료와 같은 표시. 관사·전치사까지 묶은 자리도 표시는 본래 낱말에만 ---------- */
+function renderOrig(p){
+  $('or-text').innerHTML=lineHTML(p,function(i){
+    var w=p.words[i], k=w.t.indexOf(w.c), pre=w.t.slice(0,k), post=w.t.slice(k+w.c.length);
+    var cls='om'+(w.star?' s':'')+(w.topic?' t':'');
+    return esc(pre)+'<button type="button" class="'+cls+'" data-i="'+i+'"><span class="cw">'+esc(w.c)+'</span><sup>'+(i+1)+'</sup></button>'+esc(post);
+  });
+  $('or-info').textContent='낱말을 눌러 보세요.';
+  $('or-ko').innerHTML=p.kolines.map(function(segs){return '<p>'+segs.map(function(s){
+    if(typeof s!=='number')return esc(s);
+    var w=p.words[s];return '<button type="button" class="om'+(w.star?' s':'')+(w.topic?' t':'')+'" data-i="'+s+'"><span class="cw">'+esc(w.kc)+'</span><sup>'+(s+1)+'</sup></button>';
+  }).join('')+'</p>'}).join('');
+}
+$('or-ko-toggle').addEventListener('click',function(){
+  var on=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',on);
+  this.textContent=on?'해석 보기':'해석 가리기';$('or-ko').classList.toggle('hide',on);
+});
+$('orig').addEventListener('click',function(e){
+  var b=e.target.closest('.om');if(!b)return;var p=DATA.passages[cur],w=p.words[+b.dataset.i];
+  [].forEach.call($('orig').querySelectorAll('.om'),function(x){x.classList.toggle('on',x.dataset.i===b.dataset.i)});
+  $('or-info').innerHTML='<b>'+(+b.dataset.i+1)+'</b>'+marks(w)+' <b class="en">'+esc(w.h)+'</b> '+esc(w.ko)+'<br>≒ <i>'+esc(w.syn.join(', '))+'</i> &nbsp; ↔ <i>'+esc(w.ant.join(', '))+'</i>';
+});
+
+function renderVocab(p){
+  var h='<thead><tr><th>No</th><th>본문 어휘</th><th>문맥상 뜻</th><th>≒ 동의어</th><th>↔ 반의어</th></tr></thead><tbody>';
+  p.words.forEach(function(w,i){
+    h+='<tr'+(w.star&&w.topic?' class="both"':'')+'><td class="no'+(w.star?' s':'')+'">'+(i+1)+marks(w)+'</td><td class="w">'+esc(w.h)+'</td><td>'+esc(w.ko)+'</td><td class="en">'+esc(w.syn.join(', '))+'</td><td class="en">'+esc(w.ant.join(', ')||'—')+'</td></tr>';
+  });
+  $('vt').innerHTML=h+'</tbody>';
+}
+
+/* ---------- 1단계: 동의어·반의어 퀴즈 ----------
+   A 뜻이 같은 것 / B 뜻이 반대인 것 / C 동의어 → 본문 어휘. 오답 후보(dA·dB·dC)는 미리 거른 것이다. */
+var wq=$('wq'), V=[], WN=10, wset=[], wi=0, wscore=0;
+function makeQ(w){
+  var r=Math.random(), type=r<.45?'A':r<.75?'B':'C';
+  if(type==='C'&&w.dC.length<3)type=r<.85?'A':'B';   /* 같은 품사 본문 어휘가 모자라면 C 유형은 내지 않는다 */
+  var q={w:w,type:type};
+  if(type==='A'){q.ans=pickOne(w.syn);q.opts=shuffle([q.ans].concat(shuffle(w.dA).slice(0,3)))}
+  else if(type==='B'){q.ans=pickOne(w.ant);q.opts=shuffle([q.ans].concat(shuffle(w.dB).slice(0,3)))}
+  else{q.cue=pickOne(w.syn);q.ans=w.h;q.opts=shuffle([w.h].concat(shuffle(w.dC).slice(0,3).map(function(j){return typeof j==='number'?V[j].h:j})))}
+  return q;
+}
+function wstart(){ wset=shuffle(V).slice(0,WN).map(makeQ); wi=0; wscore=0; wdraw(); }
+function wdraw(){
+  var head='<div class="wq-top"><span>'+(wi<WN?(wi+1)+' / '+WN:'완료')+' · 맞힌 개수 '+wscore+'</span></div><div class="bar"><i style="width:'+(wi/WN*100)+'%"></i></div>';
+  if(wi>=WN){
+    var msg=wscore===WN?'모두 맞혔어요!':wscore>=WN*0.7?'잘했어요. 틀린 어휘만 어휘 정리에서 한 번 더 보세요.':'어휘 정리를 한 번 더 보고 다시 도전해요.';
+    wq.innerHTML=head+'<p class="wq-q">'+WN+'개 중 '+wscore+'개 정답<small>'+msg+'</small></p><div class="wq-foot"><span></span><button class="btn primary" id="wq-again" type="button">새 문제로 다시 풀기</button></div>';
+    $('wq-again').addEventListener('click',wstart); return;
+  }
+  var q=wset[wi], w=q.w, body;
+  if(q.type==='C') body='<p class="wq-ask">다음 낱말로 바꿔 쓸 수 있는 본문 어휘는?</p><p class="wq-big">'+esc(q.cue)+'</p>';
+  else body='<p class="wq-ctx">'+ctxHTML(w,'u')+'</p><p class="wq-ask">밑줄 친 낱말과 문맥상 뜻이 '+(q.type==='A'?'<span style="color:var(--ok)">같은</span>':'<span style="color:var(--bad)">반대인</span>')+' 것은?</p>';
+  var o='<div class="wq-opts">'+q.opts.map(function(c,j){return '<button class="opt en-o" type="button" data-v="'+esc(c)+'"><span class="n">'+['①','②','③','④'][j]+'</span><span>'+esc(c)+'</span></button>'}).join('')+'</div>';
+  wq.innerHTML=head+body+o+'<div class="wq-foot" id="wq-foot"></div>';
+  var btns=[].slice.call(wq.querySelectorAll('.wq-opts .opt'));
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var ok=b.dataset.v===q.ans;
+    btns.forEach(function(x){x.disabled=true; if(x.dataset.v===q.ans) x.classList.add('right');});
+    if(!ok) b.classList.add('wrong'); else wscore++;
+    $('wq-foot').innerHTML='<span>'+(ok?'<b class="ok">정답!</b> ':'<b class="no">아쉬워요.</b> ')+'<i style="font-family:var(--serif-en)">'+esc(w.h)+'</i> '+esc(w.ko)+' · ≒ '+esc(w.syn.join(', '))+' · ↔ '+esc(w.ant.join(', '))+'</span><button class="btn primary" id="wq-next" type="button">'+(wi+1<WN?'다음':'결과 보기')+'</button>';
+    $('wq-next').addEventListener('click',function(){wi++;wdraw();});
+    $('wq-next').focus();
+  });});
+}
+
+/* ---------- 2단계: 문맥 속 고르기 [동의어 | 반의어] ---------- */
+function pkState(p){
+  if(!PK[cur])PK[cur]={flip:p.words.map(function(){return Math.random()<.5}),
+    syn:p.words.map(function(w){return pickOne(w.st)}),sel:{},graded:false};
+  return PK[cur];
+}
+function renderPick(p){
+  var st=pkState(p);
+  $('pk-text').innerHTML=lineHTML(p,function(i){
+    var a=[st.syn[i],p.words[i].x]; if(st.flip[i])a.reverse();
+    var cls='pick';
+    if(st.graded){cls+= st.sel[i]===undefined?' miss':(st.sel[i]===st.syn[i]?' ok':' bad')}
+    return '<span class="'+cls+'" role="group" aria-label="'+(i+1)+'번 보기">'+a.map(function(v){
+      return '<button type="button" data-i="'+i+'" data-v="'+esc(v)+'" aria-pressed="'+(st.sel[i]===v)+'">'+esc(v)+'</button>'}).join('')+'<sup>'+(i+1)+'</sup></span>';
+  });
+  if(!st.graded){$('pk-res').textContent=Object.keys(st.sel).length+' / '+p.words.length+' 골랐어요';$('pk-fb').innerHTML='';return}
+  var right=0, fb='';
+  p.words.forEach(function(w,i){
+    if(st.sel[i]===st.syn[i]){right++;return}
+    var got=st.sel[i]===undefined?'고르지 않음':'<i>'+esc(st.sel[i])+'</i>';
+    fb+='<li><b>'+(i+1)+'</b> '+got+' → <b class="en">'+esc(st.syn[i])+'</b> <span style="color:var(--muted)">(원문 <i>'+esc(w.t)+'</i> · '+esc(w.ko)+')</span></li>';
+  });
+  $('pk-res').textContent=right+' / '+p.words.length+' 맞았어요';
+  $('pk-fb').innerHTML=fb||'<li class="good">모두 맞혔어요! ‘다시 섞기’로 다른 동의어가 들어간 문장을 풀어 보세요.</li>';
+}
+$('pk-text').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var p=DATA.passages[cur],st=pkState(p);
+  if(st.graded)return;
+  st.sel[+b.dataset.i]=b.dataset.v;renderPick(p);
+});
+$('pk-check').addEventListener('click',function(){var p=DATA.passages[cur];pkState(p).graded=true;renderPick(p)});
+$('pk-reset').addEventListener('click',function(){var p=DATA.passages[cur];delete PK[cur];renderPick(p)});
+
+/* ---------- 3단계: 어휘 추론 · 변형 (5세트 고정) ---------- */
+function inState(p){if(!IN[cur])IN[cur]={k:0,ans:{}};return IN[cur]}
+function renderInfer(p){
+  var st=inState(p), set=p.sets[st.k], done=st.ans[st.k];
+  $('in-sets').innerHTML=p.sets.map(function(s,k){
+    var a=st.ans[k], c=(k===st.k?'cur':'')+(a===undefined?'':(a===s.wrong?' o':' x'));
+    return '<button type="button" data-k="'+k+'" class="'+c+'">세트 '+(k+1)+'</button>'}).join('');
+  $('in-stem').textContent='세트 '+(st.k+1)+'. 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?';
+  $('in-text').innerHTML=lineHTML(p,function(i){
+    var pos=set.idx.indexOf(i), w=p.words[i];
+    if(pos<0)return esc(w.t);
+    var cls='ul'+(done!==undefined&&pos===set.wrong?' wrong':'');
+    return '<span class="'+cls+'"><span class="n">'+NUM[pos]+'</span>'+esc(set.show[pos])+'</span>';
+  });
+  $('in-opts').innerHTML=NUM.map(function(n,k){
+    var c=''; if(done!==undefined){if(k===set.wrong)c='ok';else if(k===done)c='no'}
+    return '<button type="button" data-k="'+k+'" class="'+c+'"'+(done!==undefined?' disabled':'')+' aria-label="'+(k+1)+'번">'+n+'</button>'}).join('');
+  var score=0,cnt=0;Object.keys(st.ans).forEach(function(k){cnt++;if(st.ans[k]===p.sets[k].wrong)score++});
+  $('in-score').textContent=cnt?score+' / '+cnt+' 세트 정답':'';
+  if(done===undefined){$('in-ex').hidden=true;$('in-next').hidden=true;return}
+  var lis=set.idx.map(function(i,pos){
+    var w=p.words[i];
+    if(pos===set.wrong)return '<li class="bad">'+NUM[pos]+' <i>'+esc(set.show[pos])+'</i> ✗ 반의어예요. 원문 <b class="en">'+esc(w.t)+'</b>('+esc(w.ko)+') 자리라 <i>'+esc(w.st.join(', '))+'</i> 같은 말이 와야 해요.</li>';
+    return '<li>'+NUM[pos]+' <i>'+esc(set.show[pos])+'</i> ← 원문 <b class="en">'+esc(w.t)+'</b> ('+esc(w.ko)+')</li>';
+  }).join('');
+  $('in-ex').innerHTML='<div><b>'+(done===set.wrong?'정답이에요!':'아쉬워요.')+'</b> 정답은 '+NUM[set.wrong]+'이에요.</div><ul class="exl">'+lis+'</ul>';
+  $('in-ex').hidden=false;
+  $('in-next').hidden=false;
+  $('in-next').textContent=st.k<p.sets.length-1?'다음 세트':'처음 세트로';
+}
+$('in-sets').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;inState(DATA.passages[cur]).k=+b.dataset.k;renderInfer(DATA.passages[cur])});
+$('in-opts').addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;var p=DATA.passages[cur],st=inState(p);st.ans[st.k]=+b.dataset.k;renderInfer(p)});
+$('in-next').addEventListener('click',function(){var p=DATA.passages[cur],st=inState(p);st.k=(st.k+1)%p.sets.length;renderInfer(p)});
+
+var shown=-1;
+function render(){var p=DATA.passages[cur];tabs();renderHead(p);renderOrig(p);renderVocab(p);
+  if(shown!==cur){shown=cur;V=p.words;WN=Math.min(10,V.length);wstart();}   /* 지문을 바꿀 때만 퀴즈를 새로 시작 */
+  renderPick(p);renderInfer(p)}
+function anchorOf(p){var m=String(p.lab||'').match(/(\d+)월\s*([\d~]+)번/);return m?('m'+m[1]+'-'+m[2].replace('~','-')):('p'+String(p.no).replace('~','-'))}
+function fromHash(){var h=(location.hash||'').slice(1);if(!h)return;for(var i=0;i<DATA.passages.length;i++){if(anchorOf(DATA.passages[i])===h){if(cur!==i){cur=i;render();}return}}}
+window.addEventListener('hashchange',fromHash);
+(function(){var h=(location.hash||'').slice(1);for(var i=0;i<DATA.passages.length;i++){if(anchorOf(DATA.passages[i])===h){cur=i;break}}})();
+render();
+</script>
+
+<script type="application/json" id="syn-src">[{"exam": "2022 개정 공통영어1 NE능률(민병천) 3과", "no": "3-1", "label": "3과 본문 1번", "type": "", "en_title": "Why You Shouldn’t Exercise Right After Eating", "kr_title": "식사 직후 운동: 밥 먹고 바로 운동하면 왜 배가 아플까?", "summary": "식사 직후에 운동하면 음식을 소화하기 위해 소화 기관으로 몰렸던 혈액이 근육에 산소와 영양분을 공급하기 위해 근육으로 이동하면서 소화 과정이 중단되어 복통 같은 위장 문제가 생길 수 있다. 따라서 어떤 운동이든 배가 부른 상태로 해서는 안 된다.", "passage": "Host: Welcome back to Today’s Health. Today we’re going to be talking about exercise. Dr. Victoria Hill is here, and she is going to share some useful tips. So, Dr. Hill, let’s start with a question about my experience last month. I worked out right after dinner and got a stomachache. Why did that happen? Dr. Hill: Well, the problem is that you exercised too soon after eating. This can cause various stomach issues. When you eat, blood rushes to the digestive system to help break down the food and absorb its nutrients. But when you start to exercise, blood moves from the digestive system to your muscles. This happens in order to supply your muscles with the oxygen and nutrients they require. As a result, the digestion process is paused until the blood returns. So, whether you’re lifting weights or going for a jog, you shouldn’t do it with a stomach full of food.", "translation": "진행자: ‘오늘의 건강’에 돌아오신 것을 환영합니다. 오늘 우리는 운동에 대해 이야기할 것입니다. Victoria Hill 박사님이 여기 나와 계시며 유용한 조언을 공유해 줄 것입니다. 자, Hill 박사님, 지난달 제 경험에 관한 질문으로 시작합시다. 저는 저녁을 먹은 후에 바로 운동을 했고 복통을 느꼈습니다. 그 일이 왜 일어났나요? Hill 박사: 음, 문제는 당신이 식사 후 너무 빨리 운동을 한 것입니다. 이는 다양한 위장 문제를 일으킬 수 있습니다. 당신이 식사를 할 때 혈액은 음식을 분해하고 음식의 영양분을 흡수하는 것을 돕기 위해 소화 기관으로 급히 움직입니다. 그러나 당신이 운동을 시작하면 혈액은 소화 기관에서 당신의 근육으로 이동합니다. 이는 당신의 근육에게 그것이 필요로 하는 산소와 영양분을 공급하기 위해 일어납니다. 그 결과, 소화 과정은 혈액이 돌아올 때까지 중단됩니다. 따라서 당신이 역기를 들든 조깅을 하러 가든, 당신은 위장에 음식이 가득한 채로 (운동을) 하면 안 됩니다.", "footnote": "*stomachache: 복통  *digestive system: 소화 기관  *nutrient: 영양분  *lift weights: 역기를 들다", "words": [{"t": "useful", "head": "useful", "pos": "a", "ko": "유용한", "syn": ["helpful", "valuable"], "ant": ["useless", "worthless"], "star": true, "topic": false, "syn_t": ["helpful", "valuable"], "ant_t": "useless", "ko_t": "유용한", "avoid": ["beneficial", "unhelpful"]}, {"t": "soon", "head": "soon", "pos": "r", "ko": "빨리, 일찍", "syn": ["quickly", "early"], "ant": ["late"], "star": true, "topic": true, "syn_t": ["quickly", "early"], "ant_t": "late", "ko_t": "빨리"}, {"t": "various", "head": "various", "pos": "a", "ko": "다양한", "syn": ["different", "diverse"], "ant": ["few", "limited"], "star": false, "topic": false, "syn_t": ["different", "diverse"], "ant_t": "few", "ko_t": "다양한"}, {"t": "rushes", "head": "rush", "pos": "v", "ko": "급히 움직이다", "syn": ["hurry", "race"], "ant": ["crawl", "creep"], "star": false, "topic": true, "syn_t": ["hurries", "races"], "ant_t": "crawls", "ko_t": "급히 움직입니다"}, {"t": "absorb", "head": "absorb", "pos": "v", "ko": "흡수하다", "syn": ["take in", "soak up"], "ant": ["release", "give off"], "star": true, "topic": false, "syn_t": ["take in", "soak up"], "ant_t": "release", "ko_t": "흡수하는", "avoid": ["eat", "consume"]}, {"t": "paused", "head": "pause", "pos": "v", "ko": "중단시키다", "syn": ["stop", "halt"], "ant": ["continue", "speed up"], "star": true, "topic": true, "syn_t": ["stopped", "halted"], "ant_t": "continued", "ko_t": "중단됩니다"}, {"t": "returns", "head": "return", "pos": "v", "ko": "돌아오다", "syn": ["come back", "go back"], "ant": ["leave", "depart"], "star": true, "topic": false, "syn_t": ["comes back", "goes back"], "ant_t": "leaves", "ko_t": "돌아올"}, {"t": "full", "head": "full", "pos": "a", "ko": "가득 찬", "syn": ["filled", "packed"], "ant": ["empty"], "star": true, "topic": true, "syn_t": ["filled", "packed"], "ant_t": "empty", "ko_t": "가득한"}]}, {"exam": "2022 개정 공통영어1 NE능률(민병천) 3과", "no": "3-2", "label": "3과 본문 2번", "type": "", "en_title": "The Trouble with Exercising on an Empty Stomach", "kr_title": "빈속 운동: 아무것도 안 먹고 운동하면 왜 힘들까?", "summary": "빈속에 운동하는 것도 해롭다. 운동에 필요한 에너지는 탄수화물이 분해된 포도당이 근육과 간에 저장된 글리코겐에서 오는데, 빈속에는 혈당이 낮고 글리코겐이 부족해 에너지가 모자라고 피곤하며, 심하면 구역감·두통·실신까지 겪을 수 있다.", "passage": "Host: I see. That makes sense. So, does that mean I should exercise on an empty stomach? Dr. Hill: No, it doesn’t. That can also be harmful and unpleasant. This is because the body needs energy to exercise. The fuel that provides this energy is glycogen. Carbohydrates in the food we eat are broken down into a kind of sugar called glucose. When this glucose is stored in parts of the body, such as the muscles and the liver, it is called glycogen. This is why exercising on a completely empty stomach — such as when you first wake up in the morning — can be such a challenge. Your blood sugar levels are low, and you don’t have enough glycogen stored in your body. If you exercise on an empty stomach, you will most likely lack energy and feel unusually tired. There can also be more serious outcomes. Some people end up suffering from nausea and headaches, and others even faint. This is because intense exercise uses up all the glycogen in your muscles.", "translation": "진행자: 그렇군요. 말이 되네요. 그렇다면 그것은 제가 빈속에 운동을 해야 한다는 것을 의미하나요? Hill 박사: 아니요, 그렇지 않습니다. 그것 또한 해롭고 불쾌할 수 있습니다. 이는 신체가 운동하기 위해서는 에너지가 필요하기 때문입니다. 이 에너지를 제공하는 연료는 글리코겐입니다. 우리가 먹는 음식의 탄수화물은 글루코스(포도당)라고 불리는 일종의 당분으로 분해됩니다. 이 글루코스(포도당)가 근육과 간과 같은 신체의 일부에 저장되면 그것은 글리코겐이라 불립니다. 이것이 당신이 아침에 처음 일어났을 때와 같이 완전히 빈속에 운동하는 것이 그렇게나 힘들 수 있는 이유입니다. 당신의 혈당 수치는 낮고, 당신은 신체에 저장된 글리코겐을 충분히 갖고 있지 않습니다. 만일 당신이 빈속에 운동한다면, 당신은 아마 에너지가 부족하고 유난히 피곤하게 느낄 것입니다. 또한 더 심각한 결과가 있을 수 있습니다. 어떤 사람들은 결국 구역감과 두통을 겪고, 다른 사람들은 실신하기도 합니다. 이는 강한 운동이 당신의 근육에 있는 모든 글리코겐을 다 써 버리기 때문입니다.", "footnote": "*glycogen: 글리코겐(근육·간에 저장된 당분)  *carbohydrate: 탄수화물  *glucose: 글루코스, 포도당  *nausea: 구역감, 메스꺼움", "words": [{"t": "harmful", "head": "harmful", "pos": "a", "ko": "해로운", "syn": ["damaging", "dangerous"], "ant": ["harmless", "beneficial"], "star": true, "topic": true, "syn_t": ["damaging", "dangerous"], "ant_t": "beneficial", "ko_t": "해롭고", "avoid": ["helpful", "useful"]}, {"t": "unpleasant", "head": "unpleasant", "pos": "a", "ko": "불쾌한", "syn": ["uncomfortable", "disagreeable"], "ant": ["pleasant", "enjoyable"], "star": true, "topic": false, "syn_t": ["uncomfortable", "disagreeable"], "ant_t": "pleasant", "ko_t": "불쾌할"}, {"t": "provides", "head": "provide", "pos": "v", "ko": "제공하다", "syn": ["supply", "give"], "ant": ["remove", "take away"], "star": false, "topic": false, "syn_t": ["supplies", "gives"], "ant_t": "takes away", "ko_t": "제공하는", "avoid": ["include", "contain", "drain", "lack"]}, {"t": "stored", "head": "store", "pos": "v", "ko": "저장하다", "syn": ["keep", "save"], "ant": ["use up", "spend"], "star": true, "topic": true, "syn_t": ["kept", "saved"], "ant_t": "used up", "ko_t": "저장되면", "avoid": ["restore", "drain", "burn", "lose", "consume"]}, {"t": "low", "head": "low", "pos": "a", "ko": "낮은", "syn": ["reduced", "depleted"], "ant": ["high", "elevated"], "star": true, "topic": true, "syn_t": ["reduced", "depleted"], "ant_t": "high", "ko_t": "낮고"}, {"t": "lack", "head": "lack", "pos": "v", "ko": "~이 부족하다", "syn": ["be short of", "be low on"], "ant": ["have plenty of"], "star": true, "topic": true, "syn_t": ["be short of", "be low on"], "ant_t": "have plenty of", "ko_t": "부족하고"}, {"t": "serious", "head": "serious", "pos": "a", "ko": "심각한", "syn": ["severe", "grave"], "ant": ["minor", "mild"], "star": true, "topic": false, "syn_t": ["severe", "grave"], "ant_t": "minor", "ko_t": "심각한", "avoid": ["dangerous", "damaging", "harmful", "hard", "intense", "light", "gentle"]}, {"t": "intense", "head": "intense", "pos": "a", "ko": "강한, 격렬한", "syn": ["vigorous", "hard"], "ant": ["light", "gentle"], "star": true, "topic": false, "syn_t": ["vigorous", "hard"], "ant_t": "light", "ko_t": "강한", "avoid": ["severe", "grave", "energetic", "demanding", "mild", "minor", "relaxed"]}]}, {"exam": "2022 개정 공통영어1 NE능률(민병천) 3과", "no": "3-3", "label": "3과 본문 3번", "type": "", "en_title": "Refueling After Exercise: How Many Carbohydrates You Need", "kr_title": "운동 후 탄수화물 섭취: 운동 뒤에는 무엇을 얼마나 먹어야 할까?", "summary": "운동으로 잃은 근육 글리코겐을 채우기 위해 운동 후 30분 이내에 탄수화물이 든 음식을 먹어야 한다. 체중 1kg당 1~1.5g의 탄수화물이 필요하므로, 60kg인 사람은 흰 쌀밥 한 그릇이나 바나나 세 개 정도인 60~90g을 먹으면 된다.", "passage": "Host: So, is it the loss of glycogen that causes us to have low levels of energy? Dr. Hill: That’s correct. For this reason, doctors recommend that people eat food containing carbohydrates within thirty minutes after working out. This replaces the muscle glycogen you have lost. Basically, you need between one and one and a half grams of carbohydrates for every kilogram you weigh. Let’s do the math. If you weigh 60 kilograms, you should try to consume between 60 and 90 grams of carbohydrates after you exercise. This is equal to about one bowl of white rice or three bananas.", "translation": "진행자: 그렇다면, 우리가 낮은 수준의 에너지를 갖도록 만드는 것이 바로 글리코겐의 손실인가요? Hill 박사: 맞습니다. 이러한 이유로 의사들은 사람들에게 운동 후 30분 이내에 탄수화물을 함유한 음식을 먹을 것을 권장합니다. 이것이 당신이 잃어버린 근육 글리코겐을 대체합니다. 기본적으로 당신의 체중 1kg당 1에서 1.5g 사이의 탄수화물이 필요합니다. 산수를 해봅시다. 만일 당신이 60kg이라면 당신은 운동한 후에 60에서 90g 사이의 탄수화물을 섭취하려고 노력해야 합니다. 이는 대략 흰 쌀밥 한 그릇 또는 바나나 세 개와 동일합니다.", "footnote": "*glycogen: 글리코겐  *carbohydrate: 탄수화물  *do the math: 계산해 보다  *consume: 섭취하다", "words": [{"t": "loss", "head": "loss", "pos": "n", "ko": "손실", "syn": ["decrease", "reduction"], "ant": ["gain", "increase"], "star": true, "topic": true, "syn_t": ["decrease", "reduction"], "ant_t": "gain", "ko_t": "손실", "avoid": ["shortage", "absence", "lack", "abundance", "plenty"]}, {"t": "correct", "head": "correct", "pos": "a", "ko": "맞는", "syn": ["right", "true"], "ant": ["wrong", "incorrect"], "star": false, "topic": false, "syn_t": ["right", "true"], "ant_t": "wrong", "ko_t": "맞습니다"}, {"t": "containing", "head": "contain", "pos": "v", "ko": "함유하다", "syn": ["include", "be rich in"], "ant": ["lack", "be free of"], "star": true, "topic": true, "syn_t": ["including", "rich in"], "ant_t": "lacking", "ko_t": "함유한", "avoid": ["provide", "supply", "drain", "remove"]}, {"t": "replaces", "head": "replace", "pos": "v", "ko": "대체하다, 채우다", "syn": ["restore", "make up for"], "ant": ["remove", "drain"], "star": true, "topic": true, "syn_t": ["restores", "makes up for"], "ant_t": "removes", "ko_t": "대체합니다", "avoid": ["use up", "lose", "burn", "lack"]}, {"t": "lost", "head": "lose", "pos": "v", "ko": "잃다", "syn": ["use up", "burn"], "ant": ["gain", "store"], "star": true, "topic": false, "syn_t": ["used up", "burned"], "ant_t": "gained", "ko_t": "잃어버린", "avoid": ["drain", "spend", "restore", "keep", "save"]}, {"t": "consume", "head": "consume", "pos": "v", "ko": "섭취하다", "syn": ["eat", "take in"], "ant": ["avoid", "skip"], "star": true, "topic": false, "syn_t": ["eat", "take in"], "ant_t": "avoid", "ko_t": "섭취하려고", "avoid": ["soak up", "absorb", "use up", "burn"]}, {"t": "equal", "head": "equal", "pos": "a", "ko": "같은", "syn": ["the same", "equivalent"], "ant": ["different"], "star": false, "topic": false, "syn_t": ["the same as", "equivalent to"], "ant_t": "different from", "ko_t": "동일합니다", "span": "equal to"}]}, {"exam": "2022 개정 공통영어1 NE능률(민병천) 3과", "no": "3-4", "label": "3과 본문 4번", "type": "", "en_title": "How Long to Wait Between Eating and Exercising", "kr_title": "운동 전 식사 시간: 밥 먹고 얼마나 기다렸다가 운동해야 할까?", "summary": "식사 직후에 운동하면 불편하고, 너무 오래 기다리면 에너지가 부족해지므로 운동 전 식사 시간은 1~3시간이 알맞다. 이 시간은 음식의 종류와 양, 체구·나이·성별, 운동의 종류에 따라 달라서, 사이클링 같은 격한 운동은 1시간 30분~3시간, 골프 같은 가벼운 운동은 1시간이면 충분하고, 간식 후에는 덜 기다려도 된다.", "passage": "Host: That’s very interesting. But what about eating before we exercise? Can you explain how long we should wait after eating? Dr. Hill: Well, as I said before, exercising right after you eat will cause feelings of discomfort. But, if you wait too long to exercise after eating, you’ll suffer from a lack of energy. The best time to eat before you exercise varies from one to three hours. Basically, it depends on several factors such as the type and amount of food as well as body size, age, and gender. The type of exercise also matters. For extremely active exercise like cycling, I suggest that you wait between one and a half and three hours after eating a moderate-sized meal. But for something more casual, such as golfing, waiting for one hour after a meal should be enough. Clearly, you can wait less after eating a snack. Host: Thank you very much for this fascinating information, Dr. Hill. I’m sure it will be very helpful for all of our viewers.", "translation": "진행자: 정말 흥미롭네요. 그런데 운동하기 전에 식사하는 것은 어떤가요? 우리가 식사 후에 얼마나 오래 기다려야 하는지 설명해 주시겠어요? Hill 박사: 음, 제가 전에 말했던 것처럼, 식사 직후에 운동하는 것은 불편한 느낌을 유발할 수 있습니다. 그러나 식사 후 운동하기 위해 너무 오래 기다린다면 당신은 에너지 부족으로 고통받을 것입니다. 운동 전에 식사할 가장 좋은 시간은 1시간에서 3시간으로 다릅니다. 기본적으로 그것은 체구, 나이, 성별뿐만 아니라 음식의 종류와 양과 같은 여러 요소에 의해 결정됩니다. 운동의 종류 또한 중요합니다. 사이클링과 같은 매우 활동적인 운동의 경우, 저는 적정량의 식사를 한 후 1시간 30분에서 3시간 사이를 기다릴 것을 권장합니다. 그러나 골프 치기와 같이 좀 더 일상적인 운동의 경우, 식사 후 1시간을 기다리는 것으로 충분합니다. 분명히, 간식을 먹은 후에는 덜 기다려도 됩니다. 진행자: Hill 박사님, 대단히 흥미로운 이 정보에 정말 감사드립니다. 저는 그것이 모든 우리 시청자들에게 매우 도움이 될 것이라고 확신합니다.", "footnote": "*discomfort: 불편함  *vary: 다르다, 달라지다  *moderate-sized: 적당한 양의  *casual: 가벼운, 일상적인", "words": [{"t": "discomfort", "head": "discomfort", "pos": "n", "ko": "불편함", "syn": ["unease", "pain"], "ant": ["comfort", "ease"], "star": true, "topic": true, "syn_t": ["unease", "pain"], "ant_t": "comfort", "ko_t": "불편한"}, {"t": "lack", "head": "lack", "pos": "n", "ko": "부족", "syn": ["shortage", "absence"], "ant": ["abundance", "plenty"], "star": true, "topic": true, "syn_t": ["a shortage", "an absence"], "ant_t": "an abundance", "ko_t": "부족", "span": "a lack", "avoid": ["decrease", "reduction", "loss", "gain", "increase"]}, {"t": "extremely", "head": "extremely", "pos": "r", "ko": "매우", "syn": ["highly", "very"], "ant": ["slightly", "mildly"], "star": true, "topic": false, "syn_t": ["highly", "very"], "ant_t": "slightly", "ko_t": "매우", "avoid": ["absolutely", "entirely"]}, {"t": "active", "head": "active", "pos": "a", "ko": "활동적인", "syn": ["energetic", "vigorous"], "ant": ["gentle", "inactive"], "star": true, "topic": true, "syn_t": ["energetic", "vigorous"], "ant_t": "gentle", "ko_t": "활동적인", "avoid": ["intense", "hard", "demanding", "light", "relaxed", "casual"]}, {"t": "casual", "head": "casual", "pos": "a", "ko": "가벼운, 일상적인", "syn": ["light", "relaxed"], "ant": ["intense", "demanding"], "star": true, "topic": true, "syn_t": ["light", "relaxed"], "ant_t": "intense", "ko_t": "일상적인", "avoid": ["gentle", "mild", "vigorous", "energetic", "active", "hard"]}, {"t": "fascinating", "head": "fascinating", "pos": "a", "ko": "대단히 흥미로운", "syn": ["interesting", "intriguing"], "ant": ["boring", "dull"], "star": true, "topic": false, "syn_t": ["interesting", "intriguing"], "ant_t": "boring", "ko_t": "흥미로운"}, {"t": "helpful", "head": "helpful", "pos": "a", "ko": "도움이 되는", "syn": ["useful", "beneficial"], "ant": ["useless", "unhelpful"], "star": true, "topic": false, "syn_t": ["useful", "beneficial"], "ant_t": "useless", "ko_t": "도움이 될", "avoid": ["valuable", "worthless"]}]}]</script>
+
+</body></html>
