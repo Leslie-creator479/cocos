@@ -1,0 +1,28 @@
+# 코코스학원 홈페이지 저장소 안내
+
+GitHub Pages로 공개되는 코코스학원 홈페이지·온라인 학습지 저장소다. `main` 브랜치에 올리면 1~2분 뒤 반영된다.
+주소: https://leslie-creator479.github.io/cocos/ (학원 도메인을 연결하면 바뀐다. 페이지끼리는 상대 경로로 이어져 있어 주소가 바뀌어도 고칠 것이 없다.)
+
+## 폴더 구조
+| 경로 | 내용 |
+|---|---|
+| `index.html` | 지금은 `library/`로 넘겨 주는 페이지(홈페이지 디자인을 정하면 바꾼다) |
+| `library/` | 자료실(탭: 학력평가·교과서·학교별 시험 범위·동의어·반의어·단어게임). `_tools/add_library.py`로만 고친다 |
+| `study/<연도>-<월2자리>-g<학년>/` | 학력평가 회차 목차. 지문은 `.../<번호>/` (예 `study/2026-06-g2/23/`, 장문 `41-42`, `43-45`) |
+| `study/olympos1/`, `study/olympos2/` | 올림포스 기출 지문 `<강>-<번호>/` (예 `study/olympos2/7-3/`) |
+| `textbook/<교재>/<과>/` | 교과서 과별 목차, 본문 `.../<번호>/` (예 `textbook/neo2/1/3/` = 영어II 능률(오선영) 1과 본문 3번) |
+| `school/2026-2-mid/<학교>-g<학년>/` | 학교별 시험 범위 목차(학교: dongkwang, seongnam, seongnam-girls, seongil, pungsaeng) |
+| `syn/<회차>/` | 동의어·반의어 (회차 이름은 study와 같다. 교과서는 `syn/neo2-1-3`처럼) |
+| `game/<회차>/` | 단어게임 |
+| `tools/` | 선생님용 페이지(블로그 원고 등). 반드시 noindex로 감싼다 |
+| `preview/` | 홈페이지 디자인 시안(noindex) |
+| `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `add_library.py`(자료실 카드), `artifact_map.json`(옛 claude.ai 아티팩트 id → 이 저장소 경로) |
+
+## 규칙
+- 모든 페이지는 `<폴더>/index.html` 하나. 파일 이름이 아니라 폴더 주소로 연다.
+- 아티팩트용으로 만든 페이지는 겉틀이 없으니 `python3 _tools/wrap.py 원본.html 경로/index.html`로 감싸서 넣는다(선생님용 페이지는 `--noindex`).
+- 페이지 사이 링크는 **상대 경로**로 쓴다(목차 → 지문 `18/`, 지문 → 목차 `../`, 동의어 → 목차 `../../study/2026-06-g1/`). 블로그·카카오톡에 붙일 링크만 전체 주소(`https://leslie-creator479.github.io/cocos/…/`)를 쓴다.
+- 옛 claude.ai 링크(`https://claude.ai/artifact/<id>`)가 들어 있으면 `_tools/artifact_map.json`으로 경로를 찾아 상대 경로로 바꾼다.
+- 저장소는 공개다. 학생 이름·전화번호 같은 개인정보, 코코 키우기·100일 습관 같은 기록 페이지는 올리지 않는다.
+- 올리기: `git add -A && git commit -m "<무엇을>" && git push origin main`. 한 번에 50MB가 넘으면 회차별로 나눠 커밋·푸시한다. 푸시 전 `git pull --rebase origin main`.
+- 올린 뒤 1~2분 기다렸다가 WebFetch로 새 주소를 열어 제목이 맞는지 확인하고 링크를 드린다(공유 설정은 필요 없다. 모두 공개).
