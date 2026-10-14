@@ -208,6 +208,7 @@ footer .copy{color:var(--ink);font-weight:500}
 .tray{min-height:64px;border:1.5px dashed var(--line);border-radius:10px;padding:10px;transition:border-color .2s,background-color .2s}
 .tray.ok{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
 .tray-empty{font-size:14px;color:var(--muted);align-self:center}
+.tray-end{font-family:var(--serif-en);font-size:17px;color:var(--muted);align-self:center;margin-left:-3px;padding:0 2px}
 .tok{font-family:var(--serif-en);font-size:16.5px;line-height:1.35;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px;text-align:left;transition:border-color .15s,background-color .15s,opacity .15s}
 .tok:hover:not(:disabled){border-color:var(--accent)}
 .tray .tok{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent-ink)}
@@ -231,6 +232,37 @@ footer .copy{color:var(--ink);font-weight:500}
 .dots button{width:26px;height:26px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12px;padding:0;color:var(--muted);font-variant-numeric:tabular-nums}
 .dots button.cur{border-color:var(--accent);color:var(--accent);font-weight:700}
 .dots button.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.brief{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:20px}
+.b-lab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--accent-ink);margin:0 0 8px}
+.b-one{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.b-one p{margin:0;font-family:var(--serif-ko);font-size:18px;line-height:1.7;color:var(--ink)}
+.b-flow{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.b-step{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:0 14px;position:relative;padding-bottom:16px}
+.b-step:last-child{padding-bottom:0}
+.b-step::before{content:"";position:absolute;left:2.8em;top:34px;bottom:2px;border-left:2px solid var(--line)}
+.b-step:last-child::before{display:none}
+.b-go{align-self:start;justify-self:stretch;position:relative;z-index:1;font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:4px 6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.b-go:hover{border-color:var(--accent)}
+.b-step .t{font-weight:700;font-size:15.5px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-top:3px}
+.b-step .d{margin:3px 0 0;font-size:15px;color:var(--muted);line-height:1.7}
+.b-turn{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--ex-soft);color:var(--ex-ink);border:1px solid var(--ex)}
+.b-step.turn .b-go{background:var(--ex-soft);color:var(--ex-ink);border-color:color-mix(in srgb,var(--ex) 45%,transparent)}
+.b-keys{display:flex;flex-wrap:wrap;gap:8px}
+.b-keys span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.b-keys i{font-family:var(--serif-en);font-weight:600;margin-right:6px}
+.b-tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.b-tips li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;font-size:14.5px;line-height:1.7}
+.b-tips b.n{font-size:13px;color:var(--accent-ink);padding-top:1px}
+.b-tips i{font-family:var(--serif-en)}
+.b-ask{display:flex;flex-direction:column;gap:8px}
+.b-ask details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px}
+.b-ask summary{cursor:pointer;font-weight:500;list-style:none;display:flex;gap:8px;align-items:baseline}
+.b-ask summary::-webkit-details-marker{display:none}
+.b-ask summary .bq{flex:1 1 0;min-width:0}
+.b-ask summary::after{content:"생각해 보고 눌러 확인";margin-left:auto;flex:none;font-size:12.5px;color:var(--accent);font-weight:400}
+.b-ask details[open] summary::after{content:"접기"}
+.b-ask details p{margin:8px 0 0;color:var(--accent-ink);background:var(--accent-soft);border-radius:8px;padding:8px 12px;font-size:14.5px}
+@media (max-width:520px){.b-step{grid-template-columns:5.2em minmax(0,1fr);gap:0 10px}.b-step::before{left:2.6em}.b-ask summary{flex-wrap:wrap}.b-ask summary::after{margin-left:2.2em;flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -241,8 +273,19 @@ footer .copy{color:var(--ink);font-weight:500}
     <h1 id="h1"></h1>
     <p class="en-title" id="en-title"></p>
     <p class="gist" id="gist"></p>
-    <nav class="jump" aria-label="바로가기"><a href="#passage">지문</a><a href="#words">단어 정리</a><a href="#wordquiz">단어 퀴즈</a><a href="#mindmap">마인드맵</a><a href="#quiz">확인 퀴즈</a><a href="#order">문장 배열</a><a href="#academy">코코스학원</a></nav>
+    <nav class="jump" aria-label="바로가기"><a href="#brief">먼저 읽기</a><a href="#passage">지문</a><a href="#words">단어 정리</a><a href="#wordquiz">단어 퀴즈</a><a href="#mindmap">마인드맵</a><a href="#quiz">확인 퀴즈</a><a href="#order">문장 배열</a><a href="#academy">코코스학원</a></nav>
   </header>
+
+  <section id="brief" aria-labelledby="h-brief">
+    <div class="sec-head"><div><h2 id="h-brief">먼저 읽어 보세요</h2><p>지문을 읽기 전에 1분만 훑어보세요. 글의 뼈대를 알고 읽으면 훨씬 잘 읽혀요. 문장 번호를 누르면 지문에서 그 문장들이 표시돼요.</p></div></div>
+    <div class="brief">
+      <div class="b-one"><span class="b-lab">한 줄로 말하면</span><p id="b-one"></p></div>
+      <div><span class="b-lab">글의 흐름</span><ol class="b-flow" id="b-flow"></ol></div>
+      <div><span class="b-lab">핵심어</span><div class="b-keys" id="b-keys"></div></div>
+      <div><span class="b-lab">읽다가 막히기 쉬운 곳</span><ul class="b-tips" id="b-tips"></ul></div>
+      <div><span class="b-lab">지문을 다 읽은 뒤에 스스로 답해 보기</span><div class="b-ask" id="b-ask"></div></div>
+    </div>
+  </section>
 
   <section id="passage" aria-labelledby="h-passage">
     <div class="sec-head">
@@ -324,6 +367,27 @@ var DATA = {
   enTitle: 'Safe Threats: Why We Find Pleasure in Harmless Pain',
   gist: '인간은 생존이 위협받지 않는 ‘안전한 위협’ 속에서 고통을 다스리는 숙달감을 보상으로 느끼기 때문에, 매운 칠리처럼 약간의 고통을 주는 활동에서 쾌락을 얻는다. 이렇게 고통 그 자체를 추구하는 것은 인간만의 독특한 특성으로 보인다.',
   footer: '지문 출처: 2024년 6월 부산광역시 교육청 학력평가 41~42번',
+  brief: {
+    one: '매운 음식이나 너무 뜨거운 목욕처럼 조금 아픈 걸 즐기는 건, 그게 <b>아프지만 사실은 안전한 위협</b>이기 때문이에요. 고통을 이겨 내는 느낌이 상처럼 느껴지는 거죠. 이렇게 <b>고통 자체를 찾는 건 사람만의 특징</b>이에요.',
+    flow: [
+      { s: [1, 2, 3], t: '조금 아픈 걸 즐기는 이유', d: '사람은 매운 음식, 센 마사지처럼 살짝 아픈 걸 즐겨. 핵심은 그게 ‘안전한 위협’이라는 거야. 뇌는 아프지만 위험하진 않다고 느껴.' },
+      { s: [4, 5], t: '유머와 닮았어', d: '유머도 규칙을 장난스럽게 깨서 웃음을 주는 ‘안전한 위협’이야. 불편하지만 안전하다고 느끼는 거지.' },
+      { s: [6, 7], turn: '그래서', t: '고통이 아니라 보상', d: '생존이 위험하지 않을 땐 고통을 원하는 게 사실 보상을 원하는 거야. 그 보상은 고통을 다스린다는 느낌에서 와.' },
+      { s: [8, 9, 10, 11], t: '예시 · 칠리 먹기', d: '캡사이신은 혀에서 화상 입을 때와 똑같은 신호를 켜. 몸은 위험하다는데 실제론 안전하다는 걸 알아서 즐거운 거야. 아이들도 반복해서 먹으며 그 맛을 배워.' },
+      { s: [12, 13], turn: '흥미롭게도', t: '사람만 그래', d: '고통 그 자체를 찾는 건 사람뿐이야. 동물은 고통이 늘 즐거운 보상과 바로 이어져야만 칠리를 좋아하게 돼.' }
+    ],
+    keys: [['safe threat', '안전한 위협'], ['mastery over the pain', '고통을 다스리는(이겨 내는) 느낌'], ['uniquely human', '인간만의']],
+    tips: [
+      ['1번', '<i>whether this is found in spicy food, strong massages, or stepping into a too-cold or too-hot bath</i> → ‘그것이 매운 음식이든, 센 마사지든, 너무 차갑거나 뜨거운 목욕이든’이라는 예시예요.'],
+      ['6번', '<i>In this context, where survival is clearly not in danger</i> → ‘생존이 분명히 위험하지 않은 이런 상황에서’예요. 주어는 <i>the desire for pain</i>이고, 이것이 사실은 <i>the desire for a reward</i>라는 게 핵심이에요.'],
+      ['8번', '<i>The closer you look at your chilli-eating habit, the more remarkable it seems.</i> → ‘더 ~할수록 더 ~하다’ 구문이에요. 여기부터 칠리 예시가 시작돼요.'],
+      ['10번', '<i>Knowing that our body is firing off danger signals, but that we are actually completely safe</i>까지가 주어예요. 동사는 <i>produces</i>예요. 제목 문제라면 이 문장이 ‘안전한 위협’을 가장 잘 보여 줘요.']
+    ],
+    ask: [
+      ['고통을 원하는 마음이 사실은 보상을 원하는 것이라고 하는 이유는?', '생존이 위험하지 않은 상황에서는 고통을 다스린다는 숙달감이 보상처럼 느껴지기 때문이에요. (6~7번)'],
+      ['과학자들이 동물에게 칠리를 좋아하게 만든 유일한 방법은?', '고통을 항상 즐거운 보상과 직접 연결하는 것이에요. 고통 그 자체를 찾는 건 인간만의 특징으로 보여요. (12~13번)']
+    ]
+  },
   sentences: [
     { en: 'All humans, to an extent, seek activities that cause a degree of pain in order to experience pleasure, whether this is found in spicy food, strong massages, or stepping into a too-cold or too-hot bath.', ko: '모든 인간은 어느 정도는 쾌락을 경험하기 위해 약간의 고통을 유발하는 활동을 추구한다. 이것이 매운 음식 또는 강한 마사지, 너무 차갑거나 뜨거운 욕조에 들어가기 중 어디에서 발견되든지 간에 말이다.' },
     { en: 'The key is that it is a ‘safe threat’.', ko: '핵심은 그것이 ‘안전한 위협’이라는 점이다.' },
@@ -514,6 +578,26 @@ var SAUDIO = [
   $('yr').textContent=new Date().getFullYear();
   $('chips').innerHTML=DATA.chips.map(function(c){return '<span class="chip">'+c+'</span>'}).join('');
   $('h1').textContent=DATA.h1; $('en-title').textContent=DATA.enTitle; $('gist').textContent=DATA.gist; $('footer').textContent=DATA.footer;
+
+  /* ---- 먼저 읽어 보세요 ---- */
+  (function(){
+    var B=DATA.brief, sec=$('brief'); if(!B||!sec){ if(sec) sec.hidden=true; return; }
+    function rng(a){ return a.length>1&&a[a.length-1]-a[0]===a.length-1 ? a[0]+'~'+a[a.length-1]+'번' : a.join('·')+'번'; }
+    $('b-one').innerHTML=B.one;
+    $('b-flow').innerHTML=B.flow.map(function(f){return '<li class="b-step'+(f.turn?' turn':'')+'"><button type="button" class="b-go" data-s="'+f.s.join(',')+'" aria-label="지문 '+rng(f.s)+' 문장 보기">'+rng(f.s)+'</button><div><div class="t">'+(f.turn?'<span class="b-turn">'+f.turn+'</span>':'')+f.t+'</div><p class="d">'+f.d+'</p></div></li>'}).join('');
+    $('b-keys').innerHTML=B.keys.map(function(k){return '<span><i>'+k[0]+'</i>'+k[1]+'</span>'}).join('');
+    $('b-tips').innerHTML=B.tips.map(function(t){return '<li><b class="n">'+t[0]+'</b><span>'+t[1]+'</span></li>'}).join('');
+    $('b-ask').innerHTML=B.ask.map(function(q,i){return '<details><summary><b>Q'+(i+1)+'.</b><span class="bq">'+q[0]+'</span></summary><p>'+q[1]+'</p></details>'}).join('');
+    $('b-flow').addEventListener('click',function(e){
+      var b=e.target.closest('.b-go'); if(!b) return;
+      var ids=b.getAttribute('data-s').split(',');
+      document.querySelectorAll('.node.active').forEach(function(n){n.classList.remove('active')});
+      document.querySelectorAll('#links path.on').forEach(function(p){p.classList.remove('on')});
+      document.querySelectorAll('.sent').forEach(function(s){s.classList.toggle('hl',ids.indexOf(s.getAttribute('data-s'))>-1)});
+      var first=document.querySelector('.sent[data-s="'+ids[0]+'"]');
+      if(first){ try{ first.scrollIntoView({behavior:'smooth',block:'center'}); }catch(err){ first.scrollIntoView(); } }
+    });
+  })();
   $('en').innerHTML=DATA.sentences.map(function(s,i){return '<li class="sent" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+s.en+'</p><button type="button" class="kbtn" aria-expanded="false">해석 보기</button><p class="ko">'+s.ko+'</p></div></li>'}).join('');
   $('gloss').innerHTML=DATA.gloss.map(function(g){return '<span><i>'+g[0]+'</i> '+g[1]+'</span>'}).join('');
   var koBtn=$('ko-toggle'), sentEls=[].slice.call($('en').querySelectorAll('.sent'));
@@ -814,14 +898,16 @@ var SAUDIO = [
     cur={it:it, tk:tk, slots:bank, bank:bank.slice(), tray:[], bad:{}, tries:0, done:false, shown:false};
     draw();
   }
-  function label(i){ return i===0?lc(cur.tk[0],cur.it):cur.tk[i]; }
+  var END=/[.?!]+[\u201D\u2019"')]*$/;
+  function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
+  function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
     var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';
     h+='<p class="ord-ko"><small>지문 '+it.s+'번 문장</small>'+s.ko+'</p>';
-    h+='<div class="tray'+(cur.done?(cur.shown?' shown':' ok'):'')+'" id="ord-tray" aria-label="내가 만든 문장">'+(cur.tray.length?cur.tray.map(function(i,p){return '<button type="button" class="tok'+(cur.bad[p]?' bad':'')+'" data-t="'+i+'"'+(cur.done?' disabled':' aria-label="'+esc(label(i))+' 빼기"')+'>'+esc(label(i))+'</button>'}).join(''):'<span class="tray-empty">아래 어구를 순서대로 눌러 보세요.</span>')+'</div>';
+    h+='<div class="tray'+(cur.done?(cur.shown?' shown':' ok'):'')+'" id="ord-tray" aria-label="내가 만든 문장">'+(cur.tray.length?cur.tray.map(function(i,p){return '<button type="button" class="tok'+(cur.bad[p]?' bad':'')+'" data-t="'+i+'"'+(cur.done?' disabled':' aria-label="'+esc(label(i))+' 빼기"')+'>'+esc(label(i))+'</button>'}).join(''):'<span class="tray-empty">아래 어구를 순서대로 눌러 보세요.</span>')+(cur.tray.length&&tail()&&cur.tk.length>1?'<span class="tray-end" aria-hidden="true">'+esc(tail())+'</span>':'')+'</div>';
     h+=cur.done?'':'<div class="bank" id="ord-bank">'+cur.slots.map(function(i){var used=cur.bank.indexOf(i)<0;return '<button type="button" class="tok'+(used?' used':'')+'" data-b="'+i+'"'+(used?' disabled aria-hidden="true" tabindex="-1"':'')+'>'+esc(label(i))+'</button>'}).join('')+'</div>';
     var msg='';
     if(cur.done) msg=cur.shown?'<b class="no">정답을 확인했어요.</b> 다음에 다시 도전해 보세요.':'<b class="ok">정답!</b> '+(cur.tries?'고쳐서 완성했어요.':'한 번에 맞혔어요.');
@@ -880,7 +966,7 @@ var SAUDIO = [
     for(var i=0;i<others.length;i++){ var r=others[i].getBoundingClientRect();
       if(y<r.top||(y<=r.bottom&&x<r.left+r.width/2)){ before=others[i]; break; } }
     if(before){ if(el.nextSibling!==before) tray.insertBefore(el,before); }
-    else if(tray.lastElementChild!==el) tray.appendChild(el);
+    else { var tl=tray.querySelector('.tray-end'); if(tl){ if(el.nextSibling!==tl) tray.insertBefore(el,tl); } else if(tray.lastElementChild!==el) tray.appendChild(el); }
   }
   function dEnd(){
     if(!drag) return false;

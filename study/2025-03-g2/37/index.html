@@ -208,6 +208,7 @@ footer .copy{color:var(--ink);font-weight:500}
 .tray{min-height:64px;border:1.5px dashed var(--line);border-radius:10px;padding:10px;transition:border-color .2s,background-color .2s}
 .tray.ok{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
 .tray-empty{font-size:14px;color:var(--muted);align-self:center}
+.tray-end{font-family:var(--serif-en);font-size:17px;color:var(--muted);align-self:center;margin-left:-3px;padding:0 2px}
 .tok{font-family:var(--serif-en);font-size:16.5px;line-height:1.35;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px;text-align:left;transition:border-color .15s,background-color .15s,opacity .15s}
 .tok:hover:not(:disabled){border-color:var(--accent)}
 .tray .tok{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent-ink)}
@@ -231,6 +232,37 @@ footer .copy{color:var(--ink);font-weight:500}
 .dots button{width:26px;height:26px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12px;padding:0;color:var(--muted);font-variant-numeric:tabular-nums}
 .dots button.cur{border-color:var(--accent);color:var(--accent);font-weight:700}
 .dots button.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.brief{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:20px}
+.b-lab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--accent-ink);margin:0 0 8px}
+.b-one{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.b-one p{margin:0;font-family:var(--serif-ko);font-size:18px;line-height:1.7;color:var(--ink)}
+.b-flow{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.b-step{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:0 14px;position:relative;padding-bottom:16px}
+.b-step:last-child{padding-bottom:0}
+.b-step::before{content:"";position:absolute;left:2.8em;top:34px;bottom:2px;border-left:2px solid var(--line)}
+.b-step:last-child::before{display:none}
+.b-go{align-self:start;justify-self:stretch;position:relative;z-index:1;font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:4px 6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.b-go:hover{border-color:var(--accent)}
+.b-step .t{font-weight:700;font-size:15.5px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-top:3px}
+.b-step .d{margin:3px 0 0;font-size:15px;color:var(--muted);line-height:1.7}
+.b-turn{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--ex-soft);color:var(--ex-ink);border:1px solid var(--ex)}
+.b-step.turn .b-go{background:var(--ex-soft);color:var(--ex-ink);border-color:color-mix(in srgb,var(--ex) 45%,transparent)}
+.b-keys{display:flex;flex-wrap:wrap;gap:8px}
+.b-keys span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.b-keys i{font-family:var(--serif-en);font-weight:600;margin-right:6px}
+.b-tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.b-tips li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;font-size:14.5px;line-height:1.7}
+.b-tips b.n{font-size:13px;color:var(--accent-ink);padding-top:1px}
+.b-tips i{font-family:var(--serif-en)}
+.b-ask{display:flex;flex-direction:column;gap:8px}
+.b-ask details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px}
+.b-ask summary{cursor:pointer;font-weight:500;list-style:none;display:flex;gap:8px;align-items:baseline}
+.b-ask summary::-webkit-details-marker{display:none}
+.b-ask summary .bq{flex:1 1 0;min-width:0}
+.b-ask summary::after{content:"생각해 보고 눌러 확인";margin-left:auto;flex:none;font-size:12.5px;color:var(--accent);font-weight:400}
+.b-ask details[open] summary::after{content:"접기"}
+.b-ask details p{margin:8px 0 0;color:var(--accent-ink);background:var(--accent-soft);border-radius:8px;padding:8px 12px;font-size:14.5px}
+@media (max-width:520px){.b-step{grid-template-columns:5.2em minmax(0,1fr);gap:0 10px}.b-step::before{left:2.6em}.b-ask summary{flex-wrap:wrap}.b-ask summary::after{margin-left:2.2em;flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -241,8 +273,19 @@ footer .copy{color:var(--ink);font-weight:500}
     <h1 id="h1"></h1>
     <p class="en-title" id="en-title"></p>
     <p class="gist" id="gist"></p>
-    <nav class="jump" aria-label="바로가기"><a href="#passage">지문</a><a href="#words">단어 정리</a><a href="#wordquiz">단어 퀴즈</a><a href="#mindmap">마인드맵</a><a href="#quiz">확인 퀴즈</a><a href="#order">문장 배열</a><a href="#academy">코코스학원</a></nav>
+    <nav class="jump" aria-label="바로가기"><a href="#brief">먼저 읽기</a><a href="#passage">지문</a><a href="#words">단어 정리</a><a href="#wordquiz">단어 퀴즈</a><a href="#mindmap">마인드맵</a><a href="#quiz">확인 퀴즈</a><a href="#order">문장 배열</a><a href="#academy">코코스학원</a></nav>
   </header>
+
+  <section id="brief" aria-labelledby="h-brief">
+    <div class="sec-head"><div><h2 id="h-brief">먼저 읽어 보세요</h2><p>지문을 읽기 전에 1분만 훑어보세요. 글의 뼈대를 알고 읽으면 훨씬 잘 읽혀요. 문장 번호를 누르면 지문에서 그 문장들이 표시돼요.</p></div></div>
+    <div class="brief">
+      <div class="b-one"><span class="b-lab">한 줄로 말하면</span><p id="b-one"></p></div>
+      <div><span class="b-lab">글의 흐름</span><ol class="b-flow" id="b-flow"></ol></div>
+      <div><span class="b-lab">핵심어</span><div class="b-keys" id="b-keys"></div></div>
+      <div><span class="b-lab">읽다가 막히기 쉬운 곳</span><ul class="b-tips" id="b-tips"></ul></div>
+      <div><span class="b-lab">지문을 다 읽은 뒤에 스스로 답해 보기</span><div class="b-ask" id="b-ask"></div></div>
+    </div>
+  </section>
 
   <section id="passage" aria-labelledby="h-passage">
     <div class="sec-head">
@@ -324,6 +367,25 @@ var DATA = {
   enTitle: 'How Chronic Stress Reshapes the Brain’s Hippocampus',
   gist: '스트레스는 신체 질환뿐 아니라 뇌의 구조에도 영향을 미친다. 오랜 스트레스는 회복력과 기분 조절, 위험 감시를 맡는 해마를 줄어들게 하고 혼란시켜, 우리를 싸우거나 달아나거나 얼어붙는 지속적인 비상 상태에 가둘 수 있다.',
   footer: '지문 출처: 2025년 3월 서울특별시 교육청 학력평가 37번',
+  brief: {
+    one: '스트레스는 몸뿐 아니라 <b>뇌의 구조</b>까지 바꿔요. 오래된 스트레스는 마음을 지켜 주는 <b>해마를 작게 만들고 헷갈리게 해서</b> 우리를 계속 비상 상태에 가둘 수 있어요.',
+    flow: [
+      { s: [1, 2, 3], t: '스트레스와 뇌', d: '스트레스는 뇌 구조까지 바꿔. 연구해 보니 오래 스트레스를 겪은 사람은 해마가 더 작았대.' },
+      { s: [4, 5, 6, 7], t: '해마가 하는 일', d: '그게 왜 중요하냐고? 해마는 스트레스를 견디게 하고, 기분을 조절하고, 위험을 기억해서 피하게 도와주거든.' },
+      { s: [8], turn: '하지만', t: '오랜 스트레스의 결과', d: '스트레스가 계속되면 해마가 헷갈려서 스트레스 신호를 끄지 못하고 켜 버려. 그럼 계속 싸우거나 도망치거나 얼어붙는 상태에 갇혀.' }
+    ],
+    keys: [['hippocampus', '해마(뇌의 한 부분)'], ['resilient', '회복력 있는, 잘 버티는'], ['chronic stress', '만성 스트레스']],
+    tips: [
+      ['1번', '<i>not only affects physical disease but also the very structure of our brains</i> → not only A but also B예요. <i>the very</i>는 ‘바로 그, ~자체’라는 강조예요.'],
+      ['4번', '<i>Why does this matter?</i> → <i>this</i>는 3번의 ‘오랜 스트레스와 작아진 해마의 관련’을 가리켜요. 이 질문 뒤에 해마의 역할이 이어져요.'],
+      ['5번', '<i>This part of the brain</i> → 해마(<i>hippocampus</i>)를 가리켜요. 6~7번의 <i>It</i>도 모두 해마예요.'],
+      ['8번', '<i>turning signals for cortisol “on” instead of “off,”</i> → 스트레스 호르몬 신호를 꺼야 할 때 오히려 켠다는 뜻이에요. <i>which</i>는 앞 내용 전체를 받아요.']
+    ],
+    ask: [
+      ['해마는 어떤 일을 할까?', '스트레스에 맞서 회복력을 유지하게 돕고, 기분을 조절하고, 주변이 안전한지 살피며 위험한 이미지를 장기 기억에 저장해 나중에 피하게 해 줘요. (5~6번)'],
+      ['만성 스트레스는 해마에 어떤 영향을 줄까?', '해마를 혼란스럽게 해서 코르티솔 신호를 끄지 않고 켜게 만들어요. 그래서 싸우거나 도망치거나 얼어붙는 상태에 계속 갇힐 수 있어요. (8번)']
+    ]
+  },
   sentences: [
     { en: 'Stress not only affects physical disease but also the very structure of our brains, making us even more likely to experience a drained brain.', ko: '스트레스는 신체 질환뿐만 아니라 뇌의 구조 자체에도 영향을 미쳐, 우리가 피로한 뇌를 경험할 가능성이 훨씬 더 높아지도록 만든다.' },
     { en: 'A number of studies have been done to reveal what happens in healthy people’s brains when they go through something stressful.', ko: '건강한 사람들이 스트레스를 겪을 때 그들의 뇌에서 어떤 일이 일어나는지 밝혀내기 위해 많은 연구가 진행되었다.' },
@@ -496,6 +558,26 @@ var SAUDIO = [
   $('yr').textContent=new Date().getFullYear();
   $('chips').innerHTML=DATA.chips.map(function(c){return '<span class="chip">'+c+'</span>'}).join('');
   $('h1').textContent=DATA.h1; $('en-title').textContent=DATA.enTitle; $('gist').textContent=DATA.gist; $('footer').textContent=DATA.footer;
+
+  /* ---- 먼저 읽어 보세요 ---- */
+  (function(){
+    var B=DATA.brief, sec=$('brief'); if(!B||!sec){ if(sec) sec.hidden=true; return; }
+    function rng(a){ return a.length>1&&a[a.length-1]-a[0]===a.length-1 ? a[0]+'~'+a[a.length-1]+'번' : a.join('·')+'번'; }
+    $('b-one').innerHTML=B.one;
+    $('b-flow').innerHTML=B.flow.map(function(f){return '<li class="b-step'+(f.turn?' turn':'')+'"><button type="button" class="b-go" data-s="'+f.s.join(',')+'" aria-label="지문 '+rng(f.s)+' 문장 보기">'+rng(f.s)+'</button><div><div class="t">'+(f.turn?'<span class="b-turn">'+f.turn+'</span>':'')+f.t+'</div><p class="d">'+f.d+'</p></div></li>'}).join('');
+    $('b-keys').innerHTML=B.keys.map(function(k){return '<span><i>'+k[0]+'</i>'+k[1]+'</span>'}).join('');
+    $('b-tips').innerHTML=B.tips.map(function(t){return '<li><b class="n">'+t[0]+'</b><span>'+t[1]+'</span></li>'}).join('');
+    $('b-ask').innerHTML=B.ask.map(function(q,i){return '<details><summary><b>Q'+(i+1)+'.</b><span class="bq">'+q[0]+'</span></summary><p>'+q[1]+'</p></details>'}).join('');
+    $('b-flow').addEventListener('click',function(e){
+      var b=e.target.closest('.b-go'); if(!b) return;
+      var ids=b.getAttribute('data-s').split(',');
+      document.querySelectorAll('.node.active').forEach(function(n){n.classList.remove('active')});
+      document.querySelectorAll('#links path.on').forEach(function(p){p.classList.remove('on')});
+      document.querySelectorAll('.sent').forEach(function(s){s.classList.toggle('hl',ids.indexOf(s.getAttribute('data-s'))>-1)});
+      var first=document.querySelector('.sent[data-s="'+ids[0]+'"]');
+      if(first){ try{ first.scrollIntoView({behavior:'smooth',block:'center'}); }catch(err){ first.scrollIntoView(); } }
+    });
+  })();
   $('en').innerHTML=DATA.sentences.map(function(s,i){return '<li class="sent" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+s.en+'</p><button type="button" class="kbtn" aria-expanded="false">해석 보기</button><p class="ko">'+s.ko+'</p></div></li>'}).join('');
   $('gloss').innerHTML=DATA.gloss.map(function(g){return '<span><i>'+g[0]+'</i> '+g[1]+'</span>'}).join('');
   var koBtn=$('ko-toggle'), sentEls=[].slice.call($('en').querySelectorAll('.sent'));
@@ -796,14 +878,16 @@ var SAUDIO = [
     cur={it:it, tk:tk, slots:bank, bank:bank.slice(), tray:[], bad:{}, tries:0, done:false, shown:false};
     draw();
   }
-  function label(i){ return i===0?lc(cur.tk[0],cur.it):cur.tk[i]; }
+  var END=/[.?!]+[\u201D\u2019"')]*$/;
+  function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
+  function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
     var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';
     h+='<p class="ord-ko"><small>지문 '+it.s+'번 문장</small>'+s.ko+'</p>';
-    h+='<div class="tray'+(cur.done?(cur.shown?' shown':' ok'):'')+'" id="ord-tray" aria-label="내가 만든 문장">'+(cur.tray.length?cur.tray.map(function(i,p){return '<button type="button" class="tok'+(cur.bad[p]?' bad':'')+'" data-t="'+i+'"'+(cur.done?' disabled':' aria-label="'+esc(label(i))+' 빼기"')+'>'+esc(label(i))+'</button>'}).join(''):'<span class="tray-empty">아래 어구를 순서대로 눌러 보세요.</span>')+'</div>';
+    h+='<div class="tray'+(cur.done?(cur.shown?' shown':' ok'):'')+'" id="ord-tray" aria-label="내가 만든 문장">'+(cur.tray.length?cur.tray.map(function(i,p){return '<button type="button" class="tok'+(cur.bad[p]?' bad':'')+'" data-t="'+i+'"'+(cur.done?' disabled':' aria-label="'+esc(label(i))+' 빼기"')+'>'+esc(label(i))+'</button>'}).join(''):'<span class="tray-empty">아래 어구를 순서대로 눌러 보세요.</span>')+(cur.tray.length&&tail()&&cur.tk.length>1?'<span class="tray-end" aria-hidden="true">'+esc(tail())+'</span>':'')+'</div>';
     h+=cur.done?'':'<div class="bank" id="ord-bank">'+cur.slots.map(function(i){var used=cur.bank.indexOf(i)<0;return '<button type="button" class="tok'+(used?' used':'')+'" data-b="'+i+'"'+(used?' disabled aria-hidden="true" tabindex="-1"':'')+'>'+esc(label(i))+'</button>'}).join('')+'</div>';
     var msg='';
     if(cur.done) msg=cur.shown?'<b class="no">정답을 확인했어요.</b> 다음에 다시 도전해 보세요.':'<b class="ok">정답!</b> '+(cur.tries?'고쳐서 완성했어요.':'한 번에 맞혔어요.');
@@ -862,7 +946,7 @@ var SAUDIO = [
     for(var i=0;i<others.length;i++){ var r=others[i].getBoundingClientRect();
       if(y<r.top||(y<=r.bottom&&x<r.left+r.width/2)){ before=others[i]; break; } }
     if(before){ if(el.nextSibling!==before) tray.insertBefore(el,before); }
-    else if(tray.lastElementChild!==el) tray.appendChild(el);
+    else { var tl=tray.querySelector('.tray-end'); if(tl){ if(el.nextSibling!==tl) tray.insertBefore(el,tl); } else if(tray.lastElementChild!==el) tray.appendChild(el); }
   }
   function dEnd(){
     if(!drag) return false;
