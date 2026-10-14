@@ -48,7 +48,39 @@ lists = [
     {'t': '학생용 자료실', 'd': '학생에게 보내는 주소 cocosedu.kr/library', 'href': '../library/'},
 ]
 n_drafts = sum(len(g['items']) for s in sections for g in s['groups'])
-data = json.dumps({'lists': lists, 'sections': sections}, ensure_ascii=False)
+
+# 학생용 주소(회차별): 자료실 데이터에서 만든다
+BASE = 'https://cocosedu.kr/'
+lib = open('library/index.html', encoding='utf8').read()
+LD = json.JSONDecoder().raw_decode(lib[lib.index('var D = ') + 8:])[0]
+def full(href): return BASE + href.replace('../', '', 1)
+have = {c['href'] for k in LD for c in LD[k]}
+rgroups = {}
+for c in LD.get('study', []):
+    slug = c['href'].strip('/').split('/')[-1]
+    links = [['온라인 학습지', full(c['href'])]]
+    for k, lab in (('syn', '동의어·반의어'), ('game', '단어게임')):
+        h = f'../{k}/{slug}/'
+        if h in have: links.append([lab, full(h)])
+    rgroups.setdefault(f"{c['y']}년 학력평가", []).append({'t': c['t'].split('년 ', 1)[-1], 'links': links})
+for c in LD.get('school', []):
+    slug = c['href'].strip('/').split('/')[-1]
+    term = c['href'].strip('/').split('/')[-2]
+    links = [['온라인 학습지', full(c['href'])]]
+    h = f'../syn/{term}-{slug}/'
+    if h in have: links.append(['동의어·반의어', full(h)])
+    rgroups.setdefault('2026년 2학기 중간고사 · 학교별', []).append({'t': c['t'], 'links': links})
+for c in LD.get('textbook', []):
+    links = [['온라인 학습지', full(c['href'])]]
+    for sc in LD.get('syn', []):
+        if sc.get('grp') == c.get('grp') and sc['href'].startswith('../syn/neo2'):
+            links.append(['동의어·반의어(1~3과)', full(sc['href'])])
+    rgroups.setdefault(c.get('grp') or '교과서', []).append({'t': c['t'], 'links': links})
+def rorder(g):
+    m = re.match(r'(\d{4})년 학력평가', g)
+    return (0, -int(m.group(1))) if m else ((1, 0) if '학교별' in g else (2, 0))
+rounds = [{'g': g, 'items': rgroups[g]} for g in sorted(rgroups, key=rorder)]
+data = json.dumps({'lists': lists, 'sections': sections, 'rounds': rounds}, ensure_ascii=False)
 
 page = '''<!doctype html>
 <html lang="ko">
@@ -99,6 +131,20 @@ section.kind h3{margin:0;font-size:19px;font-weight:600}
 .items a{font-size:14.5px;padding:6px 12px;border:1px solid var(--line);background:#fff;text-decoration:none;white-space:nowrap}
 .items a:hover{border-color:var(--gold-deep);color:var(--gold-deep)}
 .empty{color:var(--muted)}
+.rounds{display:flex;flex-direction:column;gap:30px}
+.rg h3{margin:0 0 6px;font-size:19px;font-weight:600}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:8px 20px;align-items:start;padding:14px 0;border-top:1px solid var(--line)}
+@media (max-width:760px){.row{grid-template-columns:1fr}}
+.row .t{font-weight:500;padding-top:4px}
+.urls{display:flex;flex-direction:column;gap:6px;min-width:0}
+.url{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0}
+.url .lab{font-size:13px;color:var(--muted);width:96px;flex:none}
+.url code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:13.5px;background:#fff;border:1px solid var(--line);padding:3px 8px;overflow-wrap:anywhere;user-select:all;min-width:0}
+.cp{font:inherit;font-size:13px;padding:4px 10px;border:1px solid var(--line);background:#fff;cursor:pointer;color:var(--ink)}
+.cp:hover{border-color:var(--gold-deep);color:var(--gold-deep)}
+.cp.all{border-color:var(--ink);font-weight:500;white-space:nowrap}
+.cp.done{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cp:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 footer{color:var(--muted);font-size:13px}
 footer .wrap{padding-block:0 40px}
 </style>
@@ -115,6 +161,12 @@ footer .wrap{padding-block:0 40px}
 <main>
   <div class="wrap">
     <div class="lists" id="lists"></div>
+    <div>
+      <div class="tools"><h2>학생용 주소<small>블로그·카카오톡에 붙여 넣기</small></h2>
+        <input class="search" id="q2" type="search" placeholder="찾기 (예: 2025 3월, 동광고, 1과)" aria-label="회차 찾기"></div>
+      <p style="margin:12px 0 0;color:var(--muted);font-size:14px">주소 옆 ‘복사’를 누르거나, 줄마다 ‘블로그용 한 번에 복사’로 세 줄을 한꺼번에 복사해요. 주소를 길게 누르면 전체가 선택돼요.</p>
+    </div>
+    <div class="rounds" id="rounds"></div>
     <div>
       <div class="tools"><h2>블로그 원고<small>__N__개</small></h2>
         <input class="search" id="q" type="search" placeholder="찾기 (예: 2025 3월, 고2, 동광고)" aria-label="원고 찾기"></div>
@@ -142,6 +194,28 @@ var D = __DATA__;
   }
   document.getElementById('q').addEventListener('input',render);
   render();
+  function copyText(t,btn){
+    function ok(){var o=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');setTimeout(function(){btn.textContent=o;btn.classList.remove('done')},1600)}
+    function fallback(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();var r=false;try{r=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);if(r)ok();else btn.textContent='길게 눌러 복사해 주세요'}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fallback)}else fallback();
+  }
+  function renderRounds(){
+    var q=document.getElementById('q2').value.trim().toLowerCase().replace(/\\s+/g,'');
+    var html=D.rounds.map(function(g){
+      var rows=g.items.filter(function(it){return !q||(g.g+it.t).toLowerCase().replace(/\\s+/g,'').indexOf(q)>-1});
+      if(!rows.length) return '';
+      return '<section class="rg"><h3>'+esc(g.g)+'</h3>'+rows.map(function(it){
+        var block=it.links.map(function(l){return '▶ '+l[0]+'\\n'+l[1]}).join('\\n');
+        return '<div class="row"><span class="t">'+esc(it.t)+'</span><div class="urls">'+it.links.map(function(l){
+          return '<div class="url"><span class="lab">'+esc(l[0])+'</span><code>'+esc(l[1])+'</code><button type="button" class="cp" data-t="'+esc(l[1])+'">복사</button></div>'}).join('')+
+          '</div><button type="button" class="cp all" data-t="'+esc(block)+'">블로그용 한 번에 복사</button></div>';
+      }).join('')+'</section>';
+    }).join('');
+    document.getElementById('rounds').innerHTML=html||'<p class="empty">찾는 회차가 없어요.</p>';
+  }
+  document.getElementById('q2').addEventListener('input',renderRounds);
+  document.getElementById('rounds').addEventListener('click',function(e){var b=e.target.closest('.cp');if(b)copyText(b.getAttribute('data-t'),b)});
+  renderRounds();
 })();
 </script>
 </body>
