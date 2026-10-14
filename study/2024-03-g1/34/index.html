@@ -208,6 +208,7 @@ footer .copy{color:var(--ink);font-weight:500}
 .tray{min-height:64px;border:1.5px dashed var(--line);border-radius:10px;padding:10px;transition:border-color .2s,background-color .2s}
 .tray.ok{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
 .tray-empty{font-size:14px;color:var(--muted);align-self:center}
+.tray-end{font-family:var(--serif-en);font-size:17px;color:var(--muted);align-self:center;margin-left:-3px;padding:0 2px}
 .tok{font-family:var(--serif-en);font-size:16.5px;line-height:1.35;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px;text-align:left;transition:border-color .15s,background-color .15s,opacity .15s}
 .tok:hover:not(:disabled){border-color:var(--accent)}
 .tray .tok{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent-ink)}
@@ -231,6 +232,37 @@ footer .copy{color:var(--ink);font-weight:500}
 .dots button{width:26px;height:26px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12px;padding:0;color:var(--muted);font-variant-numeric:tabular-nums}
 .dots button.cur{border-color:var(--accent);color:var(--accent);font-weight:700}
 .dots button.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.brief{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:20px}
+.b-lab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--accent-ink);margin:0 0 8px}
+.b-one{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.b-one p{margin:0;font-family:var(--serif-ko);font-size:18px;line-height:1.7;color:var(--ink)}
+.b-flow{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.b-step{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:0 14px;position:relative;padding-bottom:16px}
+.b-step:last-child{padding-bottom:0}
+.b-step::before{content:"";position:absolute;left:2.8em;top:34px;bottom:2px;border-left:2px solid var(--line)}
+.b-step:last-child::before{display:none}
+.b-go{align-self:start;justify-self:stretch;position:relative;z-index:1;font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:4px 6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.b-go:hover{border-color:var(--accent)}
+.b-step .t{font-weight:700;font-size:15.5px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-top:3px}
+.b-step .d{margin:3px 0 0;font-size:15px;color:var(--muted);line-height:1.7}
+.b-turn{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--ex-soft);color:var(--ex-ink);border:1px solid var(--ex)}
+.b-step.turn .b-go{background:var(--ex-soft);color:var(--ex-ink);border-color:color-mix(in srgb,var(--ex) 45%,transparent)}
+.b-keys{display:flex;flex-wrap:wrap;gap:8px}
+.b-keys span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.b-keys i{font-family:var(--serif-en);font-weight:600;margin-right:6px}
+.b-tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.b-tips li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;font-size:14.5px;line-height:1.7}
+.b-tips b.n{font-size:13px;color:var(--accent-ink);padding-top:1px}
+.b-tips i{font-family:var(--serif-en)}
+.b-ask{display:flex;flex-direction:column;gap:8px}
+.b-ask details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px}
+.b-ask summary{cursor:pointer;font-weight:500;list-style:none;display:flex;gap:8px;align-items:baseline}
+.b-ask summary::-webkit-details-marker{display:none}
+.b-ask summary .bq{flex:1 1 0;min-width:0}
+.b-ask summary::after{content:"생각해 보고 눌러 확인";margin-left:auto;flex:none;font-size:12.5px;color:var(--accent);font-weight:400}
+.b-ask details[open] summary::after{content:"접기"}
+.b-ask details p{margin:8px 0 0;color:var(--accent-ink);background:var(--accent-soft);border-radius:8px;padding:8px 12px;font-size:14.5px}
+@media (max-width:520px){.b-step{grid-template-columns:5.2em minmax(0,1fr);gap:0 10px}.b-step::before{left:2.6em}.b-ask summary{flex-wrap:wrap}.b-ask summary::after{margin-left:2.2em;flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -241,8 +273,19 @@ footer .copy{color:var(--ink);font-weight:500}
     <h1 id="h1"></h1>
     <p class="en-title" id="en-title"></p>
     <p class="gist" id="gist"></p>
-    <nav class="jump" aria-label="바로가기"><a href="#passage">지문</a><a href="#words">단어 정리</a><a href="#wordquiz">단어 퀴즈</a><a href="#mindmap">마인드맵</a><a href="#quiz">확인 퀴즈</a><a href="#order">문장 배열</a><a href="#academy">코코스학원</a></nav>
+    <nav class="jump" aria-label="바로가기"><a href="#brief">먼저 읽기</a><a href="#passage">지문</a><a href="#words">단어 정리</a><a href="#wordquiz">단어 퀴즈</a><a href="#mindmap">마인드맵</a><a href="#quiz">확인 퀴즈</a><a href="#order">문장 배열</a><a href="#academy">코코스학원</a></nav>
   </header>
+
+  <section id="brief" aria-labelledby="h-brief">
+    <div class="sec-head"><div><h2 id="h-brief">먼저 읽어 보세요</h2><p>지문을 읽기 전에 1분만 훑어보세요. 글의 뼈대를 알고 읽으면 훨씬 잘 읽혀요. 문장 번호를 누르면 지문에서 그 문장들이 표시돼요.</p></div></div>
+    <div class="brief">
+      <div class="b-one"><span class="b-lab">한 줄로 말하면</span><p id="b-one"></p></div>
+      <div><span class="b-lab">글의 흐름</span><ol class="b-flow" id="b-flow"></ol></div>
+      <div><span class="b-lab">핵심어</span><div class="b-keys" id="b-keys"></div></div>
+      <div><span class="b-lab">읽다가 막히기 쉬운 곳</span><ul class="b-tips" id="b-tips"></ul></div>
+      <div><span class="b-lab">지문을 다 읽은 뒤에 스스로 답해 보기</span><div class="b-ask" id="b-ask"></div></div>
+    </div>
+  </section>
 
   <section id="passage" aria-labelledby="h-passage">
     <div class="sec-head">
@@ -324,6 +367,26 @@ var DATA = {
   enTitle: 'The Curse of Knowledge: Seeing Learning Through Students’ Eyes',
   gist: '전문가는 자신이 배울 때 얼마나 어려웠는지 잊고 초보자에게 과업이 얼마나 어려운지에 무감각해지기 쉽다(지식의 저주). 그러므로 가르치는 사람은 학습 과정을 학생의 눈을 통해 바라봐야 한다.',
   footer: '지문 출처: 2024년 3월 서울특별시 교육청 학력평가 34번',
+  brief: {
+    one: '어떤 일을 잘하게 된 사람은 처음 배울 때 <b>얼마나 어려웠는지 잊어버려요</b>. 그래서 가르치는 사람은 내 생각대로가 아니라 <b>학생의 눈으로</b> 배우는 과정을 봐야 해요.',
+    flow: [
+      { s: [1], t: '전문가의 어려움', d: '어떤 분야를 잘 아는 사람이 오히려 초보자를 가르칠 때 힘들어한다는 연구가 많아.' },
+      { s: [2, 3], t: '휴대 전화 실험 · 지식의 저주', d: '휴대 전화를 잘 쓰는 사람이 초보자보다 ‘배우는 데 얼마나 걸릴지’를 훨씬 못 맞혔어. 초보자에게 뭐가 어려운지 둔감해지는 거야. 이걸 ‘지식의 저주’라고 해.' },
+      { s: [4, 5], t: '자기 경험까지 잊어', d: '기술을 익히고 나면 그게 쉬워 보이기 시작해. 심지어 자기가 배우는 데 걸린 시간까지 짧게 기억했대.' },
+      { s: [6], turn: '그러니까', t: '가르치는 사람에게 필요한 것', d: '전문가는 배움의 어려움을 잊으니까, ‘학생은 이렇게 배워야 해’라고 짐작하지 말고 학생의 눈으로 봐야 해.' }
+    ],
+    keys: [['curse of knowledge', '지식의 저주(알고 나면 모르는 사람 마음을 모름)'], ['underestimate', '실제보다 낮게 보다'], ['through students’ eyes', '학생의 눈으로']],
+    tips: [
+      ['2번', '<i>people expert in using mobile phones</i> → <i>expert</i> 앞에 who are가 생략됐어요. ‘휴대 전화 사용에 능숙한 사람들’이 주어예요. 동사는 <i>were</i>예요.'],
+      ['3번', '<i>an effect referred to as the ‘curse of knowledge’</i> → 앞 내용 전체를 다시 받아서 ‘이걸 지식의 저주라고 부른다’고 이름 붙이는 부분이에요.'],
+      ['5번', '<i>even underestimated</i> → <i>even</i>(심지어)은 4번보다 더 놀라운 결과를 덧붙여요. 남의 어려움뿐 아니라 자기 경험까지 잊었다는 거예요.'],
+      ['6번', '<i>Knowing that experts forget ~</i>는 분사구문으로 ‘~을 알기에’예요. <i>rather than</i> 앞의 ‘학생의 눈으로 보기’가 글의 결론이에요. 빈칸이라면 이 문장을 봐요.']
+    ],
+    ask: [
+      ['휴대 전화 실험에서 전문가는 무엇을 잘 못 했나요?', '사람들이 휴대 전화 사용법을 배우는 데 얼마나 오래 걸리는지를 초보자보다 훨씬 부정확하게 판단했어요. (2번)'],
+      ['이 글이 가르치는 사람에게 하는 충고는 무엇일까?', '학생이 어떻게 배워야 한다고 짐작하지 말고, 학생의 눈으로 학습 과정을 바라봐야 한다는 거예요. (6번)']
+    ]
+  },
   sentences: [
     { en: 'A number of research studies have shown how experts in a field often experience difficulties when introducing newcomers to that field.', ko: '많은 조사 연구는 한 분야의 전문가가 그 분야로 초보자를 입문시킬 때 어떻게 어려움을 종종 겪는지를 보여 주었다.' },
     { en: 'For example, in a genuine training situation, Dr Pamela Hinds found that people expert in using mobile phones were remarkably less accurate than novice phone users in judging how long it takes people to learn to use the phones.', ko: '예를 들어, 실제 교육 상황에서 Pamela Hinds 박사는 휴대 전화기를 사용하는 데 능숙한 사람들이 휴대 전화기 사용법을 배우는 것에 얼마나 오랜 시간이 걸리는지를 판단하는 데 있어서, 초보 휴대 전화기 사용자보다 놀랍도록 덜 정확하다는 것을 알아냈다.' },
@@ -481,6 +544,26 @@ var SAUDIO = [
   $('yr').textContent=new Date().getFullYear();
   $('chips').innerHTML=DATA.chips.map(function(c){return '<span class="chip">'+c+'</span>'}).join('');
   $('h1').textContent=DATA.h1; $('en-title').textContent=DATA.enTitle; $('gist').textContent=DATA.gist; $('footer').textContent=DATA.footer;
+
+  /* ---- 먼저 읽어 보세요 ---- */
+  (function(){
+    var B=DATA.brief, sec=$('brief'); if(!B||!sec){ if(sec) sec.hidden=true; return; }
+    function rng(a){ return a.length>1&&a[a.length-1]-a[0]===a.length-1 ? a[0]+'~'+a[a.length-1]+'번' : a.join('·')+'번'; }
+    $('b-one').innerHTML=B.one;
+    $('b-flow').innerHTML=B.flow.map(function(f){return '<li class="b-step'+(f.turn?' turn':'')+'"><button type="button" class="b-go" data-s="'+f.s.join(',')+'" aria-label="지문 '+rng(f.s)+' 문장 보기">'+rng(f.s)+'</button><div><div class="t">'+(f.turn?'<span class="b-turn">'+f.turn+'</span>':'')+f.t+'</div><p class="d">'+f.d+'</p></div></li>'}).join('');
+    $('b-keys').innerHTML=B.keys.map(function(k){return '<span><i>'+k[0]+'</i>'+k[1]+'</span>'}).join('');
+    $('b-tips').innerHTML=B.tips.map(function(t){return '<li><b class="n">'+t[0]+'</b><span>'+t[1]+'</span></li>'}).join('');
+    $('b-ask').innerHTML=B.ask.map(function(q,i){return '<details><summary><b>Q'+(i+1)+'.</b><span class="bq">'+q[0]+'</span></summary><p>'+q[1]+'</p></details>'}).join('');
+    $('b-flow').addEventListener('click',function(e){
+      var b=e.target.closest('.b-go'); if(!b) return;
+      var ids=b.getAttribute('data-s').split(',');
+      document.querySelectorAll('.node.active').forEach(function(n){n.classList.remove('active')});
+      document.querySelectorAll('#links path.on').forEach(function(p){p.classList.remove('on')});
+      document.querySelectorAll('.sent').forEach(function(s){s.classList.toggle('hl',ids.indexOf(s.getAttribute('data-s'))>-1)});
+      var first=document.querySelector('.sent[data-s="'+ids[0]+'"]');
+      if(first){ try{ first.scrollIntoView({behavior:'smooth',block:'center'}); }catch(err){ first.scrollIntoView(); } }
+    });
+  })();
   $('en').innerHTML=DATA.sentences.map(function(s,i){return '<li class="sent" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+s.en+'</p><button type="button" class="kbtn" aria-expanded="false">해석 보기</button><p class="ko">'+s.ko+'</p></div></li>'}).join('');
   $('gloss').innerHTML=DATA.gloss.map(function(g){return '<span><i>'+g[0]+'</i> '+g[1]+'</span>'}).join('');
   var koBtn=$('ko-toggle'), sentEls=[].slice.call($('en').querySelectorAll('.sent'));
@@ -781,14 +864,16 @@ var SAUDIO = [
     cur={it:it, tk:tk, slots:bank, bank:bank.slice(), tray:[], bad:{}, tries:0, done:false, shown:false};
     draw();
   }
-  function label(i){ return i===0?lc(cur.tk[0],cur.it):cur.tk[i]; }
+  var END=/[.?!]+[\u201D\u2019"')]*$/;
+  function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
+  function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
     var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';
     h+='<p class="ord-ko"><small>지문 '+it.s+'번 문장</small>'+s.ko+'</p>';
-    h+='<div class="tray'+(cur.done?(cur.shown?' shown':' ok'):'')+'" id="ord-tray" aria-label="내가 만든 문장">'+(cur.tray.length?cur.tray.map(function(i,p){return '<button type="button" class="tok'+(cur.bad[p]?' bad':'')+'" data-t="'+i+'"'+(cur.done?' disabled':' aria-label="'+esc(label(i))+' 빼기"')+'>'+esc(label(i))+'</button>'}).join(''):'<span class="tray-empty">아래 어구를 순서대로 눌러 보세요.</span>')+'</div>';
+    h+='<div class="tray'+(cur.done?(cur.shown?' shown':' ok'):'')+'" id="ord-tray" aria-label="내가 만든 문장">'+(cur.tray.length?cur.tray.map(function(i,p){return '<button type="button" class="tok'+(cur.bad[p]?' bad':'')+'" data-t="'+i+'"'+(cur.done?' disabled':' aria-label="'+esc(label(i))+' 빼기"')+'>'+esc(label(i))+'</button>'}).join(''):'<span class="tray-empty">아래 어구를 순서대로 눌러 보세요.</span>')+(cur.tray.length&&tail()&&cur.tk.length>1?'<span class="tray-end" aria-hidden="true">'+esc(tail())+'</span>':'')+'</div>';
     h+=cur.done?'':'<div class="bank" id="ord-bank">'+cur.slots.map(function(i){var used=cur.bank.indexOf(i)<0;return '<button type="button" class="tok'+(used?' used':'')+'" data-b="'+i+'"'+(used?' disabled aria-hidden="true" tabindex="-1"':'')+'>'+esc(label(i))+'</button>'}).join('')+'</div>';
     var msg='';
     if(cur.done) msg=cur.shown?'<b class="no">정답을 확인했어요.</b> 다음에 다시 도전해 보세요.':'<b class="ok">정답!</b> '+(cur.tries?'고쳐서 완성했어요.':'한 번에 맞혔어요.');
@@ -847,7 +932,7 @@ var SAUDIO = [
     for(var i=0;i<others.length;i++){ var r=others[i].getBoundingClientRect();
       if(y<r.top||(y<=r.bottom&&x<r.left+r.width/2)){ before=others[i]; break; } }
     if(before){ if(el.nextSibling!==before) tray.insertBefore(el,before); }
-    else if(tray.lastElementChild!==el) tray.appendChild(el);
+    else { var tl=tray.querySelector('.tray-end'); if(tl){ if(el.nextSibling!==tl) tray.insertBefore(el,tl); } else if(tray.lastElementChild!==el) tray.appendChild(el); }
   }
   function dEnd(){
     if(!drag) return false;
