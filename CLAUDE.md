@@ -16,13 +16,13 @@ GitHub Pages로 공개되는 코코스학원 홈페이지·온라인 학습지 �
 | `game/<회차>/` | 단어게임 |
 | `tools/` | 선생님용 페이지(블로그 원고 등). 반드시 noindex로 감싼다 |
 | `preview/` | 홈페이지 디자인 시안(noindex) |
-| `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `add_library.py`(자료실 카드), `artifact_map.json`(옛 claude.ai 아티팩트 id → 이 저장소 경로) |
+| `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `fix_links.py`(claude.ai 링크 → 홈페이지 주소), `add_library.py`(자료실 카드), `artifact_map.json`(옛 아티팩트 id → 저장소 경로) |
 
 ## 규칙
 - 모든 페이지는 `<폴더>/index.html` 하나. 파일 이름이 아니라 폴더 주소로 연다.
 - 아티팩트용으로 만든 페이지는 겉틀이 없으니 `python3 _tools/wrap.py 원본.html 경로/index.html`로 감싸서 넣는다(선생님용 페이지는 `--noindex`).
 - 페이지 사이 링크는 **상대 경로**로 쓴다(목차 → 지문 `18/`, 지문 → 목차 `../`, 동의어 → 목차 `../../study/2026-06-g1/`). 블로그·카카오톡에 붙일 링크만 전체 주소(`https://leslie-creator479.github.io/cocos/…/`)를 쓴다.
-- 옛 claude.ai 링크(`https://claude.ai/artifact/<id>`)가 들어 있으면 `_tools/artifact_map.json`으로 경로를 찾아 상대 경로로 바꾼다.
+- 페이지에 claude.ai 링크(`https://claude.ai/artifact/<id>`)가 남아 있으면 `python3 _tools/fix_links.py <페이지 경로> <파일>`로 바꾼다. 아직 없는 새 페이지는 스크립트에 가짜 id(경로의 `/`를 `_`로, 예 `study_2026-10-g1_18`)를 넘겨 두면 이 도구가 경로로 바꾼다.
 - 저장소는 공개다. 학생 이름·전화번호 같은 개인정보, 코코 키우기·100일 습관 같은 기록 페이지는 올리지 않는다.
 - 올리기: `git add -A && git commit -m "<무엇을>" && git push origin main`. 한 번에 50MB가 넘으면 회차별로 나눠 커밋·푸시한다. 푸시 전 `git pull --rebase origin main`.
 - 올린 뒤 1~2분 기다렸다가 WebFetch로 새 주소를 열어 제목이 맞는지 확인하고 링크를 드린다(공유 설정은 필요 없다. 모두 공개).
