@@ -1,0 +1,188 @@
+<!doctype html><html><head><meta charset=utf8><meta name="robots" content="noindex"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>2024 9월 고1 단어게임 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>2024년 9월 고1 단어게임 블로그 원고</h1>
+    <p>네이버 블로그에 글 전체를 링크째 붙여 넣을 수 있는 원고예요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>[대표 이미지] 자리에 대표 이미지를 올리고, ‘태그 복사’로 태그를 넣어요.</li>
+    <li>목록에서 한 줄을 눌러 그 범위가 골라진 채로 단어게임이 열리는지 확인하고 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  <section class="exam" id="list">
+    <div class="exam-head">
+      <div><h2>범위별·지문별 바로가기만</h2><p class="meta" id="list-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-list">링크 포함 복사</button>
+        <button type="button" class="btn" id="copy-url">단어게임 링크 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-list" role="status" aria-live="polite"></p>
+    <div class="preview" id="pv-list" aria-label="붙여 넣을 목록 미리보기"></div>
+  </section>
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"url": "https://cocosedu.kr/game/2024-09-g1/", "title": "2024년 9월 고1 영어 모의고사 단어게임 | 18~45번 단어 489개 놀면서 외우기", "tags": "9월고1모의고사 영어단어게임 단어게임 모의고사단어 고1영어 영어단어암기 내신영어 영어어휘 성남동영어학원", "count": 22, "groups": [{"g": "범위별 바로가기", "items": [["18~45번 전체 22개 지문", "https://cocosedu.kr/game/2024-09-g1/#18-45"], ["18~26번 (8개 지문)", "https://cocosedu.kr/game/2024-09-g1/#18-26"], ["29~45번 (14개 지문)", "https://cocosedu.kr/game/2024-09-g1/#29-45"]]}, {"g": "지문별 바로가기", "items": [["18번 목적 · 매표소 재운영 요청", "https://cocosedu.kr/game/2024-09-g1/#18"], ["19번 심경 · 무대 위의 심폐소생술", "https://cocosedu.kr/game/2024-09-g1/#19"], ["20번 주장 · 영재 부모의 덫", "https://cocosedu.kr/game/2024-09-g1/#20"], ["21번 함축 의미 · 승자들과 어울리기", "https://cocosedu.kr/game/2024-09-g1/#21"], ["22번 요지 · 감정의 존재 이유", "https://cocosedu.kr/game/2024-09-g1/#22"], ["23번 주제 · AI와 포용적인 일터", "https://cocosedu.kr/game/2024-09-g1/#23"], ["24번 제목 · 고래와 탄소 저장", "https://cocosedu.kr/game/2024-09-g1/#24"], ["26번 내용 불일치 · Émilie du Châtelet", "https://cocosedu.kr/game/2024-09-g1/#26"], ["29번 어법 · 조직 속 갈등", "https://cocosedu.kr/game/2024-09-g1/#29"], ["30번 어휘 · 자전거 도시와 배달 트럭", "https://cocosedu.kr/game/2024-09-g1/#30"], ["31번 빈칸 · 위대한 작곡가의 조건", "https://cocosedu.kr/game/2024-09-g1/#31"], ["32번 빈칸 · 매체가 곧 메시지", "https://cocosedu.kr/game/2024-09-g1/#32"], ["33번 빈칸 · 개념과 본질주의", "https://cocosedu.kr/game/2024-09-g1/#33"], ["34번 빈칸 · 평범한 명성", "https://cocosedu.kr/game/2024-09-g1/#34"], ["35번 무관한 문장 · 벼락치기의 착각", "https://cocosedu.kr/game/2024-09-g1/#35"], ["36번 글의 순서 · 관찰 학습", "https://cocosedu.kr/game/2024-09-g1/#36"], ["37번 글의 순서 · 녹음된 내 목소리", "https://cocosedu.kr/game/2024-09-g1/#37"], ["38번 문장 삽입 · 상사와 상동", "https://cocosedu.kr/game/2024-09-g1/#38"], ["39번 문장 삽입 · 줄어드는 바다의 산소", "https://cocosedu.kr/game/2024-09-g1/#39"], ["40번 요약문 · 원숭이의 공정성", "https://cocosedu.kr/game/2024-09-g1/#40"], ["41~42번 장문(제목·어휘) · 고등 교육 평가의 모순", "https://cocosedu.kr/game/2024-09-g1/#41-42"], ["43~45번 장문(순서·지칭·내용) · 겉모습에 따른 대접", "https://cocosedu.kr/game/2024-09-g1/#43-45"]]}], "body": [["p", "[대표 이미지]"], ["p", "2024년 9월 고1 영어 모의고사 18~45번 지문 단어로 단어게임을 만들었어요."], ["b", "■ 단어, 게임으로 외워 볼까요?"], ["p", "단어장만 붙잡고 외우다 보면 금방 지루해지죠."], ["p", "그래서 22개 지문에 나온 단어 489개를 다섯 가지 게임으로 만들었어요."], ["b", "▶ 단어게임 바로가기"], ["link", "https://cocosedu.kr/game/2024-09-g1/", "https://cocosedu.kr/game/2024-09-g1/"], ["p", "휴대폰으로도 바로 할 수 있고, 로그인 없이 링크만 누르면 돼요."], ["b", "■ 이렇게 해요"], ["p", "· 범위 고르기: 전체, 18~26번, 29~45번 버튼이나 지문 번호를 눌러 공부할 범위를 골라요. 학교 시험 범위에 맞춰 고르면 돼요."], ["p", "· 1단계 단어 먼저 익히기: 지문별 단어 목록에서 발음을 듣고, 뜻을 가리고 외워요."], ["p", "· 2단계 게임으로 확인하기: 다섯 가지 게임 중 마음에 드는 것부터 해 보세요."], ["b", "■ 게임 다섯 가지"], ["p", "· 카드 짝 맞추기: 영어 카드와 뜻 카드를 뒤집어 짝 찾기"], ["p", "· 60초 타임어택: 60초 동안 뜻을 몇 개나 맞힐 수 있을까?"], ["p", "· 떨어지는 단어: 단어가 바닥에 닿기 전에 뜻 고르기, 목숨은 3개"], ["p", "· 철자 채우기: 뜻을 보고 알파벳을 눌러 단어 완성하기"], ["p", "· 지문 속 빈칸: 실제 지문 문장에서 빠진 단어 찾기. 보기가 모두 같은 품사·같은 형태라서 뜻을 알아야 풀 수 있어요."], ["br"], ["p", "틀린 단어는 '오답 다시 풀기'에 모여서, 다 맞힐 때까지 다시 나와요."], ["p", "게임이 끝나면 별점과 기록이 나와요. 친구와 기록 대결도 해 보세요!"], ["b", "■ 더 공부하고 싶다면"], ["p", "단어 목록에서 지문마다 '학습지 열기'와 '동의어·반의어 열기' 버튼이 있어요."], ["p", "해석과 마인드맵, 확인 퀴즈로 지문 전체를 공부하거나, 동의어·반의어로 내신 변형 문제까지 대비할 수 있어요."], ["b", "■ 범위별·지문별 바로가기"], ["p", "아래 링크를 누르면 그 범위가 골라진 채로 단어게임이 열려요."], ["list"], ["p", "링크는 누구에게나 자유롭게 공유해도 좋아요."], ["p", "다만 내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요."]]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function listHTML(){
+  var h='';
+  D.groups.forEach(function(g,i){
+    if(i)h+='<p><br></p>';
+    h+='<p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){h+='<p>'+a(it[1],it[0])+'</p>'});
+  });
+  return h;
+}
+function listText(){
+  var t='';
+  D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
+  return t;
+}
+function bodyHTML(){
+  var h='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')h+='<p><br></p><p><b>'+esc(b[1])+'</b></p>';
+    else if(b[0]==='link')h+='<p>'+a(b[2],b[1])+'</p>';
+    else if(b[0]==='br')h+='<p><br></p>';
+    else if(b[0]==='list')h+='<p><br></p>'+listHTML()+'<p><br></p>';
+    else h+='<p>'+esc(b[1])+'</p>';
+  });
+  return h;
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='list')t+='\n'+listText()+'\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent=D.count+'개 지문 · 제목·본문·태그';
+$('list-meta').textContent=(D.groups.length>1?'범위 '+D.groups[0].items.length+'개 · ':'')+'지문 '+D.count+'개 · 줄마다 그 범위가 골라진 채로 열려요';
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+$('pv-list').innerHTML=listHTML();
+
+var stP=$('st-post'),stL=$('st-list');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+$('copy-list').addEventListener('click',function(e){copyRich(listHTML(),listText(),e.currentTarget,stL,$('pv-list'),'바로가기 목록을 복사했어요. 본문의 바로가기 자리에 붙여 넣으세요.')});
+$('copy-url').addEventListener('click',function(e){copyPlain(D.url,e.currentTarget,stL,'단어게임 주소를 복사했어요.',null)});
+</script>
+
+
+
+</body></html>
