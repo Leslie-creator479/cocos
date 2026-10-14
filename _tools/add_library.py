@@ -26,8 +26,10 @@ D, end = json.JSONDecoder().raw_decode(s[k:])
 m = re.match(r'(\d{4})년 (\d+)월 고(\d)', title)
 y = m.group(1) if m else '2026'
 g = m.group(3) if m else ('1' if '1학년' in title else '2' if '2학년' in title else '')
-card = {'t': title, 'y': y, 'g': g, 'n': n, 'href': '../' + path + '/', 'grp': grp}
 D.setdefault(tab, [])
+if not g and grp:  # 교과서처럼 제목에 학년이 없으면 같은 교재(--group) 카드의 학년을 따른다
+    g = next((c['g'] for cs in D.values() for c in cs if c.get('grp') == grp and c.get('g')), '')
+card = {'t': title, 'y': y, 'g': g, 'n': n, 'href': '../' + path + '/', 'grp': grp}
 D[tab] = [c for c in D[tab] if c['href'] != card['href']] + [card]
 
 
