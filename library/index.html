@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>코코스학원 자료실</title>
+<meta name="description" content="코코스학원이 만든 영어 온라인 학습지 자료실. 학력평가 지문별 해석·듣기·단어·변형 문제, 학교별 시험 범위, 동의어·반의어, 단어게임.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;500;600;700&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* 자료실: 남색 머리 영역(제목·검색·분류 탭) → 밝은 본문에 연도·학년별 회차 목록 */
+:root{
+  color-scheme:light;
+  --night:#0A1424; --night-line:rgba(214,222,236,.14); --on-night:#ECEEF2; --on-night-muted:#97A2B4;
+  --white:#F7F7F5; --card:#FFFFFF; --ink:#0B1323; --muted:#5A616E; --line:#DADAD4;
+  --gold:#C3A46C; --gold-deep:#8A6C3C;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --latin:"Jost","Futura","Avenir Next",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,5vw,64px)}
+.cap{font-family:var(--latin);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+.top{background:var(--night);border-bottom:1px solid var(--night-line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.logo{display:inline-block;width:112px;height:25px;background:url(data:image/png;base64,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) left center/contain no-repeat;filter:brightness(0) invert(1)}
+.top nav{display:flex;gap:22px;font-size:14px}
+.top nav a{color:var(--on-night-muted);text-decoration:none}
+.top nav a:hover{color:var(--on-night)}
+
+.hero{background:var(--night);color:var(--on-night)}
+.hero .wrap{padding-block:56px 40px;display:flex;flex-direction:column;gap:18px}
+.hero h1{margin:0;font-weight:600;font-size:clamp(34px,6vw,64px);line-height:1.12;letter-spacing:-.035em}
+.hero p{margin:0;color:var(--on-night-muted);font-weight:300;max-width:38em}
+.stats{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:6px}
+.stats div{display:flex;flex-direction:column}
+.stats b{font-family:var(--latin);font-weight:300;font-size:clamp(30px,4vw,44px);line-height:1;font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--on-night-muted)}
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:18px;padding-top:22px;border-top:1px solid var(--night-line)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{font:inherit;font-size:14px;color:var(--on-night-muted);background:transparent;border:1px solid var(--night-line);padding:7px 14px;cursor:pointer}
+.tabs button[aria-pressed="true"]{color:var(--night);background:var(--gold);border-color:var(--gold)}
+.search{flex:1 1 220px;max-width:320px;font:inherit;font-size:15px;color:var(--on-night);background:transparent;border:0;border-bottom:1px solid var(--night-line);padding:8px 2px}
+.search::placeholder{color:#66738A}
+
+main .wrap{padding-block:48px 72px;display:flex;flex-direction:column;gap:48px}
+.group h2{margin:0 0 16px;font-size:22px;font-weight:600;letter-spacing:-.02em;display:flex;align-items:baseline;gap:12px}
+.group h2 small{font-size:13px;font-weight:400;color:var(--muted)}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.grid{grid-template-columns:1fr}}
+.grid a{display:flex;justify-content:space-between;align-items:center;gap:10px;height:100%;padding:18px 16px 18px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.grid a:hover .t{color:var(--gold-deep)}
+.grid .t{font-weight:500;font-size:16px}
+.grid .n{font-family:var(--latin);font-size:13px;color:var(--muted);white-space:nowrap}
+.grid .n::after{content:" →";color:var(--gold-deep)}
+.empty{color:var(--muted)}
+.note{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px}
+
+footer{background:var(--night);color:var(--on-night-muted)}
+footer .wrap{padding-block:28px 40px;font-size:12.5px;display:flex;flex-direction:column;gap:6px}
+footer a{color:var(--on-night)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a href="../" aria-label="코코스학원 홈"><span class="logo" role="img" aria-label="COCOS"></span></a>
+    <nav aria-label="주요 메뉴"><a href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener">블로그</a><a href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener">오시는 길</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="cap">Library · 자료실</p>
+    <h1>코코스 온라인 학습지</h1>
+    <p>회원가입 없이 누구나 볼 수 있어요. 지문마다 문장별 해석과 듣기, 발음 단어장, 마인드맵, 변형 문제 15문항, 문장 배열까지 들어 있습니다.</p>
+    <div class="stats">
+      <div><b>754</b><span>지문별 학습지</span></div>
+      <div><b>31</b><span>학력평가 회차</span></div>
+    </div>
+    <div class="tools">
+      <div class="tabs" role="group" aria-label="자료 종류">
+        <button type="button" data-k="study" aria-pressed="true">학력평가</button>
+        <button type="button" data-k="school" aria-pressed="false">학교별 시험 범위</button>
+        <button type="button" data-k="syn" aria-pressed="false">동의어·반의어</button>
+        <button type="button" data-k="game" aria-pressed="false">단어게임</button>
+      </div>
+      <input class="search" id="q" type="search" placeholder="찾기 (예: 2024 6월, 고2, 동광고)" aria-label="자료 찾기">
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap" id="list"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>학원명 코코스학원 · 등록번호 제4760호 · 교습과목 중·고등 영어 · 교습비 중등부 300,000원, 고등부 360,000원 · 추가 경비 없음</p>
+    <p>© <span id="yr">2026</span> 코코스학원. 링크는 자유롭게 공유해도 좋아요. 내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요.</p>
+  </div>
+</footer>
+
+<script>
+var D = {"study": [{"t": "2026년 3월 고1", "y": "2026", "g": "1", "n": 22, "href": "../study/2026-03-g1/"}, {"t": "2026년 6월 고1", "y": "2026", "g": "1", "n": 22, "href": "../study/2026-06-g1/"}, {"t": "2026년 9월 고1", "y": "2026", "g": "1", "n": 22, "href": "../study/2026-09-g1/"}, {"t": "2026년 3월 고2", "y": "2026", "g": "2", "n": 22, "href": "../study/2026-03-g2/"}, {"t": "2026년 6월 고2", "y": "2026", "g": "2", "n": 22, "href": "../study/2026-06-g2/"}, {"t": "2026년 9월 고2", "y": "2026", "g": "2", "n": 22, "href": "../study/2026-09-g2/"}, {"t": "2025년 3월 고1", "y": "2025", "g": "1", "n": 22, "href": "../study/2025-03-g1/"}, {"t": "2025년 6월 고1", "y": "2025", "g": "1", "n": 22, "href": "../study/2025-06-g1/"}, {"t": "2025년 9월 고1", "y": "2025", "g": "1", "n": 22, "href": "../study/2025-09-g1/"}, {"t": "2025년 10월 고1", "y": "2025", "g": "1", "n": 22, "href": "../study/2025-10-g1/"}, {"t": "2025년 3월 고2", "y": "2025", "g": "2", "n": 22, "href": "../study/2025-03-g2/"}, {"t": "2025년 6월 고2", "y": "2025", "g": "2", "n": 22, "href": "../study/2025-06-g2/"}, {"t": "2025년 9월 고2", "y": "2025", "g": "2", "n": 22, "href": "../study/2025-09-g2/"}, {"t": "2025년 10월 고2", "y": "2025", "g": "2", "n": 22, "href": "../study/2025-10-g2/"}, {"t": "2024년 3월 고1", "y": "2024", "g": "1", "n": 22, "href": "../study/2024-03-g1/"}, {"t": "2024년 6월 고1", "y": "2024", "g": "1", "n": 22, "href": "../study/2024-06-g1/"}, {"t": "2024년 9월 고1", "y": "2024", "g": "1", "n": 22, "href": "../study/2024-09-g1/"}, {"t": "2024년 10월 고1", "y": "2024", "g": "1", "n": 22, "href": "../study/2024-10-g1/"}, {"t": "2024년 3월 고2", "y": "2024", "g": "2", "n": 22, "href": "../study/2024-03-g2/"}, {"t": "2024년 6월 고2", "y": "2024", "g": "2", "n": 22, "href": "../study/2024-06-g2/"}, {"t": "2024년 9월 고2", "y": "2024", "g": "2", "n": 22, "href": "../study/2024-09-g2/"}, {"t": "2024년 10월 고2", "y": "2024", "g": "2", "n": 22, "href": "../study/2024-10-g2/"}, {"t": "2023년 3월 고1", "y": "2023", "g": "1", "n": 22, "href": "../study/2023-03-g1/"}, {"t": "2023년 6월 고1", "y": "2023", "g": "1", "n": 22, "href": "../study/2023-06-g1/"}, {"t": "2023년 9월 고1", "y": "2023", "g": "1", "n": 22, "href": "../study/2023-09-g1/"}, {"t": "2023년 11월 고1", "y": "2023", "g": "1", "n": 22, "href": "../study/2023-11-g1/"}, {"t": "2023년 3월 고2", "y": "2023", "g": "2", "n": 22, "href": "../study/2023-03-g2/"}, {"t": "2023년 6월 고2", "y": "2023", "g": "2", "n": 22, "href": "../study/2023-06-g2/"}, {"t": "2023년 9월 고2", "y": "2023", "g": "2", "n": 22, "href": "../study/2023-09-g2/"}, {"t": "2023년 11월 고2", "y": "2023", "g": "2", "n": 22, "href": "../study/2023-11-g2/"}, {"t": "2022년 3월 고1", "y": "2022", "g": "1", "n": 22, "href": "../study/2022-03-g1/"}], "school": [{"t": "동광고 1학년", "y": "2026", "g": "1", "n": 28, "href": "../school/2026-2-mid/dongkwang-g1/"}, {"t": "성남고 1학년", "y": "2026", "g": "1", "n": 11, "href": "../school/2026-2-mid/seongnam-g1/"}, {"t": "성남여고 1학년", "y": "2026", "g": "1", "n": 15, "href": "../school/2026-2-mid/seongnam-girls-g1/"}, {"t": "성일고 1학년", "y": "2026", "g": "1", "n": 8, "href": "../school/2026-2-mid/seongil-g1/"}, {"t": "풍생고 1학년", "y": "2026", "g": "1", "n": 12, "href": "../school/2026-2-mid/pungsaeng-g1/"}, {"t": "동광고 2학년", "y": "2026", "g": "2", "n": 32, "href": "../school/2026-2-mid/dongkwang-g2/"}, {"t": "성남고 2학년", "y": "2026", "g": "2", "n": 11, "href": "../school/2026-2-mid/seongnam-g2/"}, {"t": "성남여고 2학년", "y": "2026", "g": "2", "n": 19, "href": "../school/2026-2-mid/seongnam-girls-g2/"}, {"t": "풍생고 2학년", "y": "2026", "g": "2", "n": 36, "href": "../school/2026-2-mid/pungsaeng-g2/"}], "syn": [{"t": "2026년 3월 고1", "y": "2026", "g": "1", "n": 22, "href": "../syn/2026-03-g1/"}, {"t": "2026년 6월 고1", "y": "2026", "g": "1", "n": 22, "href": "../syn/2026-06-g1/"}, {"t": "2026년 9월 고1", "y": "2026", "g": "1", "n": 22, "href": "../syn/2026-09-g1/"}, {"t": "2026년 3월 고2", "y": "2026", "g": "2", "n": 22, "href": "../syn/2026-03-g2/"}, {"t": "2026년 6월 고2", "y": "2026", "g": "2", "n": 22, "href": "../syn/2026-06-g2/"}, {"t": "2026년 9월 고2", "y": "2026", "g": "2", "n": 22, "href": "../syn/2026-09-g2/"}, {"t": "2025년 3월 고1", "y": "2025", "g": "1", "n": 22, "href": "../syn/2025-03-g1/"}, {"t": "2025년 6월 고1", "y": "2025", "g": "1", "n": 22, "href": "../syn/2025-06-g1/"}, {"t": "2025년 9월 고1", "y": "2025", "g": "1", "n": 22, "href": "../syn/2025-09-g1/"}, {"t": "2025년 10월 고1", "y": "2025", "g": "1", "n": 22, "href": "../syn/2025-10-g1/"}, {"t": "2025년 3월 고2", "y": "2025", "g": "2", "n": 22, "href": "../syn/2025-03-g2/"}, {"t": "2025년 6월 고2", "y": "2025", "g": "2", "n": 22, "href": "../syn/2025-06-g2/"}, {"t": "2025년 9월 고2", "y": "2025", "g": "2", "n": 22, "href": "../syn/2025-09-g2/"}, {"t": "2025년 10월 고2", "y": "2025", "g": "2", "n": 22, "href": "../syn/2025-10-g2/"}, {"t": "2024년 3월 고1", "y": "2024", "g": "1", "n": 22, "href": "../syn/2024-03-g1/"}, {"t": "2024년 6월 고1", "y": "2024", "g": "1", "n": 22, "href": "../syn/2024-06-g1/"}, {"t": "2024년 9월 고1", "y": "2024", "g": "1", "n": 22, "href": "../syn/2024-09-g1/"}, {"t": "2024년 10월 고1", "y": "2024", "g": "1", "n": 22, "href": "../syn/2024-10-g1/"}, {"t": "2024년 3월 고2", "y": "2024", "g": "2", "n": 22, "href": "../syn/2024-03-g2/"}, {"t": "2024년 6월 고2", "y": "2024", "g": "2", "n": 22, "href": "../syn/2024-06-g2/"}, {"t": "2024년 9월 고2", "y": "2024", "g": "2", "n": 22, "href": "../syn/2024-09-g2/"}, {"t": "2024년 10월 고2", "y": "2024", "g": "2", "n": 22, "href": "../syn/2024-10-g2/"}, {"t": "2023년 3월 고1", "y": "2023", "g": "1", "n": 22, "href": "../syn/2023-03-g1/"}, {"t": "2023년 6월 고1", "y": "2023", "g": "1", "n": 22, "href": "../syn/2023-06-g1/"}, {"t": "2023년 9월 고1", "y": "2023", "g": "1", "n": 22, "href": "../syn/2023-09-g1/"}, {"t": "2023년 11월 고1", "y": "2023", "g": "1", "n": 22, "href": "../syn/2023-11-g1/"}, {"t": "2023년 3월 고2", "y": "2023", "g": "2", "n": 22, "href": "../syn/2023-03-g2/"}, {"t": "2023년 6월 고2", "y": "2023", "g": "2", "n": 22, "href": "../syn/2023-06-g2/"}, {"t": "2023년 9월 고2", "y": "2023", "g": "2", "n": 22, "href": "../syn/2023-09-g2/"}, {"t": "2023년 11월 고2", "y": "2023", "g": "2", "n": 22, "href": "../syn/2023-11-g2/"}], "game": [{"t": "2026년 3월 고1", "y": "2026", "g": "1", "n": 22, "href": "../game/2026-03-g1/"}, {"t": "2026년 6월 고1", "y": "2026", "g": "1", "n": 22, "href": "../game/2026-06-g1/"}, {"t": "2026년 9월 고1", "y": "2026", "g": "1", "n": 22, "href": "../game/2026-09-g1/"}, {"t": "2026년 3월 고2", "y": "2026", "g": "2", "n": 22, "href": "../game/2026-03-g2/"}, {"t": "2026년 6월 고2", "y": "2026", "g": "2", "n": 22, "href": "../game/2026-06-g2/"}, {"t": "2026년 9월 고2", "y": "2026", "g": "2", "n": 22, "href": "../game/2026-09-g2/"}, {"t": "2025년 3월 고1", "y": "2025", "g": "1", "n": 22, "href": "../game/2025-03-g1/"}, {"t": "2025년 6월 고1", "y": "2025", "g": "1", "n": 22, "href": "../game/2025-06-g1/"}, {"t": "2025년 9월 고1", "y": "2025", "g": "1", "n": 22, "href": "../game/2025-09-g1/"}, {"t": "2025년 10월 고1", "y": "2025", "g": "1", "n": 22, "href": "../game/2025-10-g1/"}, {"t": "2025년 3월 고2", "y": "2025", "g": "2", "n": 22, "href": "../game/2025-03-g2/"}, {"t": "2025년 6월 고2", "y": "2025", "g": "2", "n": 22, "href": "../game/2025-06-g2/"}, {"t": "2025년 9월 고2", "y": "2025", "g": "2", "n": 22, "href": "../game/2025-09-g2/"}, {"t": "2025년 10월 고2", "y": "2025", "g": "2", "n": 22, "href": "../game/2025-10-g2/"}, {"t": "2024년 3월 고1", "y": "2024", "g": "1", "n": 22, "href": "../game/2024-03-g1/"}, {"t": "2024년 6월 고1", "y": "2024", "g": "1", "n": 22, "href": "../game/2024-06-g1/"}, {"t": "2024년 9월 고1", "y": "2024", "g": "1", "n": 22, "href": "../game/2024-09-g1/"}, {"t": "2024년 10월 고1", "y": "2024", "g": "1", "n": 22, "href": "../game/2024-10-g1/"}, {"t": "2024년 3월 고2", "y": "2024", "g": "2", "n": 22, "href": "../game/2024-03-g2/"}, {"t": "2024년 6월 고2", "y": "2024", "g": "2", "n": 22, "href": "../game/2024-06-g2/"}, {"t": "2024년 9월 고2", "y": "2024", "g": "2", "n": 22, "href": "../game/2024-09-g2/"}, {"t": "2024년 10월 고2", "y": "2024", "g": "2", "n": 22, "href": "../game/2024-10-g2/"}, {"t": "2023년 3월 고1", "y": "2023", "g": "1", "n": 22, "href": "../game/2023-03-g1/"}, {"t": "2023년 6월 고1", "y": "2023", "g": "1", "n": 22, "href": "../game/2023-06-g1/"}, {"t": "2023년 9월 고1", "y": "2023", "g": "1", "n": 22, "href": "../game/2023-09-g1/"}, {"t": "2023년 11월 고1", "y": "2023", "g": "1", "n": 22, "href": "../game/2023-11-g1/"}, {"t": "2023년 3월 고2", "y": "2023", "g": "2", "n": 22, "href": "../game/2023-03-g2/"}, {"t": "2023년 6월 고2", "y": "2023", "g": "2", "n": 22, "href": "../game/2023-06-g2/"}, {"t": "2023년 9월 고2", "y": "2023", "g": "2", "n": 22, "href": "../game/2023-09-g2/"}, {"t": "2023년 11월 고2", "y": "2023", "g": "2", "n": 22, "href": "../game/2023-11-g2/"}]};
+(function(){
+  var $=function(id){return document.getElementById(id)}, cur='study';
+  $('yr').textContent=new Date().getFullYear();
+  try{ var h=location.hash.slice(1); if(D[h]) cur=h; }catch(e){}
+  function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+  var unit={study:'개 지문',school:'개 지문',syn:'개 지문',game:'개 지문'};
+  function render(){
+    document.querySelectorAll('.tabs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===cur)});
+    var q=$('q').value.trim().toLowerCase(), rows=D[cur].filter(function(c){return !q||c.t.toLowerCase().indexOf(q)>-1||('고'+c.g).indexOf(q)>-1});
+    var groups={}, order=[];
+    rows.forEach(function(c){var g=cur==='school'?'2026년 2학기 중간고사':c.y+'년 · 고'+c.g; if(!groups[g]){groups[g]=[];order.push(g)} groups[g].push(c)});
+    var html=order.map(function(g){return '<section class="group"><h2>'+esc(g)+' <small>'+groups[g].length+'개</small></h2><ul class="grid">'+
+      groups[g].map(function(c){var t=cur==='school'?c.t:c.t.replace(/^\d{4}년 /,'');return '<li><a href="'+esc(c.href)+'"><span class="t">'+esc(t)+'</span><span class="n">'+c.n+unit[cur]+'</span></a></li>'}).join('')+'</ul></section>'}).join('');
+    $('list').innerHTML=(html||'<p class="empty">찾는 자료가 없어요. 다른 말로 찾아보세요.</p>')+'<p class="note">각 회차를 누르면 목차가 열리고, 목차에서 지문을 고르면 그 지문의 학습지로 들어가요.</p>';
+  }
+  document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.k;try{history.replaceState(null,'','#'+cur)}catch(e){}render()})});
+  $('q').addEventListener('input',render);
+  render();
+})();
+</script>
+</body>
+</html>

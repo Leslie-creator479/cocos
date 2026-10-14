@@ -1,0 +1,486 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"></head><body>
+<title>코코스학원 홈페이지 시안 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;700&family=Outfit:wght@200;300;400;500&display=swap">
+<style>
+/* 코코스 블루 & 옐로: 로고의 하늘색 글자와 노란 말풍선을 깊은 코발트와 누른 노랑으로 다시 해석한 브랜드 사이트.
+   한 가지 분위기로 고정한 디자인이라 color-scheme은 light로 두고 모든 색을 명시한다. */
+:root{
+  color-scheme:light;
+  --cobalt:#0F3591; --cobalt-deep:#0B2A6F; --cobalt-night:#081F55;
+  --on-blue:#FFFFFF; --on-blue-muted:#B8C5E5; --blue-line:rgba(255,255,255,.17);
+  --yellow:#F5D43B; --yellow-deep:#E2BE1E;
+  --white:#FFFFFF; --mist:#EEF2F8; --ink:#0A1A42; --muted:#55617A; --line:#D3DBE8;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --latin:"Outfit","Avenir Next","Futura",system-ui,sans-serif;
+  --gutter:clamp(18px,5.6vw,96px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;margin:0;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:var(--gutter)}
+.todo{text-decoration:underline dotted 1.5px;text-underline-offset:6px}
+.on-white .todo,.on-mist .todo{text-decoration-color:var(--cobalt)}
+.on-blue .todo{text-decoration-color:var(--yellow)}
+
+/* 영문 라벨 + 작은 말풍선 점 (모티프 3) */
+.label{display:inline-flex;align-items:center;gap:12px;font-family:var(--latin);font-size:12.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;line-height:1.4}
+.label::before{content:"";width:10px;height:10px;flex:none;background:var(--yellow);border-radius:50% 50% 50% 0}
+.on-white .label,.on-mist .label{color:var(--cobalt)}
+.on-white .label::before,.on-mist .label::before{background:var(--cobalt)}
+.on-blue .label{color:var(--on-blue)}
+.plain{font-family:var(--latin);font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+
+/* 안내 띠 */
+.draft{background:var(--cobalt-night);color:var(--on-blue-muted);font-size:12.5px;text-align:center;padding:8px 16px;letter-spacing:.03em}
+.draft b{color:var(--yellow);font-weight:500}
+
+/* 머리글: 흰 바탕에 로고 원래 색 */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.logo{display:block;width:118px;height:26px;background:url(data:image/png;base64,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) left center/contain no-repeat}
+.top nav{display:flex;align-items:center;gap:6px 34px;font-size:14px}
+.top nav a{color:var(--ink);text-decoration:none;font-weight:500;letter-spacing:-.005em;transition:color .25s}
+.top nav a:hover{color:var(--cobalt)}
+@media (max-width:860px){.top nav a:not(.btn){display:none}}
+
+/* 버튼: 각진 면, 가는 화살표 선 */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;font:inherit;font-size:14.5px;font-weight:500;letter-spacing:.01em;text-decoration:none;padding:16px 26px;border:1px solid transparent;border-radius:2px;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.btn::after{content:"";width:20px;height:1px;background:currentColor;transition:width .3s}
+.btn:hover::after{width:30px}
+.btn.yellow{background:var(--yellow);color:var(--cobalt-deep)}
+.btn.yellow:hover{background:#FFE15A}
+.btn.ghost{border-color:var(--blue-line);color:var(--on-blue)}
+.btn.ghost:hover{border-color:var(--on-blue)}
+.btn.blue{background:var(--cobalt);color:var(--on-blue)}
+.btn.blue:hover{background:var(--cobalt-deep)}
+.top .btn{padding:10px 18px;font-size:13.5px}
+.top .btn::after{display:none}
+
+/* 면 */
+.on-blue{background:var(--cobalt);color:var(--on-blue)}
+.on-white{background:var(--white);color:var(--ink)}
+.on-mist{background:var(--mist);color:var(--ink)}
+.pad{padding-block:clamp(80px,9.5vw,148px)}
+
+/* 섹션 머리 */
+.head{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:26px 72px;align-items:end;margin-bottom:clamp(52px,6vw,84px)}
+@media (max-width:880px){.head{grid-template-columns:1fr}}
+.head .label{margin-bottom:24px}
+.head h2{font-size:clamp(36px,5vw,72px);font-weight:700;line-height:1.14;letter-spacing:-.045em}
+.head p{font-size:16px;max-width:30em;padding-bottom:8px}
+.on-white .head p,.on-mist .head p{color:var(--muted)}
+.on-blue .head p{color:var(--on-blue-muted);font-weight:300}
+
+/* 사진 자리 */
+.plate{position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;font-size:13.5px;letter-spacing:.1em}
+.plate.light{background:
+  repeating-linear-gradient(135deg,rgba(15,53,145,.05) 0 1px,transparent 1px 14px),var(--mist);color:var(--muted)}
+.plate.dark{background:
+  repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 1px,transparent 1px 14px),var(--cobalt-deep);color:var(--on-blue-muted)}
+.plate span em{display:block;font-family:var(--latin);font-style:normal;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;margin-bottom:6px}
+.plate.light span em{color:var(--cobalt)}
+.plate.dark span em{color:var(--yellow)}
+.caption{display:flex;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;padding-top:14px;font-size:13px}
+.on-white .caption,.on-mist .caption{color:var(--muted)}
+.on-blue .caption{color:var(--on-blue-muted)}
+
+/* ===== 첫 화면 ===== */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(48px,6vw,84px) clamp(56px,6vw,88px)}
+.hero .meta{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--blue-line);color:var(--on-blue-muted)}
+.hero .meta .plain{color:var(--on-blue)}
+.hero .meta span:last-child{font-size:13px;letter-spacing:.04em}
+.hero h1{font-weight:700;font-size:clamp(44px,9.4vw,140px);line-height:1.12;letter-spacing:-.055em;margin-top:clamp(52px,7vw,104px)}
+.hero h1 .ln{display:block}
+/* 큰 노란 말풍선이 핵심 낱말을 감싼다 (모티프 1) */
+.bubble{position:relative;display:inline-block;background:var(--yellow);color:var(--cobalt-deep);padding:.02em .34em .08em .3em;border-radius:.58em;margin-top:.12em;transform-origin:12% 100%}
+.bubble::after{content:"";position:absolute;left:.42em;bottom:-.26em;width:.46em;height:.34em;background:var(--yellow);clip-path:polygon(0 100%,18% 0,100% 0)}
+@media (prefers-reduced-motion:no-preference){
+  .bubble{animation:pop 1s cubic-bezier(.22,.8,.24,1) .35s 1 both}
+  @keyframes pop{0%{transform:scale(1)}42%{transform:scale(1.05)}100%{transform:scale(1)}}
+}
+.hero .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;margin-top:clamp(52px,6vw,88px);align-items:end}
+@media (max-width:880px){.hero .row{grid-template-columns:1fr}}
+.hero .lead{font-size:clamp(16px,1.4vw,18.5px);font-weight:300;color:var(--on-blue-muted);max-width:31em;line-height:1.95}
+.hero .lead b{color:var(--on-blue);font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(56px,6vw,88px);border-top:1px solid var(--blue-line)}
+@media (max-width:720px){.facts{grid-template-columns:1fr}}
+.facts div{padding:26px 24px 4px 0;display:flex;align-items:baseline;gap:16px}
+.facts div + div{border-left:1px solid var(--blue-line);padding-left:28px}
+@media (max-width:720px){.facts div + div{border-left:0;padding-left:0;border-top:1px solid var(--blue-line)}.facts div{padding:20px 0}}
+.facts b{font-family:var(--latin);font-weight:300;font-size:clamp(46px,4.6vw,68px);line-height:1;letter-spacing:-.02em;color:var(--on-blue)}
+.facts b small{font-size:.32em;font-weight:400;letter-spacing:.06em;margin-left:4px;color:var(--yellow)}
+.facts span{font-size:14px;color:var(--on-blue-muted);line-height:1.6}
+/* 배경의 가는 말풍선 윤곽 (모티프 2) */
+.hero .deco{position:absolute;z-index:0;right:-9vw;top:2%;width:min(62vw,860px);height:auto;pointer-events:none}
+@media (max-width:720px){.hero .deco{right:-40vw;top:4%;width:96vw;opacity:.55}}
+
+/* ===== 학원 소개 · 원장 인사 ===== */
+.intro{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(36px,6vw,104px);align-items:start}
+@media (max-width:880px){.intro{grid-template-columns:1fr}}
+.intro .plate{aspect-ratio:4/5}
+.intro .quote{font-size:clamp(25px,2.9vw,40px);font-weight:700;line-height:1.48;letter-spacing:-.035em}
+.intro .quote em{font-style:normal;box-shadow:inset 0 -.3em 0 var(--yellow)}
+.intro .body{margin-top:36px;padding-top:30px;border-top:1px solid var(--line);color:var(--muted);max-width:36em}
+.sign{margin-top:30px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.sign b{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.sign span{color:var(--muted);font-size:13.5px;letter-spacing:.04em}
+.method{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(72px,8vw,120px);border-top:2px solid var(--cobalt)}
+@media (max-width:880px){.method{grid-template-columns:1fr}}
+.method article{padding:32px clamp(20px,2.6vw,40px) 6px 0}
+.method article + article{border-left:1px solid var(--line);padding-left:clamp(20px,2.6vw,40px)}
+@media (max-width:880px){.method article + article{border-left:0;padding-left:0;border-top:1px solid var(--line)}.method article{padding-bottom:30px}}
+.method .num{font-family:var(--latin);font-weight:300;font-size:clamp(64px,6.4vw,96px);line-height:.9;color:var(--cobalt);letter-spacing:-.03em}
+.method h3{font-size:clamp(24px,2.2vw,30px);font-weight:700;letter-spacing:-.035em;margin:22px 0 10px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.method h3 .plain{color:var(--muted);font-size:11.5px}
+.method p{color:var(--muted);font-size:15.5px;max-width:24em}
+
+/* ===== 학년별 프로그램: 큰 숫자 교습비 3열 ===== */
+.programs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--cobalt)}
+@media (max-width:960px){.programs{grid-template-columns:1fr}}
+.prog{display:flex;flex-direction:column;padding:34px clamp(22px,2.6vw,40px) 40px 0}
+.prog + .prog{border-left:1px solid var(--line);padding-left:clamp(22px,2.6vw,40px)}
+@media (max-width:960px){.prog + .prog{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
+.prog .plain{color:var(--cobalt)}
+.prog h3{font-size:clamp(34px,3.4vw,48px);font-weight:700;letter-spacing:-.05em;line-height:1.1;margin-top:14px}
+.prog .sub{font-size:16px;font-weight:500;margin-top:10px}
+.prog p{color:var(--muted);font-size:15px;margin-top:12px;max-width:26em}
+.fee{margin-top:auto;padding-top:44px}
+.fee .t{display:block;font-size:13px;color:var(--muted);letter-spacing:.04em;margin-bottom:8px}
+.fee b{display:flex;align-items:baseline;gap:8px;font-family:var(--latin);font-weight:300;font-size:clamp(54px,5.4vw,80px);line-height:1;letter-spacing:-.03em;color:var(--cobalt-deep);font-variant-numeric:lining-nums tabular-nums}
+.fee b small{font-family:var(--sans);font-size:16px;font-weight:500;letter-spacing:0;color:var(--ink)}
+.prog.feature .fee b{color:var(--cobalt)}
+.prog-note{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--muted)}
+.prog-note span{display:inline-flex;align-items:center;gap:10px}
+.prog-note span::before{content:"";width:6px;height:6px;background:var(--cobalt);border-radius:50%}
+
+/* ===== 노랑 띠 ===== */
+.band{background:var(--yellow);color:var(--cobalt-deep)}
+.band .wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px 48px;align-items:center;padding-block:clamp(40px,4.6vw,64px)}
+@media (max-width:880px){.band .wrap{grid-template-columns:1fr}}
+.band .plain{color:var(--cobalt-deep)}
+.band p{font-size:clamp(24px,3vw,42px);font-weight:700;letter-spacing:-.045em;line-height:1.3}
+.band .en{font-family:var(--latin);font-weight:300;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.01em;white-space:nowrap}
+
+/* ===== 입시 컨설팅 (블루 면) ===== */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--blue-line)}
+@media (max-width:880px){.steps{grid-template-columns:1fr}}
+.steps article{padding:34px 36px 40px 0}
+.steps article + article{border-left:1px solid var(--blue-line);padding-left:36px}
+@media (max-width:880px){.steps article,.steps article + article{border-left:0;padding:28px 0;border-top:1px solid var(--blue-line)}.steps article:first-child{border-top:0}}
+.steps .num{font-family:var(--latin);font-weight:300;font-size:clamp(56px,5.4vw,80px);line-height:.9;color:var(--yellow);letter-spacing:-.03em}
+.steps h3{font-size:clamp(22px,2vw,28px);font-weight:700;letter-spacing:-.035em;margin:22px 0 10px}
+.steps p{color:var(--on-blue-muted);font-weight:300;font-size:15.5px}
+.seminar{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);margin-top:clamp(64px,7vw,104px);background:var(--cobalt-deep)}
+@media (max-width:880px){.seminar{grid-template-columns:1fr}}
+.seminar .plate{min-height:340px}
+.seminar .txt{padding:clamp(28px,3.6vw,56px)}
+.seminar h3{font-size:clamp(28px,2.8vw,40px);font-weight:700;line-height:1.28;letter-spacing:-.045em;margin-top:22px}
+.seminar p{color:var(--on-blue-muted);font-weight:300;margin-top:16px;font-size:15.5px}
+.seminar dl{margin:28px 0 32px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 28px;font-size:15px;padding-top:22px;border-top:1px solid var(--blue-line)}
+.seminar dt{color:var(--on-blue-muted)}
+.seminar dd{margin:0}
+
+/* ===== 학습 관리 ===== */
+.care{border-top:2px solid var(--cobalt)}
+.care article{display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.35fr) minmax(170px,auto);gap:12px 44px;padding:clamp(28px,3vw,40px) 0;border-bottom:1px solid var(--line);align-items:baseline}
+@media (max-width:960px){.care article{grid-template-columns:56px minmax(0,1fr)}.care article > p,.care .go{grid-column:2}}
+.care .num{font-family:var(--latin);font-weight:300;font-size:clamp(34px,3vw,44px);line-height:1;color:var(--cobalt);letter-spacing:-.02em}
+.care h3{font-size:clamp(23px,2.3vw,32px);font-weight:700;letter-spacing:-.04em;line-height:1.25}
+.care p{color:var(--muted);font-size:15.5px}
+.care .go{display:flex;flex-direction:column;gap:8px;align-items:flex-start;font-size:14px}
+.care .go .plain{color:var(--muted);font-size:11px}
+.care .go a{color:var(--cobalt);font-weight:500;text-decoration:none;border-bottom:1px solid var(--cobalt);padding-bottom:1px;white-space:nowrap;display:inline-flex;gap:8px;align-items:center}
+.care .go a::after{content:"\2197";font-family:var(--latin);font-weight:300}
+.care .go a:hover{color:var(--cobalt-deep);border-bottom-color:var(--yellow-deep)}
+.care .go .tag{color:var(--muted);font-size:13.5px}
+.care article.feature{background:linear-gradient(90deg,var(--mist),rgba(238,242,248,0));margin-inline:calc(-1 * clamp(0px,1.4vw,20px));padding-inline:clamp(0px,1.4vw,20px)}
+
+/* ===== 성과 (자리만) ===== */
+.frames{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+@media (max-width:880px){.frames{grid-template-columns:1fr}}
+.frame{background:var(--white);border-top:2px solid var(--cobalt);padding:clamp(26px,2.8vw,40px);min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:36px}
+.frame .plain{color:var(--cobalt)}
+.frame b{font-size:clamp(23px,2.2vw,30px);font-weight:700;letter-spacing:-.035em;line-height:1.35;display:block}
+.frame p{color:var(--muted);font-size:14px;margin-top:10px}
+
+/* ===== 상담 예약 (블루 면) ===== */
+.ask{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px clamp(48px,7vw,120px)}
+@media (max-width:900px){.ask{grid-template-columns:1fr}}
+.ask .label{margin-bottom:24px}
+.ask h2{font-size:clamp(44px,6.4vw,96px);font-weight:700;line-height:1.06;letter-spacing:-.055em}
+.ask .lead{color:var(--on-blue-muted);font-weight:300;margin-top:26px;max-width:26em}
+.ask dl{margin:40px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 32px;font-size:15.5px;border-top:1px solid var(--blue-line);padding-top:26px}
+.ask dt{color:var(--on-blue-muted);font-size:14px}
+.ask dd{margin:0}
+.ask .links{display:flex;gap:26px;margin-top:30px;font-size:14.5px;flex-wrap:wrap}
+.ask .links a{color:var(--on-blue);text-decoration:none;border-bottom:1px solid var(--yellow);padding-bottom:1px;display:inline-flex;gap:8px}
+.ask .links a::after{content:"\2197";font-family:var(--latin);font-weight:300;color:var(--yellow)}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 30px;align-content:start;border-top:1px solid var(--on-blue);padding-top:38px}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+form .full{grid-column:1 / -1}
+label{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--on-blue);font-weight:500}
+label .plain{color:var(--yellow);font-size:10.5px;font-weight:500}
+input,select,textarea{font:inherit;font-family:var(--sans);font-size:16px;color:var(--on-blue);background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.32);border-radius:0;padding:10px 0;width:100%;font-weight:400}
+select{appearance:none;-webkit-appearance:none;background:linear-gradient(45deg,transparent 50%,var(--yellow) 50%) right 6px center/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--yellow) 50%) right 0 center/6px 6px no-repeat;padding-right:24px}
+select option{color:var(--ink);background:var(--white)}
+input::placeholder,textarea::placeholder{color:rgba(184,197,229,.7)}
+input:focus,select:focus,textarea:focus{border-bottom-color:var(--yellow);outline:none}
+textarea{min-height:88px;resize:vertical}
+form .btn{justify-self:start;margin-top:6px}
+.note{grid-column:1 / -1;background:var(--cobalt-deep);border-left:3px solid var(--yellow);color:var(--on-blue);padding:14px 18px;font-size:14px;line-height:1.7}
+
+/* 바닥글 */
+footer{background:var(--cobalt-night);color:var(--on-blue-muted)}
+footer .wrap{padding-block:52px 44px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px 56px;align-items:end;font-size:12.5px}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+.chip{display:inline-block;background:var(--white);padding:10px 14px;border-radius:2px}
+.chip .logo{width:104px;height:23px}
+footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
+@media (max-width:760px){footer .legal{text-align:left}}
+</style>
+
+<div class="draft">홈페이지 시안 10 · <b>코코스 블루 &amp; 옐로</b> · 점선 밑줄은 실제 정보로 바꿔 넣을 자리예요</div>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#home" aria-label="코코스학원 처음으로"><span class="logo" role="img" aria-label="COCOS"></span></a>
+    <nav aria-label="주요 메뉴">
+      <a href="#about">학원 소개</a>
+      <a href="#programs">프로그램</a>
+      <a href="#consult">입시 컨설팅</a>
+      <a href="#care">학습 관리</a>
+      <a class="btn blue" href="#ask">상담 예약</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <!-- 첫 화면 -->
+  <section class="on-blue hero">
+    <svg class="deco" viewBox="0 0 400 400" aria-hidden="true" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1">
+      <path d="M200 30a170 170 0 1 1-104.6 304.1L40 372l20.5-70.6A170 170 0 0 1 200 30z"/>
+      <path d="M200 74a126 126 0 1 1-77.5 225.4L82 326l15.3-51.6A126 126 0 0 1 200 74z" stroke="rgba(245,212,59,.22)"/>
+    </svg>
+    <div class="wrap">
+      <div class="meta"><span class="plain">COCOS English Academy</span><span>중·고등 영어 · 등록번호 제4760호</span></div>
+      <h1><span class="ln">학습과 컨설팅을</span><span class="ln"><span class="bubble">하나로.</span></span></h1>
+      <div class="row">
+        <p class="lead">시험 범위의 지문을 <b>문장 단위로</b> 끝까지 읽히고, 학생의 학교와 성적에 맞춘 <b>고교 선택과 내신 전략</b>까지 한 곳에서 관리합니다.</p>
+        <div class="btns">
+          <a class="btn yellow" href="#ask">상담 예약</a>
+          <a class="btn ghost" href="#consult">학부모 설명회</a>
+        </div>
+      </div>
+      <div class="facts">
+        <div><b>7<small>가지</small></b><span>지문마다 준비하는<br>온라인 학습 도구</span></div>
+        <div><b>15<small>문항</small></b><span>지문마다 만드는<br>확인 퀴즈</span></div>
+        <div><b>0<small>원</small></b><span>교습비 외<br>추가 경비</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 학원 소개 · 원장 인사 -->
+  <section class="on-white" id="about" aria-labelledby="t-about">
+    <div class="wrap pad">
+      <div class="head">
+        <div><span class="label">About COCOS</span><h2 id="t-about">정확히 읽는 힘에서<br>시작합니다</h2></div>
+        <p>코코스학원은 중·고등 영어를 가르칩니다. 수업과 입시 상담을 따로 두지 않고, 한 학생의 흐름 안에서 함께 봅니다.</p>
+      </div>
+      <div class="intro">
+        <div>
+          <div class="plate light" role="img" aria-label="원장님 사진 자리"><span><em>Portrait</em>원장님 사진 자리</span></div>
+          <div class="caption"><span class="plain">Director</span><span class="todo">원장님 사진을 넣어 주세요</span></div>
+        </div>
+        <div>
+          <p class="quote">영어 점수는 문장을 정확히 읽는 데서 나오고, 좋은 입시는 그 점수를 <em>어디에 쓸지</em> 아는 데서 시작합니다.</p>
+          <div class="body"><p class="todo">원장님 인사말이 들어갈 자리예요. 학원을 연 이유, 가르치는 원칙, 학생과 학부모께 드리는 약속을 두세 문단으로 적어 주세요.</p></div>
+          <div class="sign"><b class="todo">○○○</b><span>코코스학원 원장</span></div>
+        </div>
+      </div>
+      <div class="method">
+        <article><div class="num" aria-hidden="true">01</div><h3>진단 <span class="plain">Diagnosis</span></h3><p>레벨 테스트와 학교 시험 분석으로 지금의 위치를 확인합니다.</p></article>
+        <article><div class="num" aria-hidden="true">02</div><h3>설계 <span class="plain">Design</span></h3><p>학교별 평가 계획에 맞춰 내신과 모의고사 학습을 설계합니다.</p></article>
+        <article><div class="num" aria-hidden="true">03</div><h3>관리 <span class="plain">Care</span></h3><p>지문별 온라인 학습지와 정기 테스트로 시험 날까지 관리합니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 학년별 프로그램 -->
+  <section class="on-mist" id="programs" aria-labelledby="t-prog">
+    <div class="wrap pad">
+      <div class="head">
+        <div><span class="label">Programs &amp; Tuition</span><h2 id="t-prog">학년별 프로그램</h2></div>
+        <p>학교별 시험 범위와 평가 방식에 맞춰 반을 운영합니다. 교습비는 아래 금액이 전부입니다.</p>
+      </div>
+      <div class="programs">
+        <article class="prog">
+          <span class="plain">Middle School</span>
+          <h3>중등부</h3>
+          <div class="sub">교과서 내신 · 문법 기초</div>
+          <p>교과서 본문 내신 대비와 함께 문법·구문 기초를 다지고 서술형 쓰기를 훈련합니다.</p>
+          <div class="fee"><span class="t">월 교습비</span><b>300,000<small>원</small></b></div>
+        </article>
+        <article class="prog">
+          <span class="plain">Pre-High</span>
+          <h3>예비고1</h3>
+          <div class="sub">고교 입학 준비</div>
+          <p>고등 내신의 지문 분석 방식과 모의고사 유형을 미리 익히고, 진학할 학교의 평가 방식에 맞춰 준비합니다.</p>
+          <div class="fee"><span class="t">월 교습비 · 중등부 기준</span><b>300,000<small>원</small></b></div>
+        </article>
+        <article class="prog feature">
+          <span class="plain">High School</span>
+          <h3>고등부</h3>
+          <div class="sub">내신 완성 · 학력평가 대비</div>
+          <p>시험 범위 지문을 문장 단위로 분석하고 변형 문제, 어법, 서술형까지 대비합니다. 학력평가 유형 훈련을 함께 합니다.</p>
+          <div class="fee"><span class="t">월 교습비</span><b>360,000<small>원</small></b></div>
+        </article>
+      </div>
+      <div class="prog-note"><span>교습비 외 추가 경비 없음</span><span>예비고1(중3)은 중등부 교습비 적용</span><span class="todo">시간표를 넣어 주세요</span></div>
+    </div>
+  </section>
+
+  <!-- 노랑 띠 -->
+  <div class="band" role="note">
+    <div class="wrap">
+      <span class="plain">One Place</span>
+      <p>내신 수업과 입시 컨설팅을 한 곳에서.</p>
+      <span class="en">Learning × Consulting</span>
+    </div>
+  </div>
+
+  <!-- 입시 컨설팅 -->
+  <section class="on-blue" id="consult" aria-labelledby="t-consult">
+    <div class="wrap pad">
+      <div class="head">
+        <div><span class="label">Admissions Consulting</span><h2 id="t-consult">학교를 아는 것이<br>입시의 시작입니다</h2></div>
+        <p>학교알리미에 공시된 교육과정 편제와 평가 계획을 학교별로 비교해, 학생에게 맞는 고교 선택과 내신 전략을 함께 정합니다.</p>
+      </div>
+      <div class="steps">
+        <article><div class="num" aria-hidden="true">01</div><h3>교육과정 편제 비교</h3><p>지역 고등학교의 교육과정 편제표를 나란히 놓고 과목 구성과 선택 과목의 차이를 짚어 드립니다.</p></article>
+        <article><div class="num" aria-hidden="true">02</div><h3>평가 방식 비교</h3><p>지필과 수행평가 비율, 서술형 비중, 수행평가 항목을 학교마다 정리해 비교합니다.</p></article>
+        <article><div class="num" aria-hidden="true">03</div><h3>학생별 전략 상담</h3><p>학생의 성적과 성향에 맞춰 고교 선택과 학년별 내신 전략을 상담합니다.</p></article>
+      </div>
+      <div class="seminar">
+        <div class="plate dark" role="img" aria-label="설명회 사진 자리"><span><em>Seminar</em>설명회 사진 자리</span></div>
+        <div class="txt">
+          <span class="label">Parents’ Seminar</span>
+          <h3>예비고1 학부모 설명회<br>「고교 선택의 기준」</h3>
+          <p>지역 고교의 편제표, 지필·수행 비율, 서술형 비중, 수행평가 항목을 학교별로 비교해 설명합니다.</p>
+          <dl><dt>일정</dt><dd class="todo">설명회 일정을 넣어 주세요</dd><dt>장소</dt><dd class="todo">장소를 넣어 주세요</dd></dl>
+          <a class="btn yellow" href="#ask">설명회 참석 신청</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 학습 관리 -->
+  <section class="on-white" id="care" aria-labelledby="t-care">
+    <div class="wrap pad">
+      <div class="head">
+        <div><span class="label">Learning Care</span><h2 id="t-care">수업 밖에서도<br>이어지는 관리</h2></div>
+        <p>수업에서 다룬 지문을 집에서 다시 공부할 수 있도록, 코코스학원이 직접 만든 자료로 관리합니다.</p>
+      </div>
+      <div class="care">
+        <article class="feature">
+          <span class="num">01</span><h3>온라인 학습지</h3>
+          <p>지문마다 문장별 해석, 문장 듣기, 발음 단어장, 단어 퀴즈, 마인드맵, 확인 퀴즈 15문항, 문장 배열. 회원가입 없이 링크로 누구나 볼 수 있습니다.</p>
+          <div class="go"><span class="plain">Archive · 자료실</span></div>
+        </article>
+        <article>
+          <span class="num">02</span><h3>내신 대비 자료</h3>
+          <p>원지문, 워크북, 구문 분석(직독직해), 출제 1순위 문장, 어법 파이널, 동의어·반의어.</p>
+          <div class="go"><span class="tag">수업 배부</span></div>
+        </article>
+        <article>
+          <span class="num">03</span><h3>단어 관리</h3>
+          <p>시험 범위 단어장과 단어 테스트, 단어게임으로 단어를 끝까지 챙깁니다.</p>
+          <div class="go"><span class="tag">수업 배부</span></div>
+        </article>
+        <article>
+          <span class="num">04</span><h3>코코 키우기</h3>
+          <p>출석·테스트·과제로 코인을 모으면 학원 캐릭터 코코가 자랍니다. 뽑기와 도감으로 꾸준함을 기록합니다.</p>
+          <div class="go"><span class="tag">보상 제도</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 성과 -->
+  <section class="on-mist" aria-labelledby="t-results">
+    <div class="wrap pad">
+      <div class="head">
+        <div><span class="label">Results</span><h2 id="t-results">성과</h2></div>
+        <p class="todo">실제 합격 실적이나 성적 향상 사례를 받아서 넣을 자리예요. 확인된 내용만 싣습니다.</p>
+      </div>
+      <div class="frames">
+        <div class="frame"><span class="plain">Admission</span><div><b class="todo">합격 대학 · 학과</b><p>학생 학교 · 입학 연도</p></div></div>
+        <div class="frame"><span class="plain">Grade</span><div><b class="todo">내신 등급 변화</b><p>학년 · 학기</p></div></div>
+        <div class="frame"><span class="plain">Review</span><div><b class="todo">학부모 후기</b><p>학생 학년</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상담 예약 -->
+  <section class="on-blue" id="ask" aria-labelledby="t-ask">
+    <div class="wrap pad ask">
+      <div>
+        <span class="label">Consultation</span>
+        <h2 id="t-ask">상담 예약</h2>
+        <p class="lead">레벨 테스트와 상담은 예약제로 진행합니다. 남겨 주시면 원장이 직접 연락드립니다.</p>
+        <dl>
+          <dt>전화</dt><dd class="todo">000-0000-0000</dd>
+          <dt>주소</dt><dd class="todo">학원 주소를 넣어 주세요</dd>
+          <dt>상담 시간</dt><dd class="todo">상담 시간을 넣어 주세요</dd>
+        </dl>
+        <div class="links">
+          <a href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener">네이버 지도</a>
+          <a href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener">블로그</a>
+        </div>
+      </div>
+      <form id="askForm" novalidate>
+        <label for="p-name"><span class="plain">Student</span>학생 이름<input id="p-name" placeholder="홍길동" autocomplete="off"></label>
+        <label for="p-grade"><span class="plain">Grade</span>학년
+          <select id="p-grade"><option>중1</option><option>중2</option><option selected>중3 (예비고1)</option><option>고1</option><option>고2</option><option>고3</option></select>
+        </label>
+        <label for="p-school"><span class="plain">School</span>재학 중인 학교<input id="p-school" placeholder="○○중학교" autocomplete="off"></label>
+        <label for="p-phone"><span class="plain">Contact</span>연락처<input id="p-phone" inputmode="tel" placeholder="010-0000-0000"></label>
+        <label class="full" for="p-type"><span class="plain">Subject</span>상담 내용
+          <select id="p-type"><option>레벨 테스트 · 입학 상담</option><option>고교 선택 상담</option><option>학부모 설명회 참석</option><option>기타</option></select>
+        </label>
+        <label class="full" for="p-msg"><span class="plain">Message</span>남기실 말씀<textarea id="p-msg" placeholder="예: 내년 고1 진학 예정이고 내신 대비가 걱정입니다."></textarea></label>
+        <button class="btn yellow full" type="submit">상담 예약하기</button>
+        <p class="note" id="formNote" hidden>시안이라 실제로 전송되지는 않아요. 실제 홈페이지에서는 문자, 카카오톡 채널, 구글 설문 중 원하시는 방식으로 연결합니다.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="chip"><span class="logo" role="img" aria-label="COCOS"></span></span>
+    <div class="legal">
+      <p>학원명 코코스학원 · 등록번호 제4760호 · 교습과목 중·고등 영어 · 교습비 중등부 300,000원, 고등부 360,000원 · 추가 경비 없음</p>
+      <p>© <span id="yr">2026</span> 코코스학원 · 학습과 컨설팅을 하나로</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('askForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var n = document.getElementById('formNote');
+  n.hidden = false;
+  n.setAttribute('role','status');
+});
+</script>
+
+</body></html>
