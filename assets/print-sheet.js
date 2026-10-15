@@ -27,7 +27,8 @@
   /* 지문·해설 속 ①~⑳: 글자 크기에 맞게 줄이고 뒤에 한 칸(줄바꿈 없는 칸) */
   function nums(t) {
     return String(t == null ? '' : t)
-      .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\))[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>').replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
+      .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\))[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>')
+      .replace(/_{3,}/g, function (m) { return '<span class="cp-line" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
   }
   function ans(q) {
     if (typeof q.a === 'number') return NUM[q.a] || String(q.a + 1);
@@ -58,6 +59,9 @@
     '@media screen{#cocos-print{display:none}}',
     /* 요약문 빈칸 (A)(B): 화면에서도 ___(A)___처럼 넓게 (선생님 요청 2026-10-15) */
     'u.cocos-blank{display:inline-block;min-width:6.2em;text-align:center;text-decoration:none;border-bottom:1.5px solid currentColor;line-height:1.25;margin:0 .15em;padding:0 .2em}',
+    /* 빈칸 ______: 밑줄 문자 대신 이어진 선으로 (선생님 요청 2026-10-15) */
+    '.cocos-line{display:inline-block;border-bottom:1.5px solid currentColor;height:1em;vertical-align:-.12em;margin:0 .1em}',
+    '#cocos-print .cp-line{display:inline-block;border-bottom:1.2px solid #1B2033;height:1em;vertical-align:-.12em;margin:0 .1em}',
     '#cocos-print .cp-blank{display:inline-block;min-width:6.2em;text-align:center;border-bottom:1.2px solid #1B2033;line-height:1.25;margin:0 .15em}',
     '@media print{',
     '  @page{size:A4;margin:13mm 12mm 14mm}',
@@ -340,13 +344,38 @@
       if (m && !u.closest('#cocos-print')) { u.className += ' cocos-blank'; u.textContent = '(' + m[1] + ')'; }
     }
   }
+  var US = /_{3,}/;
+  function tagLines() {
+    if (!document.body || !document.createTreeWalker) return;
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (!US.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode;
+        if (!p || /^(SCRIPT|STYLE|TEXTAREA|INPUT)$/.test(p.nodeName) || p.closest('#cocos-print')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var list = [], n;
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(function (t) {
+      var parts = t.nodeValue.split(/(_{3,})/), frag = document.createDocumentFragment();
+      parts.forEach(function (x) {
+        if (/^_{3,}$/.test(x)) {
+          var sp = document.createElement('span'); sp.className = 'cocos-line';
+          sp.style.width = Math.max(5, Math.round(x.length * 0.55)) + 'em';
+          sp.setAttribute('aria-label', '빈칸'); frag.appendChild(sp);
+        } else if (x) frag.appendChild(document.createTextNode(x));
+      });
+      t.parentNode.replaceChild(frag, t);
+    });
+  }
   function start() {
-    tagBlanks();
+    tagBlanks(); tagLines();
     try {
       var busy = false;
       new MutationObserver(function () {
         if (busy) return; busy = true;
-        (window.requestAnimationFrame || setTimeout)(function () { busy = false; tagBlanks(); });
+        (window.requestAnimationFrame || setTimeout)(function () { busy = false; tagBlanks(); tagLines(); });
       }).observe(document.body, { childList: true, subtree: true });
     } catch (e) {}
     var st = document.createElement('style');
