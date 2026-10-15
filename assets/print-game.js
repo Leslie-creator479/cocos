@@ -48,7 +48,10 @@
     '#cocos-pdf-tip{flex-basis:100%;font-size:13.5px;color:var(--ink,#1B2033);background:var(--accent-soft,#E2F3FC);border-radius:10px;padding:10px 14px;margin:0}',
     '@media screen{#cocos-print{display:none}}',
     '@media print{',
-    '  @page{size:A4;margin:13mm 12mm 14mm}',
+    /* 좌우 여백은 내용 안쪽 여백으로 준다: 인쇄 창에서 '여백 없음'을 골라도 좌우가 꽉 차지 않게 (2026-10-15) */
+    '  @page{size:A4;margin:12mm 0 13mm}',
+    '  html,body{width:auto!important;min-width:0!important;max-width:none!important;overflow:visible!important}',
+    '  #cocos-print{padding:0 14mm!important;box-sizing:border-box;width:auto!important;max-width:100%!important}',
     '  html,body{background:#fff!important;color:#1B2033!important;margin:0!important;padding:0!important}',
     '  body>*:not(#cocos-print){display:none!important}',
     '  #cocos-print{display:block!important}',
