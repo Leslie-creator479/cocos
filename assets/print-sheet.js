@@ -124,8 +124,8 @@
     '#cocos-print .cp-qq .box{display:block;border:1px solid var(--p-ink);padding:5px 9px;margin-bottom:7px}',
     '#cocos-print ol.cp-o{list-style:none;margin:0;padding:0 0 0 4px}',
     '#cocos-print ol.cp-o li{display:grid;grid-template-columns:auto 1fr;column-gap:6px;padding:1px 0;align-items:baseline}',
-    '#cocos-print .cp-num{font-size:.84em;font-weight:400;line-height:1}',
-    '#cocos-print ol.cp-o li>b{font-weight:400;font-size:.86em;line-height:1}',
+    '#cocos-print .cp-num{font-size:.72em;vertical-align:.08em;font-weight:400;line-height:1}',
+    '#cocos-print ol.cp-o li>b{font-weight:400;font-size:.74em;line-height:1;position:relative;top:-.08em}',
     '#cocos-print ol.cp-o.cp-en li span{font-family:"Source Serif 4",Georgia,serif;font-size:10.5pt}',
     '#cocos-print ol.cp-o.cp-row{display:flex;flex-wrap:wrap;gap:2px 20px}',
     '#cocos-print ol.cp-o.cp-row li{display:flex;gap:6px}',
@@ -139,7 +139,7 @@
     '#cocos-print .cp-grid div b{color:var(--p-acc);margin-right:6px}',
     '#cocos-print .cp-ex{display:grid;grid-template-columns:30px 1fr;gap:4px;padding:4px 0;border-bottom:1px dashed var(--p-line);font-size:9.5pt;break-inside:avoid}',
     '#cocos-print .cp-ex .cp-n{font-weight:700;color:var(--p-acc)}',
-    '#cocos-print .cp-ex .cp-a{font-weight:700;margin-right:6px;font-size:.9em}',
+    '#cocos-print .cp-ex .cp-a{font-weight:700;margin-right:6px;font-size:.78em}',
     '#cocos-print .cp-ex i{font-family:"Source Serif 4",Georgia,serif}',
     '#cocos-print .cp-foot{margin-top:18px;padding-top:8px;border-top:2px solid var(--p-acc);font-size:8.5pt;color:var(--p-muted);break-inside:avoid}',
     '#cocos-print .cp-foot b{color:var(--p-ink)}',
@@ -268,7 +268,7 @@
     if (Q.length || (b && b.ask) || O.length) {
       h.push(sec('✓', '정답과 해설', '', 'newpage'));
       if (Q.length) {
-        h.push('<div class="cp-grid">' + Q.map(function (q, k) { return '<div><b>' + (k + 1) + '</b>' + ans(q) + '</div>'; }).join('') + '</div>');
+        h.push('<div class="cp-grid">' + Q.map(function (q, k) { return '<div><b>' + (k + 1) + '</b>' + nums(ans(q)) + '</div>'; }).join('') + '</div>');
         Q.forEach(function (q, k) {
           if (!q.e) return;
           var lead = String(q.e).replace(/<[^>]+>/g, '').trim().charAt(0) === ans(q) ? '' : '<span class="cp-a">' + ans(q) + '</span>';
