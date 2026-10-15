@@ -12,6 +12,7 @@
 하는 일 (몇 번 돌려도 결과가 같다. 다른 방에서 새 페이지를 올린 뒤 다시 돌리면 빠진 것만 고친다):
   1) noindex 대상 페이지 <head>에 <meta name="robots" content="noindex"> 넣기, 검색 대상에서 이 스크립트가 넣은 표시는 빼기
   2) sitemap.xml 다시 만들기(검색에 여는 페이지만)
+  0) 학습지에 'PDF로 저장' 버튼 붙이기(print_btn.py, 잠긴 페이지는 건너뜀)
   3) robots.txt 만들기: HTML이 아니라 표시를 달 수 없는 것(_tools/, CLAUDE.md, README.md)만 막고 sitemap 위치를 알린다.
      noindex 폴더를 robots.txt로 막지 않는 이유: 막으면 로봇이 페이지를 못 열어 noindex 표시를 못 보고,
      다른 곳(블로그 등)에 걸린 링크만 보고 주소를 검색 결과에 올릴 수 있다.
@@ -62,6 +63,10 @@ def add_noindex(s):
 
 def main():
     check = '--check' in sys.argv
+    # 학습지 'PDF로 저장' 버튼·안내 카드 오타도 함께 정리(_tools/print_btn.py, 선생님 결정 2026-10-15)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import print_btn
+    print_btn.run(check=check, quiet=True)
     opened, closed, changed, failed = [], [], [], []
     for page, path in pages():
         s = open(path, encoding='utf8').read()

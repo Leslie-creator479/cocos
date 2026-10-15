@@ -96,6 +96,14 @@
     '#cocos-print .cp-ask .cp-line{border-bottom:1px solid var(--p-line);height:18px;margin:2px 0 6px}',
     '#cocos-print .cp-passage{font-family:"Source Serif 4",Georgia,serif;font-size:11.5pt;line-height:1.85;border:1px solid var(--p-line);border-radius:6px;padding:10px 13px;text-align:justify}',
     '#cocos-print .cp-passage sup{font-family:"Noto Sans KR",sans-serif;font-size:7pt;font-weight:700;color:var(--p-acc);margin:0 2px 0 1px}',
+    '#cocos-print .cp-passage.cp-dialog{text-align:left}',
+    '#cocos-print .cp-passage .cp-line{margin:0 0 3px}',
+    '#cocos-print .cp-sp{font-family:"Noto Sans KR",sans-serif;font-size:9pt;color:var(--p-acc-ink);background:var(--p-soft);border-radius:4px;padding:0 6px;margin-right:4px}',
+    '#cocos-print .cp-fig{font-family:"Noto Sans KR",sans-serif;font-size:9.5pt;margin:8px 0;break-inside:avoid}',
+    '#cocos-print .cp-fig table{border-collapse:collapse;margin:4px auto}',
+    '#cocos-print .cp-fig th,#cocos-print .cp-fig td{border:1px solid var(--p-line);padding:3px 10px;text-align:center}',
+    '#cocos-print .cp-fig th{background:var(--p-soft)}',
+    '#cocos-print .cp-fig .fig-cap{font-weight:700;text-align:center}',
     '#cocos-print .cp-gloss{font-size:9pt;color:var(--p-muted);margin-top:4px}',
     '#cocos-print .cp-pair{display:grid;grid-template-columns:22px 1fr;gap:0 6px;padding:5px 0;border-bottom:1px solid var(--p-line);break-inside:avoid}',
     '#cocos-print .cp-pair .cp-n{font-weight:700;color:var(--p-acc);font-size:9.5pt;padding-top:1px}',
@@ -190,9 +198,18 @@
 
     /* 2. 지문 */
     h.push(sec(++n, '지문', '문장 번호는 해석·문제의 번호와 같아요'));
-    h.push('<div class="cp-passage">' + D.sentences.map(function (s, k) {
-      return '<sup>' + (k + 1) + '</sup>' + s.en;
-    }).join(' ') + '</div>');
+    var dialog = D.sentences.some(function (s) { return s.sp; });
+    var fig = D.figure && D.figure.html ? '<div class="cp-fig">' + D.figure.html + '</div>' : '';
+    var figAt = fig ? (+D.figure.after || D.sentences.length) : -1;
+    var body = '';
+    D.sentences.forEach(function (s, k) {
+      if (dialog && s.sp) body += (k ? '</p>' : '') + '<p class="cp-line"><b class="cp-sp">' + esc(s.sp) + '</b> ';
+      else if (dialog && !k) body += '<p class="cp-line">';
+      body += '<sup>' + (k + 1) + '</sup>' + s.en + ' ';
+      if (k + 1 === figAt) body += (dialog ? '</p>' : '') + fig + (dialog ? '<p class="cp-line">' : '');
+    });
+    if (dialog) body += '</p>';
+    h.push('<div class="cp-passage' + (dialog ? ' cp-dialog' : '') + '">' + body + '</div>');
     if (D.gloss && D.gloss.length) {
       h.push('<p class="cp-gloss">' + D.gloss.map(function (g) { return '* <span class="cp-en">' + g[0] + '</span> ' + g[1]; }).join('　') + '</p>');
     }
@@ -200,7 +217,7 @@
     /* 3. 문장별 해석 */
     h.push(sec(++n, '문장별 해석', ''));
     D.sentences.forEach(function (s, k) {
-      h.push('<div class="cp-pair"><span class="cp-n">' + (k + 1) + '</span><div><p class="cp-e">' + s.en + '</p><p class="cp-k">' + (s.ko || '') + '</p></div></div>');
+      h.push('<div class="cp-pair"><span class="cp-n">' + (k + 1) + '</span><div><p class="cp-e">' + (s.sp ? '<b class="cp-sp">' + esc(s.sp) + '</b> ' : '') + s.en + '</p><p class="cp-k">' + (s.ko || '') + '</p></div></div>');
     });
 
     /* 4. 단어 정리 */
@@ -259,7 +276,11 @@
         var idx = shuffle(c, (o.s || k + 1) * 7 + c.length);
         h.push('<div class="cp-ord"><p class="cp-qh"><b>' + (o.s || k + 1) + '번 문장</b>' +
           (D.sentences[(o.s || 0) - 1] && D.sentences[o.s - 1].ko ? ' <span style="color:#5B6278;font-size:9.5pt">— ' + D.sentences[o.s - 1].ko + '</span>' : '') + '</p>' +
-          '<div class="cp-chunks">' + idx.map(function (j) { return '<span>' + esc(c[j]) + '</span>'; }).join('') + '</div>' +
+          '<div class="cp-chunks">' + idx.map(function (j) {
+            var t = c[j];
+            if (j === 0 && !o.keep && !/^I\b/.test(t)) t = t.charAt(0).toLowerCase() + t.slice(1);
+            return '<span>' + esc(t) + '</span>';
+          }).join('') + '</div>' +
           '<div class="cp-write"></div><div class="cp-write"></div></div>');
       });
     }

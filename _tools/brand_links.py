@@ -36,7 +36,7 @@ def convert(path):
     s, k = re.subn(r'<a class="brand" href="(?:#academy|[./]*)"(?: title="코코스학원 홈페이지로")?>', f'<a class="brand" href="{home}" title="코코스학원 홈페이지로">', s, count=1); n += k
     # 안내 문구 (단어게임 페이지는 단어게임도 함께 말한다)
     what = '온라인 학습지와 단어를 재미있게 익히는 단어게임' if re.search(r'<h2 id="h-academy">[^<]*단어게임', s) else '온라인 학습지'
-    msg = (f'시험 범위 지문마다 해석·단어·마인드맵·변형 문제까지 담은 {what}을 만들고 있어요. '
+    msg = (f'시험 범위 지문마다 해석·단어·마인드맵·변형 문제까지 담은 {what}{"을" if what.endswith("게임") else "를"} 만들고 있어요. '
            '더 많은 자료는 자료실에서, 수업 소식은 블로그와 인스타그램에서, 학원 소개와 설명회 소식은 홈페이지에서 볼 수 있어요.')
     s, k = re.subn(r'(<h2 id="h-academy">[^<]*</h2>\s*<p>)[^<]*(</p>)', lambda m: m.group(1) + msg + m.group(2), s, count=1); n += k
     # 버튼
