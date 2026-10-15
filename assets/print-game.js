@@ -30,7 +30,8 @@
   function rangeLabel(gs) {
     if (gs.length === D.P.length) return '전체 ' + D.P.length + '개 지문';
     var a = gs.map(function (g) { return D.P[g].no; });
-    return a.length > 8 ? a.slice(0, 8).join(', ') + ' 외 ' + (a.length - 8) + '개 지문' : a.join(', ') + '번';
+    var tail = a.every(function (x) { return /^[\d~-]+$/.test(String(x)); }) ? '번' : '';
+    return a.length > 8 ? a.slice(0, 8).join(', ') + ' 외 ' + (a.length - 8) + '개 지문' : a.join(', ') + tail;
   }
 
   var CSS = [
@@ -101,7 +102,7 @@
       h.push('<div' + page() + '>' + head('단어 목록', label + ' · 단어 ' + list.length + '개'));
       gs.forEach(function (g) {
         var ws = list.filter(function (v) { return v.g === g; }); if (!ws.length) return;
-        h.push('<h2>' + esc(D.P[g].no) + '번 · ' + esc(D.P[g].topic || '') + '</h2><div class="cp-grid">' + ws.map(function (v, k) {
+        h.push('<h2>' + esc(D.P[g].no) + (/^[\d~-]+$/.test(String(D.P[g].no)) ? '번' : '') + ' · ' + esc(D.P[g].topic || '') + '</h2><div class="cp-grid">' + ws.map(function (v, k) {
           return '<div class="cp-r"><span class="n">' + (k + 1) + '</span><span class="w">' + esc(v.w) + '</span><span class="p">' + esc(v.p) + '</span><span class="m">' + esc(v.m) + '</span></div>';
         }).join('') + '</div>');
       });
