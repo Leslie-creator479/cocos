@@ -26,7 +26,8 @@
   }
   /* 지문·해설 속 ①~⑳: 글자 크기에 맞게 줄이고 뒤에 한 칸(줄바꿈 없는 칸) */
   function nums(t) {
-    return String(t == null ? '' : t).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
+    return String(t == null ? '' : t)
+      .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\))[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>').replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
   }
   function ans(q) {
     if (typeof q.a === 'number') return NUM[q.a] || String(q.a + 1);
@@ -55,6 +56,9 @@
     '#cocos-pdf-row small{font-size:13px;color:var(--muted,#5B6278)}',
     '#cocos-pdf-tip{flex-basis:100%;font-size:13.5px;color:var(--ink,#1B2033);background:var(--accent-soft,#E2F3FC);border-radius:10px;padding:10px 14px;margin:0}',
     '@media screen{#cocos-print{display:none}}',
+    /* 요약문 빈칸 (A)(B): 화면에서도 ___(A)___처럼 넓게 (선생님 요청 2026-10-15) */
+    'u.cocos-blank{display:inline-block;min-width:6.2em;text-align:center;text-decoration:none;border-bottom:1.5px solid currentColor;line-height:1.25;margin:0 .15em;padding:0 .2em}',
+    '#cocos-print .cp-blank{display:inline-block;min-width:6.2em;text-align:center;border-bottom:1.2px solid #1B2033;line-height:1.25;margin:0 .15em}',
     '@media print{',
     '  @page{size:A4;margin:13mm 12mm 14mm}',
     '  html,body{background:#fff!important;color:#1B2033!important;margin:0!important;padding:0!important}',
@@ -327,7 +331,24 @@
     return /KAKAOTALK|NAVER\(inapp|Instagram|FBAN|FBAV|Line\//i.test(ua);
   }
 
+  /* 화면의 요약문 빈칸 표시: 문제 화면이 바뀔 때마다 다시 그려지므로 지켜보다가 표시를 붙인다 */
+  var BL = /^[\s\u2003\u00a0]*\(?([A-E])\)?[\s\u2003\u00a0]*$/;
+  function tagBlanks() {
+    var us = document.querySelectorAll('u:not(.cocos-blank)');
+    for (var i = 0; i < us.length; i++) {
+      var u = us[i], m = BL.exec(u.textContent);
+      if (m && !u.closest('#cocos-print')) { u.className += ' cocos-blank'; u.textContent = '(' + m[1] + ')'; }
+    }
+  }
   function start() {
+    tagBlanks();
+    try {
+      var busy = false;
+      new MutationObserver(function () {
+        if (busy) return; busy = true;
+        (window.requestAnimationFrame || setTimeout)(function () { busy = false; tagBlanks(); });
+      }).observe(document.body, { childList: true, subtree: true });
+    } catch (e) {}
     var st = document.createElement('style');
     st.id = 'cocos-print-css';
     st.textContent = CSS;
