@@ -28,7 +28,7 @@
   function nums(t) {
     return String(t == null ? '' : t)
       .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\))[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>')
-      .replace(/_{3,}/g, function (m) { return '<span class="cp-line" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
+      .replace(/_{3,}/g, function (m) { return '<span class="cp-uline" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
   }
   function ans(q) {
     if (typeof q.a === 'number') return NUM[q.a] || String(q.a + 1);
@@ -61,7 +61,7 @@
     'u.cocos-blank{display:inline-block;min-width:6.2em;text-align:center;text-decoration:none;border-bottom:1.5px solid currentColor;line-height:1.25;margin:0 .15em;padding:0 .2em}',
     /* 빈칸 ______: 밑줄 문자 대신 이어진 선으로 (선생님 요청 2026-10-15) */
     '.cocos-line{display:inline-block;border-bottom:1.5px solid currentColor;height:1em;vertical-align:-.12em;margin:0 .1em}',
-    '#cocos-print .cp-line{display:inline-block;border-bottom:1.2px solid #1B2033;height:1em;vertical-align:-.12em;margin:0 .1em}',
+    '#cocos-print .cp-uline{display:inline-block;border-bottom:1.2px solid #1B2033;height:1em;vertical-align:-.12em;margin:0 .1em}',
     '#cocos-print .cp-blank{display:inline-block;min-width:6.2em;text-align:center;border-bottom:1.2px solid #1B2033;line-height:1.25;margin:0 .15em}',
     '@media print{',
     /* 좌우 여백은 내용 안쪽 여백으로 준다: 인쇄 창에서 '여백 없음'을 골라도 좌우가 꽉 차지 않게 (2026-10-15) */
