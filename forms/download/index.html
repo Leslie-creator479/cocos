@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>양식 내려받기 · 코코스학원</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1d2433;--sub:#5d6678;--accent:#1f3a68;--line:#dfe3ea}
+@media (prefers-color-scheme:dark){:root{--bg:#12161d;--card:#1b212b;--ink:#e8ecf2;--sub:#a3acbb;--accent:#8fb2ec;--line:#2c3441}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 24px;max-width:420px;width:100%;text-align:center}
+h1{font-size:19px;margin:0 0 8px;overflow-wrap:anywhere}
+p{color:var(--sub);margin:6px 0;line-height:1.6;font-size:15px}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+a.btn{display:inline-block;padding:10px 18px;border-radius:9px;text-decoration:none;font-weight:700;font-size:15px;border:1px solid var(--accent);color:var(--accent)}
+a.btn.primary{background:var(--accent);color:var(--card)}
+.brand{margin-top:20px;font-size:12px;color:var(--sub)}
+</style>
+</head>
+<body>
+<main class="card">
+<h1 id="t">양식 내려받기</h1>
+<p id="m">내려받기를 시작하고 있어요…</p>
+<div class="row" id="r" hidden>
+<a class="btn primary" id="dl" href="#" download>다시 내려받기</a>
+<a class="btn" id="op" href="#">열어서 인쇄</a>
+</div>
+<p class="brand">코코스학원 교무실 양식</p>
+</main>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search),f=q.get("f")||"",n=(q.get("n")||"").replace(/[\\\/:*?"<>|]/g,"").slice(0,60);
+  var t=document.getElementById("t"),m=document.getElementById("m"),r=document.getElementById("r"),dl=document.getElementById("dl"),op=document.getElementById("op");
+  if(!/^[a-z0-9-]+\.pdf$/.test(f)){m.textContent="양식을 찾을 수 없어요. 교무실 양식함에서 다시 눌러 주세요.";return}
+  var url="../"+f,name=(n||f.replace(/\.pdf$/,""))+".pdf";
+  t.textContent=name;dl.href=url;dl.setAttribute("download",name);op.href=url;r.hidden=false;
+  setTimeout(function(){dl.click();m.textContent="내려받았어요. 이 창은 닫으셔도 돼요.";},300);
+})();
+</script>
+</body>
+</html>
