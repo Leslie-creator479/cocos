@@ -33,9 +33,11 @@ a.btn.primary{background:var(--accent);color:var(--card)}
 (function(){
   var q=new URLSearchParams(location.search),f=q.get("f")||"",n=(q.get("n")||"").replace(/[\\\/:*?"<>|]/g,"").slice(0,60);
   var t=document.getElementById("t"),m=document.getElementById("m"),r=document.getElementById("r"),dl=document.getElementById("dl"),op=document.getElementById("op");
-  if(!/^[a-z0-9-]+\.pdf$/.test(f)){m.textContent="양식을 찾을 수 없어요. 교무실 양식함에서 다시 눌러 주세요.";return}
-  var url="../"+f,name=(n||f.replace(/\.pdf$/,""))+".pdf";
-  t.textContent=name;dl.href=url;dl.setAttribute("download",name);op.href=url;r.hidden=false;
+  var mt=/^[a-z0-9-]+\.(pdf|hwp|hwpx|xlsx|xls|docx|doc|pptx)$/.exec(f);
+  if(!mt){m.textContent="양식을 찾을 수 없어요. 교무실 양식함에서 다시 눌러 주세요.";return}
+  var ext=mt[1],url="../"+f,name=(n||f.replace(/\.[a-z]+$/,""))+"."+ext;
+  t.textContent=name;dl.href=url;dl.setAttribute("download",name);r.hidden=false;
+  if(ext==="pdf")op.href=url;else op.remove();
   setTimeout(function(){dl.click();m.textContent="내려받았어요. 이 창은 닫으셔도 돼요.";},300);
 })();
 </script>
