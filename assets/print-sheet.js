@@ -369,13 +369,36 @@
       t.parentNode.replaceChild(frag, t);
     });
   }
+  /* 화면 지문 속 ①~⑤ 바로 뒤에 영어 낱말이 붙어 있으면 한 칸(줄바꿈 없는 칸) 띄운다 (선생님 요청 2026-10-15) */
+  var CN = /[\u2460-\u2473]/, CN_IN = /([\u2460-\u2473])(?=[A-Za-z\u201c"'(])/g, CN_END = /[\u2460-\u2473]$/;
+  function tagNums() {
+    if (!document.body || !document.createTreeWalker) return;
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (!CN.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode;
+        if (!p || /^(SCRIPT|STYLE|TEXTAREA|INPUT)$/.test(p.nodeName) || p.closest('#cocos-print')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var list = [], n;
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(function (t) {
+      var v = t.nodeValue, nv = v.replace(CN_IN, '$1\u00a0');
+      if (CN_END.test(nv) && t.nextSibling) {
+        var nx = t.nextSibling, tx = nx.nodeType === 3 ? nx.nodeValue : (nx.textContent || '');
+        if (/^[A-Za-z\u201c"'(]/.test(tx)) nv += '\u00a0';
+      }
+      if (nv !== v) t.nodeValue = nv;
+    });
+  }
   function start() {
-    tagBlanks(); tagLines();
+    tagBlanks(); tagLines(); tagNums();
     try {
       var busy = false;
       new MutationObserver(function () {
         if (busy) return; busy = true;
-        (window.requestAnimationFrame || setTimeout)(function () { busy = false; tagBlanks(); tagLines(); });
+        (window.requestAnimationFrame || setTimeout)(function () { busy = false; tagBlanks(); tagLines(); tagNums(); });
       }).observe(document.body, { childList: true, subtree: true });
     } catch (e) {}
     var st = document.createElement('style');
