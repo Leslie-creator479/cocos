@@ -24,6 +24,10 @@
     for (var i = 1; i < a.length; i++) if (a[i] !== a[i - 1] + 1) run = false;
     return (a.length > 1 && run ? a[0] + '~' + a[a.length - 1] : a.join('·')) + '번';
   }
+  /* 지문·해설 속 ①~⑳: 글자 크기에 맞게 줄이고 뒤에 한 칸(줄바꿈 없는 칸) */
+  function nums(t) {
+    return String(t == null ? '' : t).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
+  }
   function ans(q) {
     if (typeof q.a === 'number') return NUM[q.a] || String(q.a + 1);
     return esc(q.a);
@@ -120,6 +124,7 @@
     '#cocos-print .cp-qq .box{display:block;border:1px solid var(--p-ink);padding:5px 9px;margin-bottom:7px}',
     '#cocos-print ol.cp-o{list-style:none;margin:0;padding:0 0 0 4px}',
     '#cocos-print ol.cp-o li{display:grid;grid-template-columns:auto 1fr;column-gap:6px;padding:1px 0;align-items:baseline}',
+    '#cocos-print .cp-num{font-size:.84em;font-weight:400;line-height:1}',
     '#cocos-print ol.cp-o li>b{font-weight:400;font-size:.86em;line-height:1}',
     '#cocos-print ol.cp-o.cp-en li span{font-family:"Source Serif 4",Georgia,serif;font-size:10.5pt}',
     '#cocos-print ol.cp-o.cp-row{display:flex;flex-wrap:wrap;gap:2px 20px}',
@@ -230,13 +235,13 @@
       h.push(sec(++n, '확인 문제', Q.length + '문항 · 정답은 맨 뒤에', 'newpage'));
       Q.forEach(function (q, k) {
         var s = '<div class="cp-q"><p class="cp-qh">' + (k + 1) + '. ' + (q.type ? '<span class="cp-t">' + esc(q.type) + '</span>' : '') + (q.p || '') + '</p>';
-        if (q.q) s += '<div class="cp-qq">' + q.q + '</div>';
+        if (q.q) s += '<div class="cp-qq">' + nums(q.q) + '</div>';
         if (q.o && q.o.length) {
           var short = q.o.every(function (o) { return String(o).replace(/<[^>]+>/g, '').length <= 26; });
           s += '<ol class="cp-o' + (q.en ? ' cp-en' : '') + (short ? ' cp-row' : '') + '">' + q.o.map(function (o, j) {
             var bare = String(o).replace(/<[^>]+>/g, '').trim();
             if (bare === NUM[j] || bare === String(j + 1)) return '<li><b>' + NUM[j] + '</b><span></span></li>';
-            return '<li><b>' + NUM[j] + '</b><span>' + o + '</span></li>';
+            return '<li><b>' + NUM[j] + '</b><span>' + nums(o) + '</span></li>';
           }).join('') + '</ol>';
         } else {
           s += '<div class="cp-write"></div><div class="cp-write"></div>';
@@ -267,7 +272,7 @@
         Q.forEach(function (q, k) {
           if (!q.e) return;
           var lead = String(q.e).replace(/<[^>]+>/g, '').trim().charAt(0) === ans(q) ? '' : '<span class="cp-a">' + ans(q) + '</span>';
-          h.push('<div class="cp-ex"><span class="cp-n">' + (k + 1) + '</span><p>' + lead + q.e + '</p></div>');
+          h.push('<div class="cp-ex"><span class="cp-n">' + (k + 1) + '</span><p>' + lead + nums(q.e) + '</p></div>');
         });
       }
       if (b && b.ask && b.ask.length) {
