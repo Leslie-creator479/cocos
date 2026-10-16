@@ -1,0 +1,170 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>성남여고 고2 2학기 중간고사 분석 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+.imgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.imgs figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.imgs img{width:100%;border:1px solid var(--line);border-radius:10px;display:block;background:var(--paper)}
+.imgs figcaption{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.imgs a.dl{font-size:14px;font-weight:700;color:var(--accent-ink);border:1px solid var(--accent);border-radius:8px;padding:4px 10px;text-decoration:none;white-space:nowrap}
+.preview .ph{color:var(--accent-ink);font-weight:700;background:var(--accent-soft);border-radius:6px;padding:0 6px}
+@media (max-width:560px){.imgs{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>성남여고 고2 2학기 중간고사 영어Ⅱ 분석 블로그 원고</h1>
+    <p>네이버 블로그에 링크째 붙여 넣을 수 있는 원고와 이미지 6장이에요. 정답은 넣지 않았어요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>아래 이미지를 내려받아 [대표 이미지]와 [이미지 1~5] 자리에 순서대로 올려요.</li>
+    <li>‘태그 복사’로 태그를 넣고, 바로가기 링크 세 개가 열리는지 확인하고 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  <section class="exam" id="images">
+    <div class="exam-head">
+      <div><h2>이미지 6장</h2><p class="meta">가로 1920px PNG · 본문 순서대로 올려요</p></div>
+    </div>
+    <div class="imgs" id="imgs"></div>
+  </section>
+
+  <p class="note">이미지는 본문에 자동으로 들어가지 않아요. 붙여 넣은 뒤 이미지 자리 표시를 지우고 그 자리에 이미지를 올려 주세요.<br>붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"title": "2026 성남여고 2학년 2학기 중간고사 영어Ⅱ 분석 | 출제 비율·유형·변형 문항 총정리", "tags": "성남여고 성남여고영어 성남여고내신 고2영어내신 영어2내신 중간고사분석 내신시험분석 영어변형문제 6월고2모의고사 9월고2모의고사 성남동영어학원", "body": [["p", "[대표 이미지]"], ["p", "성남여고 2학년 2학기 중간고사 영어Ⅱ 시험지를 문항별로 분석했어요."], ["p", "시험 범위는 교과서(NE능률 오선영) 1~3과와 2026년 6월·9월 고2 모의고사 일부 지문이었어요."], ["p", "어디서 몇 문제가 나왔는지, 어떤 유형으로 바뀌었는지, 지문을 어떻게 변형했는지 정리했으니 기말고사 준비에 참고해 주세요."], ["b", "■ 1. 시험 구성"], ["img", "[이미지 1 · 시험 구성과 출처 비율]"], ["p", "· 객관식 21문항 80점 + 서술형(논술형) 5문항 20점, 모두 26문항이에요."], ["p", "· 객관식 배점은 3.4~4.2점으로 차이가 크지 않아서, 한 문제 실수가 그대로 등급에 영향을 줘요."], ["p", "· 객관식 선택지는 19문항이 영어였고, 한글 선택지는 2문항뿐이었어요."], ["b", "■ 2. 어디서 나왔나요? (출처별 비율)"], ["p", "· 6월 모의고사 17문항 · 64.7점"], ["p", "· 9월 모의고사 2문항 · 8.1점"], ["p", "· 교과서 1~3과 7문항 · 27.2점"], ["p", "· 부교재 0문항 (이번 범위에 부교재가 없었어요)"], ["br"], ["p", "모의고사 범위 19지문 중 18지문이 출제됐어요. 빠진 지문은 6월 26번(인물 소개 글) 하나뿐이에요."], ["p", "교과서는 2과(시민 과학)가 15.5점으로 가장 많이 나왔어요."], ["p", "범위 지문을 골라서 공부하면 안 되는 시험이었어요."], ["b", "■ 3. 어떤 유형이 나왔나요?"], ["img", "[이미지 2 · 문제 유형별 배점]"], ["p", "· 빈칸 추론 5문항(20.0점)과 글의 흐름(무관한 문장·순서·문장 삽입) 5문항(19.5점)이 객관식 배점의 절반이었어요."], ["p", "· 이어서 대의 파악(요지·제목·주제) 4문항, 어법 3문항, 내용 불일치 2문항, 어휘 1문항, 요약문 1문항이 나왔어요."], ["p", "· 가장 높은 배점(4.2점)은 빈칸, 교과서 내용 불일치, 지문을 늘린 어휘 문항에 걸렸어요."], ["p", "· 서술형은 보기 단어를 골라 어형을 바꿔 쓰는 빈칸(9점), 보기 어구로 요약문·문장 완성(8점), 어법 오류 고치기(3점)로 나왔어요."], ["p", "· 장문 세트는 교과서 2과 STEVE 지문과 6월 41~42번, 두 개였어요."], ["b", "■ 4. 모의고사 지문은 유형이 모두 바뀌었어요"], ["img", "[이미지 3 · 모의고사 지문의 출제 유형]"], ["p", "모의고사 지문으로 나온 19문항 가운데 원래 모의고사와 같은 유형으로 나온 문항은 하나도 없었어요."], ["p", "· 원래 빈칸 문제였던 31~34번 지문은 주제·제목·순서·서술형 영작으로 나왔어요."], ["p", "· 대신 주장·주제·순서·요약문 지문(20·23·37·40번)이 빈칸으로 나왔어요."], ["p", "원래 문제의 정답 문장만 외워서는 풀기 어려운 구성이에요."], ["b", "■ 5. 지문 변형은 이렇게 나왔어요"], ["img", "[이미지 4 · 지문·어휘 변형 분석]"], ["p", "출제 지문 23개 중 12개(52%)는 본문까지 바꾼 변형 지문이었어요. 교과서 지문은 5개 모두, 모의고사 지문은 18개 중 7개가 바뀌었어요."], ["br"], ["p", "① 원문에 없는 문장 새로 넣기 (5·6번)"], ["p", "같은 소재와 같은 단어를 쓰지만 글의 논지와 어긋나는 문장을 새로 써서 넣었어요. 바로 앞 문장의 단어를 이어받아 자연스러워 보이게 만든 점이 특징이에요."], ["br"], ["p", "② 원서 문단 덧붙이기 (13번, 서술형 4)"], ["p", "모의고사 지문 앞이나 뒤에 원래 글의 다른 문단을 붙여 지문이 길어졌어요. 13번은 밑줄 다섯 개 중 세 개가, 서술형 4는 빈칸 다섯 개 중 네 개가 처음 보는 문단에 있었어요."], ["br"], ["p", "③ 교과서 문단 잇기·줄이기 (1·12·16·17·21번, 서술형 1·3)"], ["p", "여러 문단을 이어 붙이거나 일부를 통째로 뺐어요. 3과 투표 이야기는 세 가지 투표 방법 중 하나를 빼고 두 가지로 다시 썼어요."], ["br"], ["p", "④ 원문 표현을 틀린 형태로 바꾸기 (16·18·21번, 서술형 3)"], ["p", "교과서·모의고사 원문의 맞는 표현을 틀리게 바꿔 어법 문제로 냈어요. 수일치, what과 that, 감각동사 뒤 형용사, allow + 목적어 + to부정사, 관계사절과 to부정사 구별 같은 기본 포인트가 나왔어요."], ["br"], ["p", "⑤ 반의어로 바꾸기 (13번)"], ["p", "문맥과 반대 뜻이 되도록 낱말을 바꿔 쓴 어휘 문항이었어요."], ["br"], ["p", "⑥ 정답을 같은 뜻 다른 표현으로 (9·10·11·19·20번)"], ["p", "빈칸·요약문 정답이 원문 표현 그대로가 아니라 같은 뜻의 다른 표현으로 나왔어요."], ["br"], ["p", "⑦ 요약문·대화문 새로 쓰기 (20번, 서술형 1·2)"], ["p", "요약문이나 대화문을 새로 써서, 원문 단어가 아닌 같은 뜻의 다른 단어를 고르게 했어요."], ["b", "■ 6. 기말고사는 이렇게 준비해요"], ["img", "[이미지 5 · 기말고사 대비 포인트]"], ["p", "1. 지문 하나를 빈칸·순서·삽입·무관·요약·제목으로 모두 풀어 보기"], ["p", "2. 모의고사 지문의 원래 글 앞뒤 내용까지 알아 두기"], ["p", "3. 같은 소재·다른 논지 문장 골라내기 연습"], ["p", "4. 핵심 문장의 동의어·반의어 표현 정리"], ["p", "5. 교과서 본문 어법 포인트(수일치, what/that, 준동사, 관계사, 가정법) 점검"], ["p", "6. 서술형 어형 변화(품사·시제·수일치) 연습"], ["b", "■ 시험 범위 모의고사, 이렇게 공부해요"], ["p", "코코스학원 온라인 학습지로 지문별 해석·단어·변형 문제까지 공부할 수 있어요."], ["p", "▶ 2026년 6월 고2 모의고사 온라인 학습지"], ["link", "https://cocosedu.kr/study/2026-06-g2/", "https://cocosedu.kr/study/2026-06-g2/"], ["p", "▶ 2026년 9월 고2 모의고사 온라인 학습지"], ["link", "https://cocosedu.kr/study/2026-09-g2/", "https://cocosedu.kr/study/2026-09-g2/"], ["p", "▶ 6월 고2 동의어·반의어 (어휘 변형 대비)"], ["link", "https://cocosedu.kr/syn/2026-06-g2/", "https://cocosedu.kr/syn/2026-06-g2/"], ["br"], ["p", "이 글은 코코스학원이 시험지를 직접 분석해 정리한 자료예요."], ["p", "시험 문제와 지문의 저작권은 학교와 출제처에 있어 시험지 이미지와 문제 원문, 정답은 싣지 않았어요."], ["p", "내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요."]], "imgs": [{"src": "00-thumb.png", "name": "성남여고_고2_2학기중간_00_대표이미지.png", "cap": "대표 이미지"}, {"src": "01-source.png", "name": "성남여고_고2_2학기중간_01_시험구성_출처비율.png", "cap": "이미지 1 · 시험 구성과 출처 비율"}, {"src": "02-types.png", "name": "성남여고_고2_2학기중간_02_문제유형별_배점.png", "cap": "이미지 2 · 문제 유형별 배점"}, {"src": "03-convert.png", "name": "성남여고_고2_2학기중간_03_모의고사_유형전환.png", "cap": "이미지 3 · 모의고사 지문의 출제 유형"}, {"src": "04-variation.png", "name": "성남여고_고2_2학기중간_04_지문변형_분석.png", "cap": "이미지 4 · 지문·어휘 변형 분석"}, {"src": "05-final.png", "name": "성남여고_고2_2학기중간_05_기말고사_대비.png", "cap": "이미지 5 · 기말고사 대비 포인트"}]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function bodyHTML(){
+  var h='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')h+='<p><br></p><p><b>'+esc(b[1])+'</b></p>';
+    else if(b[0]==='link')h+='<p>'+a(b[2],b[1])+'</p>';
+    else if(b[0]==='br')h+='<p><br></p>';
+    else if(b[0]==='img')h+='<p><br></p><p><span class="ph">'+esc(b[1])+'</span></p><p><br></p>';
+    else h+='<p>'+esc(b[1])+'</p>';
+  });
+  return h;
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='img')t+='\n'+b[1]+'\n\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent='제목·본문·태그 · 이미지 자리 '+D.imgs.length+'곳';
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+$('imgs').innerHTML=D.imgs.map(function(m){return '<figure><img src="'+esc(m.src)+'" alt="'+esc(m.cap)+'" loading="lazy"><figcaption><span>'+esc(m.cap)+'</span><a class="dl" href="'+esc(m.src)+'" download="'+esc(m.name)+'">내려받기</a></figcaption></figure>'}).join('');
+
+var stP=$('st-post');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+</script>
+</body></html>
