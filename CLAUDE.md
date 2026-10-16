@@ -14,7 +14,7 @@ GitHub Pages로 공개되는 코코스학원 홈페이지·온라인 학습지 �
 | `school/2026-2-mid/<학교>-g<학년>/` | 학교별 시험 범위 목차(학교: dongkwang, seongnam, seongnam-girls, seongil, pungsaeng) |
 | `syn/<회차>/` | 동의어·반의어 (회차 이름은 study와 같다. 교과서는 과마다 하나씩 `syn/neo2-1`, `syn/ce1min-1`처럼. 여러 과를 한 페이지에 묶지 않는다(선생님 결정 2026-10-15). 옛 `syn/neo2-1-3`은 1·2·3과로 넘겨주는 안내 페이지) |
 | `game/<회차>/` | 단어게임 (교과서는 `game/ce1min-1`처럼 syn과 같은 이름) |
-| `tools/` | 선생님 자료함(검색 제외). `tools/index.html` 첫 화면은 `_tools/build_tools_index.py`로만 만든다. `tools/blog-list/` 블로그 수록 지문 목록(이게 기준판, 옛 아티팩트판은 더 고치지 않음), `tools/textbook-list/` 교과서 지문 목록, `tools/game-blog/<회차>/`·`tools/syn-blog/<회차>/` 블로그 원고, `tools/exam-blog/<연도>-<학기>-<mid·final>-<학교>-g<학년>/` 학교 시험 분석 블로그 원고(이미지 PNG 함께, 정답은 넣지 않음), `tools/templates/` 틀 |
+| `tools/` | 선생님 자료함(검색 제외). `tools/index.html` 첫 화면은 `_tools/build_tools_index.py`로만 만든다. `tools/blog-list/` 블로그 수록 지문 목록(이게 기준판, 옛 아티팩트판은 더 고치지 않음), `tools/textbook-list/` 교과서 지문 목록, `tools/game-blog/<회차>/`·`tools/syn-blog/<회차>/` 블로그 원고, `tools/templates/` 틀 |
 | `preview/` | 홈페이지 디자인 시안(noindex) |
 | `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `fix_links.py`(claude.ai 링크 → 홈페이지 주소), `add_library.py`(자료실 카드), `build_tools_index.py`(선생님 자료함 첫 화면), `brand_links.py`(학원 안내 카드), `seo.py`(검색 노출·sitemap·robots, 돌 때 `print_btn.py`도 함께 돈다), `print_btn.py`(학습지·동의어·단어게임 PDF 버튼 붙이기), `lock.mjs`(교과서·부교재 학원생 잠금), `artifact_map.json`(옛 아티팩트 id → 저장소 경로) |
 

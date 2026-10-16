@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 logo = re.search(r'url\((data:image/png;base64,[^)]+)\)', open('library/index.html', encoding='utf8').read()).group(1)
 
-KIND = {'game-blog': '단어게임 블로그 원고', 'syn-blog': '동의어·반의어 블로그 원고', 'exam-blog': '학교 시험 분석 블로그 원고'}
+KIND = {'game-blog': '단어게임 블로그 원고', 'syn-blog': '동의어·반의어 블로그 원고'}
 SCH = {'dongkwang': '동광고', 'seongnam': '성남고', 'seongnam-girls': '성남여고', 'seongil': '성일고', 'pungsaeng': '풍생고'}
 
 
