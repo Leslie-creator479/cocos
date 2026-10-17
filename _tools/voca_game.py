@@ -19,7 +19,7 @@
    - 틀: game/2022-03-g2(모의고사 단어게임, 잠기지 않은 페이지)를 그대로 쓰고 단어장에 맞게 고친다
      (지문 → Day, '지문 속 빈칸' 게임 뺌(예문 없음), 학습지·동의어 링크 없음, 머리말 아래 교재 구매 안내).
    만든 뒤: brand_links.py → seo.py(PDF 버튼) → lock.mjs lock, 자료실은
-   python3 _tools/add_library.py game "능률VOCA 고등기본" game/voca-nehs-basic <Day 수> --group "정규반 단어장" --buy "<주소>" --buy-label "정규반 단어 교재: 능률VOCA 고등기본 · 교보문고에서 사기"
+   python3 _tools/add_library.py game "능률VOCA 고등기본" game/voca-nehs-basic <Day 수> --group "정규반 단어장"   (카드 아래 구매 링크는 넣지 않는다)
    범위 링크: 주소#2 (Day 02), 주소#4-6 (Day 04~06), 주소#4-5.9 (Day 04·05·09)
 """
 import json, re, sys, os, argparse
