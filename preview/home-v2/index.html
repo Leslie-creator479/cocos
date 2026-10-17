@@ -327,6 +327,30 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 @media (max-width:1100px){.progs{grid-template-columns:repeat(2,minmax(0,1fr))}.progs article:nth-child(3){border-left:0;padding-left:0}.progs article:nth-child(n+3){border-top:1px solid var(--night-line)}.vows{grid-template-columns:1fr}}
 @media (max-width:860px){.center-head{grid-template-columns:1fr}}
 @media (max-width:600px){.progs{grid-template-columns:1fr}.progs article,.progs article + article{border-left:0;padding:26px 0;border-top:1px solid var(--night-line)}.progs article:first-child{border-top:0}}
+
+/* 흰 배경 섹션 선 그림 (2026-10-18) */
+.ico{width:44px;height:44px;color:var(--gold-deep);display:block;flex:none}
+.care .no{display:flex;flex-direction:column;gap:16px}
+.care .no .ico{width:50px;height:50px;color:var(--ink);opacity:.8}
+.method .ico{width:56px;height:56px;color:var(--gold-deep);margin:-6px 0 18px}
+.entry .ico{width:52px;height:52px;color:var(--gold-deep);margin-bottom:18px}
+.row-link .cap{display:flex;align-items:center;gap:12px}
+.row-link .ico{width:26px;height:26px}
+@media (min-width:481px){.row-link{grid-template-columns:168px minmax(0,1fr)}}
+.place{margin-top:clamp(40px,5vw,64px);max-width:440px;color:#4A505C}
+.place svg{display:block;width:100%;height:auto}
+.place figcaption{margin-top:14px;font-size:13px;color:var(--muted);letter-spacing:.04em}
+.scene{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);margin-bottom:clamp(40px,5vw,72px)}
+.scene figure{margin:0;padding:28px 0 0;color:var(--ink)}
+.scene figure + figure{border-left:1px dashed var(--line);padding-left:clamp(20px,3vw,48px)}
+.scene figure:first-child{padding-right:clamp(20px,3vw,48px)}
+.scene figcaption{display:flex;flex-direction:column;gap:8px}
+.scene figcaption .cap{color:var(--gold-deep)}
+.scene figcaption b{font-size:clamp(18px,1.6vw,22px);font-weight:600;letter-spacing:-.02em}
+.scene svg{display:block;width:100%;height:auto;margin-top:8px;color:#4A505C}
+.scene + .care{border-top:1px solid var(--line)}
+@media (max-width:900px){.care .no{grid-row:1 / span 3}.care .no .ico{width:40px;height:40px}}
+@media (max-width:760px){.scene{grid-template-columns:1fr}.scene figure + figure{border-left:0;padding-left:0;border-top:1px dashed var(--line)}.scene figure:first-child{padding-right:0}}
 </style>
 
 
@@ -452,29 +476,58 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
         <div><span class="cap">How We Teach</span><h2 id="t-principles">AI는 교실 밖에서,<br>교실 안에는 선생님과 학생</h2></div>
         <p>기술은 학원이 쓰고, 교실은 공부에 집중합니다. 오랫동안 아이들을 가르치며 지켜본 끝에 세운 기준입니다.</p>
       </div>
+      <div class="scene">
+        <figure><figcaption><span class="cap">Outside the Classroom</span><b>교실 밖 — 학원이 AI로</b></figcaption><svg viewBox="0 0 560 260" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="currentColor" stroke-width="1.4" opacity=".5">
+    <path d="M70 70L210 130M70 190L210 150M130 40L230 120M130 220L230 160M250 40L260 112M250 220L260 168"/>
+  </g>
+  <g stroke="currentColor" stroke-width="1.4" fill="#F7F7F5">
+    <circle cx="70" cy="70" r="9"/><circle cx="70" cy="190" r="9"/><circle cx="130" cy="40" r="6"/><circle cx="130" cy="220" r="6"/><circle cx="250" cy="40" r="6"/><circle cx="250" cy="220" r="6"/>
+  </g>
+  <rect x="210" y="105" width="90" height="70" rx="10" stroke="var(--gold-deep)" stroke-width="1.8" fill="#F7F7F5"/>
+  <text x="255" y="148" text-anchor="middle" font-family="Jost,Inter,sans-serif" font-size="26" font-weight="500" letter-spacing="2" fill="var(--gold-deep)">AI</text>
+  <path d="M300 140h70" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 6"/>
+  <g stroke="var(--gold-deep)" stroke-width="1.6" fill="#F7F7F5">
+    <path d="M384 108h44v62h-44z"/><path d="M392 100h44v62h-44z"/><path d="M400 92h44v62h-44z"/>
+  </g>
+  <path d="M410 108h24M410 118h24M410 128h16" stroke="var(--gold-deep)" stroke-width="1.4"/>
+  <path d="M450 140h70m-10-8l10 8-10 8" stroke="currentColor" stroke-width="1.4"/>
+</svg></figure>
+        <figure><figcaption><span class="cap">Inside the Classroom</span><b>교실 안 — 선생님과 학생</b></figcaption><svg viewBox="0 0 560 260" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="140" cy="92" r="20"/><path d="M96 176c0-26 20-44 44-44s44 18 44 44"/>
+  <circle cx="420" cy="100" r="17"/><path d="M382 176c0-23 17-38 38-38s38 15 38 38"/>
+  <path d="M60 182h440M110 182v52M450 182v52"/>
+  <path d="M236 176l8-18h72l8 18z" stroke="var(--gold-deep)" fill="#F7F7F5"/><path d="M256 168h48" stroke="var(--gold-deep)" stroke-width="1.3"/>
+  <path d="M330 156l26-24" stroke="var(--gold-deep)"/>
+  <path d="M196 62h40a10 10 0 0 1 10 10v14a10 10 0 0 1-10 10h-24l-12 10v-10h-4a10 10 0 0 1-10-10V72a10 10 0 0 1 10-10z" opacity=".7"/>
+  <path d="M362 54h26a10 10 0 0 1 10 10v10a10 10 0 0 1-10 10h-2v8l-10-8h-14a10 10 0 0 1-10-10V64a10 10 0 0 1 10-10z" opacity=".7"/>
+  <text x="375" y="76" text-anchor="middle" font-family="Jost,Inter,sans-serif" font-size="20" fill="currentColor" stroke="none">?</text>
+  <path d="M206 79h30M206 87h18" stroke-width="1.3" opacity=".7"/>
+</svg></figure>
+      </div>
       <div class="care">
         <article>
-          <span class="no">i.</span><h3>휴대폰은 맡기고 시작합니다</h3>
+          <span class="no">i.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="23" y="6" width="18" height="34" rx="3"/><path d="M29 11h6"/><path fill="#F7F7F5" d="M9 34h46l-5 20H14z"/><path d="M17 42h30"/></svg></span><h3>휴대폰은 맡기고 시작합니다</h3>
           <p>학생들은 등원하면 휴대폰을 맡깁니다. 태블릿도 담당 선생님이 수업에 필요하다고 판단할 때만 씁니다.</p>
           <div class="go"><span class="tag">교실 안</span></div>
         </article>
         <article>
-          <span class="no">ii.</span><h3>수업은 교실에서만 합니다</h3>
+          <span class="no">ii.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="48" height="26" rx="1.5"/><path d="M14 16h20M14 22h28M14 28h14"/><circle cx="20" cy="44" r="4"/><path d="M12 58c0-5 3.6-8 8-8s8 3 8 8"/><circle cx="44" cy="44" r="4"/><path d="M36 58c0-5 3.6-8 8-8s8 3 8 8"/></svg></span><h3>수업은 교실에서만 합니다</h3>
           <p>동영상·온라인 수업은 하지 않습니다. 영상이 있으니 빠져도 된다는 생각이 오히려 결석을 늘렸기 때문입니다. 학교 행사나 집안의 상(喪)처럼 불가피한 결석은 선생님이 직접 만나 보강합니다.</p>
           <div class="go"><span class="tag">교실 안</span></div>
         </article>
         <article>
-          <span class="no">iii.</span><h3>교재도 시험도 종이로 합니다</h3>
+          <span class="no">iii.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8h22l10 10v38H12z"/><path d="M34 8v10h10"/><path d="M18 28h18M18 35h18M18 42h10"/><path fill="#F7F7F5" d="M38 54l15-19 4.5 3.5-15 19-6 1.5z"/></svg></span><h3>교재도 시험도 종이로 합니다</h3>
           <p>학원이 만든 종이 교재에 직접 필기하며 공부하고, 시험도 종이에 펜으로 봅니다. 전자기기로도 보고 싶은 학생에게는 교재 PDF를 따로 드립니다.</p>
           <div class="go"><span class="tag">교실 안</span></div>
         </article>
         <article>
-          <span class="no">iv.</span><h3>기록은 학원 시스템이 남깁니다</h3>
+          <span class="no">iv.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="8" width="40" height="48" rx="2"/><path d="M19 17h16"/><path d="M21 47v-9M29 47V30M37 47v-12M45 47V24"/><path d="M18 50h28"/></svg></span><h3>기록은 학원 시스템이 남깁니다</h3>
           <p>종이 시험 결과를 학원이 직접 만든 시스템에 기록합니다. 학생은 시험마다 개인 리포트를 받고, 반 전체가 어려워한 문항은 다음 수업에서 다시 다룹니다.<br><small class="note">2026년 9월 고3 모의고사부터 적용했고, 단어시험·과제·중등부로 넓혀 가고 있습니다.</small></p>
           <div class="go"><span class="tag out">교실 밖</span></div>
         </article>
         <article>
-          <span class="no">v.</span><h3>교재와 시스템은 학원이 AI로 만듭니다</h3>
+          <span class="no">v.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="18" width="28" height="28" rx="4"/><path d="M26 18v-6M32 18v-6M38 18v-6M26 52v-6M32 52v-6M38 52v-6M18 26h-6M18 32h-6M18 38h-6M52 26h-6M52 32h-6M52 38h-6"/><path d="M32 24.5l2 5.5 5.5 2-5.5 2-2 5.5-2-5.5-5.5-2 5.5-2z"/></svg></span><h3>교재와 시스템은 학원이 AI로 만듭니다</h3>
           <p>원지문, 한 줄 해석, 워크북, 구문 분석, 단어장과 단어 시험지, 지문별 온라인 학습지까지 학원이 AI와 함께 만듭니다. 선생님은 그 시간을 온전히 수업과 학생에게 씁니다.</p>
           <div class="go"><span class="tag out">교실 밖</span></div>
         </article>
@@ -491,9 +544,9 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
         <p>한 학생의 영어를 맡는 일은 현재 위치를 정확히 아는 데서 시작합니다. 코코스학원은 같은 순서를 모든 학생에게 지킵니다.</p>
       </div>
       <div class="method">
-        <article><div class="numeral" aria-hidden="true">I</div><span class="cap">Diagnosis</span><h3>진단</h3><p>레벨 테스트와 학교 시험 분석으로 현재 위치를 확인합니다.</p></article>
-        <article><div class="numeral" aria-hidden="true">II</div><span class="cap">Design</span><h3>설계</h3><p>학교별 평가 계획에 맞춰 내신과 모의고사 학습을 설계합니다.</p></article>
-        <article><div class="numeral" aria-hidden="true">III</div><span class="cap">Care</span><h3>관리</h3><p>지문별 온라인 학습지와 정기 테스트로 시험 날까지 관리합니다.</p></article>
+        <article><div class="numeral" aria-hidden="true">I</div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M38 22V16l-8-8H12v44h16"/><path d="M30 8v8h8"/><path d="M18 20h10M18 27h14M18 34h8"/><circle cx="40" cy="42" r="9"/><path d="M46.5 48.5L55 57"/></svg><span class="cap">Diagnosis</span><h3>진단</h3><p>레벨 테스트와 학교 시험 분석으로 현재 위치를 확인합니다.</p></article>
+        <article><div class="numeral" aria-hidden="true">II</div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="12" r="3.5"/><path d="M30 15.5L17 55M34 15.5L47 55"/><path d="M21 42h22"/><path d="M8 58h48" stroke-dasharray="2 4"/></svg><span class="cap">Design</span><h3>설계</h3><p>학교별 평가 계획에 맞춰 내신과 모의고사 학습을 설계합니다.</p></article>
+        <article><div class="numeral" aria-hidden="true">III</div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="44" height="40" rx="3"/><path d="M10 24h44M22 8v10M42 8v10"/><path d="M24 39l6 6 11-12"/></svg><span class="cap">Care</span><h3>관리</h3><p>지문별 온라인 학습지와 정기 테스트로 시험 날까지 관리합니다.</p></article>
       </div>
     </div>
   </section>
@@ -508,12 +561,12 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
       </div>
       <div class="ledger">
         <div class="entry">
-          <div><span class="cap">High School</span><div class="lv">고등부</div></div>
+          <div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 26L32 14l28 12-28 12z"/><path d="M15 31v11c0 4.5 7.5 9 17 9s17-4.5 17-9V31"/><path d="M56 28v14"/><circle cx="56" cy="44" r="1.6"/></svg><span class="cap">High School</span><div class="lv">고등부</div></div>
           <div><h3>내신 완성 · 학력평가 대비</h3><p>시험 범위 지문을 문장 단위로 분석하고 변형 문제, 어법, 서술형까지 대비합니다. 학력평가와 수능 유형 훈련을 함께 합니다.</p></div>
           <div class="fee">월 교습비<b>360,000<small>원</small></b></div>
         </div>
         <div class="entry">
-          <div><span class="cap">Middle School</span><div class="lv">중등부</div></div>
+          <div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span class="cap">Middle School</span><div class="lv">중등부</div></div>
           <div><h3>교과서 내신 · 문법 기초</h3><p>교과서 본문 내신 대비와 함께 문법·구문 기초를 다지고 서술형 쓰기를 훈련합니다.</p></div>
           <div class="fee">월 교습비<b>300,000<small>원</small></b></div>
         </div>
@@ -532,22 +585,22 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
       </div>
       <div class="care">
         <article>
-          <span class="no">i.</span><h3>온라인 학습지</h3>
+          <span class="no">i.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="17" y="6" width="30" height="52" rx="5"/><path d="M28 52h8"/><path d="M23 16h18M23 22h18M23 28h11"/><path d="M27 39v6M31 36v12M35 39v6M39 41v2"/></svg></span><h3>온라인 학습지</h3>
           <p>지문마다 문장별 해석과 문장 듣기, 발음 단어장, 단어 퀴즈, 마인드맵, 확인 퀴즈 15문항, 문장 배열. 회원가입 없이 링크로 누구나 볼 수 있습니다.</p>
           <div class="go"><span>자료실</span><a href="library/">온라인 학습지 전체 보기</a></div>
         </article>
         <article>
-          <span class="no">ii.</span><h3>내신 대비 자료</h3>
+          <span class="no">ii.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18v40h28"/><path fill="#F7F7F5" d="M20 12h30v40H20z"/><path d="M26 20h18M26 27h18M26 34h18M26 41h10"/></svg></span><h3>내신 대비 자료</h3>
           <p>원지문, 워크북, 구문 분석(직독직해), 출제 1순위 문장, 어법 파이널, 동의어·반의어.</p>
           <div class="go"><span>수업 배부</span></div>
         </article>
         <article>
-          <span class="no">iii.</span><h3>단어 관리</h3>
+          <span class="no">iii.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="18" width="28" height="36" rx="3" transform="rotate(-10 21 36)"/><rect fill="#F7F7F5" x="27" y="12" width="28" height="36" rx="3"/><path d="M35 40l6-18 6 18M37.6 33h6.8"/></svg></span><h3>단어 관리</h3>
           <p>시험 범위 단어장과 단어 테스트, 틀린 단어만 다시 푸는 단어게임.</p>
           <div class="go"><span>수업 배부</span></div>
         </article>
         <article>
-          <span class="no">iv.</span><h3>코코 키우기</h3>
+          <span class="no">iv.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 56V32"/><path d="M32 40c-10 0-16-6-16-15 9 0 16 5 16 15z"/><path d="M32 34c0-10 7-17 17-17 0 10-7 17-17 17z"/><path d="M20 56h24"/></svg></span><h3>코코 키우기</h3>
           <p>출석·테스트·과제로 코인을 모으면 학원 캐릭터 코코가 자랍니다. 뽑기와 도감으로 꾸준함을 기록합니다.</p>
           <div class="go"><span>보상 제도</span></div>
         </article>
@@ -563,15 +616,30 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
         <span class="cap">Private Consultation</span>
         <h2 id="t-ask">상담<br>예약</h2>
         <p class="lead">레벨 테스트와 상담은 예약제로 진행합니다. 전화로 편하게 문의해 주세요.</p>
-        
+        <figure class="place">
+          <svg viewBox="0 0 440 300" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 270h400" />
+            <path d="M80 270V96h240v174"/>
+            <path d="M80 96l20-24h200l20 24"/>
+            <path d="M80 200h240M80 140h240" opacity=".45"/>
+            <rect x="104" y="214" width="40" height="40"/><rect x="164" y="214" width="40" height="40"/><path d="M226 270v-52h44v52"/><path d="M248 218v52" opacity=".5"/>
+            <rect x="104" y="154" width="192" height="36" stroke="var(--gold-deep)" stroke-width="1.8" fill="rgba(195,164,108,.10)"/>
+            <text x="200" y="179" text-anchor="middle" font-family="Jost,Inter,sans-serif" font-size="18" letter-spacing="6" fill="var(--gold-deep)" stroke="none">COCOS</text>
+            <path d="M310 168h22" stroke="var(--gold-deep)"/><text x="338" y="173" font-family="Jost,Inter,sans-serif" font-size="13" letter-spacing="2" fill="var(--gold-deep)" stroke="none">2F</text>
+            <rect x="104" y="108" width="40" height="22" opacity=".5"/><rect x="164" y="108" width="40" height="22" opacity=".5"/><rect x="224" y="108" width="40" height="22" opacity=".5"/>
+            <path d="M372 112s-22-22-22-40a22 22 0 0 1 44 0c0 18-22 40-22 40z" stroke="var(--gold-deep)" fill="#F7F7F5"/><circle cx="372" cy="72" r="8" stroke="var(--gold-deep)"/>
+            <path d="M372 112v30" stroke="var(--gold-deep)" stroke-dasharray="2 5"/>
+          </svg>
+          <figcaption>광명로 124, 2층 · 수진역 성일중고 사거리</figcaption>
+        </figure>
       </div>
       <div class="contact">
-        <a class="row-link" href="tel:031-752-3334"><span class="cap">Call</span><b>031-752-3334</b><span>전화 상담 · 레벨 테스트 예약</span></a>
-        <div class="row-link"><span class="cap">Hours</span><b>운영 시간</b><span>평일 오후 3시 ~ 밤 10시 · 토요일 오전 11시 ~ 오후 4시</span></div>
-        <a class="row-link" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><span class="cap">Visit</span><b>오시는 길</b><span>경기도 성남시 중원구 광명로 124, 2층 (수진역 성일중고 사거리) · 네이버 지도에서 길찾기</span></a>
-        <a class="row-link" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener"><span class="cap">Blog</span><b>코코스학원 블로그</b><span>학원 소식과 온라인 학습지</span></a>
-        <a class="row-link" href="https://www.instagram.com/cocos_sujin/" target="_blank" rel="noopener"><span class="cap">Instagram</span><b>@cocos_sujin</b><span>학원 일상과 소식</span></a>
-        <a class="row-link" href="library/"><span class="cap">Library</span><b>온라인 학습지 자료실</b><span>지문별 해석·듣기·단어·변형 문제</span></a>
+        <a class="row-link" href="tel:031-752-3334"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9l-9 3c-1.5 15 9 33 25 41l6.5-6.5-8-8-6.5 4c-5-3.5-8.5-8.5-10.5-14l5-4.5z"/><path d="M40 10a14 14 0 0 1 14 14M40 18a6 6 0 0 1 6 6"/></svg>Call</span><b>031-752-3334</b><span>전화 상담 · 레벨 테스트 예약</span></a>
+        <div class="row-link"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M32 18v14l9 6"/></svg>Hours</span><b>운영 시간</b><span>평일 오후 3시 ~ 밤 10시 · 토요일 오전 11시 ~ 오후 4시</span></div>
+        <a class="row-link" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 58s-16-16-16-30a16 16 0 0 1 32 0c0 14-16 30-16 30z"/><circle cx="32" cy="28" r="6"/></svg>Visit</span><b>오시는 길</b><span>경기도 성남시 중원구 광명로 124, 2층 (수진역 성일중고 사거리) · 네이버 지도에서 길찾기</span></a>
+        <a class="row-link" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 52l4-14 26-26 10 10-26 26z"/><path d="M38 16l10 10"/><path d="M8 58h48"/></svg>Blog</span><b>코코스학원 블로그</b><span>학원 소식과 온라인 학습지</span></a>
+        <a class="row-link" href="https://www.instagram.com/cocos_sujin/" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="44" height="44" rx="12"/><circle cx="32" cy="32" r="10"/><circle cx="45" cy="19" r="1.6"/></svg>Instagram</span><b>@cocos_sujin</b><span>학원 일상과 소식</span></a>
+        <a class="row-link" href="library/"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 54V12h10v42M22 54V18h10v36"/><path d="M34 22l9-3 11 33-9 3z"/><path d="M8 54h48"/></svg>Library</span><b>온라인 학습지 자료실</b><span>지문별 해석·듣기·단어·변형 문제</span></a>
       </div>
     </div>
   </section>
