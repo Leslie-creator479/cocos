@@ -46,7 +46,7 @@
     '#cocos-pdf-panel label{display:flex;align-items:center;gap:8px;font-size:15px;cursor:pointer}',
     '#cocos-pdf-panel input{width:18px;height:18px;accent-color:var(--accent,#0A7FBF)}',
     '#cocos-pdf-panel .rg{font-size:13.5px;color:var(--muted,#5B6278)}',
-    '#cocos-pdf-tip{flex-basis:100%;font-size:13.5px;color:var(--ink,#1B2033);background:var(--accent-soft,#E2F3FC);border-radius:10px;padding:10px 14px;margin:0}',
+    '#cocos-pdf-tip{flex-basis:100%;font-size:13.5px;color:var(--ink,#1B2033);background:var(--accent-soft,#E2F3FC);border-radius:10px;padding:10px 14px;margin:0}#cocos-pdf-tip .cocos-ext{display:inline-block;margin-top:8px;padding:7px 14px;border-radius:999px;background:var(--accent,#0A7FBF);color:#fff;font-weight:700;text-decoration:none}',
     '@media screen{#cocos-print{display:none}}',
     '@media print{',
     /* 좌우 여백은 내용 안쪽 여백으로 준다: 인쇄 창에서 '여백 없음'을 골라도 좌우가 꽉 차지 않게 (2026-10-15) */
@@ -148,6 +148,19 @@
   function inApp() { return /KAKAOTALK|NAVER\(inapp|Instagram|FBAN|FBAV|Line\//i.test(navigator.userAgent || ''); }
   var ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
 
+  /* 앱 안 브라우저(카카오톡·네이버 등)에서 바로 바깥 브라우저로 여는 버튼 (2026-10-17) */
+  function extUrl() {
+    var u = location.href, ua = navigator.userAgent || '';
+    if (/KAKAOTALK/i.test(ua)) return 'kakaotalk://web/openExternal?url=' + encodeURIComponent(u);
+    if (/Android/i.test(ua) && /^https?:/.test(u)) return 'intent://' + u.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(u) + ';end';
+    return '';
+  }
+  function tipHtml() {
+    var x = extUrl(), ios = /iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+    var name = /KAKAOTALK/i.test(navigator.userAgent || '') ? (ios ? '사파리로 열기' : '다른 브라우저로 열기') : '크롬으로 열기';
+    return '카카오톡·네이버 앱 안에서는 PDF 저장이 안 될 수 있어요. ' + (x ? '아래 버튼을 누르면 바로 열려요. 열린 화면에서 PDF 버튼을 다시 눌러 주세요.' : '화면 오른쪽 위(또는 아래) 메뉴에서 <b>‘다른 브라우저로 열기’</b>를 누른 뒤 다시 눌러 주세요.') +
+      (x ? '<br><a class="cocos-ext" href="' + x + '">' + name + ' ↗</a>' : '');
+  }
   function start() {
     var st = document.createElement('style'); st.id = 'cocos-print-css'; st.textContent = CSS; document.head.appendChild(st);
     var anchor = document.querySelector('header #links') || document.querySelector('header .gist') || document.querySelector('header h1');
@@ -171,7 +184,7 @@
       var old = document.getElementById('cocos-pdf-tip'); if (old) old.remove();
       if (!inApp()) return;
       var tip = document.createElement('p'); tip.id = 'cocos-pdf-tip';
-      tip.innerHTML = '카카오톡·네이버 앱 안에서는 PDF 저장이 안 될 수 있어요. 화면 오른쪽 위(또는 아래) 메뉴에서 <b>‘다른 브라우저로 열기’</b>를 누른 뒤 다시 눌러 주세요.';
+      tip.innerHTML = tipHtml();
       row.insertBefore(tip, panel);  // 버튼 바로 아래(패널 위)에 보이게
       try { tip.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
     }

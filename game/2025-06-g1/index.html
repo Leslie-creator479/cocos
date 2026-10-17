@@ -426,8 +426,12 @@ var DATA = {"key":"cocos-wordgame-2025-06-g1","label":"2025 6월 고1","syn":"A9
   var synth = ('speechSynthesis' in window) ? window.speechSynthesis : null, voice = null;
   function pickVoice(){ try { var vs = synth.getVoices(); voice = vs.filter(function(x){ return /^en[-_]US/i.test(x.lang); })[0] || vs.filter(function(x){ return /^en/i.test(x.lang); })[0] || null; } catch (e) {} }
   if (synth) { pickVoice(); try { synth.addEventListener('voiceschanged', pickVoice); } catch (e) {} }
-  function speak(t){ if (!synth) return; try { synth.cancel(); var u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = 0.9; if (voice) u.voice = voice; synth.speak(u); } catch (e) {} }
-  function sayBtn(w){ if (!synth) return null; return h('button', { type: 'button', 'class': 'say', 'aria-label': w + ' 발음 듣기', html: SPK, onclick: function(ev){ ev.stopPropagation(); speak(w); } }); }
+  function tts(t){ if (!synth) return; try { synth.cancel(); var u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = 0.9; if (voice) u.voice = voice; synth.speak(u); } catch (e) {} }
+  /* 발음은 미리 녹음한 MP3(assets/say/<단어>.mp3)를 먼저 튼다. 카카오톡 안 브라우저는 기기 음성이 없어서(2026-10-17). 녹음이 없으면 기기 음성 */
+  var SAY = DATA.say != null ? DATA.say : '../../assets/say/', player = null;
+  function slug(w){ return String(w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function speak(t){ if (SAY) { try { if (!player) player = new Audio(); player.pause(); player.src = SAY + slug(t) + '.mp3'; var pr = player.play(); if (pr && pr.catch) pr.catch(function(){ tts(t); }); return; } catch (e) {} } tts(t); }
+  function sayBtn(w){ if (!synth && !SAY) return null; return h('button', { type: 'button', 'class': 'say', 'aria-label': w + ' 발음 듣기', html: SPK, onclick: function(ev){ ev.stopPropagation(); speak(w); } }); }
   function starStr(n){ var s = ''; for (var i = 0; i < 3; i++) s += i < n ? '★' : '<s>★</s>'; return s; }
   function src(v){ return h('span', { 'class': 'src-tag', text: lab(P[v.g]) }); }
   function esc(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }

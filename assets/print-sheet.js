@@ -55,7 +55,7 @@
     '#cocos-pdf-btn:hover{background:var(--accent-soft,#E2F3FC)}',
     '#cocos-pdf-btn svg{width:18px;height:18px}',
     '#cocos-pdf-row small{font-size:13px;color:var(--muted,#5B6278)}',
-    '#cocos-pdf-tip{flex-basis:100%;font-size:13.5px;color:var(--ink,#1B2033);background:var(--accent-soft,#E2F3FC);border-radius:10px;padding:10px 14px;margin:0}',
+    '#cocos-pdf-tip{flex-basis:100%;font-size:13.5px;color:var(--ink,#1B2033);background:var(--accent-soft,#E2F3FC);border-radius:10px;padding:10px 14px;margin:0}#cocos-pdf-tip .cocos-ext{display:inline-block;margin-top:8px;padding:7px 14px;border-radius:999px;background:var(--accent,#0A7FBF);color:#fff;font-weight:700;text-decoration:none}',
     '@media screen{#cocos-print{display:none}}',
     /* 요약문 빈칸 (A)(B): 화면에서도 ___(A)___처럼 넓게 (선생님 요청 2026-10-15) */
     'u.cocos-blank{display:inline-block;min-width:6.2em;text-align:center;text-decoration:none;border-bottom:1.5px solid currentColor;line-height:1.25;margin:0 .15em;padding:0 .2em}',
@@ -395,6 +395,19 @@
       if (nv !== v) t.nodeValue = nv;
     });
   }
+  /* 앱 안 브라우저(카카오톡·네이버 등)에서 바로 바깥 브라우저로 여는 버튼 (2026-10-17) */
+  function extUrl() {
+    var u = location.href, ua = navigator.userAgent || '';
+    if (/KAKAOTALK/i.test(ua)) return 'kakaotalk://web/openExternal?url=' + encodeURIComponent(u);
+    if (/Android/i.test(ua) && /^https?:/.test(u)) return 'intent://' + u.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(u) + ';end';
+    return '';
+  }
+  function tipHtml() {
+    var x = extUrl(), ios = /iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+    var name = /KAKAOTALK/i.test(navigator.userAgent || '') ? (ios ? '사파리로 열기' : '다른 브라우저로 열기') : '크롬으로 열기';
+    return '카카오톡·네이버 앱 안에서는 PDF 저장이 안 될 수 있어요. ' + (x ? '아래 버튼을 누르면 바로 열려요. 열린 화면에서 PDF 버튼을 다시 눌러 주세요.' : '화면 오른쪽 위(또는 아래) 메뉴에서 <b>‘다른 브라우저로 열기’</b>를 누른 뒤 다시 눌러 주세요.') +
+      (x ? '<br><a class="cocos-ext" href="' + x + '">' + name + ' ↗</a>' : '');
+  }
   function start() {
     tagBlanks(); tagLines(); tagNums();
     try {
@@ -420,7 +433,7 @@
         var old = document.getElementById('cocos-pdf-tip'); if (old) old.remove();
         if (inApp()) {
           var tip = document.createElement('p'); tip.id = 'cocos-pdf-tip';
-          tip.innerHTML = '카카오톡·네이버 앱 안에서는 PDF 저장이 안 될 수 있어요. 화면 오른쪽 위(또는 아래) 메뉴에서 <b>‘다른 브라우저로 열기’</b>를 누른 뒤 다시 눌러 주세요.';
+          tip.innerHTML = tipHtml();
           row.appendChild(tip);
         }
         build();
