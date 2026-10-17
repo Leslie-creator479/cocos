@@ -2,9 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://cocosedu.kr/</loc></url>
   <url><loc>https://cocosedu.kr/game/2022-03-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/game/2022-03-g2/</loc></url>
   <url><loc>https://cocosedu.kr/game/2022-06-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/game/2022-06-g2/</loc></url>
   <url><loc>https://cocosedu.kr/game/2022-09-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/game/2022-09-g2/</loc></url>
   <url><loc>https://cocosedu.kr/game/2022-11-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/game/2022-11-g2/</loc></url>
   <url><loc>https://cocosedu.kr/game/2023-03-g1/</loc></url>
   <url><loc>https://cocosedu.kr/game/2023-03-g2/</loc></url>
   <url><loc>https://cocosedu.kr/game/2023-06-g1/</loc></url>
@@ -911,9 +915,13 @@
   <url><loc>https://cocosedu.kr/study/2026-09-g2/41-42/</loc></url>
   <url><loc>https://cocosedu.kr/study/2026-09-g2/43-45/</loc></url>
   <url><loc>https://cocosedu.kr/syn/2022-03-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/syn/2022-03-g2/</loc></url>
   <url><loc>https://cocosedu.kr/syn/2022-06-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/syn/2022-06-g2/</loc></url>
   <url><loc>https://cocosedu.kr/syn/2022-09-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/syn/2022-09-g2/</loc></url>
   <url><loc>https://cocosedu.kr/syn/2022-11-g1/</loc></url>
+  <url><loc>https://cocosedu.kr/syn/2022-11-g2/</loc></url>
   <url><loc>https://cocosedu.kr/syn/2023-03-g1/</loc></url>
   <url><loc>https://cocosedu.kr/syn/2023-03-g2/</loc></url>
   <url><loc>https://cocosedu.kr/syn/2023-06-g1/</loc></url>
