@@ -167,17 +167,20 @@
       var gs = chosen(), n = WORDS.filter(function (v) { return gs.indexOf(v.g) > -1; }).length;
       document.getElementById('cocos-pdf-rg').textContent = '지금 범위: ' + rangeLabel(gs) + ' · 단어 ' + n + '개';
     }
-    document.getElementById('cocos-pdf-open').addEventListener('click', function () { panel.hidden = !panel.hidden; refresh(); });
+    function showTip() {
+      var old = document.getElementById('cocos-pdf-tip'); if (old) old.remove();
+      if (!inApp()) return;
+      var tip = document.createElement('p'); tip.id = 'cocos-pdf-tip';
+      tip.innerHTML = '카카오톡·네이버 앱 안에서는 PDF 저장이 안 될 수 있어요. 화면 오른쪽 위(또는 아래) 메뉴에서 <b>‘다른 브라우저로 열기’</b>를 누른 뒤 다시 눌러 주세요.';
+      row.insertBefore(tip, panel);  // 버튼 바로 아래(패널 위)에 보이게
+      try { tip.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+    }
+    document.getElementById('cocos-pdf-open').addEventListener('click', function () { panel.hidden = !panel.hidden; refresh(); if (!panel.hidden) showTip(); });
     document.addEventListener('click', function (e) { if (!panel.hidden && e.target.closest && e.target.closest('#range')) setTimeout(refresh, 0); });
     document.getElementById('cocos-pdf-go').addEventListener('click', function () {
       var opt = { list: document.getElementById('cp-o-list').checked, mean: document.getElementById('cp-o-mean').checked, spell: document.getElementById('cp-o-spell').checked };
       if (!opt.list && !opt.mean && !opt.spell) { opt.list = true; document.getElementById('cp-o-list').checked = true; }
-      var old = document.getElementById('cocos-pdf-tip'); if (old) old.remove();
-      if (inApp()) {
-        var tip = document.createElement('p'); tip.id = 'cocos-pdf-tip';
-        tip.innerHTML = '카카오톡·네이버 앱 안에서는 PDF 저장이 안 될 수 있어요. 화면 오른쪽 위(또는 아래) 메뉴에서 <b>‘다른 브라우저로 열기’</b>를 누른 뒤 다시 눌러 주세요.';
-        row.appendChild(tip);
-      }
+      showTip();
       build(opt);
       try { window.print(); } catch (err) {}
     });
