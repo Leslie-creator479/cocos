@@ -1,0 +1,565 @@
+<!doctype html><html><head><meta name="robots" content="noindex"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>[코코스학원] 코코스 문법 샘플 · 관계대명사</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-soft:#E2F3FC; --accent-ink:#065A88;
+  --ex:#A84A24; --ex-soft:#FBEDE6; --ex-ink:#7A3316;
+  --mark:#FFE766; --mark-ink:#1B2033;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA; --bad:#B3261E; --bad-soft:#FBE7E5;
+  --serif-ko:"Gowun Batang","Nanum Myeongjo","AppleMyungjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --serif-en:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-soft:#10293A; --accent-ink:#BCE5FA;
+    --ex:#F0A07E; --ex-soft:#35231C; --ex-ink:#F7C7B2;
+    --mark:rgba(255,214,64,.30); --mark-ink:#FFF4C9;
+    --ok:#6FCF9B; --ok-soft:#18301F; --bad:#F2918A; --bad-soft:#3A1D1B;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-soft:#10293A; --accent-ink:#BCE5FA;
+  --ex:#F0A07E; --ex-soft:#35231C; --ex-ink:#F7C7B2;
+  --mark:rgba(255,214,64,.30); --mark-ink:#FFF4C9;
+  --ok:#6FCF9B; --ok-soft:#18301F; --bad:#F2918A; --bad-soft:#3A1D1B;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;margin:0;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:32px 64px;display:flex;flex-direction:column;gap:40px}
+h1,h2{font-family:var(--serif-ko);font-weight:700;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.25}
+h2{font-size:24px;line-height:1.3}
+header{display:flex;flex-direction:column;gap:10px}
+.src{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-weight:500}
+.en-title{font-family:var(--serif-en);font-style:italic;color:var(--muted);font-size:17px;margin:0}
+.gist{margin:6px 0 0;max-width:62ch}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 14px;font-size:14px}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.passage{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px clamp(18px,4vw,32px)}
+.sents{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.sent{display:grid;grid-template-columns:1.6em minmax(0,1fr);gap:0 10px;padding:12px 10px;border-radius:0;transition:background-color .25s}
+.sent + .sent{border-top:1px dashed var(--line)}
+.sent.hl{background:var(--mark);color:var(--mark-ink)}
+.sn{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:5px}
+.sent.hl .sn{color:inherit}
+.se{font-family:var(--serif-en);font-size:18px;line-height:1.75;margin:0}
+.kbtn{margin-top:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--accent)}
+.kbtn:hover{border-color:var(--accent)}
+.ko{display:none;margin:8px 0 2px;font-size:15px;line-height:1.7;color:var(--accent-ink);background:var(--accent-soft);padding:8px 12px;border-radius:8px}
+.sent.open .ko{display:block}
+.sent.open .kbtn{color:var(--muted)}
+.listen{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 6px}
+.lbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent);color:var(--card);border-radius:999px;padding:7px 16px 7px 12px;font-size:14px;font-weight:700}
+.lbtn svg,.lstop svg,.lbar button svg{width:15px;height:15px}
+.lbtn.on{background:var(--card);color:var(--accent)}
+.lstop{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:0}
+.lstop[hidden]{display:none}
+.listen .seg button{padding:6px 12px}
+.listen .btn{border-radius:999px;font-size:13px;padding:6px 12px}
+.lhint{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.sacts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sacts .kbtn{margin-top:0}
+.sbtn{display:inline-flex;align-items:center;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 12px 2px 9px;font-size:13px;color:var(--accent)}
+.sbtn svg{width:14px;height:14px}
+.sbtn:hover{border-color:var(--accent)}
+.sbtn.on{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.sent.now{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.sent.now.hl{background:var(--mark)}
+.cue{display:none;align-items:center;gap:10px;margin-top:8px;font-size:13px;font-weight:700;color:var(--accent-ink)}
+.cue i{flex:1;max-width:180px;height:5px;border-radius:999px;background:var(--line);overflow:hidden}
+.cue b{display:block;height:100%;width:100%;background:var(--accent)}
+.sent.wait .cue{display:flex}
+.lbar{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:999px;background:var(--ink);color:var(--paper);box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:13px;font-weight:700;white-space:nowrap}
+.lbar[hidden]{display:none}
+.lbar button{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;border:0;background:rgba(255,255,255,.14);color:inherit;padding:0}
+.lbar .go{background:none;width:auto;padding:0 6px;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.gloss{margin:18px 0 0;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 16px}
+.gloss i{font-family:var(--serif-en)}
+.map{position:relative;display:grid;grid-template-columns:1fr 1.05fr 1fr;grid-template-areas:"l c r" "l k r";gap:28px 44px;align-items:center}
+.map svg.links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.map svg path{fill:none;stroke:var(--line);stroke-width:1.5;transition:stroke .2s}
+.map svg path.on{stroke:var(--accent)}
+.col{display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
+.col.l{grid-area:l}.col.r{grid-area:r}
+.node{position:relative;z-index:1;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;transition:border-color .2s,background-color .2s}
+.node .t{font-weight:700;font-size:15px}
+.node .s{font-size:13.5px;color:var(--muted)}
+.node .k{font-family:var(--serif-en);font-style:italic;font-size:13.5px;color:var(--muted)}
+.node.concept{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.node.concept .t{color:var(--accent-ink)}
+.node.example{border-color:color-mix(in srgb,var(--ex) 35%,var(--line))}
+.node.example .t{color:var(--ex-ink)}
+.node.concept.active{background:var(--accent-soft);border-color:var(--accent)}
+.node.example.active{background:var(--ex-soft);border-color:var(--ex)}
+.node.core{grid-area:c;align-items:center;text-align:center;background:var(--ink);border-color:var(--ink);color:var(--paper);padding:18px 16px}
+.node.core .t{font-family:var(--serif-ko);font-size:21px;color:var(--paper)}
+.node.core .k{color:color-mix(in srgb,var(--paper) 75%,transparent)}
+.node.core.active{outline:3px solid var(--mark);outline-offset:2px}
+.node.conclusion{grid-area:k;align-self:start}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:14px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1.5px solid var(--accent);background:var(--accent-soft)}
+.legend span.e::before{border-color:var(--ex);background:var(--ex-soft)}
+.note{margin-top:14px;min-height:3.4em;font-size:14.5px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+@media (max-width:760px){
+  .map{grid-template-columns:1fr;grid-template-areas:"c" "l" "r" "k";gap:14px}
+  .map svg.links{display:none}
+  .col{gap:10px;padding-left:14px;border-left:2px solid var(--line);border-radius:0}
+  .node.conclusion{margin-left:16px}
+}
+.score{font-family:var(--serif-ko);font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.score b{color:var(--ink);font-size:20px}
+.qs{display:flex;flex-direction:column;gap:16px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px clamp(16px,3.5vw,24px);display:flex;flex-direction:column;gap:12px}
+.q .num{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+.q .type{font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.q .type.var{border-color:var(--ex);background:var(--ex-soft);color:var(--ex-ink)}
+.q .prompt{font-weight:500;margin:0}
+.q .quote{font-family:var(--serif-en);font-size:16px;background:var(--paper);border-radius:8px;padding:10px 14px;margin:0;line-height:1.75}
+.q .quote u{text-decoration-thickness:2px;text-underline-offset:3px}
+.q .quote .box{display:block;border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin-bottom:10px;background:var(--card)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px;line-height:1.55;transition:border-color .15s,background-color .15s}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .n{flex:none;width:1.4em;font-variant-numeric:tabular-nums;color:var(--muted)}
+.opt.en-o{font-family:var(--serif-en);font-size:16px}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.right .n,.opt.wrong .n{color:inherit;font-weight:700}
+.fb{font-size:14.5px;border-radius:8px;padding:10px 14px;background:var(--paper)}
+.fb b.ok{color:var(--ok)} .fb b.no{color:var(--bad)}
+.hint{align-self:flex-start;background:none;border:0;padding:0;font-size:13.5px;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.hint-text{font-size:14px;color:var(--muted);margin:0}
+div.done{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:var(--accent-soft);color:var(--accent-ink);border-radius:12px;padding:16px 20px;font-weight:500}
+.jump{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;margin-top:4px}
+.jump a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.jump a:hover{border-bottom-color:var(--accent)}
+.vocab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.vrow{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:2px 8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.say{display:inline-flex;text-decoration:none;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--accent);padding:0;flex:none}
+.say:hover{border-color:var(--accent);background:var(--accent-soft)}
+.say svg{width:15px;height:15px}
+.say.on{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.vrow .w{font-family:var(--serif-en);font-size:17px;font-weight:600}
+.vrow .mp{display:inline-block;font-size:12px;line-height:1.5;color:var(--accent-ink);background:var(--accent-soft);border-radius:4px;padding:0 5px;margin-right:6px;vertical-align:1px}
+.vrow .m{grid-column:1 / -1;font-size:14.5px;color:var(--muted);transition:filter .2s,opacity .2s;background:none;border:0;padding:0;text-align:left;cursor:default}
+.vocab.hide-m .vrow .m{cursor:pointer}
+.vocab.hide-m .vrow:not(.open) .mt{filter:blur(6px);opacity:.55}
+.vrow .mt{transition:filter .2s,opacity .2s}
+@media (max-width:640px){.vocab{grid-template-columns:1fr}}
+.wq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:14px}
+.wq-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:var(--card);padding:5px 12px;font-size:13px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+.bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.wq-q{font-size:26px;font-weight:600;line-height:1.35;margin:4px 0 2px}
+.wq-q.en{font-family:var(--serif-en)}
+.wq-q .say{vertical-align:middle;margin-left:8px;width:32px;height:32px}
+.wq-q small{display:block;font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}
+.wq-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.wq-opts{grid-template-columns:1fr}}
+.wq-opts .opt.en-o{font-size:16.5px}
+.wq-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;min-height:36px;font-size:14.5px}
+.wq-foot b.ok{color:var(--ok)} .wq-foot b.no{color:var(--bad)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--muted);font-size:13px;margin-bottom:4px}
+.logo{display:inline-block;background:url(data:image/png;base64,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) no-repeat left center/contain}
+.brand .logo{width:120px;height:27px}
+.promo{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:16px;padding:28px clamp(18px,4vw,36px);display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.promo::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:#FEE101;opacity:.35}
+.promo > *{position:relative;z-index:1}
+.promo .logo{width:180px;height:40px}
+.promo .tag{margin:0;font-size:14px;font-weight:700;color:var(--accent-ink);letter-spacing:.02em}
+.promo h2{font-size:22px}
+.promo p{margin:0;max-width:60ch}
+.promo .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.promo .ctas a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:15px;font-weight:500;padding:10px 18px;border-radius:10px;border:1px solid var(--accent)}
+.promo .ctas a.primary{background:var(--accent);color:var(--card)}
+.promo .ctas a.ghost{background:var(--card);color:var(--accent-ink)}
+.promo .ctas a:hover{filter:brightness(1.05)}
+.promo .share{font-size:13.5px;color:var(--muted)}
+/* brand-ctas */.promo .ctas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.promo .ctas a{flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:2px;min-height:66px;padding:10px 6px;line-height:1.35}.promo .ctas a b{font-size:15px;font-weight:700;white-space:nowrap}.promo .ctas a small{font-size:12.5px;font-weight:400;opacity:.85;white-space:nowrap}.promo .share{font-size:13.5px;color:var(--muted)}@media (max-width:720px){.promo .ctas{grid-template-columns:repeat(2,minmax(0,1fr))}.promo .ctas a.primary{grid-column:1 / -1}}
+.done a{color:inherit;font-weight:700}
+.acad-info{margin:4px 0 0;padding-top:12px;border-top:1px dashed color-mix(in srgb,var(--accent) 35%,transparent);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px;color:var(--muted)}
+.acad-info dt{font-weight:500;color:var(--accent-ink)}
+.acad-info dd{margin:0;font-variant-numeric:tabular-nums}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+footer p{margin:0}
+footer .copy{color:var(--ink);font-weight:500}
+.ord{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:14px}
+.ord-ko{font-family:var(--serif-ko);font-size:19px;line-height:1.6;margin:2px 0 0}
+.ord-ko small{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);margin-bottom:4px}
+.tray,.bank{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.tray{min-height:64px;border:1.5px dashed var(--line);border-radius:10px;padding:10px;transition:border-color .2s,background-color .2s}
+.tray.ok{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
+.tray-empty{font-size:14px;color:var(--muted);align-self:center}
+.tray-end{font-family:var(--serif-en);font-size:17px;color:var(--muted);align-self:center;margin-left:-3px;padding:0 2px}
+.tok{font-family:var(--serif-en);font-size:16.5px;line-height:1.35;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px;text-align:left;transition:border-color .15s,background-color .15s,opacity .15s}
+.tok:hover:not(:disabled){border-color:var(--accent)}
+.tray .tok{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent-ink)}
+.tray .tok.bad{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.tray.shown{border-style:solid;border-color:var(--accent)}
+.tray.ok .tok{background:var(--card);border-color:var(--ok);color:var(--ok)}
+.tok:disabled{cursor:default}
+.tray .tok:not(:disabled)::after{content:"✕";font-family:var(--sans);font-size:11px;margin-left:7px;opacity:.55;vertical-align:1px}
+.bank .tok.used{opacity:.22;border-style:dashed}
+.tray .tok{touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.tray .tok.lift{opacity:.3;border-style:dashed}
+.tray.sorting{border-color:var(--accent)}
+.tok.ghost{position:fixed;left:0;top:0;z-index:50;margin:0;pointer-events:none;background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.ord-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.ord-acts .l,.ord-acts .r{display:flex;flex-wrap:wrap;gap:8px}
+.btn:disabled{opacity:.45;cursor:default}
+.ord-msg{font-size:14.5px;min-height:1.6em;margin:0}
+.ord-msg b.ok{color:var(--ok)} .ord-msg b.no{color:var(--bad)}
+.ord-full{font-family:var(--serif-en);font-size:17px;background:var(--paper);border-radius:8px;padding:10px 14px;margin:0}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dots button{width:26px;height:26px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12px;padding:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.dots button.cur{border-color:var(--accent);color:var(--accent);font-weight:700}
+.dots button.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.brief{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:20px}
+.b-lab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--accent-ink);margin:0 0 8px}
+.b-one{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.b-one p{margin:0;font-family:var(--serif-ko);font-size:18px;line-height:1.7;color:var(--ink)}
+.b-flow{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.b-step{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:0 14px;position:relative;padding-bottom:16px}
+.b-step:last-child{padding-bottom:0}
+.b-step::before{content:"";position:absolute;left:2.8em;top:34px;bottom:2px;border-left:2px solid var(--line)}
+.b-step:last-child::before{display:none}
+.b-go{align-self:start;justify-self:stretch;position:relative;z-index:1;font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:4px 6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.b-go:hover{border-color:var(--accent)}
+.b-step .t{font-weight:700;font-size:15.5px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-top:3px}
+.b-step .d{margin:3px 0 0;font-size:15px;color:var(--muted);line-height:1.7}
+.b-turn{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--ex-soft);color:var(--ex-ink);border:1px solid var(--ex)}
+.b-step.turn .b-go{background:var(--ex-soft);color:var(--ex-ink);border-color:color-mix(in srgb,var(--ex) 45%,transparent)}
+.b-keys{display:flex;flex-wrap:wrap;gap:8px}
+.b-keys span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.b-keys i{font-family:var(--serif-en);font-weight:600;margin-right:6px}
+.b-tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.b-tips li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;font-size:14.5px;line-height:1.7}
+.b-tips b.n{font-size:13px;color:var(--accent-ink);padding-top:1px}
+.b-tips i{font-family:var(--serif-en)}
+.b-ask{display:flex;flex-direction:column;gap:8px}
+.b-ask details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px}
+.b-ask summary{cursor:pointer;font-weight:500;list-style:none;display:flex;gap:8px;align-items:baseline}
+.b-ask summary::-webkit-details-marker{display:none}
+.b-ask summary .bq{flex:1 1 0;min-width:0}
+.b-ask summary::after{content:"생각해 보고 눌러 확인";margin-left:auto;flex:none;font-size:12.5px;color:var(--accent);font-weight:400}
+.b-ask details[open] summary::after{content:"접기"}
+.b-ask details p{margin:8px 0 0;color:var(--accent-ink);background:var(--accent-soft);border-radius:8px;padding:8px 12px;font-size:14.5px}
+@media (max-width:520px){.b-step{grid-template-columns:5.2em minmax(0,1fr);gap:0 10px}.b-step::before{left:2.6em}.b-ask summary{flex-wrap:wrap}.b-ask summary::after{margin-left:2.2em;flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<style>
+/* 코코스 문법 교재 샘플 전용 (g- 접두어) */
+.g-sample{background:#FFF7D6;border:1px solid #F2D45C;color:#5A4500;border-radius:10px;padding:10px 14px;font-size:14px}
+.g-points{display:flex;flex-direction:column;gap:16px}
+.g-pt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3.5vw,26px);display:flex;flex-direction:column;gap:12px}
+.g-pt h3{margin:0;font-size:18px;display:flex;gap:10px;align-items:center}
+.g-pt h3 .n{white-space:nowrap;flex:none;font-size:12px;font-weight:700;color:var(--card);background:var(--accent);border-radius:999px;padding:2px 10px;letter-spacing:.02em}
+.g-pt p{margin:0;line-height:1.75}
+.g-join{display:grid;gap:6px;background:var(--paper);border-radius:10px;padding:14px 16px;font-family:var(--serif-en);font-size:16.5px;line-height:1.7}
+.g-join .ar{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.g-ante{background:var(--accent-soft);color:var(--accent-ink);border-radius:4px;padding:0 3px;font-weight:600}
+.g-rel{background:var(--mark);color:var(--mark-ink);border-radius:4px;padding:0 3px;font-weight:700}
+.g-gone{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1.5px}
+.g-tbl{width:100%;border-collapse:collapse;font-size:15px}
+.g-tbl th,.g-tbl td{border:1px solid var(--line);padding:9px 10px;text-align:center}
+.g-tbl th{background:var(--paper);font-weight:600}
+.g-tbl td.k{font-weight:600;background:var(--paper)}
+.g-ex{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.g-ex li{display:flex;gap:10px;align-items:flex-start;border-left:3px solid var(--accent-soft);padding:4px 0 4px 12px}
+.g-ex .en{font-family:var(--serif-en);font-size:16.5px;line-height:1.6}
+.g-ex .g-ko{display:block;font-size:14px;color:var(--muted);font-family:var(--sans)}
+.g-sent{display:flex;gap:10px;align-items:flex-start}.g-sent>span{flex:1;min-width:0}
+.g-say{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:14px;line-height:1}
+.g-say:hover{border-color:var(--accent)}
+.g-tip{background:var(--ex-soft);color:var(--ex-ink);border-radius:10px;padding:10px 14px;font-size:14.5px;line-height:1.7}
+.g-tip b{color:var(--ex)}
+.g-ox{display:flex;gap:8px}
+.g-ox .opt{justify-content:center;font-weight:700;font-size:17px;width:auto;flex:1;max-width:120px}
+.g-in{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--serif-en);font-size:16.5px;line-height:1.9}
+.g-in input{font:inherit;width:8em;border:0;border-bottom:2px solid var(--accent);background:var(--accent-soft);border-radius:4px 4px 0 0;padding:2px 6px;text-align:center}
+.g-in input.right{border-color:var(--ok);background:var(--ok-soft)}
+.g-in input.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.g-wr textarea{width:100%;box-sizing:border-box;font-family:var(--serif-en);font-size:16.5px;line-height:1.6;border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-height:3.4em;resize:vertical}
+.g-wr textarea:focus,.g-in input:focus{outline:2px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:1px}
+.g-chk{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.g-chk li::before{content:"□ ";color:var(--muted)}
+.g-chk li.ok::before{content:"✓ ";color:var(--ok);font-weight:700}
+.g-chk li.no::before{content:"✗ ";color:var(--bad);font-weight:700}
+.g-model{font-family:var(--serif-en);font-size:16px}
+.g-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.g-pool,.g-line{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;align-items:center}
+.g-line{border:1px dashed var(--line);border-radius:10px;padding:8px}
+.g-tk{font-family:var(--serif-en);font-size:16.5px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px}
+.g-tk:hover:not(:disabled){border-color:var(--accent)}
+.g-tk.used{opacity:.25;border-style:dashed}
+.g-line .g-tk{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent-ink)}
+.g-line.ok .g-tk{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.g-line.no{border-color:var(--bad)}
+.g-total{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3.5vw,26px)}
+.g-bars{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;align-items:center;font-size:14.5px}
+.g-bar{height:10px;border-radius:5px;background:var(--paper);overflow:hidden}
+.g-bar i{display:block;height:100%;background:var(--accent);border-radius:5px;width:0;transition:width .4s}
+#g-print{display:none}
+@media print{
+  @page{size:A4;margin:12mm 0 13mm}
+  body>*:not(#g-print){display:none!important}
+  #g-print{display:block!important;padding:0 14mm;font-family:var(--sans);color:#111;font-size:12.5px;line-height:1.6}
+  #g-print h1{font-size:20px;margin:0 0 4px}
+  #g-print h2{font-size:15px;border-bottom:2px solid #0A7FBF;padding-bottom:3px;margin:16px 0 8px}
+  #g-print .en{font-family:var(--serif-en);font-size:13.5px}
+  #g-print ol{margin:0;padding-left:1.4em}
+  #g-print li{margin:0 0 6px;break-inside:avoid}
+  #g-print .ln{display:block;border-bottom:1px solid #999;height:1.7em;margin:2px 0 4px}
+  #g-print .ans{break-before:page}
+  #g-print table{border-collapse:collapse;width:100%}
+  #g-print td,#g-print th{border:1px solid #bbb;padding:4px 6px;text-align:center}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="../../" title="코코스학원 홈페이지로"><span class="logo" role="img" aria-label="코코스학원"></span><span>코코스학원 온라인 학습지 · 학습과 컨설팅을 하나로</span></a>
+    <div class="src"><span class="chip">코코스 문법 · 고1</span><span class="chip">Unit 7 · 관계대명사</span></div>
+    <h1>관계대명사: 두 문장을 하나로 잇는 말</h1>
+    <p class="en-title">Relative Pronouns — who · which · that · whose</p>
+    <p class="gist">명사를 뒤에서 꾸며 주는 문장을 붙일 때 쓰는 말이 관계대명사예요. 개념 세 가지를 예문으로 익히고, O/X → 고르기 → 빈칸 쓰기 → 배열 → 서술형 순서로 단계별로 확인해요.</p>
+    <p class="g-sample">이 페이지는 <b>문법 교재 온라인판 샘플</b>이에요. 개념 설명과 문제는 예시로 새로 쓴 것이고, 학원 교재 파일을 주시면 같은 틀에 교재 내용이 들어가요.</p>
+    <nav class="jump" aria-label="바로가기"><a href="#g-concept">개념 정리</a><a href="#g-ox">O/X</a><a href="#g-mc">고르기</a><a href="#g-fill">빈칸 쓰기</a><a href="#g-order">배열</a><a href="#g-write">서술형</a><a href="#g-result">결과</a><a href="#academy">코코스학원</a></nav>
+    <div class="g-row"><button class="btn primary" id="g-pdf" type="button">PDF로 저장 (개념·문제·정답)</button></div>
+  </header>
+
+  <section id="g-concept" aria-labelledby="h-concept">
+    <div class="sec-head"><div><h2 id="h-concept">개념 정리</h2><p>스피커를 누르면 예문을 읽어 줘요. <span class="g-ante">파란색</span>은 꾸밈을 받는 명사(선행사), <span class="g-rel">노란색</span>은 관계대명사예요.</p></div></div>
+    <div class="g-points" id="g-points"></div>
+  </section>
+
+  <section id="g-ox" aria-labelledby="h-ox">
+    <div class="sec-head"><div><h2 id="h-ox">1단계 · 개념 O/X</h2><p>설명이 맞으면 O, 틀리면 X를 누르세요.</p></div><div class="score" id="s-ox"></div></div>
+    <div class="qs" id="q-ox"></div>
+  </section>
+
+  <section id="g-mc" aria-labelledby="h-mc">
+    <div class="sec-head"><div><h2 id="h-mc">2단계 · 알맞은 것 고르기</h2><p>한 번 고르면 바로 채점되고 해설이 나와요.</p></div><div class="score" id="s-mc"></div></div>
+    <div class="qs" id="q-mc"></div>
+  </section>
+
+  <section id="g-fill" aria-labelledby="h-fill">
+    <div class="sec-head"><div><h2 id="h-fill">3단계 · 빈칸 쓰기</h2><p>빈칸에 알맞은 관계대명사를 직접 쓰고 ‘채점’을 누르세요. 답이 여러 개일 수 있어요.</p></div><div class="score" id="s-fill"></div></div>
+    <div class="qs" id="q-fill"></div>
+  </section>
+
+  <section id="g-order" aria-labelledby="h-order">
+    <div class="sec-head"><div><h2 id="h-order">4단계 · 문장 배열</h2><p>우리말을 보고 어구를 순서대로 눌러 문장을 완성하세요. 올린 어구를 다시 누르면 빠져요.</p></div><div class="score" id="s-order"></div></div>
+    <div class="qs" id="q-order"></div>
+  </section>
+
+  <section id="g-write" aria-labelledby="h-write">
+    <div class="sec-head"><div><h2 id="h-write">5단계 · 서술형</h2><p>조건에 맞게 두 문장을 한 문장으로 쓰세요. ‘채점’을 누르면 채점 기준별로 확인해 줘요.</p></div><div class="score" id="s-write"></div></div>
+    <div class="qs" id="q-write"></div>
+  </section>
+
+  <section id="g-result" aria-labelledby="h-result">
+    <div class="sec-head"><div><h2 id="h-result">결과</h2><p>단계별 점수예요. 틀린 문제만 다시 풀 수 있어요.</p></div></div>
+    <div class="g-total">
+      <div class="g-bars" id="g-bars"></div>
+      <div class="g-row"><button class="btn primary" id="g-retry" type="button">틀린 문제 다시 풀기</button><button class="btn" id="g-reset" type="button">처음부터 다시</button></div>
+    </div>
+  </section>
+
+  <section id="academy" class="promo" aria-labelledby="h-academy">
+    <span class="logo" role="img" aria-label="코코스학원"></span>
+    <p class="tag">학습과 컨설팅을 하나로</p>
+    <h2 id="h-academy">이 온라인 문법 교재는 코코스학원이 만들었어요</h2>
+    <p>시험 범위 지문마다 해석·단어·마인드맵·변형 문제까지 담은 온라인 학습지를 만들고 있어요. 더 많은 자료는 자료실에서, 수업 소식은 블로그와 인스타그램에서, 학원 소개와 설명회 소식은 홈페이지에서 볼 수 있어요.</p>
+    <div class="ctas">
+      <a class="primary" href="../../library/"><b>자료실</b><small>다른 학습지 보기</small></a>
+      <a class="ghost" id="go-blog" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener"><b>블로그</b><small>수업 소식 보기</small></a>
+      <a class="ghost" id="go-insta" href="https://www.instagram.com/cocos_sujin/" target="_blank" rel="noopener"><b>인스타그램</b><small>학원 일상 보기</small></a>
+      <a class="ghost" href="../../"><b>홈페이지</b><small>학원 소개·설명회</small></a>
+      <a class="ghost" id="go-place" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><b>네이버 플레이스</b><small>상담·위치 보기</small></a>
+    </div>
+    <p class="share">도움이 됐다면 친구에게도 이 온라인 학습지 링크를 공유해 주세요!</p>
+    <dl class="acad-info" aria-label="학원 정보">
+      <dt>학원명</dt><dd>코코스학원</dd>
+      <dt>등록번호</dt><dd>제4760호</dd>
+      <dt>교습과목</dt><dd>중·고등 영어</dd>
+      <dt>교습비</dt><dd>중등부 300,000원 · 고등부 360,000원</dd>
+      <dt>추가 경비</dt><dd>없음</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p class="copy">© <span id="yr">2026</span> 코코스학원. 이 온라인 학습지의 문제·해설·단어 정리·마인드맵은 코코스학원이 만들었어요.</p>
+    <p>링크는 누구에게나 자유롭게 공유해도 좋아요. 다만 내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요.</p>
+    <p id="footer"></p>
+  </footer>
+</div>
+
+<div id="g-print"></div>
+
+<script>
+(function(){
+var POINTS=[
+ {t:'주격 관계대명사 who · which · that',
+  d:'두 문장에서 <b>같은 사람·사물</b>을 가리키는 말을 찾고, 뒤 문장의 주어(she, it)를 관계대명사로 바꿔 앞 명사 바로 뒤에 붙여요. 사람이면 <b>who</b>, 사물·동물이면 <b>which</b>, 둘 다 <b>that</b>도 돼요.',
+  join:['I have <span class="g-ante">a friend</span>. + <u>She</u> lives in Busan.','I have <span class="g-ante">a friend</span> <span class="g-rel">who</span> lives in Busan.'],
+  ex:[['The bus <span class="g-rel">which</span> goes to the station is late.','역으로 가는 버스가 늦는다.'],['A teacher <span class="g-rel">who</span> listens to students is popular.','학생들의 말을 들어 주는 선생님은 인기가 많다.']],
+  tip:'관계대명사 뒤 동사는 <b>선행사</b>에 수를 맞춰요. <i>the students who <b>are</b> …</i> / <i>the student who <b>is</b> …</i>'},
+ {t:'목적격 관계대명사 — 생략할 수 있어요',
+  d:'뒤 문장의 <b>목적어</b>(him, it)를 관계대명사로 바꿔요. 사람 <b>who(m)</b>, 사물 <b>which</b>, 둘 다 <b>that</b>. 목적격은 <b>생략</b>해도 돼요.',
+  join:['This is <span class="g-ante">the book</span>. + I bought <u>it</u> yesterday.','This is <span class="g-ante">the book</span> <span class="g-rel">(which)</span> I bought <span class="g-gone">it</span> yesterday.'],
+  ex:[['The man <span class="g-rel">(who)</span> we met at the park was my uncle.','우리가 공원에서 만난 남자는 우리 삼촌이었다.'],['I lost the pen <span class="g-rel">(that)</span> my sister gave me.','나는 언니가 준 펜을 잃어버렸다.']],
+  tip:'관계대명사가 목적어 자리를 대신했으니 뒤에 <b>목적어(it, him)를 또 쓰면 틀려요</b>. 어법 문제 단골이에요.'},
+ {t:'소유격 whose와 that을 쓸 수 없는 자리',
+  d:'뒤 문장의 <b>his/her/its</b>가 바뀌면 <b>whose</b>(사람·사물 모두). 그리고 <b>콤마(,) 뒤</b>와 <b>전치사 바로 뒤</b>에는 that을 쓸 수 없어요.',
+  join:['I know <span class="g-ante">a girl</span>. + <u>Her</u> dream is to be a pilot.','I know <span class="g-ante">a girl</span> <span class="g-rel">whose</span> dream is to be a pilot.'],
+  ex:[['My uncle, <span class="g-rel">who</span> lives in Jeju, sent us oranges.','제주에 사시는 우리 삼촌이 우리에게 귤을 보내 주셨다.'],['This is the house in <span class="g-rel">which</span> he was born.','이곳이 그가 태어난 집이다.']],
+  tip:'<i>My uncle, <b>that</b> lives in Jeju</i> (✗) · <i>the house in <b>that</b> he was born</i> (✗)'}
+];
+var TABLE='<table class="g-tbl"><tr><th>선행사</th><th>주격</th><th>목적격</th><th>소유격</th></tr><tr><td class="k">사람</td><td>who / that</td><td>who(m) / that</td><td>whose</td></tr><tr><td class="k">사물·동물</td><td>which / that</td><td>which / that</td><td>whose</td></tr></table>';
+var OX=[
+ ['선행사가 사물일 때 주격 관계대명사로 who를 쓴다.',false,'사물·동물이면 which나 that을 써요. who는 사람일 때.'],
+ ['목적격 관계대명사는 생략할 수 있다.',true,'목적격 who(m)·which·that은 생략할 수 있어요.'],
+ ['주격 관계대명사 뒤 동사의 수는 선행사에 맞춘다.',true,'the boys who <b>play</b> … / the boy who <b>plays</b> …'],
+ ['콤마(,) 뒤에도 관계대명사 that을 쓸 수 있다.',false,'콤마 뒤(계속적 용법)에는 that을 쓸 수 없어요.'],
+ ['whose는 선행사가 사람일 때만 쓴다.',false,'whose는 사람·사물 모두 써요. a house whose roof is red.']
+];
+var MC=[
+ {p:'빈칸에 알맞은 것은?',q:'I have a cousin ______ can speak three languages.',o:['which','who','whose','whom'],a:1,e:'선행사 a cousin(사람) + 뒤에 주어가 없으니 주격 <b>who</b>.'},
+ {p:'빈칸에 알맞은 것은?',q:'Look at the dog ______ tail is very long.',o:['who','that','whose','which'],a:2,e:'뒤에 tail(명사)이 바로 나오고 “그 개의 꼬리”이므로 소유격 <b>whose</b>.'},
+ {p:'빈칸에 들어갈 수 <b>없는</b> 것은?',q:'This is the movie ______ I watched last night.',o:['which','that','(생략)','what'],a:3,e:'선행사 the movie가 있으니 what은 못 써요. 목적격이라 which·that·생략 모두 가능.'},
+ {p:'어법상 <b>틀린</b> 것은?',q:'① The girl who sits next to me is kind. ② The cake which I made it was sweet. ③ I know a man whose son is a doctor. ④ The books that are on the desk are mine.',o:['①','②','③','④'],a:1,e:'② 목적격 which가 made의 목적어를 대신했으니 <b>it을 빼야</b> 해요.'},
+ {p:'빈칸에 알맞은 것은?',q:'Seoul, ______ is the capital of Korea, has many palaces.',o:['that','which','what','whose'],a:1,e:'콤마 뒤에는 that을 쓸 수 없어요. 사물이고 주격이니 <b>which</b>.'},
+ {p:'두 문장을 한 문장으로 바르게 바꾼 것은?<br><small>I met a woman. She works at the hospital.</small>',q:'',o:['I met a woman which works at the hospital.','I met a woman who works at the hospital.','I met a woman who she works at the hospital.','I met a woman whose works at the hospital.'],a:1,e:'사람 + 주격 → who. 관계대명사가 주어 she를 대신하니 she를 또 쓰지 않아요.'}
+];
+var FILL=[
+ {s:['She is the singer ',' everyone loves.'],a:['who','whom','that',''],h:'목적격(사람) — 생략도 돼요',show:'who(m) / that / 생략'},
+ {s:['I want a phone ',' battery lasts long.'],a:['whose'],h:'뒤에 명사 battery',show:'whose'},
+ {s:['The river ',' runs through the city is clean.'],a:['which','that'],h:'주격(사물)',show:'which / that'},
+ {s:['Mr. Kim, ',' teaches us math, is funny.'],a:['who'],h:'콤마 뒤, 사람',show:'who'},
+ {s:['This is the chair on ',' I sat.'],a:['which'],h:'전치사 바로 뒤',show:'which'}
+];
+var ORD=[
+ {ko:'나는 영어를 가르치는 선생님을 안다.',t:['I','know','a teacher','who','teaches','English.']},
+ {ko:'그녀가 나에게 준 책은 재미있었다.',t:['The book','that','she','gave me','was','interesting.']},
+ {ko:'나는 지붕이 빨간 집에 산다.',t:['I','live in','a house','whose','roof','is red.']}
+];
+var WR=[
+ {a:'The boy is my brother.',b:'He is playing soccer.',c:'주격 관계대명사를 사용할 것',m:'The boy who is playing soccer is my brother.',
+  chk:[['선행사 the boy 뒤에 who 또는 that',/the boy (who|that) /i],['is playing soccer가 바로 뒤에',/(who|that) is playing soccer/i],['he를 다시 쓰지 않음',function(v){return !/(who|that) he /i.test(v);}],['동사 is my brother로 끝맺음',/is my brother\.?$/i]]},
+ {a:'I lost the watch.',b:'My father bought it for me.',c:'which를 사용할 것',m:'I lost the watch which my father bought for me.',
+  chk:[['the watch 뒤에 which',/the watch which /i],['my father bought for me',/which my father bought for me/i],['it을 다시 쓰지 않음',function(v){return !/bought it/i.test(v);}]]},
+ {a:'I have a friend.',b:'Her mother is a nurse.',c:'소유격 관계대명사를 사용할 것',m:'I have a friend whose mother is a nurse.',
+  chk:[['a friend 뒤에 whose',/a friend whose /i],['whose 바로 뒤에 mother',/whose mother is a nurse/i],['her를 다시 쓰지 않음',function(v){return !/whose her/i.test(v);}]]}
+];
+var RES={ox:[],mc:[],fill:[],order:[],write:[]};
+var $=function(id){return document.getElementById(id)};
+function h(tag,attrs,html){var e=document.createElement(tag);for(var k in attrs||{}){if(k==='class')e.className=attrs[k];else if(k.slice(0,2)==='on')e.addEventListener(k.slice(2),attrs[k]);else e.setAttribute(k,attrs[k]);}if(html!=null)e.innerHTML=html;return e;}
+function strip(x){return x.replace(/<span class="g-gone">[^<]*<\/span>\s*/g,'').replace(/<[^>]+>/g,'').replace(/[()]/g,'');}
+function say(t){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(strip(t));u.lang='en-US';u.rate=.9;speechSynthesis.speak(u);}catch(e){}}
+function sayBtn(t){return h('button',{type:'button','class':'g-say','aria-label':'듣기',onclick:function(){say(t);}},'🔊');}
+function score(k){var r=RES[k],n=r.filter(function(x){return x===true}).length,d=r.filter(function(x){return x!=null}).length;var el=$('s-'+k);if(el)el.innerHTML='<b>'+n+'</b> / '+r.length+(d<r.length?' · 남은 문제 '+(r.length-d):'');bars();}
+
+/* 개념 */
+POINTS.forEach(function(p,i){
+  var c=h('article',{'class':'g-pt'});
+  c.append(h('h3',{},'<span class="n">POINT '+(i+1)+'</span>'+p.t));
+  c.append(h('p',{},p.d));
+  var j=h('div',{'class':'g-join'});j.append(h('div',{},p.join[0]));j.append(h('div',{'class':'ar'},'↓ 하나로'));var r=h('div',{'class':'g-sent'});r.append(sayBtn(p.join[1]));r.append(h('span',{},p.join[1]));j.append(r);c.append(j);
+  if(i===0)c.append(h('div',{},TABLE));
+  var ul=h('ul',{'class':'g-ex'});p.ex.forEach(function(x){var li=h('li');li.append(sayBtn(x[0]));li.append(h('span',{},'<span class="en">'+x[0]+'</span><span class="g-ko">'+x[1]+'</span>'));ul.append(li);});c.append(ul);
+  c.append(h('p',{'class':'g-tip'},'<b>주의</b> '+p.tip));
+  $('g-points').append(c);
+});
+
+/* 1단계 O/X */
+function buildOX(only){var box=$('q-ox');box.innerHTML='';OX.forEach(function(q,i){if(only&&RES.ox[i]===true)return;RES.ox[i]=null;
+  var c=h('div',{'class':'q'});c.append(h('div',{'class':'num'},(i+1)+'번 <span class="type">O/X</span>'));c.append(h('p',{'class':'prompt'},q[0]));
+  var row=h('div',{'class':'g-ox'}),fb=h('div',{'class':'fb'});fb.hidden=true;
+  ['O','X'].forEach(function(lab,k){var b=h('button',{type:'button','class':'opt',onclick:function(){var ok=(k===0)===q[1];RES.ox[i]=ok;[].forEach.call(row.children,function(x,m){x.disabled=true;if((m===0)===q[1])x.classList.add('right');});if(!ok)b.classList.add('wrong');fb.hidden=false;fb.innerHTML=(ok?'<b class="ok">정답!</b> ':'<b class="no">아쉬워요.</b> 정답은 '+(q[1]?'O':'X')+'. ')+q[2];score('ox');}},lab);row.append(b);});
+  c.append(row);c.append(fb);box.append(c);});score('ox');}
+/* 2단계 고르기 */
+function buildMC(only){var box=$('q-mc');box.innerHTML='';MC.forEach(function(q,i){if(only&&RES.mc[i]===true)return;RES.mc[i]=null;
+  var c=h('div',{'class':'q'});c.append(h('div',{'class':'num'},(i+1)+'번 <span class="type">고르기</span>'));c.append(h('p',{'class':'prompt'},q.p));
+  if(q.q)c.append(h('p',{'class':'quote'},q.q.replace(/ (②|③|④)/g,'<br>$1')));
+  var opts=h('div',{'class':'opts'}),fb=h('div',{'class':'fb'});fb.hidden=true;
+  q.o.forEach(function(o,k){var b=h('button',{type:'button','class':'opt en-o',onclick:function(){var ok=k===q.a;RES.mc[i]=ok;[].forEach.call(opts.children,function(x,m){x.disabled=true;if(m===q.a)x.classList.add('right');});if(!ok)b.classList.add('wrong');fb.hidden=false;fb.innerHTML=(ok?'<b class="ok">정답!</b> ':'<b class="no">아쉬워요.</b> ')+q.e;score('mc');}},'<span class="n">'+'①②③④⑤'[k]+'</span><span>'+o+'</span>');opts.append(b);});
+  c.append(opts);c.append(fb);box.append(c);});score('mc');}
+/* 3단계 빈칸 쓰기 */
+function norm(v){return v.trim().toLowerCase().replace(/[^a-z]/g,'');}
+function buildFill(only){var box=$('q-fill');box.innerHTML='';FILL.forEach(function(q,i){if(only&&RES.fill[i]===true)return;RES.fill[i]=null;
+  var c=h('div',{'class':'q'});c.append(h('div',{'class':'num'},(i+1)+'번 <span class="type">빈칸 쓰기</span> <span>힌트: '+q.h+'</span>'));
+  var line=h('div',{'class':'g-in'}),inp=h('input',{type:'text','aria-label':'빈칸 '+(i+1),autocapitalize:'off',autocomplete:'off',spellcheck:'false'});
+  line.append(h('span',{},q.s[0]));line.append(inp);line.append(h('span',{},q.s[1]));c.append(line);
+  var fb=h('div',{'class':'fb'});fb.hidden=true;
+  var go=h('button',{type:'button','class':'btn primary',onclick:function(){var v=norm(inp.value);var ok=q.a.indexOf(v)>-1;RES.fill[i]=ok;inp.classList.remove('right','wrong');inp.classList.add(ok?'right':'wrong');fb.hidden=false;fb.innerHTML=(ok?'<b class="ok">정답!</b> ':'<b class="no">다시 생각해 봐요.</b> ')+'가능한 답: <b>'+q.show+'</b>';score('fill');}},'채점');
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter')go.click();});
+  var r=h('div',{'class':'g-row'});r.append(go);c.append(r);c.append(fb);box.append(c);});score('fill');}
+/* 4단계 배열 */
+function shuffle(a,seed){var b=a.slice(),s=seed;for(var i=b.length-1;i>0;i--){s=(s*9301+49297)%233280;var j=Math.floor(s/233280*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}if(b.join()==a.join())b.push(b.shift());return b;}
+function buildOrder(only){var box=$('q-order');box.innerHTML='';ORD.forEach(function(q,i){if(only&&RES.order[i]===true)return;RES.order[i]=null;
+  var c=h('div',{'class':'q'});c.append(h('div',{'class':'num'},(i+1)+'번 <span class="type">배열</span>'));c.append(h('p',{'class':'prompt'},q.ko));
+  var line=h('div',{'class':'g-line'}),pool=h('div',{'class':'g-pool'}),fb=h('div',{'class':'fb'});fb.hidden=true;var picked=[];
+  shuffle(q.t,(i+3)*7919).forEach(function(w){var b=h('button',{type:'button','class':'g-tk'},w);b.onclick=function(){if(b.classList.contains('used'))return;b.classList.add('used');var t=h('button',{type:'button','class':'g-tk'},w);t.onclick=function(){if(line.classList.contains('ok'))return;t.remove();picked.splice(picked.indexOf(w),1);b.classList.remove('used');};line.append(t);picked.push(w);};pool.append(b);});
+  var chk=h('button',{type:'button','class':'btn primary',onclick:function(){var cur=[].map.call(line.children,function(x){return x.textContent});var ok=cur.join(' ')===q.t.join(' ');RES.order[i]=ok;line.classList.remove('ok','no');line.classList.add(ok?'ok':'no');fb.hidden=false;fb.innerHTML=ok?'<b class="ok">정답!</b> <span class="g-model">'+q.t.join(' ')+'</span>':'<b class="no">순서를 다시 확인해 봐요.</b> 관계대명사는 꾸밈을 받는 명사 바로 뒤에 와요.';if(ok)say(q.t.join(' '));score('order');}},'확인');
+  var ans=h('button',{type:'button','class':'btn',onclick:function(){fb.hidden=false;fb.innerHTML='정답: <span class="g-model">'+q.t.join(' ')+'</span>';if(RES.order[i]==null){RES.order[i]=false;score('order');}}},'정답 보기');
+  c.append(line);c.append(pool);var r=h('div',{'class':'g-row'});r.append(chk);r.append(ans);c.append(r);c.append(fb);box.append(c);});score('order');}
+/* 5단계 서술형 */
+function buildWrite(only){var box=$('q-write');box.innerHTML='';WR.forEach(function(q,i){if(only&&RES.write[i]===true)return;RES.write[i]=null;
+  var c=h('div',{'class':'q g-wr'});c.append(h('div',{'class':'num'},(i+1)+'번 <span class="type var">서술형</span>'));
+  c.append(h('p',{'class':'quote'},q.a+' + '+q.b));c.append(h('p',{'class':'prompt'},'<small>조건: '+q.c+'</small>'));
+  var ta=h('textarea',{'aria-label':'답 쓰기 '+(i+1),autocapitalize:'sentences',spellcheck:'false',placeholder:'여기에 영어 문장을 쓰세요'});c.append(ta);
+  var ul=h('ul',{'class':'g-chk'});q.chk.forEach(function(k){ul.append(h('li',{},k[0]));});
+  var fb=h('div',{'class':'fb'});fb.hidden=true;
+  var go=h('button',{type:'button','class':'btn primary',onclick:function(){var v=ta.value.trim().replace(/\s+/g,' ');var all=true;q.chk.forEach(function(k,m){var ok=typeof k[1]==='function'?k[1](v):k[1].test(v);if(!v)ok=false;ul.children[m].className=ok?'ok':'no';if(!ok)all=false;});RES.write[i]=all;fb.hidden=false;fb.innerHTML=(all?'<b class="ok">잘 썼어요!</b> ':'<b class="no">기준을 다시 확인해 봐요.</b> ')+'모범 답안: <span class="g-model">'+q.m+'</span>';score('write');}},'채점');
+  var r=h('div',{'class':'g-row'});r.append(go);c.append(r);c.append(ul);c.append(fb);box.append(c);});score('write');}
+
+var NAMES={ox:'1단계 O/X',mc:'2단계 고르기',fill:'3단계 빈칸 쓰기',order:'4단계 배열',write:'5단계 서술형'};
+function bars(){var g=$('g-bars');if(!g)return;g.innerHTML='';Object.keys(NAMES).forEach(function(k){var r=RES[k],n=r.filter(function(x){return x===true}).length;g.append(h('span',{},NAMES[k]));var b=h('div',{'class':'g-bar'},'<i style="width:'+(r.length?Math.round(n/r.length*100):0)+'%"></i>');g.append(b);g.append(h('b',{},n+' / '+r.length));});}
+function all(only){buildOX(only);buildMC(only);buildFill(only);buildOrder(only);buildWrite(only);}
+RES.ox=OX.map(function(){return null});RES.mc=MC.map(function(){return null});RES.fill=FILL.map(function(){return null});RES.order=ORD.map(function(){return null});RES.write=WR.map(function(){return null});
+all(false);
+$('g-retry').onclick=function(){all(true);location.hash='#g-ox';};
+$('g-reset').onclick=function(){Object.keys(RES).forEach(function(k){RES[k]=RES[k].map(function(){return null})});all(false);location.hash='#g-ox';};
+
+/* PDF: 개념 + 문제(답 칸) + 정답 */
+function buildPrint(){var o='<h1>관계대명사: 두 문장을 하나로 잇는 말</h1><div>코코스 문법 · 고1 · Unit 7 · 코코스학원 온라인 학습지</div>';
+  o+='<h2>개념 정리</h2>';POINTS.forEach(function(p,i){o+='<p><b>POINT '+(i+1)+' '+p.t+'</b><br>'+strip(p.d)+'<br><span class="en">'+strip(p.join[0])+' → '+strip(p.join[1])+'</span><br>'+p.ex.map(function(x){return '<span class="en">'+strip(x[0])+'</span> '+x[1]}).join('<br>')+'<br><i>주의: '+strip(p.tip)+'</i></p>';if(i===0)o+=TABLE;});
+  o+='<h2>1단계 · 개념 O/X</h2><ol>'+OX.map(function(q){return '<li>'+q[0]+' ( O / X )</li>'}).join('')+'</ol>';
+  o+='<h2>2단계 · 알맞은 것 고르기</h2><ol>'+MC.map(function(q){return '<li>'+strip(q.p)+(q.q?'<br><span class="en">'+q.q+'</span>':'')+'<br><span class="en">'+q.o.map(function(x,k){return '①②③④'[k]+' '+x}).join('&nbsp;&nbsp; ')+'</span></li>'}).join('')+'</ol>';
+  o+='<h2>3단계 · 빈칸 쓰기</h2><ol>'+FILL.map(function(q){return '<li class="en">'+q.s[0]+'__________'+q.s[1]+'</li>'}).join('')+'</ol>';
+  o+='<h2>4단계 · 문장 배열</h2><ol>'+ORD.map(function(q,i){return '<li>'+q.ko+'<br><span class="en">( '+shuffle(q.t,(i+3)*7919).join(' / ')+' )</span><span class="ln"></span></li>'}).join('')+'</ol>';
+  o+='<h2>5단계 · 서술형</h2><ol>'+WR.map(function(q){return '<li><span class="en">'+q.a+' + '+q.b+'</span> (조건: '+q.c+')<span class="ln"></span></li>'}).join('')+'</ol>';
+  o+='<div class="ans"><h2>정답과 해설</h2><p><b>1단계</b> '+OX.map(function(q,i){return (i+1)+') '+(q[1]?'O':'X')}).join('  ')+'</p>';
+  o+='<p><b>2단계</b><br>'+MC.map(function(q,i){return (i+1)+') '+'①②③④'[q.a]+' — '+strip(q.e)}).join('<br>')+'</p>';
+  o+='<p><b>3단계</b> '+FILL.map(function(q,i){return (i+1)+') '+q.show}).join('  ')+'</p>';
+  o+='<p><b>4단계</b><br>'+ORD.map(function(q,i){return (i+1)+') <span class="en">'+q.t.join(' ')+'</span>'}).join('<br>')+'</p>';
+  o+='<p><b>5단계</b><br>'+WR.map(function(q,i){return (i+1)+') <span class="en">'+q.m+'</span>'}).join('<br>')+'</p></div>';
+  $('g-print').innerHTML=o;}
+$('g-pdf').onclick=function(){buildPrint();setTimeout(function(){window.print();},50);};
+window.addEventListener('beforeprint',buildPrint);
+var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
+})();
+</script>
+
+</body></html>
