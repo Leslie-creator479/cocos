@@ -43,15 +43,46 @@ def guess(w, m):
     return '명'
 
 
+def opened(f):
+    """엑셀을 연다. 가끔 '읽기 전용 암호'(Excel 기본 암호)가 걸린 채로 저장된 파일이 오는데(2026-10-17 워드마스터 Day 13~14),
+    msoffcrypto로 풀고 openpyxl이 못 읽는 이름 없는 셀 스타일을 고쳐서 연다."""
+    import openpyxl, zipfile, io
+    if not zipfile.is_zipfile(f):
+        import msoffcrypto  # pip install msoffcrypto-tool --break-system-packages
+        o = msoffcrypto.OfficeFile(open(f, 'rb')); o.load_key(password='VelvetSweatshop')
+        buf = io.BytesIO(); o.decrypt(buf); buf.seek(0)
+        zin = zipfile.ZipFile(buf); fixed = io.BytesIO(); zout = zipfile.ZipFile(fixed, 'w', zipfile.ZIP_DEFLATED); n = [0]
+        for it in zin.infolist():
+            d = zin.read(it.filename)
+            if it.filename == 'xl/styles.xml':
+                def fx(mm):
+                    t = mm.group(0)
+                    if ' name=' not in t:
+                        n[0] += 1; t = t.replace('cellStyle ', f'cellStyle name="s{n[0]}" ', 1)
+                    return t
+                d = re.sub(r'<(?:x:)?cellStyle [^>]*>', fx, d.decode('utf8')).encode('utf8')
+            zout.writestr(it, d)
+        zout.close(); fixed.seek(0); f = fixed
+        print('암호 풀어 읽음')
+    return openpyxl.load_workbook(f, data_only=True, read_only=True)
+
+
 def extract(files, out):
-    import openpyxl
     rows, seen = [], set()
     for f in files:
-        ws = openpyxl.load_workbook(f, data_only=True)['rand']
+        wb = opened(f); ws = wb['rand']
+        recs = [r for r in ws.iter_rows(min_row=2, values_only=True) if len(r) >= 10 and r[2]]
+        # 'Day 표시'를 끄고 뽑은 파일(2026-10-17 워드마스터)은 J열에 (Day 01)이 없다 → 머리말 '출제범위 … Day 01 / Day 02'의
+        # Day들로 순번(A열) 순서대로 똑같이 나눈다(Day마다 단어 수가 같은 책일 때만. 다르면 멈춘다)
+        if not any(re.match(r'\(Day \d+\)', str(r[9] or '')) for r in recs):
+            head = next((str(c) for row in wb['print'].iter_rows(max_row=5, values_only=True) for c in row if c and '출제범위' in str(c)), '')
+            ds = [int(x) for x in re.findall(r'Day (\d+)', head)]
+            assert ds and len(recs) % len(ds) == 0, f'Day 표시도 없고 Day별로 똑같이 나눌 수 없음: {f}'
+            per = len(recs) // len(ds); recs.sort(key=lambda r: r[0])
+            recs = [tuple(r[:9]) + ((f'(Day {ds[i // per]:02d}) ' if i % per == 0 else '') + str(r[2]),) for i, r in enumerate(recs)]
+            print(f'Day 표시 없음 → {ds} 를 {per}개씩 순서대로 나눔')
         day = None
-        for r in ws.iter_rows(min_row=2, values_only=True):
-            if not r[2]:
-                continue
+        for r in recs:
             mm = re.match(r'\(Day (\d+)\)', str(r[9] or ''))
             if mm:
                 day = int(mm.group(1))
