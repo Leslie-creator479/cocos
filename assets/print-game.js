@@ -6,6 +6,7 @@
 (function () {
   'use strict';
   var D = window.DATA;
+  var U = (D && D.unit) || '지문';  // 단어장 페이지는 DATA.unit = 'Day'
   if (!D || !D.W || !D.P || window.__cocosPrintGame) return;
   window.__cocosPrintGame = true;
 
@@ -28,10 +29,10 @@
     return gs.length ? gs : D.P.map(function (p, g) { return g; });
   }
   function rangeLabel(gs) {
-    if (gs.length === D.P.length) return '전체 ' + D.P.length + '개 지문';
+    if (gs.length === D.P.length) return '전체 ' + D.P.length + '개 ' + U;
     var a = gs.map(function (g) { return D.P[g].no; });
     var tail = a.every(function (x) { return /^[\d~-]+$/.test(String(x)); }) ? '번' : '';
-    return a.length > 8 ? a.slice(0, 8).join(', ') + ' 외 ' + (a.length - 8) + '개 지문' : a.join(', ') + tail;
+    return a.length > 8 ? a.slice(0, 8).join(', ') + ' 외 ' + (a.length - 8) + '개 ' + U : a.join(', ') + tail;
   }
 
   var CSS = [
@@ -153,10 +154,10 @@
     if (!anchor) return;
     var row = document.createElement('div'); row.id = 'cocos-pdf-row';
     row.innerHTML = '<button type="button" class="cocos-pdf-btn" id="cocos-pdf-open">' + ICON + '단어 목록·시험지 PDF</button>' +
-      '<small>아래 ‘범위 고르기’에서 고른 지문의 단어로 만들어요. 안 고르면 전체 단어로 만들어요.</small>' +
+      '<small>아래 ‘범위 고르기’에서 고른 ' + U + '의 단어로 만들어요. 안 고르면 전체 단어로 만들어요.</small>' +
       '<div id="cocos-pdf-panel" hidden>' +
       '<p class="rg" id="cocos-pdf-rg"></p>' +
-      '<label><input type="checkbox" id="cp-o-list" checked> 단어 목록 (지문별 · 뜻 포함)</label>' +
+      '<label><input type="checkbox" id="cp-o-list" checked> 단어 목록 (' + U + '별 · 뜻 포함)</label>' +
       '<label><input type="checkbox" id="cp-o-mean" checked> 뜻 쓰기 시험지</label>' +
       '<label><input type="checkbox" id="cp-o-spell" checked> 영어 쓰기 시험지</label>' +
       '<div><button type="button" class="cocos-pdf-btn go" id="cocos-pdf-go">' + ICON + 'PDF 만들기</button></div></div>';
