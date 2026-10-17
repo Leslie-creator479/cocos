@@ -146,7 +146,7 @@ var D = {"study": [{"t": "2026년 3월 고1", "y": "2026", "g": "1", "n": 22, "h
   var cat='mock', kind='study';
   try{var h=location.hash.slice(1), old={study:['mock','study'],syn:['mock','syn'],game:['mock','game'],textbook:['textbook','study'],school:['school','study']};
     if(old[h]){cat=old[h][0];kind=old[h][1];} else {var m=h.split('-'); if(['mock','textbook','school','voca'].indexOf(m[0])>-1){cat=m[0]; if(KIND[m[1]]) kind=m[1];}}}catch(e){}
-  function unit(c,k){ if(k!=='study') return '개 지문'; return catOf(c)==='textbook'?'개 본문':'개 지문'; }
+  function unit(c,k){ return catOf(c)==='textbook'?'개 본문':'개 지문'; }
   function sync(){try{history.replaceState(null,'','#'+cat+'-'+kind)}catch(e){}}
   function render(){
     document.querySelectorAll('#cats button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.c===cat)});
@@ -163,7 +163,7 @@ var D = {"study": [{"t": "2026년 3월 고1", "y": "2026", "g": "1", "n": 22, "h
     var groups={}, order=[];
     rows.forEach(function(c){var g=c.grp?c.grp:(cat==='school'?'2026년 2학기 중간고사':c.y+'년 · 고'+c.g); if(!groups[g]){groups[g]=[];order.push(g)} groups[g].push(c)});
     var html=order.map(function(g){return '<section class="group"><h2>'+esc(g)+' <small>'+groups[g].length+'개</small></h2><ul class="grid">'+
-      groups[g].map(function(c){var t=(cat!=='mock'||c.grp)?c.t:c.t.replace(/^\d{4}년 /,''), n=cat==='voca'?'Day '+c.n+'개':c.n+unit(c,kind);return '<li'+(c.buy?' class="has-buy"':'')+'><a href="'+esc(c.href)+'"><span class="t">'+esc(t)+'</span><span class="n">'+n+'</span></a>'+(c.buy?'<a class="buy" href="'+esc(c.buy)+'" target="_blank" rel="noopener">'+esc(c.buyLabel||'교재 구매하기')+' ↗</a>':'')+'</li>'}).join('')+'</ul></section>'}).join('');
+      groups[g].map(function(c){var t=(cat!=='mock'||c.grp)?c.t:c.t.replace(/^\d{4}년 /,''); if(c.grp&&t.indexOf(c.grp)===0&&t.length>c.grp.length) t=t.slice(c.grp.length).trim(); var n=cat==='voca'?'Day '+c.n+'개':c.n+unit(c,kind);return '<li'+(c.buy?' class="has-buy"':'')+'><a href="'+esc(c.href)+'"><span class="t">'+esc(t)+'</span><span class="n">'+n+'</span></a>'+(c.buy?'<a class="buy" href="'+esc(c.buy)+'" target="_blank" rel="noopener">'+esc(c.buyLabel||'교재 구매하기')+' ↗</a>':'')+'</li>'}).join('')+'</ul></section>'}).join('');
     var tip=cat==='voca'?'단어장 한 권이 한 페이지에 들어 있어요. 페이지 안에서 시험 범위(Day)를 고르면 돼요.':kind==='study'?'각 회차를 누르면 목차가 열리고, 목차에서 지문을 고르면 그 지문의 온라인 학습지가 열려요.':'회차(범위) 전체가 한 페이지에 들어 있어요.';
     $('list').innerHTML=(html||'<p class="empty">찾는 자료가 없어요. 다른 말로 찾아보세요.</p>')+'<p class="note">'+tip+'</p>';
   }
