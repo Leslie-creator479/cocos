@@ -125,9 +125,9 @@ def build(words_f, meta_f, out):
     for x, y in PATCH:
         assert x in s, '틀이 바뀜: ' + x[:50]
         s = s.replace(x, y)
+    os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
     tmp = out + '.tmp.html'
     open(tmp, 'w', encoding='utf8').write(s)
-    os.makedirs(os.path.dirname(out), exist_ok=True)
     os.system(f'python3 {ROOT}/_tools/wrap.py {tmp} {out} >/dev/null'); os.remove(tmp)
     print(out, '·', rng, '· 단어', len(GW), '· 묶음', [x['label'] for x in groups])
 
