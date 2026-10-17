@@ -12,14 +12,15 @@
 3) 페이지 만들기
    python3 _tools/voca_game.py build words.json meta.json game/voca-nehs-basic/index.html
    meta.json: {"title":"능률VOCA 고등기본","key":"cocos-wordgame-voca-nehs-basic","chip":"능률VOCA 고등기본 · 정규반 단어 시험",
-               "source":"단어 출처: 능률VOCA 고등기본 (NE능률)","group":3,"last_group":[37,40],
+               "source":"단어 출처: 능률VOCA 고등기본 (NE능률)","group":10,
                "buy":{"label":"정규반 단어 교재: 능률VOCA 고등기본","text":"교보문고에서 사기","url":"https://…"}}
-   - 묶음 버튼은 group(3)일씩: Day 01~03, 04~06 … 마지막은 last_group(37~40, 네 과).
+   - 단어장 한 권(Day 01~40 전부)을 한 페이지에 넣고 Day 하나씩 고르게 한다(반마다 두 과·세 과씩 시험 범위가 달라서, 선생님 결정 2026-10-17).
+     묶음 버튼은 빨리 고르기용으로 group(10)일씩: Day 01~10, 11~20 …
    - 틀: game/2022-03-g2(모의고사 단어게임, 잠기지 않은 페이지)를 그대로 쓰고 단어장에 맞게 고친다
      (지문 → Day, '지문 속 빈칸' 게임 뺌(예문 없음), 학습지·동의어 링크 없음, 머리말 아래 교재 구매 안내).
    만든 뒤: brand_links.py → seo.py(PDF 버튼) → lock.mjs lock, 자료실은
    python3 _tools/add_library.py game "능률VOCA 고등기본" game/voca-nehs-basic <Day 수> --group "정규반 단어장" --buy "<주소>" --buy-label "정규반 단어 교재: 능률VOCA 고등기본 · 교보문고에서 사기"
-   범위 링크: 주소#d2 (Day 02), 주소#d1.d2.d3 (Day 01~03)
+   범위 링크: 주소#2 (Day 02), 주소#4-6 (Day 04~06), 주소#4-5.9 (Day 04·05·09)
 """
 import json, re, sys, os, argparse
 
@@ -67,7 +68,7 @@ def from_page(page, out):
     s = open(page, encoding='utf8').read()
     a = s.index('var DATA = ') + len('var DATA = ')
     D, _ = json.JSONDecoder().raw_decode(s[a:])
-    days = [int(p['k'][1:]) for p in D['P']]
+    days = [int(p['k'].lstrip('d')) for p in D['P']]
     rows = [dict(day=days[x[3]], w=x[0], m=x[2], p=x[1]) for x in D['W']]
     json.dump(rows, open(out, 'w', encoding='utf8'), ensure_ascii=False, indent=0)
     print(len(rows), '단어 · Day', days)
@@ -96,13 +97,13 @@ PATCH = [
 def build(words_f, meta_f, out):
     W = json.load(open(words_f, encoding='utf8')); M = json.load(open(meta_f, encoding='utf8'))
     days = sorted({x['day'] for x in W})
-    P = [dict(no=f'Day {d:02d}', k=f'd{d}', lab=f'Day {d:02d}', topic='', u='', s=[]) for d in days]
+    P = [dict(no=f'Day {d:02d}', k=str(d), lab=f'Day {d:02d}', topic='', u='', s=[]) for d in days]
     GW = [[x['w'], x['p'], x['m'], days.index(x['day'])] for x in sorted(W, key=lambda x: x['day'])]
-    g, last = M.get('group', 3), M.get('last_group')
+    g = M.get('group', 10)
     groups, d0 = [], 1
     while d0 <= max(days):
-        d1 = last[1] if last and d0 == last[0] else d0 + g - 1
-        ks = [f'd{d}' for d in range(d0, d1 + 1) if d in days]
+        d1 = d0 + g - 1
+        ks = [str(d) for d in range(d0, d1 + 1) if d in days]
         if ks:
             groups.append(dict(label=f'Day {d0:02d}~{d1:02d}', keys=ks))
         d0 = d1 + 1
