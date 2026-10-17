@@ -9,14 +9,19 @@
         학교별은 "동광고 1학년", 교과서는 "4과"처럼 쓰고 --group에 교재 이름("영어II NE능률(오선영)")을 준다.
   사이트 경로: 저장소 기준 폴더. 예) study/2026-10-g1 , syn/2026-10-g1 , game/2026-10-g1 , textbook/neo2/4
   예) python3 _tools/add_library.py study "2026년 10월 고1" study/2026-10-g1 22
+  단어장(학원에서 쓰는 시중 단어장): 경로를 game/voca-<영문 약칭>으로 하면 자료실 '단어장' 분류에 들어간다. 지문 수 자리는 Day 수.
+     --buy "<구매 주소>" --buy-label "정규반 단어 교재: …"를 주면 카드 아래에 구매 링크가 붙는다.
+  예) python3 _tools/add_library.py game "능률VOCA 고등기본" game/voca-nehs-basic 3 --group "정규반 단어장" --buy "https://…" --buy-label "정규반 단어 교재: 능률VOCA 고등기본 · 교보문고에서 사기"
 """
 import json, re, sys
 
 LIB = 'library/index.html'
 args = [x for x in sys.argv[1:]]
-grp = ''
-if '--group' in args:
-    i = args.index('--group'); grp = args[i + 1]; del args[i:i + 2]
+def opt(name):
+    if name in args:
+        i = args.index(name); v = args[i + 1]; del args[i:i + 2]; return v
+    return ''
+grp = opt('--group'); buy = opt('--buy'); buy_label = opt('--buy-label')
 tab, title, path, n = args[0], args[1], args[2].strip('/'), int(args[3])
 assert tab in ('study', 'textbook', 'school', 'syn', 'game'), '탭 이름 확인'
 
@@ -30,6 +35,8 @@ D.setdefault(tab, [])
 if not g and grp:  # 교과서처럼 제목에 학년이 없으면 같은 교재(--group) 카드의 학년을 따른다
     g = next((c['g'] for cs in D.values() for c in cs if c.get('grp') == grp and c.get('g')), '')
 card = {'t': title, 'y': y, 'g': g, 'n': n, 'href': '../' + path + '/', 'grp': grp}
+if buy: card['buy'] = buy
+if buy_label: card['buyLabel'] = buy_label
 D[tab] = [c for c in D[tab] if c['href'] != card['href']] + [card]
 
 

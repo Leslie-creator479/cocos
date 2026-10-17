@@ -7,16 +7,17 @@ GitHub Pages로 공개되는 코코스학원 홈페이지·온라인 학습지 �
 | 경로 | 내용 |
 |---|---|
 | `index.html` | 홈페이지 첫 화면(시안 8 미드나잇 네이비, 2026-10-14 확정). 원장 인사·성과·상담 시간·주소는 내용을 받으면 다시 넣는다. 2026-10-14부터 설명회 시즌이라 입시 컨설팅·예비고1 설명회 섹션(`#consult`, 카드 `#seminar`)을 맨 위에 두고 금색 안내 띠·머리글 '설명회 문의' 버튼으로 강조한다. 시즌이 끝나면 첫 화면(.hero) 아래로 되돌린다 |
-| `library/` | 자료실. 큰 분류 탭 **모의고사 / 교과서 / 학교별 시험 범위**, 그 안에 **학습지(학교별은 '시험 범위 목차') / 동의어·반의어 / 단어게임** 작은 탭(2026-10-14 선생님 결정). 분류는 주소로 자동: 모의고사 회차 이름이면 모의고사, `textbook/`과 교과서 약칭으로 시작하는 syn·game(예 `syn/ce1min-1`)은 교과서, 나머지(학교별·부교재)는 학교별 시험 범위. 카드 데이터는 `_tools/add_library.py`로만 고친다(탭 인자는 그대로 study·textbook·school·syn·game) |
+| `library/` | 자료실. 큰 분류 탭 **모의고사 / 교과서 / 학교별 시험 범위 / 단어장**(단어장은 `game/voca-…`, 2026-10-17 추가), 그 안에 **학습지(학교별은 '시험 범위 목차') / 동의어·반의어 / 단어게임** 작은 탭(2026-10-14 선생님 결정). 분류는 주소로 자동: 모의고사 회차 이름이면 모의고사, `textbook/`과 교과서 약칭으로 시작하는 syn·game(예 `syn/ce1min-1`)은 교과서, 나머지(학교별·부교재)는 학교별 시험 범위. 카드 데이터는 `_tools/add_library.py`로만 고친다(탭 인자는 그대로 study·textbook·school·syn·game) |
 | `study/<연도>-<월2자리>-g<학년>/` | 학력평가 회차 목차. 지문은 `.../<번호>/` (예 `study/2026-06-g2/23/`, 장문 `41-42`, `43-45`) |
 | `study/olympos1/`, `study/olympos2/` | 올림포스 기출 지문 `<강>-<번호>/` (예 `study/olympos2/7-3/`) |
 | `textbook/<교재>/<과>/` | 교과서 과별 목차, 본문 `.../<번호>/` (예 `textbook/neo2/1/3/` = 영어II 능률(오선영) 1과 본문 3번). 교재: `neo2` 영어II 능률(오선영), `ce1min` 공통영어1 능률(민병천), `ce1oh` 공통영어1 능률(오선영), `ce1park` 공통영어1 YBM(박준언), `ce1kang` 공통영어1 천재(강상구), `ce1cho` 공통영어1 천재(조수경), `ce2min` 공통영어2 능률(민병천), `ce2oh` 공통영어2 능률(오선영), `e1oh` 영어I 능률(오선영)(2022 개정 2026년판), `e1park` 영어I YBM(박준언)(2022 개정 2026년판), `ce2park` 공통영어2 YBM(박준언). 스페셜 레슨은 과 자리에 `s1`·`s2`(syn·game은 `ce1min-s1`·`ce1min-s2`, 선생님용 교과서 지문 목록에서는 lessons 101·102). `ce1oh`는 스페셜 레슨이 하나(Special Lesson)라 `s1`(`textbook/ce1oh/s1/`, `syn/ce1oh-s1`, `game/ce1oh-s1`, 목록 lessons 101·label '스페셜 레슨') |
 | `school/2026-2-mid/<학교>-g<학년>/` | 학교별 시험 범위 목차(학교: dongkwang, seongnam, seongnam-girls, seongil, pungsaeng) |
 | `syn/<회차>/` | 동의어·반의어 (회차 이름은 study와 같다. 교과서는 과마다 하나씩 `syn/neo2-1`, `syn/ce1min-1`처럼. 여러 과를 한 페이지에 묶지 않는다(선생님 결정 2026-10-15). 옛 `syn/neo2-1-3`은 1·2·3과로 넘겨주는 안내 페이지) |
 | `game/<회차>/` | 단어게임 (교과서는 `game/ce1min-1`처럼 syn과 같은 이름) |
+| `game/voca-<약칭>/` | 단어장 단어게임(학원에서 쓰는 시중 단어장, 자료실 '단어장' 분류, 2026-10-17 선생님 결정). 지금 `voca-nehs-basic` = 능률VOCA 고등기본(정규반, 세 과씩 시험: Day 01~03 … 마지막 37~40). 단어장 한 권 = 한 페이지, 범위는 Day. `_tools/voca_game.py`로만 만든다(extract → 품사 확인 → build). 시중 교재라 잠김·noindex, 단어 데이터를 저장소에 평문으로 두지 않는다. 자료실 카드는 `add_library.py game … --group "정규반 단어장" --buy <구매 주소> --buy-label "정규반 단어 교재: …"` |
 | `tools/` | 선생님 자료함(검색 제외). `tools/index.html` 첫 화면은 `_tools/build_tools_index.py`로만 만든다. `tools/blog-list/` 블로그 수록 지문 목록(이게 기준판, 옛 아티팩트판은 더 고치지 않음), `tools/textbook-list/` 교과서 지문 목록, `tools/game-blog/<회차>/`·`tools/syn-blog/<회차>/` 블로그 원고, `tools/templates/` 틀 |
 | `preview/` | 홈페이지 디자인 시안(noindex) |
-| `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `fix_links.py`(claude.ai 링크 → 홈페이지 주소), `add_library.py`(자료실 카드), `build_tools_index.py`(선생님 자료함 첫 화면), `brand_links.py`(학원 안내 카드), `seo.py`(검색 노출·sitemap·robots, 돌 때 `print_btn.py`도 함께 돈다), `print_btn.py`(학습지·동의어·단어게임 PDF 버튼 붙이기), `lock.mjs`(교과서·부교재 학원생 잠금), `artifact_map.json`(옛 아티팩트 id → 저장소 경로) |
+| `_tools/` | 작업 도구: `wrap.py`(완전한 HTML로 감싸기), `fix_links.py`(claude.ai 링크 → 홈페이지 주소), `add_library.py`(자료실 카드), `build_tools_index.py`(선생님 자료함 첫 화면), `brand_links.py`(학원 안내 카드), `seo.py`(검색 노출·sitemap·robots, 돌 때 `print_btn.py`도 함께 돈다), `print_btn.py`(학습지·동의어·단어게임 PDF 버튼 붙이기), `voca_game.py`(단어장 단어게임), `lock.mjs`(교과서·부교재 학원생 잠금), `artifact_map.json`(옛 아티팩트 id → 저장소 경로) |
 
 ## 규칙
 - 모든 페이지는 `<폴더>/index.html` 하나. 파일 이름이 아니라 폴더 주소로 연다.
