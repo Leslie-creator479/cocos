@@ -106,6 +106,8 @@ def from_page(page, out):
 
 
 PATCH = [
+    ("  function speak(t){ if (!synth) return; try { synth.cancel(); var u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = 0.9; if (voice) u.voice = voice; synth.speak(u); } catch (e) {} }", "  function tts(t){ if (!synth) return; try { synth.cancel(); var u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = 0.9; if (voice) u.voice = voice; synth.speak(u); } catch (e) {} }\n  /* 발음은 미리 녹음한 MP3(assets/say/<단어>.mp3)를 먼저 튼다. 카카오톡 안 브라우저는 기기 음성이 없어서(2026-10-17) */\n  var SAY = DATA.say || '', player = null;\n  function slug(w){ return String(w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }\n  function speak(t){ if (SAY) { try { if (!player) player = new Audio(); player.pause(); player.src = SAY + slug(t) + '.mp3'; var pr = player.play(); if (pr && pr.catch) pr.catch(function(){ tts(t); }); return; } catch (e) {} } tts(t); }"),
+    ('  function sayBtn(w){ if (!synth) return null;', '  function sayBtn(w){ if (!synth && !SAY) return null;'),
     ("return '전체 ' + P.length + '개 지문';", "return '전체 Day ' + P.length + '개';"),
     ("return gs.length + '개 지문';", "return 'Day ' + gs.length + '개';"),
     ("공부할 지문 번호를 눌러 고르세요.", "공부할 Day를 눌러 고르세요."),
@@ -150,7 +152,7 @@ def build(words_f, meta_f, out):
     s = re.sub(r'\n*<script src="[./]*assets/print-game\.js"></script>\n*', '\n', s)
     a = s.index('/* ==== DATA:START ==== */'); b = s.index('/* ==== DATA:END ==== */')
     head = s[a:s.index('var DATA = ', a)]
-    data = dict(unit='Day', key=M['key'], label=M['title'], syn='', meta=meta, groups=groups, P=P, W=GW)
+    data = dict(unit='Day', say='../../assets/say/', key=M['key'], label=M['title'], syn='', meta=meta, groups=groups, P=P, W=GW)
     s = s[:a] + head + 'var DATA = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n' + s[b:]
     s = re.sub(r'<title>[^<]*</title>', f"<title>[코코스학원] {M['title']} 단어게임</title>", s, count=1)
     for x, y in PATCH:
