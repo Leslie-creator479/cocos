@@ -428,6 +428,18 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .ptabs button + button{border-left:1px solid var(--ink)}
 .ptabs button[aria-selected="true"]{background:var(--night);color:var(--on-night)}
 .ptabs button:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+.mtrack{margin-bottom:8px}
+.mtrack-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:12px 40px;align-items:baseline;padding-bottom:18px}
+.mtrack-h p{font-size:14.5px;color:var(--muted);line-height:1.75}
+.mtrack-g{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mt{background:var(--night-2);color:var(--on-night);padding:28px 30px 30px}
+.mt-code{font-family:var(--latin);font-size:clamp(32px,3vw,44px);font-weight:300;line-height:1;letter-spacing:.02em;display:flex;flex-direction:column;gap:10px}
+.mt-code small{font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.04em;color:var(--gold)}
+.mt dl{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px 14px;margin-top:22px;font-size:14.5px;line-height:1.7}
+.mt dt{font-size:12px;letter-spacing:.12em;color:var(--gold);padding-top:3px}
+.mt dd{color:#C9D0DB}
+.mtrack-h2{margin-top:44px;padding-bottom:4px;border-bottom:1px solid var(--ink)}
+@media (max-width:860px){.mtrack-h{grid-template-columns:1fr}.mtrack-g{grid-template-columns:1fr}.mt{padding:24px 22px 26px}.mt dl{grid-template-columns:36px minmax(0,1fr)}}
 .mrows{border-top:0}
 .mrow{display:grid;grid-template-columns:120px minmax(0,1.1fr) minmax(0,1fr);gap:10px 40px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .mcode{font-family:var(--latin);font-size:clamp(32px,3vw,44px);font-weight:300;line-height:1;letter-spacing:.02em}
@@ -819,10 +831,18 @@ section[id],#course{scroll-margin-top:80px}
         <div class="ppanel" id="course-mid" role="tabpanel" aria-labelledby="tab-mid" hidden>
         <div class="course-h">
           <div><span class="cap">Middle School · Classes</span><h3>중등부 레벨</h3></div>
-          <p>레벨 테스트로 다섯 단계 중 한 반에 배정합니다.</p>
+          <p>레벨 테스트로 반을 배정합니다. 최상위 과정은 진학 목표에 따라 두 반으로, 그 밖의 반은 학년별 네 단계로 운영합니다.</p>
+        </div>
+        <div class="mtrack">
+          <div class="mtrack-h"><span class="cap">Top Track · 학년 통합</span><p>최상위 과정은 학년별 반을 두지 않고 TEPS반과 중등 COT반으로 통합해 운영합니다. 2024년 2월부터 이어 오고 있습니다.</p></div>
+          <div class="mtrack-g">
+            <div class="mt"><div class="mt-code">TEPS<small>특목고·자사고 준비반</small></div><dl><dt>대상</dt><dd>주로 중2 이하 학생 가운데 외고·국제고 등 특목고와 자사고 진학을 희망하는 학생</dd><dt>수업</dt><dd>이 학교들 진학에 필요한 수준의 커리큘럼으로 영어 수업을 구성합니다</dd><dt>입시</dt><dd>코코스 컨설팅센터와 함께 실제 특목고·자사고 입시까지 진행합니다</dd></dl></div>
+            <div class="mt"><div class="mt-code">COT<small>중등 COT반 · COCOS Top</small></div><dl><dt>대상</dt><dd>주로 중2 이상 학생 가운데 영어 성적이 뛰어나고 일반고 진학을 목표로 하는, 이미 고1 이상 수준의 학습이 가능한 학생</dd><dt>수업</dt><dd>고등 과정으로 진행합니다</dd><dt>교재</dt><dd>고등 과정 독해·문법 교재, 고등 모의고사, 고등 단어</dd></dl></div>
+          </div>
+          <div class="mtrack-h2"><span class="cap">By Grade · 학년별 레벨</span></div>
         </div>
         <div class="mrows">
-          <div class="mrow"><div class="mcode">COT<span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div><b>최상위반</b><small>학년 구분 없음</small><p>고2·3 수준의 고등 심화 과정을 소화할 수 있는 학생</p></div><div class="mbook"><span>교재</span>고2~3 수준 독해·문법 교재, 고등 모의고사, 고등 단어</div></div>
+          
           <div class="mrow"><div class="mcode">UI<span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><div><b>중등 +2 Level</b><p>자기 학년보다 두 단계 높은 고1·2 수준. 독해·문법과 함께 모의고사 학습</p></div><div class="mbook"><span>교재</span>중등 +2 Level 수준 독해·문법·모의고사·단어 교재</div></div>
           <div class="mrow"><div class="mcode">MI<span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div><div><b>중등 +1 Level</b><p>자기 학년보다 한 단계 높은 고1 수준. 고등 과정의 학습 개념과 습관을 미리 준비</p></div><div class="mbook"><span>교재</span>중등 +1 Level 수준 독해·문법·듣기·단어 교재</div></div>
           <div class="mrow"><div class="mcode">LI<span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div><div><b>중등 기본 Level</b><p>자기 학년에 맞는 수준. 문장 해석력, 문법 기본 개념, 듣기와 어휘</p></div><div class="mbook"><span>교재</span>중등 기본 Level 독해·문법·듣기·단어 교재</div></div>
