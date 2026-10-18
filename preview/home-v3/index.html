@@ -419,6 +419,30 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 @media (max-width:1100px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:900px){.levels{grid-template-columns:1fr}.levels article,.levels article + article{border-left:0;padding:28px 0;border-top:1px solid var(--line)}.levels article:first-child{border-top:0}.flow{grid-template-columns:1fr 1fr}.term-list{grid-template-columns:1fr}}
 @media (max-width:560px){.bar{grid-template-columns:1fr 1fr}.bar div.cl{grid-column:1 / -1}.flow{grid-template-columns:1fr}.weeks{grid-template-columns:1fr}.weeks div.span4{grid-column:auto}}
+
+.ptabs{display:inline-flex;border:1px solid var(--ink);margin-bottom:clamp(36px,4vw,56px)}
+.ptabs button{font:inherit;font-size:15px;font-weight:600;letter-spacing:.06em;padding:14px 34px;background:transparent;color:var(--ink);border:0;cursor:pointer}
+.ptabs button + button{border-left:1px solid var(--ink)}
+.ptabs button[aria-selected="true"]{background:var(--night);color:var(--on-night)}
+.ptabs button:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+.mrows{border-top:0}
+.mrow{display:grid;grid-template-columns:120px minmax(0,1.1fr) minmax(0,1fr);gap:10px 40px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.mcode{font-family:var(--latin);font-size:clamp(32px,3vw,44px);font-weight:300;line-height:1;letter-spacing:.02em}
+.mrow b{font-size:17px;font-weight:600}
+.mrow small{margin-left:10px;font-size:12px;color:var(--gold-deep);letter-spacing:.06em}
+.mrow p{margin-top:6px;font-size:14.5px;color:var(--muted);line-height:1.75}
+.mbook{font-size:14.5px;color:var(--ink);line-height:1.75}
+.mbook span{display:block;font-size:12px;letter-spacing:.14em;color:var(--gold-deep);margin-bottom:4px}
+.days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.day{display:flex;flex-direction:column;gap:4px}
+.dname{font-size:13px;letter-spacing:.08em;color:var(--gold-deep);padding-bottom:10px;border-bottom:2px solid var(--ink);margin-bottom:6px}
+.blk{padding:14px 16px 16px;background:var(--night-3);color:var(--on-night);min-height:80px;display:flex;flex-direction:column;justify-content:space-between}
+.blk.l2{background:var(--night-2)}
+.blk.g{background:linear-gradient(135deg,rgba(195,164,108,.22),rgba(195,164,108,.08));color:var(--ink);border:1px solid var(--gold-line);min-height:164px}
+.blk span{font-family:var(--latin);font-size:12px;letter-spacing:.16em;opacity:.75}
+.blk b{font-size:16px;font-weight:600;line-height:1.4}
+.day p{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.7}
+@media (max-width:860px){.mrow{grid-template-columns:72px minmax(0,1fr)}.mbook{grid-column:2}.days{grid-template-columns:1fr}.blk.g{min-height:80px}}
 </style>
 
 
@@ -635,14 +659,19 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
         </div>
         <div class="entry">
           <div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span class="cap">Middle School</span><div class="lv">중등부</div></div>
-          <div><h3>교과서 내신 · 문법 기초</h3><p>교과서 본문 내신 대비와 함께 문법·구문 기초를 다지고 서술형 쓰기를 훈련합니다.</p></div>
+          <div><h3>레벨별 독해·문법 · 주 3회</h3><p>레벨별 독해·문법 수업과 단어 테스트·듣기, 수요일 Special Lesson(모의고사·질의응답)으로 주 3회 수업합니다. 내신 기간에는 학교별 내신반으로 운영합니다.</p></div>
           <div class="fee">월 교습비<b>300,000<small>원</small></b></div>
         </div>
       </div>
       <p class="ledger-note">교습비 외 추가 경비는 없습니다.</p>
 
       <!-- 수업 운영 (2026-10-18) -->
-      <div class="course">
+      <div class="course" id="course">
+        <div class="ptabs" role="tablist" aria-label="학년 선택">
+          <button type="button" role="tab" id="tab-high" aria-controls="course-high" aria-selected="true">고등부</button>
+          <button type="button" role="tab" id="tab-mid" aria-controls="course-mid" aria-selected="false">중등부</button>
+        </div>
+        <div class="ppanel" id="course-high" role="tabpanel" aria-labelledby="tab-high">
         <div class="course-h">
           <div><span class="cap">High School · Regular Classes</span><h3>고등부 정규반 레벨</h3></div>
           <p>레벨 테스트로 다섯 단계 중 한 반에 배정합니다. 한 반 정원은 15명입니다.</p>
@@ -729,6 +758,40 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
           <li><span><b>학교 맞춤 클리닉</b> 그 학교 출제 스타일에 맞춰 단어·해석·빈칸·영작 시험 중에서 골라 진행합니다.</span></li>
           <li><span><b>수준별 조정</b> 학생들의 수준에 따라 시험 유형을 조정하기도 합니다.</span></li>
         </ul>
+        </div>
+        <div class="ppanel" id="course-mid" role="tabpanel" aria-labelledby="tab-mid" hidden>
+        <div class="course-h">
+          <div><span class="cap">Middle School · Classes</span><h3>중등부 레벨</h3></div>
+          <p>레벨 테스트로 다섯 단계 중 한 반에 배정합니다.</p>
+        </div>
+        <div class="mrows">
+          <div class="mrow"><div class="mcode">COT</div><div><b>최상위반</b><small>학년 구분 없음</small><p>고2·3 수준의 고등 심화 과정을 소화할 수 있는 학생</p></div><div class="mbook"><span>교재</span>고2~3 수준 독해·문법 교재, 고등 모의고사, 고등 단어</div></div>
+          <div class="mrow"><div class="mcode">UI</div><div><b>중등 +2 Level</b><p>자기 학년보다 두 단계 높은 고1·2 수준. 독해·문법과 함께 모의고사 학습</p></div><div class="mbook"><span>교재</span>중등 +2 Level 수준 독해·문법·모의고사·단어 교재</div></div>
+          <div class="mrow"><div class="mcode">MI</div><div><b>중등 +1 Level</b><p>자기 학년보다 한 단계 높은 고1 수준. 고등 과정의 학습 개념과 습관을 미리 준비</p></div><div class="mbook"><span>교재</span>중등 +1 Level 수준 독해·문법·듣기·단어 교재</div></div>
+          <div class="mrow"><div class="mcode">LI</div><div><b>중등 기본 Level</b><p>자기 학년에 맞는 수준. 문장 해석력, 문법 기본 개념, 듣기와 어휘</p></div><div class="mbook"><span>교재</span>중등 기본 Level 독해·문법·듣기·단어 교재</div></div>
+          <div class="mrow"><div class="mcode">BI</div><div><b>중등 기초 Level</b><p>발음·어휘 등 영어 기초부터 탄탄히 익히는 반</p></div><div class="mbook"><span>교재</span>기초 개념 수준 Phonics·독해·문법·듣기 교재</div></div>
+        </div>
+
+        <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
+          <div><span class="cap">Middle School · Weekly</span><h3>중등부 수업, 주 3회</h3></div>
+          <p>주 2회 고정 수업(월·금 또는 화·목)과 수요일 Special Lesson으로 진행합니다.</p>
+        </div>
+        <div class="days">
+          <div class="day"><span class="dname">월 또는 화</span><div class="blk"><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div>
+          <div class="day"><span class="dname">금 또는 목</span><div class="blk"><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div>
+          <div class="day sp"><span class="dname">수요일 · Special Lesson</span><div class="blk g"><span>60 MIN</span><b>모의고사 테스트 또는 질의응답 수업</b></div><p>일정이 맞지 않으면 다른 요일·시간으로 바꿀 수 있도록 협의합니다.</p></div>
+        </div>
+
+        <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
+          <div><span class="cap">Middle School · Exam Prep</span><h3>중등부 내신반</h3></div>
+          <p>내신 대비 기간에도 똑같이 주 3회 수업합니다.</p>
+        </div>
+        <div class="days">
+          <div class="day"><span class="dname">월 또는 화</span><div class="blk"><span>60 MIN</span><b>내신 수업</b></div><div class="blk l2"><span>60 MIN</span><b>내신 테스트</b></div></div>
+          <div class="day"><span class="dname">금 또는 목</span><div class="blk"><span>60 MIN</span><b>내신 수업</b></div><div class="blk l2"><span>60 MIN</span><b>내신 테스트</b></div></div>
+          <div class="day sp"><span class="dname">주 1회</span><div class="blk g"><span>Q&amp;A</span><b>질의응답 수업</b></div></div>
+        </div>
+        </div>
       </div>
     </div>
   </section>
@@ -822,4 +885,5 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){try{var t=Date.UTC(2026,9,28,10,0,0),n=Date.now(),d=Math.ceil((Date.UTC(2026,9,28)-Date.UTC(new Date(n+9*3600e3).getUTCFullYear(),new Date(n+9*3600e3).getUTCMonth(),new Date(n+9*3600e3).getUTCDate()))/864e5),e=document.getElementById('dday');
 if(!e)return; if(n>t+2*3600e3){e.textContent='';var b=e.parentNode;b.lastChild.textContent='설명회 문의는 전화로 받아요';}else e.textContent=d>0?'D-'+d:'D-DAY';}catch(x){}})();
 </script>
+<script>(function(){var t=document.querySelectorAll('.ptabs [role=tab]');if(!t.length)return;function show(id){t.forEach(function(b){var on=b.getAttribute('aria-controls')===id;b.setAttribute('aria-selected',on);var p=document.getElementById(b.getAttribute('aria-controls'));if(p)p.hidden=!on;});}t.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('aria-controls'));});});if(location.hash==='#middle'){show('course-mid');}})();</script>
 </body></html>
