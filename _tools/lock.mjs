@@ -56,7 +56,12 @@ function restrictWording(html) {
     .replace(/링크는 누구에게나 자유롭게 공유해도 좋아요\.[^<>\n]{0,200}/g, NOTICE);
 }
 
+// 네이버 애널리틱스(_tools/analytics.py와 같은 코드): 본문에서 빼고 겉 화면에만 둔다 → 잠금이 풀려도 한 번만 센다 (2026-10-18)
+const WCS = '<!-- naver-analytics -->\n<script src="https://wcs.pstatic.net/wcslog.js"></script>\n<script>if(!wcs_add) var wcs_add = {};wcs_add["wa"] = "1c961abfe2e9f50";if(window.wcs) {wcs_do();}</script>\n<!-- /naver-analytics -->\n';
+const stripWcs = h => h.replace(/<!-- naver-analytics -->[\s\S]*?<!-- \/naver-analytics -->\n?/g, '');
+
 function shell(page, html, k) {
+  html = stripWcs(html);
   const iv = crypto.randomBytes(12);
   const c = crypto.createCipheriv('aes-256-gcm', k, iv);
   const ct = Buffer.concat([c.update(Buffer.from(html, 'utf8')), c.final(), c.getAuthTag()]);
@@ -137,7 +142,7 @@ button:disabled{opacity:.6}
   });
 })();
 </script>
-</body></html>
+${WCS}</body></html>
 `;
 }
 
