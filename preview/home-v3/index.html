@@ -358,6 +358,16 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .course-h .cap{color:var(--gold-deep);display:block;margin-bottom:12px}
 .course-h h3{font-size:clamp(26px,2.6vw,36px);font-weight:600;letter-spacing:-.03em}
 .course-h p{color:var(--muted);font-size:14.5px;max-width:34em}
+.ladder{list-style:none;margin:0;padding:24px 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;border-bottom:1px solid var(--line)}
+.ladder li{position:relative;padding:14px 14px 16px;background:var(--night);color:var(--on-night);display:flex;flex-direction:column;gap:2px}
+.ladder li:nth-child(2){background:var(--night-2)}
+.ladder li:nth-child(4){background:var(--night-3)}
+.ladder li.opt{background:transparent;color:var(--ink);border:1px dashed var(--gold-deep)}
+.ladder span{font-family:var(--latin);font-size:24px;font-weight:400;letter-spacing:.04em;line-height:1.1}
+.ladder b{font-size:14px;font-weight:600;margin-top:4px}
+.ladder em{font-style:normal;font-size:11.5px;letter-spacing:.04em;opacity:.7;line-height:1.5}
+.ladder li:not(:last-child)::after{content:"";position:absolute;right:-6px;top:50%;width:6px;height:1px;background:var(--gold-deep)}
+@media (max-width:760px){.ladder{grid-template-columns:repeat(2,minmax(0,1fr))}.ladder li:first-child{grid-column:1 / -1}.ladder li::after{display:none}}
 .levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
 .levels article{padding:32px 32px 36px 0;display:flex;flex-direction:column;gap:6px}
 .levels article + article{border-left:1px solid var(--line);padding-left:32px}
@@ -635,8 +645,15 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
       <div class="course">
         <div class="course-h">
           <div><span class="cap">Regular Classes</span><h3>정규반 레벨</h3></div>
-          <p>레벨 테스트로 반을 나눕니다. 한 반 정원은 15명입니다.</p>
+          <p>레벨 테스트로 다섯 단계 중 한 반에 배정합니다. 한 반 정원은 15명입니다.</p>
         </div>
+        <ol class="ladder">
+          <li><span>COT</span><b>심화반</b><em>COCOS Top</em></li>
+          <li><span>UI</span><b>상위반</b><em>Upper Intermediate</em></li>
+          <li class="opt"><span>MI</span><b>중위반</b><em>UI·LI 사이, 필요할 때 편성</em></li>
+          <li><span>LI</span><b>기본반</b><em>Lower Intermediate</em></li>
+          <li class="opt"><span>BA</span><b>기초반</b><em>기초가 부족한 학생, 필요할 때 편성</em></li>
+        </ol>
         <div class="levels">
           <article>
             <div class="lv-code">COT</div>
@@ -664,6 +681,7 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
           </article>
         </div>
         <div class="course-note">
+          <span><b>MI·BA반</b> — MI반은 UI와 LI 사이에서 반을 나누기 애매할 때, BA반은 기초가 충분히 갖춰지지 않은 학생들을 위해 필요할 때 따로 엽니다.</span>
           <span><b>오답률 교재</b> — 모의고사 문항을 오답률에 따라 분류해 만든 코코스 자체 독해 교재입니다.</span>
           <span><b>고3</b> — 1학기에는 정규반과 같은 방식으로 수업하되, 그해 수능이 목표인 만큼 레벨을 나누지 않습니다. 1학기 내신이 끝나면 수능 집중반으로 편성하며, 2학기 내신 대비는 하지 않습니다.</span>
         </div>
