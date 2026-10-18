@@ -441,6 +441,13 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .blk.g{background:linear-gradient(135deg,rgba(195,164,108,.22),rgba(195,164,108,.08));color:var(--ink);border:1px solid var(--gold-line);min-height:164px}
 .blk span{font-family:var(--latin);font-size:12px;letter-spacing:.16em;opacity:.75}
 .blk b{font-size:16px;font-weight:600;line-height:1.4}
+.blk em{font-style:normal;font-size:12.5px;opacity:.75;margin-top:4px}
+.mock{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:16px 48px;align-items:center;margin-top:28px;padding:28px clamp(20px,3vw,40px);background:var(--night);color:var(--on-night);border-top:3px solid var(--gold)}
+.mock .cap{color:var(--gold);display:block;margin-bottom:10px}
+.mock h4{margin:0;font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.03em}
+.mock p{color:var(--on-night-muted);font-weight:300;font-size:15px;line-height:1.85}
+.mock p b{color:var(--on-night);font-weight:500}
+@media (max-width:860px){.mock{grid-template-columns:1fr}}
 .day p{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.7}
 @media (max-width:860px){.mrow{grid-template-columns:72px minmax(0,1fr)}.mbook{grid-column:2}.days{grid-template-columns:1fr}.blk.g{min-height:80px}}
 </style>
@@ -659,7 +666,7 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
         </div>
         <div class="entry">
           <div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span class="cap">Middle School</span><div class="lv">중등부</div></div>
-          <div><h3>레벨별 독해·문법 · 주 3회</h3><p>레벨별 독해·문법 수업과 단어 테스트·듣기, 수요일 Special Lesson(모의고사·질의응답)으로 주 3회 수업합니다. 내신 기간에는 학교별 내신반으로 운영합니다.</p></div>
+          <div><h3>레벨별 독해·문법 · 주 3회</h3><p>레벨별 독해·문법 수업과 단어 테스트·듣기, 수요일 Special Lesson(고1 모의고사·질의응답)으로 주 3회 수업합니다. 내신 기간에는 학교별 내신반으로 운영합니다.</p></div>
           <div class="fee">월 교습비<b>300,000<small>원</small></b></div>
         </div>
       </div>
@@ -774,12 +781,16 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 
         <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
           <div><span class="cap">Middle School · Weekly</span><h3>중등부 수업, 주 3회</h3></div>
-          <p>주 2회 고정 수업(월·금 또는 화·목)과 수요일 Special Lesson으로 진행합니다.</p>
+          <p>주 2회 고정 수업(월·금 또는 화·목)과 수요일 Special Lesson으로 진행합니다. 질의응답 수업은 60분이 원칙이며, 필요하면 담당 선생님 판단으로 늘립니다.</p>
         </div>
         <div class="days">
           <div class="day"><span class="dname">월 또는 화</span><div class="blk"><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div>
           <div class="day"><span class="dname">금 또는 목</span><div class="blk"><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div>
-          <div class="day sp"><span class="dname">수요일 · Special Lesson</span><div class="blk g"><span>60 MIN</span><b>모의고사 테스트 또는 질의응답 수업</b></div><p>일정이 맞지 않으면 다른 요일·시간으로 바꿀 수 있도록 협의합니다.</p></div>
+          <div class="day sp"><span class="dname">수요일 · Special Lesson</span><div class="blk g"><span>80–90 MIN</span><b>고1 모의고사 테스트</b><em>테스트 70분 + 채점·유형 정리</em></div><p>모의고사가 아직 이른 LI반 학생은 이 시간을 질의응답 수업(60분 원칙)으로 바꿔 약한 부분을 보충합니다. 일정이 맞지 않으면 다른 요일·시간으로 협의합니다.</p></div>
+        </div>
+        <div class="mock">
+          <div><span class="cap">New · All-Grade Mock Exam</span><h4>전 학년 고1 모의고사 체제</h4></div>
+          <p>중등부는 모든 반이 고1 수준 모의고사를 봅니다. 고1이 되기 전까지 <b>고등학교 1학년 모의고사 수준에 내가 얼마나 가까워졌는지</b> 늘 확인하고, 그 수준을 목표로 학습을 계획하고 운영하기 위해서입니다.</p>
         </div>
 
         <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
@@ -789,7 +800,7 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
         <div class="days">
           <div class="day"><span class="dname">월 또는 화</span><div class="blk"><span>60 MIN</span><b>내신 수업</b></div><div class="blk l2"><span>60 MIN</span><b>내신 테스트</b></div></div>
           <div class="day"><span class="dname">금 또는 목</span><div class="blk"><span>60 MIN</span><b>내신 수업</b></div><div class="blk l2"><span>60 MIN</span><b>내신 테스트</b></div></div>
-          <div class="day sp"><span class="dname">주 1회</span><div class="blk g"><span>Q&amp;A</span><b>질의응답 수업</b></div></div>
+          <div class="day sp"><span class="dname">주 1회</span><div class="blk g"><span>60 MIN</span><b>질의응답 수업</b></div><p>60분이 원칙이며, 학생의 수행 상황에 따라 담당 선생님이 필요하다고 판단하면 시간을 늘립니다.</p></div>
         </div>
         </div>
       </div>
