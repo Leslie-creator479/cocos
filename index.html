@@ -450,6 +450,10 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .mbook span{display:block;font-size:12px;letter-spacing:.14em;color:var(--gold-deep);margin-bottom:4px}
 .days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
 .day{display:flex;flex-direction:column;gap:4px}
+.day.pair{grid-column:span 2;align-self:start}
+.pair-b{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.pair-b .blk{min-height:164px}
+@media (max-width:860px){.pair-b .blk{min-height:80px}}
 .dname{font-size:13px;letter-spacing:.08em;color:var(--gold-deep);padding-bottom:10px;border-bottom:2px solid var(--ink);margin-bottom:6px}
 .blk{padding:14px 16px 16px;background:var(--night-3);color:var(--on-night);min-height:80px;display:flex;flex-direction:column;justify-content:space-between}
 .blk.l2{background:var(--night-2)}
@@ -470,7 +474,7 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .mock.light p b{color:var(--ink);font-weight:600}
 @media (max-width:860px){.mock{grid-template-columns:1fr}}
 .day p{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.7}
-@media (max-width:860px){.mrow{grid-template-columns:72px minmax(0,1fr)}.mbook{grid-column:2}.days{grid-template-columns:1fr}.blk.g{min-height:80px}}
+@media (max-width:860px){.day.pair{grid-column:1/-1}.mrow{grid-template-columns:72px minmax(0,1fr)}.mbook{grid-column:2}.days{grid-template-columns:1fr}.blk.g{min-height:80px}}
 
 /* 수업 운영 그림 (2026-10-18) */
 .bar div,.weeks div,.blk{position:relative}
@@ -851,11 +855,10 @@ section[id],#course{scroll-margin-top:80px}
 
         <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
           <div><span class="cap">Middle School · Weekly</span><h3>중등부 수업, 주 3회</h3></div>
-          <p>TEPS반·중등 COT반을 포함한 중등부 모든 반이 같은 시스템으로, 주 2회 고정 수업(월·금 또는 화·목)과 수요일 Special Lesson으로 진행합니다. 질의응답 수업은 60분이 원칙이며, 필요하면 담당 선생님 판단으로 늘립니다.</p>
+          <p>TEPS반·중등 COT반을 포함한 중등부 모든 반이 같은 시스템으로, 주 2회 고정 수업(월·금반 또는 화·목반)과 수요일 Special Lesson으로 진행합니다. 질의응답 수업은 60분이 원칙이며, 필요하면 담당 선생님 판단으로 늘립니다.</p>
         </div>
         <div class="days">
-          <div class="day"><span class="dname">월 또는 화</span><div class="blk"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42v-8a20 20 0 0 1 40 0v8"/><rect x="8" y="38" width="10" height="17" rx="3"/><rect x="46" y="38" width="10" height="17" rx="3"/></svg><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div>
-          <div class="day"><span class="dname">금 또는 목</span><div class="blk"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42v-8a20 20 0 0 1 40 0v8"/><rect x="8" y="38" width="10" height="17" rx="3"/><rect x="46" y="38" width="10" height="17" rx="3"/></svg><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div>
+          <div class="day pair"><span class="dname">월·금반 / 화·목반 · 주 2회, 하루 2시간</span><div class="pair-b"><div class="blk"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42v-8a20 20 0 0 1 40 0v8"/><rect x="8" y="38" width="10" height="17" rx="3"/><rect x="46" y="38" width="10" height="17" rx="3"/></svg><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div></div>
           <div class="day sp"><span class="dname">수요일 · Special Lesson</span><div class="blk g"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8h22l10 10v38H12z"/><path d="M34 8v10h10"/><path d="M18 28h18M18 35h18M18 42h10"/><path fill="#F7F7F5" d="M38 54l15-19 4.5 3.5-15 19-6 1.5z"/></svg><span>80–90 MIN</span><b>고1 모의고사 테스트</b><em>테스트 70분 + 채점·유형 정리</em></div><p>모의고사를 보지 않는 학생은 이 시간에 질의응답 수업(60분 원칙)으로 약한 부분을 보충합니다. 일정이 맞지 않으면 다른 요일·시간으로 협의합니다.</p></div>
         </div>
         <div class="mock">
@@ -872,8 +875,7 @@ section[id],#course{scroll-margin-top:80px}
           <p>내신 대비 기간에도 똑같이 주 3회 수업합니다.</p>
         </div>
         <div class="days">
-          <div class="day"><span class="dname">월 또는 화</span><div class="blk"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span>60 MIN</span><b>내신 수업</b></div><div class="blk l2"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4"/><path d="M22 28l5 5 10-11M22 44h20"/></svg><span>60 MIN</span><b>내신 테스트</b></div></div>
-          <div class="day"><span class="dname">금 또는 목</span><div class="blk"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span>60 MIN</span><b>내신 수업</b></div><div class="blk l2"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4"/><path d="M22 28l5 5 10-11M22 44h20"/></svg><span>60 MIN</span><b>내신 테스트</b></div></div>
+          <div class="day pair"><span class="dname">월·금반 / 화·목반 · 주 2회, 하루 2시간</span><div class="pair-b"><div class="blk"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span>60 MIN</span><b>내신 수업</b></div><div class="blk l2"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4"/><path d="M22 28l5 5 10-11M22 44h20"/></svg><span>60 MIN</span><b>내신 테스트</b></div></div></div>
           <div class="day sp"><span class="dname">주 1회</span><div class="blk g"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h28a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H22l-8 7v-7H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z"/><path d="M46 24h10a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-2v7l-7-7H34a4 4 0 0 1-4-4v-2"/><path d="M13 21h18M13 27h11"/></svg><span>60 MIN</span><b>질의응답 수업</b></div><p>60분이 원칙이며, 학생의 수행 상황에 따라 담당 선생님이 필요하다고 판단하면 시간을 늘립니다.</p></div>
         </div>
         <div class="mock light">
