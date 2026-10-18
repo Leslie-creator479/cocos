@@ -475,6 +475,27 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .mcode .meter{margin-left:0}
 .term-list li .ico{width:26px;height:26px;color:var(--gold-deep);flex:none;margin-top:2px}
 .term-list li::before{content:none}
+
+/* 입학 절차 (2026-10-18) */
+.worry{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:clamp(48px,5vw,72px)}
+.worry li{list-style:none;padding:22px 24px;background:#FFFFFF;border:1px solid var(--line);font-size:15px;line-height:1.7;color:var(--ink);position:relative}
+.worry li::before{content:"\201C";position:absolute;left:18px;top:6px;font-family:var(--latin);font-size:40px;color:var(--gold);line-height:1}
+.worry li span{display:block;padding-top:14px}
+.worry-h{font-size:13px;letter-spacing:.14em;color:var(--gold-deep);margin:0 0 14px}
+.worry{padding:0;margin-top:0}
+.steps5{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:st;position:relative}
+.steps5::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--gold-line)}
+.steps5 li{counter-increment:st;position:relative;padding:0 22px 0 0}
+.steps5 .dot{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--white);border:1px solid var(--gold-deep);display:grid;place-items:center;color:var(--gold-deep)}
+.steps5 .dot .ico{width:28px;height:28px}
+.steps5 li:last-child .dot{background:var(--night);border-color:var(--night);color:var(--gold)}
+.steps5 .no{display:block;margin-top:18px;font-family:var(--latin);font-size:12px;letter-spacing:.2em;color:var(--gold-deep)}
+.steps5 .no::before{content:"STEP " counter(st,decimal-leading-zero)}
+.steps5 h3{font-size:clamp(19px,1.7vw,23px);font-weight:600;letter-spacing:-.02em;margin:8px 0 10px}
+.steps5 p{font-size:14px;color:var(--muted);line-height:1.75}
+.adm-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:clamp(40px,4vw,56px);padding-top:28px;border-top:1px solid var(--line)}
+.adm-cta p{font-size:15px;color:var(--ink)}
+@media (max-width:1000px){.steps5{grid-template-columns:1fr;gap:28px}.steps5::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto}.steps5 li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:0 20px;padding:0}.steps5 li > *:not(.dot){grid-column:2}.steps5 .dot{grid-row:1 / span 3}.steps5 .no{margin-top:4px}.worry{grid-template-columns:1fr}}
 </style>
 
 
@@ -884,9 +905,37 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
     </div>
   </section>
 
+  <!-- 입학 절차 (2026-10-18) -->
+  <section class="sec on-white" id="admission" aria-labelledby="t-adm">
+    <p class="rail">No. 07 — Admission</p>
+    <div class="wrap pad">
+      <div class="head">
+        <div><span class="cap">Admission Process</span><h2 id="t-adm">입학 절차</h2></div>
+        <p>아이 수준에 맞는 반에서, 첫 수업부터 헤매지 않고 시작할 수 있도록 다섯 단계로 안내합니다.</p>
+      </div>
+      <p class="worry-h">학원에 처음 보낼 때, 이런 고민 있으셨나요?</p>
+      <ul class="worry">
+        <li><span>배정받은 반의 수업이 너무 어렵거나 쉬워서 아이 수준과 맞지 않는다.</span></li>
+        <li><span>준비가 안 된 채로 수업이 시작돼, 처음 몇 주를 시행착오로 보낸다.</span></li>
+        <li><span>과제와 테스트 관리는 잘 되는지, 아이가 잘 적응하는지 알 수가 없다.</span></li>
+      </ul>
+      <ol class="steps5">
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M21 33l7 7 15-16"/></svg></span><span class="no"></span><h3>입학 테스트</h3><p>입학 상담으로 학업 성취도를 확인한 뒤 수준에 맞는 테스트를 봅니다. 1차 결과로 레벨이 분명하지 않으면 2차 테스트로 한 번 더 정확히 확인합니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h28a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H22l-8 7v-7H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z"/><path d="M46 24h10a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-2v7l-7-7H34a4 4 0 0 1-4-4v-2"/><path d="M13 21h18M13 27h11"/></svg></span><span class="no"></span><h3>테스트 결과 상담</h3><p>점수만 알려 드리지 않습니다. 틀린 문항과 풀이 과정에서 문제점을 찾아, 강점과 약점, 앞으로 집중하고 보완할 점을 학생·학부모님께 설명해 드립니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg></span><span class="no"></span><h3>오리엔테이션 수업</h3><p>교재 준비, 현재 진도, 과제 방법, 테스트 준비를 미리 안내하고, 수업에 필요한 기본 개념과 부족한 부분은 담당 선생님이 확인해 지도합니다. 첫 수업부터 바로 적응하도록 돕는 코코스만의 입학 프로그램입니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4"/><path d="M22 28l5 5 10-11M22 44h20"/></svg></span><span class="no"></span><h3>정규 수업</h3><p>첫 수업이 끝나면 담당 선생님이 학생·학부모님과 상담해 수업 이해도를 확인하고, 드러난 문제는 바로 바로잡습니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="44" height="40" rx="3"/><path d="M10 24h44M22 8v10M42 8v10"/><path d="M24 39l6 6 11-12"/></svg></span><span class="no"></span><h3>2주 후 적응 점검</h3><p>수업을 시작하고 2주가 지나면 담임 선생님이 그동안의 수업 상황을 다시 확인합니다. 아이가 수업과 학원에 얼마나 만족하는지, 학부모님께서 바라시는 점은 없는지 여쭙고, 아이가 학원에 잘 자리 잡을 때까지 함께 살핍니다.</p></li>
+      </ol>
+      <div class="adm-cta">
+        <p>입학 테스트와 상담은 예약제로 진행합니다.</p>
+        <a class="btn" href="tel:031-752-3334">031-752-3334 입학 테스트 예약</a>
+      </div>
+    </div>
+  </section>
+
   <!-- 상담 예약 -->
   <section class="sec on-white" id="ask" aria-labelledby="t-ask">
-    <p class="rail">No. 07 — Consultation</p>
+    <p class="rail">No. 08 — Consultation</p>
     <div class="wrap pad ask">
       <div>
         <span class="cap">Private Consultation</span>
