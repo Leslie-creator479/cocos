@@ -496,6 +496,25 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .adm-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:clamp(40px,4vw,56px);padding-top:28px;border-top:1px solid var(--line)}
 .adm-cta p{font-size:15px;color:var(--ink)}
 @media (max-width:1000px){.steps5{grid-template-columns:1fr;gap:28px}.steps5::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto}.steps5 li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:0 20px;padding:0}.steps5 li > *:not(.dot){grid-column:2}.steps5 .dot{grid-row:1 / span 3}.steps5 .no{margin-top:4px}.worry{grid-template-columns:1fr}}
+
+/* 휴대폰 메뉴 (2026-10-18) */
+section[id],#course{scroll-margin-top:80px}
+.top .links{display:contents}
+.menu-btn{display:none;width:44px;height:40px;border:1px solid var(--night-line);background:transparent;cursor:pointer;padding:0;position:relative}
+.menu-btn i{position:absolute;left:12px;right:12px;height:1.5px;background:var(--on-night);transition:transform .25s,opacity .25s}
+.menu-btn i:nth-child(1){top:13px}.menu-btn i:nth-child(2){top:19px}.menu-btn i:nth-child(3){top:25px}
+.top.open .menu-btn i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.top.open .menu-btn i:nth-child(2){opacity:0}
+.top.open .menu-btn i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:1060px) and (min-width:821px){.top nav{gap:6px 22px;font-size:13px}}
+@media (max-width:820px){
+  .top nav{gap:10px}
+  .menu-btn{display:block}
+  .top .links{display:none}
+  .top.open .links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--night);border-top:1px solid var(--night-line);border-bottom:1px solid var(--gold-line);padding:8px var(--gutter) 16px;box-shadow:0 24px 40px -20px rgba(0,0,0,.6)}
+  .top.open .links a{display:block!important;padding:15px 2px;font-size:16px;color:var(--on-night);letter-spacing:.04em;border-bottom:1px solid var(--night-line)}
+  .top.open .links a:last-child{border-bottom:0}
+}
 </style>
 
 
@@ -504,12 +523,16 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
   <div class="wrap">
     <a href="#home" aria-label="코코스학원 처음으로"><span class="logo" role="img" aria-label="COCOS"></span></a>
     <nav aria-label="주요 메뉴">
+      <span class="links" id="main-links">
       <a href="#about">학원 소개</a>
       <a href="#consult">입시 컨설팅</a>
       <a href="#programs">프로그램</a>
       <a href="#care">학습 관리</a>
+      <a href="#admission">입학 절차</a>
       <a href="library/">자료실</a>
+      </span>
       <a class="btn gold" href="https://forms.gle/surVtasiZNmmRxi76" target="_blank" rel="noopener">설명회 신청</a>
+      <button type="button" class="menu-btn" aria-controls="main-links" aria-expanded="false" aria-label="메뉴 열기"><i></i><i></i><i></i></button>
     </nav>
   </div>
 </header>
@@ -990,4 +1013,5 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 if(!e)return; if(n>t+2*3600e3){e.textContent='';var b=e.parentNode;b.lastChild.textContent='설명회 문의는 전화로 받아요';}else e.textContent=d>0?'D-'+d:'D-DAY';}catch(x){}})();
 </script>
 <script>(function(){var t=document.querySelectorAll('.ptabs [role=tab]');if(!t.length)return;function show(id){t.forEach(function(b){var on=b.getAttribute('aria-controls')===id;b.setAttribute('aria-selected',on);var p=document.getElementById(b.getAttribute('aria-controls'));if(p)p.hidden=!on;});}t.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('aria-controls'));});});if(location.hash==='#middle'){show('course-mid');}})();</script>
+<script>(function(){var top=document.querySelector('header.top'),b=top&&top.querySelector('.menu-btn');if(!b)return;function set(o){top.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');}b.addEventListener('click',function(){set(!top.classList.contains('open'));});top.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});document.addEventListener('click',function(e){if(!top.contains(e.target))set(false);});})();</script>
 </body></html>
