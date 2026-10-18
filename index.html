@@ -1022,4 +1022,7 @@ if(!e)return; if(n>t+2*3600e3){e.textContent='';var b=e.parentNode;b.lastChild.t
 </script>
 <script>(function(){var t=document.querySelectorAll('.ptabs [role=tab]');if(!t.length)return;function show(id){t.forEach(function(b){var on=b.getAttribute('aria-controls')===id;b.setAttribute('aria-selected',on);var p=document.getElementById(b.getAttribute('aria-controls'));if(p)p.hidden=!on;});}t.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('aria-controls'));});});if(location.hash==='#middle'){show('course-mid');}})();</script>
 <script>(function(){var top=document.querySelector('header.top'),b=top&&top.querySelector('.menu-btn');if(!b)return;function set(o){top.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');}b.addEventListener('click',function(){set(!top.classList.contains('open'));});top.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});document.addEventListener('click',function(e){if(!top.contains(e.target))set(false);});})();</script>
+<!-- 네이버 애널리틱스 (2026-10-18) -->
+<script src="https://wcs.pstatic.net/wcslog.js"></script>
+<script>if(!wcs_add) var wcs_add = {};wcs_add["wa"] = "1c961abfe2e9f50";if(window.wcs) {wcs_do();}</script>
 </body></html>
