@@ -74,16 +74,16 @@ def extract(files, out):
         recs = [r for r in ws.iter_rows(min_row=2, values_only=True) if len(r) >= 10 and r[2]]
         # 'Day 표시'를 끄고 뽑은 파일(2026-10-17 워드마스터)은 J열에 (Day 01)이 없다 → 머리말 '출제범위 … Day 01 / Day 02'의
         # Day들로 순번(A열) 순서대로 똑같이 나눈다(Day마다 단어 수가 같은 책일 때만. 다르면 멈춘다)
-        if not any(re.match(r'\(Day \d+\)', str(r[9] or '')) for r in recs):
+        if not any(re.match(r'\(Day \d+\)', str(r[9] or ''), re.I) for r in recs):  # 해커스는 'DAY 01'(대문자)
             head = next((str(c) for row in wb['print'].iter_rows(max_row=5, values_only=True) for c in row if c and '출제범위' in str(c)), '')
-            ds = [int(x) for x in re.findall(r'Day (\d+)', head)]
+            ds = [int(x) for x in re.findall(r'Day (\d+)', head, re.I)]
             assert ds and len(recs) % len(ds) == 0, f'Day 표시도 없고 Day별로 똑같이 나눌 수 없음: {f}'
             per = len(recs) // len(ds); recs.sort(key=lambda r: r[0])
             recs = [tuple(r[:9]) + ((f'(Day {ds[i // per]:02d}) ' if i % per == 0 else '') + str(r[2]),) for i, r in enumerate(recs)]
             print(f'Day 표시 없음 → {ds} 를 {per}개씩 순서대로 나눔')
         day = None
         for r in recs:
-            mm = re.match(r'\(Day (\d+)\)', str(r[9] or ''))
+            mm = re.match(r'\(Day (\d+)\)', str(r[9] or ''), re.I)
             if mm:
                 day = int(mm.group(1))
             w, m = str(r[2]).strip(), str(r[3]).strip()
