@@ -546,6 +546,19 @@ section[id],#course{scroll-margin-top:80px}
 .sp-c p{font-size:13.5px;line-height:1.75;color:var(--muted);margin-top:8px}
 @media (max-width:860px){.tb-dir{grid-template-columns:1fr}.sp-grid{grid-template-columns:1fr 1fr}.sp-c,.sp-c:not(:nth-child(3n+1)){padding-left:0;border-left:0}.sp-c:nth-child(2n){padding-left:20px;border-left:1px solid var(--line)}}
 @media (max-width:560px){.sp-grid{grid-template-columns:1fr}.sp-c:nth-child(2n){padding-left:0;border-left:0}}
+
+/* 선생님 카드 (2026-10-21) — 사진 전까지 영어 이름 모노그램 */
+.tb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
+.tc{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.tc-photo{aspect-ratio:4/3.6;background:linear-gradient(160deg,var(--night-3),var(--night));position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tc-photo img{width:100%;height:100%;object-fit:cover}
+.tc-mono{width:min(58%,140px);aspect-ratio:1;border:1.4px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--latin);font-weight:300;font-size:clamp(20px,2.3vw,30px);letter-spacing:.08em;padding-left:.08em}
+.tc-photo small{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:var(--latin);font-size:10px;letter-spacing:.3em;color:rgba(195,164,108,.7)}
+.tc-body{padding:16px 18px 18px}
+.tc-body h4{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.tc-meta{font-size:13px;color:var(--muted);margin-top:4px}
+.tb-grid .tc-body h4,.tb-grid .tc-body p{margin:0;padding:0}.tb-grid .tc-body p.tc-meta{margin-top:4px}
+@media (max-width:860px){.tb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tc-mono{width:min(54%,120px);font-size:clamp(17px,4.6vw,26px)}.tc-photo small{bottom:8px;font-size:8.5px;letter-spacing:.22em}.tc-body{padding:13px 14px 15px}.tb-grid .tc-body h4{font-size:16px}}
 </style>
 
 
@@ -752,11 +765,29 @@ section[id],#course{scroll-margin-top:80px}
           <button type="button" role="tab" id="tab-mid" aria-controls="course-mid" aria-selected="false">중등부</button>
         </div>
         <div class="ppanel" id="course-high" role="tabpanel" aria-labelledby="tab-high">
-        <!-- 고등부: 선생님의 이름으로 (2026-10-20). 선생님 소개 카드(.tb-grid)와 소개 페이지는 사진·문구가 준비되면 preview/teacher 모양대로 이 아래에 넣는다 -->
+        <!-- 고등부: 선생님의 이름으로 (2026-10-20). 선생님 카드(.tb-grid, 2026-10-21)는 사진이 올 때까지 영어 이름 모노그램(.tc-mono). 사진이 오면 .tc-photo 안을 <img>로 바꾼다 -->
         <div class="course-h">
           <div><span class="cap">High School · Teachers</span><h3 id="t-tb">고등부는 선생님의 이름으로 수업합니다</h3></div>
           <p>코코스 고등부 선생님은 각자 자기 이름을 걸고 맡은 학년과 학교를 책임집니다. 지금 고등부 선생님들은 아래의 코코스 기본 설계로 수업하고, 학원은 13년 동안 쌓아 온 자료와 시스템으로 함께합니다.</p>
         </div>
+        <div class="tb-grid" aria-label="고등부 선생님">
+            <article class="tc">
+              <div class="tc-photo" role="img" aria-label="Hwan 선생님"><span class="tc-mono">Hwan</span><small>COCOS TEACHER</small></div>
+              <div class="tc-body"><h4>Hwan 선생님</h4><p class="tc-meta">코코스 대표 · 고등부</p></div>
+            </article>
+            <article class="tc">
+              <div class="tc-photo" role="img" aria-label="Sam 선생님"><span class="tc-mono">Sam</span><small>COCOS TEACHER</small></div>
+              <div class="tc-body"><h4>Sam 선생님</h4><p class="tc-meta">코코스 대표 · 고등부</p></div>
+            </article>
+            <article class="tc">
+              <div class="tc-photo" role="img" aria-label="Eric 선생님"><span class="tc-mono">Eric</span><small>COCOS TEACHER</small></div>
+              <div class="tc-body"><h4>Eric 선생님</h4><p class="tc-meta">고등부</p></div>
+            </article>
+            <article class="tc">
+              <div class="tc-photo" role="img" aria-label="Kwon 선생님"><span class="tc-mono">Kwon</span><small>COCOS TEACHER</small></div>
+              <div class="tc-body"><h4>Kwon 선생님</h4><p class="tc-meta">고등부</p></div>
+            </article>
+          </div>
         <div class="tb-dir">
           <div><span class="cap">Directors</span><b>코코스 대표</b></div>
           <p>2013년부터 성남 고등학교 내신을 맡아 온 두 대표가, 선생님들이 수업에만 온전히 힘을 쏟을 수 있도록 무대와 자료를 준비합니다.</p>
@@ -871,6 +902,16 @@ section[id],#course{scroll-margin-top:80px}
         </section>
         </div>
         <div class="ppanel" id="course-mid" role="tabpanel" aria-labelledby="tab-mid" hidden>
+        <div class="course-h">
+          <div><span class="cap">Middle School · Teachers</span><h3>중등부 선생님</h3></div>
+          <p>코코스 중등부 선생님은 맡은 반을 자기 이름을 걸고 책임집니다. 아래의 코코스 중등부 기본 설계로 수업하고, 학원은 자료와 시스템으로 함께합니다.</p>
+        </div>
+        <div class="tb-grid" aria-label="중등부 선생님" style="margin-bottom:clamp(64px,7vw,96px)">
+          <article class="tc">
+              <div class="tc-photo" role="img" aria-label="Jenny 선생님"><span class="tc-mono">Jenny</span><small>COCOS TEACHER</small></div>
+              <div class="tc-body"><h4>Jenny 선생님</h4><p class="tc-meta">중등부</p></div>
+            </article>
+        </div>
         <div class="course-h">
           <div><span class="cap">Middle School · Classes</span><h3>중등부 레벨</h3></div>
           <p>레벨 테스트로 반을 배정합니다. 최상위 과정은 진학 목표에 따라 두 반으로, 그 밖의 반은 학년별 네 단계로 운영합니다.</p>
