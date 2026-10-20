@@ -22,6 +22,8 @@ def slug(w):
 def speak_text(w):
     t = re.sub(r'\((the )?-[^)]*\)', '', w)
     t = re.sub(r'(?<=[A-Za-z])\([^)]*\)', '', t)
+    t = re.sub(r'\[[^\]]*\]', '', t)  # depend on[upon] → depend on (대괄호는 바꿔 쓸 수 있는 말)
+    t = re.sub(r'\s*\(\d+\)', '', t)  # lie (1) → lie (같은 철자 다른 단어 번호)
     t = re.sub(r'[()~]', '', t)
     t = re.sub(r'\bsb\b', 'somebody', t); t = re.sub(r'\bsth\b', 'something', t)
     return re.sub(r'\s+', ' ', t).strip()

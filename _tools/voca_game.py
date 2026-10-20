@@ -156,6 +156,8 @@ def build(words_f, meta_f, out):
     s = s[:a] + head + 'var DATA = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n' + s[b:]
     s = re.sub(r'<title>[^<]*</title>', f"<title>[코코스학원] {M['title']} 단어게임</title>", s, count=1)
     for x, y in PATCH:
+        if x not in s and all(l in s for l in y.split('\n') if l.strip() and not l.strip().startswith('/*')):
+            continue  # 틀(game/2022-03-g2)에 이미 들어간 고침(예: 녹음 발음, 2026-10-17 이후 모든 단어게임에 반영됨)
         assert x in s, '틀이 바뀜: ' + x[:50]
         s = s.replace(x, y)
     os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
