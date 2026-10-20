@@ -1,18 +1,26 @@
 # 시안 B: 홈페이지 전체 문장을 '선생님 중심'으로 바꾼 판 (바뀐 곳은 노란 표시, 버튼으로 지금 문장과 비교)
 import html as H
 
+MARK = True  # False면 노란 표시 없이 문장만 바꾼다(실제 첫 화면에 넣을 때)
+
 def chg(t, old, new, tag='span', cls=''):
     assert t.count(old) == 1, ('not unique', old[:60], t.count(old))
+    if not MARK:
+        return t.replace(old, new)
     el = f'<{tag} class="bchg{(" "+cls) if cls else ""}" data-orig="{H.escape(old, quote=True)}">{new}</{tag}>'
     return t.replace(old, el)
 
 def add_after(t, anchor, new_p):
     assert t.count(anchor) == 1, ('anchor', anchor[:60])
+    if not MARK:
+        return t.replace(anchor, anchor + f'\n          <p>{new_p}</p>')
     return t.replace(anchor, anchor + f'\n          <p class="bchg bnew" data-orig="">{new_p}</p>')
 
 def chg_nth(t, old, new, n):
     """같은 문장이 여러 번 나올 때 n번째(0부터)만 바꾼다."""
     i = -1
+    if not MARK:
+        return t.replace(old, new, 1)
     for _ in range(n + 1):
         i = t.index(old, i + 1)
     el = f'<span class="bchg" data-orig="{H.escape(old, quote=True)}">{new}</span>'
@@ -23,9 +31,9 @@ def apply(t, letter=True):
         # --- 원장 인사 ---
         t = chg(t, '이제 교재와 학원 시스템은 학원이 AI와 함께 맡아 만들고, 선생님은 그 시간을 온전히 수업과 학생에게 씁니다.',
                 '그 자료를 바탕으로 학원은 AI와 함께 교재와 시스템을 만들어 왔고, 선생님은 그 시간을 온전히 수업과 학생에게 써 왔습니다.')
-        t = add_after(t, '그 시간을 온전히 수업과 학생에게 써 왔습니다.</span></p>',
+        t = add_after(t, '그 시간을 온전히 수업과 학생에게 써 왔습니다.' + ('</span></p>' if MARK else '</p>'),
             '이제 코코스는 다음 장을 엽니다. 코코스 선생님은 한 분 한 분이 자기 이름을 걸고 맡은 반과 학교를 책임집니다. '
-            '13년 동안 같은 교실을 지켜 온 선생님들이 학생과 학부모님 앞에 이름과 얼굴로 서고, 학원은 오랜 수업에서 다듬어 온 '
+            '13년 동안 같은 교실을 지켜 온 선생님들이 학생과 학부모님 앞에 직접 서고, 학원은 오랜 수업에서 다듬어 온 '
             '기본 설계와 자료, 출제 분석, 시스템과 컨설팅을 준비해 선생님께 드립니다. 무엇을 골라 어떻게 가르칠지는 선생님이 정합니다. '
             '<b>무대 위는 선생님이, 무대 뒤는 학원이.</b>')
         t = chg(t, '기술을 몰라서 하는 고집이 아니라, 어디에 쓰고 어디서 멈춰야 하는지 알기에 세운 기준입니다.',

@@ -532,6 +532,20 @@ section[id],#course{scroll-margin-top:80px}
   .top.open .links a:last-child{border-bottom:0}
 }
 .event-pad{padding-block:clamp(40px,5vw,72px)}
+
+/* 고등부 선생님·코코스 지원 (2026-10-20) */
+.tb-dir{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:10px 40px;margin-top:22px;background:var(--night);color:var(--on-night);padding:24px 28px;align-items:center}
+.tb-dir .cap{color:var(--gold);display:block;margin-bottom:6px}
+.tb-dir b{font-size:17px;font-weight:600}
+.tb-dir p{font-size:14px;line-height:1.75;color:var(--on-night-muted)}
+.sp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.sp-c{padding:26px 24px 28px 0;border-bottom:1px solid var(--line)}
+.sp-c:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--line)}
+.sp-c .ico{width:34px;height:34px;color:var(--gold-deep)}
+.sp-c b{display:block;font-size:16.5px;font-weight:600;margin-top:14px}
+.sp-c p{font-size:13.5px;line-height:1.75;color:var(--muted);margin-top:8px}
+@media (max-width:860px){.tb-dir{grid-template-columns:1fr}.sp-grid{grid-template-columns:1fr 1fr}.sp-c,.sp-c:not(:nth-child(3n+1)){padding-left:0;border-left:0}.sp-c:nth-child(2n){padding-left:20px;border-left:1px solid var(--line)}}
+@media (max-width:560px){.sp-grid{grid-template-columns:1fr}.sp-c:nth-child(2n){padding-left:0;border-left:0}}
 </style>
 
 
@@ -615,12 +629,13 @@ section[id],#course{scroll-margin-top:80px}
         <blockquote id="t-about">학습과 컨설팅을 하나로.</blockquote>
         <div class="body">
           <p>코코스학원은 2013년 위듀영어학원으로 문을 열었습니다. 2020년에 이름은 바뀌었지만, 개원 때부터 아이들을 가르쳐 온 선생님들이 지금도 같은 교실을 지키고 있습니다.</p>
-          <p>오랫동안 저희 선생님들은 각자 수업 자료를 직접 만들어 왔습니다. 시험 범위의 지문을 한 문장도 빠짐없이 직독직해하고 구문을 분석한 그 자료들이 지금 코코스 교재의 기준이 되었습니다. 이제 교재와 학원 시스템은 학원이 AI와 함께 맡아 만들고, 선생님은 그 시간을 온전히 수업과 학생에게 씁니다.</p>
-          <p>AI를 매일 쓰는 학원이지만, 학생들은 등원하면 휴대폰부터 맡기고 종이 교재에 직접 쓰며 공부합니다. 모르는 문장 앞에서 버티는 시간, 틀린 문제를 다시 붙잡는 시간은 누구도 대신해 줄 수 없기 때문입니다. <b>AI는 교실 밖에서, 교실 안에는 선생님과 학생.</b> 기술을 몰라서 하는 고집이 아니라, 어디에 쓰고 어디서 멈춰야 하는지 알기에 세운 기준입니다. 앞으로는 학생들에게도 AI를 언제 쓰고 언제 멈춰야 하는지까지 가르치려 합니다.</p>
+          <p>오랫동안 저희 선생님들은 각자 수업 자료를 직접 만들어 왔습니다. 시험 범위의 지문을 한 문장도 빠짐없이 직독직해하고 구문을 분석한 그 자료들이 지금 코코스 교재의 기준이 되었습니다. 그 자료를 바탕으로 학원은 AI와 함께 교재와 시스템을 만들어 왔고, 선생님은 그 시간을 온전히 수업과 학생에게 써 왔습니다.</p>
+          <p>이제 코코스는 다음 장을 엽니다. 코코스 선생님은 한 분 한 분이 자기 이름을 걸고 맡은 반과 학교를 책임집니다. 13년 동안 같은 교실을 지켜 온 선생님들이 학생과 학부모님 앞에 직접 서고, 학원은 오랜 수업에서 다듬어 온 기본 설계와 자료, 출제 분석, 시스템과 컨설팅을 준비해 선생님께 드립니다. 무엇을 골라 어떻게 가르칠지는 선생님이 정합니다. <b>무대 위는 선생님이, 무대 뒤는 학원이.</b></p>
+          <p>AI를 매일 쓰는 학원이지만, 학생들은 등원하면 휴대폰부터 맡기고 종이 교재에 직접 쓰며 공부합니다. 모르는 문장 앞에서 버티는 시간, 틀린 문제를 다시 붙잡는 시간은 누구도 대신해 줄 수 없기 때문입니다. <b>AI는 교실 밖에서, 교실 안에는 선생님과 학생.</b> 기술을 몰라서 하는 고집이 아니라, 어디에 쓰고 어디서 멈춰야 하는지 알기에 코코스가 지켜 온 약속입니다. 앞으로는 학생들에게도 AI를 언제 쓰고 언제 멈춰야 하는지까지 가르치려 합니다.</p>
           <p>그리고 영어 하나만 잘해서 원하는 대학에 갈 수 있는 시대는 아닙니다. 그래서 컨설팅센터를 열어 고교 선택과 대학 입시를 함께 고민합니다. 학교보다 아이를 먼저 봅니다. '학습과 컨설팅을 하나로'는 그 다짐입니다.</p>
           <p>선생님과 학생이 교실에서 공부에만 마음을 쏟을 수 있도록, 그 뒤의 모든 일은 학원이 끝까지 맡겠습니다. 언제든 편하게 찾아와 주십시오.</p>
         </div>
-        <div class="sign"><b>코코스학원 원장</b><span>COCOS English Academy</span></div>
+        <div class="sign"><b>코코스학원 대표</b><span>COCOS English Academy</span></div>
       </div>
     </div>
   </section>
@@ -631,7 +646,7 @@ section[id],#course{scroll-margin-top:80px}
     <div class="wrap pad">
       <div class="head">
         <div><span class="cap">How We Teach</span><h2 id="t-principles">AI는 교실 밖에서,<br>교실 안에는 선생님과 학생</h2></div>
-        <p>기술은 학원이 쓰고, 교실은 공부에 집중합니다. 오랫동안 아이들을 가르치며 지켜본 끝에 세운 기준입니다.</p>
+        <p>기술은 학원이 쓰고, 교실은 공부에 집중합니다. 교실 안의 세 가지는 학생이 코코스에서 지키는 규칙이고, 교실 밖의 두 가지는 코코스가 선생님과 학생에게 준비해 드리는 것입니다.</p>
       </div>
       <div class="scene">
         <figure><figcaption><span class="cap">Outside the Classroom</span><b>교실 밖 — 학원이 AI로</b></figcaption><svg viewBox="0 0 560 260" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -666,27 +681,27 @@ section[id],#course{scroll-margin-top:80px}
         <article>
           <span class="no">i.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="23" y="6" width="18" height="34" rx="3"/><path d="M29 11h6"/><path fill="#F7F7F5" d="M9 34h46l-5 20H14z"/><path d="M17 42h30"/></svg></span><h3>휴대폰은 맡기고 시작합니다</h3>
           <p>학생들은 등원하면 휴대폰을 맡깁니다. 태블릿도 담당 선생님이 수업에 필요하다고 판단할 때만 씁니다.</p>
-          <div class="go"><span class="tag">교실 안</span></div>
+          <div class="go"><span class="tag">교실 안 · 학원 규칙</span></div>
         </article>
         <article>
           <span class="no">ii.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="48" height="26" rx="1.5"/><path d="M14 16h20M14 22h28M14 28h14"/><circle cx="20" cy="44" r="4"/><path d="M12 58c0-5 3.6-8 8-8s8 3 8 8"/><circle cx="44" cy="44" r="4"/><path d="M36 58c0-5 3.6-8 8-8s8 3 8 8"/></svg></span><h3>수업은 교실에서만 합니다</h3>
-          <p>동영상·온라인 수업은 하지 않습니다. 영상이 있으니 빠져도 된다는 생각이 오히려 결석을 늘렸기 때문입니다. 보강이 필요할 때는 영상 대신 선생님이 직접 만나 수업합니다.</p>
-          <div class="go"><span class="tag">교실 안</span></div>
+          <p>코코스는 동영상·온라인 수업 과정을 열지 않습니다. 영상이 있으니 빠져도 된다는 생각이 오히려 결석을 늘린다는 것을 오래 겪었기 때문입니다. 보강이 필요할 때는 영상 대신 선생님이 직접 만나 수업합니다.</p>
+          <div class="go"><span class="tag">교실 안 · 학원 규칙</span></div>
         </article>
         <article>
           <span class="no">iii.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8h22l10 10v38H12z"/><path d="M34 8v10h10"/><path d="M18 28h18M18 35h18M18 42h10"/><path fill="#F7F7F5" d="M38 54l15-19 4.5 3.5-15 19-6 1.5z"/></svg></span><h3>교재도 시험도 종이로 합니다</h3>
-          <p>학원이 만든 종이 교재에 직접 필기하며 공부하고, 시험도 종이에 펜으로 봅니다. 전자기기로도 보고 싶은 학생에게는 교재 PDF를 따로 드립니다.</p>
-          <div class="go"><span class="tag">교실 안</span></div>
+          <p>학생은 종이 교재에 직접 필기하며 공부하고, 시험도 종이에 펜으로 봅니다. 교재는 코코스가 만든 자료와 담당 선생님이 고른 교재 가운데서 씁니다. 전자기기로도 보고 싶은 학생에게는 교재 PDF를 따로 드립니다.</p>
+          <div class="go"><span class="tag">교실 안 · 학원 규칙</span></div>
         </article>
         <article>
           <span class="no">iv.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="8" width="40" height="48" rx="2"/><path d="M19 17h16"/><path d="M21 47v-9M29 47V30M37 47v-12M45 47V24"/><path d="M18 50h28"/></svg></span><h3>기록은 학원 시스템이 남깁니다</h3>
-          <p>종이 시험 결과를 학원이 직접 만든 시스템에 기록합니다. 학생은 시험마다 개인 리포트를 받고, 반 전체가 어려워한 문항은 다음 수업에서 다시 다룹니다.<br><small class="note">2026년 9월 고3 모의고사부터 적용했고, 단어시험·과제·중등부로 넓혀 가고 있습니다.</small></p>
-          <div class="go"><span class="tag out">교실 밖</span></div>
+          <p>학원이 직접 만든 기록 시스템을 모든 반에 드립니다. 종이 시험 결과를 기록하면 학생은 시험마다 개인 리포트를 받고, 담당 선생님은 반 전체가 어려워한 문항을 한눈에 볼 수 있습니다.<br><small class="note">2026년 9월 고3 모의고사부터 적용했고, 단어시험·과제·중등부로 넓혀 가고 있습니다.</small></p>
+          <div class="go"><span class="tag out">교실 밖 · 코코스가 드리는 것</span></div>
         </article>
         <article>
           <span class="no">v.<svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="18" width="28" height="28" rx="4"/><path d="M26 18v-6M32 18v-6M38 18v-6M26 52v-6M32 52v-6M38 52v-6M18 26h-6M18 32h-6M18 38h-6M52 26h-6M52 32h-6M52 38h-6"/><path d="M32 24.5l2 5.5 5.5 2-5.5 2-2 5.5-2-5.5-5.5-2 5.5-2z"/></svg></span><h3>교재와 시스템은 학원이 AI로 만듭니다</h3>
-          <p>원지문, 한 줄 해석, 워크북, 구문 분석, 단어장과 단어 시험지, 지문별 온라인 학습지까지 학원이 AI와 함께 만듭니다. 선생님은 그 시간을 온전히 수업과 학생에게 씁니다.</p>
-          <div class="go"><span class="tag out">교실 밖</span></div>
+          <p>원지문, 한 줄 해석, 워크북, 구문 분석, 단어장과 단어 시험지, 지문별 온라인 학습지까지 학원이 AI와 함께 만들어 선생님께 드립니다. 선생님은 수업에 맞는 자료를 골라 쓰고, 남는 시간을 온전히 수업과 학생에게 씁니다.</p>
+          <div class="go"><span class="tag out">교실 밖 · 코코스가 드리는 것</span></div>
         </article>
       </div>
     </div>
@@ -698,7 +713,7 @@ section[id],#course{scroll-margin-top:80px}
     <div class="wrap pad">
       <div class="head">
         <div><span class="cap">The COCOS Method</span><h2 id="t-method">세 단계로<br>관리합니다</h2></div>
-        <p>한 학생의 영어를 맡는 일은 현재 위치를 정확히 아는 데서 시작합니다. 코코스학원은 같은 순서를 모든 학생에게 지킵니다.</p>
+        <p>한 학생의 영어를 맡는 일은 현재 위치를 정확히 아는 데서 시작합니다. 진단·설계·관리는 코코스가 오랜 수업에서 다듬어 온 기본 설계입니다. 학원은 레벨 테스트와 학교별 분석, 온라인 학습지를 준비하고, 담당 선생님이 이를 바탕으로 자기 반의 수업을 설계합니다.</p>
       </div>
       <div class="method">
         <article><div class="numeral" aria-hidden="true">I</div><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M38 22V16l-8-8H12v44h16"/><path d="M30 8v8h8"/><path d="M18 20h10M18 27h14M18 34h8"/><circle cx="40" cy="42" r="9"/><path d="M46.5 48.5L55 57"/></svg><span class="cap">Diagnosis</span><h3>진단</h3><p>레벨 테스트와 학교 시험 분석으로 현재 위치를 확인합니다.</p></article>
@@ -714,7 +729,7 @@ section[id],#course{scroll-margin-top:80px}
     <div class="wrap pad">
       <div class="head">
         <div><span class="cap">Programs &amp; Tuition</span><h2 id="t-prog">학년별 프로그램</h2></div>
-        <p>평소에는 레벨 테스트로 나눈 정규반에서, 내신 기간에는 학교별 내신대비반에서 수업합니다.</p>
+        <p>레벨 테스트로 나눈 정규반에서 담당 선생님과 수업하고, 내신 기간에는 학교별 내신대비반을 엽니다.</p>
       </div>
       <div class="ledger">
         <div class="entry">
@@ -737,12 +752,21 @@ section[id],#course{scroll-margin-top:80px}
           <button type="button" role="tab" id="tab-mid" aria-controls="course-mid" aria-selected="false">중등부</button>
         </div>
         <div class="ppanel" id="course-high" role="tabpanel" aria-labelledby="tab-high">
-        <div class="mock" style="margin:0 0 clamp(56px,6vw,88px)">
+        <!-- 고등부: 선생님의 이름으로 (2026-10-20). 선생님 소개 카드(.tb-grid)와 소개 페이지는 사진·문구가 준비되면 preview/teacher 모양대로 이 아래에 넣는다 -->
+        <div class="course-h">
+          <div><span class="cap">High School · Teachers</span><h3 id="t-tb">고등부는 선생님의 이름으로 수업합니다</h3></div>
+          <p>코코스 고등부 선생님은 각자 자기 이름을 걸고 맡은 학년과 학교를 책임집니다. 지금 고등부 선생님들은 아래의 코코스 기본 설계로 수업하고, 학원은 13년 동안 쌓아 온 자료와 시스템으로 함께합니다.</p>
+        </div>
+        <div class="tb-dir">
+          <div><span class="cap">Directors</span><b>코코스 대표</b></div>
+          <p>2013년부터 성남 고등학교 내신을 맡아 온 두 대표가, 선생님들이 수업에만 온전히 힘을 쏟을 수 있도록 무대와 자료를 준비합니다.</p>
+        </div>
+        <div class="mock" style="margin:clamp(48px,5vw,72px) 0 clamp(56px,6vw,88px)">
           <div><svg class="ico big" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18v40h28"/><path fill="#F7F7F5" d="M20 12h30v40H20z"/><path d="M26 20h18M26 27h18M26 34h18M26 41h10"/></svg><span class="cap">Since 2013 · High School</span><h4>2013년부터, 이 지역<br>고등학교 내신을 지켜 온 시간</h4></div>
           <div class="mock-body">
             <p>코코스는 2013년부터 성남 지역 고등학교의 내신을 학교별로 대비해 왔습니다. 시험 범위 지문을 <b>한 문장도 빠짐없이 직독직해하고 구문을 분석하며 쌓아 온 자료</b>가 지금 코코스 교재의 기준입니다.</p>
-            <p>정규반의 오답률별 독해 교재와 4단계 문법 교재, 학교별 내신 교재까지 <b>모두 학원이 직접 만듭니다.</b></p>
-            <p class="consent"><b>학년 전담 선생님</b> — 고등부는 학년마다 담당 선생님이 그 학년의 학교별 내신과 모의고사를 꾸준히 맡아, 학생 한 명 한 명을 집중해서 관리합니다.</p>
+            <p>정규반의 오답률별 독해 교재와 4단계 문법 교재, 학교별 내신 교재까지 <b>모두 학원이 직접 만들어 선생님께 드립니다.</b></p>
+            <p class="consent"><b>학년 담당 선생님</b> — 고등부는 학년마다 담당 선생님이 자기 이름을 걸고 그 학년의 학교별 내신과 모의고사를 맡습니다.</p>
           </div>
         </div>
         <div class="course-h">
@@ -787,7 +811,7 @@ section[id],#course{scroll-margin-top:80px}
 
         <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
           <div><span class="cap">High School · A Day at COCOS</span><h3>고등부 수업, 하루 3시간</h3></div>
-          <p>월·금반 또는 화·목반으로 주 2회, 정규 수업과 클리닉을 같은 날 이어서 합니다. 다른 학원 일정과 겹치면 클리닉만 다른 요일·시간으로 바꿀 수 있습니다.</p>
+          <p>코코스 고등부 기본 설계는 월·금반 또는 화·목반으로 주 2회, 정규 수업과 클리닉을 같은 날 이어서 하는 하루 3시간입니다. 지금 고등부 선생님들은 이 설계로 수업합니다. 다른 학원 일정과 겹치면 클리닉만 다른 요일·시간으로 바꿀 수 있습니다.</p>
         </div>
         <div class="week">
           <div class="bar">
@@ -831,6 +855,20 @@ section[id],#course{scroll-margin-top:80px}
           <li><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 56h48"/><path d="M14 56V28h36v28"/><path d="M10 30L32 14l22 16"/><path d="M28 56V44h8v12"/><path d="M20 36h6M38 36h6"/><path d="M32 14V6h8v4h-8"/></svg><span><b>학교 맞춤 클리닉</b> 그 학교 출제 스타일에 맞춰 단어·해석·빈칸·영작 시험 중에서 골라 진행합니다.</span></li>
           <li><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="30" cy="34" r="21"/><circle cx="30" cy="34" r="13"/><circle cx="30" cy="34" r="5"/><path d="M30 34L53 11M46 10h7v7"/></svg><span><b>수준별 조정</b> 학생들의 수준에 따라 시험 유형을 조정하기도 합니다.</span></li>
         </ul>
+                <section class="sp" aria-labelledby="t-sp">
+          <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
+            <div><span class="cap">COCOS Support</span><h3 id="t-sp">코코스가 선생님과 함께 드리는 것</h3></div>
+            <p>어느 선생님 반에서 공부하든, 13년 동안 쌓아 온 코코스의 자료와 도구를 함께 누릴 수 있습니다.</p>
+          </div>
+          <div class="sp-grid">
+            <div class="sp-c"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/></svg><b>13년 내신 자료</b><p>2013년부터 쌓아 온 학교별 시험 범위 자료와 자체 교재를 선생님이 수업에 맞게 골라 씁니다.</p></div>
+            <div class="sp-c"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="28" r="16"/><path d="M40 40l14 14"/><path d="M21 28h14M28 21v14"/></svg><b>학교별 출제 분석</b><p>학교별 기출 분석과 변형 문제 자료를 코코스 선생님들이 함께 나눕니다.</p></div>
+            <div class="sp-c"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="12" width="48" height="32" rx="3"/><path d="M24 54h16M32 44v10"/><path d="M18 24h20M18 31h14"/></svg><b>온라인 학습지</b><p>문장별 해석·녹음·확인 문제가 담긴 코코스 자료실을 학생 누구나 쓸 수 있습니다.</p></div>
+            <div class="sp-c"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 54h48"/><path d="M14 46l12-12 9 8 17-20"/><path d="M44 22h8v8"/></svg><b>성적 분석 도구</b><p>모의고사 성적 분석표 양식으로 계속 틀리는 유형을 기록하고 상담에 활용합니다.</p></div>
+            <div class="sp-c"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="24"/><path d="M40 24l-5 11-11 5 5-11z"/></svg><b>입시 컨설팅센터</b><p>진로·입시 상담이 필요할 때 코코스 컨설팅센터가 함께합니다.</p></div>
+            <div class="sp-c"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h48v10H8z"/><path d="M14 32v22M50 32v22"/><path d="M24 22v-8h16v8"/></svg><b>상담·행정</b><p>입학 상담, 레벨 테스트, 수납과 안내는 학원이 맡아 선생님은 수업에 집중합니다.</p></div>
+          </div>
+        </section>
         </div>
         <div class="ppanel" id="course-mid" role="tabpanel" aria-labelledby="tab-mid" hidden>
         <div class="course-h">
@@ -855,7 +893,7 @@ section[id],#course{scroll-margin-top:80px}
 
         <div class="course-h" style="margin-top:clamp(64px,7vw,96px)">
           <div><span class="cap">Middle School · Weekly</span><h3>중등부 수업, 주 3회</h3></div>
-          <p>TEPS반·중등 COT반을 포함한 중등부 모든 반이 같은 시스템으로, 주 2회 고정 수업(월·금반 또는 화·목반)과 수요일 Special Lesson으로 진행합니다. 질의응답 수업은 60분이 원칙이며, 필요하면 담당 선생님 판단으로 늘립니다.</p>
+          <p>코코스 중등부 기본 설계는 주 2회 고정 수업(월·금반 또는 화·목반)과 수요일 Special Lesson입니다. 지금 중등부 선생님들은 TEPS반·중등 COT반을 포함한 모든 반을 이 설계로 수업합니다. 질의응답 수업은 60분이 원칙이며, 필요하면 담당 선생님 판단으로 늘립니다.</p>
         </div>
         <div class="days">
           <div class="day pair"><span class="dname">월·금반 / 화·목반 · 주 2회, 하루 2시간</span><div class="pair-b"><div class="blk"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg><span>60 MIN</span><b>독해 또는 문법</b></div><div class="blk l2"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42v-8a20 20 0 0 1 40 0v8"/><rect x="8" y="38" width="10" height="17" rx="3"/><rect x="46" y="38" width="10" height="17" rx="3"/></svg><span>60 MIN</span><b>단어 테스트 · 듣기</b></div></div></div>
@@ -970,14 +1008,14 @@ section[id],#course{scroll-margin-top:80px}
       <ul class="worry">
         <li><span>배정받은 반의 수업이 너무 어렵거나 쉬워서 아이 수준과 맞지 않는다.</span></li>
         <li><span>준비가 안 된 채로 수업이 시작돼, 처음 몇 주를 시행착오로 보낸다.</span></li>
-        <li><span>과제와 테스트 관리는 잘 되는지, 아이가 잘 적응하는지 알 수가 없다.</span></li>
+        <li><span>아이가 잘 적응하고 있는지, 궁금한 점은 누구에게 물어야 할지 알 수 없다.</span></li>
       </ul>
       <ol class="steps5">
         <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M21 33l7 7 15-16"/></svg></span><span class="no"></span><h3>입학 테스트</h3><p>입학 상담으로 학업 성취도를 확인한 뒤 수준에 맞는 테스트를 봅니다. 1차 결과로 레벨이 분명하지 않으면 2차 테스트로 한 번 더 정확히 확인합니다.</p></li>
         <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h28a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H22l-8 7v-7H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z"/><path d="M46 24h10a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-2v7l-7-7H34a4 4 0 0 1-4-4v-2"/><path d="M13 21h18M13 27h11"/></svg></span><span class="no"></span><h3>테스트 결과 상담</h3><p>점수만 알려 드리지 않습니다. 틀린 문항과 풀이 과정에서 문제점을 찾아, 강점과 약점, 앞으로 집중하고 보완할 점을 학생·학부모님께 설명해 드립니다.</p></li>
-        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg></span><span class="no"></span><h3>오리엔테이션 수업</h3><p>교재 준비, 현재 진도, 과제 방법, 테스트 준비를 미리 안내하고, 수업에 필요한 기본 개념과 부족한 부분은 담당 선생님이 확인해 지도합니다. 첫 수업부터 바로 적응하도록 돕는 코코스만의 입학 프로그램입니다.</p></li>
-        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4"/><path d="M22 28l5 5 10-11M22 44h20"/></svg></span><span class="no"></span><h3>정규 수업</h3><p>첫 수업이 끝나면 담당 선생님이 학생·학부모님과 상담해 수업 이해도를 확인하고, 드러난 문제는 바로 바로잡습니다.</p></li>
-        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="44" height="40" rx="3"/><path d="M10 24h44M22 8v10M42 8v10"/><path d="M24 39l6 6 11-12"/></svg></span><span class="no"></span><h3>2주 후 적응 점검</h3><p>수업을 시작하고 2주가 지나면 담임 선생님이 그동안의 수업 상황을 다시 확인합니다. 아이가 수업과 학원에 얼마나 만족하는지, 학부모님께서 바라시는 점은 없는지 여쭙고, 아이가 학원에 잘 자리 잡을 때까지 함께 살핍니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg></span><span class="no"></span><h3>오리엔테이션 수업</h3><p>교재 준비, 현재 진도, 과제 방법은 학원이 미리 안내해 드리고, 첫 수업 전에 담당 선생님을 만나 아이의 기본 개념과 부족한 부분을 함께 확인합니다. 첫 수업부터 바로 적응하도록 돕는 코코스의 입학 프로그램입니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4"/><path d="M22 28l5 5 10-11M22 44h20"/></svg></span><span class="no"></span><h3>정규 수업</h3><p>첫 수업 뒤에는 담당 선생님이 정한 방식으로 수업 이해도와 앞으로의 계획을 안내해 드립니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="44" height="40" rx="3"/><path d="M10 24h44M22 8v10M42 8v10"/><path d="M24 39l6 6 11-12"/></svg></span><span class="no"></span><h3>2주 후 안부 연락</h3><p>수업을 시작하고 2주가 지나면 학원이 학부모님께 연락드려, 아이가 학원에 잘 적응했는지, 바라시는 점은 없는지 여쭙습니다. 수업에 관한 말씀은 담당 선생님께 그대로 전해 드립니다.</p></li>
       </ol>
       <div class="adm-cta">
         <p>입학 테스트와 상담은 예약제로 진행합니다.</p>
