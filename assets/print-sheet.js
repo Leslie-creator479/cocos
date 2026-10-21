@@ -3,6 +3,17 @@
    - 누르면 학습지 데이터(DATA)로 인쇄용 화면을 만들고 인쇄 창을 연다(학생 기기에서 PDF로 저장).
    - 홈페이지에는 아무 파일도 저장하지 않는다. Ctrl+P·공유 → 프린트로 열어도 같은 화면이 나온다.
    이 파일 하나를 고치면 모든 학습지의 PDF 모양이 함께 바뀐다. */
+/* 단어 정리 '단어 전체 듣기'(assets/vocab-listen.js)를 함께 불러온다(2026-10-22). */
+(function () {
+  try {
+    var me = document.currentScript;
+    if (!me || !me.src || window.__cocosVocabListenLoad) return;
+    window.__cocosVocabListenLoad = true;
+    var s = document.createElement('script');
+    s.src = me.src.replace(/print-sheet\.js([?#].*)?$/, 'vocab-listen.js');
+    (document.body || document.head).appendChild(s);
+  } catch (e) {}
+})();
 (function () {
   'use strict';
   var D = window.DATA;
