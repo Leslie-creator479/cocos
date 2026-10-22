@@ -3,6 +3,17 @@
    - 범위는 게임 화면의 '범위 고르기'에서 고른 지문을 따른다(안 골랐으면 전체).
    - 시험지는 순서를 섞고, 맨 뒤에 정답을 붙인다. PDF는 학생 기기에서 만들어진다.
    이 파일 하나를 고치면 모든 단어게임 페이지의 PDF 모양이 함께 바뀐다. */
+/* 1단계 '단어 먼저 익히기'의 '단어 전체 듣기'(assets/game-listen.js)를 함께 불러온다(2026-10-23). */
+(function () {
+  try {
+    var me = document.currentScript;
+    if (!me || !me.src || window.__cocosGameListenLoad) return;
+    window.__cocosGameListenLoad = true;
+    var s = document.createElement('script');
+    s.src = me.src.replace(/print-game\.js([?#].*)?$/, 'game-listen.js');
+    (document.body || document.head).appendChild(s);
+  } catch (e) {}
+})();
 (function () {
   'use strict';
   var D = window.DATA;
