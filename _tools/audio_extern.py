@@ -20,7 +20,7 @@ import base64, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SAY = os.path.join(ROOT, 'assets', 'say')
-MOCK = re.compile(r'^\d{4}-\d{2}-g\d$')
+MOCK = re.compile(r'^(\d{4}-\d{2}-g\d|suneung-\d{4}-\d{2})$')  # 모의고사·수능(공개 자료)
 A_BLOCK = re.compile(r'(/\* ==== AUDIO:START ==== \*/)([\s\S]*?)(/\* ==== AUDIO:END ==== \*/)')
 S_BLOCK = re.compile(r'(/\* ==== SAUDIO:START ==== \*/)([\s\S]*?)(/\* ==== SAUDIO:END ==== \*/)')
 A_ENTRY = re.compile(r'^(\s*"((?:[^"\\]|\\.)*)": )"data:audio/mpeg;base64,([A-Za-z0-9+/=]+)"', re.M)

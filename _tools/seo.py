@@ -25,7 +25,7 @@ import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://cocosedu.kr/'
 META = '<meta name="robots" content="noindex">'
-MOCK = r'\d{4}-\d{2}-g\d'
+MOCK = r'(?:\d{4}-\d{2}-g\d|suneung-\d{4}-\d{2})'  # 모의고사(학력평가) 회차와 수능(suneung-<시행 연도>-<월>, 2026-10-23)
 OPEN = [re.compile(p) for p in (
     r'^$', r'^library$',
     rf'^study/{MOCK}(/[^/]+)?$',

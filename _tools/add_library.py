@@ -7,6 +7,8 @@
   탭: study(모의고사, 화면 표시는 '모의고사') | textbook(교과서) | school(학교별 시험 범위) | syn(동의어·반의어) | game(단어게임)
   제목: 학력평가·동의어·단어게임은 "2026년 10월 고1"처럼 연도·월·학년을 쓴다(자료실이 연도·학년으로 묶는다).
         학교별은 "동광고 1학년", 교과서는 "4과"처럼 쓰고 --group에 교재 이름("영어II NE능률(오선영)")을 준다.
+  수능: 경로를 study|syn|game/suneung-<시행 연도>-<월>로, 제목은 "2026학년도 수능 (2025년 11월 시행)", --group "대학수학능력시험"
+        (자료실 '수능' 분류, 2026-10-23)
   사이트 경로: 저장소 기준 폴더. 예) study/2026-10-g1 , syn/2026-10-g1 , game/2026-10-g1 , textbook/neo2/4
   예) python3 _tools/add_library.py study "2026년 10월 고1" study/2026-10-g1 22
   단어장(학원에서 쓰는 시중 단어장): 경로를 game/voca-<영문 약칭>으로 하면 자료실 '단어장' 분류에 들어간다. 지문 수 자리는 Day 수.
@@ -29,8 +31,9 @@ s = open(LIB, encoding='utf8').read()
 k = s.index('var D = ') + len('var D = ')
 D, end = json.JSONDecoder().raw_decode(s[k:])
 m = re.match(r'(\d{4})년 (\d+)월 고(\d)', title)
-y = m.group(1) if m else '2026'
-g = m.group(3) if m else ('1' if '1학년' in title else '2' if '2학년' in title else '')
+sn = re.search(r'(\d{4})년 11월 시행', title)  # 수능 카드: "2026학년도 수능 (2025년 11월 시행)"
+y = m.group(1) if m else sn.group(1) if sn else '2026'
+g = m.group(3) if m else '3' if sn else ('1' if '1학년' in title else '2' if '2학년' in title else '')
 D.setdefault(tab, [])
 if not g and grp:  # 교과서처럼 제목에 학년이 없으면 같은 교재(--group) 카드의 학년을 따른다
     g = next((c['g'] for cs in D.values() for c in cs if c.get('grp') == grp and c.get('g')), '')
@@ -41,6 +44,9 @@ D[tab] = [c for c in D[tab] if c['href'] != card['href']] + [card]
 
 
 def key(c):
+    sn = re.match(r'(\d{4})학년도 수능', c['t'])  # 수능: 최근 학년도부터 (2026-10-23)
+    if sn:
+        return (0, -int(sn.group(1)) + 1, 3, 11, '')
     mm = re.match(r'(\d{4})년 (\d+)월 고(\d)', c['t'])
     if mm:
         return (0, -int(mm.group(1)), int(mm.group(3)), int(mm.group(2)), '')
@@ -54,6 +60,6 @@ s = s[:k] + json.dumps(D, ensure_ascii=False) + s[k + end:]
 import glob
 tot = len(glob.glob('study/*/*/index.html')) + len(glob.glob('textbook/*/*/*/index.html'))
 s = re.sub(r'(<div><b>)\d+(</b><span>지문별 학습지</span>)', lambda mm: mm.group(1) + str(tot) + mm.group(2), s)
-s = re.sub(r'(<div><b>)\d+(</b><span>모의고사 회차</span>)', lambda mm: mm.group(1) + str(len(D.get('study', []))) + mm.group(2), s)
+s = re.sub(r'(<div><b>)\d+(</b><span>모의고사 회차</span>)', lambda mm: mm.group(1) + str(sum(1 for c in D.get('study', []) if re.search(r'/\d{4}-\d{2}-g\d/$', c['href']))) + mm.group(2), s)
 open(LIB, 'w', encoding='utf8').write(s)
 print('자료실', tab, title, '→', card['href'], '| 회차 수', {t: len(v) for t, v in D.items()})
