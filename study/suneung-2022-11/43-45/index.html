@@ -1,0 +1,1011 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>[코코스학원] 2022 11월 고3 수능 43~45번 · 색맹 교정 안경</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-soft:#E2F3FC; --accent-ink:#065A88;
+  --ex:#A84A24; --ex-soft:#FBEDE6; --ex-ink:#7A3316;
+  --mark:#FFE766; --mark-ink:#1B2033;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA; --bad:#B3261E; --bad-soft:#FBE7E5;
+  --serif-ko:"Gowun Batang","Nanum Myeongjo","AppleMyungjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --serif-en:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-soft:#10293A; --accent-ink:#BCE5FA;
+    --ex:#F0A07E; --ex-soft:#35231C; --ex-ink:#F7C7B2;
+    --mark:rgba(255,214,64,.30); --mark-ink:#FFF4C9;
+    --ok:#6FCF9B; --ok-soft:#18301F; --bad:#F2918A; --bad-soft:#3A1D1B;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-soft:#10293A; --accent-ink:#BCE5FA;
+  --ex:#F0A07E; --ex-soft:#35231C; --ex-ink:#F7C7B2;
+  --mark:rgba(255,214,64,.30); --mark-ink:#FFF4C9;
+  --ok:#6FCF9B; --ok-soft:#18301F; --bad:#F2918A; --bad-soft:#3A1D1B;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;margin:0;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:32px 64px;display:flex;flex-direction:column;gap:40px}
+h1,h2{font-family:var(--serif-ko);font-weight:700;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.25}
+h2{font-size:24px;line-height:1.3}
+header{display:flex;flex-direction:column;gap:10px}
+.src{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-weight:500}
+.en-title{font-family:var(--serif-en);font-style:italic;color:var(--muted);font-size:17px;margin:0}
+.gist{margin:6px 0 0;max-width:62ch}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 14px;font-size:14px}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.passage{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px clamp(18px,4vw,32px)}
+.sents{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.sent{display:grid;grid-template-columns:1.6em minmax(0,1fr);gap:0 10px;padding:12px 10px;border-radius:0;transition:background-color .25s}
+.sent + .sent{border-top:1px dashed var(--line)}
+.sent.hl{background:var(--mark);color:var(--mark-ink)}
+.sn{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:5px}
+.sent.hl .sn{color:inherit}
+.se{font-family:var(--serif-en);font-size:18px;line-height:1.75;margin:0}
+.kbtn{margin-top:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--accent)}
+.kbtn:hover{border-color:var(--accent)}
+.ko{display:none;margin:8px 0 2px;font-size:15px;line-height:1.7;color:var(--accent-ink);background:var(--accent-soft);padding:8px 12px;border-radius:8px}
+.sent.open .ko{display:block}
+.sent.open .kbtn{color:var(--muted)}
+.listen{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 6px}
+.lbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent);color:var(--card);border-radius:999px;padding:7px 16px 7px 12px;font-size:14px;font-weight:700}
+.lbtn svg,.lstop svg,.lbar button svg{width:15px;height:15px}
+.lbtn.on{background:var(--card);color:var(--accent)}
+.lstop{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:0}
+.lstop[hidden]{display:none}
+.listen .seg button{padding:6px 12px}
+.listen .btn{border-radius:999px;font-size:13px;padding:6px 12px}
+.lhint{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.sacts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sacts .kbtn{margin-top:0}
+.sbtn{display:inline-flex;align-items:center;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 12px 2px 9px;font-size:13px;color:var(--accent)}
+.sbtn svg{width:14px;height:14px}
+.sbtn:hover{border-color:var(--accent)}
+.sbtn.on{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.sent.now{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.sent.now.hl{background:var(--mark)}
+.cue{display:none;align-items:center;gap:10px;margin-top:8px;font-size:13px;font-weight:700;color:var(--accent-ink)}
+.cue i{flex:1;max-width:180px;height:5px;border-radius:999px;background:var(--line);overflow:hidden}
+.cue b{display:block;height:100%;width:100%;background:var(--accent)}
+.sent.wait .cue{display:flex}
+.lbar{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:999px;background:var(--ink);color:var(--paper);box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:13px;font-weight:700;white-space:nowrap}
+.lbar[hidden]{display:none}
+.lbar button{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;border:0;background:rgba(255,255,255,.14);color:inherit;padding:0}
+.lbar .go{background:none;width:auto;padding:0 6px;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.gloss{margin:18px 0 0;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 16px}
+.gloss i{font-family:var(--serif-en)}
+.map{position:relative;display:grid;grid-template-columns:1fr 1.05fr 1fr;grid-template-areas:"l c r" "l k r";gap:28px 44px;align-items:center}
+.map svg.links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.map svg path{fill:none;stroke:var(--line);stroke-width:1.5;transition:stroke .2s}
+.map svg path.on{stroke:var(--accent)}
+.col{display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
+.col.l{grid-area:l}.col.r{grid-area:r}
+.node{position:relative;z-index:1;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;transition:border-color .2s,background-color .2s}
+.node .t{font-weight:700;font-size:15px}
+.node .s{font-size:13.5px;color:var(--muted)}
+.node .k{font-family:var(--serif-en);font-style:italic;font-size:13.5px;color:var(--muted)}
+.node.concept{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.node.concept .t{color:var(--accent-ink)}
+.node.example{border-color:color-mix(in srgb,var(--ex) 35%,var(--line))}
+.node.example .t{color:var(--ex-ink)}
+.node.concept.active{background:var(--accent-soft);border-color:var(--accent)}
+.node.example.active{background:var(--ex-soft);border-color:var(--ex)}
+.node.core{grid-area:c;align-items:center;text-align:center;background:var(--ink);border-color:var(--ink);color:var(--paper);padding:18px 16px}
+.node.core .t{font-family:var(--serif-ko);font-size:21px;color:var(--paper)}
+.node.core .k{color:color-mix(in srgb,var(--paper) 75%,transparent)}
+.node.core.active{outline:3px solid var(--mark);outline-offset:2px}
+.node.conclusion{grid-area:k;align-self:start}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:14px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1.5px solid var(--accent);background:var(--accent-soft)}
+.legend span.e::before{border-color:var(--ex);background:var(--ex-soft)}
+.note{margin-top:14px;min-height:3.4em;font-size:14.5px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+@media (max-width:760px){
+  .map{grid-template-columns:1fr;grid-template-areas:"c" "l" "r" "k";gap:14px}
+  .map svg.links{display:none}
+  .col{gap:10px;padding-left:14px;border-left:2px solid var(--line);border-radius:0}
+  .node.conclusion{margin-left:16px}
+}
+.score{font-family:var(--serif-ko);font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.score b{color:var(--ink);font-size:20px}
+.qs{display:flex;flex-direction:column;gap:16px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px clamp(16px,3.5vw,24px);display:flex;flex-direction:column;gap:12px}
+.q .num{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+.q .type{font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.q .type.var{border-color:var(--ex);background:var(--ex-soft);color:var(--ex-ink)}
+.q .prompt{font-weight:500;margin:0}
+.q .quote{font-family:var(--serif-en);font-size:16px;background:var(--paper);border-radius:8px;padding:10px 14px;margin:0;line-height:1.75}
+.q .quote u{text-decoration-thickness:2px;text-underline-offset:3px}
+.q .quote .box{display:block;border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin-bottom:10px;background:var(--card)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px;line-height:1.55;transition:border-color .15s,background-color .15s}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .n{flex:none;width:1.4em;font-variant-numeric:tabular-nums;color:var(--muted)}
+.opt.en-o{font-family:var(--serif-en);font-size:16px}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.right .n,.opt.wrong .n{color:inherit;font-weight:700}
+.fb{font-size:14.5px;border-radius:8px;padding:10px 14px;background:var(--paper)}
+.fb b.ok{color:var(--ok)} .fb b.no{color:var(--bad)}
+.hint{align-self:flex-start;background:none;border:0;padding:0;font-size:13.5px;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.hint-text{font-size:14px;color:var(--muted);margin:0}
+div.done{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:var(--accent-soft);color:var(--accent-ink);border-radius:12px;padding:16px 20px;font-weight:500}
+.jump{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;margin-top:4px}
+.jump a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.jump a:hover{border-bottom-color:var(--accent)}
+.vocab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.vrow{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:2px 8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.say{display:inline-flex;text-decoration:none;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--accent);padding:0;flex:none}
+.say:hover{border-color:var(--accent);background:var(--accent-soft)}
+.say svg{width:15px;height:15px}
+.say.on{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.vrow .w{font-family:var(--serif-en);font-size:17px;font-weight:600}
+.vrow .mp{display:inline-block;font-size:12px;line-height:1.5;color:var(--accent-ink);background:var(--accent-soft);border-radius:4px;padding:0 5px;margin-right:6px;vertical-align:1px}
+.vrow .m{grid-column:1 / -1;font-size:14.5px;color:var(--muted);transition:filter .2s,opacity .2s;background:none;border:0;padding:0;text-align:left;cursor:default}
+.vocab.hide-m .vrow .m{cursor:pointer}
+.vocab.hide-m .vrow:not(.open) .mt{filter:blur(6px);opacity:.55}
+.vrow .mt{transition:filter .2s,opacity .2s}
+@media (max-width:640px){.vocab{grid-template-columns:1fr}}
+.wq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:14px}
+.wq-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:var(--card);padding:5px 12px;font-size:13px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+.bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.wq-q{font-size:26px;font-weight:600;line-height:1.35;margin:4px 0 2px}
+.wq-q.en{font-family:var(--serif-en)}
+.wq-q .say{vertical-align:middle;margin-left:8px;width:32px;height:32px}
+.wq-q small{display:block;font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}
+.wq-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.wq-opts{grid-template-columns:1fr}}
+.wq-opts .opt.en-o{font-size:16.5px}
+.wq-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;min-height:36px;font-size:14.5px}
+.wq-foot b.ok{color:var(--ok)} .wq-foot b.no{color:var(--bad)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-decoration:none;color:var(--muted);font-size:13px;margin-bottom:4px}
+.logo{display:inline-block;background:url(data:image/png;base64,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) no-repeat left center/contain}
+.brand .logo{width:120px;height:27px}
+.promo{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:16px;padding:28px clamp(18px,4vw,36px);display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.promo::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:#FEE101;opacity:.35}
+.promo > *{position:relative;z-index:1}
+.promo .logo{width:180px;height:40px}
+.promo .tag{margin:0;font-size:14px;font-weight:700;color:var(--accent-ink);letter-spacing:.02em}
+.promo h2{font-size:22px}
+.promo p{margin:0;max-width:60ch}
+.promo .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.promo .ctas a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:15px;font-weight:500;padding:10px 18px;border-radius:10px;border:1px solid var(--accent)}
+.promo .ctas a.primary{background:var(--accent);color:var(--card)}
+.promo .ctas a.ghost{background:var(--card);color:var(--accent-ink)}
+.promo .ctas a:hover{filter:brightness(1.05)}
+.promo .share{font-size:13.5px;color:var(--muted)}
+/* brand-ctas */.promo .ctas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.promo .ctas a{flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:2px;min-height:66px;padding:10px 6px;line-height:1.35}.promo .ctas a b{font-size:15px;font-weight:700;white-space:nowrap}.promo .ctas a small{font-size:12.5px;font-weight:400;opacity:.85;white-space:nowrap}.promo .share{font-size:13.5px;color:var(--muted)}@media (max-width:720px){.promo .ctas{grid-template-columns:repeat(2,minmax(0,1fr))}.promo .ctas a.primary{grid-column:1 / -1}}
+.done a{color:inherit;font-weight:700}
+.acad-info{margin:4px 0 0;padding-top:12px;border-top:1px dashed color-mix(in srgb,var(--accent) 35%,transparent);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px;color:var(--muted)}
+.acad-info dt{font-weight:500;color:var(--accent-ink)}
+.acad-info dd{margin:0;font-variant-numeric:tabular-nums}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+footer p{margin:0}
+footer .copy{color:var(--ink);font-weight:500}
+.ord{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:14px}
+.ord-ko{font-family:var(--serif-ko);font-size:19px;line-height:1.6;margin:2px 0 0}
+.ord-ko small{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);margin-bottom:4px}
+.tray,.bank{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.tray{min-height:64px;border:1.5px dashed var(--line);border-radius:10px;padding:10px;transition:border-color .2s,background-color .2s}
+.tray.ok{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
+.tray-empty{font-size:14px;color:var(--muted);align-self:center}
+.tray-end{font-family:var(--serif-en);font-size:17px;color:var(--muted);align-self:center;margin-left:-3px;padding:0 2px}
+.tok{font-family:var(--serif-en);font-size:16.5px;line-height:1.35;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px;text-align:left;transition:border-color .15s,background-color .15s,opacity .15s}
+.tok:hover:not(:disabled){border-color:var(--accent)}
+.tray .tok{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent-ink)}
+.tray .tok.bad{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.tray.shown{border-style:solid;border-color:var(--accent)}
+.tray.ok .tok{background:var(--card);border-color:var(--ok);color:var(--ok)}
+.tok:disabled{cursor:default}
+.tray .tok:not(:disabled)::after{content:"✕";font-family:var(--sans);font-size:11px;margin-left:7px;opacity:.55;vertical-align:1px}
+.bank .tok.used{opacity:.22;border-style:dashed}
+.tray .tok{touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.tray .tok.lift{opacity:.3;border-style:dashed}
+.tray.sorting{border-color:var(--accent)}
+.tok.ghost{position:fixed;left:0;top:0;z-index:50;margin:0;pointer-events:none;background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.ord-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.ord-acts .l,.ord-acts .r{display:flex;flex-wrap:wrap;gap:8px}
+.btn:disabled{opacity:.45;cursor:default}
+.ord-msg{font-size:14.5px;min-height:1.6em;margin:0}
+.ord-msg b.ok{color:var(--ok)} .ord-msg b.no{color:var(--bad)}
+.ord-full{font-family:var(--serif-en);font-size:17px;background:var(--paper);border-radius:8px;padding:10px 14px;margin:0}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dots button{width:26px;height:26px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12px;padding:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.dots button.cur{border-color:var(--accent);color:var(--accent);font-weight:700}
+.dots button.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.brief{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3.5vw,28px);display:flex;flex-direction:column;gap:20px}
+.b-lab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--accent-ink);margin:0 0 8px}
+.b-one{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.b-one p{margin:0;font-family:var(--serif-ko);font-size:18px;line-height:1.7;color:var(--ink)}
+.b-flow{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.b-step{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:0 14px;position:relative;padding-bottom:16px}
+.b-step:last-child{padding-bottom:0}
+.b-step::before{content:"";position:absolute;left:2.8em;top:34px;bottom:2px;border-left:2px solid var(--line)}
+.b-step:last-child::before{display:none}
+.b-go{align-self:start;justify-self:stretch;position:relative;z-index:1;font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:4px 6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.b-go:hover{border-color:var(--accent)}
+.b-step .t{font-weight:700;font-size:15.5px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-top:3px}
+.b-step .d{margin:3px 0 0;font-size:15px;color:var(--muted);line-height:1.7}
+.b-turn{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--ex-soft);color:var(--ex-ink);border:1px solid var(--ex)}
+.b-step.turn .b-go{background:var(--ex-soft);color:var(--ex-ink);border-color:color-mix(in srgb,var(--ex) 45%,transparent)}
+.b-keys{display:flex;flex-wrap:wrap;gap:8px}
+.b-keys span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.b-keys i{font-family:var(--serif-en);font-weight:600;margin-right:6px}
+.b-tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.b-tips li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:10px;font-size:14.5px;line-height:1.7}
+.b-tips b.n{font-size:13px;color:var(--accent-ink);padding-top:1px}
+.b-tips i{font-family:var(--serif-en)}
+.b-ask{display:flex;flex-direction:column;gap:8px}
+.b-ask details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px}
+.b-ask summary{cursor:pointer;font-weight:500;list-style:none;display:flex;gap:8px;align-items:baseline}
+.b-ask summary::-webkit-details-marker{display:none}
+.b-ask summary .bq{flex:1 1 0;min-width:0}
+.b-ask summary::after{content:"생각해 보고 눌러 확인";margin-left:auto;flex:none;font-size:12.5px;color:var(--accent);font-weight:400}
+.b-ask details[open] summary::after{content:"접기"}
+.b-ask details p{margin:8px 0 0;color:var(--accent-ink);background:var(--accent-soft);border-radius:8px;padding:8px 12px;font-size:14.5px}
+@media (max-width:520px){.b-step{grid-template-columns:5.2em minmax(0,1fr);gap:0 10px}.b-step::before{left:2.6em}.b-ask summary{flex-wrap:wrap}.b-ask summary::after{margin-left:2.2em;flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="../../../" title="코코스학원 홈페이지로"><span class="logo" role="img" aria-label="코코스학원"></span><span>코코스학원 온라인 학습지 · 학습과 컨설팅을 하나로</span></a>
+    <div class="src" id="chips"></div>
+    <h1 id="h1"></h1>
+    <p class="en-title" id="en-title"></p>
+    <p class="gist" id="gist"></p>
+    <nav class="jump" aria-label="바로가기"><a href="#brief">먼저 읽기</a><a href="#passage">지문</a><a href="#words">단어 정리</a><a href="#wordquiz">단어 퀴즈</a><a href="#mindmap">마인드맵</a><a href="#quiz">확인 퀴즈</a><a href="#order">문장 배열</a><a href="#academy">코코스학원</a></nav>
+  </header>
+
+  <section id="brief" aria-labelledby="h-brief">
+    <div class="sec-head"><div><h2 id="h-brief">먼저 읽어 보세요</h2><p>지문을 읽기 전에 1분만 훑어보세요. 글의 뼈대를 알고 읽으면 훨씬 잘 읽혀요. 문장 번호를 누르면 지문에서 그 문장들이 표시돼요.</p></div></div>
+    <div class="brief">
+      <div class="b-one"><span class="b-lab">한 줄로 말하면</span><p id="b-one"></p></div>
+      <div><span class="b-lab">글의 흐름</span><ol class="b-flow" id="b-flow"></ol></div>
+      <div><span class="b-lab">핵심어</span><div class="b-keys" id="b-keys"></div></div>
+      <div><span class="b-lab">읽다가 막히기 쉬운 곳</span><ul class="b-tips" id="b-tips"></ul></div>
+      <div><span class="b-lab">지문을 다 읽은 뒤에 스스로 답해 보기</span><div class="b-ask" id="b-ask"></div></div>
+    </div>
+  </section>
+
+  <section id="passage" aria-labelledby="h-passage">
+    <div class="sec-head">
+      <div><h2 id="h-passage">지문</h2><p>문장을 먼저 스스로 해석해 보고, ‘해석 보기’를 눌러 확인하세요. ‘듣기’를 누르면 문장을 읽어 줘요.</p></div>
+      <button class="btn" id="ko-toggle" aria-pressed="false">해석 모두 보기</button>
+    </div>
+    <div class="listen" id="listen"><button type="button" class="lbtn" id="l-all"></button><button type="button" class="lstop" id="l-stop" aria-label="듣기 멈추기" hidden></button><span class="seg" role="group" aria-label="듣기 속도"><button type="button" data-rate="0.8" aria-pressed="false">0.8배</button><button type="button" data-rate="1" aria-pressed="true">1배</button></span><button type="button" class="btn" id="l-sh" aria-pressed="false">따라 말하기</button></div><p class="lhint" id="l-hint">‘따라 말하기’를 켜면 문장이 끝날 때마다 잠시 멈춰요. 그동안 들은 문장을 소리 내어 따라 말해 보세요.</p>
+    <div class="passage" id="passage-box"><ol class="sents" id="en"></ol><p class="gloss" id="gloss"></p></div>
+  </section>
+
+  <section id="words" aria-labelledby="h-words">
+    <div class="sec-head">
+      <div><h2 id="h-words">단어 정리</h2><p>스피커를 누르면 발음이 나와요. 뜻을 가리고 외운 뒤, 가려진 뜻을 눌러 하나씩 확인해 보세요.</p></div>
+      <button class="btn" id="hide-m" aria-pressed="false">뜻 가리기</button>
+    </div>
+    <div class="vocab" id="vocab"></div>
+  </section>
+
+  <section id="wordquiz" aria-labelledby="h-wq">
+    <div class="sec-head">
+      <div><h2 id="h-wq">단어 퀴즈</h2><p>단어 정리에서 무작위로 10개가 나와요. 풀 때마다 순서와 보기가 바뀌어요.</p></div>
+    </div>
+    <div class="wq" id="wq"></div>
+  </section>
+
+  <section id="mindmap" aria-labelledby="h-map">
+    <div class="sec-head"><div><h2 id="h-map">마인드맵</h2><p id="map-sub"></p></div></div>
+    <div class="map" id="map"><svg class="links" id="links" aria-hidden="true"></svg></div>
+    <div class="legend"><span>개념·결론</span><span class="e">예시·근거</span></div>
+    <div class="note" id="note" aria-live="polite">상자를 눌러 보세요. 설명이 여기 나오고, 지문에서 해당 문장이 표시돼요.</div>
+  </section>
+
+  <section id="quiz" aria-labelledby="h-quiz">
+    <div class="sec-head">
+      <div><h2 id="h-quiz">확인 퀴즈</h2><p>한 번 고르면 바로 채점돼요.</p></div>
+      <div class="score" id="score"></div>
+    </div>
+    <div class="qs" id="qs"></div>
+  </section>
+
+  <section id="order" aria-labelledby="h-order">
+    <div class="sec-head">
+      <div><h2 id="h-order">문장 배열</h2><p>해석을 보고 어구를 순서대로 눌러 영어 문장을 완성하세요. 올린 어구는 길게 눌러 끌면 자리를 옮길 수 있고, ✕를 누르거나 ‘한 칸 되돌리기’로 뺄 수 있어요.</p></div>
+    </div>
+    <div class="ord" id="ord"></div>
+  </section>
+
+  <section id="academy" class="promo" aria-labelledby="h-academy">
+    <span class="logo" role="img" aria-label="코코스학원"></span>
+    <p class="tag">학습과 컨설팅을 하나로</p>
+    <h2 id="h-academy">이 온라인 학습지는 코코스학원이 만들었어요</h2>
+    <p>시험 범위 지문마다 해석·단어·마인드맵·변형 문제까지 담은 온라인 학습지를 만들고 있어요. 더 많은 자료는 자료실에서, 수업 소식은 블로그와 인스타그램에서, 학원 소개와 설명회 소식은 홈페이지에서 볼 수 있어요.</p>
+    <div class="ctas">
+      <a class="primary" href="../../../library/"><b>자료실</b><small>다른 학습지 보기</small></a>
+      <a class="ghost" id="go-blog" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener"><b>블로그</b><small>수업 소식 보기</small></a>
+      <a class="ghost" id="go-insta" href="https://www.instagram.com/cocos_sujin/" target="_blank" rel="noopener"><b>인스타그램</b><small>학원 일상 보기</small></a>
+      <a class="ghost" href="../../../"><b>홈페이지</b><small>학원 소개·설명회</small></a>
+      <a class="ghost" id="go-place" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><b>네이버 플레이스</b><small>상담·위치 보기</small></a>
+    </div>
+    <p class="share">도움이 됐다면 친구에게도 이 온라인 학습지 링크를 공유해 주세요!</p>
+    <dl class="acad-info" aria-label="학원 정보">
+      <dt>학원명</dt><dd>코코스학원</dd>
+      <dt>등록번호</dt><dd>제4760호</dd>
+      <dt>교습과목</dt><dd>중·고등 영어</dd>
+      <dt>교습비</dt><dd>중등부 300,000원 · 고등부 360,000원</dd>
+      <dt>추가 경비</dt><dd>없음</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p class="copy">© <span id="yr">2026</span> 코코스학원. 이 온라인 학습지의 문제·해설·단어 정리·마인드맵은 코코스학원이 만들었어요.</p>
+    <p>링크는 누구에게나 자유롭게 공유해도 좋아요. 다만 내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요.</p>
+    <p id="footer"></p>
+  </footer>
+</div>
+
+<script>
+/* ==== DATA:START ==== */
+var DATA = {
+  chips: ['2023학년도 수능 · 고3', '43~45번 · 장문(순서·지칭·세부 내용)'],
+  h1: '색맹 교정 안경: Hailey가 아빠에게 준 ‘훨씬 더 개인적인’ 선물은 무엇이었을까?',
+  enTitle: 'A Birthday Gift That Let Dad See True Colors',
+  gist: 'Hailey는 아빠가 가족을 걱정시키지 않으려고 오랫동안 숨겨 온 적록색맹을 알아내고, 생일 선물로 색맹 교정 안경을 드렸다. 난생처음 선명한 빨강과 초록을 본 아빠는 감격해 눈물을 흘렸고, 상대를 깊이 생각해 고른 선물은 가족 모두에게 큰 행복을 주었다.',
+  footer: '지문 출처: 2023학년도 대학수학능력시험(2022년 11월 시행) 영어 43~45번',
+  brief: {
+    one: 'Hailey는 아빠가 몰래 앓아 온 <b>색맹</b>을 알고, 생일 선물로 <b>색맹 교정 안경</b>을 드려요. 안경을 쓰고 처음으로 선명한 빨강과 초록을 본 아빠는 감격해 눈물을 흘려요.',
+    flow: [
+      { s: [1, 2, 3, 4, 5], t: '생일 파티 준비', d: '동생 Hailey가 커다란 케이크를 나르자 Camila는 조마조마해. 아빠 선물이 뭐냐고 묻자 Hailey는 아빠가 깜짝 놀라실 거라며 윙크만 해.' },
+      { s: [6, 7, 8, 9, 10, 11, 12], t: '비밀 선물과 아빠의 도착', d: 'Camila는 지갑이나 시계일 거라고 짐작하지만, Hailey는 훨씬 더 개인적인 거라고 해. 아빠 얘기를 꺼내려는 순간 초인종이 울리고, 아빠가 기쁘게 들어와 무지개색 케이크와 장미를 봐.' },
+      { s: [13, 14, 15, 16], turn: '그런데', t: '안경 선물의 비밀', d: '꾸러미 안에는 안경이 있어. 아빠 눈은 멀쩡하다며 어리둥절한 Camila에게, Hailey는 아빠가 가족 걱정할까 봐 오랫동안 색맹을 숨겨 왔다고 말해.' },
+      { s: [17, 18, 19, 20, 21, 22], turn: '결국', t: '처음 보는 색', d: '색맹 교정 안경을 쓴 아빠는 난생처음 선명한 빨강과 초록을 보고 울음을 터뜨려. Camila도 그 선물이 아빠를 얼마나 행복하게 했는지 깨달아.' }
+    ],
+    keys: [
+      ['color blindness', '색맹(색을 잘 구별 못함)'],
+      ['something much more personal', '훨씬 더 개인적인 것'],
+      ['keep it a secret', '비밀로 하다']
+    ],
+    tips: [
+      ['1번', '<i>watching her sister carrying a huge cake</i> → ‘동생이 커다란 케이크를 나르는 것을 보면서’. <i>watch</i> + 목적어 + -ing는 ‘~가 …하는 것을 보다’예요.'],
+      ['3번', '<i>Camila relaxed only when Hailey had safely placed the cake</i> → <i>only when</i>은 ‘~하고 나서야 비로소’. 케이크를 무사히 올려놓기 전까지는 계속 마음을 졸였다는 뜻이에요.'],
+      ['16번', '<i>he has long been suffering from color blindness</i> → ‘오랫동안 색맹을 앓아 왔다’. 뒤의 <i>so as not to worry us</i>는 ‘우리를 걱정시키지 않으려고’예요. 안경 선물의 이유가 여기서 밝혀져요.'],
+      ['22번', '<i>her gift of the glasses</i>의 <i>her</i> → 고개를 끄덕인 Camila가 아니라 안경을 고른 동생 Hailey를 가리켜요. 지칭 문제에서 헷갈리기 쉬운 자리예요.']
+    ],
+    ask: [
+      ['Hailey가 지갑이나 시계 대신 안경을 고른 까닭은 무엇일까?', '아빠가 가족을 걱정시키지 않으려고 오랫동안 숨겨 온 색맹을 최근에 알게 되었기 때문이에요. 이 안경은 적록색맹을 교정하는 데 도움이 돼요. (16~17번)'],
+      ['안경을 쓴 아빠는 왜 울기 시작했을까?', '난생처음으로 선명한 빨강색과 초록색을 보게 되어 감격했기 때문이에요. (19~20번)']
+    ]
+  },
+  sentences: [
+    { en: '“Hailey, be careful!” Camila yelled uneasily, watching her sister carrying a huge cake to the table.', ko: '“Hailey, 조심해!” Camila는 동생이 테이블로 커다란 케이크를 들고 오는 것을 보며 걱정되어 소리쳤다.' },
+    { en: '“Don’t worry, Camila,” Hailey responded, smiling.', ko: '“걱정 마, Camila.” Hailey는 미소 지으며 답했다.' },
+    { en: 'Camila relaxed only when Hailey had safely placed the cake on the party table.', ko: 'Camila는 Hailey가 파티 테이블에 케이크를 무사히 올려 두었을 때 비로소 안심했다.' },
+    { en: '“Dad will be here shortly. What gift did you buy for his birthday?” Camila asked out of interest.', ko: '“아빠가 곧 오실 거야. 너는 아빠 생일을 위해 무슨 선물을 샀어?” Camila는 호기심에서 물었다.' },
+    { en: '“Dad will be surprised to find out what it is!” Hailey answered with a wink.', ko: '“그게 뭔지 알면 아빠가 깜짝 놀라실 거야!” Hailey는 윙크를 하며 답했다.' },
+    { en: '“I bet you bought a wallet or a watch for him,” Camila said.', ko: '“틀림없이 너는 아빠를 위해 지갑이나 시계를 샀을 거야.”라고 Camila가 말했다.' },
+    { en: 'In reply, Hailey answered, “No. I bought something much more personal. By the way, there’s something you should know about Dad...”', ko: '대꾸하면서 Hailey는 “아니. 난 훨씬 더 개인적인 것을 샀어. 그건 그렇고 언니가 아빠에 대해 알아야 할 게 있어···”라고 대답했다.' },
+    { en: 'They were suddenly interrupted by the doorbell ringing.', ko: '초인종이 울리면서 그들의 대화는 갑자기 중단되었다.' },
+    { en: 'It was their dad and they were overjoyed to see him.', ko: '그들의 아빠가 왔고 그들은 그를 보고 매우 기뻐했다.' },
+    { en: '“My lovely ladies, thank you for inviting me to your place for my birthday.”', ko: '“사랑하는 우리 아가씨들, 내 생일에 너희들 집에 초대해줘서 고맙구나.”' },
+    { en: 'He walked in joyfully, hugging his daughters.', ko: '그는 기쁨에 차서 걸어 들어와 딸들을 껴안았다.' },
+    { en: 'They all walked into the dining room, where he was greeted with a rainbow-colored birthday cake and fifty red roses.', ko: '그들은 모두 식당으로 들어갔고, 그곳에서 그는 무지개색 생일 케이크와 50송이의 빨간 장미로 환영받았다.' },
+    { en: '“Happy birthday! You’re fifty today, Dad. We love you!” Camila said before her sister handed him a small parcel.', ko: '“생일 축하드려요! 오늘 쉰 살이세요, 아빠. 사랑해요!”라고 Camila가 말하고 나서 그녀의 동생이 그에게 작은 꾸러미를 드렸다.' },
+    { en: 'When he opened it, he discovered a pair of glasses inside.', ko: '그것을 열었을 때 그는 안에서 안경을 발견했다.' },
+    { en: '“Hailey, Dad doesn’t have eyesight problems,” Camila said, puzzled.', ko: '“Hailey, 아빠에게 시력 문제는 없어.”라고 Camila가 어리둥절해하며 말했다.' },
+    { en: '“Actually Camila, I recently found out he has long been suffering from color blindness. He’s kept it a secret so as not to worry us,” Hailey explained.', ko: '“사실은 Camila, 난 아빠가 오랫동안 색맹을 앓고 있다는 것을 최근에 알게 되었어. 아빠는 우리를 걱정시키지 않으려고 그것을 비밀로 해왔어.”라고 Hailey가 설명했다.' },
+    { en: '“Dad, these glasses can help correct your red-green color blindness,” said Hailey.', ko: '“아빠, 이 안경은 적록색맹을 교정하는 데 도움이 될 수 있어요.”라고 Hailey가 말했다.' },
+    { en: 'He slowly put them on, and stared at the birthday presents on the table.', ko: '그는 천천히 그것을 쓰고, 테이블 위에 있는 생일 선물을 바라보았다.' },
+    { en: 'Seeing vivid red and green colors for the first time ever, he started to cry.', ko: '지금껏 처음으로 선명한 빨강색과 초록색을 보고 그는 울기 시작했다.' },
+    { en: '“Incredible! Look at those wonderful colors!” He shouted in amazement.', ko: '“믿을 수가 없구나! 저 경이로운 색깔들을 보렴!” 그는 깜짝 놀라 소리쳤다.' },
+    { en: 'Hailey told him in tears, “Dad, I’m glad you can now finally enjoy the true beauty of rainbows and roses. Red represents love and green represents health. You deserve both.”', ko: 'Hailey는 눈물을 흘리며 그에게 말했다. “아빠, 난 아빠가 이제 마침내 무지개와 장미의 진정한 아름다움을 즐길 수 있어서 기뻐요. 빨강색은 사랑을 나타내고 초록색은 건강을 나타내요. 아빠는 둘 다 누릴 자격이 있으세요.”' },
+    { en: 'Camila nodded, seeing how happy her gift of the glasses had made their dad.', ko: 'Camila는 고개를 끄덕이고서, 그녀의 안경 선물이 그들의 아빠를 얼마나 행복하게 했는지 알게 되었다.' }
+  ],
+  gloss: [
+    ['color blindness', '색맹'],
+    ['so as not to', '~하지 않기 위해'],
+    ['red-green color blindness', '적록색맹']
+  ],
+  vocab: [
+    { w: 'uneasily', p: '부', m: '걱정되어, 불안하게' },
+    { w: 'respond', p: '동', m: '답하다, 대답하다' },
+    { w: 'relax', p: '동', m: '안심하다, 긴장을 풀다' },
+    { w: 'shortly', p: '부', m: '곧, 머지않아' },
+    { w: 'out of interest', p: '숙', m: '호기심에서, 궁금해서' },
+    { w: 'with a wink', p: '숙', m: '윙크를 하며' },
+    { w: 'I bet', p: '숙', m: '틀림없이 ~일 거야' },
+    { w: 'in reply', p: '숙', m: '대답으로, 대꾸하여' },
+    { w: 'personal', p: '형', m: '개인적인, 개인을 위한' },
+    { w: 'by the way', p: '숙', m: '그건 그렇고, 그런데' },
+    { w: 'interrupt', p: '동', m: '중단시키다, 방해하다' },
+    { w: 'overjoyed', p: '형', m: '매우 기뻐하는' },
+    { w: 'joyfully', p: '부', m: '기쁨에 차서, 즐겁게' },
+    { w: 'greet', p: '동', m: '맞이하다, 환영하다' },
+    { w: 'parcel', p: '명', m: '꾸러미, 소포' },
+    { w: 'puzzled', p: '형', m: '어리둥절한, 당혹한' },
+    { w: 'eyesight', p: '명', m: '시력' },
+    { w: 'suffer from', p: '숙', m: '(병을) 앓다, ~으로 고통받다' },
+    { w: 'color blindness', p: '명', m: '색맹' },
+    { w: 'keep a secret', p: '숙', m: '비밀로 하다' },
+    { w: 'so as not to', p: '숙', m: '~하지 않기 위해' },
+    { w: 'correct', p: '동', m: '교정하다, 바로잡다' },
+    { w: 'stare at', p: '숙', m: '~을 바라보다, 응시하다' },
+    { w: 'vivid', p: '형', m: '선명한, 생생한' },
+    { w: 'in amazement', p: '숙', m: '깜짝 놀라서' },
+    { w: 'in tears', p: '숙', m: '눈물을 흘리며' },
+    { w: 'represent', p: '동', m: '나타내다, 상징하다' },
+    { w: 'deserve', p: '동', m: '~을 누릴 자격이 있다' }
+  ],
+  map: {
+    sub: '글의 구조: 파티 준비 → 비밀 선물·아빠의 도착 → 안경과 색맹의 비밀 → 처음 보는 색(감격)',
+    core: { t: '색맹 교정 안경', k: 'a pair of glasses', s: [14, 17], note: '<b>색맹 교정 안경</b> — 꾸러미 속 <i>a pair of glasses</i>(안경 한 개)는 <i>can help correct your red-green color blindness</i>(적록색맹을 교정하는 데 도움이 되는) 선물이라는 것이 이야기의 중심이에요.' },
+    left: [
+      { t: '선물 · 훨씬 더 개인적인 것', sub: '지갑·시계가 아닌 선물', k: 'something much more personal', s: [6, 7], note: '<b>선물 · 훨씬 더 개인적인 것</b> — Camila는 지갑이나 시계를 짐작했지만, Hailey는 <i>something much more personal</i>(훨씬 더 개인적인 것)을 샀어요.' },
+      { t: '비밀 · 숨겨 온 색맹', sub: '가족 걱정할까 봐 숨김', k: 'kept it a secret', s: [15, 16], note: '<b>비밀 · 숨겨 온 색맹</b> — 아빠는 오랫동안 색맹을 앓았지만 <i>so as not to worry us</i>(우리를 걱정시키지 않으려고) 그것을 비밀로 해 왔어요.' }
+    ],
+    right: [
+      { t: '장면 1 · 파티 준비', sub: '케이크와 궁금한 선물', s: [1, 2, 3, 4, 5], note: '<b>장면 1 · 파티 준비</b> — Camila는 케이크를 나르는 동생을 <i>uneasily</i>(걱정되어) 지켜보고, 선물이 무엇인지 묻지만 Hailey는 윙크만 해요.' },
+      { t: '장면 2 · 아빠의 도착', sub: '반가움과 무지개 케이크', s: [8, 9, 10, 11, 12, 13, 14], note: '<b>장면 2 · 아빠의 도착</b> — 초인종에 대화가 끊기고, 아빠는 <i>joyfully</i>(기쁨에 차서) 들어와 무지개색 케이크와 장미를 받은 뒤 꾸러미를 열어요.' },
+      { t: '장면 3 · 처음 보는 색', sub: '감격의 눈물', s: [17, 18, 19, 20, 21], note: '<b>장면 3 · 처음 보는 색</b> — 안경을 쓴 아빠는 <i>vivid red and green colors for the first time ever</i>(난생처음 선명한 빨강과 초록)를 보고 울음을 터뜨려요.' }
+    ],
+    end: { t: '결론 (요지)', sub: '깊이 생각한 선물의 행복', k: 'how happy her gift had made their dad', s: [19, 21, 22], note: '<b>결론(요지)</b> — Hailey는 아빠가 가족을 걱정시키지 않으려고 숨겨 온 적록색맹을 알아내고 색맹 교정 안경을 드렸어요. 난생처음 선명한 색을 본 아빠는 감격했고, 상대를 깊이 생각해 고른 선물은 가족 모두에게 큰 행복을 주었어요.' }
+  },
+  quiz: [
+    { type: '주제', p: '윗글의 주제로 가장 적절한 것은?', en: true, o: ['a birthday party ruined by an unexpected visitor', 'the difficulty of choosing a wallet or a watch as a gift', 'a daughter’s thoughtful gift that let her father see true colors', 'why parents should never keep health problems secret', 'how color blindness is passed down in families'], a: 2, h: 'Hailey가 고른 ‘훨씬 더 개인적인’ 선물이 무엇이었고, 아빠에게 어떤 일이 일어났는지 보세요.', e: '이 학습지의 영어 제목 <i>A Birthday Gift That Let Dad See True Colors</i>(아빠가 진짜 색을 보게 해 준 생일 선물)와 같은 내용이에요. ②는 Camila의 추측 속 소재만 가져왔고, ④는 아빠의 비밀을 비판하는 글이 아니라 지나친 일반화예요.' },
+    { type: '요지', p: '윗글의 요지로 가장 적절한 것은?', o: ['상대를 깊이 이해하고 고른 선물은 큰 감동과 행복을 줄 수 있다.', '선물은 비쌀수록 받는 사람을 더 기쁘게 한다.', '가족 사이에는 어떤 비밀도 있어서는 안 된다.', '생일 파티는 미리 꼼꼼하게 준비해야 성공한다.', '건강 문제는 혼자 참지 말고 전문가와 상담해야 한다.'], a: 0, h: '마지막 문장에서 Camila가 고개를 끄덕이며 깨달은 것을 보세요.', e: 'Hailey는 아빠가 숨겨 온 색맹을 알고 <i>something much more personal</i>(훨씬 더 개인적인 것)인 안경을 골랐고, 아빠는 처음 보는 색에 눈물을 흘렸어요. 마지막 문장 <i>how happy her gift of the glasses had made their dad</i>처럼 깊이 생각해 고른 선물이 큰 행복을 주었다는 것이 맨 위 요약과 같은 뜻이에요. ③⑤는 글에서 말하지 않은 교훈이에요.' },
+    { type: '내용 이해', p: '윗글에서 Hailey가 아빠에게 안경을 선물한 까닭으로 가장 적절한 것은?', o: ['아빠의 시력이 최근 갑자기 나빠졌기 때문에', '아빠가 새 안경을 갖고 싶다고 말했기 때문에', '언니가 안경을 함께 사자고 제안했기 때문에', '아빠가 오랫동안 숨겨 온 색맹을 알게 되었기 때문에', '아빠가 지갑과 시계를 이미 가지고 있었기 때문에'], a: 3, e: '16번 문장 <i>I recently found out he has long been suffering from color blindness</i>, 17번 문장 <i>these glasses can help correct your red-green color blindness</i>에서 안경은 색맹을 교정하려는 선물이에요. ①은 15번 <i>Dad doesn’t have eyesight problems</i>와 맞지 않고, ③ Camila는 선물이 무엇인지도 몰랐어요.' },
+    { type: '내용 불일치', p: '윗글의 내용과 일치하지 않는 것은?', o: ['Camila는 Hailey가 케이크를 테이블에 올려놓은 뒤에야 안심했다.', 'Camila는 Hailey가 아빠에게 줄 선물이 무엇인지 미리 알고 있었다.', '아빠는 생일을 맞아 딸들의 집에 초대받았다.', '아빠는 가족을 걱정시키지 않으려고 색맹을 비밀로 해 왔다.', '아빠는 안경을 쓰고 난생처음 선명한 빨강과 초록을 보았다.'], a: 1, h: '4번과 6번 문장에서 Camila가 선물에 대해 어떻게 말하는지 보세요.', e: 'Camila는 <i>What gift did you buy for his birthday?</i>라고 묻고 <i>I bet you bought a wallet or a watch</i>라고 짐작했으므로 선물을 미리 알지 못했어요. 그래서 ②가 글과 달라요. ①은 3번, ③은 10번, ④는 16번, ⑤는 19번 문장과 일치해요.' },
+    { type: '요약문 완성', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', q: 'Having learned that her father had secretly lived with color blindness, Hailey gave him glasses that could <u>  (A)  </u> it, and seeing vivid colors for the first time left him deeply <u>  (B)  </u>.', en: true, o: ['conceal — moved', 'remedy — annoyed', 'conceal — annoyed', 'worsen — moved', 'remedy — moved'], a: 4, h: '(A)는 17번 문장에서 안경이 색맹에 하는 일, (B)는 19~20번 문장에서 아빠의 반응을 보세요.', e: '(A) 안경은 <i>can help correct your red-green color blindness</i>, 즉 색맹을 <b>remedy</b>(바로잡다)해요. (B) 아빠는 <i>he started to cry</i>, <i>He shouted in amazement</i>처럼 깊이 <b>moved</b>(감동한)했어요. ①③ conceal(숨기다)은 아빠가 색맹에 대해 해 온 일이지 안경이 하는 일이 아니고, ②③ annoyed(짜증 난)는 기쁨의 눈물과 반대예요. 요약문: 아버지가 남몰래 색맹을 안고 살아왔다는 것을 알게 된 Hailey는 그것을 (A)바로잡을 수 있는 안경을 드렸고, 처음으로 선명한 색을 본 아버지는 깊이 (B)감동했다.' },
+    { type: '빈칸', p: '빈칸에 들어갈 말로 가장 적절한 것은?', q: '“Dad will be here shortly. What gift did you buy for his birthday?” Camila asked out of interest. “Dad will be surprised to find out what it is!” Hailey answered with a wink. “I bet you bought a wallet or a watch for him,” Camila said. In reply, Hailey answered, “No. I bought something much more ______________. By the way, there’s something you should know about Dad...”', en: true, o: ['personal', 'expensive', 'practical', 'common', 'fashionable'], a: 0, h: '지갑이나 시계와 달리, 아빠 한 사람만을 위해 고른 선물이라는 점을 생각해 보세요.', e: 'Hailey는 누구에게나 주는 지갑이나 시계가 아니라, 아빠의 숨겨 온 색맹을 알고 고른 <b>personal</b>(개인적인) 선물을 샀어요. 바로 뒤 <i>there’s something you should know about Dad</i>가 그 까닭(색맹)을 예고해요. ④ common(흔한)은 오히려 지갑·시계에 어울려요.' },
+    { type: '빈칸', p: '빈칸에 들어갈 말로 가장 적절한 것은?', q: '“Dad, these glasses can help correct your red-green color blindness,” said Hailey. He slowly put them on, and stared at the birthday presents on the table. Seeing ______________, he started to cry. “Incredible! Look at those wonderful colors!” He shouted in amazement.', en: true, o: ['the cake his daughters had made', 'his old friends at the door', 'vivid red and green colors for the first time ever', 'the price tag on the glasses', 'a wallet and a watch on the table'], a: 2, e: '적록색맹을 교정하는 안경을 쓴 뒤 우는 까닭은 <b>vivid red and green colors for the first time ever</b>(난생처음 선명한 빨강과 초록)를 보았기 때문이에요. 바로 뒤 <i>Look at those wonderful colors!</i>와도 이어져요. ⑤는 Camila의 짐작 속 선물이라 맞지 않아요.' },
+    { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', q: '“Hailey, be careful!” Camila yelled uneasily, watching her sister carrying a huge cake to the table. “Don’t worry, Camila,” Hailey responded, smiling. Camila relaxed only when Hailey had safely placed the cake on the party table. “Dad will be here shortly. What gift did you buy for his birthday?” Camila asked out of interest. “Dad will be surprised to find out what it is!” Hailey answered with a wink. “I bet you bought a wallet or a watch for him,” Camila said. In reply, Hailey answered, “No. I bought something much more personal. By the way, there’s something you should know about Dad...” They were suddenly interrupted by the doorbell ringing. It was their dad and they were overjoyed to see him. “My lovely ladies, thank you for inviting me to your place for my birthday.” He walked in joyfully, hugging his daughters. They all walked into the dining room, where he was greeted with a rainbow-colored birthday cake and fifty red roses. “Happy birthday! You’re fifty today, Dad. We love you!” Camila said before her sister handed him a small parcel. When he opened it, he discovered a pair of glasses inside. “Hailey, Dad doesn’t have eyesight problems,” Camila said, puzzled. “Actually Camila, I recently found out he has long been suffering from color blindness. He’s ______________ so as not to worry us,” Hailey explained. “Dad, these glasses can help correct your red-green color blindness,” said Hailey. He slowly put them on, and stared at the birthday presents on the table. Seeing vivid red and green colors for the first time ever, he started to cry. “Incredible! Look at those wonderful colors!” He shouted in amazement. Hailey told him in tears, “Dad, I’m glad you can now finally enjoy the true beauty of rainbows and roses. Red represents love and green represents health. You deserve both.” Camila nodded, seeing how happy her gift of the glasses had made their dad.', en: true, o: ['told everyone about it', 'hidden it from us', 'tried to get it treated', 'complained about it often', 'asked us for help'], a: 1, h: '빈칸 뒤 <i>so as not to worry us</i>(우리를 걱정시키지 않으려고)와 15번 문장에서 Camila가 아빠의 색맹을 몰랐다는 점을 보세요. 정답은 원문과 다른 말로 쓰여 있어요.', e: '원문은 <i>kept it a secret</i>(그것을 비밀로 해 왔다)예요. ②는 이것을 ‘우리에게 그것을 숨겨 왔다’로 바꿔 쓴 표현이에요. 그래서 Camila는 <i>Dad doesn’t have eyesight problems</i>라고 할 만큼 아무것도 몰랐어요. ①⑤는 비밀로 한 것과 반대예요.' },
+    { type: '순서', p: '주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?', q: '<span class="box">“Hailey, be careful!” Camila yelled uneasily, watching her sister carrying a huge cake to the table. “Don’t worry, Camila,” Hailey responded, smiling. Camila relaxed only when Hailey had safely placed the cake on the party table. “Dad will be here shortly. What gift did you buy for his birthday?” Camila asked out of interest. “Dad will be surprised to find out what it is!” Hailey answered with a wink.</span>(A) “Happy birthday! You’re fifty today, Dad. We love you!” Camila said before her sister handed him a small parcel. When he opened it, he discovered a pair of glasses inside. “Hailey, Dad doesn’t have eyesight problems,” Camila said, puzzled. “Actually Camila, I recently found out he has long been suffering from color blindness. He’s kept it a secret so as not to worry us,” Hailey explained.<br><br>(B) “Dad, these glasses can help correct your red-green color blindness,” said Hailey. He slowly put them on, and stared at the birthday presents on the table. Seeing vivid red and green colors for the first time ever, he started to cry. “Incredible! Look at those wonderful colors!” He shouted in amazement. Hailey told him in tears, “Dad, I’m glad you can now finally enjoy the true beauty of rainbows and roses. Red represents love and green represents health. You deserve both.” Camila nodded, seeing how happy her gift of the glasses had made their dad.<br><br>(C) “I bet you bought a wallet or a watch for him,” Camila said. In reply, Hailey answered, “No. I bought something much more personal. By the way, there’s something you should know about Dad...” They were suddenly interrupted by the doorbell ringing. It was their dad and they were overjoyed to see him. “My lovely ladies, thank you for inviting me to your place for my birthday.” He walked in joyfully, hugging his daughters. They all walked into the dining room, where he was greeted with a rainbow-colored birthday cake and fifty red roses.', o: ['(A) — (C) — (B)', '(B) — (A) — (C)', '(B) — (C) — (A)', '(C) — (A) — (B)', '(C) — (B) — (A)'], a: 3, h: '아빠가 언제 도착하는지, 선물 꾸러미를 언제 여는지, 안경을 언제 쓰는지 차례로 따져 보세요.', e: '주어진 글(선물이 무엇인지 묻는 Camila) → (C) 지갑이나 시계일 거라는 짐작과 ‘훨씬 더 개인적인 것’, 초인종과 아빠의 도착 → (A) 생일 축하와 함께 꾸러미 속 안경, 색맹이었다는 비밀 → (B) <i>these glasses</i>를 쓰고 처음 보는 색에 감격하는 아빠로 마무리.' },
+    { type: '문장 삽입', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?', q: '<span class="box">When he opened it, he discovered a pair of glasses inside.</span>It was their dad and they were overjoyed to see him. ( ① ) “My lovely ladies, thank you for inviting me to your place for my birthday.” ( ② ) He walked in joyfully, hugging his daughters. ( ③ ) They all walked into the dining room, where he was greeted with a rainbow-colored birthday cake and fifty red roses. ( ④ ) “Happy birthday! You’re fifty today, Dad. We love you!” Camila said before her sister handed him a small parcel. ( ⑤ ) “Hailey, Dad doesn’t have eyesight problems,” Camila said, puzzled. “Actually Camila, I recently found out he has long been suffering from color blindness. He’s kept it a secret so as not to worry us,” Hailey explained.', o: ['①', '②', '③', '④', '⑤'], a: 4, h: '주어진 문장의 <i>it</i>이 가리키는 것이 무엇인지, 안경이 처음 나오는 곳이 어디인지 보세요.', e: '⑤ 앞에서 동생이 아빠에게 <i>a small parcel</i>(작은 꾸러미)을 건네요. 주어진 문장의 <i>it</i>은 이 꾸러미이고, 그 안의 안경을 보고 Camila가 ⑤ 뒤에서 <i>Dad doesn’t have eyesight problems</i>라고 어리둥절해해야 흐름이 맞아요.' },
+    { type: '어휘 · (A)(B)(C)', p: '(A), (B), (C)의 각 네모 안에서 문맥에 맞는 낱말로 가장 적절한 것은?', q: '“Hailey, be careful!” Camila yelled (A) [ uneasily / calmly ], watching her sister carrying a huge cake to the table. … It was their dad and they were (B) [ overjoyed / disappointed ] to see him. … Seeing (C) [ vivid / faded ] red and green colors for the first time ever, he started to cry.', en: true, o: ['calmly — overjoyed — vivid', 'uneasily — disappointed — faded', 'calmly — disappointed — vivid', 'uneasily — overjoyed — vivid', 'uneasily — disappointed — vivid'], a: 3, e: '(A) 커다란 케이크를 나르는 동생에게 <i>be careful!</i>이라고 외쳤으니 <b>uneasily</b>(걱정되어). (B) 반가운 아빠가 와서 <b>overjoyed</b>(매우 기뻐한). (C) 색맹 교정 안경으로 처음 보는 색이라 감격해 울었으니 <b>vivid</b>(선명한)예요. faded는 ‘흐릿한’이라는 뜻이에요.' },
+    { type: '어휘 · 밑줄', p: '밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?', q: '“Hailey, be careful!” Camila yelled uneasily, watching her sister carrying a huge cake to the table. “Don’t worry, Camila,” Hailey responded, smiling. Camila relaxed only when Hailey had ①<u>safely</u> placed the cake on the party table. “Dad will be here shortly. What gift did you buy for his birthday?” Camila asked out of interest. “Dad will be surprised to find out what it is!” Hailey answered with a wink. “I bet you bought a wallet or a watch for him,” Camila said. In reply, Hailey answered, “No. I bought something much more personal. By the way, there’s something you should know about Dad...” They were suddenly interrupted by the doorbell ringing. It was their dad and they were overjoyed to see him. “My lovely ladies, thank you for inviting me to your place for my birthday.” He walked in ②<u>reluctantly</u>, hugging his daughters. They all walked into the dining room, where he was greeted with a rainbow-colored birthday cake and fifty red roses. “Happy birthday! You’re fifty today, Dad. We love you!” Camila said before her sister handed him a small parcel. When he opened it, he discovered a pair of glasses inside. “Hailey, Dad doesn’t have eyesight problems,” Camila said, ③<u>puzzled</u>. “Actually Camila, I recently found out he has long been suffering from color blindness. He’s kept it a ④<u>secret</u> so as not to worry us,” Hailey explained. “Dad, these glasses can help correct your red-green color blindness,” said Hailey. He slowly put them on, and stared at the birthday presents on the table. Seeing vivid red and green colors for the first time ever, he started to cry. “Incredible! Look at those ⑤<u>wonderful</u> colors!” He shouted in amazement. Hailey told him in tears, “Dad, I’m glad you can now finally enjoy the true beauty of rainbows and roses. Red represents love and green represents health. You deserve both.” Camila nodded, seeing how happy her gift of the glasses had made their dad.', o: ['①', '②', '③', '④', '⑤'], a: 1, h: '초대해 줘서 고맙다며 딸들을 껴안는 아빠의 마음을 생각해 보세요.', e: '② <i>reluctantly</i> → <b>joyfully</b>. 아빠는 <i>thank you for inviting me</i>라고 고마워하며 <i>hugging his daughters</i> 딸들을 껴안았으므로 ‘마지못해’ 들어왔다는 말은 맞지 않아요. ‘기쁨에 차서’ 들어왔어야 해요.' },
+    { type: '어휘 · 변형', p: '밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?', q: '“Hailey, be careful!” Camila yelled uneasily, watching her sister carrying a huge cake to the table. “Don’t worry, Camila,” Hailey responded, smiling. Camila relaxed only when Hailey had safely placed the cake on the party table. “Dad will be here ①<u>soon</u>. What gift did you buy for his birthday?” Camila asked out of interest. “Dad will be surprised to find out what it is!” Hailey answered with a wink. “I bet you bought a wallet or a watch for him,” Camila said. In reply, Hailey answered, “No. I bought something much more personal. By the way, there’s something you should know about Dad...” They were ②<u>abruptly</u> interrupted by the doorbell ringing. It was their dad and they were overjoyed to see him. “My lovely ladies, thank you for inviting me to your place for my birthday.” He walked in joyfully, hugging his daughters. They all walked into the dining room, where he was greeted with a rainbow-colored birthday cake and fifty red roses. “Happy birthday! You’re fifty today, Dad. We love you!” Camila said before her sister handed him a small parcel. When he opened it, he ③<u>found</u> a pair of glasses inside. “Hailey, Dad doesn’t have eyesight problems,” Camila said, puzzled. “Actually Camila, I recently found out he has long been suffering from color blindness. He’s kept it a secret so as not to worry us,” Hailey explained. “Dad, these glasses can help ④<u>fix</u> your red-green color blindness,” said Hailey. He slowly put them on, and stared at the birthday presents on the table. Seeing vivid red and green colors for the first time ever, he started to cry. “Incredible! Look at those wonderful colors!” He shouted in amazement. Hailey told him in tears, “Dad, I’m glad you can now finally enjoy the true beauty of rainbows and roses. Red represents love and green represents health. You deserve both.” Camila nodded, seeing how ⑤<u>miserable</u> her gift of the glasses had made their dad.', o: ['①', '②', '③', '④', '⑤'], a: 4, h: '밑줄 친 단어들은 원문 단어를 바꿔 쓴 것이에요. 처음 보는 색에 감격해 운 아빠를 보며 Camila가 깨달은 것을 생각해 보세요.', e: '⑤ <i>miserable</i>(비참한) → <b>happy</b>(행복한). 아빠는 처음 보는 색에 감격해 울었고 Hailey도 기쁨의 눈물을 흘렸으므로, 안경 선물이 아빠를 얼마나 ‘행복하게’ 했는지 깨달았다는 내용이어야 해요. ①②③④는 원문의 shortly, suddenly, discovered, correct를 같은 뜻의 말로 바꾼 것이라 모두 적절해요.' },
+    { type: '어법 · (A)(B)(C)', p: '(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?', q: '“Hailey, be careful!” Camila yelled uneasily, watching her sister (A) [ carrying / carried ] a huge cake to the table. … “My lovely ladies, thank you for (B) [ inviting / invite ] me to your place for my birthday.” … (C) [ Seeing / Seen ] vivid red and green colors for the first time ever, he started to cry.', en: true, o: ['carried — inviting — Seen', 'carrying — invite — Seeing', 'carrying — inviting — Seeing', 'carried — invite — Seeing', 'carrying — inviting — Seen'], a: 2, e: '(A) 지각동사 <i>watch</i> + 목적어 + 목적격 보어에서, 동생이 케이크를 ‘나르는’ 능동이므로 <b>carrying</b>. (B) 전치사 <i>for</i>의 목적어이므로 동명사 <b>inviting</b>. (C) 주절의 주어 <i>he</i>가 색을 ‘보는’ 능동 관계이므로 현재분사로 시작하는 분사구문 <b>Seeing</b>이에요.' },
+    { type: '어법 · 밑줄', p: '밑줄 친 부분 중, 어법상 틀린 것은?', q: '“Don’t worry, Camila,” Hailey responded, ①<u>smiled</u>. Camila relaxed only when Hailey had safely placed the cake on the party table. “Dad will be here shortly. What gift did you buy for his birthday?” Camila asked out of interest. “Dad will be surprised ②<u>to find</u> out what it is!” Hailey answered with a wink. … They were suddenly interrupted by the doorbell ③<u>ringing</u>. It was their dad and they were overjoyed to see him. “My lovely ladies, thank you for inviting me to your place for my birthday.” He walked in joyfully, hugging his daughters. They all walked into the dining room, ④<u>where</u> he was greeted with a rainbow-colored birthday cake and fifty red roses. … “Actually Camila, I recently found out he has long been suffering from color blindness. He’s kept it a secret so as ⑤<u>not to worry</u> us,” Hailey explained.', o: ['①', '②', '③', '④', '⑤'], a: 0, h: '①은 이미 동사 <i>responded</i>가 있는 문장에서 ‘미소 지으며’를 나타내는 자리예요.', e: '① <i>smiled</i> → <b>smiling</b>. 이미 동사 <i>responded</i>가 있으므로 ‘미소 지으며’는 동시 상황을 나타내는 분사구문 smiling으로 써야 해요. ② 감정의 원인을 나타내는 to부정사, ③ 전치사 <i>by</i>의 목적어인 동명사(의미상 주어 the doorbell), ④ 장소 선행사 <i>the dining room</i>을 받는 관계부사, ⑤ <i>so as not to</i> ‘~하지 않기 위해’로 모두 맞아요.' }
+  ],
+  order: [
+    { s: 1, c: ['“Hailey, be careful!”', 'Camila yelled uneasily,', 'watching her sister', 'carrying a huge cake', 'to the table.'], keep: true },
+    { s: 2, c: ['“Don’t worry,', 'Camila,”', 'Hailey responded,', 'smiling.'], keep: true },
+    { s: 3, c: ['Camila relaxed', 'only when', 'Hailey had safely placed', 'the cake', 'on the party table.'], keep: true },
+    { s: 4, c: ['“Dad will be here shortly.', 'What gift did you buy', 'for his birthday?”', 'Camila asked', 'out of interest.'], keep: true },
+    { s: 5, c: ['“Dad will be surprised', 'to find out', 'what it is!”', 'Hailey answered', 'with a wink.'], keep: true },
+    { s: 6, c: ['“I bet', 'you bought a wallet', 'or a watch', 'for him,”', 'Camila said.'], keep: true },
+    { s: 7, c: ['In reply,', 'Hailey answered,', '“No.', 'I bought something', 'much more personal.', 'By the way,', 'there’s something', 'you should know', 'about Dad...”'] },
+    { s: 8, c: ['They were', 'suddenly interrupted', 'by the doorbell', 'ringing.'] },
+    { s: 9, c: ['It was their dad', 'and they were overjoyed', 'to see him.'] },
+    { s: 10, c: ['“My lovely ladies,', 'thank you', 'for inviting me', 'to your place', 'for my birthday.”'], keep: true },
+    { s: 11, c: ['He walked in', 'joyfully,', 'hugging', 'his daughters.'] },
+    { s: 12, c: ['They all walked', 'into the dining room,', 'where he was greeted', 'with a rainbow-colored', 'birthday cake', 'and fifty red roses.'] },
+    { s: 13, c: ['“Happy birthday!', 'You’re fifty today, Dad.', 'We love you!”', 'Camila said', 'before her sister', 'handed him', 'a small parcel.'], keep: true },
+    { s: 14, c: ['When he opened it,', 'he discovered', 'a pair of glasses', 'inside.'] },
+    { s: 15, c: ['“Hailey,', 'Dad doesn’t have', 'eyesight problems,”', 'Camila said,', 'puzzled.'], keep: true },
+    { s: 16, c: ['“Actually Camila,', 'I recently found out', 'he has long been suffering', 'from color blindness.', 'He’s kept it a secret', 'so as not to', 'worry us,”', 'Hailey explained.'], keep: true },
+    { s: 17, c: ['“Dad,', 'these glasses', 'can help correct', 'your red-green', 'color blindness,”', 'said Hailey.'], keep: true },
+    { s: 18, c: ['He slowly', 'put them on,', 'and stared at', 'the birthday presents', 'on the table.'] },
+    { s: 19, c: ['Seeing vivid', 'red and green colors', 'for the first time ever,', 'he started', 'to cry.'] },
+    { s: 20, c: ['“Incredible!', 'Look at', 'those wonderful colors!”', 'He shouted', 'in amazement.'], keep: true },
+    { s: 21, c: ['Hailey told him', 'in tears,', '“Dad, I’m glad', 'you can now finally enjoy', 'the true beauty', 'of rainbows and roses.', 'Red represents love', 'and green represents health.', 'You deserve both.”'], keep: true },
+    { s: 22, c: ['Camila nodded,', 'seeing', 'how happy', 'her gift of the glasses', 'had made their dad.'], keep: true }
+  ]
+};
+/* ==== DATA:END ==== */
+/* ==== AUDIO:START ==== */
+var AUDIO = {
+  "uneasily": "/assets/say/uneasily.mp3",
+  "respond": "/assets/say/respond.mp3",
+  "relax": "/assets/say/relax.mp3",
+  "shortly": "/assets/say/shortly.mp3",
+  "out of interest": "/assets/say/out-of-interest.mp3",
+  "with a wink": "/assets/say/with-a-wink.mp3",
+  "I bet": "/assets/say/i-bet.mp3",
+  "in reply": "/assets/say/in-reply.mp3",
+  "personal": "/assets/say/personal.mp3",
+  "by the way": "/assets/say/by-the-way.mp3",
+  "interrupt": "/assets/say/interrupt.mp3",
+  "overjoyed": "/assets/say/overjoyed.mp3",
+  "joyfully": "/assets/say/joyfully.mp3",
+  "greet": "/assets/say/greet.mp3",
+  "parcel": "/assets/say/parcel.mp3",
+  "puzzled": "/assets/say/puzzled.mp3",
+  "eyesight": "/assets/say/eyesight.mp3",
+  "suffer from": "/assets/say/suffer-from.mp3",
+  "color blindness": "/assets/say/color-blindness.mp3",
+  "keep a secret": "/assets/say/keep-a-secret.mp3",
+  "so as not to": "/assets/say/so-as-not-to.mp3",
+  "correct": "/assets/say/correct.mp3",
+  "stare at": "/assets/say/stare-at.mp3",
+  "vivid": "/assets/say/vivid.mp3",
+  "in amazement": "/assets/say/in-amazement.mp3",
+  "in tears": "/assets/say/in-tears.mp3",
+  "represent": "/assets/say/represent.mp3",
+  "deserve": "/assets/say/deserve.mp3"
+};
+/* ==== AUDIO:END ==== */
+/* ==== SAUDIO:START ==== */
+var SAUDIO = [
+  "s1.mp3",
+  "s2.mp3",
+  "s3.mp3",
+  "s4.mp3",
+  "s5.mp3",
+  "s6.mp3",
+  "s7.mp3",
+  "s8.mp3",
+  "s9.mp3",
+  "s10.mp3",
+  "s11.mp3",
+  "s12.mp3",
+  "s13.mp3",
+  "s14.mp3",
+  "s15.mp3",
+  "s16.mp3",
+  "s17.mp3",
+  "s18.mp3",
+  "s19.mp3",
+  "s20.mp3",
+  "s21.mp3",
+  "s22.mp3"
+];
+/* ==== SAUDIO:END ==== */
+
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var NUMS=['①','②','③','④','⑤'];
+  document.title=document.title||DATA.h1;
+  $('yr').textContent=new Date().getFullYear();
+  $('chips').innerHTML=DATA.chips.map(function(c){return '<span class="chip">'+c+'</span>'}).join('');
+  $('h1').textContent=DATA.h1; $('en-title').textContent=DATA.enTitle; $('gist').textContent=DATA.gist; $('footer').textContent=DATA.footer;
+
+  /* ---- 먼저 읽어 보세요 ---- */
+  (function(){
+    var B=DATA.brief, sec=$('brief'); if(!B||!sec){ if(sec) sec.hidden=true; return; }
+    function rng(a){ return a.length>1&&a[a.length-1]-a[0]===a.length-1 ? a[0]+'~'+a[a.length-1]+'번' : a.join('·')+'번'; }
+    $('b-one').innerHTML=B.one;
+    $('b-flow').innerHTML=B.flow.map(function(f){return '<li class="b-step'+(f.turn?' turn':'')+'"><button type="button" class="b-go" data-s="'+f.s.join(',')+'" aria-label="지문 '+rng(f.s)+' 문장 보기">'+rng(f.s)+'</button><div><div class="t">'+(f.turn?'<span class="b-turn">'+f.turn+'</span>':'')+f.t+'</div><p class="d">'+f.d+'</p></div></li>'}).join('');
+    $('b-keys').innerHTML=B.keys.map(function(k){return '<span><i>'+k[0]+'</i>'+k[1]+'</span>'}).join('');
+    $('b-tips').innerHTML=B.tips.map(function(t){return '<li><b class="n">'+t[0]+'</b><span>'+t[1]+'</span></li>'}).join('');
+    $('b-ask').innerHTML=B.ask.map(function(q,i){return '<details><summary><b>Q'+(i+1)+'.</b><span class="bq">'+q[0]+'</span></summary><p>'+q[1]+'</p></details>'}).join('');
+    $('b-flow').addEventListener('click',function(e){
+      var b=e.target.closest('.b-go'); if(!b) return;
+      var ids=b.getAttribute('data-s').split(',');
+      document.querySelectorAll('.node.active').forEach(function(n){n.classList.remove('active')});
+      document.querySelectorAll('#links path.on').forEach(function(p){p.classList.remove('on')});
+      document.querySelectorAll('.sent').forEach(function(s){s.classList.toggle('hl',ids.indexOf(s.getAttribute('data-s'))>-1)});
+      var first=document.querySelector('.sent[data-s="'+ids[0]+'"]');
+      if(first){ try{ first.scrollIntoView({behavior:'smooth',block:'center'}); }catch(err){ first.scrollIntoView(); } }
+    });
+  })();
+  $('en').innerHTML=DATA.sentences.map(function(s,i){return '<li class="sent" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+s.en+'</p><button type="button" class="kbtn" aria-expanded="false">해석 보기</button><p class="ko">'+s.ko+'</p></div></li>'}).join('');
+  $('gloss').innerHTML=DATA.gloss.map(function(g){return '<span><i>'+g[0]+'</i> '+g[1]+'</span>'}).join('');
+  var koBtn=$('ko-toggle'), sentEls=[].slice.call($('en').querySelectorAll('.sent'));
+  function setOpen(li,on){ li.classList.toggle('open',on); var b=li.querySelector('.kbtn'); b.setAttribute('aria-expanded',String(on)); b.textContent=on?'해석 숨기기':'해석 보기'; }
+  function syncAll(){ var all=sentEls.every(function(li){return li.classList.contains('open')}); koBtn.setAttribute('aria-pressed',String(all)); koBtn.textContent=all?'해석 모두 가리기':'해석 모두 보기'; }
+  $('en').addEventListener('click',function(e){ var b=e.target.closest('.kbtn'); if(!b) return; var li=b.closest('.sent'); setOpen(li,!li.classList.contains('open')); syncAll(); });
+  koBtn.addEventListener('click',function(){ var on=koBtn.getAttribute('aria-pressed')!=='true'; sentEls.forEach(function(li){setOpen(li,on)}); syncAll(); });
+
+  var synth=('speechSynthesis' in window)?window.speechSynthesis:null, voice=null;
+  function pickVoice(){ try{ var vs=synth.getVoices(); voice=vs.filter(function(v){return /^en[-_]US/i.test(v.lang)})[0]||vs.filter(function(v){return /^en/i.test(v.lang)})[0]||null; }catch(e){} }
+  if(synth){ pickVoice(); try{ synth.addEventListener('voiceschanged',pickVoice); }catch(e){} }
+  var TTS=!!synth&&typeof SpeechSynthesisUtterance!=='undefined';
+  function speak(t,btn){ if(!synth) return; try{ synth.cancel(); var u=new SpeechSynthesisUtterance(t.replace(/[~()]/g,' ')); u.lang='en-US'; if(voice) u.voice=voice; u.rate=0.85;
+    if(btn){ btn.classList.add('on'); u.onend=u.onerror=function(){btn.classList.remove('on')}; } synth.speak(u); }catch(e){} }
+  var SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+  var player=null, playing=null;
+  function stopAll(){ if(player){ try{ player.pause(); }catch(e){} } if(playing){ playing.classList.remove('on'); playing=null; } if(synth){ try{ synth.cancel(); }catch(e){} } }
+  function play(w,btn){
+    stopAll();
+    if(!AUDIO[w]){ speak(w,btn); return; }
+    try{
+      if(!player) player=new Audio();
+      player.src=AUDIO[w]; playing=btn; btn.classList.add('on');
+      player.onended=player.onerror=function(){ btn.classList.remove('on'); if(playing===btn) playing=null; };
+      var p=player.play(); if(p&&p.catch) p.catch(function(){ btn.classList.remove('on'); if(TTS) speak(w,btn); });
+    }catch(e){ btn.classList.remove('on'); if(TTS) speak(w,btn); }
+  }
+  function sayBtn(w){ var q=w.replace(/"/g,'&quot;');
+    if(AUDIO[w]||TTS) return '<button type="button" class="say" data-say="'+q+'" aria-label="'+q+' 발음 듣기">'+SPK+'</button>';
+    return '<a class="say" href="https://en.dict.naver.com/#/search?query='+encodeURIComponent(w)+'" target="_blank" rel="noopener" aria-label="'+q+' 발음 듣기 (네이버 사전)">'+SPK+'</a>'; }
+  document.addEventListener('click',function(e){ var b=e.target.closest('button.say'); if(!b) return; e.preventDefault(); play(b.getAttribute('data-say'),b); });
+
+  /* ---- 문장 듣기 · 따라 말하기 ---- */
+  (function(){
+    var bar=$('listen'), hint=$('l-hint');
+    if(typeof SAUDIO==='undefined'||!SAUDIO.length||!bar){ if(bar){ bar.hidden=true; hint.hidden=true; } return; }
+    var I_PLAY='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>';
+    var I_PAUSE='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4.5" width="4" height="15" rx="1"/><rect x="14" y="4.5" width="4" height="15" rx="1"/></svg>';
+    var I_STOP='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5.5" y="5.5" width="13" height="13" rx="2"/></svg>';
+    var N=Math.min(SAUDIO.length,sentEls.length), sp=new Audio(), rate=1, shadow=false;
+    var mode=null, idx=-1, paused=false, waitT=null, pendNext=false, oneBtn=null, barSeen=true;
+    sp.preload='auto';
+    sentEls.forEach(function(li,i){
+      if(i>=N) return;
+      var kb=li.querySelector('.kbtn'), box=document.createElement('div'); box.className='sacts';
+      kb.parentNode.insertBefore(box,kb);
+      box.innerHTML='<button type="button" class="sbtn" data-i="'+i+'" aria-label="'+(i+1)+'번 문장 듣기">'+SPK+'<span>듣기</span></button>';
+      box.appendChild(kb);
+      var cue=document.createElement('div'); cue.className='cue'; cue.setAttribute('aria-live','polite');
+      cue.innerHTML='<span>따라 말해 보세요</span><i><b></b></i>';
+      box.parentNode.insertBefore(cue,box.nextSibling);
+    });
+    var allBtn=$('l-all'), stopBtn=$('l-stop'), shBtn=$('l-sh');
+    stopBtn.innerHTML=I_STOP;
+    var lbar=document.createElement('div'); lbar.className='lbar'; lbar.hidden=true;
+    lbar.innerHTML='<button type="button" class="go" aria-label="지문으로 가기"></button><button type="button" class="pp"></button><button type="button" class="st" aria-label="듣기 멈추기">'+I_STOP+'</button>';
+    document.body.appendChild(lbar);
+    var lGo=lbar.querySelector('.go'), lPP=lbar.querySelector('.pp');
+    function setRate(){ try{ sp.defaultPlaybackRate=rate; sp.playbackRate=rate; if('preservesPitch' in sp) sp.preservesPitch=true; else if('webkitPreservesPitch' in sp) sp.webkitPreservesPitch=true; }catch(e){} }
+    ['loadedmetadata','play','playing'].forEach(function(ev){ sp.addEventListener(ev,setRate); });
+    function ui(){
+      var all=mode==='all';
+      allBtn.innerHTML=(all&&!paused?I_PAUSE:I_PLAY)+'<span>'+(all?(paused?'이어 듣기':'일시정지'):'지문 전체 듣기')+'</span>';
+      allBtn.classList.toggle('on',all);
+      stopBtn.hidden=!all;
+      lGo.textContent='지문 듣기 '+(idx+1)+' / '+N;
+      lPP.innerHTML=paused?I_PLAY:I_PAUSE; lPP.setAttribute('aria-label',paused?'이어 듣기':'일시정지');
+      lbar.hidden=!(all&&!barSeen);
+    }
+    function clearMarks(){ sentEls.forEach(function(li){ li.classList.remove('now','wait'); }); if(oneBtn){ oneBtn.classList.remove('on'); oneBtn=null; } }
+    function stopSent(){ if(waitT){ clearTimeout(waitT); waitT=null; } pendNext=false; try{ sp.pause(); }catch(e){} mode=null; idx=-1; paused=false; clearMarks(); ui(); }
+    function load(i){
+      try{
+        sp.src=SAUDIO[i]; setRate();
+        var p=sp.play(); setRate();
+        if(p&&p.catch) p.catch(function(err){ if(err&&err.name==='AbortError') return; stopSent(); });
+      }catch(e){ stopSent(); }
+    }
+    function inView(el){ var r=el.getBoundingClientRect(); return r.bottom>0&&r.top<window.innerHeight; }
+    function follow(prev,li){
+      var r=li.getBoundingClientRect();
+      if(prev&&!inView(prev)) return;
+      if(r.top<70||r.bottom>window.innerHeight-90){ try{ li.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){ li.scrollIntoView(); } }
+    }
+    function go(i){
+      var prev=idx>=0?sentEls[idx]:null;
+      clearMarks();
+      if(i>=N){ stopSent(); return; }
+      idx=i; paused=false; pendNext=false;
+      sentEls[i].classList.add('now'); follow(prev,sentEls[i]);
+      load(i); ui();
+    }
+    function playAll(){ stopAll(); stopSent(); mode='all'; go(0); }
+    function pause(){
+      paused=true;
+      if(waitT){ clearTimeout(waitT); waitT=null; pendNext=true; sentEls[idx].classList.remove('wait'); }
+      else { try{ sp.pause(); }catch(e){} }
+      ui();
+    }
+    function resume(){
+      stopAll(); paused=false;
+      if(pendNext){ pendNext=false; go(idx+1); return; }
+      var p=sp.play(); if(p&&p.catch) p.catch(function(){ stopSent(); });
+      ui();
+    }
+    function playOne(i,btn){
+      var same=mode==='one'&&idx===i;
+      stopAll(); stopSent();
+      if(same) return;
+      mode='one'; idx=i; oneBtn=btn; btn.classList.add('on'); sentEls[i].classList.add('now');
+      load(i); ui();
+    }
+    sp.addEventListener('ended',function(){
+      if(mode==='one'){ stopSent(); return; }
+      if(mode!=='all') return;
+      var li=sentEls[idx];
+      if(shadow){
+        var ms=Math.round(((sp.duration&&isFinite(sp.duration))?sp.duration:4)/rate*1000+1200);
+        li.classList.add('wait');
+        var b=li.querySelector('.cue b'); b.style.transition='none'; b.style.width='100%'; void b.offsetWidth;
+        b.style.transition='width '+ms+'ms linear'; b.style.width='0%';
+        waitT=setTimeout(function(){ waitT=null; go(idx+1); },ms);
+      } else {
+        waitT=setTimeout(function(){ waitT=null; go(idx+1); },450);
+      }
+    });
+    sp.addEventListener('error',function(){ if(mode) stopSent(); });
+    allBtn.addEventListener('click',function(){ if(mode!=='all') playAll(); else if(paused) resume(); else pause(); });
+    stopBtn.addEventListener('click',stopSent);
+    lbar.querySelector('.st').addEventListener('click',stopSent);
+    lPP.addEventListener('click',function(){ if(paused) resume(); else pause(); });
+    lGo.addEventListener('click',function(){ var li=sentEls[idx]||bar; try{ li.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){ li.scrollIntoView(); } });
+    [].forEach.call(bar.querySelectorAll('[data-rate]'),function(b){
+      b.addEventListener('click',function(){
+        rate=+b.getAttribute('data-rate');
+        [].forEach.call(bar.querySelectorAll('[data-rate]'),function(x){ x.setAttribute('aria-pressed',String(x===b)); });
+        setRate();
+      });
+    });
+    shBtn.addEventListener('click',function(){
+      shadow=!shadow; shBtn.setAttribute('aria-pressed',String(shadow));
+      if(!shadow&&waitT&&idx>=0){ clearTimeout(waitT); waitT=null; go(idx+1); }
+    });
+    $('en').addEventListener('click',function(e){ var b=e.target.closest('.sbtn'); if(!b) return; playOne(+b.getAttribute('data-i'),b); });
+    document.addEventListener('click',function(e){ if(mode&&e.target.closest('button.say')) stopSent(); },true);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ barSeen=es[0].isIntersecting; ui(); }).observe(bar);
+    } else { barSeen=false; }
+    ui();
+  })();
+
+  var V=DATA.vocab, vbox=$('vocab'), hideBtn=$('hide-m');
+  vbox.innerHTML=V.map(function(v,i){return '<div class="vrow" id="v'+i+'"><span class="w">'+v.w+'</span>'+sayBtn(v.w)+'<button type="button" class="m"><span class="mp">'+v.p+'</span><span class="mt">'+v.m+'</span></button></div>'}).join('');
+  hideBtn.addEventListener('click',function(){
+    var on=hideBtn.getAttribute('aria-pressed')!=='true';
+    hideBtn.setAttribute('aria-pressed',String(on)); hideBtn.textContent=on?'뜻 보이기':'뜻 가리기';
+    vbox.classList.toggle('hide-m',on);
+    [].forEach.call(vbox.querySelectorAll('.vrow'),function(r){r.classList.remove('open')});
+  });
+  vbox.addEventListener('click',function(e){var m=e.target.closest('.m'); if(m&&vbox.classList.contains('hide-m')) m.closest('.vrow').classList.toggle('open');});
+
+  var wq=$('wq'), WN=Math.min(10,V.length), wmode='en', wset=[], wi=0, wscore=0;
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function wstart(){ wset=shuffle(V).slice(0,WN); wi=0; wscore=0; wdraw(); }
+  function choicesFor(v){
+    var same=V.filter(function(x){return x!==v&&x.p===v.p}), rest=V.filter(function(x){return x!==v&&x.p!==v.p});
+    var pool=shuffle(same).concat(shuffle(rest)).slice(0,3);
+    return shuffle(pool.concat([v]));
+  }
+  function wdraw(){
+    var head='<div class="wq-top"><span>'+(wi<WN?(wi+1)+' / '+WN:'완료')+' · 맞힌 개수 '+wscore+'</span><span class="seg" role="group" aria-label="퀴즈 방향"><button type="button" id="wm-en" aria-pressed="'+(wmode==='en')+'">영어 → 뜻</button><button type="button" id="wm-ko" aria-pressed="'+(wmode==='ko')+'">뜻 → 영어</button></span></div><div class="bar"><i style="width:'+(wi/WN*100)+'%"></i></div>';
+    if(wi>=WN){
+      var msg=wscore===WN?'모두 맞혔어요!':wscore>=WN*0.7?'잘했어요. 틀린 단어만 한 번 더 보세요.':'단어 정리를 한 번 더 보고 다시 도전해요.';
+      wq.innerHTML=head+'<p class="wq-q">'+WN+'개 중 '+wscore+'개 정답<small>'+msg+'</small></p><div class="wq-foot"><span></span><button class="btn primary" id="wq-again" type="button">새 문제로 다시 풀기</button></div>';
+      $('wq-again').addEventListener('click',wstart); bindMode(); return;
+    }
+    var v=wset[wi], ch=choicesFor(v), en=wmode==='en';
+    var q=en?'<p class="wq-q en">'+v.w+sayBtn(v.w)+'<small>'+v.p+' · 알맞은 뜻을 고르세요</small></p>':'<p class="wq-q">'+v.m+'<small>'+v.p+' · 알맞은 영어 단어를 고르세요</small></p>';
+    var o='<div class="wq-opts">'+ch.map(function(c,j){return '<button class="opt'+(en?'':' en-o')+'" type="button" id="wo'+j+'" data-k="'+V.indexOf(c)+'"><span class="n">'+['①','②','③','④'][j]+'</span><span>'+(en?c.m:c.w)+'</span></button>'}).join('')+'</div>';
+    wq.innerHTML=head+q+o+'<div class="wq-foot" id="wq-foot"></div>';
+    bindMode();
+    var btns=[].slice.call(wq.querySelectorAll('.wq-opts .opt'));
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      var ok=V[+b.getAttribute('data-k')]===v;
+      btns.forEach(function(x){x.disabled=true; if(V[+x.getAttribute('data-k')]===v) x.classList.add('right');});
+      if(!ok) b.classList.add('wrong'); else wscore++;
+      $('wq-foot').innerHTML=(ok?'<span><b class="ok">정답!</b> ':'<span><b class="no">아쉬워요.</b> ')+'<i style="font-family:var(--serif-en)">'+v.w+'</i> '+sayBtn(v.w)+' = '+v.m+'</span><button class="btn primary" id="wq-next" type="button">'+(wi+1<WN?'다음':'결과 보기')+'</button>';
+      $('wq-next').addEventListener('click',function(){wi++;wdraw();});
+      $('wq-next').focus();
+    });});
+  }
+  function bindMode(){
+    $('wm-en').addEventListener('click',function(){if(wmode!=='en'){wmode='en';wstart();}});
+    $('wm-ko').addEventListener('click',function(){if(wmode!=='ko'){wmode='ko';wstart();}});
+  }
+  wstart();
+
+  var map=$('map'), svg=$('links'), note=$('note'), M=DATA.map;
+  $('map-sub').textContent=M.sub;
+  function nodeHTML(n,cls){
+    return '<button class="node '+cls+'" data-s="'+n.s.join(',')+'"><span class="t">'+n.t+'</span>'+(n.sub?'<span class="s">'+n.sub+'</span>':'')+(n.k?'<span class="k">'+n.k+'</span>':'')+'</button>';
+  }
+  var noteOf=[];
+  var html='<div class="col l">'+M.left.map(function(n){noteOf.push(n.note);return nodeHTML(n,'concept')}).join('')+'</div>';
+  noteOf.push(M.core.note); html+=nodeHTML(M.core,'core');
+  html+='<div class="col r">'+M.right.map(function(n){noteOf.push(n.note);return nodeHTML(n,'example')}).join('')+'</div>';
+  noteOf.push(M.end.note); html+=nodeHTML(M.end,'concept conclusion');
+  map.insertAdjacentHTML('beforeend',html);
+  var core=map.querySelector('.node.core');
+  var nodes=[].slice.call(map.querySelectorAll('.node'));
+  var paths=[];
+  function drawLinks(){
+    svg.innerHTML=''; paths=[];
+    if(window.innerWidth<=760) return;
+    var m=map.getBoundingClientRect(), c=core.getBoundingClientRect();
+    var cx=c.left-m.left, cy=c.top-m.top, cw=c.width, ch=c.height;
+    nodes.forEach(function(n){
+      if(n===core) return;
+      var r=n.getBoundingClientRect(), d, nx=r.left-m.left, ny=r.top-m.top, nw=r.width, nh=r.height;
+      if(n.classList.contains('conclusion')){ d='M'+(cx+cw/2)+' '+(cy+ch)+' L'+(cx+cw/2)+' '+ny; }
+      else { var left=nx+nw<cx, x1=left?cx:cx+cw, y1=cy+ch/2, x2=left?nx+nw:nx, y2=ny+nh/2, mx=(x1+x2)/2;
+        d='M'+x1+' '+y1+' C'+mx+' '+y1+' '+mx+' '+y2+' '+x2+' '+y2; }
+      var p=document.createElementNS('http://www.w3.org/2000/svg','path');
+      p.setAttribute('d',d); svg.appendChild(p); paths.push({node:n,path:p});
+      if(n.classList.contains('active')) p.classList.add('on');
+    });
+  }
+  window.addEventListener('resize',drawLinks);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(drawLinks);
+  drawLinks();
+  var idle='상자를 눌러 보세요. 설명이 여기 나오고, 지문에서 해당 문장이 표시돼요.';
+  nodes.forEach(function(n,i){
+    n.addEventListener('click',function(){
+      var was=n.classList.contains('active');
+      nodes.forEach(function(x){x.classList.remove('active')});
+      paths.forEach(function(p){p.path.classList.remove('on')});
+      document.querySelectorAll('.sent').forEach(function(s){s.classList.remove('hl')});
+      if(was){note.textContent=idle;return;}
+      n.classList.add('active');
+      paths.forEach(function(p){if(p.node===n)p.path.classList.add('on')});
+      n.getAttribute('data-s').split(',').forEach(function(id){var s=document.querySelector('.sent[data-s="'+id+'"]'); if(s) s.classList.add('hl');});
+      note.innerHTML=noteOf[i];
+    });
+  });
+
+  var Q=DATA.quiz, qs=$('qs'), scoreEl=$('score'), answered=0, correct=0;
+  function updateScore(){scoreEl.innerHTML='<b>'+correct+'</b> / '+Q.length;}
+  function render(){
+    qs.innerHTML=''; answered=0; correct=0; updateScore();
+    Q.forEach(function(q,i){
+      var box=document.createElement('div'); box.className='q';
+      var h='<div class="num">문항 '+(i+1)+'<span class="type'+(q.type.indexOf('변형')>-1?' var':'')+'">'+q.type+'</span></div><p class="prompt">'+q.p+'</p>';
+      if(q.q) h+='<p class="quote">'+q.q+'</p>';
+      h+='<div class="opts" role="group" aria-label="문항 '+(i+1)+' 선택지">';
+      q.o.forEach(function(t,j){ var n=NUMS[j]; var same=(t===n);
+        h+='<button class="opt'+(q.en?' en-o':'')+'" id="q'+i+'o'+j+'" data-j="'+j+'"><span class="n">'+n+'</span>'+(same?'':'<span>'+t+'</span>')+'</button>'; });
+      h+='</div>';
+      if(q.h) h+='<button class="hint" id="q'+i+'h">힌트 보기</button>';
+      box.innerHTML=h; qs.appendChild(box);
+      if(q.h){ var hb=box.querySelector('.hint'); hb.addEventListener('click',function(){var p=document.createElement('p');p.className='hint-text';p.innerHTML='힌트: '+q.h;hb.replaceWith(p);}); }
+      var opts=[].slice.call(box.querySelectorAll('.opt'));
+      opts.forEach(function(b){
+        b.addEventListener('click',function(){
+          var j=+b.getAttribute('data-j'), ok=j===q.a;
+          opts.forEach(function(x){x.disabled=true});
+          opts[q.a].classList.add('right'); if(!ok) b.classList.add('wrong');
+          var hh=box.querySelector('.hint'); if(hh) hh.remove();
+          var fb=document.createElement('div'); fb.className='fb';
+          fb.innerHTML=(ok?'<b class="ok">정답이에요!</b> ':'<b class="no">아쉬워요. 정답은 '+NUMS[q.a]+'</b> ')+q.e;
+          box.appendChild(fb); answered++; if(ok) correct++; updateScore();
+          if(answered===Q.length) finish();
+        });
+      });
+    });
+  }
+  function finish(){
+    var d=document.createElement('div'); d.className='done';
+    var r=correct/Q.length;
+    var msg=r===1?'모두 맞혔어요. 이 지문은 완벽하게 이해했어요!':r>=0.7?'잘했어요. 틀린 문항의 해설을 한 번 더 읽어 보세요.':'마인드맵으로 글 구조를 다시 보고 한 번 더 풀어 봐요.';
+    d.innerHTML='<span>'+Q.length+'문항 중 '+correct+'문항 정답 · '+msg+'<br><a href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener">코코스학원 블로그에서 다른 지문도 공부해 보세요 →</a></span><button class="btn" id="retry">다시 풀기</button>';
+    qs.appendChild(d);
+    $('retry').addEventListener('click',function(){render();$('quiz').scrollIntoView({behavior:'smooth'});});
+  }
+  render();
+})();
+(function(){
+  var O=DATA.order, S=DATA.sentences, box=document.getElementById('ord');
+  if(!O||!O.length||!box) return;
+  var oi=0, mode='chunk', solved={}, cur=null;
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function tokens(it){ return mode==='chunk'?it.c.slice():it.c.join(' ').split(/\s+/); }
+  function lc(t,it){ if(it.keep||/^I\b/.test(t)) return t; return t.charAt(0).toLowerCase()+t.slice(1); }
+  function setup(){
+    var it=O[oi], tk=tokens(it);
+    var ids=tk.map(function(_,i){return i}), bank=ids;
+    if(ids.length>1){ var n=0; do{ bank=shuffle(ids); n++; }while(bank.join()===ids.join()&&n<20); }
+    cur={it:it, tk:tk, slots:bank, bank:bank.slice(), tray:[], bad:{}, tries:0, done:false, shown:false};
+    draw();
+  }
+  var END=/[.?!]+[\u201D\u2019"')]*$/;
+  function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
+  function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
+  function draw(){
+    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
+    var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
+    h+='<div class="dots">'+dots+'</div>';
+    h+='<p class="ord-ko"><small>지문 '+it.s+'번 문장</small>'+s.ko+'</p>';
+    h+='<div class="tray'+(cur.done?(cur.shown?' shown':' ok'):'')+'" id="ord-tray" aria-label="내가 만든 문장">'+(cur.tray.length?cur.tray.map(function(i,p){return '<button type="button" class="tok'+(cur.bad[p]?' bad':'')+'" data-t="'+i+'"'+(cur.done?' disabled':' aria-label="'+esc(label(i))+' 빼기"')+'>'+esc(label(i))+'</button>'}).join(''):'<span class="tray-empty">아래 어구를 순서대로 눌러 보세요.</span>')+(cur.tray.length&&tail()&&cur.tk.length>1?'<span class="tray-end" aria-hidden="true">'+esc(tail())+'</span>':'')+'</div>';
+    h+=cur.done?'':'<div class="bank" id="ord-bank">'+cur.slots.map(function(i){var used=cur.bank.indexOf(i)<0;return '<button type="button" class="tok'+(used?' used':'')+'" data-b="'+i+'"'+(used?' disabled aria-hidden="true" tabindex="-1"':'')+'>'+esc(label(i))+'</button>'}).join('')+'</div>';
+    var msg='';
+    if(cur.done) msg=cur.shown?'<b class="no">정답을 확인했어요.</b> 다음에 다시 도전해 보세요.':'<b class="ok">정답!</b> '+(cur.tries?'고쳐서 완성했어요.':'한 번에 맞혔어요.');
+    else if(cur.tries&&Object.keys(cur.bad).length) msg='<b class="no">아쉬워요.</b> 빨간 어구부터 순서가 달라요. 길게 눌러 끌어서 옮기거나, 눌러서 빼고 다시 배열해 보세요.';
+    h+='<p class="ord-msg" aria-live="polite">'+msg+'</p>';
+    if(cur.done) h+='<p class="ord-full">'+s.en+'</p>';
+    h+='<div class="ord-acts"><div class="l"><button type="button" class="btn" id="ord-prev"'+(oi===0?' disabled':'')+'>← 이전</button><button type="button" class="btn" id="ord-reset">'+(cur.done?'다시 풀기':'처음부터')+'</button>'+(cur.done?'':'<button type="button" class="btn" id="ord-undo"'+(cur.tray.length?'':' disabled')+'>↩ 한 칸 되돌리기</button><button type="button" class="btn" id="ord-show">정답 보기</button>')+'</div><div class="r">'+(cur.done?'':'<button type="button" class="btn primary" id="ord-check"'+(cur.bank.length?' disabled':'')+'>정답 확인</button>')+(oi<total-1?'<button type="button" class="btn'+(cur.done?' primary':'')+'" id="ord-next">다음 문장 →</button>':'')+'</div></div>';
+    if(oi===total-1&&cur.done) h+='<div class="done"><span>'+total+'문장 중 '+Object.keys(solved).length+'문장 완성 · '+(Object.keys(solved).length===total?'모든 문장을 완성했어요!':'못 푼 문장은 위 번호를 눌러 다시 도전해 보세요.')+'</span></div>';
+    box.innerHTML=h;
+  }
+  box.addEventListener('click',function(e){
+    if(suppress){ suppress=false; return; }
+    var b=e.target.closest('button'); if(!b||b.disabled) return;
+    if(b.hasAttribute('data-b')){ var i=+b.getAttribute('data-b'); cur.bank.splice(cur.bank.indexOf(i),1); cur.tray.push(i); cur.bad={}; draw(); return; }
+    if(b.hasAttribute('data-t')){ var t=+b.getAttribute('data-t'); cur.tray.splice(cur.tray.indexOf(t),1); cur.bank.push(t); cur.bad={}; draw(); return; }
+    if(b.hasAttribute('data-go')){ oi=+b.getAttribute('data-go'); setup(); return; }
+    switch(b.id){
+      case 'om-chunk': if(mode!=='chunk'){mode='chunk';setup();} break;
+      case 'om-word': if(mode!=='word'){mode='word';setup();} break;
+      case 'ord-prev': if(oi>0){oi--;setup();} break;
+      case 'ord-next': if(oi<O.length-1){oi++;setup();} break;
+      case 'ord-reset': setup(); break;
+      case 'ord-undo': if(cur.tray.length){ cur.bank.push(cur.tray.pop()); cur.bad={}; draw(); } break;
+      case 'ord-show':
+        cur.tray=cur.tk.map(function(_,i){return i}); cur.bank=[]; cur.bad={}; cur.done=true; cur.shown=true; draw(); break;
+      case 'ord-check':
+        var bad={}, wrong=false;
+        cur.tray.forEach(function(i,p){ if(wrong||cur.tk[i]!==cur.tk[p]){ wrong=true; bad[p]=true; } });
+        if(wrong) cur.tries++;
+        if(!wrong){ cur.done=true; solved[oi]=true; }
+        cur.bad=bad; draw();
+        var f=document.getElementById(wrong?'ord-tray':'ord-next'); if(f&&!wrong) f.focus();
+        break;
+    }
+  });
+  var drag=null, suppress=false;
+  function trayToks(){ return [].slice.call(box.querySelectorAll('#ord-tray .tok')); }
+  function dStart(el,x,y,touch){
+    if(!cur||cur.done) return;
+    drag={el:el,x:x,y:y,on:false,touch:touch};
+    if(touch) drag.timer=setTimeout(dOn,350);
+  }
+  function dOn(){
+    if(!drag||drag.on) return;
+    var el=drag.el, r=el.getBoundingClientRect(), g=el.cloneNode(true);
+    g.className='tok ghost'; g.removeAttribute('data-t'); g.removeAttribute('aria-label'); g.setAttribute('aria-hidden','true');
+    g.style.width=r.width+'px'; document.body.appendChild(g);
+    drag.on=true; drag.g=g; drag.dx=drag.x-r.left; drag.dy=drag.y-r.top;
+    el.classList.add('lift'); el.parentNode.classList.add('sorting');
+    dMove(drag.x,drag.y);
+    if(drag.touch&&navigator.vibrate){ try{ navigator.vibrate(12); }catch(e){} }
+  }
+  function dMove(x,y){
+    drag.g.style.transform='translate('+(x-drag.dx)+'px,'+(y-drag.dy)+'px) scale(1.06)';
+    var el=drag.el, tray=el.parentNode, others=trayToks().filter(function(t){return t!==el}), before=null;
+    for(var i=0;i<others.length;i++){ var r=others[i].getBoundingClientRect();
+      if(y<r.top||(y<=r.bottom&&x<r.left+r.width/2)){ before=others[i]; break; } }
+    if(before){ if(el.nextSibling!==before) tray.insertBefore(el,before); }
+    else { var tl=tray.querySelector('.tray-end'); if(tl){ if(el.nextSibling!==tl) tray.insertBefore(el,tl); } else if(tray.lastElementChild!==el) tray.appendChild(el); }
+  }
+  function dEnd(){
+    if(!drag) return false;
+    var d=drag; drag=null; clearTimeout(d.timer);
+    if(!d.on) return false;
+    d.g.remove(); if(!d.touch){ suppress=true; setTimeout(function(){ suppress=false; },300); }
+    var order=trayToks().map(function(t){return +t.getAttribute('data-t')});
+    if(order.join()!==cur.tray.join()){ cur.tray=order; cur.bad={}; }
+    draw(); return true;
+  }
+  box.addEventListener('touchstart',function(e){
+    var t=e.target.closest('#ord-tray .tok'); if(!t||t.disabled||e.touches.length>1) return;
+    dStart(t,e.touches[0].clientX,e.touches[0].clientY,true);
+  },{passive:true});
+  box.addEventListener('touchmove',function(e){
+    if(!drag) return; var p=e.touches[0];
+    if(!drag.on){ if(Math.abs(p.clientX-drag.x)>8||Math.abs(p.clientY-drag.y)>8){ clearTimeout(drag.timer); drag=null; } return; }
+    e.preventDefault(); dMove(p.clientX,p.clientY);
+  },{passive:false});
+  box.addEventListener('touchend',function(e){ if(dEnd()&&e.cancelable) e.preventDefault(); });
+  box.addEventListener('touchcancel',function(){ dEnd(); });
+  box.addEventListener('contextmenu',function(e){ if(e.target.closest('#ord-tray .tok')) e.preventDefault(); });
+  box.addEventListener('mousedown',function(e){
+    if(e.button!==0) return; var t=e.target.closest('#ord-tray .tok'); if(!t||t.disabled) return;
+    dStart(t,e.clientX,e.clientY,false);
+  });
+  document.addEventListener('mousemove',function(e){
+    if(!drag||drag.touch) return;
+    if(!drag.on){ if(Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y)<6) return; dOn(); }
+    e.preventDefault(); dMove(e.clientX,e.clientY);
+  });
+  document.addEventListener('mouseup',function(){ if(drag&&!drag.touch) dEnd(); });
+  setup();
+})();
+</script>
+
+
+<script src="../../../assets/print-sheet.js"></script>
+<!-- naver-analytics -->
+<script src="https://wcs.pstatic.net/wcslog.js"></script>
+<script>if(!wcs_add) var wcs_add = {};wcs_add["wa"] = "1c961abfe2e9f50";if(window.wcs) {wcs_do();}</script>
+<!-- /naver-analytics -->
+</body></html>
