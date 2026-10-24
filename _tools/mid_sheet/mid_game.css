@@ -1,0 +1,37 @@
+/* ==== MID THEME:START (중등 단어게임) ==== */
+#range-sec h2::before{content:"📚";background:var(--mint-soft)}
+#hub-sec h2::before{content:"🎮";background:var(--pink-soft)}
+.stage-top h2::before{display:none}
+.links a{font-weight:700}
+.range,.stage,details.words{border:2px solid var(--line);border-radius:22px;box-shadow:0 5px 0 var(--line)}
+.rbtn{border-width:1.5px;font-weight:700}
+.rchip{border-width:2px;border-radius:14px;box-shadow:0 3px 0 var(--line)}
+.rchip.on{box-shadow:0 3px 0 color-mix(in srgb,var(--accent) 40%,transparent)}
+.gcard{border:2px solid var(--line);border-radius:20px;box-shadow:0 5px 0 var(--line)}
+.gcard:hover{box-shadow:0 7px 0 var(--line)}
+.gcard.study{border:2px solid var(--accent);box-shadow:0 5px 0 color-mix(in srgb,var(--accent) 35%,transparent)}
+.gicon{border-radius:16px}
+.hub .gcard:nth-of-type(3n+2):not(.study):not(.rv) .gicon{background:var(--pink-soft);color:var(--pink-ink)}
+.hub .gcard:nth-of-type(3n):not(.study):not(.rv) .gicon{background:var(--mint-soft);color:var(--mint-ink)}
+.hub .gcard:nth-of-type(3n+1):not(.study):not(.rv) .gicon{background:var(--lilac-soft);color:var(--lilac-ink)}
+.gname{font-family:var(--round);font-weight:400;font-size:19px}
+.step{font-family:var(--sans)}
+.step-head{font-family:var(--round);font-weight:400;font-size:18px}
+.hub-note{border-radius:14px}
+.stage-top{background:color-mix(in srgb,var(--sun-soft) 70%,var(--card));border-bottom:2px solid var(--line)}
+.stage-top h2{font-family:var(--round)}
+.back{border-width:1.5px;font-weight:700}
+.qword,.drop,.slot,.tile,.mcard.en .face,.vrow .w{font-weight:800}
+.qmean{font-family:var(--round);font-weight:400}
+.mcard{border-width:2px;border-radius:16px;box-shadow:0 4px 0 color-mix(in srgb,var(--accent) 35%,transparent)}
+.mcard.up,.mcard.ok,.mcard.no{box-shadow:none}
+.arena{border:2px solid var(--line);border-radius:18px}
+.tile{border-width:2px;border-radius:14px;box-shadow:0 3px 0 var(--line)}
+.sent{border-radius:14px;font-weight:500}
+.big{font-family:var(--round);font-weight:400}
+.stamp{border-radius:14px}
+.wlist li{border-radius:999px}
+.vgroup h3{font-weight:400}
+.vlinks a{border-width:1.5px;font-weight:700}
+.guide{border:2px solid var(--line);border-radius:16px}
+/* ==== MID THEME:END ==== */

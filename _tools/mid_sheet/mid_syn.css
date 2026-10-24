@@ -1,0 +1,30 @@
+/* ==== MID THEME:START (중등 동의어·반의어) ==== */
+#orig h2::before{content:"📖";background:var(--accent-soft)}
+#vocab h2::before{content:"🔤";background:var(--mint-soft)}
+#wordquiz h2::before{content:"🎯";background:var(--pink-soft)}
+#pick h2::before{content:"🔀";background:var(--lilac-soft)}
+#infer h2::before{content:"🕵️";background:var(--sun-soft)}
+.ptabs{gap:8px}
+.ptabs button{border:2px solid var(--line);border-radius:999px;padding:7px 16px;box-shadow:0 3px 0 var(--line)}
+.ptabs button[aria-pressed="true"]{box-shadow:0 3px 0 color-mix(in srgb,var(--accent) 45%,transparent)}
+.ptitle b{font-family:var(--round);font-weight:400;font-size:20px}
+.ptitle i{font-style:normal;font-weight:700;color:var(--accent-ink)}
+.ptext,.vt-wrap,.wq,.oinfo,.ex{border:2px solid var(--line);border-radius:22px;box-shadow:0 5px 0 var(--line)}
+.oinfo,.ex{border-radius:16px;box-shadow:0 3px 0 var(--line);background:var(--card)}
+.otr{border-radius:18px}
+.otr-head h3{font-family:var(--round);font-weight:400}
+.ptext{font-weight:500}
+.vt th{font-weight:700}
+.vt .w,.vt .en{font-weight:800}
+.wq-q{font-family:var(--round);font-weight:400}
+.wq-q.en,.wq-big{font-family:var(--serif-en);font-weight:800}
+.wq-ctx{border-radius:14px;font-weight:500}
+.wq-opts .opt.en-o,.opt.en-o{font-weight:700}
+.seg{border-radius:999px;border-width:1.5px}
+.pick{border-radius:999px;border-width:1.5px}
+.pick button{font-weight:700}
+.sets button{border-width:1.5px}
+.opts5 button{border-width:2px;border-radius:14px;box-shadow:0 3px 0 var(--line);font-weight:700}
+.keys span{display:inline-flex;align-items:center}
+.om sup{font-weight:700}
+/* ==== MID THEME:END ==== */
