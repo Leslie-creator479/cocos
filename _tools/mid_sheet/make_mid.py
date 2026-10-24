@@ -41,6 +41,10 @@ a = "'<span class=\"type'+(q.type.indexOf('변형')>-1?' var':'')+'\">'"
 b = "'<span class=\"type'+(q.type.indexOf('변형')>-1?' var':'')+'\" data-k=\"'+q.type.split(' ')[0]+'\">'"
 if b not in t:
     assert t.count(a) == 1, 'type span'; t = t.replace(a, b)
+# 문장 배열: 따옴표로 시작하는 문장도 첫 글자를 소문자로 (첫 어구 힌트 막기, 2026-10-24)
+LC_OLD = "function lc(t,it){ if(it.keep||/^I\\b/.test(t)) return t; return t.charAt(0).toLowerCase()+t.slice(1); }"
+LC_NEW = "function lc(t,it){ if(it.keep) return t; var m=t.match(/^([\\u201c\\u2018\"'(]*)(.)/); if(!m||/^I\\b/.test(t.slice(m[1].length))) return t; return m[1]+m[2].toLowerCase()+t.slice(m[0].length); }"
+t = t.replace(LC_OLD, LC_NEW)
 t, n = re.subn(r'(/\* ==== DATA:START ==== \*/\n)[\s\S]*?(\n/\* ==== DATA:END ==== \*/)', lambda m: m.group(1) + data + m.group(2), t)
 assert n == 1
 t = re.sub(r'(/\* ==== AUDIO:START ==== \*/\n)[\s\S]*?(\n/\* ==== AUDIO:END ==== \*/)', lambda m: m.group(1) + 'var AUDIO = {};' + m.group(2), t)
