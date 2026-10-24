@@ -164,6 +164,8 @@ def build(words_f, meta_f, out):
     tmp = out + '.tmp.html'
     open(tmp, 'w', encoding='utf8').write(s)
     os.system(f'python3 {ROOT}/_tools/wrap.py {tmp} {out} >/dev/null'); os.remove(tmp)
+    if M.get('mid', bool(re.search('중등|중학', M['title']))):  # 중등·중학 단어장은 중등 테마(원장님 결정 2026-10-25, meta.json "mid": false로 끌 수 있음)
+        os.system(f'python3 {ROOT}/_tools/mid_sheet/theme_page.py game {out} >/dev/null')
     print(out, '·', rng, '· 단어', len(GW), '· 묶음', [x['label'] for x in groups])
 
 

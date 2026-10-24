@@ -17,6 +17,6 @@ for f in files:
     if 'family=Jua' not in t:
         i = t.index('<style>'); t = t[:i] + LINK + '\n' + t[i:]
     t = re.sub(r'/\* ==== MID THEME:START[\s\S]*?MID THEME:END ==== \*/\n?', '', t)
-    i = t.index('</style>'); t = t[:i] + theme + t[i:]
+    i = t.rindex('</style>'); t = t[:i] + theme + t[i:]   # 맨 뒤 스타일 끝에(wrap.py로 감싼 페이지는 앞에 겉틀 스타일이 하나 더 있다)
     open(f, 'w', encoding='utf8').write(t)
     print('중등 테마', kind, f)
