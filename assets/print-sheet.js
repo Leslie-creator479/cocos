@@ -39,7 +39,7 @@
   function nums(t) {
     return String(t == null ? '' : t)
       .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\)|[\u24d0-\u24e9])[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>')
-      .replace(/_{3,}/g, function (m) { return '<span class="cp-uline" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u24ff\u3260-\u327f])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
+      .replace(/_{3,}/g, function (m) { return '<span class="cp-uline" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;').replace(/([\u2474-\u24ff\u3260-\u327f])[ \u00a0]?/g, function (m, c, off, s) { var nx = s.charAt(off + m.length); if (s.substr(off + m.length, 7) === '</span>') return m; return '<span class="cp-num">' + c + '</span>' + (/[A-Za-z\u201c"'(<]/.test(nx) ? '&nbsp;' : (m.length > 1 ? ' ' : '')); });
   }
   function ans(q) {
     if (typeof q.a === 'number') return NUM[q.a] || String(q.a + 1);
@@ -72,6 +72,7 @@
     'u.cocos-blank{display:inline-block;min-width:6.2em;text-align:center;text-decoration:none;border-bottom:1.5px solid currentColor;line-height:1.25;margin:0 .15em;padding:0 .2em}',
     /* 빈칸 ______: 밑줄 문자 대신 이어진 선으로 (선생님 요청 2026-10-15) */
     '.cocos-line{display:inline-block;border-bottom:1.5px solid currentColor;height:1em;vertical-align:-.12em;margin:0 .1em}',
+    'u.cocos-neg,#cocos-print u.cocos-neg{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}',
     '#cocos-print .cp-uline{display:inline-block;border-bottom:1.2px solid #1B2033;height:1em;vertical-align:-.12em;margin:0 .1em}',
     '#cocos-print .cp-blank{display:inline-block;min-width:6.2em;text-align:center;border-bottom:1.2px solid #1B2033;line-height:1.25;margin:0 .15em}',
     '@media print{',
@@ -273,7 +274,7 @@
     if (Q.length) {
       h.push(sec(++n, '확인 문제', Q.length + '문항 · 정답은 맨 뒤에', 'newpage'));
       Q.forEach(function (q, k) {
-        var s = '<div class="cp-q"><p class="cp-qh">' + (k + 1) + '. ' + (q.type ? '<span class="cp-t">' + esc(q.type) + '</span>' : '') + (q.p || '') + '</p>';
+        var s = '<div class="cp-q"><p class="cp-qh">' + (k + 1) + '. ' + (q.type ? '<span class="cp-t">' + esc(q.type) + '</span>' : '') + neg(q.p || '') + '</p>';
         if (q.q) s += '<div class="cp-qq">' + nums(q.q) + '</div>';
         if (q.o && q.o.length) {
           var short = q.o.every(function (o) { return String(o).replace(/<[^>]+>/g, '').length <= 26; });
@@ -350,7 +351,7 @@
   }
 
   /* 화면의 요약문 빈칸 표시: 문제 화면이 바뀔 때마다 다시 그려지므로 지켜보다가 표시를 붙인다 */
-  var BL = /^[\s\u2003\u00a0]*(?:\(?([A-E])\)?|([\u24d0-\u24e9]))[\s\u2003\u00a0]*$/;  /* (A)(B) \ub610\ub294 \uc911\ub4f1 \u24d0\u24d1 (2026-10-24) */
+  var BL = /^[\s\u2003\u00a0]*(?:\(?([A-E])\)?|([\u24d0-\u24e9]))[\s\u2003\u00a0]*$/;  /* (A)(B) 또는 중등 ⓐⓑ (2026-10-24) */
   function tagBlanks() {
     var us = document.querySelectorAll('u:not(.cocos-blank)');
     for (var i = 0; i < us.length; i++) {
@@ -384,7 +385,7 @@
     });
   }
   /* 화면 지문 속 ①~⑤ 바로 뒤에 영어 낱말이 붙어 있으면 한 칸(줄바꿈 없는 칸) 띄운다 (선생님 요청 2026-10-15) */
-  var CN = /[\u2460-\u24ff\u3260-\u327f]/, CN_IN = /([\u2460-\u24ff\u3260-\u327f])(?=[A-Za-z0-9\uac00-\ud7a3\u201c"'(])/g, CN_END = /[\u2460-\u24ff\u3260-\u327f]$/;  /* ①⑴ⓐⒶ㉠ 모두, 뒤에 한글이 붙어도 (2026-10-24) */
+  var CN = /[\u2460-\u24ff\u3260-\u327f]/, CN_IN = /([\u2460-\u24ff\u3260-\u327f])(?=[A-Za-z\u201c"'(])/g, CN_END = /[\u2460-\u24ff\u3260-\u327f]$/;  /* ①⑴ⓐⒶ㉠ 모두 (2026-10-24). 한글 조사 앞(ⓔ가)은 띄우지 않는다 */
   function tagNums() {
     if (!document.body || !document.createTreeWalker) return;
     var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
@@ -401,10 +402,23 @@
       var v = t.nodeValue, nv = v.replace(CN_IN, '$1\u00a0');
       if (CN_END.test(nv) && t.nextSibling) {
         var nx = t.nextSibling, tx = nx.nodeType === 3 ? nx.nodeValue : (nx.textContent || '');
-        if (/^[A-Za-z0-9\uac00-\ud7a3\u201c"'(]/.test(tx)) nv += '\u00a0';
+        if (/^[A-Za-z\u201c"'(]/.test(tx)) nv += '\u00a0';
       }
       if (nv !== v) t.nodeValue = nv;
     });
+  }
+  /* 발문의 '않은·없는·틀린·어색한·아닌·다른'에 밑줄: 시험지처럼 강조 (선생님 요청 2026-10-24)
+     답을 고르는 말(것·곳·질문 등) 바로 앞에 올 때만 긋는다. '의도하지 않게 다른 사람' 같은 곳은 긋지 않는다. */
+  var NEG = /(않은|않는|없는|틀린|어색한|아닌|다른)(?=\s*(것|곳|질문|문장|단어|낱말|표현|부분))/g;
+  function neg(s) { return String(s == null ? '' : s).replace(NEG, '<u class="cocos-neg">$1</u>'); }
+  function tagNeg() {
+    var ps = document.querySelectorAll('.q .prompt:not([data-neg])');
+    for (var i = 0; i < ps.length; i++) {
+      var el = ps[i]; el.setAttribute('data-neg', '1');
+      if (el.querySelector('u.cocos-neg')) continue;
+      var h = el.innerHTML, nh = neg(h);
+      if (nh !== h) el.innerHTML = nh;
+    }
   }
   /* 앱 안 브라우저(카카오톡·네이버 등)에서 바로 바깥 브라우저로 여는 버튼 (2026-10-17) */
   function extUrl() {
@@ -420,12 +434,12 @@
       (x ? '<br><a class="cocos-ext" href="' + x + '">' + name + ' ↗</a>' : '');
   }
   function start() {
-    tagBlanks(); tagLines(); tagNums();
+    tagBlanks(); tagLines(); tagNums(); tagNeg();
     try {
       var busy = false;
       new MutationObserver(function () {
         if (busy) return; busy = true;
-        (window.requestAnimationFrame || setTimeout)(function () { busy = false; tagBlanks(); tagLines(); tagNums(); });
+        (window.requestAnimationFrame || setTimeout)(function () { busy = false; tagBlanks(); tagLines(); tagNums(); tagNeg(); });
       }).observe(document.body, { childList: true, subtree: true });
     } catch (e) {}
     var st = document.createElement('style');
