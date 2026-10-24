@@ -38,7 +38,7 @@
   /* 지문·해설 속 ①~⑳: 글자 크기에 맞게 줄이고 뒤에 한 칸(줄바꿈 없는 칸) */
   function nums(t) {
     return String(t == null ? '' : t)
-      .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\))[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>')
+      .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\)|[\u24d0-\u24e9])[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>')
       .replace(/_{3,}/g, function (m) { return '<span class="cp-uline" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
   }
   function ans(q) {
@@ -350,12 +350,12 @@
   }
 
   /* 화면의 요약문 빈칸 표시: 문제 화면이 바뀔 때마다 다시 그려지므로 지켜보다가 표시를 붙인다 */
-  var BL = /^[\s\u2003\u00a0]*\(?([A-E])\)?[\s\u2003\u00a0]*$/;
+  var BL = /^[\s\u2003\u00a0]*(?:\(?([A-E])\)?|([\u24d0-\u24e9]))[\s\u2003\u00a0]*$/;  /* (A)(B) \ub610\ub294 \uc911\ub4f1 \u24d0\u24d1 (2026-10-24) */
   function tagBlanks() {
     var us = document.querySelectorAll('u:not(.cocos-blank)');
     for (var i = 0; i < us.length; i++) {
       var u = us[i], m = BL.exec(u.textContent);
-      if (m && !u.closest('#cocos-print')) { u.className += ' cocos-blank'; u.textContent = '(' + m[1] + ')'; }
+      if (m && !u.closest('#cocos-print')) { u.className += ' cocos-blank'; u.textContent = m[1] ? '(' + m[1] + ')' : m[2]; }
     }
   }
   var US = /_{3,}/;
