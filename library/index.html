@@ -62,6 +62,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .tabs{display:flex;flex-wrap:wrap;gap:6px}
 .tabs button{font:inherit;font-size:14px;color:var(--on-night-muted);background:transparent;border:1px solid var(--night-line);padding:7px 14px;cursor:pointer}
 .tabs button[aria-pressed="true"]{color:var(--night);background:var(--gold);border-color:var(--gold)}
+/* 고등 | 중등 | 단어장 큰 구분 + 작은 분류 (2026-10-25) */
+.tabs.lv button{font-size:16px;font-weight:700;padding:9px 24px}
+.tabs.sub{margin-top:10px;flex-basis:100%;width:100%}
+.tabs.sub:empty{display:none}
+.tabs.sub button{font-size:13.5px;padding:5px 14px;border-radius:999px}
+.tabs.sub button[aria-pressed="true"]{color:var(--gold);background:transparent;border-color:var(--gold)}
 .search{flex:1 1 220px;max-width:320px;font:inherit;font-size:15px;color:var(--on-night);background:transparent;border:0;border-bottom:1px solid var(--night-line);padding:8px 2px}
 .search::placeholder{color:#66738A}
 
@@ -112,14 +118,12 @@ footer a{color:var(--on-night)}
       <div><b>40</b><span>모의고사 회차</span></div>
     </div>
     <div class="tools">
-      <div class="tabs" id="cats" role="group" aria-label="자료 분류">
-        <button type="button" data-c="mock" aria-pressed="true">모의고사</button>
-        <button type="button" data-c="suneung" aria-pressed="false">수능</button>
-        <button type="button" data-c="textbook" aria-pressed="false">교과서</button>
-        <button type="button" data-c="school" aria-pressed="false">학교별 시험 범위</button>
-        <button type="button" data-c="mid" aria-pressed="false">중등</button>
-        <button type="button" data-c="voca" aria-pressed="false">단어장</button>
+      <div class="tabs lv" id="lv" role="group" aria-label="자료 구분">
+        <button type="button" data-l="high" aria-pressed="true">고등</button>
+        <button type="button" data-l="mid" aria-pressed="false">중등</button>
+        <button type="button" data-l="voca" aria-pressed="false">단어장</button>
       </div>
+      <div class="tabs sub" id="cats" role="group" aria-label="자료 분류"></div>
       <input class="search" id="q" type="search" placeholder="찾기 (예: 2024 6월, 고2, 동광고, 능률, 중2)" aria-label="자료 찾기">
     </div>
   </div>
@@ -165,13 +169,19 @@ var D = {"study": [{"t": "2026년 3월 고1", "y": "2026", "g": "1", "n": 22, "h
             voca:'🔒 학원에서 쓰는 단어장이에요. 학원생 전용이라 처음 한 번 비밀번호를 넣으면 이 기기에서는 계속 열려요. 시험 범위(Day)를 골라 단어를 익히고 게임으로 확인하세요.',
             mid:'🔒 중등 교과서 자료는 학원생 전용이에요. 처음 한 번 비밀번호를 넣으면 이 기기에서는 계속 열려요. 비밀번호는 담당 선생님께 받으세요.',
             school:'목차는 누구나 볼 수 있어요. 목차 안의 교과서·부교재 지문과 학교별 동의어·반의어는 학원생 비밀번호로 열려요. 학교별 자료는 준비된 범위만 들어 있어요.'};
+  // 큰 구분: 고등(모의고사·수능·교과서·학교별 시험 범위) / 중등(교과서) / 단어장 (원장님 결정 2026-10-25). 주소 #mid-study 같은 옛 링크는 그대로 열린다
+  var LV={high:['mock','suneung','textbook','school'],mid:['mid'],voca:['voca']}, SUB={mock:'모의고사',suneung:'수능',textbook:'교과서',school:'학교별 시험 범위',mid:'교과서'};
+  function lvOf(c){return c==='mid'?'mid':c==='voca'?'voca':'high';}
   var cat='mock', kind='study';
   try{var h=location.hash.slice(1), old={study:['mock','study'],syn:['mock','syn'],game:['mock','game'],textbook:['textbook','study'],school:['school','study']};
     if(old[h]){cat=old[h][0];kind=old[h][1];} else {var m=h.split('-'); if(['mock','suneung','textbook','school','mid','voca'].indexOf(m[0])>-1){cat=m[0]; if(KIND[m[1]]) kind=m[1];}}}catch(e){}
   function unit(c,k){ var x=catOf(c); return x==='textbook'||x==='mid'?'개 본문':'개 지문'; }
   function sync(){try{history.replaceState(null,'','#'+cat+'-'+kind)}catch(e){}}
   function render(){
-    document.querySelectorAll('#cats button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.c===cat)});
+    var lv=lvOf(cat);
+    document.querySelectorAll('#lv button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===lv)});
+    $('cats').innerHTML=lv==='voca'?'':LV[lv].map(function(c){return '<button type="button" data-c="'+c+'" aria-pressed="'+(c===cat)+'">'+SUB[c]+'</button>'}).join('');
+    document.querySelectorAll('#cats button').forEach(function(b){b.addEventListener('click',function(){cat=b.dataset.c;kind='study';sync();render()})});
     var inCat=ALL.filter(function(x){return x.cat===cat}), counts={study:0,syn:0,game:0};
     inCat.forEach(function(x){counts[x.kind]++});
     var KS=cat==='voca'?['game']:['study','syn','game'];
@@ -189,7 +199,8 @@ var D = {"study": [{"t": "2026년 3월 고1", "y": "2026", "g": "1", "n": 22, "h
     var tip=cat==='voca'?'단어장 한 권이 한 페이지에 들어 있어요. 페이지 안에서 시험 범위(Day)를 고르면 돼요.':kind==='study'?'각 회차를 누르면 목차가 열리고, 목차에서 지문을 고르면 그 지문의 온라인 학습지가 열려요.':'회차(범위) 전체가 한 페이지에 들어 있어요.';
     $('list').innerHTML=(html||'<p class="empty">찾는 자료가 없어요. 다른 말로 찾아보세요.</p>')+'<p class="note">'+tip+'</p>';
   }
-  document.querySelectorAll('#cats button').forEach(function(b){b.addEventListener('click',function(){cat=b.dataset.c;kind=cat==='voca'?'game':'study';sync();render()})});
+  var LAST={high:'mock',mid:'mid',voca:'voca'}; LAST[lvOf(cat)]=cat;
+  document.querySelectorAll('#lv button').forEach(function(b){b.addEventListener('click',function(){var l=b.dataset.l; LAST[lvOf(cat)]=cat; cat=LAST[l]; kind=l==='voca'?'game':'study';sync();render()})});
   $('q').addEventListener('input',render);
   render();
 })();
