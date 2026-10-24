@@ -10,7 +10,7 @@ MODEL_DIR = os.environ.get('KOKORO_DIR', '/home/claude/.kokoro')
 BASE = 'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/'
 FILES = {'kokoro-v1.0.int8.onnx': 'model', 'voices-v1.0.bin': 'voices'}
 VOICE, SPEED = 'af_heart', 0.9
-SAYFIX = {'NGO': 'N G O', 'NGOs': "N G O's", 'Jeju-do': 'Jeju doh'}  # 글자대로 읽으면 틀리는 단어
+SAYFIX = {'NGO': 'N G O', 'NGOs': "N G O's", 'Jeju-do': 'Jeju doh', 'LOL': 'L O L', 'T. rex': 'T rex', 'fallas': 'fah-yahs', 'Fallas': 'Fah-yahs'}  # 글자대로 읽으면 틀리는 단어
 
 def ensure_models():
     os.makedirs(MODEL_DIR, exist_ok=True)
