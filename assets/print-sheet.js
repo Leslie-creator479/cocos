@@ -39,7 +39,7 @@
   function nums(t) {
     return String(t == null ? '' : t)
       .replace(/<u>[\s\u2003\u00a0]*(\([A-E]\)|[\u24d0-\u24e9])[\s\u2003\u00a0]*<\/u>/g, '<span class="cp-blank">$1</span>')
-      .replace(/_{3,}/g, function (m) { return '<span class="cp-uline" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u2473])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
+      .replace(/_{3,}/g, function (m) { return '<span class="cp-uline" style="width:' + Math.max(5, Math.round(m.length * 0.55)) + 'em"></span>'; }).replace(/([\u2460-\u24ff\u3260-\u327f])[ \u00a0]?/g, '<span class="cp-num">$1</span>&nbsp;');
   }
   function ans(q) {
     if (typeof q.a === 'number') return NUM[q.a] || String(q.a + 1);
@@ -384,7 +384,7 @@
     });
   }
   /* 화면 지문 속 ①~⑤ 바로 뒤에 영어 낱말이 붙어 있으면 한 칸(줄바꿈 없는 칸) 띄운다 (선생님 요청 2026-10-15) */
-  var CN = /[\u2460-\u2473]/, CN_IN = /([\u2460-\u2473])(?=[A-Za-z\u201c"'(])/g, CN_END = /[\u2460-\u2473]$/;
+  var CN = /[\u2460-\u24ff\u3260-\u327f]/, CN_IN = /([\u2460-\u24ff\u3260-\u327f])(?=[A-Za-z0-9\uac00-\ud7a3\u201c"'(])/g, CN_END = /[\u2460-\u24ff\u3260-\u327f]$/;  /* ①⑴ⓐⒶ㉠ 모두, 뒤에 한글이 붙어도 (2026-10-24) */
   function tagNums() {
     if (!document.body || !document.createTreeWalker) return;
     var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
@@ -401,7 +401,7 @@
       var v = t.nodeValue, nv = v.replace(CN_IN, '$1\u00a0');
       if (CN_END.test(nv) && t.nextSibling) {
         var nx = t.nextSibling, tx = nx.nodeType === 3 ? nx.nodeValue : (nx.textContent || '');
-        if (/^[A-Za-z\u201c"'(]/.test(tx)) nv += '\u00a0';
+        if (/^[A-Za-z0-9\uac00-\ud7a3\u201c"'(]/.test(tx)) nv += '\u00a0';
       }
       if (nv !== v) t.nodeValue = nv;
     });
