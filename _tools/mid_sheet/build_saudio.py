@@ -27,7 +27,7 @@ def year(m):
     return w
 TEXTFIX = [(r'\bWorld War II\b', 'World War Two'), (r'\bWorld War I\b', 'World War One'),
            (r'\bK-A-T-Y\b', 'K, A, T, Y'), (r'\bEI\b', 'E I'), (r'\bUMD\b', 'U M D'),
-           (r'\bNGOs\b', "N G O's"), (r'\bNGO\b', 'N G O'), (r'\bJeju-do\b', 'Jeju doh'), (r'\bOlle\b', 'Oh-lay'), (r'\bHalla\b', 'Hahla'), (r'\bLOL\b', 'L O L'), (r'\bMt\. ', 'Mount '), (r'\bT\. rex\b', 'T rex'), (r'\bMr\. ', 'Mister '), (r'\bDr\. ', 'Doctor '), (r'\bMrs\. ', 'Missus '),
+           (r'\bNGOs\b', "N G O's"), (r'\bNGO\b', 'N G O'), (r'\bJeju-do\b', 'Jeju doh'), (r'\bOlle\b', 'Oh-lay'), (r'\bHalla\b', 'Hahla'), (r'\s*\(\u263a\)', ''), (r'\s*\u263a', ''), (r'\bLOL\b', 'L O L'), (r'\bMt\. ', 'Mount '), (r'\bT\. rex\b', 'T rex'), (r'\bMr\. ', 'Mister '), (r'\bDr\. ', 'Doctor '), (r'\bMrs\. ', 'Missus '),
            (r'(?<=\d),(?=\d{3}\b)', ''), (r'\b(1[1-9]\d\d)(s?)\b', year)]
 BLOCK = '/* ==== SAUDIO:START ==== */\n{}\n/* ==== SAUDIO:END ==== */'
 
