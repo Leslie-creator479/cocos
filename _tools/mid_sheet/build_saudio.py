@@ -12,7 +12,7 @@ SPEED = 1.0
 PRON = {'Goethe': 'ɡˈɜːɹtə', "Goethe's": 'ɡˈɜːɹtəz', 'Guernica': 'ɡwˈɛɹnɪkə', 'Juvisy': 'ʒˌuːviːzˈiː',
         'Montigny-le-Roi': 'mˌɔntiːnjˈiː ləɹwˈɑː', 'Verrier': 'vˌɛɹiˈeɪ', 'Urbain': 'ʊɹbˈæn',
         'Flammarion': 'flˌæməɹiˈɔːn', 'Concord': 'kˈɑːŋkɚd', 'Caltech': 'kˈælˌtɛk', 'Jacques': 'ʒˈɑːk',
-        'Göttingen': 'ɡˈɜːtɪŋən', 'Seok': 'sˈʌk', 'Hopil': 'hˈoʊpˌɪl', 'Fallas': 'fˈɑːjəs', 'fallas': 'fˈɑːjəs', 'Kaos': 'kˈɑːoʊs', 'Ateneo': 'ˌɑːtənˈeɪoʊ', 'Killorglin': 'kɪlˈɔːɹɡlɪn', 'caprese': 'kəpɹˈeɪzeɪ', 'Caprese': 'kəpɹˈeɪzeɪ', 'acai': 'ˌɑːsɑːˈiː', 'Acai': 'ˌɑːsɑːˈiː', 'Chefchaouen': 'ʃˌɛfʃɑːwˈɛn', 'Diaz': 'dˈiːɑːs', 'Dubai': 'duːbˈaɪ'}
+        'Göttingen': 'ɡˈɜːtɪŋən', 'Seok': 'sˈʌk', 'Hopil': 'hˈoʊpˌɪl', 'Fallas': 'fˈɑːjəs', 'fallas': 'fˈɑːjəs', 'Kaos': 'kˈɑːoʊs', 'Ateneo': 'ˌɑːtənˈeɪoʊ', 'Killorglin': 'kɪlˈɔːɹɡlɪn', 'caprese': 'kəpɹˈeɪzeɪ', 'Caprese': 'kəpɹˈeɪzeɪ', 'acai': 'ˌɑːsɑːˈiː', 'Acai': 'ˌɑːsɑːˈiː', 'Chefchaouen': 'ʃˌɛfʃɑːwˈɛn', 'Diaz': 'dˈiːɑːs', 'Dubai': 'duːbˈaɪ', 'Reena': 'ɹˈiːnə', "Reena's": 'ɹˈiːnəz'}
 ONES = 'zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split()
 TENS = 'x x twenty thirty forty fifty sixty seventy eighty ninety'.split()
 def two(n):
