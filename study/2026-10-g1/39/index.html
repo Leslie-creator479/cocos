@@ -517,7 +517,86 @@ var DATA = {
     { s: 6, c: ['Water pressure', 'increases', 'proportionally', 'with depth.'] },
     { s: 7, c: ['It increases', 'by 1 bar', 'for every', '10 meters.'] },
     { s: 8, c: ['It follows that', 'a diver', 'at a depth of 10 meters', 'experiences a pressure of 2 bar,', 'and to stabilize pressure,', 'the supply of a breathing mixture', 'under a pressure', 'of 2 atmospheres', 'is required.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['How Deep Can Humans Go? Records Set by Ocean Explorers',
+        'Why Water Pressure Rises by One Bar Every Ten Meters',
+        'How Our Lungs Produce the Air Pressure Around Us',
+        'Pressure Against Pressure: How Divers Stay Balanced Beneath the Waves',
+        'Air Pressure: The Invisible Weight That Harms Our Bodies'],
+    a: 3,
+    e: '글은 땅 위에서 <i>external pressure is balanced by internal pressure</i>이듯, 물속에서도 <i>it is necessary to maintain the condition of equal external and internal pressure</i>라고 하고, 그 방법으로 주변 수압과 같은 압력의 공기를 공급한다고 설명해요. ‘압력에는 압력으로: 잠수부가 물속에서 균형을 지키는 법’이 이를 바꿔 쓴 제목이에요. ① 잠수라는 소재만 맞고 깊이 기록 이야기는 없어요. ② 10미터마다 1바씩 늘어난다는 것은 글의 한 세부 내용이라 범위가 좁아요. ③ 폐 속 압력은 바깥 기압과 균형을 이룰 뿐, 바깥 기압을 만들어 내는 것이 아니라 관계가 거꾸로예요. ⑤ Air Pressure를 그대로 썼지만, 글은 기압이 <i>not felt</i>라고 했지 몸에 해롭다고 하지 않았어요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'During dives, in addition to atmospheric pressure, the pressure of the water also acts on the human body. When submerged underwater, to avoid feeling the pressure of the surrounding environment, it is necessary to maintain the condition of equal external and internal pressure. To achieve this, air or a breathing mixture is supplied to the diver under pressure equal to the pressure applied by the surrounding water. Water pressure increases proportionally with depth. It increases by 1 bar for every 10 meters. It follows that a diver at a depth of 10 meters experiences a pressure of 2 bar, and to stabilize pressure, ______________.',
+    o: ['the breathing mixture must be supplied at 1 bar, the pressure of the water alone',
+        'the air supplied must exceed the surrounding pressure to push the water back',
+        'the diver must keep breathing air at the same pressure as on the surface',
+        'the pressure in the lungs must be kept lower so that the body is not damaged',
+        'the gas the diver breathes must be pressurized to match those 2 bar'],
+    a: 4,
+    e: '원문은 <i>the supply of a breathing mixture under a pressure of 2 atmospheres is required</i>(2기압의 호흡용 혼합물 공급이 요구된다)예요. 앞에서 <i>supplied to the diver under pressure equal to the pressure applied by the surrounding water</i>라고 했으므로, 2바를 받는 잠수부에게는 그와 같은 압력의 기체를 넣어 줘야 해요. ⑤가 이를 바꿔 쓴 표현이에요. ① 물의 압력만 따진 함정이에요. 잠수 중에는 <i>in addition to atmospheric pressure</i> 물의 압력이 더해지므로 2바 전체에 맞춰야 해요. ② exceed(넘다)는 equal(같은)과 어긋나요. ③ surface는 원문 낱말이지만 깊이에 따라 압력을 맞춰야 한다는 내용과 반대예요. ④ 안쪽 압력을 더 낮게 하면 균형이 깨져요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'To keep a diver from feeling the weight of the sea, the gas supplied must <u>  (A)  </u> the surrounding water pressure, which <u>  (B)  </u> steadily as the diver descends.',
+    o: ['counterbalance — mounts', 'exceed — mounts', 'counterbalance — falls', 'avoid — mounts', 'counterbalance — stabilizes'],
+    a: 0,
+    e: '(A) 공기는 <i>under pressure equal to the pressure applied by the surrounding water</i>로 공급되어 바깥 압력과 맞서 균형을 이루므로 counterbalance(상쇄하다, 균형을 맞추다)예요. (B) <i>Water pressure increases proportionally with depth</i>이므로 내려갈수록 수압이 mounts(늘어나다)예요. ② exceed는 ‘같은’ 압력이 아니라 ‘넘는’ 압력이라 틀려요. ④ avoid는 원문 낱말(<i>to avoid feeling the pressure</i>)이지만, 기체가 수압을 ‘피한다’는 말은 뜻이 통하지 않아요. ⑤ stabilize도 원문 낱말이지만, 안정되는 것은 몸 안팎의 압력이지 수압 자체는 깊이에 따라 계속 커져요. ③ falls는 방향이 반대예요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'The human body on the Earth’s surface ①<u>undergoes</u> constant air pressure equal to 16-18 tons per square meter of its body surface. However, this pressure is not felt because external pressure is balanced by internal pressure in the lungs and air cavities of the body. During dives, ②<u>instead of</u> atmospheric pressure, the pressure of the water also acts on the human body. When ③<u>immersed</u> underwater, to avoid feeling the pressure of the surrounding environment, it is necessary to ④<u>preserve</u> the condition of equal external and internal pressure. To achieve this, air or a breathing mixture is supplied to the diver under pressure equal to the pressure ⑤<u>exerted</u> by the surrounding water. Water pressure increases proportionally with depth. It increases by 1 bar for every 10 meters. It follows that a diver at a depth of 10 meters experiences a pressure of 2 bar, and to stabilize pressure, the supply of a breathing mixture under a pressure of 2 atmospheres is required.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 1,
+    h: '같은 문장의 also, 그리고 수심 10미터에서 1바가 아니라 2바라는 점을 함께 보세요.',
+    e: '② instead of(~ 대신에)는 원문에서 <b>in addition to</b>(~에 더하여)였어요. 같은 문장에 also가 있고, 수압은 10미터마다 1바씩 늘어나는데 수심 10미터의 잠수부가 <i>experiences a pressure of 2 bar</i>라고 하므로, 물속에서는 대기압이 사라지는 것이 아니라 대기압에 물의 압력이 더해져요. ① undergoes(=experiences, 겪다), ③ immersed(=submerged, 물에 잠긴), ④ preserve(=maintain, 유지하다), ⑤ exerted(=applied, 가해진)는 원문 낱말을 같은 뜻의 말로 바꾼 것이라 모두 적절해요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'The human body on the Earth’s surface ⓐ<u>experience</u> constant air pressure equal to 16-18 tons per square meter of its body surface. However, this pressure is not ⓑ<u>felt</u> because external pressure is balanced by internal pressure in the lungs and air cavities of the body. During dives, in addition to atmospheric pressure, the pressure of the water also acts on the human body. When submerged underwater, to avoid ⓒ<u>to feel</u> the pressure of the surrounding environment, it is necessary to maintain the condition of equal external and internal pressure. To achieve this, air or a breathing mixture ⓓ<u>supplies</u> to the diver under pressure equal to the pressure applied by the surrounding water. Water pressure increases proportionally with depth. It increases by 1 bar for ⓔ<u>every 10 meters</u>.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 2,
+    h: '주어의 핵심 명사가 무엇인지, avoid 뒤에 오는 형태, 그리고 공기가 스스로 공급하는지 공급되는지 따져 보세요.',
+    e: '틀린 것은 ⓐ, ⓒ, ⓓ 세 개예요. ⓐ 주어의 핵심은 단수 명사 <i>The human body</i>이므로 <b>experiences</b>여야 해요(on the Earth’s surface는 수식어). ⓒ avoid는 동명사를 목적어로 취하므로 <b>feeling</b>이어야 해요(원문 <i>to avoid feeling the pressure</i>). ⓓ 공기나 호흡용 혼합물은 잠수부에게 ‘공급되는’ 것이므로 수동태 <b>is supplied</b>여야 해요(원문 <i>air or a breathing mixture is supplied to the diver</i>). ⓑ 압력이 ‘느껴지지 않는’ 수동 관계라 과거분사 felt가 맞아요. ⓔ every 뒤에 ‘숫자 + 복수 명사’가 오면 하나의 묶음(10미터마다)으로 보아 every 10 meters로 쓰므로 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'The human body on the Earth’s surface experiences constant air pressure equal to 16-18 tons per square meter of its body surface. ① However, this pressure is not felt because external pressure is balanced by internal pressure in the lungs and air cavities of the body. ② During dives, in addition to atmospheric pressure, the pressure of the water also acts on the human body. ③ When submerged underwater, to avoid feeling the pressure of the surrounding environment, it is necessary to maintain the condition of equal external and internal pressure. ④ Water is about 800 times denser than air, so moving through it takes far more effort than walking on land. ⑤ To achieve this, air or a breathing mixture is supplied to the diver under pressure equal to the pressure applied by the surrounding water. Water pressure increases proportionally with depth. It increases by 1 bar for every 10 meters.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    e: '④는 지어낸 문장이에요. water·air라는 같은 소재를 쓰지만, 글은 몸 안팎의 압력을 같게 유지하는 방법을 다루는데 ④는 물속에서 움직이기 힘들다는 다른 이야기로 벗어나요. ④를 빼면 ③의 ‘동일한 외부와 내부 압력 상태를 유지하는 것’을 ⑤의 <i>To achieve this</i>가 바로 받아 자연스럽게 이어져요. ②는 땅 위(①)와 달리 물속에서는 물의 압력이 더해진다는 내용으로, ③의 필요성을 이끌어 내므로 흐름에 꼭 필요해요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">That is done by feeding the diver air or a breathing mixture at a pressure matching that of the water all around.</span>The human body on the Earth’s surface experiences constant air pressure equal to 16-18 tons per square meter of its body surface. However, this pressure is not felt because external pressure is balanced by internal pressure in the lungs and air cavities of the body. ( ① ) During dives, in addition to atmospheric pressure, the pressure of the water also acts on the human body. ( ② ) When submerged underwater, to avoid feeling the pressure of the surrounding environment, it is necessary to maintain the condition of equal external and internal pressure. ( ③ ) Water pressure increases proportionally with depth. ( ④ ) It increases by 1 bar for every 10 meters. ( ⑤ ) It follows that a diver at a depth of 10 meters experiences a pressure of 2 bar, and to stabilize pressure, the supply of a breathing mixture under a pressure of 2 atmospheres is required.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    h: '주어진 문장의 That이 가리키는 ‘해야 할 일’이 무엇인지 먼저 찾으세요.',
+    e: '주어진 문장은 원문 <i>To achieve this, air or a breathing mixture is supplied to the diver under pressure equal to the pressure applied by the surrounding water.</i>를 바꿔 쓴 것으로, To achieve this 대신 That is done이 앞 내용을 받아요. That이 가리키는 것은 ③ 앞의 <i>maintain the condition of equal external and internal pressure</i>(동일한 외부와 내부 압력 상태를 유지하는 것)이에요. 또 맨 끝 문장의 <i>the supply of a breathing mixture</i>는 공급 방법이 앞에서 이미 나왔다는 표시예요. ②에 넣으면 That이 ‘물의 압력이 작용한다’를 가리키게 되어 어색하고, ④·⑤는 수압이 깊이에 따라 늘어나는 설명 한가운데라 맞지 않아요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'However, this pressure is not felt because external pressure is balanced by internal pressure in the lungs and air cavities of the body. During dives, in addition to atmospheric pressure, the pressure of the water also acts on the human body. When submerged underwater, to avoid feeling the pressure of the surrounding environment, <u>a diver must answer the sea’s push with an equal push from within</u>.',
+    o: ['the diver should swim against the current with the same strength as the water',
+        'the diver must breathe out hard to keep water from entering the lungs',
+        'the diver should stay at a depth where the water pushes as weakly as the air',
+        'the diver’s body must push back harder than the water so that it is not crushed',
+        'the pressure inside the diver’s body must be kept at the level of the water pressure outside'],
+    a: 4,
+    e: '밑줄 친 ‘바다가 미는 힘에 안에서 같은 힘으로 밀어 답해야 한다’는 원문 <i>it is necessary to maintain the condition of equal external and internal pressure</i>를 비유로 바꾼 표현이에요. 땅 위에서도 <i>external pressure is balanced by internal pressure in the lungs and air cavities of the body</i>였듯, 물속에서도 몸속 압력을 바깥 수압과 같게 맞춰야 한다는 뜻이라 ⑤가 정답이에요. ① 물살을 거슬러 헤엄친다는 것은 push를 문자 그대로 읽은 해석이고, ② 숨을 세게 내쉰다는 것도 마찬가지예요. ③ 수압이 약한 깊이에 머문다는 것은 글에 없는 내용이고, ④ ‘더 세게’ 밀어낸다는 것은 answer the push를 지나치게 해석한 것으로, 밑줄의 an equal push와 원문 <i>equal external and internal pressure</i>에 어긋나요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 지구 표면에서 인체가 받는 기압은 몸 표면 1제곱미터당 20톤을 넘는다.<br>(b) 우리가 평소 기압을 느끼지 못하는 것은 폐와 몸속 빈 공간의 압력이 바깥 압력과 맞먹기 때문이다.<br>(c) 물속에서는 대기압이 사라지고 물의 압력만 인체에 작용한다.<br>(d) 수심 10미터의 잠수부가 받는 압력에는 물의 압력뿐 아니라 대기압도 포함되어 있다.<br>(e) 잠수부에게 공급하는 기체는 일반 공기가 아니라 반드시 특수한 혼합 기체여야 한다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '일치하는 것은 (b), (d) 두 개예요. (b) <i>external pressure is balanced by internal pressure in the lungs and air cavities of the body</i>와 같아요. (d) 잠수 중에는 <i>in addition to atmospheric pressure, the pressure of the water also acts on the human body</i>이고, 수압은 10미터에 1바인데 수심 10미터의 잠수부가 <i>experiences a pressure of 2 bar</i>이므로 대기압이 포함되어 있어요. (a) <i>16-18 tons per square meter</i>이므로 20톤을 넘지 않아요. (c) 대기압에 ‘더해’ 물의 압력이 작용하므로 틀려요. (e) <i>air or a breathing mixture</i>라고 했으므로 일반 공기도 쓸 수 있어요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['민서: 잠수부가 수심 20미터까지 내려가면 3기압의 혼합물을 공급해야 하겠네.',
+        '건우: 수압은 깊이에 비례하니까, 수심이 10미터에서 20미터로 두 배가 되면 4기압의 혼합물을 공급해야 해.',
+        '나연: 수심 10미터에서 물이 주는 압력은 1바니까 1바짜리 혼합물을 공급하면 충분해.',
+        '준혁: 몸 안의 압력을 바깥 압력보다 조금 더 높게 유지할수록 잠수부가 더 안전하겠구나.',
+        '채원: 땅 위에서 기압이 느껴지지 않는 건 몸에 작용하는 기압이 실제로는 아주 약하기 때문이야.'],
+    a: 0,
+    h: '수심 10미터에서 2바인 까닭(대기압 + 수압)을 먼저 생각한 뒤, 10미터를 더 내려가면 어느 쪽만 늘어나는지 보세요.',
+    e: '수압은 <i>It increases by 1 bar for every 10 meters</i>이고, 대기압이 더해져 <i>a diver at a depth of 10 meters experiences a pressure of 2 bar</i>예요. 10미터를 더 내려가면 수압만 1바 늘어나므로 20미터에서는 1바(대기압) + 2바(수압) = 3바이고, 혼합물은 <i>under pressure equal to the pressure applied by the surrounding water</i>로 주변 압력과 같아야 하므로 3기압이 필요해요(민서). 건우는 깊이에 비례하는 것이 수압뿐이라는 점을 놓치고 대기압까지 두 배로 계산한 함정이에요(2바 × 2 = 4가 아님). 나연은 대기압을 빼먹었어요(10미터에서 2기압이 필요). 준혁은 <i>equal external and internal pressure</i>와 어긋나요. 채원은 압력이 <i>16-18 tons per square meter</i>로 매우 크지만 <i>balanced</i> 되어 느껴지지 않는다는 내용과 반대예요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
