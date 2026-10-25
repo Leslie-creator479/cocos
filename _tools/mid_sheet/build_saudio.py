@@ -1,4 +1,4 @@
-# 중등·고등 학습지 공용 녹음 도구 사본(2026-10-24): SAYFIX·TEXTFIX에 NGO, Jeju-do, Halla, Olle, iguana, kimchi, Patagonia 발음 고침이 들어 있다.
+# 중등·고등 학습지 공용 녹음 도구 사본(2026-10-24): SAYFIX·TEXTFIX에 NGO, Jeju-do, Halla, Olle, iguana, kimchi, Patagonia, Seojun, Louis XVI, Llanera, Leah, Kaos, Ateneo, Killorglin 발음 고침이 들어 있다.
 """지문 문장마다 읽어 주는 MP3를 만들어 index.html의 SAUDIO 블록에 넣는다.
 사용법: python3 build_saudio.py 경로/index.html [...]
 준비물: build_audio.py와 같음 (kokoro-onnx, soundfile, ffmpeg, /home/claude/.kokoro 모델)
@@ -12,7 +12,7 @@ SPEED = 1.0
 PRON = {'Goethe': 'ɡˈɜːɹtə', "Goethe's": 'ɡˈɜːɹtəz', 'Guernica': 'ɡwˈɛɹnɪkə', 'Juvisy': 'ʒˌuːviːzˈiː',
         'Montigny-le-Roi': 'mˌɔntiːnjˈiː ləɹwˈɑː', 'Verrier': 'vˌɛɹiˈeɪ', 'Urbain': 'ʊɹbˈæn',
         'Flammarion': 'flˌæməɹiˈɔːn', 'Concord': 'kˈɑːŋkɚd', 'Caltech': 'kˈælˌtɛk', 'Jacques': 'ʒˈɑːk',
-        'Göttingen': 'ɡˈɜːtɪŋən', 'Seok': 'sˈʌk', 'Hopil': 'hˈoʊpˌɪl', 'Fallas': 'fˈɑːjəs', 'fallas': 'fˈɑːjəs'}
+        'Göttingen': 'ɡˈɜːtɪŋən', 'Seok': 'sˈʌk', 'Hopil': 'hˈoʊpˌɪl', 'Fallas': 'fˈɑːjəs', 'fallas': 'fˈɑːjəs', 'Kaos': 'kˈɑːoʊs', 'Ateneo': 'ˌɑːtənˈeɪoʊ', 'Killorglin': 'kɪlˈɔːɹɡlɪn'}
 ONES = 'zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split()
 TENS = 'x x twenty thirty forty fifty sixty seventy eighty ninety'.split()
 def two(n):
@@ -27,7 +27,7 @@ def year(m):
     return w
 TEXTFIX = [(r'\bWorld War II\b', 'World War Two'), (r'\bWorld War I\b', 'World War One'),
            (r'\bK-A-T-Y\b', 'K, A, T, Y'), (r'\bEI\b', 'E I'), (r'\bUMD\b', 'U M D'),
-           (r'\bNGOs\b', "N G O's"), (r'\bNGO\b', 'N G O'), (r'\bJeju-do\b', 'Jeju doh'), (r'\bOlle\b', 'Oh-lay'), (r'\bHalla\b', 'Hahla'), (r'\s*\(\u263a\)', ''), (r'\s*\u263a', ''), (r'\bLOL\b', 'L O L'), (r'\bMt\. ', 'Mount '), (r'\bT\. rex\b', 'T rex'), (r'\bMr\. ', 'Mister '), (r'\bDr\. ', 'Doctor '), (r'\bMrs\. ', 'Missus '), (r'\biguana(s?)\b', r'igwana\1'), (r'\bkimchi\b', 'kimchee'), (r'\bPatagonia\b', 'Patta gonia'),
+           (r'\bNGOs\b', "N G O's"), (r'\bNGO\b', 'N G O'), (r'\bJeju-do\b', 'Jeju doh'), (r'\bOlle\b', 'Oh-lay'), (r'\bHalla\b', 'Hahla'), (r'\s*\(\u263a\)', ''), (r'\s*\u263a', ''), (r'\bLOL\b', 'L O L'), (r'\bMt\. ', 'Mount '), (r'\bT\. rex\b', 'T rex'), (r'\bMr\. ', 'Mister '), (r'\bDr\. ', 'Doctor '), (r'\bMrs\. ', 'Missus '), (r'\biguana(s?)\b', r'igwana\1'), (r'\bkimchi\b', 'kimchee'), (r'\bPatagonia\b', 'Patta gonia'), (r'\bSeojun\b', 'Suh-joon'), (r'\bLouis XVI\b', 'Louis the Sixteenth'), (r'\bLlanera\b', 'Yah-nair-ah'), (r'\bLeah\b', 'Leea'),
            (r'(?<=\d),(?=\d{3}\b)', ''), (r'\b(1[1-9]\d\d)(s?)\b', year)]
 BLOCK = '/* ==== SAUDIO:START ==== */\n{}\n/* ==== SAUDIO:END ==== */'
 
