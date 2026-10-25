@@ -511,7 +511,86 @@ var DATA = {
     { s: 6, c: ['All of humanity', 'in that world', 'has been fully educated', 'so that they can participate', 'in this prosperity.'] },
     { s: 7, c: ['Everyone is', 'an explorer, researcher,', 'engineer, artist,', 'doctor, or counselor.'] },
     { s: 8, c: ['Generative AI', 'has the potential', 'to allow many dimensions', 'of our own society', 'to be similarly', 'highly abundant.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['How Star Trek’s Technology Inspired Real-World Inventions',
+        'Education for All: The Secret Behind a Prosperous Space Society',
+        'Classical Economics Explains Why Star Trek Can Never Become Real',
+        'Can AI Make “Not Enough” a Thing of the Past? Lessons from Star Trek',
+        'Rich Societies Build Smart Machines: How Wealth Creates Technology'],
+    a: 3,
+    h: '첫 문장(곧 닥칠지도 모르는 세계)과 마지막 문장(생성형 AI)을 함께 보세요. ‘Not Enough’는 글의 어느 개념을 바꿔 말한 걸까요?',
+    e: '글은 고전 경제학의 전제인 <i>there isn’t usually enough of anything</i>(희소성)가 Star Trek에서는 거의 없고, <i>Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant</i>라고 맺어요. ‘부족함(Not Enough)을 과거의 일로 만들 수 있을까?’가 이를 바꿔 쓴 제목이에요. ① 기술·발명은 소재만 맞고 실제 발명 이야기는 없어요. ② 교육은 풍요를 보여 주는 한 부분일 뿐이라 범위가 좁아요. ③ Classical Economics·Star Trek을 그대로 썼지만 글은 그 세계가 <i>might soon be upon us</i>라고 해 반대예요. ⑤ 글은 기술이 풍요를 만든다고 했지 부가 기술을 만든다고 하지 않았어요(인과가 뒤집힘).' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to ______________.',
+    o: ['bring a similar kind of plenty to many areas of our own lives',
+        'help markets and pricing allocate scarce resources to where they result in the highest benefit',
+        'make the things we depend on scarcer and therefore more valuable',
+        'prove that a world without scarcity can exist only in fiction',
+        'make everyone in our society an explorer who travels among the stars'],
+    a: 0,
+    e: '원문은 <i>allow many dimensions of our own society to be similarly highly abundant</i>(우리 사회의 많은 측면이 마찬가지로 매우 풍요로워지게 하다)예요. 첫 문장에서 Star Trek 세계가 <i>a world that might soon be upon us</i>라고 했고, 그 세계의 특징은 <i>there isn’t much scarcity</i>이므로, 생성형 AI가 우리 삶에도 ‘비슷한 풍요’를 가져올 수 있다는 ①이 정답이에요. ② markets·pricing·allocate·highest benefit은 모두 원문 낱말이지만 희소성을 전제로 한 우리 세계의 방식이라, 희소성이 없는 세계로 다가간다는 결론과 맞지 않아요. ③ 그 세계가 곧 닥칠지도 모른다는 첫 문장과 반대예요. ⑤ <i>Everyone is an explorer, researcher, engineer, artist, doctor, or counselor</i>는 Star Trek 세계의 한 모습일 뿐이고, 모두가 별 사이를 여행하는 탐험가가 된다는 말은 글에 없어요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Unlike classical economics, which deals with how to share goods that are <u>  (A)  </u>, Star Trek pictures a society where technology has made shortages almost <u>  (B)  </u>, suggesting what generative AI might do for us.',
+    o: ['abundant — nonexistent', 'insufficient — abundant', 'unlimited — inevitable', 'valuable — common', 'insufficient — nonexistent'],
+    a: 4,
+    e: '(A) 고전 경제학은 <i>there isn’t usually enough of anything to give everyone everything they want or need</i>라는 생각에 기초하므로 ‘불충분한(insufficient)’ 재화를 나누는 문제를 다뤄요. (B) Star Trek에서는 <i>there isn’t much scarcity</i>이므로 부족함(shortages)이 ‘거의 존재하지 않게(nonexistent)’ 된 거예요. ① abundant는 원문 낱말이지만 (A)에 넣으면 고전 경제학의 전제와 반대예요. ② (B)에 abundant를 넣으면 ‘부족함이 넘쳐 나게’ 되어 뜻이 거꾸로예요. ④ common도 부족함이 흔해졌다는 뜻이라 틀려요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'All of classical economics is based on the notion that there isn’t ①<u>generally</u> enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the greatest ②<u>advantage</u>. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to ③<u>restrict</u> any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. All of humanity in that world has been fully educated so that they can ④<u>share</u> in this ⑤<u>affluence</u>.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    e: '③ restrict(제한하다)는 원문에서 <b>reproduce</b>(복제하다)였어요. 바로 앞에서 <i>there isn’t much scarcity</i>라고 했고 뒤에 <i>any food they want</i>가 오므로, 원하는 음식을 ‘제한한다’는 말은 풍요로운 사회와 맞지 않아요. ① generally(=usually), ② advantage(=benefit), ④ share in(=participate in), ⑤ affluence(=prosperity, 풍요)는 원문 낱말을 같은 뜻의 말로 바꾼 것이라 모두 적절해요(② 앞의 greatest도 원문 highest를 바꾼 말).' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world ⓐ<u>what</u> might soon be upon us. All of classical economics is based on the notion ⓑ<u>that</u> there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to ⓒ<u>where</u> they might result in the highest benefit. In Star Trek, however, there isn’t much scarcity. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, ⓓ<u>communicating</u> over light-years, and travel among the stars. … Generative AI has the potential to allow many dimensions of our own society to be similarly ⓔ<u>highly</u> abundant.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    h: '선행사가 있는지, 그리고 allow ~ to 뒤에 이어지는 동사들의 모양이 같은지 확인하세요.',
+    e: '틀린 것은 ⓐ, ⓓ 두 개예요. ⓐ 앞에 선행사 <i>a world</i>가 있으므로 what이 아니라 <b>that</b>(또는 which)을 써야 해요(원문 <i>a world that might soon be upon us</i>). ⓓ <i>Technology has allowed that society to reproduce any food they want</i>에서 allow ~ to 뒤에 reproduce, transport, travel이 동사원형으로 나란히 이어지므로 <b>communicate</b>여야 해요. ⓑ the notion의 내용을 풀어 주는 동격 that이라 맞아요. ⓒ <i>to where</i>는 ‘~하는 곳으로’라는 뜻으로 선행사(the place)가 생략된 관계부사 where라 맞아요. ⓔ 형용사 abundant를 꾸미는 부사 highly라 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. ① Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. ② In Star Trek, however, there isn’t much scarcity. ③ Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. ④ Of course, building such machines would require huge amounts of energy, which is still one of the scarcest resources on Earth. ⑤ All of humanity in that world has been fully educated so that they can participate in this prosperity. Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    e: '④는 지어낸 문장이에요. ‘희소한 자원(scarcest resources)’이라는 비슷한 낱말을 쓰지만, 글은 Star Trek 세계에 <i>there isn’t much scarcity</i>이고 그 풍요(<i>this prosperity</i>)에 모두가 참여한다는 흐름인데, ④는 오늘날 지구의 에너지 부족으로 화제를 돌려요. ④를 빼면 ③의 기술이 만든 풍요가 ⑤의 <i>this prosperity</i>로 바로 이어져요. ①은 앞 문장의 부족함 때문에 시장과 가격을 쓴다는 내용이라 흐름에 맞아요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">Things are quite different in Star Trek, where hardly anything is in short supply.</span>Few people may view the Star Trek universe through an economic lens, but doing so provides a window into a world that might soon be upon us. ( ① ) All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. ( ② ) Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. ( ③ ) Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars. ( ④ ) All of humanity in that world has been fully educated so that they can participate in this prosperity. ( ⑤ ) Everyone is an explorer, researcher, engineer, artist, doctor, or counselor. Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    e: '주어진 문장은 원문 <i>In Star Trek, however, there isn’t much scarcity.</i>를 바꿔 쓴 것으로, however 대신 ‘Things are quite different’가 앞 내용과의 대조를 나타내요. ③ 앞은 부족함 때문에 시장과 가격을 쓰는 우리 세계, ③ 뒤 <i>Technology has allowed that society</i>의 <i>that society</i>는 Star Trek 사회를 가리키므로, 그 사이에 Star Trek 이야기를 꺼내는 주어진 문장이 들어가야 해요. ②에 넣으면 <i>Because of that</i>이 Star Trek의 풍요를 가리키게 되어 어색하고, ④·⑤에 넣으면 <i>that society</i>가 가리킬 말이 없어요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'All of classical economics is based on the notion that there isn’t usually enough of anything to give everyone everything they want or need. Because of that, we use markets and pricing to allocate those goods, services, and resources to where they might result in the highest benefit. In Star Trek, however, <u>the cupboard is never bare</u>. Technology has allowed that society to reproduce any food they want, transport themselves thousands of miles in the blink of an eye, communicate over light-years, and travel among the stars.',
+    o: ['there is hardly ever a shortage of the things people want',
+        'the society shares its limited supplies so fairly that no one goes without',
+        'food has become the only thing that is no longer in short supply',
+        'no one in that society is ever left without a proper education',
+        'people store up extra goods in case scarcity returns'],
+    a: 0,
+    h: 'however가 앞 문장의 어떤 생각과 대조되는지 보세요. cupboard(찬장)가 비어 있지 않다는 건 무엇을 비유할까요?',
+    e: '밑줄 친 ‘찬장이 결코 비어 있지 않다’는 원문 <i>there isn’t much scarcity</i>(희소성이 별로 없다)를 비유로 바꾼 표현이에요. however로 앞의 <i>there isn’t usually enough of anything</i>과 대조되고, 뒤에서 <i>reproduce any food they want</i>라고 하므로 ①이 정답이에요. ② ‘한정된 물자를 공평하게 나눈다’는 것은 여전히 부족함을 전제로 한 말이라, 희소성 자체가 거의 없다는 뜻과 달라요. ③ 음식은 예시 하나일 뿐이고 뒤에 이동·통신·여행도 이어지므로 ‘음식만’은 틀려요. ④ 교육은 글의 다른 부분 내용이에요. ⑤ 찬장을 문자 그대로 읽은 해석이고, 희소성이 돌아올 것에 대비한다는 내용은 글에 없어요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 고전 경제학은 모든 사람이 원하는 것을 다 나눠 줄 만큼 무엇이든 넉넉한 경우가 드물다고 본다.<br>(b) 우리가 시장과 가격을 이용하는 것은 자원을 누구에게나 똑같이 나누어 주기 위해서다.<br>(c) Star Trek에서는 기술 덕분에 수천 마일을 이동하는 데 몇 시간이면 충분하다.<br>(d) 글쓴이는 생성형 AI가 우리 사회의 여러 측면에 Star Trek과 비슷한 풍요를 가져올 수 있다고 본다.<br>(e) Star Trek의 기술은 음식을 복제할 수는 있지만 별 사이를 여행하는 데까지는 이르지 못했다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '일치하는 것은 (a), (d) 두 개예요. (a) <i>there isn’t usually enough of anything to give everyone everything they want or need</i>와 같아요. (d) <i>Generative AI has the potential to allow many dimensions of our own society to be similarly highly abundant</i>와 같아요. (b) 시장과 가격은 자원을 <i>to where they might result in the highest benefit</i>(가장 큰 이익을 낳을 곳)으로 보내기 위한 것이지, 똑같이 나누기 위한 것이 아니에요. (c) <i>in the blink of an eye</i>(눈 깜짝할 사이)이므로 ‘몇 시간’이 틀려요. (e) <i>travel among the stars</i>라고 했으므로 별 사이 여행도 가능해요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['지윤: Star Trek 사회가 풍요로운 건 시장과 가격이 자원을 가장 큰 이익을 낳는 곳에 잘 배분했기 때문이야.',
+        '서준: 글쓴이는 고전 경제학이 처음부터 틀렸으니 버려야 한다고 주장하고 있어.',
+        '하은: 생성형 AI가 발전하면 사람들은 더 이상 교육을 받을 필요가 없어지겠구나.',
+        '도윤: Star Trek에서 모두가 전문 직업을 가진 건 시장에서 치열하게 경쟁한 결과야.',
+        '민준: 희소성 때문에 시장과 가격이 필요했던 거라면, Star Trek 같은 세계에서는 그 역할이 훨씬 줄어들겠네.'],
+    a: 4,
+    h: 'Because of that의 that이 무엇인지 찾고, 그것이 사라지면 어떻게 될지 생각해 보세요.',
+    e: '글은 <i>there isn’t usually enough of anything</i>이고 <i>Because of that, we use markets and pricing to allocate</i>라고 해, 시장과 가격이 희소성 때문에 필요하다고 설명해요. 그런데 Star Trek에서는 <i>there isn’t much scarcity</i>이므로, 희소성을 전제로 한 시장·가격의 역할도 줄어들 거라고 한 단계 추론할 수 있어요(민준). 지윤은 원문 낱말(시장·가격·가장 큰 이익)을 썼지만, 글은 Star Trek의 풍요를 <i>Technology has allowed that society</i>로 기술 덕분이라고 했고 시장·가격은 희소한 우리 세계의 방식이에요. 서준의 ‘틀렸으니 버려야 한다’는 글에 없는 주장이에요. 하은은 <i>fully educated so that they can participate in this prosperity</i>와 어긋나고, 도윤의 ‘시장 경쟁의 결과’는 글에 근거가 없어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */

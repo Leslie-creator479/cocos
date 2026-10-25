@@ -12,6 +12,12 @@
     var s = document.createElement('script');
     s.src = me.src.replace(/print-sheet\.js([?#].*)?$/, 'vocab-listen.js');
     (document.body || document.head).appendChild(s);
+    /* 도전 문제(assets/challenge.js, 2026-10-25): DATA.challenge가 있는 학습지에만 칸을 만든다 */
+    if (window.DATA && window.DATA.challenge && window.DATA.challenge.length) {
+      var c = document.createElement('script');
+      c.src = me.src.replace(/print-sheet\.js([?#].*)?$/, 'challenge.js');
+      (document.body || document.head).appendChild(c);
+    }
   } catch (e) {}
 })();
 (function () {
@@ -168,7 +174,7 @@
     '#cocos-print .cp-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--p-line);border-radius:6px;overflow:hidden;margin-bottom:10px}',
     '#cocos-print .cp-grid div{padding:4px 8px;border-right:1px solid var(--p-line);border-bottom:1px solid var(--p-line);font-size:10pt}',
     '#cocos-print .cp-grid div b{color:var(--p-acc);margin-right:6px}',
-    '#cocos-print .cp-ex{display:grid;grid-template-columns:30px 1fr;gap:4px;padding:4px 0;border-bottom:1px dashed var(--p-line);font-size:9.5pt;break-inside:avoid}',
+    '#cocos-print .cp-ex{display:grid;grid-template-columns:minmax(30px,auto) 1fr;gap:4px;padding:4px 0;border-bottom:1px dashed var(--p-line);font-size:9.5pt;break-inside:avoid}',
     '#cocos-print .cp-ex .cp-n{font-weight:700;color:var(--p-acc)}',
     '#cocos-print .cp-ex .cp-a{font-weight:700;margin-right:6px;font-size:.78em}',
     '#cocos-print .cp-ex i{font-family:"Source Serif 4",Georgia,serif}',
@@ -269,12 +275,12 @@
         node(M.end, 'end') + '</div>');
     }
 
-    /* 6. 확인 문제 */
+    /* 6. 확인 문제 (도전 문제도 같은 모양으로 찍는다) */
     var Q = D.quiz || [];
-    if (Q.length) {
-      h.push(sec(++n, '확인 문제', Q.length + '문항 · 정답은 맨 뒤에', 'newpage'));
+    var CH = D.challenge || [];
+    function qblock(Q, pre) {
       Q.forEach(function (q, k) {
-        var s = '<div class="cp-q"><p class="cp-qh">' + (k + 1) + '. ' + (q.type ? '<span class="cp-t">' + esc(q.type) + '</span>' : '') + neg(q.p || '') + '</p>';
+        var s = '<div class="cp-q"><p class="cp-qh">' + pre + (k + 1) + '. ' + (q.type ? '<span class="cp-t">' + esc(q.type) + '</span>' : '') + neg(q.p || '') + '</p>';
         if (q.q) s += '<div class="cp-qq">' + nums(q.q) + '</div>';
         if (q.o && q.o.length) {
           var short = q.o.every(function (o) { return String(o).replace(/<[^>]+>/g, '').length <= 26; });
@@ -288,6 +294,14 @@
         }
         h.push(s + '</div>');
       });
+    }
+    if (Q.length) {
+      h.push(sec(++n, '확인 문제', Q.length + '문항 · 정답은 맨 뒤에', 'newpage'));
+      qblock(Q, '');
+    }
+    if (CH.length) {
+      h.push(sec(++n, '도전 문제', '고난도 ' + CH.length + '문항 · 변형 문제 · 정답은 맨 뒤에', 'newpage'));
+      qblock(CH, '도전 ');
     }
 
     /* 7. 문장 배열 */
@@ -309,15 +323,20 @@
     }
 
     /* 정답과 해설 */
-    if (Q.length || (b && b.ask) || O.length) {
+    function akey(Q, pre) {
+      h.push('<div class="cp-grid">' + Q.map(function (q, k) { return '<div><b>' + pre + (k + 1) + '</b>' + nums(ans(q)) + '</div>'; }).join('') + '</div>');
+      Q.forEach(function (q, k) {
+        if (!q.e) return;
+        var lead = String(q.e).replace(/<[^>]+>/g, '').trim().charAt(0) === ans(q) ? '' : '<span class="cp-a">' + ans(q) + '</span>';
+        h.push('<div class="cp-ex"><span class="cp-n">' + pre + (k + 1) + '</span><p>' + lead + nums(q.e) + '</p></div>');
+      });
+    }
+    if (Q.length || CH.length || (b && b.ask) || O.length) {
       h.push(sec('✓', '정답과 해설', '', 'newpage'));
-      if (Q.length) {
-        h.push('<div class="cp-grid">' + Q.map(function (q, k) { return '<div><b>' + (k + 1) + '</b>' + nums(ans(q)) + '</div>'; }).join('') + '</div>');
-        Q.forEach(function (q, k) {
-          if (!q.e) return;
-          var lead = String(q.e).replace(/<[^>]+>/g, '').trim().charAt(0) === ans(q) ? '' : '<span class="cp-a">' + ans(q) + '</span>';
-          h.push('<div class="cp-ex"><span class="cp-n">' + (k + 1) + '</span><p>' + lead + nums(q.e) + '</p></div>');
-        });
+      if (Q.length) akey(Q, '');
+      if (CH.length) {
+        h.push('<span class="cp-lab">도전 문제</span>');
+        akey(CH, '도전 ');
       }
       if (b && b.ask && b.ask.length) {
         h.push('<span class="cp-lab">먼저 읽어 보세요 · 스스로 답해 보기</span>');
