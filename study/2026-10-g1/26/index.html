@@ -511,7 +511,88 @@ var DATA = {
     { s: 5, c: ['After serving,', 'he earned master’s and doctoral degrees', 'in electrical engineering', 'from the University of California, Berkeley,', 'where he focused on', 'computer-related research.'] },
     { s: 6, c: ['In the 1968 Fall Joint Computer Conference', 'held in San Francisco,', 'he demonstrated his technologies', 'including the computer mouse,', 'which became a monumental event', 'in computer history.'] },
     { s: 7, c: ['For his contributions', 'to computer science,', 'he received the Turing Award', 'in 1997', 'and the National Medal of Technology', 'three years later.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['A Wartime Spark That Changed How People and Computers Work Together',
+        'The Computer Mouse: How a Simple Tool Was Built Step by Step',
+        'How Immigrant Families Built America’s Technology Industry',
+        'How Winning Top Awards Inspired a Young Engineer’s Inventions',
+        'Human-Computer Interaction: Letting Machines Replace Human Abilities'],
+    a: 0,
+    h: '전쟁 중에 읽은 글 → 비전 → 시연 → 수상으로 이어지는 한 줄기를 찾아보세요.',
+    e: '글은 Engelbart가 <i>transformed the field of human-computer interaction</i>한 인물이라고 소개하고, 전쟁 중 읽은 글이 <i>his vision of using computers to enhance human abilities and solve complex problems</i>에 영향을 주었으며, 그 뒤 연구·시연·수상으로 이어졌다고 해요. ‘사람과 컴퓨터가 함께 일하는 방식을 바꾼 전시(戰時)의 불꽃’이 이 흐름을 바꿔 쓴 제목이에요. ② 마우스는 시연한 기술 중 하나일 뿐이고 만드는 과정은 나오지 않아요. ③ 이민자 가정은 출생 배경 한 줄이라 범위가 엉뚱하게 넓어요. ④ 상은 공헌의 ‘결과’로 받은 것인데 상이 발명을 이끌었다고 해 인과가 뒤집혔어요. ⑤ 핵심어를 그대로 썼지만 글은 컴퓨터가 사람의 능력을 <i>enhance</i>(향상)한다고 했지 대신한다고 하지 않았어요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Douglas Carl Engelbart was an American engineer and inventor who transformed the field of human-computer interaction. He was born in Portland, Oregon, in 1925 to a European immigrant family. During World War II, he served as a radar technician in the U.S. Navy in the Philippines. It was during this time that he read an article that influenced his vision of using computers to enhance human abilities and solve complex problems. After serving, he earned master’s and doctoral degrees in electrical engineering from the University of California, Berkeley, where he focused on computer-related research. In the 1968 Fall Joint Computer Conference held in San Francisco, he demonstrated his technologies including the computer mouse, which became a monumental event in computer history. ______________, he received the Turing Award in 1997 and the National Medal of Technology three years later.',
+    o: ['Because he had served as a radar technician in the U.S. Navy',
+        'Thanks to the support of his European immigrant family',
+        'Although his ideas were ignored by most computer scientists',
+        'Even before he demonstrated the computer mouse',
+        'In recognition of what he had done to advance computing'],
+    a: 4,
+    e: '원문은 <i>For his contributions to computer science</i>(컴퓨터 과학에 대한 공헌으로)예요. 앞에서 그의 시연이 <i>a monumental event in computer history</i>가 되었다고 했으므로, 그 업적을 인정받아 상을 받았다는 ⑤가 정답이에요. ① 해군 복무와 ② 이민자 가정은 원문 낱말을 그대로 쓴 함정이지만 상을 받은 이유로 나오지 않아요. ③ 기념비적인 사건이었다는 말과 반대예요. ④ 시연은 1968년, Turing Award는 1997년이므로 시간 순서가 맞지 않아요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Engelbart’s idea of computers as tools that make people more capable was <u>  (A)  </u> by an article he read while serving in the navy, and he later went on to <u>  (B)  </u> technologies such as the mouse at a landmark event.',
+    o: ['influenced — conceal', 'discouraged — demonstrate', 'sparked — showcase', 'sparked — abandon', 'weakened — showcase'],
+    a: 2,
+    e: '(A) 해군 복무 중 읽은 글이 <i>influenced his vision of using computers to enhance human abilities</i>했으므로, 그 생각이 그 글로 ‘불붙었다(sparked)’예요. (B) 1968년 학회에서 <i>he demonstrated his technologies including the computer mouse</i>했으므로 ‘선보이다(showcase)’가 맞아요. ① influenced는 원문 낱말이라 (A)로는 맞지만 conceal(숨기다)이 반대예요. ② demonstrate도 원문 낱말이지만 discouraged(꺾었다)가 반대예요. ④ abandon(버리다), ⑤ weakened(약하게 했다)도 글과 반대예요.' },
+
+  { type: '내용 일치 · 변형', p: 'Douglas Carl Engelbart에 관한 윗글의 내용과 일치하는 것은?', en: true,
+    o: ['He came up with his vision of using computers to help people only after he had left the navy.',
+        'He served in the navy as a technician who built early computers for the military.',
+        'He presented the computer mouse at a conference held in the city where he was born.',
+        'He won his major awards mainly because of his service during World War II.',
+        'His graduate degrees were not in computer science, even though his research there dealt with computers.'],
+    a: 4,
+    h: '각 보기의 시기·장소·분야를 원문의 해당 문장과 하나씩 맞춰 보세요.',
+    e: '<i>he earned master’s and doctoral degrees in electrical engineering from the University of California, Berkeley, where he focused on computer-related research</i>이므로 학위는 컴퓨터 과학이 아니라 전기 공학이었고, 연구는 컴퓨터 관련이었어요(⑤). ① 비전에 영향을 준 글은 <i>It was during this time that he read an article</i>, 즉 해군 복무 중에 읽었어요(복무 ‘뒤’가 아님). ② 해군에서는 <i>a radar technician</i>으로 복무했고 컴퓨터를 만들었다는 말은 없어요. ③ 학회는 <i>held in San Francisco</i>였고 그가 태어난 곳은 <i>Portland, Oregon</i>이에요. ④ 상은 <i>For his contributions to computer science</i> 받은 것이지 전쟁 중 복무 때문이 아니에요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'He was born in Portland, Oregon, in 1925 to ⓐ<u>a</u> European immigrant family. During World War II, he ⓑ<u>was served</u> as a radar technician in the U.S. Navy in the Philippines. It was during this time that he read an article that influenced his vision of using computers to enhance human abilities and solve complex problems. After serving, he earned master’s and doctoral degrees in electrical engineering from the University of California, Berkeley, where he focused on computer-related research. In the 1968 Fall Joint Computer Conference ⓒ<u>holding</u> in San Francisco, he demonstrated his technologies ⓓ<u>including</u> the computer mouse, which became a monumental event in computer history. For his contributions to computer science, he received the Turing Award in 1997 and the National Medal of Technology three years ⓔ<u>later</u>.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '틀린 것은 ⓑ, ⓒ 두 개예요. ⓑ serve as(~로 복무하다)는 주어가 직접 하는 일이고 목적어를 받는 동사가 아니므로 능동태 <b>served</b>여야 해요(원문 <i>he served as a radar technician</i>). ⓒ 학회는 ‘열리는’ 것이므로 과거분사 <b>held</b>여야 해요(원문 <i>Fall Joint Computer Conference held in San Francisco</i>). ⓐ European은 [j] 소리(자음)로 시작하므로 an이 아니라 a가 맞아요. ⓓ including은 ‘~을 포함하여’라는 전치사라 맞아요. ⓔ 과거의 어느 때(1997년)를 기준으로 ‘3년 후’는 later가 맞아요(ago는 지금을 기준으로 할 때 써요).' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'Douglas Carl Engelbart was an American engineer and inventor who transformed the field of human-computer interaction. ① He was born in Portland, Oregon, in 1925 to a European immigrant family. ② During World War II, he served as a radar technician in the U.S. Navy in the Philippines. ③ Radar, which uses radio waves to find faraway objects, was first developed for military use in the 1930s. ④ It was during this time that he read an article that influenced his vision of using computers to enhance human abilities and solve complex problems. ⑤ After serving, he earned master’s and doctoral degrees in electrical engineering from the University of California, Berkeley, where he focused on computer-related research. In the 1968 Fall Joint Computer Conference held in San Francisco, he demonstrated his technologies including the computer mouse, which became a monumental event in computer history. For his contributions to computer science, he received the Turing Award in 1997 and the National Medal of Technology three years later.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    e: '③은 지어낸 문장이에요. ②의 radar라는 낱말을 이어받지만, 레이더 기술의 역사는 Engelbart의 삶을 다루는 글의 흐름에서 벗어나요. 게다가 ③이 있으면 ④ <i>It was during this time</i>의 this time이 1930년대를 가리키게 되어 어색해요. ③을 빼면 this time이 ②의 제2차 세계 대전 중 복무 시기를 바로 가리켜요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">At a 1968 computer conference in San Francisco, he presented several of his technologies, among them the computer mouse, in what came to be seen as a landmark moment for computing.</span>Douglas Carl Engelbart was an American engineer and inventor who transformed the field of human-computer interaction. He was born in Portland, Oregon, in 1925 to a European immigrant family. ( ① ) During World War II, he served as a radar technician in the U.S. Navy in the Philippines. ( ② ) It was during this time that he read an article that influenced his vision of using computers to enhance human abilities and solve complex problems. ( ③ ) After serving, he earned master’s and doctoral degrees in electrical engineering from the University of California, Berkeley, where he focused on computer-related research. ( ④ ) For his contributions to computer science, he received the Turing Award in 1997 and the National Medal of Technology three years later. ( ⑤ )',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    e: '주어진 문장은 원문 <i>In the 1968 Fall Joint Computer Conference held in San Francisco, he demonstrated his technologies including the computer mouse, which became a monumental event in computer history.</i>를 바꿔 쓴 것이에요. 인물 소개 글은 시간 순서로 이어지므로, 복무 뒤 학위·연구(④ 앞)와 1997년 수상(④ 뒤) 사이에 1968년 시연이 와야 해요. ①은 제2차 세계 대전보다 앞이 되고, ②에 넣으면 <i>It was during this time</i>이 전쟁 중을 가리키지 못해요. ③에 넣으면 1968년 이야기 뒤에 <i>After serving</i>이 와서 시간이 거꾸로 가고, ⑤는 수상(1997·2000년)보다 뒤라 맞지 않아요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'During World War II, he served as a radar technician in the U.S. Navy in the Philippines. It was during this time that he read an article that influenced his vision of using computers to enhance human abilities and solve complex problems. After serving, he earned master’s and doctoral degrees in electrical engineering from the University of California, Berkeley, where he focused on computer-related research. In the 1968 Fall Joint Computer Conference held in San Francisco, he demonstrated his technologies including the computer mouse — <u>the seed planted in the Philippines had finally borne fruit</u>.',
+    o: ['the radar technology of the navy was at last used in personal computers',
+        'his immigrant family’s hard work had finally paid off',
+        'he had finally returned to the Philippines to present his inventions',
+        'the vision he had formed during his wartime service had finally been realized',
+        'the article he read during the war had finally won a major award'],
+    a: 3,
+    h: '필리핀에서 그에게 ‘심어진’ 것이 무엇이었는지 앞 문장에서 찾아보세요.',
+    e: '필리핀에서 ‘심어진 씨앗’은 해군 복무 중 읽은 글이 영향을 준 <i>his vision of using computers to enhance human abilities and solve complex problems</i>이고, ‘열매를 맺었다’는 그 비전이 1968년 기술 시연으로 실현되었다는 뜻이라 ④가 정답이에요. ① 그가 레이더 기술자였다는 다른 부분을 끌어온 함정으로, 레이더 기술이 컴퓨터에 쓰였다는 말은 없어요. ② 이민자 가정은 씨앗이 심어진 곳(필리핀)과 관계가 없어요. ③ 필리핀으로 돌아갔다는 것은 문자 그대로의 해석이고 시연은 San Francisco에서 했어요. ⑤ 상을 받은 것은 글이 아니라 그 자신이에요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 그는 유럽에서 태어나 어린 시절 가족과 함께 미국으로 건너왔다.<br>(b) 그는 해군에서 레이더 기술자로 복무하기 전에 이미 박사 학위를 받았다.<br>(c) 그는 석사 학위와 박사 학위를 같은 대학에서 받았다.<br>(d) 1968년 San Francisco 학회에서 그가 선보인 기술은 컴퓨터 마우스 하나뿐이었다.<br>(e) 그가 Turing Award를 받은 것은 1968년 학회에서 기술을 시연하고 나서 20년이 넘게 지난 뒤였다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '일치하는 것은 (c), (e) 두 개예요. (c) <i>he earned master’s and doctoral degrees in electrical engineering from the University of California, Berkeley</i>로 두 학위 모두 같은 대학이에요. (e) 1968년 시연 뒤 <i>he received the Turing Award in 1997</i>이므로 1968년에서 29년 뒤, 즉 20년이 넘게 지난 뒤예요. (a) <i>He was born in Portland, Oregon</i>이므로 미국에서 태어났어요(유럽 출신은 가족). (b) <i>After serving, he earned master’s and doctoral degrees</i>이므로 학위는 복무 ‘뒤’예요. (d) <i>his technologies including the computer mouse</i>이므로 마우스는 여러 기술 가운데 하나예요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['나연: 그가 연구한 것은 기계 자체의 성능보다 사람과 컴퓨터가 함께 일하는 방식이었다고 볼 수 있어.',
+        '지환: 그는 레이더 기술자로 일하던 시절에 이미 컴퓨터 마우스를 직접 만들어 사용했어.',
+        '소율: 그의 기술은 Turing Award를 받은 뒤에야 처음으로 세상에 알려졌어.',
+        '건우: 그는 이민자 가정 출신이었기 때문에 해군에 들어갈 수밖에 없었어.',
+        '다인: 그는 컴퓨터가 사람의 능력을 대신해서 사람이 생각할 필요가 없어지기를 바랐어.'],
+    a: 0,
+    e: '그는 <i>transformed the field of human-computer interaction</i>(인간과 컴퓨터의 상호 작용)한 인물이고, 그의 비전은 <i>using computers to enhance human abilities</i>였어요. 기계만 빠르게 만드는 것이 아니라 사람이 컴퓨터를 써서 더 잘하도록 돕는, 사람과 컴퓨터의 관계에 초점을 둔 것이라고 한 단계 추론할 수 있어요(나연). 지환은 마우스를 1968년에 시연했다는 내용과 맞지 않고 근거도 없어요. 소율은 1968년 시연이 이미 <i>a monumental event in computer history</i>였다는 내용과 반대예요. 건우의 인과 관계는 글에 없고, 다인은 능력을 ‘향상’시킨다는 enhance를 ‘대신’으로 바꿨어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
