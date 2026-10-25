@@ -1,4 +1,4 @@
-# 중등·고등 학습지 공용 녹음 도구 사본(2026-10-24): SAYFIX·TEXTFIX에 NGO, Jeju-do, Halla, Olle, iguana, kimchi, Patagonia, Seojun, Louis XVI, Llanera, Leah, Kaos, Ateneo, Killorglin 발음 고침이 들어 있다.
+# 중등·고등 학습지 공용 녹음 도구 사본(2026-10-24): SAYFIX·TEXTFIX에 NGO, Jeju-do, Halla, Olle, iguana, kimchi, Patagonia, Seojun, Louis XVI, Llanera, Leah, Kaos, Ateneo, Killorglin, MoMA 발음 고침이 들어 있다.
 """단어 정리(vocab)의 단어마다 발음 MP3를 만들어 index.html의 AUDIO 블록에 넣는다.
 사용법: python3 build_audio.py 경로/index.html
 준비물: pip install --break-system-packages kokoro-onnx soundfile / ffmpeg
@@ -10,7 +10,7 @@ MODEL_DIR = os.environ.get('KOKORO_DIR', '/home/claude/.kokoro')
 BASE = 'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/'
 FILES = {'kokoro-v1.0.int8.onnx': 'model', 'voices-v1.0.bin': 'voices'}
 VOICE, SPEED = 'af_heart', 0.9
-SAYFIX = {'NGO': 'N G O', 'NGOs': "N G O's", 'Jeju-do': 'Jeju doh', 'LOL': 'L O L', 'T. rex': 'T rex', 'fallas': 'fah-yahs', 'Fallas': 'Fah-yahs', 'iguana': 'igwana', 'iguanas': 'igwanas', 'kimchi': 'kimchee', 'Patagonia': 'Patta gonia', 'Seojun': 'Suh-joon', 'Llanera': 'Yah-nair-ah', 'Leah': 'Leea', 'Kaos': 'Kah-ose', 'Killorglin': 'Kill-orglin'}  # 글자대로 읽으면 틀리는 단어
+SAYFIX = {'NGO': 'N G O', 'NGOs': "N G O's", 'Jeju-do': 'Jeju doh', 'LOL': 'L O L', 'T. rex': 'T rex', 'fallas': 'fah-yahs', 'Fallas': 'Fah-yahs', 'iguana': 'igwana', 'iguanas': 'igwanas', 'kimchi': 'kimchee', 'Patagonia': 'Patta gonia', 'Seojun': 'Suh-joon', 'Llanera': 'Yah-nair-ah', 'Leah': 'Leea', 'Kaos': 'Kah-ose', 'Killorglin': 'Kill-orglin', 'MoMA': 'Moma'}  # 글자대로 읽으면 틀리는 단어
 
 def ensure_models():
     os.makedirs(MODEL_DIR, exist_ok=True)
