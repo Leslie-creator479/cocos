@@ -3,6 +3,16 @@
    - 누르면 DATA.passages로 인쇄용 화면(원지문 ★◆ 표시·해석·어휘 정리·2단계 문맥 속 고르기·
      3단계 어휘 추론 변형·정답)을 만들고 인쇄 창을 연다. PDF는 학생 기기에서 만들어진다.
    이 파일 하나를 고치면 모든 동의어·반의어 페이지의 PDF 모양이 함께 바뀐다. */
+/* 밑줄이 g·p·q·y 같은 글자 아래에서 끊기지 않게(2026-10-25 원장님 요청): 화면·PDF 모두 */
+(function () {
+  try {
+    if (document.getElementById('cocos-ul-fix')) return;
+    var s = document.createElement('style'); s.id = 'cocos-ul-fix';
+    s.textContent = 'u,ins,.u,[style*="underline"]{text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;text-decoration-skip:none}';
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();
+
 (function () {
   'use strict';
   var D = window.DATA;

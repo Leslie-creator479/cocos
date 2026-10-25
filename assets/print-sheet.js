@@ -3,6 +3,16 @@
    - 누르면 학습지 데이터(DATA)로 인쇄용 화면을 만들고 인쇄 창을 연다(학생 기기에서 PDF로 저장).
    - 홈페이지에는 아무 파일도 저장하지 않는다. Ctrl+P·공유 → 프린트로 열어도 같은 화면이 나온다.
    이 파일 하나를 고치면 모든 학습지의 PDF 모양이 함께 바뀐다. */
+/* 밑줄이 g·p·q·y 같은 글자 아래에서 끊기지 않게(2026-10-25 원장님 요청): 화면·PDF 모두 */
+(function () {
+  try {
+    if (document.getElementById('cocos-ul-fix')) return;
+    var s = document.createElement('style'); s.id = 'cocos-ul-fix';
+    s.textContent = 'u,ins,.u,[style*="underline"]{text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;text-decoration-skip:none}';
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();
+
 /* 단어 정리 '단어 전체 듣기'(assets/vocab-listen.js)를 함께 불러온다(2026-10-22). */
 (function () {
   try {
