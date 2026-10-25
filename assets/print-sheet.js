@@ -13,6 +13,40 @@
   } catch (e) {}
 })();
 
+/* 단어 퀴즈 칸에 '동의어·반의어 / 단어게임' 바로 가기(2026-10-26 원장님 요청).
+   학습지 주소로 짝 페이지 주소를 만들고, 실제로 있는 페이지만 보여 준다(없으면 아무것도 안 나옴). */
+(function () {
+  try {
+    var me = document.currentScript;
+    if (!me || !me.src || window.__cocosStudyLinks) return;
+    window.__cocosStudyLinks = true;
+    var root = new URL('..', me.src);
+    var rel = decodeURIComponent(location.pathname).replace(root.pathname, '').replace(/^\/+|\/+$/g, '').split('/');
+    var syn = null, game = null, anc = '';
+    if (rel[0] === 'study' && rel.length === 3) { syn = 'syn/' + rel[1] + '/'; game = 'game/' + rel[1] + '/'; anc = 'p' + rel[2]; }
+    else if (rel[0] === 'textbook' && rel.length === 4) { var b = rel[1] + '-' + rel[2]; syn = 'syn/' + b + '/'; game = 'game/' + b + '/'; anc = 'p' + rel[2] + '-' + rel[3]; }
+    if (!syn) return;
+    var go = function () {
+      var sec = document.getElementById('wordquiz');
+      if (!sec || document.getElementById('more-study')) return;
+      var box = document.createElement('div');
+      box.id = 'more-study';
+      box.style.cssText = 'display:none;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 14px;padding:10px 14px;border-radius:10px;background:var(--paper,#F6F4EE);font-size:14px;line-height:1.5';
+      box.innerHTML = '<span style="font-weight:600">이 지문 단어를 더 공부하려면</span>';
+      var head = sec.querySelector('.sec-head');
+      (head && head.nextSibling) ? sec.insertBefore(box, head.nextSibling) : sec.appendChild(box);
+      [[syn, '동의어·반의어 →', '#' + anc], [game, '단어게임 →', '']].forEach(function (x) {
+        var url = new URL(x[0], root).href;
+        var a = document.createElement('a');
+        a.href = url + x[2]; a.textContent = x[1]; a.hidden = true;
+        a.style.cssText = 'padding:4px 12px;border-radius:999px;border:1px solid var(--accent,#2F5DA8);color:var(--accent,#2F5DA8);text-decoration:none;font-weight:600;background:var(--card,#fff)';
+        box.appendChild(a);
+        fetch(url, { method: 'HEAD' }).then(function (r) { if (r.ok) { a.hidden = false; box.style.display = 'flex'; } }).catch(function () {});
+      });
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  } catch (e) {}
+})();
 /* 단어 정리 '단어 전체 듣기'(assets/vocab-listen.js)를 함께 불러온다(2026-10-22). */
 (function () {
   try {
