@@ -31,7 +31,9 @@ def main(path):
     k = Kokoro(*ensure_models())
     out, tmp = {}, tempfile.mkdtemp()
     for w in words:
-        s, sr = k.create(SAYFIX.get(w, w), voice=VOICE, speed=SPEED, lang='en-us')
+        t = re.sub(r'\s*~\s*', ' ', SAYFIX.get(w, w)).strip()   # 'Can you please ~?'의 ~는 읽지 않는다(2026-10-26, 'tilde'로 읽던 것 고침)
+        t = re.sub(r'\s+([?.!,])', r'\1', t)
+        s, sr = k.create(t, voice=VOICE, speed=SPEED, lang='en-us')
         wav, mp3 = os.path.join(tmp, 'a.wav'), os.path.join(tmp, 'a.mp3')
         sf.write(wav, s, sr)
         trim = 'silenceremove=start_periods=1:start_threshold=-45dB'
@@ -39,7 +41,7 @@ def main(path):
                         f'{trim},areverse,{trim},areverse,apad=pad_dur=0.08',
                         '-ac', '1', '-ar', '24000', '-b:a', '48k', mp3], check=True)
         out[w] = 'data:audio/mpeg;base64,' + base64.b64encode(open(mp3, 'rb').read()).decode()
-        print(f'{w:<20} {k.tokenizer.phonemize(SAYFIX.get(w, w), "en-us")}')
+        print(f'{w:<20} {k.tokenizer.phonemize(t, "en-us")}')
     body = 'var AUDIO = {\n' + ',\n'.join(f'  {json.dumps(w)}: "{d}"' for w, d in out.items()) + '\n};'
     src = re.sub(r'(/\* ==== AUDIO:START ==== \*/\n)[\s\S]*?(\n/\* ==== AUDIO:END ==== \*/)',
                  lambda m: m.group(1) + body + m.group(2), src)

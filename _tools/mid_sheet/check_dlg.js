@@ -10,8 +10,8 @@ const cnt={};D.quiz.forEach(q=>cnt[q.a]=(cnt[q.a]||0)+1);[0,1,2,3,4].forEach(k=>
 if(D.quiz[1].o.join()!=="1개,2개,3개,4개,5개")err.push("2번(개수) 보기는 1개~5개");
 D.sentences.forEach((s,i)=>{if(!["B","G","M","W"].includes(s.sp))err.push("말하는 사람(sp) "+(i+1)+"번");});
 [D.map.core,...D.map.left,...D.map.right,D.map.end].forEach(x=>x.s.forEach(k=>{if(k<1||k>n)err.push("맵 번호 "+k)}));
-// 대화문 배열은 문장 하나씩(o.en·o.ko): 줄 안의 문장 중 4단어 이상은 모두 넣는다. 문장 안에 마침표·물음표가 또 있으면 안 된다.
-const split=t=>t.match(/[^.?!]+[.?!]+[\u2019\u201D"')]*/g).map(x=>x.trim());
+// 대화문 배열은 문장 하나씩(o.en·o.ko): 줄 안의 문장 중 4단어 이상은 모두 넣는다. 문장 안에 마침표·물음표가 또 있으면 안 된다. (Mr.·Dr.·p.m. 같은 약어는 문장 끝으로 세지 않는다)
+const split=t=>t.replace(/\b(Mr|Mrs|Ms|Dr|Mt|St)\./g,"$1\u2024").replace(/\b([ap])\.m\.(?=\s+[a-z0-9])/g,"$1\u2024m\u2024").replace(/\b([ap])\.m\./g,"$1\u2024m.").match(/[^.?!]+[.?!]+[\u2019\u201D"')]*/g).map(x=>x.trim().replace(/\u2024/g,"."));
 D.order.forEach(o=>{const t=D.sentences[o.s-1];if(!t||!o.en||!o.ko||o.c.join(" ")!==o.en||!t.en.includes(o.en))err.push("배열 "+o.s+"번 원문과 다름: "+o.en);
  else if(split(o.en).length!==1)err.push("배열 "+o.s+"번 문장이 둘 이상: "+o.en);});
 D.sentences.forEach((s,i)=>split(s.en).forEach(x=>{const w=x.split(/\s+/).length;if(w>=4&&!D.order.some(o=>o.s===i+1&&o.en===x))err.push("배열 빠짐 "+(i+1)+"번: "+x)}));
