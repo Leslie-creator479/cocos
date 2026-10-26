@@ -44,5 +44,14 @@ for a, b in REP:
     if b not in t:
         assert t.count(a) == 1, ('문구', a[:30])
         t = t.replace(a, b)
+# 문장 배열(2026-10-26 원장님 지적): 한 줄(턴)에 문장이 여럿이면 가운데 마침표·대문자가 순서 힌트가 된다.
+#   → 대화문은 문장 하나씩 배열한다. order 항목에 en(그 문장)·ko(그 문장 해석)를 넣으면 화면이 그 문장으로 낸다.
+#   { s: 9, en: 'Did you bake them, Subin?', ko: '네가 이것들을 구웠니, 수빈아?', c: ['Did you', 'bake', 'them,', 'Subin?'] }
+OA = "var it=cur.it, s=S[it.s-1], total=O.length"
+OB = "var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length"
+if OB not in t:
+    assert t.count(OA) == 1, 'order draw'
+    t = t.replace(OA, OB)
+t = t.replace("<small>지문 '+it.s+'번 문장</small>", "<small>대화문 '+it.s+'번 줄</small>")
 open(p, 'w', encoding='utf8').write(t)
 print(p, '대화문 화면 적용')

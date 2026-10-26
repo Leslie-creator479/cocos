@@ -10,8 +10,11 @@ const cnt={};D.quiz.forEach(q=>cnt[q.a]=(cnt[q.a]||0)+1);[0,1,2,3,4].forEach(k=>
 if(D.quiz[1].o.join()!=="1개,2개,3개,4개,5개")err.push("2번(개수) 보기는 1개~5개");
 D.sentences.forEach((s,i)=>{if(!["B","G","M","W"].includes(s.sp))err.push("말하는 사람(sp) "+(i+1)+"번");});
 [D.map.core,...D.map.left,...D.map.right,D.map.end].forEach(x=>x.s.forEach(k=>{if(k<1||k>n)err.push("맵 번호 "+k)}));
-D.order.forEach(o=>{const t=D.sentences[o.s-1];if(!t||o.c.join(" ")!==t.en)err.push("배열 "+o.s+"번 원문과 다름")});
-D.sentences.forEach((s,i)=>{const w=s.en.split(/\s+/).length;if(w>4&&!D.order.some(o=>o.s===i+1))err.push("배열 빠짐 "+(i+1)+"번("+w+"단어)")});
+// 대화문 배열은 문장 하나씩(o.en·o.ko): 줄 안의 문장 중 4단어 이상은 모두 넣는다. 문장 안에 마침표·물음표가 또 있으면 안 된다.
+const split=t=>t.match(/[^.?!]+[.?!]+[\u2019\u201D"')]*/g).map(x=>x.trim());
+D.order.forEach(o=>{const t=D.sentences[o.s-1];if(!t||!o.en||!o.ko||o.c.join(" ")!==o.en||!t.en.includes(o.en))err.push("배열 "+o.s+"번 원문과 다름: "+o.en);
+ else if(split(o.en).length!==1)err.push("배열 "+o.s+"번 문장이 둘 이상: "+o.en);});
+D.sentences.forEach((s,i)=>split(s.en).forEach(x=>{const w=x.split(/\s+/).length;if(w>=4&&!D.order.some(o=>o.s===i+1&&o.en===x))err.push("배열 빠짐 "+(i+1)+"번: "+x)}));
 const B=D.brief,cov=new Set();B.flow.forEach(f=>f.s.forEach(x=>cov.add(x)));for(let i=1;i<=n;i++)if(!cov.has(i))err.push("흐름 빠짐 "+i);
 if(B.keys.length!==3||B.ask.length!==2||B.tips.length<3||B.tips.length>4)err.push("brief 개수");
 const norm=t=>t.replace(/<[^>]+>/g,"").replace(/\s+/g," ").toLowerCase(),text=norm(D.sentences.map(x=>x.en).join(" "));

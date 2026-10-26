@@ -359,10 +359,12 @@
         var c = o.c || [];
         var idx = shuffle(c, (o.s || k + 1) * 7 + c.length);
         h.push('<div class="cp-ord"><p class="cp-qh"><b>' + (o.s || k + 1) + '번 문장</b>' +
-          (D.sentences[(o.s || 0) - 1] && D.sentences[o.s - 1].ko ? ' <span style="color:#5B6278;font-size:9.5pt">— ' + D.sentences[o.s - 1].ko + '</span>' : '') + '</p>' +
+          (o.ko ? ' <span style="color:#5B6278;font-size:9.5pt">— ' + o.ko + '</span>' : D.sentences[(o.s || 0) - 1] && D.sentences[o.s - 1].ko ? ' <span style="color:#5B6278;font-size:9.5pt">— ' + D.sentences[o.s - 1].ko + '</span>' : '') + '</p>' +
           '<div class="cp-chunks">' + idx.map(function (j) {
             var t = c[j];
             if (j === 0 && !o.keep && !/^I\b/.test(t)) t = t.charAt(0).toLowerCase() + t.slice(1);
+            /* 마지막 덩어리 끝의 . ? ! 는 순서 힌트라 PDF에서도 뺀다(화면과 같게, 2026-10-26) */
+            if (j === c.length - 1 && c.length > 1) { var r = t.replace(/[.?!]+[\u201D\u2019"')]*$/, ''); if (r) t = r; }
             return '<span>' + esc(t) + '</span>';
           }).join('') + '</div>' +
           '<div class="cp-write"></div><div class="cp-write"></div></div>');
