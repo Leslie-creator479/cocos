@@ -24,7 +24,7 @@
     var rel = decodeURIComponent(location.pathname).replace(root.pathname, '').replace(/^\/+|\/+$/g, '').split('/');
     var syn = null, game = null, anc = '';
     if (rel[0] === 'study' && rel.length === 3) { syn = 'syn/' + rel[1] + '/'; game = 'game/' + rel[1] + '/'; anc = 'p' + rel[2]; }
-    else if (rel[0] === 'textbook' && rel.length === 4 && !/^d\d/.test(rel[3])) { /* 대화문(d1·d2)은 동의어·단어게임 짝이 없음 */ var b = rel[1] + '-' + rel[2]; syn = 'syn/' + b + '/'; game = 'game/' + b + '/'; anc = 'p' + rel[2] + '-' + rel[3]; }
+    else if (rel[0] === 'textbook' && rel.length === 4) { /* 대화문(d1·d2)도 같은 과 동의어·단어게임에 들어 있다(#p<과>-d1, 2026-10-26) */ var b = rel[1] + '-' + rel[2]; syn = 'syn/' + b + '/'; game = 'game/' + b + '/'; anc = 'p' + rel[2] + '-' + rel[3]; }
     if (!syn) return;
     var go = function () {
       var sec = document.getElementById('wordquiz');

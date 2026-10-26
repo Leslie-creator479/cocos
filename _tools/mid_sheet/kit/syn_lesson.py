@@ -1,4 +1,4 @@
-"""중등 교재 한 과의 동의어·반의어 페이지 만들기.
+"""중등 교재 한 과의 동의어·반의어 페이지 만들기 (meta.json에 dialogs가 있으면 대화문도 같은 페이지에, 2026-10-26).
 사용법: python3 syn_lesson.py <동의어·게임 작업 폴더> <학습지 작업 폴더> <과|s1>            (words.json 없으면 지문 준비 + passages.txt만)
   L<과>/words.json : [[지문1 어휘들], [지문2 어휘들], ...]  어휘 형식은 words.py의 W(...)와 같은 키(dict)
   결과: L<과>/syn/index.html (중등 테마까지), 검사 결과, 1단계 오답 후보 목록(L<과>/distractors.txt)
@@ -10,7 +10,7 @@ SK = '/root/.claude/skills/synced/16b95152-03aa-4f07-bb76-3e709241a39d_b34e3ed9-
 n = sys.argv[3]; LN = '스페셜 레슨' if n.startswith('s') else f'{n}과'; L = os.path.join(H, f'L{n}'); os.makedirs(L, exist_ok=True)
 mf = os.path.join(L, 'meta.json')
 meta = json.load(open(mf if os.path.exists(mf) else f'{WS}/L{n}/meta.json', encoding='utf8'))
-parts = meta['parts']; BOOK = meta['book']; SLUG = meta['slug']; GR, PUB = BOOK.split(' ', 1)
+parts = [dict(p, dlg=False) for p in meta['parts']] + [dict(p, dlg=True) for p in meta.get('dialogs', [])]; BOOK = meta['book']; SLUG = meta['slug']; GR, PUB = BOOK.split(' ', 1)
 srcs = []
 for p in parts:
     f = os.path.join(L, 'src', str(p['k']), 'index.html')
@@ -21,17 +21,27 @@ for p in parts:
 C = os.path.join(L, 'content_syn.json')
 subprocess.run(['python3', f'{SK}/from_studio.py'] + srcs + ['-o', C], check=True, stdout=subprocess.DEVNULL)
 d = json.load(open(C, encoding='utf8'))
-for p, it in zip(parts, d['items']):
-    it['no'] = f"{n}-{p['k']}"; it['label'] = f"{LN} 본문 {p['k']}번"; it['type'] = p['label']; it['exam'] = f'2022 개정 {BOOK}'
+def pdata(f):
+    return json.loads(subprocess.run(['node', '-e', 'const s=require("fs").readFileSync(process.argv[1],"utf8");const m=s.match(/DATA:START ==== \\*\\/([\\s\\S]*?)\\/\\* ==== DATA:END/);const c={};require("vm").runInNewContext(m[1]+";this.D=DATA",c);console.log(JSON.stringify({s:c.D.sentences,v:c.D.vocab,h:c.D.h1}))', f], capture_output=True, text=True).stdout)
+def strip(t): return re.sub(r'<[^>]+>', '', t or '').strip()
+def pname(p): return f"{LN} 대화문 {str(p['k'])[1:]}" if p['dlg'] else f"{LN} 본문 {p['k']}번"
+for p, it, f in zip(parts, d['items'], srcs):
+    it['no'] = f"{n}-{p['k']}"; it['label'] = pname(p); it['type'] = p['label']; it['exam'] = f'2022 개정 {BOOK}'
+    if p['dlg']:   # 대화문: 말하는 사람 표시를 붙여 줄마다(짧은 대화 이름표 줄 포함)
+        D = pdata(f); en, ko = [], []
+        for x in D['s']:
+            if x.get('dn'): en.append(f"[{x['dn']}]"); ko.append(f"[{x['dn']}]")
+            en.append(f"{x['sp']}: {strip(x['en'])}"); ko.append(f"{x['sp']}: {strip(x['ko'])}")
+        it['passage'] = '\n'.join(en); it['translation'] = '\n'.join(ko)
 d['header'] = {'series': f'2022 개정 {BOOK}', 'label': '동의어·반의어', 'title': f'{BOOK} {LN} 동의어·반의어'}
-d['range'] = f'{LN} 교과서 본문 {len(parts)}개'
+nb = sum(1 for p in parts if not p['dlg']); nd = len(parts) - nb
+d['range'] = f'{LN} 교과서 본문 {nb}개' + (f' · 대화문 {nd}개' if nd else '')
 # 에이전트용 지문 파일
 with open(os.path.join(L, 'passages.txt'), 'w', encoding='utf8') as fo:
     for p, f in zip(parts, srcs):
-        s = open(f, encoding='utf8').read()
-        D = json.loads(subprocess.run(['node', '-e', 'const s=require("fs").readFileSync(process.argv[1],"utf8");const m=s.match(/DATA:START ==== \\*\\/([\\s\\S]*?)\\/\\* ==== DATA:END/);const c={};require("vm").runInNewContext(m[1]+";this.D=DATA",c);console.log(JSON.stringify({s:c.D.sentences,v:c.D.vocab,h:c.D.h1}))', f], capture_output=True, text=True).stdout)
-        fo.write(f"=== {LN} 본문 {p['k']}번 ({p['label']}) · {D['h']}\n")
-        for i, x in enumerate(D['s']): fo.write(f"{i+1}. {x['en']}\n   {x['ko']}\n")
+        D = pdata(f)
+        fo.write(f"=== {pname(p)} ({p['label']}) · {D['h']}\n")
+        for i, x in enumerate(D['s']): fo.write(f"{i+1}. {(x['sp'] + ': ') if x.get('sp') else ''}{x['en']}\n   {x['ko']}\n")
         fo.write('학습지 단어: ' + ', '.join(f"{v['w']}({v['p']})" for v in D['v']) + '\n\n')
 W = os.path.join(L, 'words.json')
 if not os.path.exists(W):
