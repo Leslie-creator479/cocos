@@ -45,6 +45,8 @@ if b not in t:
 LC_OLD = "function lc(t,it){ if(it.keep||/^I\\b/.test(t)) return t; return t.charAt(0).toLowerCase()+t.slice(1); }"
 LC_NEW = "function lc(t,it){ if(it.keep) return t; var m=t.match(/^([\\u201c\\u2018\"'(]*)(.)/); if(!m||/^I\\b/.test(t.slice(m[1].length))) return t; return m[1]+m[2].toLowerCase()+t.slice(m[0].length); }"
 t = t.replace(LC_OLD, LC_NEW)
+# 문장 배열 항목에 en·ko가 있으면 그 문장으로 낸다(한 줄에 문장이 여럿일 때 문장 하나씩, 2026-10-26)
+t = t.replace("var it=cur.it, s=S[it.s-1], total=O.length", "var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length")
 t, n = re.subn(r'(/\* ==== DATA:START ==== \*/\n)[\s\S]*?(\n/\* ==== DATA:END ==== \*/)', lambda m: m.group(1) + data + m.group(2), t)
 assert n == 1
 t = re.sub(r'(/\* ==== AUDIO:START ==== \*/\n)[\s\S]*?(\n/\* ==== AUDIO:END ==== \*/)', lambda m: m.group(1) + 'var AUDIO = {};' + m.group(2), t)

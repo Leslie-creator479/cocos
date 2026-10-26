@@ -6,7 +6,15 @@ if(D.quiz.length!==15)err.push("15문항 아님");
 D.quiz.forEach((q,i)=>{if(!T[i].split("|").includes(q.type))err.push("문항"+(i+1)+" 유형 "+q.type);if(q.o.length!==5)err.push("문항"+(i+1)+" 선택지");if(!(q.a>=0&&q.a<5))err.push("정답 범위 "+(i+1));if(new Set(q.o).size!==5)err.push("선택지 중복 "+(i+1));});
 const cnt={};D.quiz.forEach(q=>cnt[q.a]=(cnt[q.a]||0)+1);Object.entries(cnt).forEach(([k,v])=>{if(v!==3)err.push("정답 "+(+k+1)+"번 "+v+"회")});
 [D.map.core,...D.map.left,...D.map.right,D.map.end].forEach(x=>x.s.forEach(k=>{if(k<1||k>n)err.push("맵 번호 "+k)}));
-D.order.forEach(o=>{const t=D.sentences[o.s-1];if(!t||o.c.join(" ")!==t.en)err.push("배열 "+o.s+"번 원문과 다름")});
+// 문장 배열(2026-10-26): 한 항목에 문장이 둘 이상이거나 앞에 이름표(Somi:, Q1., 1.)가 있으면 순서 힌트가 된다 → o.en·o.ko로 문장 하나만, 이름표 없이
+const uq=t=>t.replace(/[\u201C\u201D"]/g,"").replace(/\s+/g," ").trim();
+const ABBR=/\b(Mr|Mrs|Ms|Dr|Mt|St|Jr|No)\.|\b[A-Z]\.(?=\s?[A-Z]?[a-z]*)|\b[ap]\.m\./g;
+D.order.forEach(o=>{const t=D.sentences[o.s-1];const x=o.c.join(" ");
+ if(!t||(o.en?(x!==o.en||!o.ko||!uq(t.en).includes(uq(o.en))):x!==t.en))err.push("배열 "+o.s+"번 원문과 다름");
+ const core=x.replace(/[.?!]+[\u201D\u2019"')]*$/,"").replace(ABBR,m=>m.replace(/\./g,"§"));
+ if(/^([A-Z][\w.’' ]{0,20}?:|Q\d+\.|\d+\.)\s/.test(x))err.push("배열 "+o.s+"번 앞 이름표(순서 힌트)");
+ else{const SAY=/^(\S+\s+){0,5}?(said|asked|shouted|cried|thought|whispered|answered|replied|yelled|called|counted)\b/;
+  for(const mm of core.matchAll(/[.?!][\u201D\u2019"')]*\s+(?=[A-Z“"‘])/g)){if(!SAY.test(core.slice(mm.index+mm[0].length))){err.push("배열 "+o.s+"번 문장이 둘 이상(순서 힌트)");break;}}}});
 const B=D.brief,cov=new Set();B.flow.forEach(f=>f.s.forEach(x=>cov.add(x)));for(let i=1;i<=n;i++)if(!cov.has(i))err.push("흐름 빠짐 "+i);
 if(B.keys.length!==3||B.ask.length!==2||B.tips.length<3||B.tips.length>4)err.push("brief 개수");
 const norm=t=>t.replace(/<[^>]+>/g,"").replace(/\s+/g," ").toLowerCase(),text=norm(D.sentences.map(x=>x.en).join(" "));
