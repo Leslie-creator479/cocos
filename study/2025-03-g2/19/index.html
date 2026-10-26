@@ -500,15 +500,15 @@ var DATA = {
       a: 4, h: '쉼표 뒤에 접속사 없이 동사가 하나 더 나오는지 살펴보세요.', e: '⑤ <i>felt</i> → <b>feeling</b>. 주절의 동사 let out이 이미 있고 접속사가 없으므로, 동시 동작을 나타내는 분사구문 feeling이 되어야 해요. ② spread는 과거형도 spread, ③ 주어 anything이 단수라 Is가 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Nathan', 'boarded the train', 'on Saturday', 'evening.'] },
-    { s: 2, c: ['As he made his way', 'to his seat,', 'he found someone', 'already sitting there.'] },
-    { s: 3, c: ['Confused,', 'he checked his ticket', 'and realized his mistake', '— it was for Sunday,', 'not Saturday!'] },
-    { s: 4, c: ['A flush', 'of panic', 'spread across', 'his face.'] },
-    { s: 5, c: ['He quickly approached', 'a train attendant', 'and explained', 'the situation.'] },
-    { s: 6, c: ['“Is there anything', 'I can do', 'to resolve this?”', 'Nathan asked.'] },
-    { s: 7, c: ['“Don’t worry, sir.', 'We still have', 'seats available,”', 'the attendant said', 'with a reassuring smile.'] },
-    { s: 8, keep: true, c: ['Nathan exchanged', 'his old ticket', 'for a new one,', 'his worries', 'melting away.'] },
-    { s: 9, c: ['Settling into his seat,', 'he let out', 'a deep breath,', 'feeling the tension', 'in his shoulders', 'ease', 'as the train', 'began to move.'] }
+    { s: 1, keep: true, c: ["Nathan","boarded the train","on Saturday","evening."] },
+    { s: 2, c: ["As he made his way","to his seat,","he found someone","already sitting there."] },
+    { s: 3, c: ["Confused,","he checked his ticket","and realized his mistake","— it was for Sunday,","not Saturday!"] },
+    { s: 4, c: ["A flush","of panic","spread across","his face."] },
+    { s: 5, c: ["He quickly approached","a train attendant","and explained","the situation."] },
+    { s: 6, c: ["“Is there anything","I can do","to resolve this?”","Nathan asked."] },
+    { s: 7, en: "“We still have seats available,” the attendant said with a reassuring smile.", ko: "“아직 이용 가능한 자리가 있습니다,” 승무원이 안심시키는 미소를 지으며 말했다.", c: ["“We still have","seats available,”","the attendant said","with a reassuring smile."] },
+    { s: 8, keep: true, c: ["Nathan exchanged","his old ticket","for a new one,","his worries","melting away."] },
+    { s: 9, c: ["Settling into his seat,","he let out","a deep breath,","feeling the tension","in his shoulders","ease","as the train","began to move."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -877,7 +877,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

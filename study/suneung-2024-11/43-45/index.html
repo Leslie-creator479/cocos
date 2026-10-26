@@ -471,31 +471,35 @@ var DATA = {
     { type: '어법 · 밑줄', p: '밑줄 친 부분 중, 어법상 틀린 것은?', q: 'Then, Grace quickly ①<u>reminded</u> him, “Honey, we actually left them here a month ago.” The clerk went into the storage area ②<u>to look for</u> the clothes. Finally, he returned with the jackets and ③<u>handed</u> them to Ethan. The clerk politely said, “I am sorry, but please ④<u>collect</u> your items earlier next time. Our storage is too full.” Ethan felt ⑤<u>embarrassing</u> for the late collection and apologized. Ethan and Grace came back home with the jackets and checked if Sean had everything else he needed for hiking.', o: ['①', '②', '③', '④', '⑤'], a: 4, h: '⑤에서 Ethan이 감정을 ‘느끼는’ 쪽인지 ‘일으키는’ 쪽인지 따져 보세요.', e: '⑤ <i>embarrassing</i> → <b>embarrassed</b>. Ethan이 민망함을 ‘느끼는’ 것이므로 과거분사를 써야 해요. ① 과거 시제 동사, ② ‘찾기 위해’라는 목적의 to부정사, ③ <i>returned</i>와 <i>and</i>로 나란한 동사, ④ <i>please</i> 뒤 명령문의 동사원형으로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['“Do you remember', 'when Sean used to tell me', 'that I was the best dad', 'in the world?”', 'Ethan asked', 'his wife, Grace.'] },
-    { s: 2, c: ['“Yes, I do.', 'I always envied', 'your relationship', 'with Sean,”', 'she replied.'] },
-    { s: 3, c: ['Ethan then shared', 'how things had changed', 'since his son', 'started middle school.'], keep: true },
-    { s: 4, c: ['Grace had noticed', 'Ethan often pushing Sean', 'to study harder.'], keep: true },
-    { s: 5, c: ['“Maybe he isn’t that into school', 'right now.', 'How about going hiking,', 'just the two of you?”', 'she suggested.'] },
-    { s: 6, c: ['He agreed,', 'and realizing that', 'both his and Sean’s hiking jackets', 'were still at the laundry,', 'he asked his wife', 'to go and pick them up', 'with him.'] },
-    { s: 7, c: ['“When did you', 'bring the jackets in?”', 'the clerk', 'at the laundry asked.'] },
-    { s: 8, c: ['“Maybe', 'two weeks ago,”', 'Ethan replied.'] },
-    { s: 9, c: ['Then,', 'Grace quickly reminded him,', '“Honey,', 'we actually left them here', 'a month ago.”'] },
-    { s: 10, c: ['The clerk', 'went into the storage area', 'to look for', 'the clothes.'] },
-    { s: 11, c: ['Finally,', 'he returned', 'with the jackets', 'and handed them', 'to Ethan.'] },
-    { s: 12, c: ['The clerk politely said,', '“I am sorry,', 'but please collect your items', 'earlier next time.', 'Our storage', 'is too full.”'] },
-    { s: 13, c: ['Ethan felt embarrassed', 'for the late collection', 'and apologized.'], keep: true },
-    { s: 14, c: ['Ethan and Grace', 'came back home', 'with the jackets', 'and checked', 'if Sean had everything else', 'he needed for hiking.'], keep: true },
-    { s: 15, c: ['Luckily,', 'in his drawers', 'they found his hat,', 'shoes, sunglasses,', 'and hiking sticks.'] },
-    { s: 16, c: ['When Sean returned', 'from school,', 'Ethan softly said,', '“Sean, let’s go hiking', 'this Saturday,', 'just the two of us.”'] },
-    { s: 17, c: ['Though Sean thanked him', 'for the suggestion,', 'he said', 'he had to go', 'to the library.'] },
-    { s: 18, c: ['Grace stepped in,', '“You know,', 'the weather this weekend', 'will be the best', 'of the year.', 'Why not enjoy it?”'], keep: true },
-    { s: 19, c: ['After a moment’s', 'hesitation,', 'he agreed.'] },
-    { s: 21, c: ['Ethan and Sean', 'set off hiking', 'along the valley', 'by Aicken Mountain.'], keep: true },
-    { s: 22, c: ['They walked', 'in silence', 'until Sean fell over a rock', 'and twisted his ankle.'] },
-    { s: 23, c: ['Realizing', 'he couldn’t walk,', 'Ethan carried his son down', 'on his back.'] },
-    { s: 24, c: ['He felt', 'Sean’s heartbeat,', 'something he hadn’t felt', 'since Sean was a baby.'] },
-    { s: 25, c: ['Suddenly,', 'Sean said,', '“Dad, I’m sorry.', 'At some point,', 'I started to become afraid', 'of disappointing you.', 'But you are still', 'the best dad.”'] },
-    { s: 26, c: ['Energized,', 'he felt no weight', 'on his back', 'and replied,', '“You are the best son,', 'no matter what.”'] }
+    { s: 1, c: ["“Do you remember","when Sean used to tell me","that I was the best dad","in the world?”","Ethan asked","his wife, Grace."] },
+    { s: 2, en: "“I always envied your relationship with Sean,” she replied.", ko: "“항상 나는 당신과 Sean의 관계를 부러워했어요.”라고 그녀가 대답했다.", c: ["“I always envied","your relationship","with Sean,”","she replied."] },
+    { s: 3, c: ["Ethan then shared","how things had changed","since his son","started middle school."], keep: true },
+    { s: 4, c: ["Grace had noticed","Ethan often pushing Sean","to study harder."], keep: true },
+    { s: 5, en: "“Maybe he isn’t that into school right now.”", ko: "“아마도 지금 그 애는 학교에 그다지 관심이 없을 거예요.”", c: ["“Maybe he isn’t that into school","right now.”"] },
+    { s: 5, en: "“How about going hiking, just the two of you?” she suggested.", ko: "“당신과 Sean 단둘이서 하이킹하러 가는 건 어때요?”라고 그녀가 제안했다.", c: ["“How about going hiking,","just the two of you?”","she suggested."] },
+    { s: 6, c: ["He agreed,","and realizing that","both his and Sean’s hiking jackets","were still at the laundry,","he asked his wife","to go and pick them up","with him."] },
+    { s: 7, c: ["“When did you","bring the jackets in?”","the clerk","at the laundry asked."] },
+    { s: 8, c: ["“Maybe","two weeks ago,”","Ethan replied."] },
+    { s: 9, c: ["Then,","Grace quickly reminded him,","“Honey,","we actually left them here","a month ago.”"] },
+    { s: 10, c: ["The clerk","went into the storage area","to look for","the clothes."] },
+    { s: 11, c: ["Finally,","he returned","with the jackets","and handed them","to Ethan."] },
+    { s: 12, en: "The clerk politely said, “I am sorry, but please collect your items earlier next time.”", ko: "점원이 공손하게 “죄송합니다만, 다음에는 물건을 더 일찍 찾아가 주세요.”라고 말했다.", c: ["The clerk politely said,","“I am sorry,","but please collect your items","earlier next time.”"] },
+    { s: 12, en: "“Our storage is too full.”", ko: "“저희 보관 공간이 너무 꽉 찼습니다.”", c: ["“Our storage","is too full.”"] },
+    { s: 13, c: ["Ethan felt embarrassed","for the late collection","and apologized."], keep: true },
+    { s: 14, c: ["Ethan and Grace","came back home","with the jackets","and checked","if Sean had everything else","he needed for hiking."], keep: true },
+    { s: 15, c: ["Luckily,","in his drawers","they found his hat,","shoes, sunglasses,","and hiking sticks."] },
+    { s: 16, c: ["When Sean returned","from school,","Ethan softly said,","“Sean, let’s go hiking","this Saturday,","just the two of us.”"] },
+    { s: 17, c: ["Though Sean thanked him","for the suggestion,","he said","he had to go","to the library."] },
+    { s: 18, en: "Grace stepped in, “You know, the weather this weekend will be the best of the year.”", ko: "Grace가 끼어들었다. “있잖아, 이번 주말 날씨가 올해 최고일 거야.”", c: ["Grace stepped in,","“You know,","the weather this weekend","will be the best","of the year.”"] },
+    { s: 19, c: ["After a moment’s","hesitation,","he agreed."] },
+    { s: 21, c: ["Ethan and Sean","set off hiking","along the valley","by Aicken Mountain."], keep: true },
+    { s: 22, c: ["They walked","in silence","until Sean fell over a rock","and twisted his ankle."] },
+    { s: 23, c: ["Realizing","he couldn’t walk,","Ethan carried his son down","on his back."] },
+    { s: 24, c: ["He felt","Sean’s heartbeat,","something he hadn’t felt","since Sean was a baby."] },
+    { s: 25, en: "Suddenly, Sean said, “Dad, I’m sorry.”", ko: "갑자기 Sean이 말했다. “아빠, 미안해요.”", c: ["Suddenly,","Sean said,","“Dad, I’m sorry.”"] },
+    { s: 25, en: "“At some point, I started to become afraid of disappointing you.”", ko: "“어느 순간부터 아빠를 실망하게 할까 봐 두려워지기 시작했어요.”", c: ["“At some point,","I started to become afraid","of disappointing you.”"] },
+    { s: 25, en: "“But you are still the best dad.”", ko: "“하지만 아빠는 여전히 최고의 아빠예요.”", c: ["“But you are still","the best dad.”"] },
+    { s: 26, c: ["Energized,","he felt no weight","on his back","and replied,","“You are the best son,","no matter what.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -890,7 +894,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

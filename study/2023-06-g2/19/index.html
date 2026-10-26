@@ -504,17 +504,19 @@ var DATA = {
       a: 3, h: '<i>There + be동사</i> 뒤에 오는 진짜 주어의 수를 확인해 보세요.', e: '④ <i>were</i> → <b>was</b>. <i>There</i> 구문에서 동사는 뒤의 주어 <i>a single, unopened letter</i>(단수)에 맞춰야 해요. ①② 과거 시제(hear-heard, swing-swung), ③ 과거진행형 <i>was facing</i>, ⑤ <i>jumped</i>와 <i>and</i>로 나란히 이어진 과거 시제 <i>looked</i>로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Ester stood up', 'as soon as', 'she heard the hum', 'of a hover engine', 'outside.'], keep: true },
-    { s: 2, c: ['“Mail,”', 'she shouted', 'and ran down', 'the third set of stairs', 'and swung open', 'the door.'] },
-    { s: 3, c: ['It was pouring now,', 'but she ran out', 'into the rain.'] },
-    { s: 4, c: ['She was facing', 'the mailbox.'] },
-    { s: 5, c: ['There was', 'a single, unopened letter', 'inside.'] },
-    { s: 6, c: ['She was sure', 'this must be', 'what she was', 'eagerly waiting for.'] },
-    { s: 7, c: ['Without hesitation,', 'she tore open', 'the envelope.'] },
-    { s: 8, c: ['She pulled out', 'the paper', 'and unfolded it.'] },
-    { s: 9, c: ['The letter said,', '‘Thank you', 'for applying', 'to our company.', 'We would like', 'to invite you', 'to our internship program.', 'We look forward to', 'seeing you soon.’'] },
-    { s: 10, c: ['She jumped up and down', 'and looked down', 'at the letter', 'again.'] },
-    { s: 11, c: ['She couldn’t wait', 'to tell this news', 'to her family.'] }
+    { s: 1, c: ["Ester stood up","as soon as","she heard the hum","of a hover engine","outside."], keep: true },
+    { s: 2, c: ["“Mail,”","she shouted","and ran down","the third set of stairs","and swung open","the door."] },
+    { s: 3, c: ["It was pouring now,","but she ran out","into the rain."] },
+    { s: 4, c: ["She was facing","the mailbox."] },
+    { s: 5, c: ["There was","a single, unopened letter","inside."] },
+    { s: 6, c: ["She was sure","this must be","what she was","eagerly waiting for."] },
+    { s: 7, c: ["Without hesitation,","she tore open","the envelope."] },
+    { s: 8, c: ["She pulled out","the paper","and unfolded it."] },
+    { s: 9, en: "The letter said, ‘Thank you for applying to our company.’", ko: "편지에는 ‘우리 회사에 지원해 주셔서 감사합니다.’라고 쓰여 있었다.", c: ["The letter said,","‘Thank you","for applying","to our company.’"] },
+    { s: 9, en: "‘We would like to invite you to our internship program.’", ko: "‘우리는 당신을 인턴십 프로그램에 초대하고 싶습니다.’", c: ["‘We would like","to invite you","to our internship program.’"] },
+    { s: 9, en: "‘We look forward to seeing you soon.’", ko: "‘우리는 당신을 곧 뵙기를 기대합니다.’", c: ["‘We look forward to","seeing you soon.’"] },
+    { s: 10, c: ["She jumped up and down","and looked down","at the letter","again."] },
+    { s: 11, c: ["She couldn’t wait","to tell this news","to her family."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -887,7 +889,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

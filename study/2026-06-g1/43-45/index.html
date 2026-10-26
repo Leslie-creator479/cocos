@@ -529,29 +529,30 @@ var DATA = {
       a: 2, h: '<i>cannot help but</i> 뒤에 오는 동사의 형태를 떠올려 보세요.', e: '③ <i>comparing</i> → <b>compare</b>. <i>cannot help but</i> 뒤에는 동사원형이 와요(= cannot help -ing). ① 주어 Emma가 ‘걸어 들어가는’ 능동이라 현재분사, ② 청중이 ‘응원하는’ 능동이라 현재분사, ④ 결과가 ‘발표되는’ 것이라 수동태, ⑤ ‘축하하기 위해’라는 목적의 to부정사가 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Emma was', 'a talented vocalist', 'but struggled', 'to gain recognition.'] },
-    { s: 2, keep: true, c: ['Lisa,', 'who went to', 'the same high school', 'with her,', 'had quickly become famous', 'with powerful performances.'] },
-    { s: 3, keep: true, c: ['Emma', 'felt jealous', 'watching', 'Lisa’s success.'] },
-    { s: 4, c: ['One day,', 'Emma decided', 'to enter', 'a major vocal competition', 'in the capital city.'] },
-    { s: 5, c: ['She spent months', 'preparing', 'her masterpiece of a performance,', 'hoping', 'this would finally be', 'her opportunity', 'to shine.'] },
-    { s: 6, c: ['When the competition day', 'arrived,', 'Emma felt', 'nervous.'] },
-    { s: 7, c: ['Walking into', 'the concert hall,', 'Emma saw', 'a large audience', 'cheering for Lisa.'] },
-    { s: 8, c: ['She', 'couldn’t help but', 'compare herself', 'to Lisa.'] },
-    { s: 9, c: ['On her turn,', 'Emma performed', 'with all her heart,', 'pouring', 'her months of preparation', 'into every note.'] },
-    { s: 10, c: ['The judges', 'then evaluated', 'each vocalist’s performance', 'carefully.'] },
-    { s: 11, c: ['Finally,', 'the results', 'were announced.'] },
-    { s: 12, c: ['To her surprise,', 'Emma got', 'first place,', 'not Lisa.'] },
-    { s: 13, c: ['Moments later,', 'Lisa came over', 'to congratulate Emma', 'with a warm smile.'] },
-    { s: 14, c: ['She said,', '“Your hard work', 'and dedication', 'really paid off.', 'I’m so happy', 'for you.”'] },
-    { s: 15, c: ['She didn’t seem', 'bothered', 'by the results.'] },
-    { s: 16, c: ['“I’m proud', 'that your singing', 'brings joy', 'to people,”', 'said Lisa.'] },
-    { s: 17, keep: true, c: ['Emma', 'felt grateful', 'for Lisa’s kindness.'] },
-    { s: 18, keep: true, c: ['Lisa added,', '“I’ve always been moved', 'by your effort', 'and have been supporting you', 'all along.”'] },
-    { s: 19, c: ['These words', 'made Emma', 'feel embarrassed', 'at her jealousy.'] },
-    { s: 20, c: ['At the same time,', 'she got inspired', 'to find', 'a better path', 'forward.'] },
-    { s: 21, c: ['They hugged warmly,', 'their bond', 'strengthened.'] },
-    { s: 22, c: ['From that day on,', 'they supported', 'each other', 'and even sang', 'on the same stage', 'together.'] },
-    { s: 23, keep: true, c: ['Emma became', 'more confident', 'and, finally,', 'got a chance', 'to have', 'her solo concert.'] }
+    { s: 1, keep: true, c: ["Emma was","a talented vocalist","but struggled","to gain recognition."] },
+    { s: 2, keep: true, c: ["Lisa,","who went to","the same high school","with her,","had quickly become famous","with powerful performances."] },
+    { s: 3, keep: true, c: ["Emma","felt jealous","watching","Lisa’s success."] },
+    { s: 4, c: ["One day,","Emma decided","to enter","a major vocal competition","in the capital city."] },
+    { s: 5, c: ["She spent months","preparing","her masterpiece of a performance,","hoping","this would finally be","her opportunity","to shine."] },
+    { s: 6, c: ["When the competition day","arrived,","Emma felt","nervous."] },
+    { s: 7, c: ["Walking into","the concert hall,","Emma saw","a large audience","cheering for Lisa."] },
+    { s: 8, c: ["She","couldn’t help but","compare herself","to Lisa."] },
+    { s: 9, c: ["On her turn,","Emma performed","with all her heart,","pouring","her months of preparation","into every note."] },
+    { s: 10, c: ["The judges","then evaluated","each vocalist’s performance","carefully."] },
+    { s: 11, c: ["Finally,","the results","were announced."] },
+    { s: 12, c: ["To her surprise,","Emma got","first place,","not Lisa."] },
+    { s: 13, c: ["Moments later,","Lisa came over","to congratulate Emma","with a warm smile."] },
+    { s: 14, en: "She said, “Your hard work and dedication really paid off.”", ko: "그녀는 “네 노력과 헌신이 정말 결실을 얻었구나.”라고 말했다.", c: ["She said,","“Your hard work","and dedication","really paid off.”"] },
+    { s: 14, en: "“I’m so happy for you.”", ko: "“나는 정말 기뻐.”", c: ["“I’m so happy","for you.”"] },
+    { s: 15, c: ["She didn’t seem","bothered","by the results."] },
+    { s: 16, c: ["“I’m proud","that your singing","brings joy","to people,”","said Lisa."] },
+    { s: 17, keep: true, c: ["Emma","felt grateful","for Lisa’s kindness."] },
+    { s: 18, keep: true, c: ["Lisa added,","“I’ve always been moved","by your effort","and have been supporting you","all along.”"] },
+    { s: 19, c: ["These words","made Emma","feel embarrassed","at her jealousy."] },
+    { s: 20, c: ["At the same time,","she got inspired","to find","a better path","forward."] },
+    { s: 21, c: ["They hugged warmly,","their bond","strengthened."] },
+    { s: 22, c: ["From that day on,","they supported","each other","and even sang","on the same stage","together."] },
+    { s: 23, keep: true, c: ["Emma became","more confident","and, finally,","got a chance","to have","her solo concert."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -946,7 +947,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

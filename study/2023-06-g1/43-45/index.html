@@ -518,25 +518,25 @@ var DATA = {
       a: 1, h: '분사구문의 생략된 주어 he와 suffer의 관계를 따져 보세요.', e: '② <i>Suffered</i> → <b>Suffering</b>. 생략된 주어 he(노인)가 고통을 ‘겪는’ 능동 관계이고 뒤에 <i>from the severe pain</i>이 이어지므로 현재분사로 분사구문을 만들어야 해요. ① <i>have to</i> + 동사원형, ③ ‘~할 수 있도록’의 <i>so that ~ can</i>, ④ 동시 동작을 나타내는 분사구문, ⑤ ‘~하기 위해’라는 목적의 to부정사로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['A nurse took', 'a tired, anxious soldier', 'to the bedside.'] },
-    { s: 2, keep: true, c: ['“Jack, your son is here,”', 'the nurse said', 'to an old man', 'lying on the bed.'] },
-    { s: 3, c: ['She had to repeat', 'the words', 'several times', 'before the old man’s eyes opened.'] },
-    { s: 4, c: ['Suffering from the severe pain', 'because of heart disease,', 'he barely saw', 'the young uniformed soldier', 'standing next to him.'] },
-    { s: 5, c: ['He reached out', 'his hand', 'to the soldier.'] },
-    { s: 6, c: ['The soldier gently wrapped', 'his fingers', 'around the weak hand', 'of the old man.'] },
-    { s: 7, c: ['The nurse brought a chair', 'so that the soldier', 'could sit', 'beside the bed.'] },
-    { s: 8, c: ['All through the night', 'the young soldier sat there,', 'holding the old man’s hand', 'and offering him', 'words of support and comfort.'] },
-    { s: 9, c: ['Occasionally,', 'she suggested', 'that the soldier', 'take a rest', 'for a while.'] },
-    { s: 11, c: ['Whenever the nurse', 'came into the room,', 'she heard the soldier', 'say a few gentle words.'] },
-    { s: 12, c: ['The old man', 'said nothing,', 'only held tightly to him', 'all through the night.'] },
-    { s: 13, c: ['Just before dawn,', 'the old man', 'died.'] },
-    { s: 14, c: ['The soldier released', 'the old man’s hand', 'and left the room', 'to find the nurse.'] },
-    { s: 15, c: ['After she was told', 'what happened,', 'she went back', 'to the room', 'with him.'] },
-    { s: 16, c: ['The soldier hesitated', 'for a while', 'and asked,', '“Who was this man?”'] },
-    { s: 17, c: ['She was surprised', 'and asked,', '“Wasn’t he', 'your father?”'] },
-    { s: 18, c: ['“No, he wasn’t.', 'I’ve never met him before,”', 'the soldier replied.'] },
-    { s: 19, c: ['She asked,', '“Then why didn’t you', 'say something', 'when I took you', 'to him?”'] },
-    { s: 20, c: ['He said,', '“I knew', 'there had been a mistake,', 'but when I realized', 'that he was too sick', 'to tell whether or not', 'I was his son,', 'I could see', 'how much he needed me.', 'So, I stayed.”'] }
+    { s: 1, c: ["A nurse took","a tired, anxious soldier","to the bedside."] },
+    { s: 2, keep: true, c: ["“Jack, your son is here,”","the nurse said","to an old man","lying on the bed."] },
+    { s: 3, c: ["She had to repeat","the words","several times","before the old man’s eyes opened."] },
+    { s: 4, c: ["Suffering from the severe pain","because of heart disease,","he barely saw","the young uniformed soldier","standing next to him."] },
+    { s: 5, c: ["He reached out","his hand","to the soldier."] },
+    { s: 6, c: ["The soldier gently wrapped","his fingers","around the weak hand","of the old man."] },
+    { s: 7, c: ["The nurse brought a chair","so that the soldier","could sit","beside the bed."] },
+    { s: 8, c: ["All through the night","the young soldier sat there,","holding the old man’s hand","and offering him","words of support and comfort."] },
+    { s: 9, c: ["Occasionally,","she suggested","that the soldier","take a rest","for a while."] },
+    { s: 11, c: ["Whenever the nurse","came into the room,","she heard the soldier","say a few gentle words."] },
+    { s: 12, c: ["The old man","said nothing,","only held tightly to him","all through the night."] },
+    { s: 13, c: ["Just before dawn,","the old man","died."] },
+    { s: 14, c: ["The soldier released","the old man’s hand","and left the room","to find the nurse."] },
+    { s: 15, c: ["After she was told","what happened,","she went back","to the room","with him."] },
+    { s: 16, c: ["The soldier hesitated","for a while","and asked,","“Who was this man?”"] },
+    { s: 17, c: ["She was surprised","and asked,","“Wasn’t he","your father?”"] },
+    { s: 18, en: "“I’ve never met him before,” the soldier replied.", ko: "“저는 그를 이전에 만난 적이 없어요.”라고 군인이 대답했다.", c: ["“I’ve never met him","before,”","the soldier replied."] },
+    { s: 19, c: ["She asked,","“Then why didn’t you","say something","when I took you","to him?”"] },
+    { s: 20, en: "He said, “I knew there had been a mistake, but when I realized that he was too sick to tell whether or not I was his son, I could see how much he needed me.”", ko: "그가 말했다, “저는 실수가 있었다는 것을 알았지만, 그가 위독해서 제가 그의 아들인지 아닌지 구별할 수 없다는 걸 알게 되었을 때, 저는 그가 얼마나 저를 필요로 하는지 알 수 있었습니다.”", c: ["He said,","“I knew there had been a mistake,","but when I realized","that he was too sick","to tell whether or not I was his son,","I could see how much he needed me.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -922,7 +922,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

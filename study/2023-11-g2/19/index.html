@@ -510,18 +510,18 @@ var DATA = {
       a: 2, h: '밑줄 친 동사의 주어가 단수인지 복수인지 확인하세요.', e: '③ <i>is</i> → <b>are</b>. 주어 <i>wild beasts</i>가 복수이므로 복수 동사를 써야 해요. ① 과거진행형, ② Chaske가 눈가리개를 ‘쓴’ 능동 관계의 현재분사, ④ 과거 시제 came, ⑤ 주어 the boy의 과거 동사 regained로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Chaske,', 'a Cherokee boy,', 'was sitting', 'on a tree stump.'] },
-    { s: 2, c: ['As a rite of passage', 'for youths', 'in his tribe,', 'Chaske had to survive', 'one night', 'in the forest', 'wearing a blindfold,', 'not knowing', 'he was observed', 'by his father.'] },
-    { s: 3, c: ['After the sunset,', 'Chaske', 'could hear', 'all kinds of noises.'] },
-    { s: 4, c: ['The wind', 'blew the grass', 'and shook', 'his stump.'] },
-    { s: 5, c: ['A sense', 'of dread', 'swept through', 'his body.'] },
-    { s: 6, c: ['What if', 'wild beasts', 'are looking', 'at me?'] },
-    { s: 8, c: ['Just as', 'he was about to', 'take off the blindfold', 'to run away,', 'a voice came in', 'from somewhere.'] },
-    { s: 9, c: ['“I’m here', 'around you.', 'Don’t give up,', 'and complete', 'your mission.”'] },
-    { s: 10, c: ['It was', 'his father’s', 'voice.'] },
-    { s: 11, c: ['He has been', 'watching me', 'from nearby!'] },
-    { s: 12, c: ['With just the presence', 'of his father,', 'the boy', 'regained stability.'] },
-    { s: 13, c: ['What panicked him', 'awfully', 'a moment ago', 'vanished', 'into thin air.'] }
+    { s: 1, keep: true, c: ["Chaske,","a Cherokee boy,","was sitting","on a tree stump."] },
+    { s: 2, c: ["As a rite of passage","for youths","in his tribe,","Chaske had to survive","one night","in the forest","wearing a blindfold,","not knowing","he was observed","by his father."] },
+    { s: 3, c: ["After the sunset,","Chaske","could hear","all kinds of noises."] },
+    { s: 4, c: ["The wind","blew the grass","and shook","his stump."] },
+    { s: 5, c: ["A sense","of dread","swept through","his body."] },
+    { s: 6, c: ["What if","wild beasts","are looking","at me?"] },
+    { s: 8, c: ["Just as","he was about to","take off the blindfold","to run away,","a voice came in","from somewhere."] },
+    { s: 9, en: "“Don’t give up, and complete your mission.”", ko: "“포기하지 말고 너의 임무를 완수해.”", c: ["“Don’t give up,","and complete","your mission.”"] },
+    { s: 10, c: ["It was","his father’s","voice."] },
+    { s: 11, c: ["He has been","watching me","from nearby!"] },
+    { s: 12, c: ["With just the presence","of his father,","the boy","regained stability."] },
+    { s: 13, c: ["What panicked him","awfully","a moment ago","vanished","into thin air."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -901,7 +901,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

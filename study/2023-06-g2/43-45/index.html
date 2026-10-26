@@ -518,20 +518,22 @@ var DATA = {
       a: 4, h: '관계대명사 who의 선행사가 무엇인지 찾고, 수를 맞춰 보세요.', e: '⑤ <i>rejoices</i> → <b>rejoice</b>. who의 선행사는 <i>the angels</i>(복수)이므로 관계절의 동사도 복수형이어야 해요. ① 그녀가 위치에 도달하기 전까지 독일이 ‘배출해 온’ 가수이므로 과거완료, ② 과거진행형, ③ 동시 동작을 나타내는 분사구문, ④ ‘(예전에) ~이었다’의 <i>used to</i> + 동사원형으로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Henrietta is', 'one of the greatest', '“queens of song.”'] },
-    { s: 2, c: ['She had to go through', 'a severe struggle', 'before she attained', 'the enviable position', 'as the greatest singer', 'Germany had produced.'] },
-    { s: 3, c: ['At the beginning of her career', 'she was hissed off', 'a Vienna stage', 'by the friends', 'of her rival, Amelia.'] },
-    { s: 4, c: ['But in spite of', 'this defeat,', 'Henrietta endured', 'until all Europe', 'was at her feet.'] },
-    { s: 5, c: ['Many years later,', 'when Henrietta was', 'at the height of her fame,', 'one day', 'she was riding', 'through the streets of Berlin.'] },
-    { s: 6, c: ['Soon she came across', 'a little girl', 'leading a blind woman.'] },
-    { s: 7, c: ['She was touched', 'by the woman’s helplessness,', 'and she impulsively beckoned', 'the child to her,', 'saying “Come here, my child.', 'Who is that', 'you are leading', 'by the hand?”'] },
-    { s: 8, c: ['The answer was,', '“That’s my mother,', 'Amelia Steininger.', 'She used to be', 'a great singer,', 'but she lost her voice,', 'and she cried so much about it', 'that now', 'she can’t see anymore.”'] },
-    { s: 9, keep: true, c: ['Henrietta inquired', 'their address', 'and then told the child,', '“Tell your mother', 'an old acquaintance', 'will call on her', 'this afternoon.”'] },
-    { s: 10, c: ['She searched out', 'their place', 'and undertook the care', 'of both mother and daughter.'] },
-    { s: 11, c: ['At her request,', 'a skilled doctor', 'tried to restore', 'Amelia’s sight,', 'but it was in vain.'] },
-    { s: 12, c: ['But Henrietta’s kindness', 'to her former rival', 'did not stop here.'] },
-    { s: 13, c: ['The next week', 'she gave a benefit concert', 'for the poor woman,', 'and it was said that', 'on that occasion', 'Henrietta sang', 'as she had never sung before.'] },
-    { s: 14, c: ['And who can doubt that', 'with the applause', 'of that vast audience', 'there was mingled', 'the applause of the angels', 'in heaven', 'who rejoice over', 'the good deeds', 'of those below?'] }
+    { s: 1, keep: true, c: ["Henrietta is","one of the greatest","“queens of song.”"] },
+    { s: 2, c: ["She had to go through","a severe struggle","before she attained","the enviable position","as the greatest singer","Germany had produced."] },
+    { s: 3, c: ["At the beginning of her career","she was hissed off","a Vienna stage","by the friends","of her rival, Amelia."] },
+    { s: 4, c: ["But in spite of","this defeat,","Henrietta endured","until all Europe","was at her feet."] },
+    { s: 5, c: ["Many years later,","when Henrietta was","at the height of her fame,","one day","she was riding","through the streets of Berlin."] },
+    { s: 6, c: ["Soon she came across","a little girl","leading a blind woman."] },
+    { s: 7, en: "She was touched by the woman’s helplessness, and she impulsively beckoned the child to her, saying “Come here, my child.”", ko: "그녀는 여성의 무력함에 마음이 움직였고, 충동적으로 아이를 그녀에게 오라고 손짓하며, “이리와, 얘야.”라고 말했다.", c: ["She was touched","by the woman’s helplessness,","and she impulsively beckoned","the child to her,","saying “Come here, my child.”"] },
+    { s: 7, en: "“Who is that you are leading by the hand?”", ko: "“네가 손을 잡고 데리고 가는 사람은 누구니?”", c: ["“Who is that","you are leading","by the hand?”"] },
+    { s: 8, en: "The answer was, “That’s my mother, Amelia Steininger.”", ko: "대답은, “저분은 제 어머니, Amelia Steininger입니다.”였다.", c: ["The answer was,","“That’s my mother,","Amelia Steininger.”"] },
+    { s: 8, en: "“She used to be a great singer, but she lost her voice, and she cried so much about it that now she can’t see anymore.”", ko: "“그녀는 훌륭한 가수였지만, 목소리를 잃었고, 그 일로 너무 많이 울어서 그녀는 이제 더 이상 앞을 볼 수 없습니다.”", c: ["“She used to be","a great singer,","but she lost her voice,","and she cried so much about it","that now","she can’t see anymore.”"] },
+    { s: 9, keep: true, c: ["Henrietta inquired","their address","and then told the child,","“Tell your mother","an old acquaintance","will call on her","this afternoon.”"] },
+    { s: 10, c: ["She searched out","their place","and undertook the care","of both mother and daughter."] },
+    { s: 11, c: ["At her request,","a skilled doctor","tried to restore","Amelia’s sight,","but it was in vain."] },
+    { s: 12, c: ["But Henrietta’s kindness","to her former rival","did not stop here."] },
+    { s: 13, c: ["The next week","she gave a benefit concert","for the poor woman,","and it was said that","on that occasion","Henrietta sang","as she had never sung before."] },
+    { s: 14, c: ["And who can doubt that","with the applause","of that vast audience","there was mingled","the applause of the angels","in heaven","who rejoice over","the good deeds","of those below?"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -917,7 +919,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

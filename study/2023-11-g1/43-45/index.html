@@ -517,21 +517,23 @@ var DATA = {
       a: 1, h: '② 앞의 <i>because</i>절에 주어와 동사가 제대로 있는지 보세요.', e: '② <i>surrounding</i> → <b>surrounded</b>. <i>because</i> 뒤에는 주어 <i>problems</i>와 동사가 와야 하는데, -ing 형태만으로는 동사가 될 수 없어요. ① <i>start</i>는 목적어로 동명사를 쓸 수 있고, ③ ‘~라고 말하면서’라는 분사구문, ④ 성자가 묻기 전(지난밤)의 일이라 과거완료, ⑤ <i>no matter how</i> + 형용사·부사(아무리 ~해도)로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['There once lived', 'a man', 'in a village', 'who was not happy', 'with his life.'] },
-    { s: 2, c: ['He was always troubled', 'by one problem', 'or another.'] },
-    { s: 3, c: ['One day,', 'a saint', 'with his guards', 'stopped by', 'his village.'] },
-    { s: 4, c: ['Many people', 'heard the news', 'and started going', 'to him', 'with their problems.'] },
-    { s: 5, c: ['The man', 'also decided', 'to visit the saint.'] },
-    { s: 6, c: ['Even after reaching', 'the saint’s place', 'in the morning,', 'he didn’t get', 'the opportunity', 'to meet him', 'till evening.'] },
-    { s: 7, c: ['When the man', 'got to meet the saint,', 'he confessed', 'that he was very unhappy', 'with life', 'because problems', 'always surrounded him,', 'like workplace tension', 'or worries about his health.'] },
-    { s: 8, c: ['He said,', '“Please give me', 'a solution', 'so that all the problems', 'in my life will end', 'and I can live peacefully.”'] },
-    { s: 9, c: ['The saint smiled', 'and said', 'that he would answer', 'the request', 'the next day.'] },
-    { s: 10, c: ['But the saint', 'also asked', 'if the man', 'could do a small job', 'for him.'] },
-    { s: 11, c: ['He told the man', 'to take care of', 'a hundred camels', 'in his group', 'that night,', 'saying', '“When all hundred camels', 'sit down,', 'you can go to sleep.”'] },
-    { s: 13, c: ['The next morning', 'when the saint', 'met that man,', 'he asked', 'if the man', 'had slept well.'] },
-    { s: 14, c: ['Tired and sad,', 'the man replied', 'that he couldn’t sleep', 'even for a moment.'] },
-    { s: 15, c: ['In fact,', 'the man tried very hard', 'but couldn’t make', 'all the camels sit', 'at the same time', 'because every time', 'he made one camel sit,', 'another would stand up.'] },
-    { s: 16, c: ['The saint told him,', '“You realized', 'that no matter how hard you try,', 'you can’t make', 'all the camels sit down.', 'If one problem is solved,', 'for some reason,', 'another will arise', 'like the camels did.', 'So, humans should enjoy life', 'despite these problems.”'] }
+    { s: 1, c: ["There once lived","a man","in a village","who was not happy","with his life."] },
+    { s: 2, c: ["He was always troubled","by one problem","or another."] },
+    { s: 3, c: ["One day,","a saint","with his guards","stopped by","his village."] },
+    { s: 4, c: ["Many people","heard the news","and started going","to him","with their problems."] },
+    { s: 5, c: ["The man","also decided","to visit the saint."] },
+    { s: 6, c: ["Even after reaching","the saint’s place","in the morning,","he didn’t get","the opportunity","to meet him","till evening."] },
+    { s: 7, c: ["When the man","got to meet the saint,","he confessed","that he was very unhappy","with life","because problems","always surrounded him,","like workplace tension","or worries about his health."] },
+    { s: 8, c: ["He said,","“Please give me","a solution","so that all the problems","in my life will end","and I can live peacefully.”"] },
+    { s: 9, c: ["The saint smiled","and said","that he would answer","the request","the next day."] },
+    { s: 10, c: ["But the saint","also asked","if the man","could do a small job","for him."] },
+    { s: 11, c: ["He told the man","to take care of","a hundred camels","in his group","that night,","saying","“When all hundred camels","sit down,","you can go to sleep.”"] },
+    { s: 13, c: ["The next morning","when the saint","met that man,","he asked","if the man","had slept well."] },
+    { s: 14, c: ["Tired and sad,","the man replied","that he couldn’t sleep","even for a moment."] },
+    { s: 15, c: ["In fact,","the man tried very hard","but couldn’t make","all the camels sit","at the same time","because every time","he made one camel sit,","another would stand up."] },
+    { s: 16, en: "The saint told him, “You realized that no matter how hard you try, you can’t make all the camels sit down.”", ko: "그 성자는 그에게 “당신이 아무리 열심히 노력하더라도 모든 낙타를 앉게 만들 수는 없다는 것을 깨달았습니다.”라고 말했다.", c: ["The saint told him,","“You realized","that no matter how hard you try,","you can’t make","all the camels sit down.”"] },
+    { s: 16, en: "“If one problem is solved, for some reason, another will arise like the camels did.”", ko: "“만약 한 가지 문제가 해결되면 낙타가 그런 것처럼 어떤 이유로 또 다른 문제가 일어날 것입니다.”", c: ["“If one problem is solved,","for some reason,","another will arise","like the camels did.”"] },
+    { s: 16, en: "“So, humans should enjoy life despite these problems.”", ko: "“그래서 인간은 이러한 문제에도 불구하고 삶을 즐겨야 합니다.”", c: ["“So, humans should enjoy life","despite these problems.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -915,7 +917,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

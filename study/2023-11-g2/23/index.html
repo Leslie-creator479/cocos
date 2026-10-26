@@ -515,19 +515,19 @@ var DATA = {
       a: 1, h: 'persuade가 목적어 뒤에 어떤 형태를 쓰는지 떠올려 보세요.', e: '② <i>use</i> → <b>to use</b>. persuade는 ‘persuade + 목적어 + to부정사’(~가 …하도록 설득하다) 형태로 써요. ① discovered의 목적어절을 이끄는 접속사, ③ ‘It was ~ who’ 강조 구문, ④ 바람잡이가 ‘위장된’ 것이므로 과거분사, ⑤ 선행사를 포함하고 뒤에 목적어가 빠진 불완전한 절(failed to do)을 이끄는 관계대명사로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Sylvan Goldman', 'invented the shopping cart', 'and introduced it', 'in his stores', 'in 1937.'] },
-    { s: 2, c: ['It was an excellent device', 'that would make it easy', 'for shoppers', 'to buy as much as they wanted', 'without getting tired', 'or seeking others’ help.'] },
-    { s: 3, c: ['But Goldman discovered', 'that in spite of', 'his repeated advertisements and explanations,', 'he could not persuade', 'his shoppers', 'to use the wheeled carts.'] },
-    { s: 4, c: ['Men were reluctant', 'because they thought', 'they would appear weak', 'if they pushed such carts', 'instead of', 'carrying their shopping.'] },
-    { s: 5, c: ['Women wouldn’t touch them', 'because the carts', 'reminded them', 'of baby carriages.'] },
-    { s: 6, c: ['It was only', 'a few', 'elderly shoppers', 'who used them.'] },
-    { s: 7, c: ['That made the carts', 'even less attractive', 'to the majority', 'of the shoppers.'] },
-    { s: 8, c: ['Then', 'Goldman', 'hit upon', 'an idea.'] },
-    { s: 9, c: ['He hired several models,', 'men and women,', 'of different ages', 'and asked them', 'to wheel the carts', 'in the store', 'and shop.'] },
-    { s: 10, c: ['A young woman employee', 'standing near the entrance', 'told the regular shoppers,', '‘Look,', 'everyone is using the carts.', 'Why don’t you?’'] },
-    { s: 11, c: ['That', 'was', 'the turning point.'] },
-    { s: 12, c: ['A few shills', 'disguised as regular shoppers', 'easily accomplished', 'what logic, explanations,', 'and advertisements', 'failed to do.'] },
-    { s: 13, c: ['Within a few weeks', 'shoppers', 'readily accepted', 'those carts.'] }
+    { s: 1, keep: true, c: ["Sylvan Goldman","invented the shopping cart","and introduced it","in his stores","in 1937."] },
+    { s: 2, c: ["It was an excellent device","that would make it easy","for shoppers","to buy as much as they wanted","without getting tired","or seeking others’ help."] },
+    { s: 3, c: ["But Goldman discovered","that in spite of","his repeated advertisements and explanations,","he could not persuade","his shoppers","to use the wheeled carts."] },
+    { s: 4, c: ["Men were reluctant","because they thought","they would appear weak","if they pushed such carts","instead of","carrying their shopping."] },
+    { s: 5, c: ["Women wouldn’t touch them","because the carts","reminded them","of baby carriages."] },
+    { s: 6, c: ["It was only","a few","elderly shoppers","who used them."] },
+    { s: 7, c: ["That made the carts","even less attractive","to the majority","of the shoppers."] },
+    { s: 8, c: ["Then","Goldman","hit upon","an idea."] },
+    { s: 9, c: ["He hired several models,","men and women,","of different ages","and asked them","to wheel the carts","in the store","and shop."] },
+    { s: 10, en: "A young woman employee standing near the entrance told the regular shoppers, ‘Look, everyone is using the carts.’", ko: "입구 근처에 서 있던 한 젊은 여성 직원이 일반 쇼핑객들에게 ‘보세요, 모든 사람이 카트를 사용하고 있습니다.’라고 말했다.", c: ["A young woman employee","standing near the entrance","told the regular shoppers,","‘Look,","everyone is using the carts.’"] },
+    { s: 11, c: ["That","was","the turning point."] },
+    { s: 12, c: ["A few shills","disguised as regular shoppers","easily accomplished","what logic, explanations,","and advertisements","failed to do."] },
+    { s: 13, c: ["Within a few weeks","shoppers","readily accepted","those carts."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -910,7 +910,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

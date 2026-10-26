@@ -507,15 +507,15 @@ var DATA = {
       a: 1, h: '사역동사 let 뒤 목적격 보어의 형태를 떠올려 보세요.', e: '② <i>to influence</i> → <b>influence</b>. 사역동사 <i>let</i>은 ‘let + 목적어 + 동사원형’으로 써요. ① <i>Everyone’s</i> = Everyone has이므로 과거분사 heard, ③ 뒤에 명사구 your idea and your effort가 오므로 전치사 because of, ④ 일이 ‘행해지는’ 것이므로 수동형 to be done, ⑤ <i>help</i>는 목적어로 (to) 동사원형을 써서 move가 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Everyone’s heard', 'the expression', 'don’t let the perfect', 'become the enemy of the good.'] },
-    { s: 2, c: ['If you want', 'to get over an obstacle', 'so that your idea', 'can become', 'the solution-based policy', 'you’ve long dreamed of,', 'you can’t have', 'an all-or-nothing mentality.'] },
-    { s: 3, c: ['You have to be willing', 'to alter your idea', 'and let others', 'influence its outcome.'] },
-    { s: 4, c: ['You have to be okay', 'with the outcome', 'being a little different,', 'even a little less,', 'than you wanted.'] },
-    { s: 5, c: ['Say', 'you’re pushing for', 'a clean water act.'] },
-    { s: 6, c: ['Even if what emerges', 'isn’t as well-funded', 'as you wished,', 'or doesn’t match', 'how you originally conceived the bill,', 'you’ll have still succeeded', 'in ensuring', 'that kids in troubled areas', 'have access to clean water.'] },
-    { s: 7, c: ['That’s what counts,', 'that they will be safer', 'because of your idea', 'and your effort.'] },
-    { s: 9, c: ['Is there more work', 'to be done?', 'Absolutely.'] },
-    { s: 10, c: ['But in almost every case,', 'helping move the needle forward', 'is vastly better', 'than not helping at all.'] }
+    { s: 1, c: ["Everyone’s heard","the expression","don’t let the perfect","become the enemy of the good."] },
+    { s: 2, c: ["If you want","to get over an obstacle","so that your idea","can become","the solution-based policy","you’ve long dreamed of,","you can’t have","an all-or-nothing mentality."] },
+    { s: 3, c: ["You have to be willing","to alter your idea","and let others","influence its outcome."] },
+    { s: 4, c: ["You have to be okay","with the outcome","being a little different,","even a little less,","than you wanted."] },
+    { s: 5, c: ["Say","you’re pushing for","a clean water act."] },
+    { s: 6, c: ["Even if what emerges","isn’t as well-funded","as you wished,","or doesn’t match","how you originally conceived the bill,","you’ll have still succeeded","in ensuring","that kids in troubled areas","have access to clean water."] },
+    { s: 7, c: ["That’s what counts,","that they will be safer","because of your idea","and your effort."] },
+    { s: 9, en: "Is there more work to be done?", ko: "더 해야 할 일이 있는가?", c: ["Is there more work","to be done?"] },
+    { s: 10, c: ["But in almost every case,","helping move the needle forward","is vastly better","than not helping at all."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -891,7 +891,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

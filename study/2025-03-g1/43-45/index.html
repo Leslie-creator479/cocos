@@ -527,28 +527,33 @@ var DATA = {
       a: 0, e: '① <i>shocking</i> → <b>shocked</b>. 주어 he가 본 것에 의해 ‘충격을 받은’ 것이므로 과거분사를 써야 해요. ② 선행사를 포함한 관계대명사 what(~한 것), ③ 농장을 산 것이 성공한 모습을 본 시점보다 앞선 일이므로 과거완료 had bought, ④ <i>seem to</i> 뒤 진행형 부정사, ⑤ <i>had torn down</i>과 병렬인 과거분사 built는 모두 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Jack, an Arkansas farmer,', 'was unhappy', 'because he couldn’t make', 'enough money', 'from his farm.'] },
-    { s: 2, c: ['He worked hard', 'for many years,', 'but things', 'didn’t improve.'] },
-    { s: 3, c: ['He sold his farm', 'to his neighbor,', 'Victor,', 'who was', 'by no means wealthy.'] },
-    { s: 4, c: ['Hoping for', 'a fresh start,', 'he left for', 'the big city', 'to find', 'better opportunities.'] },
-    { s: 5, c: ['Years passed,', 'but Jack still', 'couldn’t find', 'the fortune', 'he was looking for.'] },
-    { s: 6, c: ['Tired and broke,', 'he returned', 'to the area', 'where his old farm was.'] },
-    { s: 7, c: ['One day,', 'he drove past', 'his old land', 'and was shocked', 'by what he saw.'] },
-    { s: 8, keep: true, c: ['Victor,', 'the man who had bought', 'the farm', 'with very little money,', 'now seemed', 'to be living', 'a life of great success.'] },
-    { s: 9, c: ['He had torn down', 'the farmhouse', 'and built', 'a massive house', 'in its place.'] },
-    { s: 10, c: ['New buildings,', 'trees, and flowers', 'adorned', 'the well-kept property.'] },
-    { s: 11, keep: true, c: ['Jack could hardly believe', 'that he had ever worked', 'on this same land.'] },
-    { s: 12, c: ['Curious,', 'he stopped', 'to talk', 'to Victor.'] },
-    { s: 13, c: ['“How did you', 'do all this?”', 'he asked.'] },
-    { s: 14, c: ['And he continued,', '“When you bought the farm,', 'you barely had', 'any money.', 'How did you', 'get so rich?”'] },
-    { s: 15, keep: true, c: ['Victor smiled', 'and said,', '“I owe it all', 'to you.', 'There were diamonds', 'on this land', '— acres and acres', 'of diamonds!', 'I got rich', 'because I discovered', 'those diamonds.”'] },
-    { s: 16, c: ['“Diamonds?”', 'Jack said', 'in disbelief.'] },
-    { s: 17, c: ['And he said,', '“I knew', 'every part of that land,', 'and there were', 'no diamonds!”'] },
-    { s: 18, keep: true, c: ['Victor reached', 'into his pocket', 'and carefully pulled out', 'something', 'small and shiny.'] },
-    { s: 19, c: ['Holding it', 'between his fingers,', 'he let it', 'catch the light.'] },
-    { s: 20, c: ['He said,', '“This is', 'a diamond.”'] },
-    { s: 21, keep: true, c: ['Jack was amazed', 'and said,', '“I saw so many rocks', 'like that', 'and thought', 'they were useless.', 'They made farming', 'so hard!”'] },
-    { s: 22, keep: true, c: ['Victor laughed', 'and said,', '“You didn’t know', 'what diamonds look like.', 'Sometimes,', 'treasures are hidden', 'right in front of us.”'] }
+    { s: 1, keep: true, c: ["Jack, an Arkansas farmer,","was unhappy","because he couldn’t make","enough money","from his farm."] },
+    { s: 2, c: ["He worked hard","for many years,","but things","didn’t improve."] },
+    { s: 3, c: ["He sold his farm","to his neighbor,","Victor,","who was","by no means wealthy."] },
+    { s: 4, c: ["Hoping for","a fresh start,","he left for","the big city","to find","better opportunities."] },
+    { s: 5, c: ["Years passed,","but Jack still","couldn’t find","the fortune","he was looking for."] },
+    { s: 6, c: ["Tired and broke,","he returned","to the area","where his old farm was."] },
+    { s: 7, c: ["One day,","he drove past","his old land","and was shocked","by what he saw."] },
+    { s: 8, keep: true, c: ["Victor,","the man who had bought","the farm","with very little money,","now seemed","to be living","a life of great success."] },
+    { s: 9, c: ["He had torn down","the farmhouse","and built","a massive house","in its place."] },
+    { s: 10, c: ["New buildings,","trees, and flowers","adorned","the well-kept property."] },
+    { s: 11, keep: true, c: ["Jack could hardly believe","that he had ever worked","on this same land."] },
+    { s: 12, c: ["Curious,","he stopped","to talk","to Victor."] },
+    { s: 13, c: ["“How did you","do all this?”","he asked."] },
+    { s: 14, en: "And he continued, “When you bought the farm, you barely had any money.”", ko: "그리고 그는 계속해서 “당신이 농장을 샀을 때, 당신은 돈이 거의 없었잖아요.”라고 말했다.", c: ["And he continued,","“When you bought the farm,","you barely had","any money.”"] },
+    { s: 14, en: "“How did you get so rich?”", ko: "“어떻게 그렇게 부자가 되었죠?”", c: ["“How did you","get so rich?”"] },
+    { s: 15, en: "Victor smiled and said, “I owe it all to you.”", ko: "Victor는 미소를 지으며, “그 모든 것이 다 당신 덕분이에요.”라고 말했다.", c: ["Victor smiled","and said,","“I owe it all","to you.”"] },
+    { s: 15, en: "“There were diamonds on this land — acres and acres of diamonds!”", ko: "“이 땅에는 다이아몬드가, 대량의 다이아몬드가 있었어요!”", c: ["“There were diamonds","on this land","— acres and acres","of diamonds!”"] },
+    { s: 15, en: "“I got rich because I discovered those diamonds.”", ko: "“제가 부자가 된 것은 그 다이아몬드를 발견했기 때문이에요.”", c: ["“I got rich","because I discovered","those diamonds.”"] },
+    { s: 16, c: ["“Diamonds?”","Jack said","in disbelief."] },
+    { s: 17, c: ["And he said,","“I knew","every part of that land,","and there were","no diamonds!”"] },
+    { s: 18, keep: true, c: ["Victor reached","into his pocket","and carefully pulled out","something","small and shiny."] },
+    { s: 19, c: ["Holding it","between his fingers,","he let it","catch the light."] },
+    { s: 20, c: ["He said,","“This is","a diamond.”"] },
+    { s: 21, en: "Jack was amazed and said, “I saw so many rocks like that and thought they were useless.”", ko: "Jack은 놀라서 “저는 그런 돌을 많이 봤는데 그것들이 쓸모가 없다고 생각했어요.”라고 말했다.", c: ["Jack was amazed","and said,","“I saw so many rocks","like that","and thought","they were useless.”"] },
+    { s: 21, en: "“They made farming so hard!”", ko: "“그것들이 농사짓는 걸 너무 힘들게 만들었어요!”", c: ["“They made farming","so hard!”"] },
+    { s: 22, en: "Victor laughed and said, “You didn’t know what diamonds look like.”", ko: "Victor는 웃으며 “당신은 다이아몬드가 어떻게 생겼는지 몰랐군요.”라고 말했다.", c: ["Victor laughed","and said,","“You didn’t know","what diamonds look like.”"] },
+    { s: 22, en: "“Sometimes, treasures are hidden right in front of us.”", ko: "“때때로 보물은 바로 우리 앞에 숨겨져 있으니까요.”", c: ["“Sometimes,","treasures are hidden","right in front of us.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -943,7 +948,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

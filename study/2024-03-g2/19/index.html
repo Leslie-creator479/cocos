@@ -498,14 +498,15 @@ var DATA = {
       a: 1, h: '접속사 뒤의 절에 동사가 제대로 있는지 확인해 보세요.', e: '② <i>looking</i> → <b>looked</b>. 접속사 <i>As</i>가 이끄는 부사절에는 주어 she 뒤에 동사가 와야 하므로 과거형 looked가 맞아요. ① 삽입구 뒤 주어 Sarah의 동사, ③④ 과거의 일을 나타내는 과거형, ⑤ <i>more than just winning</i>의 winning은 ‘우승하는 것’이라는 뜻의 동명사예요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Sarah,', 'a young artist', 'with a love for painting,', 'entered', 'a local art contest.'] },
-    { s: 2, c: ['As she looked at', 'the amazing artworks', 'made by others,', 'her confidence dropped.'] },
-    { s: 3, c: ['She quietly thought,', '‘I might not win', 'an award.’'] },
-    { s: 4, c: ['The moment of judgment', 'arrived,', 'and the judges began', 'announcing winners', 'one by one.'] },
-    { s: 5, c: ['It wasn’t until', 'the end', 'that she heard', 'her name.'] },
-    { s: 6, c: ['The head of the judges', 'said,', '“Congratulations,', 'Sarah Parker!', 'You won first prize.', 'We loved', 'the uniqueness of your work.”'] },
-    { s: 7, keep: true, c: ['Sarah was overcome', 'with joy,', 'and she couldn’t stop', 'smiling.'] },
-    { s: 8, c: ['This experience meant', 'more than just winning;', 'it confirmed', 'her identity', 'as an artist.'] }
+    { s: 1, keep: true, c: ["Sarah,","a young artist","with a love for painting,","entered","a local art contest."] },
+    { s: 2, c: ["As she looked at","the amazing artworks","made by others,","her confidence dropped."] },
+    { s: 3, c: ["She quietly thought,","‘I might not win","an award.’"] },
+    { s: 4, c: ["The moment of judgment","arrived,","and the judges began","announcing winners","one by one."] },
+    { s: 5, c: ["It wasn’t until","the end","that she heard","her name."] },
+    { s: 6, en: "The head of the judges said, “Congratulations, Sarah Parker!”", ko: "심사위원장이 “축하해요, Sarah Parker!”라고 말했다.", c: ["The head of the judges","said,","“Congratulations,","Sarah Parker!”"] },
+    { s: 6, en: "“We loved the uniqueness of your work.”", ko: "“당신 작품의 독창성이 정말 좋았습니다.”", c: ["“We loved","the uniqueness of your work.”"] },
+    { s: 7, keep: true, c: ["Sarah was overcome","with joy,","and she couldn’t stop","smiling."] },
+    { s: 8, c: ["This experience meant","more than just winning;","it confirmed","her identity","as an artist."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -874,7 +875,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

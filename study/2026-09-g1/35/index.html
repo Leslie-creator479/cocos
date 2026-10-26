@@ -501,11 +501,11 @@ var DATA = {
       a: 4, h: '마지막 문장의 주어가 단수인지 복수인지 보세요.', e: '⑤ <i>needs</i> → <b>need</b>. 주어가 복수 <i>dogs</i>(with thick, heavy coats는 수식어)이므로 복수 동사를 써야 해요. ① 선행사를 포함한 관계대명사 what, ③ 이유의 접속사 as, ④ 개가 ‘목욕을 받는’ 수동 관계이므로 to be bathed가 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Our number one criterion', 'for how we care for our pets', 'should be,', '“Is this', 'what they actually need?', 'How is it impacting them?”', 'rather than,', '“What do I want?”'] },
-    { s: 2, c: ['For example,', 'we have encountered', 'many dog owners', 'who bathe their dogs religiously', 'multiple times a week', 'because they want to avoid', 'the ‘doggy’ smell,', 'but veterinary dermatologists', 'warn against such practices,', 'as they are not good', 'for a dog’s skin.'] },
-    { s: 3, c: ['If someone is really concerned', 'about their dog’s smell', 'they can use waterless shampoo', 'and thoroughly brush their dog', 'every day', 'but keep the baths down', 'to once or twice a week', 'at most.'] },
-    { s: 4, c: ['Unless they have a skin condition', 'for which a vet', 'has prescribed medicated baths,', 'most dogs', 'don’t need to be bathed', 'on a regular basis.'] },
-    { s: 5, c: ['Even dogs', 'with thick, heavy coats', 'generally only need baths', 'every 6 to 8 weeks.'] }
+    { s: 1, en: "Our number one criterion for how we care for our pets should be, “Is this what they actually need?”", ko: "우리가 우리의 반려동물을 어떻게 돌보는지에 대한 우리의 첫 번째 기준은 ‘이것이 그들이 실제로 필요한 것인가?’가 되어야 한다.", c: ["Our number one criterion","for how we care for our pets","should be,","“Is this","what they actually need?”"] },
+    { s: 2, c: ["For example,","we have encountered","many dog owners","who bathe their dogs religiously","multiple times a week","because they want to avoid","the ‘doggy’ smell,","but veterinary dermatologists","warn against such practices,","as they are not good","for a dog’s skin."] },
+    { s: 3, c: ["If someone is really concerned","about their dog’s smell","they can use waterless shampoo","and thoroughly brush their dog","every day","but keep the baths down","to once or twice a week","at most."] },
+    { s: 4, c: ["Unless they have a skin condition","for which a vet","has prescribed medicated baths,","most dogs","don’t need to be bathed","on a regular basis."] },
+    { s: 5, c: ["Even dogs","with thick, heavy coats","generally only need baths","every 6 to 8 weeks."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -875,7 +875,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

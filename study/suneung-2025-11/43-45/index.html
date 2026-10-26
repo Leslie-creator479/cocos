@@ -479,31 +479,36 @@ var DATA = {
     { type: '어법 · 밑줄', p: '밑줄 친 부분 중, 어법상 틀린 것은?', q: '“Mia seems ①<u>to live</u> inside her phone, not with us.” Sam nodded, “I know. I feel like she is ②<u>growing</u> distant from us. Why don’t we set up a family reading club?” … When Sam suggested starting a family reading club, Mia immediately shook her head and said, “No, Dad. I don’t have time to read books. You know ③<u>how busy</u> I am with exams all semester.” … Mia’s family held their first book club meeting on Saturday afternoon. Everyone ④<u>enjoying</u> the book Mia had chosen. Julia was the first to speak: “Dr. Duvall nearly invented a drug for eternal life, yet disappeared one day and ended up ⑤<u>running</u> Café Paris. That’s such a mystery.”', o: ['①', '②', '③', '④', '⑤'], a: 3, h: '④가 들어 있는 문장에 주어 <i>Everyone</i>의 동사가 있는지 확인하세요.', e: '④ <i>enjoying</i> → <b>enjoyed</b>. 주어 <i>Everyone</i> 뒤에 문장의 동사가 필요하므로 과거형 enjoyed를 써야 해요. ① <i>seem</i> 뒤에 to부정사 to live, ② <i>is growing</i>의 진행형, ③ 간접의문문 어순 <i>how busy I am</i>, ⑤ <i>end up</i> 뒤의 동명사가 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['“Mia, let’s go', 'walk our dog!”', 'Julia called out,', 'but there was', 'no answer.'], keep: true },
-    { s: 2, c: ['She checked', 'her daughter’s room', 'and found', 'that Mia was absorbed', 'in her smartphone,', 'wearing her earbuds.'] },
-    { s: 3, c: ['Julia was concerned', 'about her daughter.'], keep: true },
-    { s: 4, c: ['She turned', 'to her husband,', 'Sam.'] },
-    { s: 5, c: ['“Mia seems', 'to live', 'inside her phone,', 'not with us.”'], keep: true },
-    { s: 6, c: ['Sam nodded,', '“I know.', 'I feel like', 'she is growing distant', 'from us.', 'Why don’t we set up', 'a family reading club?”'], keep: true },
-    { s: 7, c: ['Julia brightened', 'at the suggestion,', 'and Sam promised', 'to talk with Mia', 'about it.'], keep: true },
-    { s: 8, c: ['When Sam suggested', 'starting a family reading club,', 'Mia immediately', 'shook her head and said,', '“No, Dad.', 'I don’t have time', 'to read books.', 'You know', 'how busy I am', 'with exams all semester.”'] },
-    { s: 10, c: ['“But wouldn’t it be fun', 'if we all read', 'the same story', 'and shared our thoughts?', 'You could simply read', 'for 20 minutes,', 'maybe during', 'your lunch break.”'] },
-    { s: 11, c: ['After some persuasion,', 'Mia', 'reluctantly agreed.'] },
-    { s: 12, c: ['Deep down,', 'she knew', 'she was spending', 'too much time', 'on her phone.'] },
-    { s: 13, c: ['So she asked,', '“Dad,', 'can I choose', 'the first book?”'] },
-    { s: 15, c: ['At the library,', 'Mia scanned the shelves', 'for nearly an hour,', 'feeling lost', 'among the endless titles.'] },
-    { s: 16, c: ['Then,', 'a librarian approached', 'and asked,', '“Looking for something', 'in particular?”'] },
-    { s: 17, c: ['“I need a book', 'for my family’s', 'reading club,”', 'Mia admitted.'], keep: true },
-    { s: 18, c: ['“What genre', 'do you enjoy?”', 'she asked', 'kindly.'] },
-    { s: 19, c: ['“Hmm,', 'I like mysteries,”', 'Mia replied.'] },
-    { s: 20, c: ['The librarian handed her', 'a book titled Café Paris', 'and said', 'with a smile,', '“You’ll love', 'this one.”'] },
-    { s: 21, c: ['Mia thanked her', 'and checked it out.'], keep: true },
-    { s: 22, c: ['Mia’s family held', 'their first book club meeting', 'on Saturday afternoon.'], keep: true },
-    { s: 23, c: ['Everyone enjoyed', 'the book', 'Mia had chosen.'] },
-    { s: 24, c: ['Julia was the first', 'to speak:', '“Dr. Duvall nearly invented', 'a drug for eternal life,', 'yet disappeared one day', 'and ended up running', 'Café Paris.', 'That’s such a mystery.”'], keep: true },
-    { s: 25, c: ['Mia responded,', 'her eyes sparkling,', '“Mom,', 'I understand him.', 'He always dreamed', 'of being a barista,', 'and his dream', 'came true.”'], keep: true },
-    { s: 26, c: ['Sam supported', 'his daughter,', 'and their conversation', 'grew lively.'], keep: true },
-    { s: 27, c: ['During the discussion,', 'Mia felt reconnected', 'with her parents', 'and already looked forward', 'to their next', 'book club meeting.'] }
+    { s: 1, c: ["“Mia, let’s go","walk our dog!”","Julia called out,","but there was","no answer."], keep: true },
+    { s: 2, c: ["She checked","her daughter’s room","and found","that Mia was absorbed","in her smartphone,","wearing her earbuds."] },
+    { s: 3, c: ["Julia was concerned","about her daughter."], keep: true },
+    { s: 4, c: ["She turned","to her husband,","Sam."] },
+    { s: 5, c: ["“Mia seems","to live","inside her phone,","not with us.”"], keep: true },
+    { s: 6, en: "“I feel like she is growing distant from us.”", ko: "“그녀가 우리와 점점 멀어지고 있는 기분이네요.”", c: ["“I feel like","she is growing distant","from us.”"] },
+    { s: 6, en: "“Why don’t we set up a family reading club?”", ko: "“가족 독서 모임을 만들어 보는 게 어때요?”", c: ["“Why don’t we set up","a family reading club?”"] },
+    { s: 7, c: ["Julia brightened","at the suggestion,","and Sam promised","to talk with Mia","about it."], keep: true },
+    { s: 8, en: "When Sam suggested starting a family reading club, Mia immediately shook her head and said, “No, Dad.”", ko: "Sam이 가족 독서 모임을 시작하자고 제안했을 때, Mia는 즉시 고개를 저으며 말했다. “싫어요, 아빠.”", c: ["When Sam suggested","starting a family reading club,","Mia immediately","shook her head and said,","“No, Dad.”"] },
+    { s: 8, en: "“I don’t have time to read books.”", ko: "“책 읽을 시간이 없어요.”", c: ["“I don’t have time","to read books.”"] },
+    { s: 8, en: "“You know how busy I am with exams all semester.”", ko: "“제가 시험 때문에 학기 내내 얼마나 바쁜지 아시잖아요.”", c: ["“You know","how busy I am","with exams all semester.”"] },
+    { s: 10, en: "“But wouldn’t it be fun if we all read the same story and shared our thoughts?”", ko: "“하지만 우리 모두 같은 이야기를 읽고 생각을 나누면 재미있지 않을까?”", c: ["“But wouldn’t it be fun","if we all read","the same story","and shared our thoughts?”"] },
+    { s: 10, en: "“You could simply read for 20 minutes, maybe during your lunch break.”", ko: "“어쩌면 네 점심시간에 잠깐 20분 정도만 읽으면 될 거야.”", c: ["“You could simply read","for 20 minutes,","maybe during","your lunch break.”"] },
+    { s: 11, c: ["After some persuasion,","Mia","reluctantly agreed."] },
+    { s: 12, c: ["Deep down,","she knew","she was spending","too much time","on her phone."] },
+    { s: 13, c: ["So she asked,","“Dad,","can I choose","the first book?”"] },
+    { s: 15, c: ["At the library,","Mia scanned the shelves","for nearly an hour,","feeling lost","among the endless titles."] },
+    { s: 16, c: ["Then,","a librarian approached","and asked,","“Looking for something","in particular?”"] },
+    { s: 17, c: ["“I need a book","for my family’s","reading club,”","Mia admitted."], keep: true },
+    { s: 18, c: ["“What genre","do you enjoy?”","she asked","kindly."] },
+    { s: 19, c: ["“Hmm,","I like mysteries,”","Mia replied."] },
+    { s: 20, c: ["The librarian handed her","a book titled Café Paris","and said","with a smile,","“You’ll love","this one.”"] },
+    { s: 21, c: ["Mia thanked her","and checked it out."], keep: true },
+    { s: 22, c: ["Mia’s family held","their first book club meeting","on Saturday afternoon."], keep: true },
+    { s: 23, c: ["Everyone enjoyed","the book","Mia had chosen."] },
+    { s: 24, en: "Julia was the first to speak: “Dr. Duvall nearly invented a drug for eternal life, yet disappeared one day and ended up running Café Paris.”", ko: "Julia가 먼저 말했다. “Dr. Duvall은 영생의 약을 거의 발명했는데, 어느 날 사라져서 결국 Café Paris를 운영하게 되었잖아.”", c: ["Julia was the first","to speak:","“Dr. Duvall nearly invented","a drug for eternal life,","yet disappeared one day","and ended up running Café Paris.”"] },
+    { s: 25, en: "Mia responded, her eyes sparkling, “Mom, I understand him.”", ko: "Mia는 눈을 반짝이며 대답했다. “엄마, 저는 그가 이해돼요.”", c: ["Mia responded,","her eyes sparkling,","“Mom,","I understand him.”"] },
+    { s: 25, en: "“He always dreamed of being a barista, and his dream came true.”", ko: "“그는 항상 바리스타가 되는 게 꿈이었는데, 결국 그 꿈을 이뤘잖아요.”", c: ["“He always dreamed","of being a barista,","and his dream","came true.”"] },
+    { s: 26, c: ["Sam supported","his daughter,","and their conversation","grew lively."], keep: true },
+    { s: 27, c: ["During the discussion,","Mia felt reconnected","with her parents","and already looked forward","to their next","book club meeting."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -899,7 +904,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

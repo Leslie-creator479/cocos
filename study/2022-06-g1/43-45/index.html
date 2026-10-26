@@ -523,22 +523,23 @@ var DATA = {
       a: 2, h: 'and가 무엇과 무엇을 나란히 이어 주는지 보세요.', e: '③ <i>going</i> → <b>went</b>. and가 주어 <i>the children</i>의 과거 동사 <i>hurried</i>와 나란히 이어 주므로 같은 과거형이어야 해요. ① 접속사 while 뒤에 주어(he)와 be동사가 생략된 분사 working, ② <i>appear to be</i>(~인 것처럼 보이다)의 to be, ④ 전치사 of 뒤의 동명사 finding, ⑤ 주어 <i>the boy</i>의 과거 동사 came으로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Once,', 'a farmer lost', 'his precious watch', 'while working', 'in his barn.'] },
-    { s: 2, c: ['It may have appeared', 'to be an ordinary watch', 'to others,', 'but it brought', 'a lot of happy childhood memories', 'to him.'] },
-    { s: 3, c: ['It was', 'one of', 'the most important things', 'to him.'] },
-    { s: 4, c: ['After searching for it', 'for a long time,', 'the old farmer', 'became exhausted.'] },
-    { s: 5, c: ['However,', 'the tired farmer', 'did not want to give up on', 'the search for his watch', 'and asked', 'a group of children', 'playing outside', 'to help him.'] },
-    { s: 6, c: ['He promised', 'an attractive reward', 'for the person', 'who could find it.'] },
-    { s: 7, c: ['After hearing about the reward,', 'the children hurried', 'inside the barn', 'and went through and round', 'the entire pile of hay', 'looking for the watch.'] },
-    { s: 8, c: ['After a long time', 'searching for it,', 'some of the children', 'got tired', 'and gave up.'] },
-    { s: 9, c: ['The number of children', 'looking for the watch', 'slowly decreased', 'and only a few tired children', 'were left.'] },
-    { s: 10, c: ['The farmer gave up', 'all hope', 'of finding it', 'and called off', 'the search.'] },
-    { s: 11, c: ['Just when the farmer', 'was closing the barn door,', 'a little boy', 'came up to him', 'and asked the farmer', 'to give him', 'another chance.'] },
-    { s: 12, c: ['The farmer did not want', 'to lose out on', 'any chance', 'of finding the watch', 'so let him', 'in the barn.'] },
-    { s: 13, c: ['After a little while', 'the boy came out', 'with the farmer’s watch', 'in his hand.'] },
-    { s: 14, c: ['He was happily surprised', 'and asked', 'how he had succeeded', 'to find the watch', 'while everyone else', 'had failed.'] },
-    { s: 15, c: ['He replied', '“I just sat there', 'and tried listening', 'for the sound of the watch.', 'In silence,', 'it was much easier', 'to hear it', 'and follow the direction', 'of the sound.”'] },
-    { s: 16, c: ['He was delighted', 'to get his watch back', 'and rewarded', 'the little boy', 'as promised.'] }
+    { s: 1, c: ["Once,","a farmer lost","his precious watch","while working","in his barn."] },
+    { s: 2, c: ["It may have appeared","to be an ordinary watch","to others,","but it brought","a lot of happy childhood memories","to him."] },
+    { s: 3, c: ["It was","one of","the most important things","to him."] },
+    { s: 4, c: ["After searching for it","for a long time,","the old farmer","became exhausted."] },
+    { s: 5, c: ["However,","the tired farmer","did not want to give up on","the search for his watch","and asked","a group of children","playing outside","to help him."] },
+    { s: 6, c: ["He promised","an attractive reward","for the person","who could find it."] },
+    { s: 7, c: ["After hearing about the reward,","the children hurried","inside the barn","and went through and round","the entire pile of hay","looking for the watch."] },
+    { s: 8, c: ["After a long time","searching for it,","some of the children","got tired","and gave up."] },
+    { s: 9, c: ["The number of children","looking for the watch","slowly decreased","and only a few tired children","were left."] },
+    { s: 10, c: ["The farmer gave up","all hope","of finding it","and called off","the search."] },
+    { s: 11, c: ["Just when the farmer","was closing the barn door,","a little boy","came up to him","and asked the farmer","to give him","another chance."] },
+    { s: 12, c: ["The farmer did not want","to lose out on","any chance","of finding the watch","so let him","in the barn."] },
+    { s: 13, c: ["After a little while","the boy came out","with the farmer’s watch","in his hand."] },
+    { s: 14, c: ["He was happily surprised","and asked","how he had succeeded","to find the watch","while everyone else","had failed."] },
+    { s: 15, en: "He replied “I just sat there and tried listening for the sound of the watch.”", ko: "그는 “저는 거기에 앉아서 시계의 소리를 들으려고 했어요.”라고 답했다.", c: ["He replied","“I just sat there","and tried listening","for the sound of the watch.”"] },
+    { s: 15, en: "“In silence, it was much easier to hear it and follow the direction of the sound.”", ko: "“침묵 속에서, 그것을 듣고 소리의 방향을 따라가는 것이 훨씬 쉬웠어요.”", c: ["“In silence,","it was much easier","to hear it","and follow the direction","of the sound.”"] },
+    { s: 16, c: ["He was delighted","to get his watch back","and rewarded","the little boy","as promised."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -928,7 +929,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

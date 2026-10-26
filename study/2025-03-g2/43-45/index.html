@@ -529,31 +529,37 @@ var DATA = {
       a: 2, h: '전치사 뒤에 어떤 형태가 와야 하는지 확인해 보세요.', e: '③ <i>believe</i> → <b>believing</b>. 전치사 for 뒤에는 동명사가 와야 해요. ① 선행사 confidence를 꾸미는 주격 관계대명사, ② 동시 동작을 나타내는 분사구문, ④ 깨달은 시점보다 앞선 일이므로 과거완료, ⑤ what절 주어는 단수 취급이므로 is가 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Ms. Blake walked', 'along the edge', 'of the soccer field,', 'watching Eva', 'pack up her things', 'after practice.'] },
-    { s: 2, c: ['She paused', 'for a moment,', 'then called out,', '“Hey, Eva!', 'How about staying', 'a little longer?', 'We can work on', 'some drills', '— just the two of us.”'] },
-    { s: 4, c: ['“I don’t know,', 'Coach.', 'I’m pretty tired.”'] },
-    { s: 5, keep: true, c: ['Ms. Blake', 'gave her', 'a warm smile.'] },
-    { s: 6, c: ['“Just ten minutes.', 'It’ll be fun.', 'I promise.”'] },
-    { s: 7, c: ['Finally,', 'Eva agreed,', 'though she', 'still seemed reluctant.'] },
-    { s: 8, c: ['They practiced', 'passing the ball', 'together.'] },
-    { s: 9, keep: true, c: ['Ms. Blake noticed', 'that Eva’s movements', 'were slow', 'and that her focus', 'seemed elsewhere.'] },
-    { s: 10, c: ['Breaking the silence,', 'Ms. Blake asked,', '“Do you remember', 'the final game', 'last year?”'] },
-    { s: 12, keep: true, c: ['Eva recalled', 'the game', 'where she scored', 'three goals.'] },
-    { s: 13, c: ['“I was', 'quite good', 'back then.”'] },
-    { s: 14, c: ['“You still are,”', 'replied', 'Ms. Blake.'] },
-    { s: 15, c: ['“Well, now', 'I’m so worried', 'I can’t score a goal', 'or even pass the ball', 'properly.', 'I’m afraid of', 'making mistakes,”', 'said Eva.'] },
-    { s: 16, keep: true, c: ['Ms. Blake stepped closer', 'and placed', 'a reassuring hand', 'on Eva’s shoulder.'] },
-    { s: 17, c: ['She suggested,', '“You don’t have to', 'be perfect.', 'Soccer isn’t about perfection', '— it’s about passion.', 'And you’ve always had', 'plenty of that.”'] },
-    { s: 18, keep: true, c: ['Eva’s gaze', 'met', 'Ms. Blake’s.'] },
-    { s: 19, c: ['“Do you', 'really', 'think so?”'] },
-    { s: 20, keep: true, c: ['Ms. Blake said firmly,', '“Yes.', 'The way you play,', 'the energy you bring', '— that’s what', 'makes you special.', 'Not the goals scored', 'or the trophies won.', 'It’s the love', 'you have for the game.”'] },
-    { s: 22, c: ['The next game,', 'Ms. Blake watched', 'from the sidelines', 'as Eva played.'] },
-    { s: 23, c: ['There was', 'a new confidence', 'that hadn’t been there', 'before.'] },
-    { s: 24, keep: true, c: ['Eva didn’t score', 'but led the team', 'successfully.'] },
-    { s: 25, c: ['After the game', 'she ran over,', 'saying,', '“Thanks for believing in me,', 'Coach.”'] },
-    { s: 27, c: ['“You’ve always had it', 'in you.', 'I’m just here', 'to remind you', 'of that.”'] },
-    { s: 28, keep: true, c: ['Eva’s face softened,', 'as she realized', 'she had been', 'too hard on herself.'] },
-    { s: 29, c: ['She said to herself,', '“What matters', 'is doing my best,', 'not being perfect.”'] }
+    { s: 1, keep: true, c: ["Ms. Blake walked","along the edge","of the soccer field,","watching Eva","pack up her things","after practice."] },
+    { s: 2, en: "She paused for a moment, then called out, “Hey, Eva!”", ko: "그녀는 잠시 멈춰 섰다가 큰 소리로 말했다. “이봐, Eva!”", c: ["She paused","for a moment,","then called out,","“Hey, Eva!”"] },
+    { s: 2, en: "“How about staying a little longer?”", ko: "“조금 더 있다 가는 건 어때?”", c: ["“How about staying","a little longer?”"] },
+    { s: 2, en: "“We can work on some drills — just the two of us.”", ko: "“우리 연습 좀 해 보자, 우리 둘이서만.”", c: ["“We can work on","some drills","— just the two of us.”"] },
+    { s: 5, keep: true, c: ["Ms. Blake","gave her","a warm smile."] },
+    { s: 7, c: ["Finally,","Eva agreed,","though she","still seemed reluctant."] },
+    { s: 8, c: ["They practiced","passing the ball","together."] },
+    { s: 9, keep: true, c: ["Ms. Blake noticed","that Eva’s movements","were slow","and that her focus","seemed elsewhere."] },
+    { s: 10, c: ["Breaking the silence,","Ms. Blake asked,","“Do you remember","the final game","last year?”"] },
+    { s: 12, keep: true, c: ["Eva recalled","the game","where she scored","three goals."] },
+    { s: 13, c: ["“I was","quite good","back then.”"] },
+    { s: 14, c: ["“You still are,”","replied","Ms. Blake."] },
+    { s: 15, c: ["“Well, now","I’m so worried","I can’t score a goal","or even pass the ball","properly.","I’m afraid of","making mistakes,”","said Eva."] },
+    { s: 16, keep: true, c: ["Ms. Blake stepped closer","and placed","a reassuring hand","on Eva’s shoulder."] },
+    { s: 17, en: "She suggested, “You don’t have to be perfect.”", ko: "그녀가 넌지시 말했다. “완벽할 필요는 없어.”", c: ["She suggested,","“You don’t have to","be perfect.”"] },
+    { s: 17, en: "“Soccer isn’t about perfection — it’s about passion.”", ko: "“축구는 완벽함이 아니라 열정에 관한 거야.”", c: ["“Soccer isn’t","about perfection","— it’s about passion.”"] },
+    { s: 17, en: "“And you’ve always had plenty of that.”", ko: "“그리고 너는 항상 그것(열정)을 많이 갖고 있었어.”", c: ["“And you’ve always had","plenty of that.”"] },
+    { s: 18, keep: true, c: ["Eva’s gaze","met","Ms. Blake’s."] },
+    { s: 19, c: ["“Do you","really","think so?”"] },
+    { s: 20, en: "Ms. Blake said firmly, “Yes.”", ko: "Ms. Blake는 단호하게 말했다. “그럼.”", c: ["Ms. Blake","said firmly,","“Yes.”"] },
+    { s: 20, en: "“The way you play, the energy you bring — that’s what makes you special.”", ko: "“네가 경기하는 방식, 네가 주는 에너지, 그게 너를 특별하게 만드는 거야.”", c: ["“The way you play,","the energy you bring","— that’s what","makes you special.”"] },
+    { s: 20, en: "“Not the goals scored or the trophies won.”", ko: "“득점한 골이나 획득한 트로피가 아니야.”", c: ["“Not the goals scored","or the trophies won.”"] },
+    { s: 20, en: "“It’s the love you have for the game.”", ko: "“네가 가진 이 경기에 대한 사랑하는 마음 말이야.”", c: ["“It’s the love","you have for the game.”"] },
+    { s: 22, c: ["The next game,","Ms. Blake watched","from the sidelines","as Eva played."] },
+    { s: 23, c: ["There was","a new confidence","that hadn’t been there","before."] },
+    { s: 24, keep: true, c: ["Eva didn’t score","but led the team","successfully."] },
+    { s: 25, c: ["After the game","she ran over,","saying,","“Thanks for believing in me,","Coach.”"] },
+    { s: 27, en: "“You’ve always had it in you.”", ko: "“너는 항상 그 능력을 갖고 있었어.”", c: ["“You’ve always had it","in you.”"] },
+    { s: 27, en: "“I’m just here to remind you of that.”", ko: "“난 단지 그걸 네게 상기시켜 주기 위해 여기 있는 거야.”", c: ["“I’m just here","to remind you","of that.”"] },
+    { s: 28, keep: true, c: ["Eva’s face softened,","as she realized","she had been","too hard on herself."] },
+    { s: 29, c: ["She said to herself,","“What matters","is doing my best,","not being perfect.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -951,7 +957,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

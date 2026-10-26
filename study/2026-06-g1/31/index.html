@@ -505,14 +505,15 @@ var DATA = {
       a: 4, h: '각 문장에 주어와 짝을 이루는 동사가 있는지 확인하세요.', e: '⑤ <i>adding</i> → <b>added</b>. 주어 <i>Cratylus</i>(콤마 사이 <i>a student of Heraclitus</i>는 동격)의 동사가 필요하므로 과거형 동사를 써야 해요. ④ <i>No man</i>은 3인칭 단수라서 steps가 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Our world is', 'not just interconnected,', 'but ever-changing,', 'even if', 'we can’t sense it.'] },
-    { s: 2, c: ['While', 'you’re reading', 'this,', 'you’re changing.'] },
-    { s: 3, c: ['You’re aging', '(a minute amount, thankfully),', 'but the neural networks', 'in your brain', 'are also', 'imperceptibly changing', 'as you perceive', 'each word.'] },
-    { s: 4, c: ['Crucially,', 'even when we’re seemingly', 'not doing anything of note,', 'events are taking place', 'outside your immediate surroundings', 'that will change your life', 'in the future,', 'though you won’t', 'realize it yet.'] },
-    { s: 5, keep: true, c: ['Heraclitus,', 'the ancient Greek philosopher,', 'rightly pointed out,', '“No man ever steps', 'in the same river twice.', 'For it’s not the same river', 'and he’s not the same man.”'] },
-    { s: 6, c: ['To that,', 'Cratylus,', 'a student of Heraclitus,', 'added that', 'we are not', 'mere passive observers.'] },
-    { s: 7, c: ['When', 'you step', 'in a river,', 'you change it.'] },
-    { s: 9, c: ['Even', 'microscopic changes', 'add up', 'over time.'] }
+    { s: 1, c: ["Our world is","not just interconnected,","but ever-changing,","even if","we can’t sense it."] },
+    { s: 2, c: ["While","you’re reading","this,","you’re changing."] },
+    { s: 3, c: ["You’re aging","(a minute amount, thankfully),","but the neural networks","in your brain","are also","imperceptibly changing","as you perceive","each word."] },
+    { s: 4, c: ["Crucially,","even when we’re seemingly","not doing anything of note,","events are taking place","outside your immediate surroundings","that will change your life","in the future,","though you won’t","realize it yet."] },
+    { s: 5, en: "Heraclitus, the ancient Greek philosopher, rightly pointed out, “No man ever steps in the same river twice.”", ko: "고대 그리스 철학자 Heraclitus는 “어떤 사람도 같은 강물에 두 번 발을 담글 수 없다.”라고 정확히 지적했다.", c: ["Heraclitus,","the ancient Greek philosopher,","rightly pointed out,","“No man ever steps","in the same river twice.”"] },
+    { s: 5, en: "“For it’s not the same river and he’s not the same man.”", ko: "“왜냐하면 그것은 같은 강물이 아니며 그는 같은 사람이 아니기 때문이다.”", c: ["“For it’s not the same river","and he’s not the same man.”"] },
+    { s: 6, c: ["To that,","Cratylus,","a student of Heraclitus,","added that","we are not","mere passive observers."] },
+    { s: 7, c: ["When","you step","in a river,","you change it."] },
+    { s: 9, c: ["Even","microscopic changes","add up","over time."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -886,7 +887,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

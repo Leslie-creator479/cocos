@@ -486,28 +486,33 @@ var DATA = {
     { type: '어법 · 밑줄', p: '밑줄 친 부분 중, 어법상 틀린 것은?', q: '“Don’t worry, Camila,” Hailey responded, ①<u>smiled</u>. Camila relaxed only when Hailey had safely placed the cake on the party table. “Dad will be here shortly. What gift did you buy for his birthday?” Camila asked out of interest. “Dad will be surprised ②<u>to find</u> out what it is!” Hailey answered with a wink. … They were suddenly interrupted by the doorbell ③<u>ringing</u>. It was their dad and they were overjoyed to see him. “My lovely ladies, thank you for inviting me to your place for my birthday.” He walked in joyfully, hugging his daughters. They all walked into the dining room, ④<u>where</u> he was greeted with a rainbow-colored birthday cake and fifty red roses. … “Actually Camila, I recently found out he has long been suffering from color blindness. He’s kept it a secret so as ⑤<u>not to worry</u> us,” Hailey explained.', o: ['①', '②', '③', '④', '⑤'], a: 0, h: '①은 이미 동사 <i>responded</i>가 있는 문장에서 ‘미소 지으며’를 나타내는 자리예요.', e: '① <i>smiled</i> → <b>smiling</b>. 이미 동사 <i>responded</i>가 있으므로 ‘미소 지으며’는 동시 상황을 나타내는 분사구문 smiling으로 써야 해요. ② 감정의 원인을 나타내는 to부정사, ③ 전치사 <i>by</i>의 목적어인 동명사(의미상 주어 the doorbell), ④ 장소 선행사 <i>the dining room</i>을 받는 관계부사, ⑤ <i>so as not to</i> ‘~하지 않기 위해’로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['“Hailey, be careful!”', 'Camila yelled uneasily,', 'watching her sister', 'carrying a huge cake', 'to the table.'], keep: true },
-    { s: 2, c: ['“Don’t worry,', 'Camila,”', 'Hailey responded,', 'smiling.'], keep: true },
-    { s: 3, c: ['Camila relaxed', 'only when', 'Hailey had safely placed', 'the cake', 'on the party table.'], keep: true },
-    { s: 4, c: ['“Dad will be here shortly.', 'What gift did you buy', 'for his birthday?”', 'Camila asked', 'out of interest.'], keep: true },
-    { s: 5, c: ['“Dad will be surprised', 'to find out', 'what it is!”', 'Hailey answered', 'with a wink.'], keep: true },
-    { s: 6, c: ['“I bet', 'you bought a wallet', 'or a watch', 'for him,”', 'Camila said.'], keep: true },
-    { s: 7, c: ['In reply,', 'Hailey answered,', '“No.', 'I bought something', 'much more personal.', 'By the way,', 'there’s something', 'you should know', 'about Dad...”'] },
-    { s: 8, c: ['They were', 'suddenly interrupted', 'by the doorbell', 'ringing.'] },
-    { s: 9, c: ['It was their dad', 'and they were overjoyed', 'to see him.'] },
-    { s: 10, c: ['“My lovely ladies,', 'thank you', 'for inviting me', 'to your place', 'for my birthday.”'], keep: true },
-    { s: 11, c: ['He walked in', 'joyfully,', 'hugging', 'his daughters.'] },
-    { s: 12, c: ['They all walked', 'into the dining room,', 'where he was greeted', 'with a rainbow-colored', 'birthday cake', 'and fifty red roses.'] },
-    { s: 13, c: ['“Happy birthday!', 'You’re fifty today, Dad.', 'We love you!”', 'Camila said', 'before her sister', 'handed him', 'a small parcel.'], keep: true },
-    { s: 14, c: ['When he opened it,', 'he discovered', 'a pair of glasses', 'inside.'] },
-    { s: 15, c: ['“Hailey,', 'Dad doesn’t have', 'eyesight problems,”', 'Camila said,', 'puzzled.'], keep: true },
-    { s: 16, c: ['“Actually Camila,', 'I recently found out', 'he has long been suffering', 'from color blindness.', 'He’s kept it a secret', 'so as not to', 'worry us,”', 'Hailey explained.'], keep: true },
-    { s: 17, c: ['“Dad,', 'these glasses', 'can help correct', 'your red-green', 'color blindness,”', 'said Hailey.'], keep: true },
-    { s: 18, c: ['He slowly', 'put them on,', 'and stared at', 'the birthday presents', 'on the table.'] },
-    { s: 19, c: ['Seeing vivid', 'red and green colors', 'for the first time ever,', 'he started', 'to cry.'] },
-    { s: 20, c: ['“Incredible!', 'Look at', 'those wonderful colors!”', 'He shouted', 'in amazement.'], keep: true },
-    { s: 21, c: ['Hailey told him', 'in tears,', '“Dad, I’m glad', 'you can now finally enjoy', 'the true beauty', 'of rainbows and roses.', 'Red represents love', 'and green represents health.', 'You deserve both.”'], keep: true },
-    { s: 22, c: ['Camila nodded,', 'seeing', 'how happy', 'her gift of the glasses', 'had made their dad.'], keep: true }
+    { s: 1, c: ["“Hailey, be careful!”","Camila yelled uneasily,","watching her sister","carrying a huge cake","to the table."], keep: true },
+    { s: 2, c: ["“Don’t worry,","Camila,”","Hailey responded,","smiling."], keep: true },
+    { s: 3, c: ["Camila relaxed","only when","Hailey had safely placed","the cake","on the party table."], keep: true },
+    { s: 4, en: "“Dad will be here shortly.”", ko: "“아빠가 곧 오실 거야.”", c: ["“Dad will be","here shortly.”"] },
+    { s: 4, en: "“What gift did you buy for his birthday?” Camila asked out of interest.", ko: "“너는 아빠 생일을 위해 무슨 선물을 샀어?” Camila는 호기심에서 물었다.", c: ["“What gift did you buy","for his birthday?”","Camila asked","out of interest."] },
+    { s: 5, c: ["“Dad will be surprised","to find out","what it is!”","Hailey answered","with a wink."], keep: true },
+    { s: 6, c: ["“I bet","you bought a wallet","or a watch","for him,”","Camila said."], keep: true },
+    { s: 7, en: "In reply, Hailey answered, “No.”", ko: "대꾸하면서 Hailey는 “아니.”라고 대답했다.", c: ["In reply,","Hailey answered,","“No.”"] },
+    { s: 7, en: "“I bought something much more personal.”", ko: "“난 훨씬 더 개인적인 것을 샀어.”", c: ["“I bought something","much more personal.”"] },
+    { s: 7, en: "“By the way, there’s something you should know about Dad...”", ko: "“그건 그렇고 언니가 아빠에 대해 알아야 할 게 있어···”", c: ["“By the way,","there’s something","you should know","about Dad...”"] },
+    { s: 8, c: ["They were","suddenly interrupted","by the doorbell","ringing."] },
+    { s: 9, c: ["It was their dad","and they were overjoyed","to see him."] },
+    { s: 10, c: ["“My lovely ladies,","thank you","for inviting me","to your place","for my birthday.”"], keep: true },
+    { s: 11, c: ["He walked in","joyfully,","hugging","his daughters."] },
+    { s: 12, c: ["They all walked","into the dining room,","where he was greeted","with a rainbow-colored","birthday cake","and fifty red roses."] },
+    { s: 13, en: "“We love you!” Camila said before her sister handed him a small parcel.", ko: "“사랑해요!”라고 Camila가 말하고 나서 그녀의 동생이 그에게 작은 꾸러미를 드렸다.", c: ["“We love you!”","Camila said","before her sister","handed him","a small parcel."] },
+    { s: 14, c: ["When he opened it,","he discovered","a pair of glasses","inside."] },
+    { s: 15, c: ["“Hailey,","Dad doesn’t have","eyesight problems,”","Camila said,","puzzled."], keep: true },
+    { s: 16, en: "“Actually Camila, I recently found out he has long been suffering from color blindness.”", ko: "“사실은 Camila, 난 아빠가 오랫동안 색맹을 앓고 있다는 것을 최근에 알게 되었어.”", c: ["“Actually Camila,","I recently found out","he has long been suffering","from color blindness.”"] },
+    { s: 16, en: "“He’s kept it a secret so as not to worry us,” Hailey explained.", ko: "“아빠는 우리를 걱정시키지 않으려고 그것을 비밀로 해왔어.”라고 Hailey가 설명했다.", c: ["“He’s kept it a secret","so as not to","worry us,”","Hailey explained."] },
+    { s: 17, c: ["“Dad,","these glasses","can help correct","your red-green","color blindness,”","said Hailey."], keep: true },
+    { s: 18, c: ["He slowly","put them on,","and stared at","the birthday presents","on the table."] },
+    { s: 19, c: ["Seeing vivid","red and green colors","for the first time ever,","he started","to cry."] },
+    { s: 20, en: "“Look at those wonderful colors!” He shouted in amazement.", ko: "“저 경이로운 색깔들을 보렴!” 그는 깜짝 놀라 소리쳤다.", c: ["“Look at","those wonderful colors!”","He shouted","in amazement."] },
+    { s: 21, en: "Hailey told him in tears, “Dad, I’m glad you can now finally enjoy the true beauty of rainbows and roses.”", ko: "Hailey는 눈물을 흘리며 그에게 말했다. “아빠, 난 아빠가 이제 마침내 무지개와 장미의 진정한 아름다움을 즐길 수 있어서 기뻐요.”", c: ["Hailey told him","in tears,","“Dad, I’m glad","you can now finally enjoy","the true beauty","of rainbows and roses.”"] },
+    { s: 21, en: "“Red represents love and green represents health.”", ko: "“빨강색은 사랑을 나타내고 초록색은 건강을 나타내요.”", c: ["“Red represents love","and green represents health.”"] },
+    { s: 22, c: ["Camila nodded,","seeing","how happy","her gift of the glasses","had made their dad."], keep: true }
   ]
 };
 /* ==== DATA:END ==== */
@@ -901,7 +906,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

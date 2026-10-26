@@ -524,21 +524,22 @@ var DATA = {
       a: 4, h: '분사구문의 생략된 주어와 분사의 관계를 따져 보세요.', e: '⑤ <i>Heard</i> → <b>Hearing</b>. 생략된 주어 the monk가 하인들의 말을 ‘듣는’ 능동 관계이고 뒤에 목적어 <i>this</i>가 있으므로 현재분사를 써야 해요. ① 의사들에게 ‘치료받은’ 수동태, ② 선행사 a monk(사람)의 주격 관계대명사, ③ <i>call for</i>의 수동태, ④ 뒤에 절(주어+동사)이 오는 접속사라 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['There was', 'a very wealthy man', 'who was bothered', 'by severe eye pain.'] },
-    { s: 2, c: ['He consulted', 'many doctors', 'and was treated', 'by several of them.'] },
-    { s: 3, c: ['He did not stop consulting', 'a galaxy of medical experts;', 'he was heavily medicated', 'and underwent', 'hundreds of injections.'] },
-    { s: 4, c: ['However,', 'the pain persisted', 'and was worse', 'than before.'] },
-    { s: 5, c: ['At last,', 'he heard about a monk', 'who was famous', 'for treating patients', 'with his condition.'] },
-    { s: 6, c: ['Within a few days,', 'the monk', 'was called for', 'by the suffering man.'] },
-    { s: 7, c: ['The monk understood', 'the wealthy man’s problem', 'and said that', 'for some time', 'he should concentrate', 'only on green colours', 'and not let his eyes', 'see any other colours.'] },
-    { s: 8, c: ['The wealthy man thought', 'it was a strange prescription,', 'but he was desperate', 'and decided', 'to try it.'] },
-    { s: 9, c: ['He got together', 'a group of painters', 'and purchased', 'barrels of green paint', 'and ordered that', 'every object', 'he was likely to see', 'be painted green', 'just as the monk', 'had suggested.'] },
-    { s: 10, c: ['In a few days', 'everything', 'around that man', 'was green.'] },
-    { s: 11, c: ['The wealthy man', 'made sure that', 'nothing around him', 'could be', 'any other colour.'] },
-    { s: 12, c: ['When the monk', 'came to visit him', 'after a few days,', 'the wealthy man’s servants', 'ran with buckets', 'of green paint', 'and poured them', 'all over him', 'because he was wearing', 'red clothes.'] },
-    { s: 13, c: ['He asked', 'the servants', 'why they', 'did that.'] },
-    { s: 14, c: ['They replied,', '“We can’t let', 'our master see', 'any other colour.”'] },
-    { s: 15, c: ['Hearing this,', 'the monk laughed and said', '“If only you had purchased', 'a pair of green glasses', 'for just a few dollars,', 'you could have saved', 'these walls, trees, pots, and everything else', 'and you could have saved', 'a large share of his fortune.', 'You cannot paint', 'the whole world green.”'] }
+    { s: 1, c: ["There was","a very wealthy man","who was bothered","by severe eye pain."] },
+    { s: 2, c: ["He consulted","many doctors","and was treated","by several of them."] },
+    { s: 3, c: ["He did not stop consulting","a galaxy of medical experts;","he was heavily medicated","and underwent","hundreds of injections."] },
+    { s: 4, c: ["However,","the pain persisted","and was worse","than before."] },
+    { s: 5, c: ["At last,","he heard about a monk","who was famous","for treating patients","with his condition."] },
+    { s: 6, c: ["Within a few days,","the monk","was called for","by the suffering man."] },
+    { s: 7, c: ["The monk understood","the wealthy man’s problem","and said that","for some time","he should concentrate","only on green colours","and not let his eyes","see any other colours."] },
+    { s: 8, c: ["The wealthy man thought","it was a strange prescription,","but he was desperate","and decided","to try it."] },
+    { s: 9, c: ["He got together","a group of painters","and purchased","barrels of green paint","and ordered that","every object","he was likely to see","be painted green","just as the monk","had suggested."] },
+    { s: 10, c: ["In a few days","everything","around that man","was green."] },
+    { s: 11, c: ["The wealthy man","made sure that","nothing around him","could be","any other colour."] },
+    { s: 12, c: ["When the monk","came to visit him","after a few days,","the wealthy man’s servants","ran with buckets","of green paint","and poured them","all over him","because he was wearing","red clothes."] },
+    { s: 13, c: ["He asked","the servants","why they","did that."] },
+    { s: 14, c: ["They replied,","“We can’t let","our master see","any other colour.”"] },
+    { s: 15, en: "Hearing this, the monk laughed and said “If only you had purchased a pair of green glasses for just a few dollars, you could have saved these walls, trees, pots, and everything else and you could have saved a large share of his fortune.”", ko: "이것을 듣고 수도사는 웃으며 말했다. “만약에 당신들이 단돈 몇 달러밖에 하지 않는 녹색 안경 하나만 구매했다면, 이러한 벽, 나무, 항아리, 그리고 다른 모든 것을 지킬 수 있었을 것이고 또한 그의 재산의 많은 부분을 아낄 수 있었을 것입니다.”", c: ["Hearing this,","the monk laughed and said","“If only you had purchased a pair of green glasses","for just a few dollars,","you could have saved these walls, trees, pots, and everything else","and you could have saved a large share of his fortune.”"] },
+    { s: 15, en: "“You cannot paint the whole world green.”", ko: "“당신들은 온 세상을 녹색으로 칠할 수는 없어요.”", c: ["“You cannot paint","the whole world green.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -930,7 +931,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

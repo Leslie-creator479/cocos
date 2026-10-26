@@ -507,16 +507,16 @@ var DATA = {
       a: 1, h: '전치사 뒤에 올 수 있는 동사의 형태를 생각해 보세요.', e: '② <i>think</i> → <b>thinking</b>. 전치사 without 뒤에는 동명사가 와야 해요. ① be wired to-v(~하도록 되어 있다), ③ mind를 꾸미는 현재분사, ④ 주어 we에 맞는 복수 동사, ⑤ you’ve stopped와 and로 이어진 현재완료의 과거분사라 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['We’re naturally wired', 'to organize', 'the world', 'into a hierarchy.'] },
-    { s: 2, c: ['We do this', 'to help make sense of', 'the world,', 'maintain our beliefs,', 'and generally feel better.'] },
-    { s: 3, c: ['But when someone infringes on', 'our place in the world', 'and our understanding of', 'how it works,', 'we react', 'without thinking.'] },
-    { s: 4, c: ['When someone cuts you off', 'on the highway', 'and road rage kicks in,', 'that’s your unconscious mind', 'saying,', '“Who are you', 'to cut me off?”'] },
-    { s: 5, c: ['You’re reacting', 'to a threat', 'to your inherent sense', 'of hierarchy.'] },
-    { s: 6, c: ['On the road', 'we are', 'all equals.'] },
-    { s: 7, c: ['We’re all supposed', 'to play by', 'the same rules.'] },
-    { s: 8, c: ['Cutting someone off', 'violates those rules', 'and implies', 'higher status.'] },
-    { s: 9, c: ['Or consider', 'when you get frustrated', 'with your kids', 'and end an argument', 'with “Because I said so.”', '(Or the office equivalent:', '“Because I’m the boss.”)'] },
-    { s: 10, c: ['In these moments', 'you’ve stopped thinking', 'and regressed to', 'your biological tendencies', 'of reaffirming', 'the hierarchy.'] }
+    { s: 1, c: ["We’re naturally wired","to organize","the world","into a hierarchy."] },
+    { s: 2, c: ["We do this","to help make sense of","the world,","maintain our beliefs,","and generally feel better."] },
+    { s: 3, c: ["But when someone infringes on","our place in the world","and our understanding of","how it works,","we react","without thinking."] },
+    { s: 4, c: ["When someone cuts you off","on the highway","and road rage kicks in,","that’s your unconscious mind","saying,","“Who are you","to cut me off?”"] },
+    { s: 5, c: ["You’re reacting","to a threat","to your inherent sense","of hierarchy."] },
+    { s: 6, c: ["On the road","we are","all equals."] },
+    { s: 7, c: ["We’re all supposed","to play by","the same rules."] },
+    { s: 8, c: ["Cutting someone off","violates those rules","and implies","higher status."] },
+    { s: 9, en: "Or consider when you get frustrated with your kids and end an argument with “Because I said so.”", ko: "또는 여러분이 여러분의 자녀에게 실망하게 되어 말다툼을 “내가 그렇게 말했으니까.”라고 말하며 끝낼 때를 생각해 봐라.", c: ["Or consider","when you get frustrated","with your kids","and end an argument","with “Because I said so.”"] },
+    { s: 10, c: ["In these moments","you’ve stopped thinking","and regressed to","your biological tendencies","of reaffirming","the hierarchy."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -893,7 +893,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

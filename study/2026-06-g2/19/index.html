@@ -502,16 +502,18 @@ var DATA = {
       a: 3, h: 'ask가 ‘목적어에게 ~해 달라고 부탁하다’라는 뜻일 때 목적어 뒤에 어떤 형태가 오는지 떠올려 보세요.', e: '④ <i>waiting</i> → <b>to wait</b>. <i>ask + 목적어 + to부정사</i>(~에게 …해 달라고 부탁하다) 구조예요. ① ‘찾으러’라는 목적의 to부정사, ② <i>The flavor and the message</i>는 A and B로 된 복수 주어라 are, ③ wondered의 목적어가 되는 ‘~인지’의 명사절 접속사 if, ⑤ 단수 주어 this에 맞춘 looks와 감각동사 뒤 형용사 perfect로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Luna went', 'to the bakery', 'to pick up', 'a chocolate cake', 'for her dad’s 70th birthday.'] },
-    { s: 2, c: ['As she opened', 'the box,', 'she couldn’t understand', 'what she saw.'] },
-    { s: 3, c: ['It', 'was', 'a lemon cake.'] },
-    { s: 4, c: ['Then', 'she noticed', 'the message', 'on top.'] },
-    { s: 5, c: ['It said,', '“Happy 50th Birthday,', 'Dad!”'] },
-    { s: 6, keep: true, c: ['Luna said', 'to the baker,', '“I don’t get it.', 'The flavor', 'and the message', 'are wrong.”'] },
-    { s: 7, c: ['She wondered', 'if she made', 'a mistake', 'when ordering.'] },
-    { s: 8, c: ['The baker', 'asked her', 'to wait', 'and walked away.'] },
-    { s: 9, c: ['Moments later,', 'he returned', 'with her cake,', 'explaining', 'they had received', 'two similar orders.'] },
-    { s: 10, c: ['Knowing', 'she had chosen', 'a quality bakery,', 'Luna said,', '“I see.', 'Well, this looks perfect,', 'even better', 'than I imagined.”'] }
+    { s: 1, keep: true, c: ["Luna went","to the bakery","to pick up","a chocolate cake","for her dad’s 70th birthday."] },
+    { s: 2, c: ["As she opened","the box,","she couldn’t understand","what she saw."] },
+    { s: 3, c: ["It","was","a lemon cake."] },
+    { s: 4, c: ["Then","she noticed","the message","on top."] },
+    { s: 5, c: ["It said,","“Happy 50th Birthday,","Dad!”"] },
+    { s: 6, en: "Luna said to the baker, “I don’t get it.”", ko: "Luna가 제빵사에게 “이해가 안 돼요.”라고 말했다.", c: ["Luna said","to the baker,","“I don’t get it.”"] },
+    { s: 6, en: "“The flavor and the message are wrong.”", ko: "“맛도 메시지도 틀려요.”", c: ["“The flavor","and the message","are wrong.”"] },
+    { s: 7, c: ["She wondered","if she made","a mistake","when ordering."] },
+    { s: 8, c: ["The baker","asked her","to wait","and walked away."] },
+    { s: 9, c: ["Moments later,","he returned","with her cake,","explaining","they had received","two similar orders."] },
+    { s: 10, en: "Knowing she had chosen a quality bakery, Luna said, “I see.”", ko: "훌륭한 빵집을 선택했다는 것을 확신하며, Luna는 “그렇군요.”라고 말했다.", c: ["Knowing","she had chosen","a quality bakery,","Luna said,","“I see.”"] },
+    { s: 10, en: "“Well, this looks perfect, even better than I imagined.”", ko: "“음, 이건 완벽해 보이고, 제가 상상했던 것보다 훨씬 더 좋아요.”", c: ["“Well, this looks perfect,","even better","than I imagined.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -882,7 +884,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

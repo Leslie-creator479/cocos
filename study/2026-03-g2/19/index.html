@@ -500,17 +500,18 @@ var DATA = {
       a: 2, h: '이 문장의 주어가 무엇이고, 그 주어의 동사가 어디 있는지 찾아보세요.', e: '③ <i>making</i> → <b>made</b>. 동명사구 <i>Not knowing how the day would go</i>가 주어이므로 문장의 동사가 필요해요. ① 전치사 of 뒤의 동명사, ② 간접의문문의 ‘의문사 + 주어 + 동사’ 어순, ④ 자리가 ‘차지된’ 수동 관계의 과거분사, ⑤ 주어 he가 ‘느끼기 시작하는’ 능동 관계의 분사구문이라서 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Looking around', 'the noisy cafeteria,', 'Oliver gripped', 'his tray tightly.'] },
-    { s: 2, c: ['He felt', 'the heavy weight', 'of being new', 'to the school.'] },
-    { s: 3, c: ['Not knowing', 'how the day', 'would go', 'made him', 'feel anxious.'] },
-    { s: 4, c: ['He sat', 'with a heavy sigh', 'at a corner table.'] },
-    { s: 5, c: ['He thought,', '‘Can I make it', 'through the rest', 'of the day?’'] },
-    { s: 6, c: ['Just then,', 'a plastic tray', 'was placed down', 'opposite him.'] },
-    { s: 7, c: ['It was a boy', 'from his', 'math class.'] },
-    { s: 8, c: ['“Hey,', 'is this seat taken?', 'By the way,', 'thanks for lending me', 'that pen earlier.”'] },
-    { s: 9, c: ['The invisible wall', 'around Oliver', 'seemed to', 'melt away.'] },
-    { s: 10, c: ['“Not at all,', 'please sit,”', 'he replied.'] },
-    { s: 11, c: ['Starting to feel', 'at ease,', 'he smiled brightly', 'at the boy.'] }
+    { s: 1, c: ["Looking around","the noisy cafeteria,","Oliver gripped","his tray tightly."] },
+    { s: 2, c: ["He felt","the heavy weight","of being new","to the school."] },
+    { s: 3, c: ["Not knowing","how the day","would go","made him","feel anxious."] },
+    { s: 4, c: ["He sat","with a heavy sigh","at a corner table."] },
+    { s: 5, c: ["He thought,","‘Can I make it","through the rest","of the day?’"] },
+    { s: 6, c: ["Just then,","a plastic tray","was placed down","opposite him."] },
+    { s: 7, c: ["It was a boy","from his","math class."] },
+    { s: 8, en: "“Hey, is this seat taken?”", ko: "“이봐, 여기 자리 있어?”", c: ["“Hey,","is this seat taken?”"] },
+    { s: 8, en: "“By the way, thanks for lending me that pen earlier.”", ko: "“그런데, 아까 그 펜을 빌려줘서 고마워.”", c: ["“By the way,","thanks for lending me","that pen earlier.”"] },
+    { s: 9, c: ["The invisible wall","around Oliver","seemed to","melt away."] },
+    { s: 10, c: ["“Not at all,","please sit,”","he replied."] },
+    { s: 11, c: ["Starting to feel","at ease,","he smiled brightly","at the boy."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -879,7 +880,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

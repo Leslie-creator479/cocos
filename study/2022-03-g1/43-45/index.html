@@ -520,24 +520,32 @@ var DATA = {
       a: 0, h: 'and로 연결된 두 동사의 형태를 비교해 보세요.', e: '① <i>walking</i> → <b>walked</b>. and가 과거 동사 <i>lowered</i>와 나란히 이어 주므로 같은 과거형이어야 해요. ② 뒤가 완전한 절이므로 관계부사 where, ③ 주어 It(산속 마을에서의 일)에 맞춘 단수 과거형 was, ④ 떠난 일이 슬픈 것보다 먼저이므로 완료부정사 to have left, ⑤ 감정의 원인을 나타내는 to부정사 to hear로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['One day', 'a young man was walking', 'along a road', 'on his journey', 'from one village', 'to another.'] },
-    { s: 2, c: ['As he walked', 'he noticed', 'a monk', 'working', 'in the fields.'] },
-    { s: 3, c: ['The young man', 'turned to the monk', 'and said,', '“Excuse me.', 'Do you mind', 'if I ask you', 'a question?”'] },
-    { s: 4, c: ['“Not at all,”', 'replied', 'the monk.'] },
-    { s: 5, c: ['“I am traveling', 'from the village in the mountains', 'to the village in the valley', 'and I was wondering', 'if you knew', 'what it is like', 'in the village in the valley.”'] },
-    { s: 6, c: ['“Tell me,”', 'said the monk,', '“what was your experience', 'of the village', 'in the mountains?”'] },
-    { s: 7, c: ['“Terrible,”', 'replied', 'the young man.'] },
-    { s: 8, c: ['“I am glad', 'to be away from there.', 'I found the people', 'most unwelcoming.', 'So tell me,', 'what can I expect', 'in the village in the valley?”'] },
-    { s: 9, c: ['“I am sorry', 'to tell you,”', 'said the monk,', '“but I think', 'your experience', 'will be much the same', 'there.”'] },
-    { s: 10, c: ['The young man', 'lowered his head', 'helplessly', 'and walked on.'] },
-    { s: 11, c: ['A while later', 'a middle-aged man', 'journeyed down', 'the same road', 'and came upon', 'the monk.'] },
-    { s: 12, c: ['“I am going', 'to the village in the valley,”', 'said the man.', '“Do you know', 'what it is like?”'] },
-    { s: 13, c: ['“I do,”', 'replied the monk,', '“but first', 'tell me', 'about the village', 'where you came from.”'] },
-    { s: 14, c: ['“I’ve come', 'from the village in the mountains,”', 'said the man.', '“It was', 'a wonderful experience.', 'I felt as though', 'I was a member', 'of the family', 'in the village.”'] },
-    { s: 15, c: ['“Why did you', 'feel like that?”', 'asked', 'the monk.'] },
-    { s: 16, c: ['“The elders', 'gave me much advice,', 'and people were', 'kind and generous.', 'I am sad', 'to have left there.', 'And what is', 'the village in the valley like?”', 'he asked again.'] },
-    { s: 17, c: ['“I think', 'you will find it', 'much the same,”', 'replied', 'the monk.'] },
-    { s: 18, c: ['“I’m glad', 'to hear that,”', 'the middle-aged man', 'said smiling', 'and journeyed on.'] }
+    { s: 1, c: ["One day","a young man was walking","along a road","on his journey","from one village","to another."] },
+    { s: 2, c: ["As he walked","he noticed","a monk","working","in the fields."] },
+    { s: 3, en: "The young man turned to the monk and said, “Excuse me.”", ko: "그 젊은이는 그 수도승을 향해 돌아보며 “실례합니다.”라고 말했다.", c: ["The young man","turned to the monk","and said,","“Excuse me.”"] },
+    { s: 3, en: "“Do you mind if I ask you a question?”", ko: "“제가 스님께 질문을 하나 드려도 되겠습니까?”", c: ["“Do you mind","if I ask you","a question?”"] },
+    { s: 4, c: ["“Not at all,”","replied","the monk."] },
+    { s: 5, c: ["“I am traveling","from the village in the mountains","to the village in the valley","and I was wondering","if you knew","what it is like","in the village in the valley.”"] },
+    { s: 6, c: ["“Tell me,”","said the monk,","“what was your experience","of the village","in the mountains?”"] },
+    { s: 7, c: ["“Terrible,”","replied","the young man."] },
+    { s: 8, en: "“I am glad to be away from there.”", ko: "“그곳을 벗어나게 되어 기쁩니다.”", c: ["“I am glad","to be away from there.”"] },
+    { s: 8, en: "“I found the people most unwelcoming.”", ko: "“그곳 사람들이 정말로 불친절하다고 생각했습니다.”", c: ["“I found the people","most unwelcoming.”"] },
+    { s: 8, en: "“So tell me, what can I expect in the village in the valley?”", ko: "“그러니 저에게 말씀해 주십시오, 제가 골짜기의 마을에서 무엇을 기대할 수 있을까요?”", c: ["“So tell me,","what can I expect","in the village in the valley?”"] },
+    { s: 9, c: ["“I am sorry","to tell you,”","said the monk,","“but I think","your experience","will be much the same","there.”"] },
+    { s: 10, c: ["The young man","lowered his head","helplessly","and walked on."] },
+    { s: 11, c: ["A while later","a middle-aged man","journeyed down","the same road","and came upon","the monk."] },
+    { s: 12, en: "“I am going to the village in the valley,” said the man.", ko: "그 남자는 “저는 골짜기의 마을로 가고 있습니다.”라고 말했다.", c: ["“I am going","to the village in the valley,”","said the man."] },
+    { s: 12, en: "“Do you know what it is like?”", ko: "“그곳이 어떤지 아십니까?”", c: ["“Do you know","what it is like?”"] },
+    { s: 13, c: ["“I do,”","replied the monk,","“but first","tell me","about the village","where you came from.”"] },
+    { s: 14, en: "“I’ve come from the village in the mountains,” said the man.", ko: "그 남자는 “저는 산속의 마을로부터 왔습니다.”라고 말했다.", c: ["“I’ve come","from the village in the mountains,”","said the man."] },
+    { s: 14, en: "“It was a wonderful experience.”", ko: "“그것은 멋진 경험이었습니다.”", c: ["“It was","a wonderful experience.”"] },
+    { s: 14, en: "“I felt as though I was a member of the family in the village.”", ko: "“저는 마치 그 마을의 가족의 일원인 것처럼 느꼈습니다.”", c: ["“I felt as though","I was a member","of the family","in the village.”"] },
+    { s: 15, c: ["“Why did you","feel like that?”","asked","the monk."] },
+    { s: 16, en: "“The elders gave me much advice, and people were kind and generous.”", ko: "“어르신들은 저에게 많은 조언을 해 주셨고, 사람들은 친절하고 너그러웠습니다.”", c: ["“The elders","gave me much advice,","and people were","kind and generous.”"] },
+    { s: 16, en: "“I am sad to have left there.”", ko: "“그곳을 떠나서 슬픕니다.”", c: ["“I am sad","to have left there.”"] },
+    { s: 16, en: "“And what is the village in the valley like?” he asked again.", ko: "“그런데 골짜기의 마을은 어떻습니까?”라고 그는 다시 물었다.", c: ["“And what is","the village in the valley like?”","he asked again."] },
+    { s: 17, c: ["“I think","you will find it","much the same,”","replied","the monk."] },
+    { s: 18, c: ["“I’m glad","to hear that,”","the middle-aged man","said smiling","and journeyed on."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -926,7 +934,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

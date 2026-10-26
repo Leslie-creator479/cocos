@@ -453,15 +453,17 @@ var DATA = {
     { type: '어법 · 밑줄', p: '밑줄 친 부분 중, 어법상 틀린 것은?', q: 'Katie approached the hotel front desk to check-in but an unexpected event unfolded. The receptionist couldn’t find her reservation under the name ‘Katie’. “I’m sorry, but I can’t seem to locate a reservation under that name,” the receptionist said. “No way, I definitely ①<u>made</u> a reservation on the phone,” Katie said, puzzled. The receptionist asked, “Can you tell me your phone number?” and Katie ②<u>told</u> it to him, thinking ‘What happened? Did I make a mistake?’ “Just a moment,” the receptionist said, typing deliberately on the keyboard. “I found it! It seems there ③<u>were</u> a small misspelling. Your reservation ④<u>is</u> under ‘K-A-T-Y’,” the receptionist explained. With a sense of ease, Katie watched her reservation appearing on the screen. With her heart slowing to a gentle rhythm, she proceeded with her check-in, thinking that a simple misspelling might have ⑤<u>ruined</u> her plans.', o: ['①', '②', '③', '④', '⑤'], a: 2, h: 'there + be동사 뒤에 오는 진짜 주어의 수를 보세요.', e: '③ <i>were</i> → <b>was</b>. there 구문에서 동사는 뒤의 주어 <i>a small misspelling</i>(단수)에 수를 맞춰요. ⑤ might have p.p.는 ‘~했을지도 모른다’는 과거에 대한 추측이에요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Katie approached', 'the hotel front desk', 'to check-in', 'but an unexpected event', 'unfolded.'] },
-    { s: 2, c: ['The receptionist', 'couldn’t find', 'her reservation', 'under the name ‘Katie’.'] },
-    { s: 3, c: ['“I’m sorry,', 'but I can’t seem', 'to locate a reservation', 'under that name,”', 'the receptionist said.'] },
-    { s: 4, c: ['“No way,', 'I definitely made', 'a reservation', 'on the phone,”', 'Katie said,', 'puzzled.'] },
-    { s: 5, c: ['The receptionist asked,', '“Can you tell me', 'your phone number?”', 'and Katie told it', 'to him,', 'thinking', '‘What happened?', 'Did I make a mistake?’'] },
-    { s: 6, c: ['“Just a moment,”', 'the receptionist said,', 'typing deliberately', 'on the keyboard.'] },
-    { s: 7, c: ['“I found it!', 'It seems', 'there was a small misspelling.', 'Your reservation', 'is under ‘K-A-T-Y’,”', 'the receptionist explained.'] },
-    { s: 8, c: ['With a sense of ease,', 'Katie watched', 'her reservation', 'appearing on the screen.'] },
-    { s: 9, c: ['With her heart slowing', 'to a gentle rhythm,', 'she proceeded with', 'her check-in,', 'thinking that', 'a simple misspelling', 'might have ruined', 'her plans.'] }
+    { s: 1, keep: true, c: ["Katie approached","the hotel front desk","to check-in","but an unexpected event","unfolded."] },
+    { s: 2, c: ["The receptionist","couldn’t find","her reservation","under the name ‘Katie’."] },
+    { s: 3, c: ["“I’m sorry,","but I can’t seem","to locate a reservation","under that name,”","the receptionist said."] },
+    { s: 4, c: ["“No way,","I definitely made","a reservation","on the phone,”","Katie said,","puzzled."] },
+    { s: 5, en: "The receptionist asked, “Can you tell me your phone number?” and Katie told it to him, thinking ‘What happened?’", ko: "접수 담당자가 “당신의 전화번호를 말해 주실 수 있을까요?”라고 물어 보았고, Katie가 ‘무슨 일이지?’라고 생각하며 전화번호를 그에게 알려 주었다.", c: ["The receptionist asked,","“Can you tell me","your phone number?”","and Katie told it","to him,","thinking ‘What happened?’"] },
+    { s: 5, en: "‘Did I make a mistake?’", ko: "‘내가 실수를 저질렀나?’", c: ["‘Did I make","a mistake?’"] },
+    { s: 6, c: ["“Just a moment,”","the receptionist said,","typing deliberately","on the keyboard."] },
+    { s: 7, en: "“It seems there was a small misspelling.”", ko: "“작은 오타가 있었던 것 같습니다.”", c: ["“It seems","there was","a small misspelling.”"] },
+    { s: 7, en: "“Your reservation is under ‘K-A-T-Y’,” the receptionist explained.", ko: "“당신의 예약은 ‘K-A-T-Y’로 되어 있어요.”라고 접수 담당자가 설명했다.", c: ["“Your reservation","is under ‘K-A-T-Y’,”","the receptionist explained."] },
+    { s: 8, c: ["With a sense of ease,","Katie watched","her reservation","appearing on the screen."] },
+    { s: 9, c: ["With her heart slowing","to a gentle rhythm,","she proceeded with","her check-in,","thinking that","a simple misspelling","might have ruined","her plans."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -831,7 +833,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

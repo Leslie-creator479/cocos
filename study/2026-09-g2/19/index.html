@@ -507,19 +507,19 @@ var DATA = {
       a: 4, h: 'and로 연결된 두 동사의 형태를 비교해 보세요.', e: '⑤ <i>hugging</i> → <b>hugged</b>. 주어 We의 동사 <i>jumped</i>와 and로 나란히 이어지므로 같은 과거형이어야 해요. ① looked와 이어지는 과거형, ② was와 함께 과거진행형, ③ 과거형 spread(spread–spread–spread), ④ ‘~ 때문에’의 접속사 Since라서 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['I ran into', 'the music room,', 'breathing heavily.'] },
-    { s: 2, c: ['The rest of the band', 'were sitting', 'with long faces.'] },
-    { s: 3, c: ['Immy looked up', 'at me', 'and shook', 'her head.'], keep: true },
-    { s: 5, c: ['I had truly believed', 'we would make it;', 'our audition', 'had been flawless.'] },
-    { s: 6, c: ['My chest felt heavy', 'as I asked,', '“So,', 'who won?”'] },
-    { s: 7, c: ['I was', 'holding back', 'my tears.'] },
-    { s: 8, c: ['“A band called', 'A Happy Accident.', 'They were quite good,”', 'she said calmly.'] },
-    { s: 9, c: ['A moment later,', 'a big smile', 'spread across', 'Immy’s face,', 'and the others', 'began to cheer.'] },
-    { s: 10, c: ['“Wait, what?', 'That’s us!”', 'I said.'] },
-    { s: 11, c: ['Immy laughed and said,', '“Since you were late,', 'we decided', 'to play a joke', 'on you!', 'We made it!”'], keep: true },
-    { s: 12, c: ['I was', 'filled with', 'joy.'] },
-    { s: 13, c: ['We jumped up', 'and hugged', 'each other.'] },
-    { s: 14, c: ['My heart', 'was racing', 'with excitement.'] }
+    { s: 1, c: ["I ran into","the music room,","breathing heavily."] },
+    { s: 2, c: ["The rest of the band","were sitting","with long faces."] },
+    { s: 3, c: ["Immy looked up","at me","and shook","her head."], keep: true },
+    { s: 5, c: ["I had truly believed","we would make it;","our audition","had been flawless."] },
+    { s: 6, c: ["My chest felt heavy","as I asked,","“So,","who won?”"] },
+    { s: 7, c: ["I was","holding back","my tears."] },
+    { s: 8, c: ["“A band called","A Happy Accident.","They were quite good,”","she said calmly."] },
+    { s: 9, c: ["A moment later,","a big smile","spread across","Immy’s face,","and the others","began to cheer."] },
+    { s: 10, c: ["“Wait, what?","That’s us!”","I said."] },
+    { s: 11, en: "Immy laughed and said, “Since you were late, we decided to play a joke on you!”", ko: "Immy가 웃으며 말했다. “네가 늦게 와서 우리가 장난 좀 치기로 했지!”", c: ["Immy laughed and said,","“Since you were late,","we decided","to play a joke","on you!”"] },
+    { s: 12, c: ["I was","filled with","joy."] },
+    { s: 13, c: ["We jumped up","and hugged","each other."] },
+    { s: 14, c: ["My heart","was racing","with excitement."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -895,7 +895,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

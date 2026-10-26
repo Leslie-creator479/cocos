@@ -506,15 +506,16 @@ var DATA = {
       a: 3, h: '문장에 주어 I 다음 동사가 제대로 있는지 확인해 보세요.', e: '④ <i>finishing</i> → <b>finished</b>. 주어 I 뒤에 문장의 동사가 필요하므로 과거시제 동사 finished가 와야 해요. ① 과거진행형, ② ‘의문사 + to부정사’, ③ 명령문의 생략된 주어 you를 받는 재귀대명사, ⑤ 조동사 could 뒤 동사원형이 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Dan and I', 'were supposed to', 'make a presentation', 'that day.'], keep: true },
-    { s: 2, c: ['Right after', 'the class started,', 'my phone', 'buzzed.'] },
-    { s: 3, c: ['It was a text', 'from Dan saying,', '“I can’t make it', 'on time.', 'There’s been', 'a car accident', 'on the road!”'] },
-    { s: 6, c: ['Dan didn’t show up', 'before our turn,', 'and soon', 'I was standing', 'in front of', 'the whole class.'], keep: true },
-    { s: 7, c: ['I managed', 'to finish my portion,', 'and my mind', 'went blank', 'for a few seconds,', 'wondering', 'what to do.'] },
-    { s: 9, c: ['I quickly', 'came to my senses', 'and worked through', 'Dan’s part', 'of the presentation', 'as best as', 'I could.'] },
-    { s: 10, c: ['After a few moments,', 'I finished', 'the entire presentation', 'on my own.'] },
-    { s: 11, c: ['Only', 'then', 'did the tension', 'vanish.'] },
-    { s: 12, c: ['I could', 'see', 'our professor’s', 'beaming face.'] }
+    { s: 1, c: ["Dan and I","were supposed to","make a presentation","that day."], keep: true },
+    { s: 2, c: ["Right after","the class started,","my phone","buzzed."] },
+    { s: 3, en: "It was a text from Dan saying, “I can’t make it on time.”", ko: "그것은 “나는 제시간에 갈 수 없어.”라고 하는 Dan으로부터 온 문자 메시지였다.", c: ["It was a text","from Dan saying,","“I can’t make it","on time.”"] },
+    { s: 3, en: "“There’s been a car accident on the road!”", ko: "“도로에서 차 사고가 있었어!”", c: ["“There’s been","a car accident","on the road!”"] },
+    { s: 6, c: ["Dan didn’t show up","before our turn,","and soon","I was standing","in front of","the whole class."], keep: true },
+    { s: 7, c: ["I managed","to finish my portion,","and my mind","went blank","for a few seconds,","wondering","what to do."] },
+    { s: 9, c: ["I quickly","came to my senses","and worked through","Dan’s part","of the presentation","as best as","I could."] },
+    { s: 10, c: ["After a few moments,","I finished","the entire presentation","on my own."] },
+    { s: 11, c: ["Only","then","did the tension","vanish."] },
+    { s: 12, c: ["I could","see","our professor’s","beaming face."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -889,7 +890,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

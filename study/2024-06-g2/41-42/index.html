@@ -523,15 +523,16 @@ var DATA = {
       a: 3, h: '<i>spend + 시간 + -ing</i> 구문에서 and로 이어진 두 동작의 형태를 비교해 보세요.', e: '④ <i>phrase</i> → <b>phrasing</b>. <i>spend the rest of the interview cherry-picking evidence and phrasing …</i>로, ‘~하는 데 시간을 보내다’의 -ing가 and로 나란히 이어져야 해요. ① biases를 꾸미는 주격 관계대명사, ② 형용사 consistent를 꾸미는 부사, ③ 결과를 나타내는 분사구문, ⑤ 주어 <i>More structured approaches</i>가 복수이므로 are가 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['We have biases', 'that support', 'our biases!'] },
-    { s: 2, c: ['If we’re partial', 'to one option—perhaps', 'because it’s more memorable,', 'or framed to minimize loss,', 'or seemingly consistent', 'with a promising pattern—we', 'tend to search for information', 'that will justify', 'choosing that option.'] },
-    { s: 3, c: ['On the one hand,', 'it’s sensible', 'to make choices', 'that we can defend', 'with data', 'and a list of reasons.'] },
-    { s: 4, c: ['On the other hand,', 'if we’re not careful,', 'we’re likely to conduct', 'an imbalanced analysis,', 'falling prey to', 'a cluster of errors', 'collectively known as', '“confirmation biases.”'] },
-    { s: 5, c: ['For example,', 'nearly all companies include', 'classic “tell me about yourself”', 'job interviews', 'as part of the hiring process,', 'and many rely on', 'these interviews alone', 'to evaluate applicants.'] },
-    { s: 6, c: ['But it turns out', 'that traditional interviews', 'are actually one of', 'the least useful tools', 'for predicting', 'an employee’s future success.'] },
-    { s: 7, c: ['This is because interviewers', 'often subconsciously make up their minds', 'about interviewees', 'based on their first few moments of interaction', 'and spend the rest of the interview', 'cherry-picking evidence', 'and phrasing their questions', 'to confirm that initial impression:', '“I see here you left a good position', 'at your previous job.', 'You must be pretty ambitious, right?” versus', '“You must not have been very committed, huh?”'] },
-    { s: 8, c: ['This means that', 'interviewers can be prone to', 'overlooking significant information', 'that would clearly indicate', 'whether this candidate', 'was actually the best person', 'to hire.'] },
-    { s: 9, c: ['More structured approaches,', 'like obtaining samples', 'of a candidate’s work', 'or asking how he would respond', 'to difficult hypothetical situations,', 'are dramatically better', 'at assessing future success,', 'with a nearly threefold advantage', 'over traditional interviews.'] }
+    { s: 1, c: ["We have biases","that support","our biases!"] },
+    { s: 2, c: ["If we’re partial","to one option—perhaps","because it’s more memorable,","or framed to minimize loss,","or seemingly consistent","with a promising pattern—we","tend to search for information","that will justify","choosing that option."] },
+    { s: 3, c: ["On the one hand,","it’s sensible","to make choices","that we can defend","with data","and a list of reasons."] },
+    { s: 4, c: ["On the other hand,","if we’re not careful,","we’re likely to conduct","an imbalanced analysis,","falling prey to","a cluster of errors","collectively known as","“confirmation biases.”"] },
+    { s: 5, c: ["For example,","nearly all companies include","classic “tell me about yourself”","job interviews","as part of the hiring process,","and many rely on","these interviews alone","to evaluate applicants."] },
+    { s: 6, c: ["But it turns out","that traditional interviews","are actually one of","the least useful tools","for predicting","an employee’s future success."] },
+    { s: 7, en: "This is because interviewers often subconsciously make up their minds about interviewees based on their first few moments of interaction and spend the rest of the interview cherry-picking evidence and phrasing their questions to confirm that initial impression: “I see here you left a good position at your previous job.”", ko: "이것은 면접관들이 종종 잠재의식적으로 처음 몇 순간의 상호작용을 바탕으로 면접 대상자에 대한 결정을 내리고, 그 첫인상을 확인하기 위해 증거를 고르고 질문을 만드는 데 면접의 나머지 시간을 보내기 때문이다: “당신은 이전 직장에서 좋은 직책을 두고 나오신 게 보이네요.”", c: ["This is because interviewers often subconsciously make up their minds","about interviewees based on their first few moments of interaction","and spend the rest of the interview","cherry-picking evidence and phrasing their questions","to confirm that initial impression:","“I see here you left a good position at your previous job.”"] },
+    { s: 7, en: "“You must be pretty ambitious, right?” versus “You must not have been very committed, huh?”", ko: "“틀림없이 야망이 꽤 크시겠어요, 그렇죠?” 대 “당신은 그다지 헌신적이지 않았음에 틀림없네요, 그렇죠?”", c: ["“You must be","pretty ambitious, right?” versus","“You must not have been","very committed, huh?”"] },
+    { s: 8, c: ["This means that","interviewers can be prone to","overlooking significant information","that would clearly indicate","whether this candidate","was actually the best person","to hire."] },
+    { s: 9, c: ["More structured approaches,","like obtaining samples","of a candidate’s work","or asking how he would respond","to difficult hypothetical situations,","are dramatically better","at assessing future success,","with a nearly threefold advantage","over traditional interviews."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -919,7 +920,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

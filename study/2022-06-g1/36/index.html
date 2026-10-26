@@ -509,19 +509,19 @@ var DATA = {
       a: 3, h: '관계대명사 that의 선행사가 단수인지 복수인지 보세요.', e: '④ <i>bring</i> → <b>brings</b>. 관계대명사 that의 선행사 <i>the hand of God</i>은 단수이므로 동사도 단수형이어야 해요. ① tell + 목적어 + to부정사, ③ 선행사 a boy(사람)를 받는 who, ⑤ ‘누구의 손’을 묻는 의문형용사 whose는 모두 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Mrs. Klein told', 'her first graders', 'to draw a picture', 'of something', 'to be thankful for.'] },
-    { s: 2, c: ['She thought', 'that most of the class', 'would draw turkeys', 'or Thanksgiving tables.'] },
-    { s: 3, c: ['But', 'Douglas', 'drew', 'something different.'] },
-    { s: 4, keep: true, c: ['Douglas was a boy', 'who usually spent time alone', 'and stayed around her', 'while his classmates', 'went outside together', 'during break time.'] },
-    { s: 5, c: ['What', 'the boy drew', 'was', 'a hand.'] },
-    { s: 7, c: ['His image', 'immediately', 'attracted', 'the other students’ interest.'] },
-    { s: 8, c: ['So,', 'everyone rushed', 'to talk about', 'whose hand it was.'] },
-    { s: 9, c: ['“It must be', 'the hand of God', 'that brings us food,”', 'said one student.'] },
-    { s: 10, c: ['“A farmer’s,”', 'said a second student,', '“because they raise', 'the turkeys.”'] },
-    { s: 11, c: ['“It looks more like', 'a police officer’s,”', 'added another,', '“they protect us.”'] },
-    { s: 12, c: ['The class was', 'so responsive', 'that Mrs. Klein', 'had almost forgotten', 'about Douglas.'] },
-    { s: 13, c: ['After she had the others', 'at work', 'on another project,', 'she asked Douglas', 'whose hand it was.'] },
-    { s: 14, c: ['He answered softly,', '“It’s yours.', 'Thank you,', 'Mrs. Klein.”'] }
+    { s: 1, keep: true, c: ["Mrs. Klein told","her first graders","to draw a picture","of something","to be thankful for."] },
+    { s: 2, c: ["She thought","that most of the class","would draw turkeys","or Thanksgiving tables."] },
+    { s: 3, c: ["But","Douglas","drew","something different."] },
+    { s: 4, keep: true, c: ["Douglas was a boy","who usually spent time alone","and stayed around her","while his classmates","went outside together","during break time."] },
+    { s: 5, c: ["What","the boy drew","was","a hand."] },
+    { s: 7, c: ["His image","immediately","attracted","the other students’ interest."] },
+    { s: 8, c: ["So,","everyone rushed","to talk about","whose hand it was."] },
+    { s: 9, c: ["“It must be","the hand of God","that brings us food,”","said one student."] },
+    { s: 10, c: ["“A farmer’s,”","said a second student,","“because they raise","the turkeys.”"] },
+    { s: 11, c: ["“It looks more like","a police officer’s,”","added another,","“they protect us.”"] },
+    { s: 12, c: ["The class was","so responsive","that Mrs. Klein","had almost forgotten","about Douglas."] },
+    { s: 13, c: ["After she had the others","at work","on another project,","she asked Douglas","whose hand it was."] },
+    { s: 14, en: "He answered softly, “It’s yours.”", ko: "“선생님 손이에요.”라고 그는 조용히 대답했다.", c: ["He answered softly,","“It’s yours.”"] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -899,7 +899,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

@@ -504,15 +504,16 @@ var DATA = {
       a: 1, h: '전치사 뒤에 어떤 형태가 와야 하는지 생각해 보세요.', e: '② <i>see</i> → <b>seeing</b>. 전치사 <i>of</i> 뒤에는 동명사를 써야 해요. ① <i>may have p.p.</i>(~했을 것이다), ③ 단수 주어 <i>the other person</i>에 맞춘 looks, ④ 앞의 <i>sees and experiences life</i>를 대신하는 대동사 do, ⑤ ‘얼마나 지루할지’라는 간접의문문의 how로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['Have you ever brought up', 'an idea or suggestion', 'to someone', 'and heard them', 'immediately say', '“No, that won’t work.”?'] },
-    { s: 2, c: ['You may have thought,', '“He/she didn’t', 'even give it a chance.', 'How do they know', 'it won’t work?”'] },
-    { s: 3, c: ['When you are right', 'about something,', 'you close off', 'the possibility', 'of another viewpoint', 'or opportunity.'] },
-    { s: 4, c: ['Being right', 'about something', 'means that', '“it is the way', 'it is, period.”'] },
-    { s: 6, c: ['Your particular way', 'of seeing it', 'may be true', 'with the facts.'] },
-    { s: 7, c: ['However,', 'considering the other option', 'or the other person’s', 'point of view', 'can be beneficial.'] },
-    { s: 8, c: ['If you see their side,', 'you will see', 'something new', 'or, at worse,', 'learn something', 'about how', 'the other person', 'looks at life.'] },
-    { s: 9, c: ['Why would you think', 'everyone sees', 'and experiences life', 'the way you do?'] },
-    { s: 10, c: ['Besides', 'how boring', 'that would be,', 'it would eliminate', 'all new opportunities,', 'ideas, invention,', 'and creativity.'] }
+    { s: 1, c: ["Have you ever brought up","an idea or suggestion","to someone","and heard them","immediately say","“No, that won’t work.”?"] },
+    { s: 2, en: "You may have thought, “He/she didn’t even give it a chance.”", ko: "여러분은 아마도 “그 사람은 기회조차 주지 않았어.”라고 생각했을 것이다.", c: ["You may have thought,","“He/she didn’t","even give it a chance.”"] },
+    { s: 2, en: "“How do they know it won’t work?”", ko: "“어떻게 그들은 그것이 안 될 것이라는 것을 알지?”", c: ["“How do they know","it won’t work?”"] },
+    { s: 3, c: ["When you are right","about something,","you close off","the possibility","of another viewpoint","or opportunity."] },
+    { s: 4, c: ["Being right","about something","means that","“it is the way","it is, period.”"] },
+    { s: 6, c: ["Your particular way","of seeing it","may be true","with the facts."] },
+    { s: 7, c: ["However,","considering the other option","or the other person’s","point of view","can be beneficial."] },
+    { s: 8, c: ["If you see their side,","you will see","something new","or, at worse,","learn something","about how","the other person","looks at life."] },
+    { s: 9, c: ["Why would you think","everyone sees","and experiences life","the way you do?"] },
+    { s: 10, c: ["Besides","how boring","that would be,","it would eliminate","all new opportunities,","ideas, invention,","and creativity."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -885,7 +886,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

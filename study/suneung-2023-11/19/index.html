@@ -501,14 +501,16 @@ var DATA = {
       a: 4, h: '⑤가 <i>and</i>로 어떤 동사와 나란히 이어지는지 찾아보세요.', e: '⑤ <i>taking</i> → <b>took</b>. <i>and</i>로 앞의 과거 동사 <i>leaned</i>와 나란히 이어지므로 과거형 took이어야 해요. ① 과거진행형 <i>was waiting</i>, ② 단수 주어 <i>My bus</i>에 맞는 <i>isn’t</i>, ③ 주어 <i>The bus</i>의 과거 동사, ④ <i>this bus</i>의 과거 동사예요.' }
   ],
   order: [
-    { s: 1, c: ['David was starting', 'a new job', 'in Vancouver,', 'and he was waiting', 'for his bus.'], keep: true },
-    { s: 2, c: ['He kept looking', 'back and forth', 'between his watch', 'and the direction', 'the bus would come from.'] },
-    { s: 3, c: ['He thought,', '“My bus', 'isn’t here yet.', 'I can’t be late', 'on my first day.”'] },
-    { s: 4, c: ['David', 'couldn’t feel', 'at ease.'], keep: true },
-    { s: 5, c: ['When he looked up again,', 'he saw', 'a different bus coming', 'that was going', 'right to his work.'] },
-    { s: 6, c: ['The bus', 'stopped', 'in front of him', 'and opened its door.'] },
-    { s: 7, c: ['He got on the bus', 'thinking,', '“Phew! Luckily,', 'this bus came', 'just in time', 'so I won’t be late.”'] },
-    { s: 8, c: ['He leaned back', 'on an unoccupied seat', 'in the bus', 'and took a deep breath,', 'finally able', 'to relax.'] }
+    { s: 1, c: ["David was starting","a new job","in Vancouver,","and he was waiting","for his bus."], keep: true },
+    { s: 2, c: ["He kept looking","back and forth","between his watch","and the direction","the bus would come from."] },
+    { s: 3, en: "He thought, “My bus isn’t here yet.”", ko: "그는 “내가 탈 버스가 아직 오지 않아.”라고 생각했다.", c: ["He thought,","“My bus","isn’t here yet.”"] },
+    { s: 3, en: "“I can’t be late on my first day.”", ko: "“내가 첫날 지각할 수는 없어.”", c: ["“I can’t be late","on my first day.”"] },
+    { s: 4, c: ["David","couldn’t feel","at ease."], keep: true },
+    { s: 5, c: ["When he looked up again,","he saw","a different bus coming","that was going","right to his work."] },
+    { s: 6, c: ["The bus","stopped","in front of him","and opened its door."] },
+    { s: 7, en: "He got on the bus thinking, “Phew!”", ko: "그는 버스에 오르며, “후유!”라고 생각했다.", c: ["He got on the bus","thinking, “Phew!”"] },
+    { s: 7, en: "“Luckily, this bus came just in time so I won’t be late.”", ko: "“다행히도 내가 지각하지 않도록 이 버스가 딱 맞춰 왔네.”", c: ["“Luckily,","this bus came","just in time","so I won’t be late.”"] },
+    { s: 8, c: ["He leaned back","on an unoccupied seat","in the bus","and took a deep breath,","finally able","to relax."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -878,7 +880,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

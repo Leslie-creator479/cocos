@@ -522,23 +522,24 @@ var DATA = {
       a: 1, h: '② 앞의 and가 무엇과 무엇을 연결하는지 보세요.', e: '② <i>giving</i> → <b>gave</b>. and는 주어 She의 과거시제 동사 <i>was</i>와 나란히 동사를 연결하므로 과거형 gave가 되어야 해요. ① 목적(~하기 위해)을 나타내는 to부정사, ③ asked의 직접목적어가 되는 의문사절의 what(doing의 목적어 역할), ④ ‘얼마나 많이’를 뜻하는 간접의문문, ⑤ <i>must have p.p.</i>(~했음이 틀림없다)의 과거분사이므로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['On my daughter', 'Marie’s 8th birthday,', 'she received', 'a bunch of presents', 'from her friends', 'at school.'] },
-    { s: 2, c: ['That evening,', 'with her favorite present,', 'a teddy bear,', 'in her arms,', 'we went to a restaurant', 'to celebrate her birthday.'] },
-    { s: 3, c: ['Our server,', 'a friendly woman,', 'noticed my daughter', 'holding the teddy bear', 'and said,', '“My daughter', 'loves teddy bears, too.”'] },
-    { s: 4, c: ['Then,', 'we started chatting', 'about her family.'] },
-    { s: 5, c: ['The server mentioned', 'during the conversation', 'that her daughter', 'was in the hospital', 'with a broken leg.'] },
-    { s: 6, c: ['She also said', 'that Marie looked', 'about the same age', 'as her daughter.'] },
-    { s: 7, c: ['She was so kind', 'and attentive', 'all evening,', 'and even gave Marie', 'cookies for free.'] },
-    { s: 8, c: ['After we finished our meal,', 'we paid the bill', 'and began to walk', 'to our car', 'when unexpectedly', 'Marie asked me', 'to wait', 'and ran back', 'into the restaurant.'] },
-    { s: 9, c: ['When Marie', 'came back out,', 'I asked her', 'what she had been doing.'] },
-    { s: 10, c: ['She said', 'that she gave her teddy bear', 'to our server', 'so that she could give it', 'to her daughter.'] },
-    { s: 11, c: ['I was surprised', 'at her sudden action', 'because I could see', 'how much she loved', 'that bear already.'] },
-    { s: 12, c: ['She must have seen', 'the look on my face,', 'because she said,', '“I can’t imagine', 'being stuck', 'in a hospital bed.', 'I just want her', 'to get better soon.”'] },
-    { s: 13, c: ['I felt moved', 'by Marie’s words', 'as we walked', 'toward the car.'] },
-    { s: 14, c: ['Then,', 'our server ran out', 'to our car', 'and thanked Marie', 'for her generosity.'] },
-    { s: 15, c: ['The server said', 'that she had never had', 'anyone doing anything', 'like that', 'for her family before.'] },
-    { s: 16, c: ['Later,', 'Marie said', 'it was her best birthday', 'ever.'] },
-    { s: 17, c: ['I was so proud', 'of her empathy and warmth,', 'and this was', 'an unforgettable experience', 'for our family.'] }
+    { s: 1, c: ["On my daughter","Marie’s 8th birthday,","she received","a bunch of presents","from her friends","at school."] },
+    { s: 2, c: ["That evening,","with her favorite present,","a teddy bear,","in her arms,","we went to a restaurant","to celebrate her birthday."] },
+    { s: 3, c: ["Our server,","a friendly woman,","noticed my daughter","holding the teddy bear","and said,","“My daughter","loves teddy bears, too.”"] },
+    { s: 4, c: ["Then,","we started chatting","about her family."] },
+    { s: 5, c: ["The server mentioned","during the conversation","that her daughter","was in the hospital","with a broken leg."] },
+    { s: 6, c: ["She also said","that Marie looked","about the same age","as her daughter."] },
+    { s: 7, c: ["She was so kind","and attentive","all evening,","and even gave Marie","cookies for free."] },
+    { s: 8, c: ["After we finished our meal,","we paid the bill","and began to walk","to our car","when unexpectedly","Marie asked me","to wait","and ran back","into the restaurant."] },
+    { s: 9, c: ["When Marie","came back out,","I asked her","what she had been doing."] },
+    { s: 10, c: ["She said","that she gave her teddy bear","to our server","so that she could give it","to her daughter."] },
+    { s: 11, c: ["I was surprised","at her sudden action","because I could see","how much she loved","that bear already."] },
+    { s: 12, en: "She must have seen the look on my face, because she said, “I can’t imagine being stuck in a hospital bed.”", ko: "그녀(my daughter)는 내 얼굴의 표정을 분명히 봤을 것인데, 왜냐하면 그녀가 “저는 병원 침대에 갇혀 있는 것을 상상할 수 없어요.”라고 말했기 때문이다.", c: ["She must have seen","the look on my face,","because she said,","“I can’t imagine","being stuck","in a hospital bed.”"] },
+    { s: 12, en: "“I just want her to get better soon.”", ko: "“전 그저 그녀가 빨리 낫기를 바랄 뿐이에요.”", c: ["“I just want her","to get better soon.”"] },
+    { s: 13, c: ["I felt moved","by Marie’s words","as we walked","toward the car."] },
+    { s: 14, c: ["Then,","our server ran out","to our car","and thanked Marie","for her generosity."] },
+    { s: 15, c: ["The server said","that she had never had","anyone doing anything","like that","for her family before."] },
+    { s: 16, c: ["Later,","Marie said","it was her best birthday","ever."] },
+    { s: 17, c: ["I was so proud","of her empathy and warmth,","and this was","an unforgettable experience","for our family."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -928,7 +929,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

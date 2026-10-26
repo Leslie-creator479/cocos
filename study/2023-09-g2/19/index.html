@@ -502,17 +502,18 @@ var DATA = {
       a: 2, h: '밑줄 친 관계사 앞에 선행사가 있는지 보세요.', e: '③ <i>what</i> → <b>that</b>(또는 which). 앞에 선행사 <i>words</i>가 있으므로 선행사를 포함하는 what은 쓸 수 없어요. ① 내가 ‘방해 받는’ 수동이므로 to be p.p., ② 주어 It은 단수, ④ ‘~할 때’의 접속사 As, ⑤ 이야기 전체가 과거이므로 brought가 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['My 10-year-old', 'appeared,', 'in desperate need', 'of a quarter.'] },
-    { s: 2, c: ['“A quarter?', 'What on earth', 'do you need', 'a quarter for?”'] },
-    { s: 3, c: ['My tone', 'bordered', 'on irritation.'] },
-    { s: 4, c: ['I didn’t want', 'to be bothered', 'with such', 'a trivial demand.'] },
-    { s: 5, c: ['“There’s a garage sale', 'up the street,', 'and there’s something', 'I just gotta have!', 'It only costs', 'a quarter.', 'Please?”'] },
-    { s: 6, c: ['I placed', 'a quarter', 'in my son’s hand.'] },
-    { s: 7, c: ['Moments later,', 'a little voice said,', '“Here, Mommy,', 'this is for you.”'] },
-    { s: 8, c: ['I glanced down', 'at the hands', 'of my little son', 'and saw', 'a four-inch cream-colored statue', 'of two small children', 'hugging one another.'] },
-    { s: 9, c: ['Inscribed at their feet', 'were words', 'that read', 'It starts with ‘L’', 'ends with ‘E’', 'and in between are', '‘O’ and ‘V.’'] },
-    { s: 10, c: ['As I watched him', 'race back', 'to the garage sale,', 'I smiled', 'with a heart', 'full of happiness.'] },
-    { s: 11, c: ['That 25-cent', 'garage sale purchase', 'brought me', 'a lot of joy.'] }
+    { s: 1, c: ["My 10-year-old","appeared,","in desperate need","of a quarter."] },
+    { s: 2, en: "“What on earth do you need a quarter for?”", ko: "“도대체 25센트 동전이 왜 필요하지?”", c: ["“What on earth","do you need","a quarter for?”"] },
+    { s: 3, c: ["My tone","bordered","on irritation."] },
+    { s: 4, c: ["I didn’t want","to be bothered","with such","a trivial demand."] },
+    { s: 5, en: "“There’s a garage sale up the street, and there’s something I just gotta have!”", ko: "“거리 위쪽에서 중고 물품 판매 행사를 하는데, 제가 꼭 사야 할 게 있어요!”", c: ["“There’s a garage sale","up the street,","and there’s something","I just gotta have!”"] },
+    { s: 5, en: "“It only costs a quarter.”", ko: "“25센트밖에 안 해요.”", c: ["“It only costs","a quarter.”"] },
+    { s: 6, c: ["I placed","a quarter","in my son’s hand."] },
+    { s: 7, c: ["Moments later,","a little voice said,","“Here, Mommy,","this is for you.”"] },
+    { s: 8, c: ["I glanced down","at the hands","of my little son","and saw","a four-inch cream-colored statue","of two small children","hugging one another."] },
+    { s: 9, c: ["Inscribed at their feet","were words","that read","It starts with ‘L’","ends with ‘E’","and in between are","‘O’ and ‘V.’"] },
+    { s: 10, c: ["As I watched him","race back","to the garage sale,","I smiled","with a heart","full of happiness."] },
+    { s: 11, c: ["That 25-cent","garage sale purchase","brought me","a lot of joy."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -884,7 +885,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

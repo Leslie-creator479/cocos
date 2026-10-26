@@ -507,18 +507,19 @@ var DATA = {
       a: 2, h: '명사 a mind를 뒤에서 꾸미는 말의 품사를 따져 보세요.', e: '③ <i>fully</i> → <b>full</b>. <i>a mind full of questions</i>는 형용사구(full of ~)가 명사 a mind를 뒤에서 꾸미는 구조이므로 부사 fully는 쓸 수 없어요. ① 간접의문문은 ‘의문사+주어+동사’ 어순, ④ 주어 The school이 단수, ⑤ imagine은 동명사를 목적어로 취해요.' }
   ],
   order: [
-    { s: 1, c: ['When Amina returned home', 'from the river', 'with her full clay water jar,', 'she noticed men with tools', 'near her family’s hut.'] },
-    { s: 2, c: ['She wondered', 'who', 'they were.'] },
-    { s: 3, c: ['Her uncle stood', 'among them,', 'pointing to a spot', 'beyond the baobab tree.'] },
-    { s: 4, c: ['She put the jar down', 'and walked closer,', 'wanting to know', 'what was happening.'] },
-    { s: 5, c: ['The men began', 'clearing and marking', 'the ground.'] },
-    { s: 6, keep: true, c: ['Amina ran', 'to her uncle', 'with a mind', 'full of questions.'] },
-    { s: 7, keep: true, c: ['“Uncle,', 'what’s happening?”', 'she asked.'] },
-    { s: 8, c: ['“We’re preparing the land.', 'Something important', 'will be built.', 'A school!”', 'her uncle said', 'with a proud smile.'] },
-    { s: 9, keep: true, c: ['Amina’s eyes', 'sparkled', 'with joy.'] },
-    { s: 10, c: ['The school', 'nearest to her village', 'was hours away', 'on foot.'] },
-    { s: 11, c: ['“It’s for all the children', 'in the village,”', 'her uncle continued.'] },
-    { s: 12, keep: true, c: ['Amina imagined', 'learning how to', 'read and write,', 'and her heart swelled', 'with excitement.'] }
+    { s: 1, c: ["When Amina returned home","from the river","with her full clay water jar,","she noticed men with tools","near her family’s hut."] },
+    { s: 2, c: ["She wondered","who","they were."] },
+    { s: 3, c: ["Her uncle stood","among them,","pointing to a spot","beyond the baobab tree."] },
+    { s: 4, c: ["She put the jar down","and walked closer,","wanting to know","what was happening."] },
+    { s: 5, c: ["The men began","clearing and marking","the ground."] },
+    { s: 6, keep: true, c: ["Amina ran","to her uncle","with a mind","full of questions."] },
+    { s: 7, keep: true, c: ["“Uncle,","what’s happening?”","she asked."] },
+    { s: 8, en: "“Something important will be built.”", ko: "“뭔가 중요한 것이 지어질 거야.”", c: ["“Something important","will be built.”"] },
+    { s: 8, en: "“A school!” her uncle said with a proud smile.", ko: "“바로 학교지!” 삼촌이 자랑스러운 미소를 띠고 말했다.", c: ["“A school!”","her uncle said","with a proud smile."] },
+    { s: 9, keep: true, c: ["Amina’s eyes","sparkled","with joy."] },
+    { s: 10, c: ["The school","nearest to her village","was hours away","on foot."] },
+    { s: 11, c: ["“It’s for all the children","in the village,”","her uncle continued."] },
+    { s: 12, keep: true, c: ["Amina imagined","learning how to","read and write,","and her heart swelled","with excitement."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -894,7 +895,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

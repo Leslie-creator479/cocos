@@ -533,29 +533,28 @@ var DATA = {
       a: 1, h: '지각동사 see의 목적어와 목적격 보어의 관계를 따져 보세요.', e: '② <i>stood</i> → <b>standing</b>. 지각동사 <i>saw</i>의 목적어 Todd가 ‘서 있는’ 능동 관계이므로 현재분사(또는 동사원형)를 써야 해요. ① 사람(Greg)을 받는 계속적 용법의 관계대명사, ③④ 전치사 by, for 뒤의 동명사, ⑤ 형용사 보어 curious를 취하는 연결동사로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['On Saturday morning,', 'Todd and his 5-year-old daughter Ava', 'walked out of the store', 'with the groceries', 'they had just purchased.'] },
-    { s: 2, c: ['As they pushed their grocery cart', 'through the parking lot,', 'they saw a red car', 'pulling into the space', 'next to their pick-up truck.'] },
-    { s: 3, c: ['A young man', 'named Greg', 'was driving.'] },
-    { s: 4, c: ['“That’s a cool car,”', 'Ava said', 'to her dad.'] },
-    { s: 5, c: ['He agreed', 'and looked at Greg,', 'who finished parking', 'and opened his door.'] },
-    { s: 6, c: ['As Todd finished', 'loading his groceries,', 'Greg’s door', 'remained open.'] },
-    { s: 7, c: ['Todd noticed', 'Greg didn’t get out', 'of his car.'], keep: true },
-    { s: 8, c: ['But he was pulling', 'something', 'from his car.'] },
-    { s: 9, c: ['He put a metal frame', 'on the ground', 'beside his door.'] },
-    { s: 10, c: ['Remaining in the driver’s seat,', 'he then reached back', 'into his car', 'to grab something else.'] },
-    { s: 11, c: ['Todd realized', 'what he was doing', 'and considered', 'whether he should try', 'to help him.'], keep: true },
-    { s: 12, c: ['After a moment,', 'he decided', 'to approach Greg.'] },
-    { s: 13, c: ['By this time,', 'Greg had already pulled', 'one thin wheel', 'out of his car', 'and attached it', 'to the frame.'] },
-    { s: 14, c: ['He was now pulling', 'a second wheel out', 'when he looked up', 'and saw Todd', 'standing near him.'] },
-    { s: 15, c: ['Todd said,', '“Hi there!', 'Have a great weekend!”'], keep: true },
-    { s: 16, c: ['Greg seemed', 'a bit surprised,', 'but replied', 'by wishing him', 'a great weekend too.'], keep: true },
-    { s: 17, c: ['Then Greg added,', '“Thanks for letting me', 'have my independence.”'] },
-    { s: 19, c: ['After Todd and Ava', 'climbed into their truck,', 'Ava became curious.'] },
-    { s: 20, c: ['So she asked', 'why he didn’t offer', 'to help the man', 'with his wheelchair.'] },
-    { s: 21, c: ['Todd said,', '“Why do you insist on', 'brushing your teeth', 'without my help?”'], keep: true },
-    { s: 22, c: ['She answered,', '“Because I know', 'how to!”'] },
-    { s: 23, c: ['He said,', '“And the man knows', 'how to put together', 'his wheelchair.”'] },
-    { s: 24, c: ['Ava understood that', 'sometimes the best way', 'to help someone', 'is to not help', 'at all.'], keep: true }
+    { s: 1, c: ["On Saturday morning,","Todd and his 5-year-old daughter Ava","walked out of the store","with the groceries","they had just purchased."] },
+    { s: 2, c: ["As they pushed their grocery cart","through the parking lot,","they saw a red car","pulling into the space","next to their pick-up truck."] },
+    { s: 3, c: ["A young man","named Greg","was driving."] },
+    { s: 4, c: ["“That’s a cool car,”","Ava said","to her dad."] },
+    { s: 5, c: ["He agreed","and looked at Greg,","who finished parking","and opened his door."] },
+    { s: 6, c: ["As Todd finished","loading his groceries,","Greg’s door","remained open."] },
+    { s: 7, c: ["Todd noticed","Greg didn’t get out","of his car."], keep: true },
+    { s: 8, c: ["But he was pulling","something","from his car."] },
+    { s: 9, c: ["He put a metal frame","on the ground","beside his door."] },
+    { s: 10, c: ["Remaining in the driver’s seat,","he then reached back","into his car","to grab something else."] },
+    { s: 11, c: ["Todd realized","what he was doing","and considered","whether he should try","to help him."], keep: true },
+    { s: 12, c: ["After a moment,","he decided","to approach Greg."] },
+    { s: 13, c: ["By this time,","Greg had already pulled","one thin wheel","out of his car","and attached it","to the frame."] },
+    { s: 14, c: ["He was now pulling","a second wheel out","when he looked up","and saw Todd","standing near him."] },
+    { s: 16, c: ["Greg seemed","a bit surprised,","but replied","by wishing him","a great weekend too."], keep: true },
+    { s: 17, c: ["Then Greg added,","“Thanks for letting me","have my independence.”"] },
+    { s: 19, c: ["After Todd and Ava","climbed into their truck,","Ava became curious."] },
+    { s: 20, c: ["So she asked","why he didn’t offer","to help the man","with his wheelchair."] },
+    { s: 21, c: ["Todd said,","“Why do you insist on","brushing your teeth","without my help?”"], keep: true },
+    { s: 22, c: ["She answered,","“Because I know","how to!”"] },
+    { s: 23, c: ["He said,","“And the man knows","how to put together","his wheelchair.”"] },
+    { s: 24, c: ["Ava understood that","sometimes the best way","to help someone","is to not help","at all."], keep: true }
   ]
 };
 /* ==== DATA:END ==== */
@@ -953,7 +952,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

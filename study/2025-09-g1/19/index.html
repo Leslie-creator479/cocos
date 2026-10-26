@@ -503,14 +503,14 @@ var DATA = {
       a: 2, h: '밑줄 친 말 뒤에 명사(구)가 오는지, 주어와 동사를 갖춘 절이 오는지 확인해 보세요.', e: '③ <i>During</i> → <b>While</b>. 뒤에 주어와 동사를 갖춘 절(I was coming round)이 오므로 전치사 during이 아니라 접속사 while을 써야 해요. ① 과거 시제 동사, ② chewing과 and로 나란한 현재분사, ④ 지각동사 heard의 목적어 자리이므로 목적격 him, ⑤ 이유를 나타내는 분사구문의 현재분사로 모두 맞아요.' }
   ],
   order: [
-    { s: 1, c: ['I glanced at', 'the clock', 'on the wall.'] },
-    { s: 3, c: ['That meant', 'the casting director', 'would call very soon', 'with the results', 'of my first audition', 'for a musical part', 'in The Wizard of Oz.'] },
-    { s: 4, c: ['I felt shaky', 'all over,', 'chewing my thumbnail', 'and jiggling my feet.'] },
-    { s: 6, c: ['While I was', 'coming round,', 'Dad answered.'] },
-    { s: 7, c: ['I heard him say,', '“Ahh, thank you.', 'I’ll let her', 'know ...”'] },
-    { s: 8, c: ['As I got', 'to the bottom', 'of the stairs,', 'he was just putting', 'the phone down.'] },
-    { s: 9, c: ['“That was', 'The Wizard of Oz.', 'You’re second', 'senior munchkin,”', 'he announced.'] },
-    { s: 10, c: ['I got', 'a little rush of excitement,', 'knowing I was in', '— that whatever happened', 'I could be involved', 'in one of', 'the productions.'] }
+    { s: 1, c: ["I glanced at","the clock","on the wall."] },
+    { s: 3, c: ["That meant","the casting director","would call very soon","with the results","of my first audition","for a musical part","in The Wizard of Oz."] },
+    { s: 4, c: ["I felt shaky","all over,","chewing my thumbnail","and jiggling my feet."] },
+    { s: 6, c: ["While I was","coming round,","Dad answered."] },
+    { s: 7, en: "I heard him say, “Ahh, thank you.”", ko: "나는 그가 “아, 감사합니다.”라고 말하는 것을 들었다.", c: ["I heard him say,","“Ahh, thank you.”"] },
+    { s: 8, c: ["As I got","to the bottom","of the stairs,","he was just putting","the phone down."] },
+    { s: 9, c: ["“That was","The Wizard of Oz.","You’re second","senior munchkin,”","he announced."] },
+    { s: 10, c: ["I got","a little rush of excitement,","knowing I was in","— that whatever happened","I could be involved","in one of","the productions."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -882,7 +882,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';

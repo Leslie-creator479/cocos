@@ -507,17 +507,19 @@ var DATA = {
       a: 3, h: '주어와 목적어가 같은 사람일 때 목적어의 형태를 생각해 보세요.', e: '④ <i>me</i> → <b>myself</b>. 주어 <i>I</i>와 목적어가 같은 사람이므로 재귀대명사를 써야 해요. ① 앞의 <i>had been rock climbing</i>과 나란히 이어진 과거완료(had + p.p.), ② 조동사 can 뒤 동사원형, ③ 과거의 일을 말하는 과거형 <i>found</i>, ⑤ 단수 주어 <i>The bolt</i>에 맞춘 <i>was</i>는 모두 맞아요.' }
   ],
   order: [
-    { s: 1, keep: true, c: ['Gregg and I', 'had been rock climbing', 'since sunrise', 'and had had', 'no problems.'] },
-    { s: 2, c: ['So', 'we took', 'a risk.'] },
-    { s: 3, c: ['“Look, the first bolt', 'is right there.', 'I can definitely', 'climb out to it.', 'Piece of cake,”', 'I persuaded Gregg,', 'minutes before', 'I found myself pinned.'] },
-    { s: 4, c: ['It wasn’t', 'a piece', 'of cake.'] },
-    { s: 5, c: ['The rock was', 'deceptively', 'barren of', 'handholds.'] },
-    { s: 6, c: ['I clumsily moved', 'back and forth', 'across the cliff face', 'and ended up', 'with nowhere to go...', 'but down.'] },
-    { s: 7, c: ['The bolt', 'that would save my life,', 'if I could get to it,', 'was about two feet', 'above my reach.'] },
-    { s: 8, c: ['My arms', 'trembled', 'from exhaustion.'] },
-    { s: 10, c: ['My body froze', 'with fright', 'from my neck', 'down to my toes.'] },
-    { s: 11, c: ['Our rope', 'was tied', 'between us.'] },
-    { s: 12, c: ['If I fell,', 'he would fall', 'with me.'] }
+    { s: 1, keep: true, c: ["Gregg and I","had been rock climbing","since sunrise","and had had","no problems."] },
+    { s: 2, c: ["So","we took","a risk."] },
+    { s: 3, en: "“Look, the first bolt is right there.”", ko: "“봐, 첫 번째 볼트가 바로 저기에 있어.”", c: ["“Look, the first bolt","is right there.”"] },
+    { s: 3, en: "“I can definitely climb out to it.”", ko: "“나는 분명히 거기까지 올라갈 수 있어.”", c: ["“I can definitely","climb out to it.”"] },
+    { s: 3, en: "“Piece of cake,” I persuaded Gregg, minutes before I found myself pinned.", ko: "“식은 죽 먹기야.”라고 나는 Gregg를 설득했고, 얼마 지나지 않아 나는 내가 꼼짝 못 하게 되었다는 것을 알게 되었다.", c: ["“Piece of cake,”","I persuaded Gregg,","minutes before","I found myself pinned."] },
+    { s: 4, c: ["It wasn’t","a piece","of cake."] },
+    { s: 5, c: ["The rock was","deceptively","barren of","handholds."] },
+    { s: 6, c: ["I clumsily moved","back and forth","across the cliff face","and ended up","with nowhere to go...","but down."] },
+    { s: 7, c: ["The bolt","that would save my life,","if I could get to it,","was about two feet","above my reach."] },
+    { s: 8, c: ["My arms","trembled","from exhaustion."] },
+    { s: 10, c: ["My body froze","with fright","from my neck","down to my toes."] },
+    { s: 11, c: ["Our rope","was tied","between us."] },
+    { s: 12, c: ["If I fell,","he would fall","with me."] }
   ]
 };
 /* ==== DATA:END ==== */
@@ -893,7 +895,7 @@ var SAUDIO = [
   function tail(){ var m=cur.tk[cur.tk.length-1].match(END); return m?m[0]:''; }
   function label(i){ var t=i===0?lc(cur.tk[0],cur.it):cur.tk[i]; if(i===cur.tk.length-1&&cur.tk.length>1){ var r=t.replace(END,''); if(r) t=r; } return t; }
   function draw(){
-    var it=cur.it, s=S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
+    var it=cur.it, s=it.en?{en:it.en,ko:it.ko}:S[it.s-1], total=O.length, nOk=Object.keys(solved).length;
     var dots=O.map(function(o,k){return '<button type="button" data-go="'+k+'" class="'+(k===oi?'cur ':'')+(solved[k]?'done':'')+'" aria-label="'+(k+1)+'번째 문장'+(solved[k]?' (완성)':'')+'">'+(k+1)+'</button>'}).join('');
     var h='<div class="wq-top"><span>'+(oi+1)+' / '+total+' · 완성 '+nOk+'문장</span><span class="seg" role="group" aria-label="배열 단위"><button type="button" id="om-chunk" aria-pressed="'+(mode==='chunk')+'">어구 배열</button><button type="button" id="om-word" aria-pressed="'+(mode==='word')+'">단어 배열 (어려움)</button></span></div>';
     h+='<div class="dots">'+dots+'</div>';
