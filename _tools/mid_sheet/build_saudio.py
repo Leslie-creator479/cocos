@@ -42,9 +42,13 @@ def sentences(src):
     data = re.search(r'DATA:START ==== \*/([\s\S]*?)/\* ==== DATA:END', src).group(1)
     part = data.split('sentences:', 1)[1].split('\n  ],', 1)[0]
     out = []
-    for m in re.finditer(r"\{ en: '((?:[^'\\]|\\.)*)'", part):
-        out.append(m.group(1).replace("\\'", "'"))
+    for m in re.finditer(r"\{ en: '((?:[^'\\]|\\.)*)'([^\n]*)", part):
+        sp = re.search(r"\bsp: '(\w+)'", m.group(2))
+        out.append((m.group(1).replace("\\'", "'"), sp.group(1) if sp else None))
     return out
+
+# 대화문(2026-10-26): DATA.sentences의 sp(말하는 사람)로 목소리를 고른다. sp가 없으면 VOICE(af_heart).
+VOICES = {'B': 'am_michael', 'G': 'af_heart', 'M': 'am_adam', 'W': 'af_sarah'}
 
 def main(paths):
     import soundfile as sf
@@ -54,7 +58,8 @@ def main(paths):
         src = open(path, encoding='utf8').read()
         sents = sentences(src)
         tmp, datas = tempfile.mkdtemp(), []
-        for i, s in enumerate(sents):
+        for i, (s, sp) in enumerate(sents):
+            voice = VOICES.get(sp, VOICE)
             text = clean(s)
             for a_, b_ in TEXTFIX:
                 text = re.sub(a_, b_, text)
@@ -66,9 +71,9 @@ def main(paths):
                     pat = r'(?<![^\s,.;:!?"()—])' + re.escape(old) + r'ɹ?(?![^\s,.;:!?"()—])'
                     assert re.search(pat, ph), (w, old, ph)
                     ph = re.sub(pat, PRON[w], ph)
-                a, sr = k.create(ph, voice=VOICE, speed=SPEED, lang='en-us', is_phonemes=True)
+                a, sr = k.create(ph, voice=voice, speed=SPEED, lang='en-us', is_phonemes=True)
             else:
-                a, sr = k.create(text, voice=VOICE, speed=SPEED, lang='en-us')
+                a, sr = k.create(text, voice=voice, speed=SPEED, lang='en-us')
             wav, mp3 = os.path.join(tmp, 'a.wav'), os.path.join(tmp, 'a.mp3')
             sf.write(wav, a, sr)
             trim = 'silenceremove=start_periods=1:start_threshold=-45dB'
@@ -77,7 +82,7 @@ def main(paths):
                             '-ac', '1', '-ar', '24000', '-b:a', '40k', mp3], check=True)
             b = open(mp3, 'rb').read()
             datas.append('data:audio/mpeg;base64,' + base64.b64encode(b).decode())
-            print(f'  {i+1:>2}. {len(a)/sr:4.1f}s {len(b)//1024:3d}KB  {text[:60]}  | {k.tokenizer.phonemize(text, "en-us")[:70]}')
+            print(f'  {i+1:>2}.{(sp or "")[:1]:>2} {len(a)/sr:4.1f}s {len(b)//1024:3d}KB  {text[:60]}  | {k.tokenizer.phonemize(text, "en-us")[:70]}')
         body = 'var SAUDIO = [\n' + ',\n'.join(f'  "{d}"' for d in datas) + '\n];'
         if 'SAUDIO:START' in src:
             src = re.sub(r'(/\* ==== SAUDIO:START ==== \*/\n)[\s\S]*?(\n/\* ==== SAUDIO:END ==== \*/)',

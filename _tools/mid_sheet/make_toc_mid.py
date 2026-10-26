@@ -33,6 +33,8 @@ t = re.sub(r'/\* ==== MID THEME:START[\s\S]*?MID THEME:END ==== \*/\n?', '', t)
 t = t.replace('</style>', theme.replace('/* ==== MID THEME:END ==== */', extra + '/* ==== MID THEME:END ==== */') + '</style>', 1)
 t, n = re.subn(r'var TOC = [\s\S]*?;\n/\* ==== TOC:END', lambda m: 'var TOC = ' + json.dumps(toc, ensure_ascii=False, indent=1) + ';\n/* ==== TOC:END', t)
 assert n == 1
+if any(str(x.get('n', '')).startswith('대화문') for x in toc['items']):  # 대화문 확인 퀴즈는 10문항(2026-10-26)
+    t = t.replace('<span class="pill">확인 퀴즈 15문항</span>', '<span class="pill">확인 퀴즈(본문 15 · 대화문 10문항)</span>')
 t = re.sub(r'placeholder="제목·주제로 찾기 \(예: [^)]*\)"', 'placeholder="제목·주제로 찾기 (예: 핵심어, 영어 낱말)"', t)
 os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
 open(out, 'w', encoding='utf8').write(t); print(out, len(t.encode()) // 1024, 'KB')

@@ -24,7 +24,7 @@
     var rel = decodeURIComponent(location.pathname).replace(root.pathname, '').replace(/^\/+|\/+$/g, '').split('/');
     var syn = null, game = null, anc = '';
     if (rel[0] === 'study' && rel.length === 3) { syn = 'syn/' + rel[1] + '/'; game = 'game/' + rel[1] + '/'; anc = 'p' + rel[2]; }
-    else if (rel[0] === 'textbook' && rel.length === 4) { var b = rel[1] + '-' + rel[2]; syn = 'syn/' + b + '/'; game = 'game/' + b + '/'; anc = 'p' + rel[2] + '-' + rel[3]; }
+    else if (rel[0] === 'textbook' && rel.length === 4 && !/^d\d/.test(rel[3])) { /* 대화문(d1·d2)은 동의어·단어게임 짝이 없음 */ var b = rel[1] + '-' + rel[2]; syn = 'syn/' + b + '/'; game = 'game/' + b + '/'; anc = 'p' + rel[2] + '-' + rel[3]; }
     if (!syn) return;
     var go = function () {
       var sec = document.getElementById('wordquiz');
@@ -171,6 +171,8 @@
     '#cocos-print .cp-passage sup{font-family:"Noto Sans KR",sans-serif;font-size:7pt;font-weight:700;color:var(--p-acc);margin:0 2px 0 1px}',
     '#cocos-print .cp-passage.cp-dialog{text-align:left}',
     '#cocos-print .cp-passage .cp-line{margin:0 0 3px}',
+    '#cocos-print .cp-passage .cp-dn{font-family:"Noto Sans KR",sans-serif;font-size:9pt;font-weight:700;color:var(--p-acc-ink);margin:8px 0 3px}',
+    '#cocos-print .cp-passage .cp-dn:first-child{margin-top:0}',
     '#cocos-print .cp-sp{font-family:"Noto Sans KR",sans-serif;font-size:9pt;color:var(--p-acc-ink);background:var(--p-soft);border-radius:4px;padding:0 6px;margin-right:4px}',
     '#cocos-print .cp-fig{font-family:"Noto Sans KR",sans-serif;font-size:9.5pt;margin:8px 0;break-inside:avoid}',
     '#cocos-print .cp-fig table{border-collapse:collapse;margin:4px auto}',
@@ -276,7 +278,8 @@
     var figAt = fig ? (+D.figure.after || D.sentences.length) : -1;
     var body = '';
     D.sentences.forEach(function (s, k) {
-      if (dialog && s.sp) body += (k ? '</p>' : '') + '<p class="cp-line"><b class="cp-sp">' + esc(s.sp) + '</b> ';
+      if (dialog && s.dn) body += (k ? '</p>' : '') + '<p class="cp-dn">' + esc(s.dn) + '</p>' + (s.sp ? '' : '<p class="cp-line">');
+      if (dialog && s.sp) body += (k && !s.dn ? '</p>' : '') + '<p class="cp-line"><b class="cp-sp">' + esc(s.sp) + '</b> ';
       else if (dialog && !k) body += '<p class="cp-line">';
       body += '<sup>' + (k + 1) + '</sup>' + s.en + ' ';
       if (k + 1 === figAt) body += (dialog ? '</p>' : '') + fig + (dialog ? '<p class="cp-line">' : '');
