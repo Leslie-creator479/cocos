@@ -258,3 +258,46 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
+
+/* 동의어·반의어 머리말 아래 '온라인 학습지 목차 · 단어게임' 바로 가기 (2026-10-26 원장님 요청)
+   - 단어게임 머리말의 관련 학습지 링크와 같은 모양. 주소로 짝 페이지를 찾고, 실제로 있을 때만 보인다.
+     syn/2025-10-g2 → study/2025-10-g2/ · game/2025-10-g2/
+     syn/ce1min-1 → textbook/ce1min/1/ · game/ce1min-1/   (스페셜 레슨 ce1min-s1 → textbook/ce1min/s1/)
+     syn/2026-2-mid-dongkwang-g1 → school/2026-2-mid/dongkwang-g1/ */
+(function () {
+  'use strict';
+  var D = window.DATA;
+  if (!D || !D.passages || window.__cocosSynLinks) return;
+  var m = location.pathname.match(/^(.*\/)syn\/([^\/]+)\/?/);
+  if (!m) return;
+  window.__cocosSynLinks = true;
+  var root = m[1], slug = m[2], toc = null, t;
+  if (/^(\d{4}-\d{2}-g\d|suneung-\d{4}-\d{2})$/.test(slug) || /^olympos/.test(slug)) toc = 'study/' + slug + '/';
+  else if ((t = slug.match(/^(\d{4}-\d-mid)-(.+-g\d)$/))) toc = 'school/' + t[1] + '/' + t[2] + '/';
+  else if ((t = slug.match(/^([a-z][a-z0-9]*?)-(s?\d+)$/))) toc = 'textbook/' + t[1] + '/' + t[2] + '/';
+  var cand = [];
+  if (toc) cand.push(['온라인 학습지 목차', root + toc]);
+  cand.push(['단어게임', root + 'game/' + slug + '/']);
+
+  var css = document.createElement('style');
+  css.textContent = '#syn-links{display:none;flex-wrap:wrap;gap:6px 14px;font-size:14px;margin:10px 0 2px}' +
+    '#syn-links a{color:var(--accent,#0A7FBF);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent,#0A7FBF) 35%,transparent)}' +
+    '#syn-links a:hover{border-bottom-color:var(--accent,#0A7FBF)}' +
+    '@media print{#syn-links{display:none!important}}';
+  document.head.appendChild(css);
+  var nav = document.createElement('nav');
+  nav.id = 'syn-links'; nav.setAttribute('aria-label', '관련 학습지');
+  var anchor = document.querySelector('header .jump') || document.querySelector('header h1');
+  if (!anchor) return;
+  anchor.parentNode.insertBefore(nav, anchor);
+  cand.forEach(function (c, i) {
+    var a = document.createElement('a');
+    a.href = c[1]; a.textContent = c[0] + ' →'; a.style.display = 'none'; a.style.order = i;
+    nav.appendChild(a);
+    try {
+      fetch(c[1], { method: 'HEAD' }).then(function (r) {
+        if (r.ok) { a.style.display = ''; nav.style.display = 'flex'; }
+      }).catch(function () {});
+    } catch (e) {}
+  });
+})();
