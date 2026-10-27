@@ -301,3 +301,43 @@
     } catch (e) {}
   });
 })();
+
+/* 1단계 동의어·반의어 퀴즈: 밑줄은 본문 낱말에만(2026-10-27 원장님 지적).
+   어휘 데이터의 t(바꿔 넣는 범위, 예 'a dear'·'excelled at'·'allows animals to learn')를 그대로 밑줄 치면
+   관사·목적어까지 밑줄이 그어져 보기(close·distant 같은 낱말 하나)와 어긋난다. 범위 안에서 c(본문 낱말)만,
+   표제어 h가 'excel at'처럼 전치사까지면 바로 뒤의 그 전치사까지 밑줄을 긋는다. 페이지마다 들어 있는
+   ctxHTML을 여기서 바꿔 끼우고, 이미 그려진 첫 문제는 다시 그린다. */
+(function () {
+  try {
+    if (typeof window.ctxHTML !== 'function' || window.__cocosCtxFix) return;
+    window.__cocosCtxFix = true;
+    var B = "A-Za-z’'-";
+    function e(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function r(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    function find(hay, needle) {
+      var m = new RegExp('(^|[^' + B + '])(' + r(needle) + ')(?![' + B + '])').exec(hay);
+      return m ? m.index + m[1].length : -1;
+    }
+    function core(w) {
+      var t = w.t, c = w.c;
+      if (!c || c === t) return null;
+      var s = find(t, c); if (s < 0) return null;
+      var end = s + c.length, hw = String(w.h || '').split(/\s+/), cw = c.split(/\s+/);
+      if (hw.length > cw.length) {
+        var tail = hw.slice(cw.length).join(' ');
+        if (/^[a-z’' ]+$/i.test(tail) && t.slice(end, end + 1 + tail.length).toLowerCase() === ' ' + tail.toLowerCase() &&
+            !new RegExp('[' + B + ']').test(t.charAt(end + 1 + tail.length) || '')) end += 1 + tail.length;
+      }
+      return [s, end];
+    }
+    window.ctxHTML = function (w, tag) {
+      var ctx = String(w.ctx || ''), s = find(ctx, w.t);
+      if (s < 0) return e(ctx);
+      var sp = w.t, k = core(w) || [0, sp.length];
+      return e(ctx.slice(0, s)) + e(sp.slice(0, k[0])) + '<' + tag + '>' + e(sp.slice(k[0], k[1])) + '</' + tag + '>' +
+        e(sp.slice(k[1])) + e(ctx.slice(s + sp.length));
+    };
+    if (typeof window.wdraw === 'function' && window.wset && window.wset.length && window.wi === 0 &&
+        !document.querySelector('#wq .opt[disabled]')) window.wdraw();
+  } catch (err) {}
+})();
