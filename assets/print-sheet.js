@@ -279,7 +279,7 @@
     var body = '';
     D.sentences.forEach(function (s, k) {
       if (dialog && s.dn) body += (k ? '</p>' : '') + '<p class="cp-dn">' + esc(s.dn) + '</p>' + (s.sp ? '' : '<p class="cp-line">');
-      if (dialog && s.sp) body += (k && !s.dn ? '</p>' : '') + '<p class="cp-line"><b class="cp-sp">' + esc(s.sp) + '</b> ';
+      if (dialog && s.sp) body += (k && !s.dn ? '</p>' : '') + '<p class="cp-line"><b class="cp-sp">' + esc(s.nm || s.sp) + '</b> ';
       else if (dialog && !k) body += '<p class="cp-line">';
       body += '<sup>' + (k + 1) + '</sup>' + s.en + ' ';
       if (k + 1 === figAt) body += (dialog ? '</p>' : '') + fig + (dialog ? '<p class="cp-line">' : '');
@@ -293,7 +293,7 @@
     /* 3. 문장별 해석 */
     h.push(sec(++n, '문장별 해석', ''));
     D.sentences.forEach(function (s, k) {
-      h.push('<div class="cp-pair"><span class="cp-n">' + (k + 1) + '</span><div><p class="cp-e">' + (s.sp ? '<b class="cp-sp">' + esc(s.sp) + '</b> ' : '') + s.en + '</p><p class="cp-k">' + (s.ko || '') + '</p></div></div>');
+      h.push('<div class="cp-pair"><span class="cp-n">' + (k + 1) + '</span><div><p class="cp-e">' + (s.sp ? '<b class="cp-sp">' + esc(s.nm || s.sp) + '</b> ' : '') + s.en + '</p><p class="cp-k">' + (s.ko || '') + '</p></div></div>');
     });
 
     /* 4. 단어 정리 */

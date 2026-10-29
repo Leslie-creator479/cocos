@@ -5,6 +5,8 @@ make_mid.py로 만든 중등 학습지(본문 틀)를 대화문 화면으로 고
   DATA.sentences는 '말하는 차례(턴)' 하나가 한 줄이다:
     { en: 'Thanks. I love playing it.', ko: '고마워. 나는 기타 치는 것을 정말 좋아해.', sp: 'B' }
     sp  = 말하는 사람(B 남학생 · G 여학생 · M 남자 어른 · W 여자 어른, 녹음 목소리도 이걸로 고른다)
+    nm  = (선택) 교과서가 이름으로 표시한 줄(예 'Yena', 'Andy')이면 그 이름. 동그라미 대신 이름표로 보이고, 목소리는 sp로 고른다
+          (중1 동아(이병민)처럼 Topic 2 영상 대화가 이름으로 나오는 교재, 2026-10-30)
     dn  = (선택) 짧은 대화가 여러 개일 때 그 대화의 첫 줄에 '대화 1'·'Wrap Up 1' 같은 이름표
   - 화면: 줄마다 말하는 사람 동그라미(B·G·M·W 색 구분), dn 이름표, '지문' → '대화문' 문구
   - 확인 퀴즈는 대화문형 10문항(check_dlg.js), PDF는 print-sheet.js가 sp·dn을 읽어 대화 모양으로 찍는다.
@@ -14,10 +16,13 @@ p = sys.argv[1]
 t = open(p, encoding='utf8').read()
 
 OLD = """'<li class="sent" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+s.en+'</p>"""
-NEW = """(s.dn?'<li class="dn">'+s.dn+'</li>':'')+'<li class="sent'+(s.sp?' has-sp':'')+'" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+(s.sp?'<b class="spk" data-sp="'+s.sp+'">'+s.sp+'</b>':'')+s.en+'</p>"""
+NEW0 = """(s.dn?'<li class="dn">'+s.dn+'</li>':'')+'<li class="sent'+(s.sp?' has-sp':'')+'" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+(s.sp?'<b class="spk" data-sp="'+s.sp+'">'+s.sp+'</b>':'')+s.en+'</p>"""
+NEW = """(s.dn?'<li class="dn">'+s.dn+'</li>':'')+'<li class="sent'+(s.sp?' has-sp':'')+'" data-s="'+(i+1)+'"><span class="sn">'+(i+1)+'</span><div><p class="se">'+(s.sp?'<b class="spk'+(s.nm?' nm':'')+'" data-sp="'+s.sp+'">'+(s.nm||s.sp)+'</b>':'')+s.en+'</p>"""
 if NEW not in t:
-    assert t.count(OLD) == 1, 'sentence render'
-    t = t.replace(OLD, NEW)
+    if NEW0 in t: t = t.replace(NEW0, NEW)
+    else:
+        assert t.count(OLD) == 1, 'sentence render'
+        t = t.replace(OLD, NEW)
 
 CSS = """/* ==== DLG:START ==== */
 .sents .dn{list-style:none;font-family:var(--round,inherit);font-size:15px;color:var(--accent-ink);background:var(--accent-soft);border-radius:999px;display:inline-block;padding:3px 14px;margin:14px 0 4px}
@@ -27,6 +32,7 @@ CSS = """/* ==== DLG:START ==== */
 .spk[data-sp="G"]{background:#E0567A}
 .spk[data-sp="W"]{background:#8A5BD6}
 .spk[data-sp="M"]{background:#1F4E8C}
+.spk.nm{width:auto;min-width:1.75em;padding:0 .65em;border-radius:999px}
 /* ==== DLG:END ==== */
 """
 t = re.sub(r'/\* ==== DLG:START[\s\S]*?DLG:END ==== \*/\n?', '', t)

@@ -31,7 +31,8 @@ for p, it, f in zip(parts, d['items'], srcs):
         D = pdata(f); en, ko = [], []
         for x in D['s']:
             if x.get('dn'): en.append(f"[{x['dn']}]"); ko.append(f"[{x['dn']}]")
-            en.append(f"{x['sp']}: {strip(x['en'])}"); ko.append(f"{x['sp']}: {strip(x['ko'])}")
+            who = x.get('nm') or x['sp']   # 이름으로 나오는 줄(nm)은 이름 그대로
+            en.append(f"{who}: {strip(x['en'])}"); ko.append(f"{who}: {strip(x['ko'])}")
         it['passage'] = '\n'.join(en); it['translation'] = '\n'.join(ko)
 d['header'] = {'series': f'2022 개정 {BOOK}', 'label': '동의어·반의어', 'title': f'{BOOK} {LN} 동의어·반의어'}
 nb = sum(1 for p in parts if not p['dlg']); nd = len(parts) - nb
@@ -41,7 +42,7 @@ with open(os.path.join(L, 'passages.txt'), 'w', encoding='utf8') as fo:
     for p, f in zip(parts, srcs):
         D = pdata(f)
         fo.write(f"=== {pname(p)} ({p['label']}) · {D['h']}\n")
-        for i, x in enumerate(D['s']): fo.write(f"{i+1}. {(x['sp'] + ': ') if x.get('sp') else ''}{x['en']}\n   {x['ko']}\n")
+        for i, x in enumerate(D['s']): fo.write(f"{i+1}. {((x.get('nm') or x['sp']) + ': ') if x.get('sp') else ''}{x['en']}\n   {x['ko']}\n")
         fo.write('학습지 단어: ' + ', '.join(f"{v['w']}({v['p']})" for v in D['v']) + '\n\n')
 W = os.path.join(L, 'words.json')
 if not os.path.exists(W):
