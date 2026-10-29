@@ -64,3 +64,8 @@ cd W/L<n> && for k in d1 d2; do python3 REPO/_tools/mid_sheet/make_mid.py data_$
 
 ## 보고 (짧게, 한국어)
 과마다: d1·d2 줄 수, 단어 수, 퀴즈에서 판단이 애매했던 곳 한두 줄. 파일 내용은 붙이지 않는다.
+
+## 쪽 구성이 다른 교재 (2026-10-30, 중1 동아(이병민))
+- 이병민판처럼 Topic 1 A(Listen and …)·Topic 1 B(Watch and …)·Topic 2 A(Watch a Video)·Wrap Up 구성이면: d1 = Topic 1 A + B(dn '대화 1'~ + 'Watch and Choose' 같은 B 쪽 제목), d2 = Watch a Video + Wrap Up(dn 'Watch a Video', 'Wrap Up A'·'Wrap Up B'). 라벨은 쪽 제목을 이어 'Listen and Write + Watch and Choose', 'Watch a Video + Wrap Up'.
+- 이름으로 나오는 줄(Yena:·Andy:·Dr. Jones: 등)은 sp(성별·어른 여부로 B/G/W/M)에 `nm: '<이름>'`을 더한다 → 화면·PDF·동의어 원지문에 이름표로 보인다.
+- 원지문 해석의 이름 표시(예나:·소녀:)는 ko에서 뺀다. 독백(한 사람이 여러 사람에게 말함)은 부르는 사람별로 줄을 나눠도 된다.
