@@ -21,7 +21,7 @@ const norm=t=>t.replace(/<[^>]+>/g,"").replace(/\s+/g," ").toLowerCase(),text=no
 B.tips.forEach(t=>[...t[1].matchAll(/<i>(.*?)<\/i>/g)].forEach(q=>{const p=norm(q[1]).trim();if(p.length>3&&!text.includes(p))err.push("인용 확인 "+t[0]+" "+q[1])}));
 D.quiz.forEach((q,i)=>[...(q.e||"").matchAll(/<i>(.*?)<\/i>/g)].forEach(x=>{const p=norm(x[1]).trim();if(p.length>3&&!text.includes(p))err.push("해설 인용 확인 "+(i+1)+": "+x[1])}));
 D.vocab.forEach(v=>{if(!["동","명","형","부","숙"].includes(v.p))err.push("품사 "+v.w)});
-["제4760호","추가 경비","blog.naver.com/cocosedu","place/38464695","MID THEME:START","data-k=","DLG:START","class=\"spk\""].forEach(k=>{if(!src.includes(k))err.push("빠짐: "+k)});
+["제4760호","추가 경비","blog.naver.com/cocosedu","place/38464695","MID THEME:START","data-k=","DLG:START","class=\"spk"].forEach(k=>{if(!src.includes(k))err.push("빠짐: "+k)});
 const am=src.match(/AUDIO:START ==== \*\/([\s\S]*?)\/\* ==== AUDIO:END/);const ax={};vm.runInNewContext(am[1]+";this.A=AUDIO",ax);const miss=D.vocab.filter(v=>!ax.A[v.w]).length;
 const sm=src.match(/SAUDIO:START ==== \*\/([\s\S]*?)\/\* ==== SAUDIO:END/);const sx={};vm.runInNewContext(sm[1]+";this.S=SAUDIO",sx);
 console.log(err.length?err.join("\n"):"OK","| 정답",JSON.stringify(cnt),"| 단어",D.vocab.length,"| 발음 없음",miss,"| 문장 녹음",sx.S.length+"/"+n);
