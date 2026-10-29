@@ -556,6 +556,12 @@ section[id],#course{scroll-margin-top:80px}
 .tc-meta{font-size:13px;color:var(--muted);margin-top:4px}
 .tb-grid .tc-body h4,.tb-grid .tc-body p{margin:0;padding:0}.tb-grid .tc-body p.tc-meta{margin-top:4px}
 @media (max-width:860px){.tb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tc-mono{width:min(54%,120px);font-size:clamp(17px,4.6vw,26px)}.tc-photo small{bottom:8px;font-size:8.5px;letter-spacing:.22em}.tc-body{padding:13px 14px 15px}.tb-grid .tc-body h4{font-size:16px}}
+/* 네이버 톡톡 떠 있는 버튼 (2026-10-29) */
+.talk-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;display:inline-flex;align-items:center;gap:8px;background:#03C75A;color:#fff;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:-.01em;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 10px 28px -8px rgba(0,0,0,.45);transition:transform .2s}
+.talk-fab:hover{transform:translateY(-2px)}
+.talk-fab svg{width:22px;height:22px;flex:none}
+@media (max-width:520px){.talk-fab{font-size:14px;padding:10px 15px 10px 12px}}
+@media print{.talk-fab{display:none}}
 </style>
 
 
@@ -599,9 +605,9 @@ section[id],#course{scroll-margin-top:80px}
             <dt>개강</dt><dd><b>1차 11월 · 2차 12월</b><br><span class="dim">학교 시험이 끝나는 시기에 맞춰 개강합니다. 2027학년도 중1 신입생은 12월에 개강합니다</span></dd>
             <dt>반 편성</dt><dd>입학 테스트(필요하면 2차) → 결과 상담 → 레벨별 반 배정<br><span class="dim">중등부 TEPS반·중등 COT반·UI·MI·LI·BI / 고등부 COT·UI·MI·LI·BI</span></dd>
             <dt>정원</dt><dd>한 반 15명</dd>
-            <dt>상담</dt><dd>전화 <a href="tel:031-752-3334">031-752-3334</a> · 평일 오후 3시 ~ 밤 10시</dd>
+            <dt>상담</dt><dd>전화 <a href="tel:031-752-3334">031-752-3334</a> · <a href="https://talk.naver.com/W46F3W" target="_blank" rel="noopener">네이버 톡톡</a><br><span class="dim">평일 오후 3시 ~ 밤 10시</span></dd>
           </dl>
-          <div class="btns"><a class="btn gold" href="#ask">상담 예약</a><a class="btn" href="tel:031-752-3334">전화 상담</a><a class="btn" href="#admission">입학 절차 보기</a></div>
+          <div class="btns"><a class="btn gold" href="#ask">상담 예약</a><a class="btn" href="tel:031-752-3334">전화 상담</a><a class="btn" href="https://talk.naver.com/W46F3W" target="_blank" rel="noopener">톡톡 문의</a><a class="btn" href="#admission">입학 절차 보기</a></div>
         </div>
       </div>
     </div>
@@ -1076,6 +1082,7 @@ section[id],#course{scroll-margin-top:80px}
       <div class="adm-cta">
         <p>입학 테스트와 상담은 예약제로 진행합니다.</p>
         <a class="btn" href="tel:031-752-3334">031-752-3334 입학 테스트 예약</a>
+        <a class="btn" href="https://talk.naver.com/W46F3W" target="_blank" rel="noopener">네이버 톡톡 문의</a>
       </div>
     </div>
   </section>
@@ -1087,7 +1094,7 @@ section[id],#course{scroll-margin-top:80px}
       <div>
         <span class="cap">Private Consultation</span>
         <h2 id="t-ask">상담<br>예약</h2>
-        <p class="lead">레벨 테스트와 상담은 예약제로 진행합니다. 전화로 편하게 문의해 주세요.</p>
+        <p class="lead">레벨 테스트와 상담은 예약제로 진행합니다. 전화나 네이버 톡톡으로 편하게 문의해 주세요.</p>
         <figure class="place">
           <svg viewBox="0 0 440 300" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 270h400" />
@@ -1107,6 +1114,7 @@ section[id],#course{scroll-margin-top:80px}
       </div>
       <div class="contact">
         <a class="row-link" href="tel:031-752-3334"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9l-9 3c-1.5 15 9 33 25 41l6.5-6.5-8-8-6.5 4c-5-3.5-8.5-8.5-10.5-14l5-4.5z"/><path d="M40 10a14 14 0 0 1 14 14M40 18a6 6 0 0 1 6 6"/></svg>Call</span><b>031-752-3334</b><span>전화 상담 · 레벨 테스트 예약</span></a>
+        <a class="row-link" href="https://talk.naver.com/W46F3W" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h40v26H30l-10 9v-9h-8z"/><path d="M22 29h2M31 29h2M40 29h2"/></svg>Talk</span><b>네이버 톡톡</b><span>채팅으로 상담 문의 · 답변은 운영 시간에 드려요</span></a>
         <div class="row-link"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M32 18v14l9 6"/></svg>Hours</span><b>운영 시간</b><span>평일 오후 3시 ~ 밤 10시 · 토요일 오전 11시 ~ 오후 4시</span></div>
         <a class="row-link" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 58s-16-16-16-30a16 16 0 0 1 32 0c0 14-16 30-16 30z"/><circle cx="32" cy="28" r="6"/></svg>Visit</span><b>오시는 길</b><span>경기도 성남시 중원구 광명로 124, 2층 (수진역 성일중고 사거리) · 네이버 지도에서 길찾기</span></a>
         <a class="row-link" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 52l4-14 26-26 10 10-26 26z"/><path d="M38 16l10 10"/><path d="M8 58h48"/></svg>Blog</span><b>코코스학원 블로그</b><span>학원 소식과 온라인 학습지</span></a>
@@ -1117,6 +1125,7 @@ section[id],#course{scroll-margin-top:80px}
   </section>
 </main>
 
+<a class="talk-fab" href="https://talk.naver.com/W46F3W" target="_blank" rel="noopener" aria-label="네이버 톡톡으로 상담 문의"><svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.6 1.6 4.9 4 6.4V21l3.6-2.4c.8.2 1.6.3 2.4.3 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/><circle cx="8" cy="11" r="1.3" fill="#03C75A"/><circle cx="12" cy="11" r="1.3" fill="#03C75A"/><circle cx="16" cy="11" r="1.3" fill="#03C75A"/></svg>톡톡 문의</a>
 <footer>
   <div class="wrap">
     <span class="logo" role="img" aria-label="COCOS"></span>
