@@ -507,7 +507,89 @@ var DATA = {
     { s: 6, c: ['This will greatly help us', 'in setting', 'our budget and schedule', 'more effectively.'] },
     { s: 7, c: ['Thank you very much', 'for your time', 'and assistance.'] },
     { s: 8, c: ['I', 'look forward to', 'your response.'] }
-  ]
+  ],
+  challenge: [
+  { type: '목적 · 고난도', p: '윗글의 목적으로 가장 적절한 것은?', en: true,
+    o: [
+      'to show off the new design of Pendington High School’s promotional brochure',
+      'to place an order for 500 full-color copies of a four-page school brochure',
+      'to ask the printing company to set the school’s budget and schedule for the brochure',
+      'to get a price estimate for a print job before committing to it',
+      'to explain why the school decided to update the overall design of its brochure'
+    ], a: 3,
+    e: '글쓴이는 <i>Before proceeding, we would like to ask you how much it would cost.</i>라고 해요. ‘일을 맡기기로 확정하기 전에 인쇄 작업의 가격 견적을 받으려고’가 이를 바꿔 쓴 ④예요. ② 쪽수·부수·컬러는 원문 그대로지만, 아직 <i>Before proceeding</i>(진행하기 전) 단계라 주문을 넣는 글이 아니에요. ③ 원문은 비용을 알면 <i>This will greatly help us in setting our budget and schedule</i>, 즉 학교가 예산과 일정을 정하는 데 도움이 된다는 것이지, 업체에 정해 달라는 것이 아니에요(주체가 뒤바뀜). ⑤ <i>update the overall design</i>을 그대로 썼지만 디자인을 바꾸려는 것은 새 업체를 찾는 배경일 뿐, 편지를 쓴 목적은 비용 문의예요. ① 소책자는 글의 소재일 뿐이에요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'I am a teacher at Pendington High School, and we are currently preparing a new school promotional brochure. As we wish to ______________, we are considering working with a new printing company. While reviewing several options, we felt that your design style and printing formats seemed to suit our needs well. We intend to make a four-paged brochure and print 500 copies in full color. Before proceeding, we would like to ask you how much it would cost.',
+    o: [
+      'keep the overall design of our brochure as it is',
+      'print our brochure in black and white to save money',
+      'continue working with our current printer',
+      'reduce the number of copies we print each year',
+      'give our brochure a whole new look'
+    ], a: 4,
+    e: '원문은 <i>update the overall design of our brochure</i>(소책자의 전반적인 디자인을 새롭게 하다)예요. ⑤는 이것을 ‘소책자에 완전히 새로운 모습을 입히다’로 바꿔 쓴 표현이에요. 업체를 고른 기준도 <i>your design style and printing formats seemed to suit our needs well</i>로 디자인이에요. ① overall design이라는 원문 낱말을 그대로 썼지만 ‘그대로 유지하려고’ 새 업체를 찾는다는 것은 앞뒤가 맞지 않아요. ② 비용 이야기라 그럴듯하지만 글쓴이는 <i>print 500 copies in full color</i>라고 했으므로 흑백으로 찍는다는 것은 맞지 않아요. ③ <i>a new printing company</i>와 반대예요. ④ 해마다 찍는 부수에 대한 말은 없어요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Hoping to <u>  (A)  </u> its brochure, the school asks a printing company to <u>  (B)  </u> the cost of a print job before committing to it, as this will make budgeting and scheduling easier.',
+    o: [
+      'modernize — estimate',
+      'shorten — estimate',
+      'modernize — cover',
+      'preserve — cover',
+      'review — reduce'
+    ], a: 0,
+    e: '(A) 학교는 <i>As we wish to update the overall design of our brochure</i>라고 했으므로 소책자를 ‘새롭게 바꾸려고(modernize)’ 해요. (B) <i>we would like to ask you how much it would cost</i>이므로 업체에 비용을 ‘어림해 달라(estimate)’고 하는 거예요. 둘 다 원문에 없는 낱말이에요. ② (B)는 맞지만, 소책자를 ‘줄인다(shorten)’는 말은 없어요. <i>a four-paged brochure</i>는 새로 만들 소책자의 쪽수일 뿐 예전보다 줄인다는 뜻이 아니에요. ③④ cover the cost는 업체가 비용을 ‘대 준다’는 뜻이라 글과 맞지 않아요. ⑤ review는 원문 <i>reviewing</i>에서 온 함정이고, 할인(reduce)을 요청하는 말도 없어요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'I am a teacher at Pendington High School, and we are currently ①<u>putting together</u> a new school promotional brochure. As we wish to update the overall design of our brochure, we are ②<u>contemplating</u> working with a new printing company. While ③<u>examining</u> several options, we felt that your design style and printing formats seemed to suit our needs well. We intend to make a four-paged brochure and print 500 copies in full color. Before ④<u>moving forward</u>, we would like to ⑤<u>tell</u> you how much it would cost. This will greatly help us in setting our budget and schedule more effectively. Thank you very much for your time and assistance. I look forward to your response.',
+    o: ['①', '②', '③', '④', '⑤'], a: 4,
+    e: '⑤ tell(알려 주다)은 원문에서 <b>ask</b>(묻다)였어요. 비용을 아는 쪽은 인쇄 업체이고, 글쓴이는 그 정보로 <i>setting our budget and schedule</i>을 하려는 것이므로 ‘얼마가 들지 알려 드리고 싶다’는 흐름에 맞지 않아요. ① putting together(=preparing), ② contemplating(=considering), ③ examining(=reviewing), ④ moving forward(=proceeding)는 원문 낱말을 같은 뜻의 말로 바꾼 것이라 모두 적절해요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'As we wish ⓐ<u>to update</u> the overall design of our brochure, we are considering working with a new printing company. While reviewing several options, we felt that your design style and printing formats ⓑ<u>seems</u> ⓒ<u>to suit</u> our needs well. We intend to make a ⓓ<u>four-pages</u> brochure and print 500 copies in full color. Before ⓔ<u>proceeding</u>, we would like to ask you how much it would cost.',
+    o: ['1개', '2개', '3개', '4개', '5개'], a: 1,
+    h: 'that절의 주어가 몇 개의 명사로 되어 있는지, 그리고 명사 앞에서 꾸미는 ‘숫자-명사’ 형용사의 모양을 확인하세요.',
+    e: '틀린 것은 ⓑ, ⓓ 두 개예요. ⓑ that절의 주어가 <i>your design style and printing formats</i>로 and로 이어진 복수이므로 seems가 아니라 복수 동사여야 해요(원문 <i>seemed</i>). ⓓ 숫자와 명사를 하이픈으로 이어 명사를 꾸미는 형용사로 쓸 때는 복수형 -s를 붙이지 않아요(four-page, 원문 <i>four-paged</i>). 맞는 것: ⓐ wish는 to부정사를 목적어로 써요. ⓒ seem to + 동사원형(~하는 것 같다)이에요. ⓔ 전치사 Before 뒤라서 동명사 proceeding이 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'I am a teacher at Pendington High School, and we are currently preparing a new school promotional brochure. ① These days, many schools are replacing printed brochures with online videos, which are far cheaper to share. ② As we wish to update the overall design of our brochure, we are considering working with a new printing company. ③ While reviewing several options, we felt that your design style and printing formats seemed to suit our needs well. ④ We intend to make a four-paged brochure and print 500 copies in full color. ⑤ Before proceeding, we would like to ask you how much it would cost. This will greatly help us in setting our budget and schedule more effectively. Thank you very much for your time and assistance. I look forward to your response.',
+    o: ['①', '②', '③', '④', '⑤'], a: 0,
+    e: '①은 글에 없는 지어낸 문장이에요. 소책자·비용(cheaper)이라는 같은 소재를 쓰지만, 이 편지는 새 소책자를 ‘인쇄하려고’ 비용을 묻는 글인데 ①은 요즘 학교들이 인쇄물 대신 온라인 영상을 쓴다는 일반적인 흐름으로 화제를 돌려요. ①을 빼면 ‘새 소책자를 준비 중’이라는 첫 문장이 ② ‘디자인을 새롭게 하려고 새 인쇄 업체를 고려 중’으로 바로 이어져요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">So, before we go any further, could you let us know what the total price would be?</span>I am a teacher at Pendington High School, and we are currently preparing a new school promotional brochure. ( ① ) As we wish to update the overall design of our brochure, we are considering working with a new printing company. ( ② ) While reviewing several options, we felt that your design style and printing formats seemed to suit our needs well. ( ③ ) We intend to make a four-paged brochure and print 500 copies in full color. ( ④ ) This will greatly help us in setting our budget and schedule more effectively. ( ⑤ ) Thank you very much for your time and assistance. I look forward to your response.',
+    o: ['①', '②', '③', '④', '⑤'], a: 3,
+    h: '④ 뒤 ‘This will greatly help us’의 This가 무엇을 가리켜야 예산과 일정을 정하는 데 도움이 될까요?',
+    e: '주어진 문장은 원문 <i>Before proceeding, we would like to ask you how much it would cost.</i>를 바꿔 쓴 것이에요(Before proceeding → before we go any further, how much it would cost → what the total price would be). 이 문장이 빠지면 ④ 뒤 <i>This will greatly help us in setting our budget and schedule more effectively.</i>의 This가 바로 앞의 인쇄 계획(4쪽, 컬러, 500부)을 가리키게 되는데, 자기네 계획이 예산을 정하는 데 도움이 된다는 것은 어색해요. ④에 넣어야 ‘인쇄 조건 → 그러니 총 가격을 알려 달라 → 그 정보(This)가 예산·일정에 도움’으로 이어져요. ③에 넣으면 무엇을 얼마나 인쇄할지 알리기도 전에 총 가격을 묻게 되고, ⑤에 넣으면 This가 가리킬 말이 없어요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'While reviewing several options, we felt that your design style and printing formats seemed to suit our needs well. We intend to make a four-paged brochure and print 500 copies in full color. Before we <u>sign on the dotted line</u>, we would like to ask you how much it would cost. This will greatly help us in setting our budget and schedule more effectively.',
+    o: [
+      'before we choose which company offers the most attractive design',
+      'before we formally agree to have your company print our brochure',
+      'before we finish designing every page of our new brochure',
+      'before we put our signature on the last page of the brochure',
+      'before the school’s budget for the year is officially approved'
+    ], a: 1,
+    h: '‘점선 위에 서명하다’는 계약서에 서명하는 장면이에요. 누구와 무엇을 약속하는 것일까요?',
+    e: '‘점선 위에 서명하다’는 계약을 확정한다는 뜻으로, 원문 <i>Before proceeding</i>(일을 진행하기 전에)을 비유로 바꾼 표현이에요. 이 업체에 인쇄를 맡기기로 정식으로 약속하기 전에 비용을 묻겠다는 뜻이라 ②가 정답이에요. ① 업체 비교는 이미 <i>While reviewing several options</i>에서 했고, 귀사가 잘 맞는다고 느낀 뒤예요. ④ 서명을 글자 그대로 읽은 것이에요. ⑤ 예산은 비용을 알아야 <i>setting our budget</i>을 할 수 있다고 했을 뿐, 학교 예산 승인 이야기는 없어요. ③ 디자인 작업을 끝낸다는 말은 없어요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 필자의 학교는 여러 업체를 살펴본 끝에 이 업체의 디자인 스타일과 인쇄 형식이 자신들에게 맞아 보인다고 판단했다.<br>(b) 필자는 이 업체와 이미 인쇄 계약을 맺었고, 지금은 비용만 확인하려 한다.<br>(c) 계획한 소책자는 한 부가 네 쪽이고, 전부 컬러로 500부를 찍을 예정이다.<br>(d) 필자는 비용 정보가 예산을 세우는 데에만 도움이 되고 일정과는 관계가 없다고 본다.<br>(e) 필자의 학교가 새 인쇄 업체를 찾는 까닭은 소책자의 전반적인 디자인을 새롭게 하고 싶어서이다.',
+    o: ['1개', '2개', '3개', '4개', '5개'], a: 2,
+    e: '일치하는 것은 (a), (c), (e) 세 개예요. (a) <i>While reviewing several options, we felt that your design style and printing formats seemed to suit our needs well.</i> (c) <i>a four-paged brochure and print 500 copies in full color</i> (e) <i>As we wish to update the overall design of our brochure, we are considering working with a new printing company.</i> (b) 아직 <i>considering</i>(고려 중) 단계이고 <i>Before proceeding</i> 비용을 묻는 것이라 계약을 맺었다는 것은 틀려요. (d) <i>setting our budget and schedule</i>이므로 일정에도 도움이 돼요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: [
+      '민준: 필자가 업체를 바꾸려는 건 이전 업체의 인쇄 비용이 너무 비쌌기 때문이야.',
+      '서연: 필자는 비용만 알려 준다면 어느 업체와도 계약할 생각이야.',
+      '지호: 필자가 쪽수와 부수, 컬러 여부를 밝힌 건 업체가 비용을 제대로 따져 볼 수 있게 하려는 거야.',
+      '하은: 필자는 예산과 일정을 이미 다 정해 두고, 그 범위 안에서 인쇄가 되는지 확인하려는 거야.',
+      '도윤: 필자는 견적이 마음에 들지 않으면 소책자를 만드는 일 자체를 그만둘 생각이야.'
+    ], a: 2,
+    e: '글쓴이는 <i>We intend to make a four-paged brochure and print 500 copies in full color.</i>라고 인쇄 조건을 먼저 밝힌 다음 <i>Before proceeding, we would like to ask you how much it would cost.</i>라고 물어요. 비용은 쪽수·부수·컬러에 따라 달라지므로, 조건을 알려 준 것은 업체가 값을 매길 수 있게 하려는 것이라고 추론할 수 있어요(지호). 민준: 업체를 바꾸는 이유는 <i>update the overall design</i>이고, 이전 업체의 비용 이야기는 없어요. 서연: 이 업체를 고른 것은 <i>your design style and printing formats seemed to suit our needs well</i> 때문이에요. 하은: 비용을 알면 <i>setting our budget and schedule</i>에 도움이 된다고 했으므로 예산과 일정은 아직 정하지 않았어요. 도윤: 견적이 마음에 들지 않을 때 어떻게 할지는 글에 근거가 없어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
