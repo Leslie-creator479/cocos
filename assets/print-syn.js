@@ -263,7 +263,7 @@
    - 단어게임 머리말의 관련 학습지 링크와 같은 모양. 주소로 짝 페이지를 찾고, 실제로 있을 때만 보인다.
      syn/2025-10-g2 → study/2025-10-g2/ · game/2025-10-g2/
      syn/ce1min-1 → textbook/ce1min/1/ · game/ce1min-1/   (스페셜 레슨 ce1min-s1 → textbook/ce1min/s1/)
-     syn/2026-2-mid-dongkwang-g1 → school/2026-2-mid/dongkwang-g1/ */
+     syn/2026-2-mid-dongkwang-g1 → school/2026-2-mid/dongkwang-g1/ (기말 syn/2026-2-final-… → school/2026-2-final/…, 2026-11-04) */
 (function () {
   'use strict';
   var D = window.DATA;
@@ -273,7 +273,7 @@
   window.__cocosSynLinks = true;
   var root = m[1], slug = m[2], toc = null, t;
   if (/^(\d{4}-\d{2}-g\d|suneung-\d{4}-\d{2})$/.test(slug) || /^olympos/.test(slug)) toc = 'study/' + slug + '/';
-  else if ((t = slug.match(/^(\d{4}-\d-mid)-(.+-g\d)$/))) toc = 'school/' + t[1] + '/' + t[2] + '/';
+  else if ((t = slug.match(/^(\d{4}-\d-(?:mid|final))-(.+-g\d)$/))) toc = 'school/' + t[1] + '/' + t[2] + '/';
   else if ((t = slug.match(/^([a-z][a-z0-9]*?)-(s?\d+)$/))) toc = 'textbook/' + t[1] + '/' + t[2] + '/';
   var cand = [];
   if (toc) cand.push(['온라인 학습지 목차', root + toc]);
