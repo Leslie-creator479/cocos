@@ -525,7 +525,89 @@ var DATA = {
     { s: 10, c: ['At the end of', 'the long hunting era,', 'before they turned', 'to farming,', 'they were already enjoying', 'some degree of affluence.'] },
     { s: 11, c: ['In certain regions,', 'at particular times of year,', 'the prey was', 'sufficiently plentiful', 'and their hunting techniques', 'sufficiently advanced', 'for them to experience', 'a remarkable degree', 'of prosperity.'] },
     { s: 12, c: ['They', 'had time', 'on their hands.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['Outsmarting Scarcity: How Early Hunters Earned Their First Leisure',
+        'Why Young Animals Spend Their Spare Energy on Play',
+        'How Leisure Time Made Early Humans Smarter',
+        'Farming: The Turning Point That Ended the Struggle to Survive',
+        'The Evolution of Intelligence Across the Animal Kingdom'],
+    a: 0,
+    e: '글은 생존에 모든 시간을 쓰던 초기 인류가 <i>the development of much greater intelligence</i> 덕분에 효율적인 사냥꾼이 되어 <i>They had time on their hands.</i>(여유 시간이 있었다)에 이르렀다는 내용이에요. ①은 이것을 ‘꾀로 결핍을 이기다: 초기 사냥꾼들은 어떻게 첫 여가를 얻었나’로 바꿔 쓴 제목이에요. ② 어린 동물의 놀이는 대부분의 동물이 여유가 없다는 것을 보여 주는 예외일 뿐이에요. ③ 글은 ‘지능 → 사냥 성공 → 여유 시간’인데, ‘여가 → 지능’으로 원인과 결과를 뒤집었어요. ④ farming·struggle to survive라는 원문 표현을 썼지만, 초기 인류는 <i>before they turned to farming</i>에 이미 풍요를 누렸어요. ⑤ 동물 세계 전체의 지능 진화로 범위가 너무 넓어요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'But as they slowly evolved into more and more efficient hunters, the situation changed. The secret of their success was the development of much greater intelligence. They used brain not brawn to kill their prey. At the end of the long hunting era, before they turned to farming, they were already enjoying some degree of affluence. In certain regions, at particular times of year, the prey was sufficiently plentiful and their hunting techniques sufficiently advanced for them to experience a remarkable degree of prosperity. They had ______________.',
+    o: ['no time left to spare for play',
+        'to work even harder to find enough prey',
+        'a pressing need to turn to farming',
+        'surplus energy only while young and protected',
+        'hours freed from the work of staying alive'],
+    a: 4,
+    e: '원문은 <i>They had time on their hands.</i>(그들은 여유 시간이 있었다)예요. ⑤는 이것을 ‘살아남는 일에서 풀려난 시간’으로 바꿔 쓴 표현이에요. 글 앞부분의 <i>For most animals the struggle to survive takes up all their time.</i>과 대비되는 결론이에요. ① spare·play는 원문 낱말이지만 ‘놀 시간이 없다’는 번영을 누렸다는 앞 문장과 반대예요. ② 사냥 기술이 <i>sufficiently advanced</i>했다는 내용과 맞지 않아요. ③ farming도 원문 낱말이지만, 풍요는 농경 ‘이전’에 이미 누렸고 농경이 절박했다는 말은 없어요. ④ surplus energy·protection은 어린 동물 이야기에서 온 함정이에요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Early humans, like most animals, were once entirely <u>  (A)  </u> by the demands of survival, but their growing intelligence eventually allowed them to enjoy <u>  (B)  </u> even before farming began.',
+    o: ['consumed — protection',
+        'unburdened — leisure',
+        'consumed — hardship',
+        'consumed — leisure',
+        'protected — play'],
+    a: 3,
+    e: '(A) 초기 조상들도 다른 동물처럼 생존 투쟁이 <i>takes up all their time</i>했고, 식량 찾기가 <i>would have put heavy demands upon them</i>했으므로 생존의 요구에 완전히 ‘사로잡혀 있었다’ → <b>consumed</b>, (B) 효율적인 사냥꾼이 된 뒤 <i>They had time on their hands.</i>이므로 ‘여가’ → <b>leisure</b>예요. 둘 다 원문에 없는 낱말이에요. ① protection은 원문 낱말이지만 부모의 보호를 받는 것은 어린 동물이고, 지능이 초기 인류에게 보호를 가져다주었다는 말은 없어요. ② unburdened(부담이 없는)는 <i>heavy demands</i>와 반대예요. ③ hardship(고난)은 <i>prosperity</i>와 반대예요. ⑤ play도 원문 낱말이지만 어린 동물 이야기에서 온 함정이고, protected는 (A)에 맞지 않아요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'For most animals the struggle to survive ①<u>occupies</u> all their time. Finding food and drink, keeping warm and clean, ②<u>evading</u> predators, migrating and reproducing use up all their energies. If they do have any time to spare, they spend it resting or sleeping. Only very young animals, under the protection of their parents, have enough surplus energy to engage in lively bouts of play. This was also true for our early ancestors. The constant search for food would have put heavy demands upon them. But as they slowly evolved into more and more efficient hunters, the situation changed. The secret of their success was the development of much greater intelligence. They used brain not ③<u>muscle</u> to kill their prey. At the ④<u>start</u> of the long hunting era, before they ⑤<u>took up</u> farming, they were already enjoying some degree of affluence. In certain regions, at particular times of year, the prey was sufficiently plentiful and their hunting techniques sufficiently advanced for them to experience a remarkable degree of prosperity. They had time on their hands.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    e: '④ <b>start</b>(시작)는 틀려요. 원문은 <i>At the end of the long hunting era</i>(오랜 사냥 시대의 끝에서)예요. 초기 인류는 처음에 식량 찾기로 큰 부담을 겪다가 <i>slowly evolved into more and more efficient hunters</i>(서서히 점점 더 효율적인 사냥꾼으로 진화)한 뒤에야 풍요를 누렸으므로, 그 시기는 사냥 시대의 ‘시작’이 아니라 ‘끝’이어야 해요. 나머지는 원문을 같은 뜻으로 바꾼 말이에요. ① occupies = <i>takes up</i>, ② evading = <i>avoiding</i>, ③ muscle = <i>brawn</i>, ⑤ took up = <i>turned to</i>.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'Finding food and drink, keeping ⓐ<u>warmly</u> and clean, avoiding predators, migrating and reproducing ⓑ<u>use up</u> all their energies. If they ⓒ<u>does</u> have any time to spare, they spend it resting or sleeping. Only very young animals, under the protection of their parents, ⓓ<u>have</u> enough surplus energy to engage in lively bouts of play. This was also true for our early ancestors. The constant search for food would have ⓔ<u>put</u> heavy demands upon them.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    h: '밑줄마다 그 자리에 형용사·부사·동사 중 무엇이 와야 하는지, 동사라면 주어와 수가 맞는지 확인하세요.',
+    e: '틀린 것은 ⓐ·ⓒ 2개예요. ⓐ keep + 형용사(~한 상태를 유지하다)이므로 <b>warm</b>(원문 <i>keeping warm and clean</i>, 뒤의 clean도 형용사). ⓒ 주어 they가 복수이므로 강조의 do도 <b>do</b>(원문 <i>If they do have any time to spare</i>). 맞는 것: ⓑ 동명사 주어 다섯 개(Finding …, keeping …, avoiding …, migrating and reproducing)가 and로 이어진 복수 주어라 use up, ⓓ 주어가 복수 <i>very young animals</i>이고 <i>under the protection of their parents</i>는 삽입된 수식어라 have, ⓔ would have + 과거분사이고 put의 과거분사는 put이에요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'But as they slowly evolved into more and more efficient hunters, the situation changed. ① The secret of their success was the development of much greater intelligence. ② They used brain not brawn to kill their prey. ③ Brain size varies greatly from one species of animal to another. ④ At the end of the long hunting era, before they turned to farming, they were already enjoying some degree of affluence. ⑤ In certain regions, at particular times of year, the prey was sufficiently plentiful and their hunting techniques sufficiently advanced for them to experience a remarkable degree of prosperity. They had time on their hands.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    e: '③은 글에 없는 문장으로, brain·animal처럼 글에 나온 낱말을 쓰지만 ‘동물 종마다 뇌의 크기가 다르다’는 동물 비교 이야기라, 지능 덕분에 사냥에 성공해 풍요와 여유 시간을 얻었다는 글의 흐름에서 벗어나요. ②의 <i>They used brain not brawn to kill their prey.</i>는 ‘사냥 방법’ 이야기이고, ④는 그 사냥 성공의 결과(<i>some degree of affluence</i>)로 바로 이어져요. ⑤는 ④의 풍요를 더 구체적으로 설명해요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">Our earliest ancestors were no exception to this rule.</span>For most animals the struggle to survive takes up all their time. Finding food and drink, keeping warm and clean, avoiding predators, migrating and reproducing use up all their energies. ( ① ) If they do have any time to spare, they spend it resting or sleeping. ( ② ) Only very young animals, under the protection of their parents, have enough surplus energy to engage in lively bouts of play. ( ③ ) The constant search for food would have put heavy demands upon them. ( ④ ) But as they slowly evolved into more and more efficient hunters, the situation changed. ( ⑤ ) The secret of their success was the development of much greater intelligence.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    h: '주어진 문장의 this rule이 무엇인지, 그리고 would have(~했을 것이다)로 과거를 짐작하는 문장의 them이 누구여야 하는지 생각해 보세요.',
+    e: '③ 뒤 <i>The constant search for food would have put heavy demands upon them.</i>은 과거를 짐작하는 would have로 말하므로 them은 지금의 동물이 아니라 옛날 사람들이어야 해요. 그런데 ③ 앞까지는 동물 이야기뿐이라, ‘우리의 초기 조상들도 이 법칙에서 예외가 아니었다’는 주어진 문장이 ③에 들어가야 them이 초기 조상을 가리키게 돼요. 주어진 문장은 원문 <i>This was also true for our early ancestors.</i>를 바꿔 쓴 것이고, this rule은 동물들이 생존에 모든 시간과 에너지를 쓴다는 앞 내용이에요. ②에 넣으면 그 뒤 <i>Only very young animals</i> 문장 때문에 them이 어린 동물을 가리키게 되어 흐름이 어색해요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'Only very young animals, under the protection of their parents, have enough surplus energy to engage in lively bouts of play. This was also true for our early ancestors. The constant search for food would have put heavy demands upon them. But as they slowly evolved into more and more efficient hunters, <u>the situation changed</u>. The secret of their success was the development of much greater intelligence. They used brain not brawn to kill their prey. At the end of the long hunting era, before they turned to farming, they were already enjoying some degree of affluence.',
+    o: ['they stopped hunting and began to grow their own crops',
+        'their prey grew too clever to be caught by strength alone',
+        'they lost the protection that their parents had once given them',
+        'they became the only creatures on earth with any free time',
+        'finding food no longer swallowed up nearly all of their time and energy'],
+    a: 4,
+    e: '바뀐 ‘상황’은 앞 문장 <i>The constant search for food would have put heavy demands upon them.</i>, 곧 동물들처럼 생존(식량 찾기)에 모든 시간과 에너지를 쓰던 상황이에요. 효율적인 사냥꾼이 되면서 이 부담이 줄어 <i>some degree of affluence</i>를 누렸으므로 ⑤가 정답이에요. ① <i>before they turned to farming</i>과 맞지 않아요. ② 지능을 쓴 것은 사냥하는 쪽이지 먹잇감이 영리해졌다는 말은 없어요. ③ 부모의 보호는 어린 동물 이야기예요. ④ ‘지구에서 유일하게’는 지나친 확대 해석이에요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 먹이 찾기, 체온과 청결 유지, 포식자 피하기, 이동, 번식이 대부분 동물의 에너지를 다 써 버리게 한다.<br>(b) 초기 인류는 처음부터 다른 동물들과 달리 식량을 찾는 부담에서 벗어나 있었다.<br>(c) 초기 인류는 짧은 기간에 효율적인 사냥꾼으로 바뀌었다.<br>(d) 사냥 시대 말기에 초기 인류는 모든 지역에서 한 해 내내 풍요를 누렸다.<br>(e) 먹잇감이 넉넉했던 것과 사냥 기술이 발전했던 것이 함께 맞아떨어져 초기 인류가 놀라운 번영을 누렸다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    h: '빠르기·범위·시기를 나타내는 말(얼마나 빨리, 어디서, 언제)이 원문과 같은지 확인하세요.',
+    e: '일치하는 것은 (a)(e) 2개예요. (a) <i>Finding food and drink, keeping warm and clean, avoiding predators, migrating and reproducing use up all their energies.</i>, (e) <i>the prey was sufficiently plentiful and their hunting techniques sufficiently advanced for them to experience a remarkable degree of prosperity</i>. (b) <i>This was also true for our early ancestors. The constant search for food would have put heavy demands upon them.</i>이므로 처음에는 다른 동물과 같았어요. (c) 원문은 <i>slowly evolved</i>(서서히 진화했다)예요. (d) 원문은 <i>In certain regions, at particular times of year</i>(특정 지역들에서, 한 해의 특정 시기에)라서 ‘모든 지역, 한 해 내내’가 아니에요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['지우: 초기 인류에게 여유 시간이 생긴 건 먹잇감을 얻는 데 드는 시간과 힘이 그만큼 줄었기 때문이라고 볼 수 있어.',
+        '민준: 농경이 시작되고 나서야 비로소 사람들에게 여가가 생겼어.',
+        '서연: 초기 인류는 몸집과 힘이 커진 덕분에 어린 동물처럼 놀 에너지를 얻었어.',
+        '도윤: 지능이 발달하자 초기 인류는 사냥을 그만두고 쉬거나 자는 데 시간을 썼어.',
+        '하은: 대부분의 동물이 놀지 않는 건 놀이가 생존에 쓸모없다는 것을 알기 때문이야.'],
+    a: 0,
+    e: '동물과 초기 조상에게 시간이 없었던 까닭은 생존, 특히 <i>The constant search for food</i>에 모든 시간과 에너지가 들었기 때문이에요. 그런데 <i>more and more efficient hunters</i>가 되고 <i>their hunting techniques sufficiently advanced</i>하자 <i>They had time on their hands.</i>이므로, 먹이를 얻는 데 드는 시간과 힘이 줄어 여유가 생겼다고 추론할 수 있어 지우가 맞아요. 민준: <i>before they turned to farming</i>에 이미 풍요를 누렸어요. 서연: <i>They used brain not brawn</i>이므로 힘이 아니라 지능 덕분이에요. 도윤: 사냥을 그만두었다는 말은 없고, 사냥 기술이 발전한 덕분이에요. 하은: 동물이 놀지 않는 것은 <i>use up all their energies</i> 때문이지, 놀이가 쓸모없음을 알아서라는 근거는 없어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
