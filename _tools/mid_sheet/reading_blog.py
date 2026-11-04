@@ -26,6 +26,7 @@ TPL = os.path.join(ROOT, 'tools', 'game-blog', '2026-10-g2', 'index.html')  # �
 COLORS = [('f-p', 't-pink', 'var(--pink)'), ('f-s', 't-sun', '#E0B400'), ('f-l', 't-lilac', 'var(--lilac)'),
           ('f-b', 't-blue', 'var(--blue)'), ('f-m', 't-mint', 'var(--mint)')]
 NUMS = '①②③④⑤'
+GUIDE = 'https://blog.naver.com/cocosedu/224465333543'  # 블로그 안내 글(중학 영어 독해·문법 무료 학습지 공개, 원장님 2026-11-05)
 
 
 def load_data(page):
@@ -85,7 +86,8 @@ def build_body(cfg, items, U):
     body = [["p", f"[대표 이미지: {cfg['_img'](1, 'cover')}]"]]
     body += [["p", h] for h in cfg['hook']]
     body += [["p", cfg.get('intro', '다섯 편 모두 학원이 직접 쓴 글이고, 지문마다 중학교에서 꼭 배우는 문법이 하나씩 들어 있어요. 아래 맛보기 문제를 먼저 풀어 보고, 학습지에서 해석·듣기·퀴즈 15문항까지 이어서 공부해 보세요.').replace('다섯', cfg['_n'])],
-             ["p", "(학습지 사용법은 지난 글 '중학 영어 독해·문법 무료 학습지 공개'에 정리해 두었어요. [안내 글 링크])"],
+             ["p", "학습지 사용법은 지난 글 '중학 영어 독해·문법 무료 학습지 공개'에 정리해 두었어요."],
+             ["link", "▶ 학습지 사용법 안내 글", cfg.get('guide', GUIDE)],
              ["link", f"▶ {cfg['_round']}회 목차 바로가기 (지문 {len(items)}편)", U]]
     answers = []
     for n, (k, D, inf, P) in enumerate(items):
