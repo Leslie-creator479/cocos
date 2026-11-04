@@ -1,0 +1,501 @@
+{
+ "note": "코코스 중등 독해 회차 계획표(원장님 확정 2026-11-05). 예약 작업이 status가 'todo'인 맨 앞 회차를 하나 꺼내 만들고 'done'(+ 올린 날)으로 바꾼다. 남은 todo가 2개 이하가 되면 알림에 '회차 계획 추가 필요'와 다음 12주 초안을 함께 보낸다. 지문 순서는 바꿔도 되지만 단계는 기본 2·표준 2·심화 1. 소재 사실이 확인되지 않으면 같은 주제의 다른 소재로 바꾸고 notes에 적는다.",
+ "done": [
+  {
+   "slug": "reading-m2-01",
+   "grade": 2,
+   "round": 1,
+   "theme": "동물의 놀라운 비밀",
+   "date": "2026-11-04",
+   "topics": [
+    "플라밍고는 왜 분홍색일까?",
+    "꿀벌은 춤으로 어떻게 길을 알려 줄까?",
+    "문어는 왜 심장이 세 개일까?",
+    "해달은 왜 손을 잡고 잘까?",
+    "코끼리는 어떻게 발로 대화할까?"
+   ]
+  }
+ ],
+ "plan": [
+  {
+   "date": "2026-11-08",
+   "grade": 3,
+   "round": 1,
+   "slug": "reading-m3-01",
+   "theme": "세상을 바꾼 우연한 발명",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "이야기",
+     "grammar": "가주어 it ~ to",
+     "title": "실패한 풀이 포스트잇이 되기까지"
+    },
+    {
+     "stage": "기본",
+     "kind": "발명가 일기",
+     "grammar": "간접의문문",
+     "title": "강아지 털에 붙은 씨앗에서 벨크로가?"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "관계대명사 what",
+     "title": "전자레인지는 녹은 초콜릿에서 시작됐다?"
+    },
+    {
+     "stage": "표준",
+     "kind": "편지",
+     "grammar": "분사구문",
+     "title": "실험실의 이상한 빛, X선의 발견"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "과거완료",
+     "title": "곰팡이가 구한 생명, 페니실린"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-15",
+   "grade": 1,
+   "round": 1,
+   "slug": "reading-m1-01",
+   "theme": "우리 몸의 신기한 과학",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "비교급",
+     "title": "아기는 어른보다 뼈가 많다?"
+    },
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "현재진행형",
+     "title": "하품은 왜 옮을까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "이야기",
+     "grammar": "과거형",
+     "title": "딸꾹질은 왜 날까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "보건 선생님의 편지",
+     "grammar": "조동사 should/must",
+     "title": "잠을 자야 키가 큰다?"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "to부정사(명사적)",
+     "title": "혀의 '맛 지도'는 틀렸다?"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-22",
+   "grade": 2,
+   "round": 2,
+   "slug": "reading-m2-02",
+   "theme": "세계의 신기한 축제와 문화",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "여행 일기",
+     "grammar": "접속사 when/if",
+     "title": "토마토를 던지는 축제, 라 토마티나"
+    },
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "분사(현재·과거분사 꾸밈)",
+     "title": "색 가루가 날리는 축제, 홀리"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "to부정사(부사적)",
+     "title": "피자는 원래 가난한 사람들의 음식?"
+    },
+    {
+     "stage": "표준",
+     "kind": "인터뷰",
+     "grammar": "사역동사 make/let",
+     "title": "김치가 우주에 간 날"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "비교 표현(as ~ as, 비교급 강조)",
+     "title": "해마다 새로 짓는 얼음 호텔"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-29",
+   "grade": 3,
+   "round": 2,
+   "slug": "reading-m3-02",
+   "theme": "지구를 지키는 사람들",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "이야기",
+     "grammar": "분사구문",
+     "title": "혼자 숲을 만든 사람, 자다브 파옝"
+    },
+    {
+     "stage": "기본",
+     "kind": "편지",
+     "grammar": "조동사 수동태",
+     "title": "플라스틱 병으로 지은 집"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "관계부사",
+     "title": "바다 쓰레기를 치우겠다고 나선 10대 발명가"
+    },
+    {
+     "stage": "표준",
+     "kind": "일기",
+     "grammar": "현재완료진행",
+     "title": "우리 학교 꿀벌 호텔"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "가정법 과거",
+     "title": "고래 똥이 지구를 식힌다?"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-06",
+   "grade": 1,
+   "round": 2,
+   "slug": "reading-m1-02",
+   "theme": "궁금한 하늘과 우주",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "현재진행형",
+     "title": "우주에 가면 키가 커진다?"
+    },
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "최상급",
+     "title": "금성의 하루는 1년보다 길다"
+    },
+    {
+     "stage": "표준",
+     "kind": "우주 비행사 일기",
+     "grammar": "과거형",
+     "title": "우주 정거장의 하루"
+    },
+    {
+     "stage": "표준",
+     "kind": "인터뷰",
+     "grammar": "There is/are · can",
+     "title": "별똥별의 정체"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "접속사 because/so",
+     "title": "달에 남은 발자국은 왜 안 지워질까?"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-13",
+   "grade": 2,
+   "round": 3,
+   "slug": "reading-m2-03",
+   "theme": "이상하고 신기한 식물 세계",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "지각동사",
+     "title": "벌레를 잡아먹는 식물, 파리지옥"
+    },
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "접속사 that",
+     "title": "해바라기는 정말 해를 따라 돌까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "이야기",
+     "grammar": "관계대명사",
+     "title": "고추는 왜 매울까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "인터뷰",
+     "grammar": "현재완료",
+     "title": "4,800살 넘은 나무"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "to부정사(부사적)",
+     "title": "사막의 생존왕, 선인장"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-20",
+   "grade": 3,
+   "round": 3,
+   "slug": "reading-m3-03",
+   "theme": "역사 속 신기한 직업",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "이야기",
+     "grammar": "too ~ to / enough to",
+     "title": "창문을 두드려 깨워 주던 '사람 알람'"
+    },
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "강조 구문 It is ~ that",
+     "title": "볼링핀을 손으로 세우던 아이들"
+    },
+    {
+     "stage": "표준",
+     "kind": "일기",
+     "grammar": "관계대명사 what",
+     "title": "공장에서 책을 읽어 주던 사람"
+    },
+    {
+     "stage": "표준",
+     "kind": "편지",
+     "grammar": "so that",
+     "title": "등대지기의 밤"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "분사구문",
+     "title": "냉장고가 없던 시절의 얼음 장수"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-27",
+   "grade": 1,
+   "round": 3,
+   "slug": "reading-m1-03",
+   "theme": "스포츠 속 숨은 과학",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "비교급",
+     "title": "골프공에는 왜 홈이 있을까?"
+    },
+    {
+     "stage": "기본",
+     "kind": "이야기",
+     "grammar": "과거형",
+     "title": "마라톤은 왜 42.195km일까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "명령문 · have to",
+     "title": "축구공 무늬의 비밀"
+    },
+    {
+     "stage": "표준",
+     "kind": "인터뷰",
+     "grammar": "조동사 can/will",
+     "title": "너무 빨라서 금지된 수영복"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "to부정사 · 동명사",
+     "title": "휘어 들어가는 커브볼의 비밀"
+    }
+   ]
+  },
+  {
+   "date": "2027-01-03",
+   "grade": 2,
+   "round": 4,
+   "slug": "reading-m2-04",
+   "theme": "마법 같은 날씨 이야기",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "접속사 if",
+     "title": "무지개는 사실 동그랗다?"
+    },
+    {
+     "stage": "기본",
+     "kind": "일기",
+     "grammar": "현재완료",
+     "title": "번개는 같은 곳에 두 번 칠까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "수동태",
+     "title": "눈송이는 왜 모두 다를까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "이야기",
+     "grammar": "관계대명사",
+     "title": "하늘에서 개구리가 떨어진 날"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "분사(현재·과거분사)",
+     "title": "밤하늘의 커튼, 오로라"
+    }
+   ]
+  },
+  {
+   "date": "2027-01-10",
+   "grade": 3,
+   "round": 4,
+   "slug": "reading-m3-04",
+   "theme": "뇌가 속는 순간들",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "간접의문문",
+     "title": "같은 색인데 다르게 보이는 착시"
+    },
+    {
+     "stage": "기본",
+     "kind": "이야기",
+     "grammar": "가주어 it ~ to",
+     "title": "눈이 귀를 속인다? 맥거크 효과"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "관계대명사 what",
+     "title": "기억은 바뀔 수 있다?"
+    },
+    {
+     "stage": "표준",
+     "kind": "인터뷰",
+     "grammar": "가정법 과거",
+     "title": "멀티태스킹은 정말 가능할까?"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "분사구문",
+     "title": "색깔이 맛을 바꾼다?"
+    }
+   ]
+  },
+  {
+   "date": "2027-01-17",
+   "grade": 1,
+   "round": 4,
+   "slug": "reading-m1-04",
+   "theme": "반려동물의 비밀",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "현재형(3인칭 단수)",
+     "title": "개 코에도 지문이 있다?"
+    },
+    {
+     "stage": "기본",
+     "kind": "이야기",
+     "grammar": "현재진행형",
+     "title": "금붕어의 기억력은 정말 3초일까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "감각동사 + 형용사",
+     "title": "고양이는 왜 골골 소리를 낼까?"
+    },
+    {
+     "stage": "표준",
+     "kind": "편지",
+     "grammar": "조동사 should",
+     "title": "강아지가 하품하는 이유"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "to부정사 · 동명사",
+     "title": "고양이는 왜 상자를 좋아할까?"
+    }
+   ]
+  },
+  {
+   "date": "2027-01-24",
+   "grade": 2,
+   "round": 5,
+   "slug": "reading-m2-05",
+   "theme": "세계의 이상한 건축물",
+   "status": "todo",
+   "passages": [
+    {
+     "stage": "기본",
+     "kind": "설명문",
+     "grammar": "수동태",
+     "title": "뒤집혀 있는 집"
+    },
+    {
+     "stage": "기본",
+     "kind": "여행 일기",
+     "grammar": "접속사 that",
+     "title": "바위 속에 지은 도시, 카파도키아"
+    },
+    {
+     "stage": "표준",
+     "kind": "설명문",
+     "grammar": "관계대명사",
+     "title": "기울어진 채 800년, 피사의 사탑"
+    },
+    {
+     "stage": "표준",
+     "kind": "인터뷰",
+     "grammar": "현재완료",
+     "title": "아직도 짓고 있는 성당, 사그라다 파밀리아"
+    },
+    {
+     "stage": "심화",
+     "kind": "설명문",
+     "grammar": "to부정사(부사적)",
+     "title": "바람에 흔들리게 만든 초고층 빌딩"
+    }
+   ]
+  }
+ ]
+}
