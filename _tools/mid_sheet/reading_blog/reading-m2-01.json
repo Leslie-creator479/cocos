@@ -1,0 +1,115 @@
+{
+  "slug": "reading-m2-01",
+  "theme": "동물의 놀라운 비밀",
+  "hook": [
+    "플라밍고는 원래 회색이고, 문어는 심장이 세 개라는 사실, 알고 있었나요?",
+    "코코스 중등 독해 중2 1회는 '동물의 놀라운 비밀'이에요. 읽다 보면 '진짜?' 소리가 나오는 동물 이야기 다섯 편을 영어 지문으로 만들었어요."
+  ],
+  "sources": "지문에 나온 사실은 스미스소니언, 내셔널 지오그래픽, 미국 아쿠아리움 자료로 확인했어요.",
+  "passages": {
+    "1": {
+      "emoji": "🦩",
+      "name": "플라밍고",
+      "tag": "분홍색의 비밀",
+      "q": "플라밍고는 왜<br>분홍색일까?",
+      "did": "플라밍고는 분홍색으로 태어나지 않아요.<br>아기 때는 회색이에요!",
+      "ex": "Flamingos <i>are not born</i> pink.",
+      "rule": "<b>be + 과거분사</b> = ~되다, ~받다",
+      "story": [
+        "동물원에서 보는 분홍색 플라밍고, 사실 아기 때는 회색이에요.",
+        "그렇다면 분홍색은 어디에서 오는 걸까요? 답은 바로 '먹이'예요. 먹는 것에 따라 색이 달라지는 신기한 새 이야기예요."
+      ],
+      "gram_title": "수동태 (be + 과거분사)",
+      "gram": [
+        "Flamingos are not born pink. (플라밍고는 분홍색으로 태어나지 않는다.)",
+        "flamingos in zoos are given special food. (동물원의 플라밍고는 특별한 먹이를 받는다.)",
+        "'~되다, ~받다'처럼 주어가 동작을 받을 때 be동사 + 과거분사를 써요."
+      ],
+      "words": "feather(깃털), contain(들어 있다), natural(천연의), depend on(~에 달려 있다), fade(옅어지다)",
+      "key": "flamingo"
+    },
+    "2": {
+      "emoji": "🐝",
+      "name": "꿀벌",
+      "tag": "춤으로 말해요",
+      "q": "꿀벌은 춤으로<br>길을 알려 준다?",
+      "did": "말을 못 하는 꿀벌은<br>춤 한 번으로 꽃밭 위치를 알려 줘요.",
+      "ex": "Bibi starts <i>dancing</i>.",
+      "rule": "<b>동사 + -ing</b>가 명사처럼 = ~하는 것",
+      "story": [
+        "꿀벌 Bibi가 꽃이 가득한 들판을 찾았어요. 친구들에게 알려 주고 싶지만 꿀벌은 말을 못 해요.",
+        "그래서 Bibi가 고른 방법은 '춤'! 춤의 방향과 몸을 흔드는 시간으로 꽃밭의 방향과 거리를 알려 주는, 꿀벌들의 특별한 대화법을 이야기로 읽어 봐요."
+      ],
+      "gram_title": "동명사 (동사 + -ing = ~하는 것)",
+      "gram": [
+        "Bibi starts dancing. (Bibi는 춤을 추기 시작한다.)",
+        "Dancing is Bibi’s way of talking. (춤추는 것은 Bibi가 말하는 방법이다.)",
+        "-ing가 명사처럼 주어·목적어·보어 자리에 와요. be동사와 함께 쓰는 진행형(is dancing)과 구별해 보세요."
+      ],
+      "words": "hive(벌집), share(나누다), direction(방향), length(길이), information(정보)",
+      "key": "bee"
+    },
+    "3": {
+      "emoji": "🐙",
+      "name": "문어",
+      "tag": "심장이 셋",
+      "q": "문어는 왜 심장이<br>세 개일까?",
+      "did": "문어는 심장이 세 개, 피는 파란색!<br>헤엄치면 심장 하나가 멈춰요.",
+      "ex": "many smart ways <i>to stay</i> safe",
+      "rule": "<b>명사 + to부정사</b> = ~할 (명사)",
+      "story": [
+        "우리는 심장이 하나인데, 문어는 무려 세 개예요. 게다가 피는 파란색이에요!",
+        "그런데 문어가 헤엄을 치면 심장 하나가 잠깐 멈춘대요. 그래서 문어가 주로 어떻게 움직이는지, 지문에서 확인해 보세요."
+      ],
+      "gram_title": "to부정사의 형용사적 쓰임 (명사 + to부정사 = ~할 명사)",
+      "gram": [
+        "It has many smart ways to stay safe, too. (문어는 안전하게 지낼 영리한 방법도 많다.)",
+        "to stay가 앞의 명사 ways를 뒤에서 꾸며요. chooses to crawl(기어 다니기로 하다)처럼 목적어로 쓰인 to부정사와 비교해 보세요."
+      ],
+      "words": "blood(피), breathe(숨 쉬다), oxygen(산소), beat(뛰다), crawl(기어 다니다)",
+      "key": "octopus"
+    },
+    "4": {
+      "emoji": "🦦",
+      "name": "해달",
+      "tag": "손잡고 자요",
+      "q": "해달은 왜<br>손을 잡고 잘까?",
+      "did": "자다가 떠내려가지 않으려고<br>서로 손을 꼭 잡는 해달이 있어요.",
+      "ex": "I <i>have never seen</i> anything so cute.",
+      "rule": "<b>have + 과거분사</b> = ~한 적이 있다 (경험)",
+      "story": [
+        "수족관에 다녀온 날의 일기예요. 가슴 위에 조개를 올려 놓고 먹는 해달은 꼭 작은 요리사 같았대요.",
+        "그리고 두 해달이 손을 잡고 잠드는 모습까지! 왜 손을 잡고 자는지, 수족관 직원의 설명을 지문에서 찾아보세요."
+      ],
+      "gram_title": "현재완료 (have + 과거분사)",
+      "gram": [
+        "I have never seen anything so cute in my life. (살면서 이렇게 귀여운 것은 한 번도 본 적이 없다. → 경험)",
+        "I have wanted to see sea otters for a long time. (오랫동안 해달을 보고 싶었다. → 계속)",
+        "같은 현재완료라도 경험·계속·완료처럼 뜻이 달라요. 시험에 자주 나오는 '쓰임 구별'을 지문 문장으로 연습해 봐요."
+      ],
+      "words": "aquarium(수족관), float(뜨다), fall asleep(잠들다), drift apart(떠내려가 멀어지다), favorite(가장 좋아하는)",
+      "key": "otter"
+    },
+    "5": {
+      "emoji": "🐘",
+      "name": "코끼리",
+      "tag": "발로 들어요",
+      "q": "코끼리는 발로<br>대화한다?",
+      "did": "사람 귀엔 안 들리는 낮은 소리,<br>코끼리는 그 떨림을 발로 느껴요.",
+      "ex": "trumpets <i>that</i> we can hear easily",
+      "rule": "<b>명사 + that/which/who</b> = ~하는 (명사)",
+      "story": [
+        "코끼리는 사람 귀에는 안 들리는 아주 낮은 소리로 몇 킬로미터 떨어진 코끼리와 이야기해요.",
+        "더 놀라운 건, 이 소리가 땅으로도 전해져서 코끼리가 발로 떨림을 느낀다는 거예요. 가만히 서 있는 코끼리를 보면 혹시 비밀 대화 중인지도 몰라요. 1회에서 가장 긴 심화 지문이에요."
+      ],
+      "gram_title": "관계대명사 (who·which·that)",
+      "gram": [
+        "Some of them are trumpets that we can hear easily. (그중 일부는 우리가 쉽게 들을 수 있는 나팔 같은 소리다.)",
+        "many of their calls are low rumbles which are too deep for human ears. (울음소리 다수는 사람 귀에는 너무 낮은 소리다.)",
+        "앞의 명사를 뒤에서 꾸미는 관계대명사 that과, 문장을 이어 주는 접속사 that(did you know that ~)의 차이도 함께 정리해요."
+      ],
+      "words": "gentle(온순한), condition(조건), lean(기울이다), pay attention to(~에 집중하다), conversation(대화)",
+      "key": "elephant"
+    }
+  }
+}
