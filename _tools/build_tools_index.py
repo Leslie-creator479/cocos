@@ -31,6 +31,9 @@ def label(slug):
         return 0, {'edu-voca-mid': '중학 기본 영단어 1,200'}.get(slug, slug), '교육과정 기본 어휘'
     if slug in ('mid-public',):  # 안내 블로그 원고(tools/blog/, 2026-11-04)
         return 0, {'mid-public': '중등 공개 학습지(독해·문법) 안내'}[slug], '학원 안내'
+    m = re.match(r'reading-m(\d)-(\d+)$', slug)  # 코코스 중등 독해 회차 블로그 원고
+    if m:
+        return 0, f'중{m.group(1)} {int(m.group(2))}회', '코코스 중등 독해'
     return 0, slug, '기타'
 
 
