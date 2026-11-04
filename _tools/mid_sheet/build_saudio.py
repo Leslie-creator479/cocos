@@ -9,7 +9,7 @@ import base64, os, re, subprocess, sys, tempfile, html
 from build_audio import ensure_models, VOICE
 
 SPEED = 1.0
-PRON = {'Goethe': 'ɡˈɜːɹtə', "Goethe's": 'ɡˈɜːɹtəz', 'Guernica': 'ɡwˈɛɹnɪkə', 'Juvisy': 'ʒˌuːviːzˈiː',
+PRON = {'algae': 'ˈælʤi', 'carotenoids': 'kəɹˈɑːtənˌɔɪdz', 'Carotenoids': 'kəɹˈɑːtənˌɔɪdz', 'Goethe': 'ɡˈɜːɹtə', "Goethe's": 'ɡˈɜːɹtəz', 'Guernica': 'ɡwˈɛɹnɪkə', 'Juvisy': 'ʒˌuːviːzˈiː',
         'Montigny-le-Roi': 'mˌɔntiːnjˈiː ləɹwˈɑː', 'Verrier': 'vˌɛɹiˈeɪ', 'Urbain': 'ʊɹbˈæn',
         'Flammarion': 'flˌæməɹiˈɔːn', 'Concord': 'kˈɑːŋkɚd', 'Caltech': 'kˈælˌtɛk', 'Jacques': 'ʒˈɑːk',
         'Göttingen': 'ɡˈɜːtɪŋən', 'Seok': 'sˈʌk', 'Hopil': 'hˈoʊpˌɪl', 'Fallas': 'fˈɑːjəs', 'fallas': 'fˈɑːjəs', 'Kaos': 'kˈɑːoʊs', 'Ateneo': 'ˌɑːtənˈeɪoʊ', 'Killorglin': 'kɪlˈɔːɹɡlɪn', 'caprese': 'kəpɹˈeɪzeɪ', 'Caprese': 'kəpɹˈeɪzeɪ', 'acai': 'ˌɑːsɑːˈiː', 'Acai': 'ˌɑːsɑːˈiː', 'Chefchaouen': 'ʃˌɛfʃɑːwˈɛn', 'Diaz': 'dˈiːɑːs', 'Dubai': 'duːbˈaɪ', 'Reena': 'ɹˈiːnə', "Reena's": 'ɹˈiːnəz', 'Jaemin': 'dʒˈɛmɪn', 'Miso': 'mˈiːsoʊ', 'Teo': 'tˈeɪoʊ', 'Subin': 'sˈuːbɪn', "Subin's": 'sˈuːbɪnz', "Subin’s": 'sˈuːbɪnz', 'Suyeon': 'sˈuːjʌn', 'djembe': 'dʒˈɛmbeɪ', 'djembes': 'dʒˈɛmbeɪz'}
