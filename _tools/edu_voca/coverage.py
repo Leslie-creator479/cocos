@@ -24,6 +24,11 @@ SUF = ['ably', 'ingly', 'fully', 'ically', 'ation', 'ication', 'ness', 'ment', '
 PRON = {'its': 'it', 'their': 'they', 'them': 'they', 'theirs': 'they', 'themselves': 'they', 'these': 'this', 'those': 'that', 'us': 'we',
         'our': 'we', 'ours': 'we', 'ourselves': 'we', 'me': 'i', 'my': 'i', 'mine': 'i', 'myself': 'i', 'his': 'he', 'him': 'he', 'himself': 'he',
         'her': 'she', 'hers': 'she', 'herself': 'she', 'your': 'you', 'yours': 'you', 'yourself': 'you', 'itself': 'it'}  # 지침 예시: they의 굴절형
+SKIP = set('''monday tuesday wednesday thursday friday saturday sunday january february march april may june july august september
+october november december meter meters kilometer kilometers centimeter centimeters gram grams kilogram kilograms liter liters percent dollar dollars
+won cent cents mile miles inch inches foot feet'''.split()) - {'may', 'march', 'foot', 'feet'}  # 지침 5: 월·요일명, 단위명은 세지 않는다
+IRREG = {'length': 'long', 'width': 'wide', 'depth': 'deep', 'height': 'high', 'strength': 'strong', 'cannot': 'can',
+         'scientist': 'science', 'scientists': 'science', 'scientific': 'science'}  # 파생 접사가 붙으며 철자가 바뀌는 것
 NUM = set('zero one two three four five six seven eight nine ten eleven twelve thirteen twenty thirty hundred thousand million billion first second third'.split())
 
 
@@ -46,12 +51,21 @@ def cands(w):
 
 
 def level(w):
+    if w in IRREG:
+        w = IRREG[w]
     best = None
     for c in cands(w):
         if c in FAM:
             lv = FAM[c]
             if best is None or lv > best:  # 별표가 많은 쪽(쉬운 쪽)을 먼저
                 best = lv
+    if best is None:  # 합성어(something, sometimes, everyone …): 앞뒤가 모두 목록에 있으면 앞쪽 수준으로
+        for i in range(2, len(w) - 1):
+            a_, b_ = w[:i], w[i:]
+            la = FAM.get(a_) if a_ in FAM else None
+            lb = level(b_) if len(b_) > 2 and b_ != w else None
+            if la is not None and lb is not None:
+                return min(la, lb)
     return best
 
 
@@ -76,7 +90,7 @@ def report(text):
     from collections import Counter
     cnt = Counter(); miss = Counter()
     for t in toks:
-        if t in NUM:
+        if t in NUM or t in SKIP:
             continue
         lv = level(t)
         if lv is None:
