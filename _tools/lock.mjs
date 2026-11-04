@@ -23,7 +23,7 @@ const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const SALT = 'cocos-lock-v1';
 const ITER = 150000;
 const MARK = 'id="cocos-lock"';
-const MOCK = /^(\d{4}-\d{2}-g\d|suneung-\d{4}-\d{2}|reading-m\d-\d{2})$/;  // 모의고사 회차와 수능(공개 자료, 2026-10-23), 코코스 중등 독해 오리지널 지문(reading-m<학년>-<회>, 2026-11-04)
+const MOCK = /^(\d{4}-\d{2}-g\d|suneung-\d{4}-\d{2}|(?:reading|grammar)-m\d-\d{2})$/;  // 모의고사 회차와 수능(공개 자료, 2026-10-23), 학원 자체 제작 중등 독해·문법(reading|grammar-m<학년>-<회>, 2026-11-04: 중등 교과서·학교 시험 자료는 비공개, 학원 자체 제작 자료는 공개)
 const PUBLIC_GAME = /^edu-voca-[a-z0-9-]+$/;  // 교육과정 기본 어휘 단어게임(교육부 고시 어휘라 공개, 2026-11-04)
 const ACAD = '학원명 코코스학원 · 등록번호 제4760호 · 교습과목 중·고등 영어 · 교습비 중등부 300,000원, 고등부 360,000원 · 추가 경비 없음';
 const NOTICE = '이 자료는 코코스학원 학원생의 수업용으로만 제공돼요. 교과서·부교재 지문은 출판사의 저작물이라, 비밀번호나 자료를 학원생이 아닌 사람에게 알려 주거나 복제·게시·배포하면 저작권 침해가 될 수 있어요. 이를 어겨 생기는 문제의 책임은 공유한 사람에게 있어요.';
