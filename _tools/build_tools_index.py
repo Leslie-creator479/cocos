@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 logo = re.search(r'url\((data:image/png;base64,[^)]+)\)', open('library/index.html', encoding='utf8').read()).group(1)
 
-KIND = {'game-blog': '단어게임 블로그 원고', 'syn-blog': '동의어·반의어 블로그 원고'}
+KIND = {'blog': '안내 블로그 원고', 'game-blog': '단어게임 블로그 원고', 'syn-blog': '동의어·반의어 블로그 원고'}
 SCH = {'dongkwang': '동광고', 'seongnam': '성남고', 'seongnam-girls': '성남여고', 'seongil': '성일고', 'pungsaeng': '풍생고'}
 
 
@@ -29,6 +29,8 @@ def label(slug):
         return int(m.group(1)), f"{SCH.get(m.group(4), m.group(4))} {m.group(5)}학년", term
     if slug.startswith('edu-voca-'):  # 교육과정 기본 어휘 공개 단어게임(2026-11-04)
         return 0, {'edu-voca-mid': '중학 기본 영단어 1,200'}.get(slug, slug), '교육과정 기본 어휘'
+    if slug in ('mid-public',):  # 안내 블로그 원고(tools/blog/, 2026-11-04)
+        return 0, {'mid-public': '중등 공개 학습지(독해·문법) 안내'}[slug], '학원 안내'
     return 0, slug, '기타'
 
 

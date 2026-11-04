@@ -1,0 +1,188 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>중등 공개 학습지 안내 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>중등 공개 학습지(독해·문법) 안내 블로그 원고</h1>
+    <p>네이버 블로그에 글 전체를 링크째 붙여 넣을 수 있는 원고예요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>[대표 이미지] 자리에 대표 이미지를 올리고, ‘태그 복사’로 태그를 넣어요.</li>
+    <li>목록에서 한 줄을 눌러 링크가 제대로 열리는지 확인하고 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  <section class="exam" id="list">
+    <div class="exam-head">
+      <div><h2>바로가기만</h2><p class="meta" id="list-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-list">링크 포함 복사</button>
+        <button type="button" class="btn" id="copy-url">자료실 링크 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-list" role="status" aria-live="polite"></p>
+    <div class="preview" id="pv-list" aria-label="붙여 넣을 목록 미리보기"></div>
+  </section>
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"url": "https://cocosedu.kr/library/#midread-study", "title": "중학 영어 독해·문법 무료 학습지 공개 | 중1·중2·중3 영어 독해 지문 해석·문제·PDF | 성남 코코스영어학원", "tags": "중학영어독해 중2영어독해 중학영어문법 영어독해지문 중학생영어 무료학습지 영어독해PDF 중등영어 중학영어공부 성남동영어학원", "count": 4, "groups": [{"g": "바로가기", "items": [["자료실 · 중등 독해 (공개 학습지 모음)", "https://cocosedu.kr/library/#midread-study"], ["코코스 중등 독해 중2 1회 1번 · 플라밍고는 왜 분홍색일까?", "https://cocosedu.kr/study/reading-m2-01/1/"], ["코코스 중등 독해 중2 1회 목차", "https://cocosedu.kr/study/reading-m2-01/"], ["교육과정 중학 기본 영단어 1,200 단어게임", "https://cocosedu.kr/game/edu-voca-mid/"]]}], "body": [["p", "[대표 이미지: 중등공개학습지_01_cover.png]"], ["p", "중학생 영어 공부, 어떤 독해 지문으로 시작하면 좋을지 고민되시죠?"], ["p", "코코스학원이 중학생이라면 누구나 무료로 쓸 수 있는 영어 독해·문법 학습지를 직접 만들어 공개합니다."], ["b", "■ 왜 공개 학습지인가요?"], ["p", "학원 수업에 쓰는 교과서·학교 시험 자료는 출판사의 저작물이라 학원생에게만 제공하고 있어요."], ["p", "그래서 지문부터 학원이 처음 쓴, 누구나 마음껏 쓸 수 있는 학습지를 따로 만들기로 했어요."], ["p", "[이미지: 중등공개학습지_02_free.png]"], ["p", "· 코코스 중등 독해: 학원이 새로 쓴 영어 독해 지문 (지금 공개 중)"], ["p", "· 코코스 중등 문법: 학년별 핵심 문법 학습지 (준비 중)"], ["p", "· 중학 기본 영단어 1,200: 교육과정 기본 어휘 단어게임 (지금 공개 중)"], ["p", "링크와 PDF는 누구에게나 자유롭게 공유하고 배포해도 좋아요."], ["b", "▶ 첫 번째 독해 학습지 바로가기"], ["link", "https://cocosedu.kr/study/reading-m2-01/1/", "https://cocosedu.kr/study/reading-m2-01/1/"], ["p", "휴대폰으로 바로 열리고, 로그인도 필요 없어요."], ["b", "■ 학습지 하나에 이만큼 들어 있어요"], ["p", "[이미지: 중등공개학습지_03_inside.png]"], ["p", "· 먼저 읽어 보세요: 글의 흐름과 막히기 쉬운 문장을 먼저 짚어 줘요."], ["p", "· 문장별 해석·듣기: 해석을 가린 채 스스로 읽어 보고, 문장마다 발음을 들어요. '따라 말하기'로 소리 내어 읽는 연습도 할 수 있어요."], ["p", "· 단어 정리·단어 퀴즈: 지문에 나온 단어의 뜻과 발음을 익혀요."], ["p", "· 마인드맵: 글의 구조를 한눈에 정리해요."], ["p", "· 확인 퀴즈 15문항: 중학교 영어 시험에 자주 나오는 유형으로 풀고 바로 채점해요."], ["p", "· 문장 배열: 어구를 순서대로 놓으며 문장 구조를 익혀요."], ["p", "· PDF로 저장: 지문·해석·단어·문제·정답을 한 파일로 저장해 인쇄할 수 있어요."], ["b", "■ 지문마다 수준을 숫자로 보여 줘요"], ["p", "[이미지: 중등공개학습지_04_level.png]"], ["p", "학년(중1·중2·중3)과 단계(기본·표준·심화)를 표시하고, 단어 수와 '교육과정 기본 어휘 비율'까지 적어 두었어요."], ["p", "2022 개정 영어과 교육과정은 중학교에서 쓰는 어휘의 90% 이상을 기본 어휘 목록에서 쓰도록 권장해요. 코코스 중등 독해 지문은 이 기준을 넘게 씁니다."], ["p", "또 지문마다 핵심 문법을 하나 정해 설명과 퀴즈까지 이어지게 했어요. 첫 지문(중2 · 표준 · 154단어 · 기본 어휘 91%)의 핵심 문법은 수동태예요."], ["b", "■ 퀴즈는 중학교 시험처럼"], ["p", "[이미지: 중등공개학습지_05_quiz.png]"], ["p", "내용 일치, T/F, 답할 수 없는 질문, 어법, 문법 쓰임, 빈칸, 지칭, 영영풀이, 배열, 요약문 완성까지 15문항이에요."], ["p", "모든 문항은 따로 한 번 더 풀어 보며 정답이 하나뿐인지 검토했고, 해설에는 지문 근거를 콕 집어 두었어요."], ["p", "설명문에 나오는 사실도 자료를 찾아 확인했어요."], ["b", "■ 이렇게 활용해 보세요"], ["p", "· 학생: 하루 한 지문, 해석을 가리고 스스로 읽은 뒤 퀴즈로 확인하기"], ["p", "· 학부모님: PDF로 저장해 아이와 함께 풀어 보거나 주말 복습용으로 인쇄하기"], ["p", "· 친구·스터디: 링크를 보내 같이 풀고 점수 비교하기"], ["b", "■ 바로가기"], ["list"], ["p", "앞으로 학년·단계별 독해 지문과 문법 학습지를 차례로 더해 갈게요. 새 학습지는 블로그와 자료실에서 알려 드릴게요."], ["br"], ["p", "링크와 PDF는 누구에게나 자유롭게 공유하고 배포해도 좋아요."], ["p", "다만 내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요."]]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function listHTML(){
+  var h='';
+  D.groups.forEach(function(g,i){
+    if(i)h+='<p><br></p>';
+    h+='<p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){h+='<p>'+a(it[1],it[0])+'</p>'});
+  });
+  return h;
+}
+function listText(){
+  var t='';
+  D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
+  return t;
+}
+function bodyHTML(){
+  var h='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')h+='<p><br></p><p><b>'+esc(b[1])+'</b></p>';
+    else if(b[0]==='link')h+='<p>'+a(b[2],b[1])+'</p>';
+    else if(b[0]==='br')h+='<p><br></p>';
+    else if(b[0]==='list')h+='<p><br></p>'+listHTML()+'<p><br></p>';
+    else h+='<p>'+esc(b[1])+'</p>';
+  });
+  return h;
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='list')t+='\n'+listText()+'\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent='제목·본문·태그 · 이미지 5장';
+$('list-meta').textContent='바로가기 '+D.count+'개 · 자료실·학습지·단어게임';
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+$('pv-list').innerHTML=listHTML();
+
+var stP=$('st-post'),stL=$('st-list');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+$('copy-list').addEventListener('click',function(e){copyRich(listHTML(),listText(),e.currentTarget,stL,$('pv-list'),'바로가기 목록을 복사했어요. 본문의 바로가기 자리에 붙여 넣으세요.')});
+$('copy-url').addEventListener('click',function(e){copyPlain(D.url,e.currentTarget,stL,'자료실 주소를 복사했어요.',null)});
+</script>
+
+
+
+</body></html>
