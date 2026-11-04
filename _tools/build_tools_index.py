@@ -27,6 +27,8 @@ def label(slug):
     if m:
         term = f"{m.group(1)}년 {m.group(2)}학기 {'중간' if m.group(3) == 'mid' else '기말'}고사 · 학교별"
         return int(m.group(1)), f"{SCH.get(m.group(4), m.group(4))} {m.group(5)}학년", term
+    if slug.startswith('edu-voca-'):  # 교육과정 기본 어휘 공개 단어게임(2026-11-04)
+        return 0, {'edu-voca-mid': '중학 기본 영단어 1,200'}.get(slug, slug), '교육과정 기본 어휘'
     return 0, slug, '기타'
 
 
