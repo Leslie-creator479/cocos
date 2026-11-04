@@ -30,6 +30,7 @@ OPEN = [re.compile(p) for p in (
     r'^$', r'^library$',
     rf'^study/{MOCK}(/[^/]+)?$',
     rf'^syn/{MOCK}$', rf'^game/{MOCK}$',
+    r'^game/edu-voca-[a-z0-9-]+$',  # 교육과정 기본 어휘 단어게임(교육부 고시 어휘라 공개, 2026-11-04)
 )]
 SKIP_DIRS = {'.git', '_tools', 'node_modules'}
 

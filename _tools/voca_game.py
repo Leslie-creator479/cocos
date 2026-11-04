@@ -18,6 +18,8 @@
      묶음 버튼은 빨리 고르기용으로 group(10)일씩: Day 01~10, 11~20 …
    - 틀: game/2022-03-g2(모의고사 단어게임, 잠기지 않은 페이지)를 그대로 쓰고 단어장에 맞게 고친다
      (지문 → Day, '지문 속 빈칸' 게임 뺌(예문 없음), 학습지·동의어 링크 없음, 머리말 아래 교재 구매 안내).
+   공개 단어장(교육과정 기본 어휘, game/edu-voca-…, 2026-11-04): 잠그지 않고 검색에 연다(seo.py·lock.mjs 예외). meta.json에 h1·gist·chips·desc를 넣어
+   '정규반' 문구를 바꾸고, 단어 데이터(교육부 고시 어휘 + 뜻)는 _tools/edu_voca/에 둔다(공개 자료라 평문 괜찮음).
    만든 뒤: brand_links.py → seo.py(PDF 버튼) → lock.mjs lock, 자료실은
    python3 _tools/add_library.py game "능률VOCA 고등기본" game/voca-nehs-basic <Day 수> --group "정규반 단어장"   (카드 아래 구매 링크는 넣지 않는다)
    범위 링크: 주소#2 (Day 02), 주소#4-6 (Day 04~06), 주소#4-5.9 (Day 04·05·09)
@@ -146,6 +148,9 @@ def build(words_f, meta_f, out):
                 links=[], source=M['source'])
     if M.get('buy'):
         meta['buy'] = M['buy']
+    for k in ('h1', 'gist', 'chips'):  # 공개 단어장(교육과정 기본 어휘, 2026-11-04)처럼 '정규반' 문구가 맞지 않을 때 meta.json에서 바꾼다
+        if M.get(k):
+            meta[k] = M[k]
     s = open(TPL, encoding='utf8').read()
     if '<body>' in s[:5000]:
         s = s.split('<body>', 1)[1].rsplit('</body></html>', 1)[0].lstrip('\n')
@@ -164,6 +169,11 @@ def build(words_f, meta_f, out):
     tmp = out + '.tmp.html'
     open(tmp, 'w', encoding='utf8').write(s)
     os.system(f'python3 {ROOT}/_tools/wrap.py {tmp} {out} >/dev/null'); os.remove(tmp)
+    if M.get('desc'):  # 검색 결과에 보일 설명(공개 페이지만 쓸모 있음)
+        import html
+        t = open(out, encoding='utf8').read()
+        t = t.replace('<meta charset="utf-8">', '<meta charset="utf-8"><meta name="description" content="' + html.escape(M['desc']) + '">', 1)
+        open(out, 'w', encoding='utf8').write(t)
     if M.get('mid', bool(re.search('중등|중학', M['title']))):  # 중등·중학 단어장은 중등 테마(원장님 결정 2026-10-25, meta.json "mid": false로 끌 수 있음)
         os.system(f'python3 {ROOT}/_tools/mid_sheet/theme_page.py game {out} >/dev/null')
     print(out, '·', rng, '· 단어', len(GW), '· 묶음', [x['label'] for x in groups])
