@@ -29,9 +29,15 @@ const ACAD = '학원명 코코스학원 · 등록번호 제4760호 · 교습과�
 const NOTICE = '이 자료는 코코스학원 학원생의 수업용으로만 제공돼요. 교과서·부교재 지문은 출판사의 저작물이라, 비밀번호나 자료를 학원생이 아닌 사람에게 알려 주거나 복제·게시·배포하면 저작권 침해가 될 수 있어요. 이를 어겨 생기는 문제의 책임은 공유한 사람에게 있어요.';
 const SHARE = '이 자료는 코코스학원 학원생 전용이에요. 교과서·부교재 지문은 출판사의 저작물이라 학원 밖으로 공유하거나 배포하면 저작권법 위반이 될 수 있어요.';
 
+// 모의고사 지문만 묶은 학교별 시험 범위의 동의어·단어게임은 공개(원장님 결정 2026-11-05).
+// 목록은 _tools/public_school.py가 만든다(seo.py가 돌 때 먼저 갱신되므로 seo → lock 순서를 지킨다).
+let PUBLIC_SCHOOL = [];
+try { PUBLIC_SCHOOL = JSON.parse(fs.readFileSync(path.join(ROOT, '_tools', 'public_school.json'), 'utf8')); } catch (e) {}
+
 function shouldLock(page) {
   const p = page.split('/');
   if (p[0] === 'textbook') return true;
+  if (['syn', 'game'].includes(p[0]) && p[1] && PUBLIC_SCHOOL.includes(p[1])) return false;
   if (p[0] === 'game' && p[1] && PUBLIC_GAME.test(p[1])) return false;
   if (['study', 'syn', 'game'].includes(p[0]) && p[1]) return !MOCK.test(p[1]);
   return false;
@@ -164,6 +170,10 @@ if (cmd === 'status') {
   let want = 0, done = 0;
   for (const [page, f] of pages()) if (shouldLock(page)) { want++; if (fs.readFileSync(f, 'utf8').includes(MARK)) done++; }
   console.log(`잠글 대상 ${want}쪽 · 잠김 ${done}쪽 · 안 잠김 ${want - done}쪽`);
+  // 공개로 바뀐 자료(모의고사만 묶은 학교별 동의어 등)가 아직 잠겨 있으면 알린다: unlock 후 seo.py
+  const stale = [];
+  for (const [page, f] of pages()) if (!shouldLock(page) && ['syn', 'game'].includes(page.split('/')[0]) && fs.readFileSync(f, 'utf8').includes(MARK)) stale.push(page);
+  if (stale.length) console.log(`공개 자료인데 잠긴 쪽 ${stale.length}쪽(unlock → seo.py): ${stale.join(', ')}`);
 } else if (cmd === 'lock' || cmd === 'unlock' || cmd === 'relock') {
   if (!pw) { console.error('COCOS_LOCK_PW 환경 변수로 비밀번호를 주세요(스킬에 적혀 있음).'); process.exit(1); }
   const k = key(pw);

@@ -35,6 +35,17 @@ OPEN = [re.compile(p) for p in (
 SKIP_DIRS = {'.git', '_tools', 'node_modules'}
 
 
+def school_open(names):
+    # 모의고사 지문만 묶은 학교별 시험 범위(목차·동의어·단어게임)는 공개(_tools/public_school.py, 원장님 결정 2026-11-05)
+    out = []
+    for n in names:
+        m = re.match(r'^(\d{4}-\d-(?:mid|final))-(.+)$', n)
+        if m:
+            out += [re.compile(rf'^school/{re.escape(m.group(1))}/{re.escape(m.group(2))}$'),
+                    re.compile(rf'^(?:syn|game)/{re.escape(n)}$')]
+    return out
+
+
 def is_open(page):
     return any(p.match(page) for p in OPEN)
 
@@ -64,6 +75,10 @@ def add_noindex(s):
 
 def main():
     check = '--check' in sys.argv
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    # 모의고사 지문만 묶은 학교별 자료는 공개 목록(_tools/public_school.json)에 넣는다(원장님 결정 2026-11-05)
+    import public_school
+    OPEN.extend(school_open(public_school.main(check=check)))
     # 학습지 'PDF로 저장' 버튼·안내 카드 오타도 함께 정리(_tools/print_btn.py, 선생님 결정 2026-10-15)
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import print_btn
