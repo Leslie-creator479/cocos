@@ -5,8 +5,8 @@
 (study/<연도>-<월>-g<학년>/…, study/suneung-…/…)로만 이어지면, 그 목차와 같은 이름의
 동의어·반의어(syn/<시험>-<학교>-g<학년>)·단어게임(game/…)은 모의고사 자료처럼
 잠그지 않고 검색에 연다. 교과서·부교재(올림포스 등)가 하나라도 섞이면 지금처럼
-학원생 잠금·검색 제외다. 링크가 모의고사 학습지라도 교재 범위(EBS 올림포스 기출처럼
-묶음 이름이 'N강'이거나 칩에 EBS·올림포스·수능특강이 들어간 목차)는 부교재로 보고 잠근다.
+학원생 잠금·검색 제외다. EBS 올림포스 기출처럼 교재 강·번호로 묶은 범위라도 지문이 모두
+모의고사 학습지로 이어지면(모의고사 묶음 교재) 공개다(원장님 2026-11-06).
 
 결과는 _tools/public_school.json(공개 이름 목록)에 쓴다. seo.py가 돌 때 먼저 이 도구를
 부르고, lock.mjs는 이 파일을 읽어 공개 목록의 syn·game을 잠그지 않는다.
@@ -22,9 +22,6 @@ MOCK = r'(?:\d{4}-\d{2}-g\d|suneung-\d{4}-\d{2})'
 MOCK_LINK = re.compile(rf'^(?:\.\./)*study/{MOCK}/[^/]+/?$')
 
 
-BOOK = re.compile(r'^\d+강$|EBS|올림포스|수능특강|수능완성')
-
-
 def toc_links(path):
     s = open(path, encoding='utf8').read()
     m = re.search(r'var TOC = ', s)
@@ -35,9 +32,6 @@ def toc_links(path):
         T = json.loads(s[m.end():j + 2].rstrip(';'))
     except ValueError:
         return None
-    if any(BOOK.search(c) for c in T.get('chips', [])) or \
-       any(BOOK.search(it.get('g', '')) for it in T.get('items', [])):
-        return None  # 교재(부교재) 범위
     return [it.get('u', '') for it in T.get('items', [])]
 
 
