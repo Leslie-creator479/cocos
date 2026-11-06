@@ -49,7 +49,7 @@ body += sec('examples', '지문 속 문장', ('독해 지문에 실제로 나온
 body += sec('quiz', '단계별 문제', ('기본 → 표준 → 심화 순서예요. 한 번 고르면 바로 채점돼요.', ''), '<div class="qs" id="qs"></div>', '<div class="score" id="score"></div>')
 body += sec('fix', '틀린 곳 고쳐 쓰기', ('어법상 틀린 곳이 하나씩 있어요. 고친 문장 전체를 써서 확인해 보세요.', ''), '<div class="g-list" id="fix-list"></div>')
 body += sec('write', '조건 영작', ('학교 서술형처럼 조건에 맞춰 써 보세요. 단어 수는 쓰는 동안 아래에 세어 줘요.', ''), '<div class="g-list" id="write-list"></div>\n    <div class="g-card" style="margin-top:14px"><span class="b-lab">서술형 감점 체크</span><ul class="g-check" id="write-check"></ul></div>')
-body += sec('order', '문장 배열', ('해석을 보고 어구를 순서대로 눌러 영어 문장을 완성하세요.', ''), '<div class="ord" id="ord"></div>')
+body += sec('order', '문장 배열', ('해석을 보고 어구를 순서대로 눌러 영어 문장을 완성하세요. 기간·때를 나타내는 말(for ~, since ~)은 문장 끝에 두세요.', ''), '<div class="ord" id="ord"></div>')
 if has_review:
     body += sec('review', '지난 문법 복습', ('지난 편에서 배운 문법을 다시 꺼내 봐요. 잊을 때쯤 다시 풀면 오래 기억에 남아요.', ''), '<div class="qs" id="rv"></div>', '<div class="score" id="rv-score"></div>')
 body += sec('reading', '독해로 이어 보기', ('이 문법이 나온 독해 지문을 함께 읽어 보세요.', ''), '<div class="gl" id="links"></div>')
