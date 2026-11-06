@@ -197,44 +197,7 @@
     setup();
   })();
 
-  // PDF로 저장: 인쇄용 화면을 따로 그려 인쇄(학생 기기에서 만들어짐, 2026-11-06)
-  (function(){
-    var nav=document.querySelector('header .jump'); if(!nav) return;
-    var btn=document.createElement('button'); btn.type='button'; btn.className='btn primary'; btn.id='g-pdf'; btn.textContent='PDF로 저장';
-    btn.style.cssText='margin-top:12px'; nav.parentNode.insertBefore(btn,nav.nextSibling);
-    function T(x){return x==null?'':String(x)}
-    function shuf(a,seed){a=a.slice();var s=seed||7;for(var i=a.length-1;i>0;i--){s=(s*9301+49297)%233280;var j=Math.floor(s/233280*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
-    function build(){
-      var h='<h1>'+D.h1+'</h1><p class="gp-sub">'+D.chips.join(' · ')+'</p><p>'+D.gist+'</p>';
-      if(D.hook){ h+='<h2>1. 먼저 풀어 보기 (O / X)</h2><ol>'+D.hook.items.map(function(it){return '<li class="en">'+it.en+' <span class="gp-box">O / X</span></li>'}).join('')+'</ol>'; }
-      var R=D.rule; if(R){ h+='<h2>2. 한눈에 정리</h2>'+R.cards.map(function(c){return '<div class="gp-card"><b>'+c.lab+'</b> '+T(c.sub)+(c.t?'<br>'+c.t:'')+(c.w?'<br>함께 쓰는 말: <i>'+c.w.join(', ')+'</i>':'')+(c.ex?'<br><span class="en">'+c.ex.replace(/<small>/g,' (').replace(/<\/small>/g,')')+'</span>':'')+(c.ko?' '+c.ko:'')+'</div>'}).join('');
-        if(R.table) h+='<p><b>'+T(R.tableTitle)+'</b></p><table class="gp-t"><tr>'+R.table.head.map(function(x){return '<th>'+x+'</th>'}).join('')+'</tr>'+R.table.rows.map(function(r){return '<tr>'+r.map(function(x){return '<td>'+x+'</td>'}).join('')+'</tr>'}).join('')+'</table>';
-        if(R.tips) h+='<ul>'+R.tips.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'; }
-      if(D.sentences){ h+='<h2>3. 지문 속 문장</h2><ol>'+D.sentences.map(function(s){return '<li><span class="en">'+s.show+'</span> <small>['+s.tag+']</small><br>'+s.ko+(s.note?'<br><small>'+s.note+'</small>':'')+'</li>'}).join('')+'</ol>'; }
-      if(D.quiz){ h+='<h2>4. 단계별 문제</h2>'+D.quiz.map(function(q,i){return '<div class="gp-q"><b>'+(i+1)+'. ['+T(q.lv)+'] '+q.p+'</b>'+(q.q?'<div class="gp-quote en">'+q.q+'</div>':'')+'<div class="en">'+q.o.map(function(o,j){return NUMS[j]+(o===NUMS[j]?'':' '+o)}).join('&nbsp;&nbsp; ')+'</div></div>'}).join(''); }
-      if(D.fix){ h+='<h2>5. 틀린 곳 고쳐 쓰기</h2><ol>'+D.fix.map(function(f){return '<li><span class="en">'+f.w+'</span> ('+T(f.ko)+')<div class="gp-line"></div></li>'}).join('')+'</ol>'; }
-      if(D.write){ h+='<h2>6. 조건 영작</h2><ol>'+D.write.map(function(w){return '<li>'+w.ko+'<br><small>'+(w.cond||[]).join(' / ')+'</small><div class="gp-line"></div></li>'}).join('')+'</ol>';
-        if(D.check) h+='<p><b>서술형 감점 체크</b></p><ul>'+D.check.map(function(x){return '<li>□ '+x+'</li>'}).join('')+'</ul>'; }
-      if(D.order){ h+='<h2>7. 문장 배열</h2><ol>'+D.order.map(function(o,i){return '<li>'+o.ko+'<br><span class="en">( '+shuf(o.c,i+3).map(function(c){return c.replace(/[.?!]$/,'')}).join(' / ')+' )</span><div class="gp-line"></div></li>'}).join('')+'</ol>'; }
-      h+='<h2 class="gp-ans">정답과 해설</h2>';
-      if(D.hook) h+='<p><b>1.</b> '+D.hook.items.map(function(it,i){return (i+1)+' '+(it.ok?'O':'X')+(it.fix?' → <span class="en">'+it.fix+'</span>':'')}).join(' / ')+'</p>';
-      if(D.quiz) h+='<p><b>4.</b></p><ol>'+D.quiz.map(function(q){return '<li>'+NUMS[q.a]+' '+q.e+'</li>'}).join('')+'</ol>';
-      if(D.fix) h+='<p><b>5.</b></p><ol>'+D.fix.map(function(f){return '<li class="en">'+f.a[0]+'</li>'}).join('')+'</ol>';
-      if(D.write) h+='<p><b>6.</b></p><ol>'+D.write.map(function(w){return '<li class="en">'+w.a[0]+'</li>'}).join('')+'</ol>';
-      if(D.order) h+='<p><b>7.</b></p><ol>'+D.order.map(function(o){return '<li class="en">'+o.c.join(' ')+'</li>'}).join('')+'</ol>';
-      h+='<p class="gp-foot">© 코코스학원 · cocosedu.kr · 링크와 PDF는 누구에게나 자유롭게 공유해도 좋아요.</p>';
-      return h;
-    }
-    var st=document.createElement('style');
-    st.textContent='#gprint{display:none}@media print{body.gp .wrap{display:none!important}body.gp #gprint{display:block;font:11pt/1.6 "Noto Sans KR",sans-serif;color:#000;background:#fff}body.gp{background:#fff!important}#gprint h1{font-size:18pt;margin:0 0 4pt}#gprint h2::before{display:none!important}#gprint h2{display:block}#gprint p b:only-child{break-after:avoid}#gprint h2{font-size:13pt;margin:14pt 0 6pt;border-bottom:1.5pt solid #333;padding-bottom:2pt;break-after:avoid}#gprint .gp-ans{break-before:page}#gprint .en{font-family:"Source Serif 4",Georgia,serif}#gprint .gp-sub{color:#555;margin:0 0 8pt}#gprint .gp-card,#gprint .gp-q,#gprint li{break-inside:avoid}#gprint .gp-card{border:1pt solid #bbb;border-radius:6pt;padding:5pt 8pt;margin:0 0 5pt}#gprint .gp-q{margin:0 0 9pt}#gprint .gp-quote{border:1pt solid #ccc;padding:4pt 8pt;margin:3pt 0}#gprint .gp-t{border-collapse:collapse;width:100%;font-size:10pt}#gprint .gp-t td,#gprint .gp-t th{border:1pt solid #999;padding:3pt 5pt;vertical-align:top;text-align:left}#gprint .gp-line{border-bottom:1pt solid #888;height:20pt;margin:2pt 0 6pt}#gprint .gp-box{border:1pt solid #888;border-radius:4pt;padding:0 6pt;margin-left:6pt;font-size:9pt}#gprint i{font-style:normal;font-weight:700}#gprint .gp-foot{margin-top:14pt;color:#666;font-size:9pt}}';
-    document.head.appendChild(st);
-    btn.addEventListener('click',function(){
-      var box=$('gprint'); if(!box){ box=document.createElement('div'); box.id='gprint'; document.body.appendChild(box); }
-      box.innerHTML=build(); document.body.classList.add('gp');
-      var off=function(){ document.body.classList.remove('gp'); window.removeEventListener('afterprint',off); };
-      window.addEventListener('afterprint',off); setTimeout(function(){ window.print(); },50);
-    });
-  })();
+  // PDF로 저장은 다른 학습지와 같은 공용 PDF 스크립트(print-sheet)가 그린다(GRAM 분기, seo.py → print_btn.py가 붙임, 2026-11-06)
 
   // 8. 독해로 이어 보기
   (function(){ var L=D.links, box=$('links'); if(!L||!box) return;

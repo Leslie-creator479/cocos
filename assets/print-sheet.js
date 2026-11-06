@@ -262,7 +262,30 @@
     '#cocos-print .cp-ex i{font-family:"Source Serif 4",Georgia,serif}',
     '#cocos-print .cp-foot{margin-top:18px;padding-top:8px;border-top:2px solid var(--p-acc);font-size:8.5pt;color:var(--p-muted);break-inside:avoid}',
     '#cocos-print .cp-foot b{color:var(--p-ink)}',
-    '#cocos-print .cp-foot p{margin:2px 0}'
+    '#cocos-print .cp-foot p{margin:2px 0}',
+    /* 코코스 중등 문법 페이지 (2026-11-06) */
+    '#cocos-print .cp-ox{display:inline-block;margin-left:10px;font-family:"Noto Sans KR",sans-serif;font-size:8.5pt;font-weight:700;color:var(--p-acc-ink);border:1px solid var(--p-line);border-radius:4px;padding:0 7px;vertical-align:1px}',
+    '#cocos-print .cp-rgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}',
+    '#cocos-print .cp-rcard{border:1px solid var(--p-line);border-radius:7px;padding:6px 10px;break-inside:avoid;font-size:9.5pt}',
+    '#cocos-print .cp-rcard>b{color:var(--p-acc-ink);font-size:10.5pt}',
+    '#cocos-print .cp-rcard .cp-s{color:var(--p-muted);font-size:8.5pt}',
+    '#cocos-print .cp-rcard p{margin:2px 0 0}',
+    '#cocos-print .cp-rcard.cp-key{border:1.5px solid var(--p-acc);background:var(--p-soft)}',
+    '#cocos-print .cp-rcard i{font-style:normal;font-weight:700;font-family:"Source Serif 4",Georgia,serif}',
+    '#cocos-print .cp-w span{display:inline-block;font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:9pt;color:var(--p-acc-ink);border:1px solid var(--p-line);border-radius:999px;padding:0 7px;margin:1px 3px 1px 0}',
+    '#cocos-print .cp-rex{font-family:"Source Serif 4",Georgia,serif;font-size:10pt;font-weight:600}',
+    '#cocos-print .cp-rex small{font-family:"Noto Sans KR",sans-serif;font-weight:400;font-size:8.5pt;color:var(--p-muted)}',
+    '#cocos-print table.cp-rt{width:100%;border-collapse:collapse;font-size:9.5pt;margin:2px 0 4px}',
+    '#cocos-print table.cp-rt th,#cocos-print table.cp-rt td{border:1px solid var(--p-line);padding:4px 7px;text-align:left;vertical-align:top}',
+    '#cocos-print table.cp-rt thead th{background:var(--p-soft);color:var(--p-acc-ink)}',
+    '#cocos-print table.cp-rt tbody th{white-space:nowrap;color:var(--p-ex)}',
+    '#cocos-print table.cp-rt i{font-style:normal;font-weight:700;font-family:"Source Serif 4",Georgia,serif}',
+    '#cocos-print .cp-t2{font-family:"Noto Sans KR",sans-serif;font-size:8pt;font-weight:700;color:var(--p-ex);background:#FBEFEA;border-radius:4px;padding:0 6px;white-space:nowrap}',
+    '#cocos-print .cp-t2.cp-past{color:var(--p-muted);background:#F1F2F6}',
+    '#cocos-print .cp-e u{text-decoration-thickness:1.5px;text-underline-offset:2px;text-decoration-color:var(--p-acc)}',
+    '#cocos-print ul.cp-checks{list-style:none;padding:0;margin:2px 0;columns:2;column-gap:14px;font-size:9.5pt}',
+    '#cocos-print ul.cp-checks li{break-inside:avoid;padding:1px 0}',
+    '#cocos-print ul.cp-checks li::before{content:\'□ \';color:var(--p-acc)}'
   ].join('\n');
 
   function sec(n, title, sub, cls) {
@@ -457,6 +480,152 @@
     box.innerHTML = h.join('\n');
   }
 
+  /* 코코스 중등 문법 페이지(study/grammar-m…, DATA에 hook·rule이 있음) PDF (2026-11-06 원장님 요청: 다른 학습지처럼 컬러로).
+     같은 머리·제목·색·문항 모양을 쓰고, 칸만 문법 페이지 순서대로: 먼저 풀어 보기 → 한눈에 정리 → 지문 속 문장 → 단계별 문제 → 고쳐 쓰기 → 조건 영작 → 문장 배열 → 정답과 해설 */
+  var GRAM = !!(D.hook && D.rule);
+  function buildGram() {
+    var h = [], n = 0, opened = false;
+    function open(num, title, sub, cls, keep) {
+      if (opened) h.push('</section>');
+      opened = true;
+      h.push('<section class="cp-sec' + (keep ? ' cp-keep' : '') + (cls ? ' cp-' + cls : '') + '">' + sec(num, title, sub));
+    }
+    var logo = document.querySelector('.brand .logo, .promo .logo');
+    h.push('<div class="cp-top">' + (logo ? '<span class="logo" role="img" aria-label="코코스학원" style="display:inline-block"></span>' : '<b>코코스학원</b>') +
+      '<span>코코스학원 온라인 학습지 · cocosedu.kr</span></div>');
+    if (D.chips) h.push('<div class="cp-chips">' + D.chips.map(esc).join(' · ') + '</div>');
+    h.push('<h1>' + (D.h1 || '') + '</h1>');
+    if (D.enTitle) h.push('<p class="cp-entitle">' + D.enTitle + '</p>');
+    if (D.gist) h.push('<p class="cp-gist"><b>오늘 배울 것</b>' + D.gist + '</p>');
+
+    var H = D.hook;
+    if (H && H.items) {
+      open(++n, '먼저 풀어 보기', '맞으면 O, 틀리면 X · 정답은 맨 뒤에', '', true);
+      if (H.intro) h.push('<p class="cp-gloss" style="margin:0 0 4px">' + H.intro + '</p>');
+      H.items.forEach(function (it, k) {
+        h.push('<div class="cp-pair"><span class="cp-n">' + (k + 1) + '</span><div><p class="cp-e">' + nums(it.en) + '<span class="cp-ox">O · X</span></p></div></div>');
+      });
+    }
+    var R = D.rule;
+    if (R) {
+      open(++n, '한눈에 정리', '꼴 · 쓰임 · 헷갈리는 것 구별하기');
+      h.push('<div class="cp-rgrid">' + (R.cards || []).map(function (c) {
+        return '<div class="cp-rcard' + (c.key ? ' cp-key' : '') + '"><b>' + c.lab + '</b>' + (c.sub ? ' <span class="cp-s">' + c.sub + '</span>' : '') +
+          (c.t ? '<p>' + c.t + '</p>' : '') +
+          (c.w ? '<p class="cp-w">' + c.w.map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</p>' : '') +
+          (c.ex ? '<p class="cp-rex">' + String(c.ex).replace(/<small>/g, ' <small>').replace(/<\/small>(?=.)/g, '</small><br>') + (c.ko ? '<br><small>' + c.ko + '</small>' : '') + '</p>' : '') + '</div>';
+      }).join('') + '</div>');
+      if (R.table) {
+        h.push('<div class="cp-keep"><span class="cp-lab">' + (R.tableTitle || '구별하기') + '</span><table class="cp-rt"><thead><tr>' +
+          R.table.head.map(function (x) { return '<th>' + x + '</th>'; }).join('') + '</tr></thead><tbody>' +
+          R.table.rows.map(function (r) { return '<tr>' + r.map(function (x, j) { return j ? '<td>' + x + '</td>' : '<th>' + x + '</th>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>');
+      }
+      if (R.tips && R.tips.length) h.push('<div class="cp-blk"><span class="cp-lab">시험에 나오는 포인트</span><ul class="cp-tips">' + R.tips.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>');
+    }
+    var S = D.sentences || [];
+    if (S.length) {
+      open(++n, '지문 속 문장', '독해 지문에 실제로 나온 문장', '', true);
+      S.forEach(function (s, k) {
+        h.push('<div class="cp-pair"><span class="cp-n">' + (k + 1) + '</span><div><p class="cp-e">' + (s.show || esc(s.en)) + ' <span class="cp-t2' + (s.past ? ' cp-past' : '') + '">' + esc(s.tag || '') + '</span></p>' +
+          '<p class="cp-k">' + (s.ko || '') + '</p>' + (s.note ? '<p class="cp-gloss">' + s.note + '</p>' : '') + '</div></div>');
+      });
+    }
+    var Q = D.quiz || [];
+    if (Q.length) {
+      open(++n, '단계별 문제', '기본 → 표준 → 심화 · ' + Q.length + '문항 · 정답은 맨 뒤에', 'newpage');
+      Q.forEach(function (q, k) {
+        var s = '<div class="cp-q"><p class="cp-qh">' + (k + 1) + '. ' + (q.lv ? '<span class="cp-t">' + esc(q.lv) + '</span>' : '') + (q.type ? '<span class="cp-t">' + esc(q.type) + '</span>' : '') + neg(q.p || '') + '</p>';
+        if (q.q) s += '<div class="cp-qq">' + nums(q.q) + '</div>';
+        var short = q.o.every(function (o) { return String(o).replace(/<[^>]+>/g, '').length <= 26; });
+        s += '<ol class="cp-o' + (q.en ? ' cp-en' : '') + (short ? ' cp-row' : '') + '">' + q.o.map(function (o, j) {
+          var bare = String(o).replace(/<[^>]+>/g, '').trim();
+          return '<li><b>' + NUM[j] + '</b><span>' + (bare === NUM[j] ? '' : nums(o)) + '</span></li>';
+        }).join('') + '</ol>';
+        h.push(s + '</div>');
+      });
+    }
+    var F = D.fix || [];
+    if (F.length) {
+      open(++n, '틀린 곳 고쳐 쓰기', '틀린 곳을 찾아 고친 문장 전체를 써 보세요');
+      F.forEach(function (f, k) {
+        h.push('<div class="cp-q"><p class="cp-qh">' + (k + 1) + '. <span class="cp-en" style="font-weight:600">' + f.w + '</span></p>' +
+          (f.ko ? '<p class="cp-gloss" style="margin:0 0 2px">' + f.ko + '</p>' : '') + '<div class="cp-write"></div></div>');
+      });
+    }
+    var W = D.write || [];
+    if (W.length) {
+      open(++n, '조건 영작', '학교 서술형처럼 조건에 맞춰 써 보세요');
+      W.forEach(function (w, k) {
+        h.push('<div class="cp-q"><p class="cp-qh">' + (k + 1) + '. ' + w.ko + '</p>' +
+          (w.cond ? '<div class="cp-qq" style="font-family:inherit;font-size:9.5pt"><b>조건</b> ' + w.cond.join(' · ') + '</div>' : '') +
+          '<div class="cp-write"></div><div class="cp-write"></div></div>');
+      });
+      if (D.check) h.push('<div class="cp-blk"><span class="cp-lab">서술형 감점 체크</span><ul class="cp-checks">' + D.check.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>');
+    }
+    var O = D.order || [];
+    if (O.length) {
+      open(++n, '문장 배열', '덩어리를 바른 순서로 써 보세요');
+      O.forEach(function (o, k) {
+        var c = o.c || [], idx = shuffle(c, (k + 1) * 7 + c.length);
+        h.push('<div class="cp-ord"><p class="cp-qh"><b>' + (k + 1) + '.</b> <span style="color:#5B6278;font-size:9.5pt">' + (o.ko || '') + '</span></p>' +
+          '<div class="cp-chunks">' + idx.map(function (j) {
+            var t = c[j];
+            if (j === 0 && !/^I\b/.test(t)) t = t.charAt(0).toLowerCase() + t.slice(1);
+            if (j === c.length - 1 && c.length > 1) { var r = t.replace(/[.?!]+[”’"')]*$/, ''); if (r) t = r; }
+            return '<span>' + esc(t) + '</span>';
+          }).join('') + '</div><div class="cp-write"></div></div>');
+      });
+    }
+    var RV = D.review || [];
+    if (RV.length) {
+      open(++n, '지난 문법 복습', RV.length + '문항');
+      RV.forEach(function (q, k) {
+        h.push('<div class="cp-q"><p class="cp-qh">복습 ' + (k + 1) + '. ' + neg(q.p || '') + '</p>' + (q.q ? '<div class="cp-qq">' + nums(q.q) + '</div>' : '') +
+          '<ol class="cp-o' + (q.en ? ' cp-en' : '') + ' cp-row">' + q.o.map(function (o, j) { return '<li><b>' + NUM[j] + '</b><span>' + nums(o) + '</span></li>'; }).join('') + '</ol></div>');
+      });
+    }
+
+    open('✓', '정답과 해설', '', 'newpage');
+    if (H && H.items) {
+      h.push('<span class="cp-lab">먼저 풀어 보기</span>');
+      H.items.forEach(function (it, k) {
+        h.push('<div class="cp-ex"><span class="cp-n">' + (k + 1) + '</span><p><span class="cp-a">' + (it.ok ? 'O' : 'X') + '</span>' + (it.fix ? '<span class="cp-en">' + it.fix + '</span> — ' : '') + (it.e || '') + '</p></div>');
+      });
+    }
+    function akey(L, pre) {
+      h.push('<div class="cp-grid">' + L.map(function (q, k) { return '<div><b>' + pre + (k + 1) + '</b>' + ans(q) + '</div>'; }).join('') + '</div>');
+      L.forEach(function (q, k) { if (q.e) h.push('<div class="cp-ex"><span class="cp-n">' + pre + (k + 1) + '</span><p><span class="cp-a">' + ans(q) + '</span>' + nums(q.e) + '</p></div>'); });
+    }
+    if (Q.length) { h.push('<span class="cp-lab">단계별 문제</span>'); akey(Q, ''); }
+    if (F.length) {
+      h.push('<span class="cp-lab">틀린 곳 고쳐 쓰기</span>');
+      F.forEach(function (f, k) { h.push('<div class="cp-ex"><span class="cp-n">' + (k + 1) + '</span><p><span class="cp-en">' + esc(f.a[0]) + '</span>' + (f.e ? ' — ' + f.e : '') + '</p></div>'); });
+    }
+    if (W.length) {
+      h.push('<span class="cp-lab">조건 영작</span>');
+      W.forEach(function (w, k) { h.push('<div class="cp-ex"><span class="cp-n">' + (k + 1) + '</span><p><span class="cp-en">' + esc(w.a[0]) + '</span>' + (w.e ? ' — ' + w.e : '') + '</p></div>'); });
+    }
+    if (O.length) {
+      h.push('<span class="cp-lab">문장 배열</span>');
+      O.forEach(function (o, k) { h.push('<div class="cp-ex"><span class="cp-n">' + (k + 1) + '</span><p class="cp-en">' + esc((o.c || []).join(' ')) + '</p></div>'); });
+    }
+    if (RV.length) { h.push('<span class="cp-lab">지난 문법 복습</span>'); akey(RV, '복습 '); }
+    h.push('</section>');
+
+    var share = document.querySelector('.promo .share');
+    var copy = document.querySelector('footer .copy');
+    var url = location.href.split('#')[0].split('?')[0];
+    var d = new Date();
+    h.push('<div class="cp-foot"><p><b>코코스학원</b> · 학습과 컨설팅을 하나로 · 상담 031-752-3334 · cocosedu.kr</p>' +
+      (D.footer ? '<p>' + esc(D.footer) + '</p>' : '') +
+      (copy ? '<p>' + esc(copy.textContent.replace(/\s+/g, ' ').trim()) + '</p>' : '') +
+      (share ? '<p>' + esc(share.textContent.replace(/\s+/g, ' ').trim()) + '</p>' : '') +
+      '<p>온라인 학습지 주소: ' + esc(url) + ' · 저장한 날 ' + d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate() + '</p></div>');
+    var box = document.getElementById('cocos-print');
+    if (!box) { box = document.createElement('div'); box.id = 'cocos-print'; document.body.appendChild(box); }
+    box.innerHTML = h.join('\n');
+  }
+
   function inApp() {
     var ua = navigator.userAgent || '';
     return /KAKAOTALK|NAVER\(inapp|Instagram|FBAN|FBAV|Line\//i.test(ua);
@@ -564,7 +733,7 @@
       var row = document.createElement('div');
       row.id = 'cocos-pdf-row';
       row.innerHTML = '<button type="button" id="cocos-pdf-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>PDF로 저장</button>' +
-        '<small>지문·해석·단어·문제·정답을 PDF 한 파일로 저장해 패드에서 필기하며 공부할 수 있어요.</small>';
+        '<small>' + (GRAM ? '개념 정리·예문·문제·서술형·정답을' : '지문·해석·단어·문제·정답을') + ' PDF 한 파일로 저장해 패드에서 필기하며 공부할 수 있어요.</small>';
       anchor.parentNode.insertBefore(row, anchor.nextSibling);
       document.getElementById('cocos-pdf-btn').addEventListener('click', function () {
         var old = document.getElementById('cocos-pdf-tip'); if (old) old.remove();
@@ -573,11 +742,11 @@
           tip.innerHTML = tipHtml();
           row.appendChild(tip);
         }
-        build();
+        (GRAM ? buildGram : build)();
         try { window.print(); } catch (e) {}
       });
     }
-    window.addEventListener('beforeprint', build);
+    window.addEventListener('beforeprint', function () { (GRAM ? buildGram : build)(); });
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);

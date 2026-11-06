@@ -44,7 +44,7 @@ def run(check=False, quiet=False):
                 t = t.replace(*TYPO)
                 typo.append(page)
             asset = None
-            if top in ('study', 'textbook') and SHEET.search(t) and SENT.search(t) and 'id="passage"' in t:
+            if top in ('study', 'textbook') and SHEET.search(t) and SENT.search(t) and ('id="passage"' in t or 'id="hook-list"' in t):
                 asset = ASSET
             elif top == 'syn' and SHEET.search(t) and 'passages' in t and 'id="orig"' in t:
                 asset = ASSET_SYN
