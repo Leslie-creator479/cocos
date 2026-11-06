@@ -156,6 +156,9 @@
     '#cocos-print h2 i{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;background:var(--p-acc);color:#fff;font-size:10pt}',
     '#cocos-print h2 small{font-weight:400;font-size:9pt;color:var(--p-muted);margin-left:auto}',
     '#cocos-print .cp-newpage{break-before:page;page-break-before:always}',
+    '#cocos-print .cp-sec{margin-top:10px}',
+    '#cocos-print .cp-keep,#cocos-print .cp-blk{break-inside:avoid;page-break-inside:avoid}',
+    '#cocos-print .cp-sec>h2:first-child{margin-top:12px}',
     '#cocos-print .cp-lab{display:inline-block;font-size:8.5pt;font-weight:700;color:var(--p-acc-ink);background:var(--p-soft);border-radius:4px;padding:1px 7px;margin:6px 0 3px}',
     '#cocos-print .cp-one{background:var(--p-soft);border-radius:6px;padding:7px 11px}',
     '#cocos-print ol.cp-flow{margin:2px 0;padding-left:0;list-style:none}',
@@ -234,7 +237,13 @@
   }
 
   function build() {
-    var h = [], n = 0, b = D.brief, i;
+    var h = [], n = 0, b = D.brief, i, opened = false;
+    /* 섹션마다 <section>으로 감싼다. keep = 한 쪽 안에 들어가면 쪼개지 않고 통째로 다음 쪽으로(먼저 읽어 보세요·지문·단어·마인드맵, 2026-11-06 원장님 요청) */
+    function open(num, title, sub, cls, keep) {
+      if (opened) h.push('</section>');
+      opened = true;
+      h.push('<section class="cp-sec' + (keep ? ' cp-keep' : '') + (cls ? ' cp-' + cls : '') + '">' + sec(num, title, sub));
+    }
     var logo = document.querySelector('.brand .logo, .promo .logo');
     h.push('<div class="cp-top">' + (logo ? '<span class="logo" role="img" aria-label="코코스학원" style="display:inline-block"></span>' : '<b>코코스학원</b>') +
       '<span>코코스학원 온라인 학습지 · cocosedu.kr</span></div>');
@@ -245,34 +254,34 @@
 
     /* 1. 먼저 읽어 보세요 */
     if (b) {
-      h.push(sec(++n, '먼저 읽어 보세요', '지문을 읽기 전에 글의 뼈대부터'));
-      if (b.one) h.push('<span class="cp-lab">한 줄로 말하면</span><p class="cp-one">' + b.one + '</p>');
+      open(++n, '먼저 읽어 보세요', '지문을 읽기 전에 글의 뼈대부터');
+      if (b.one) h.push('<div class="cp-blk"><span class="cp-lab">한 줄로 말하면</span><p class="cp-one">' + b.one + '</p></div>');
       if (b.flow && b.flow.length) {
-        h.push('<span class="cp-lab">글의 흐름</span><ol class="cp-flow">');
+        h.push('<div class="cp-blk"><span class="cp-lab">글의 흐름</span><ol class="cp-flow">');
         b.flow.forEach(function (f) {
           h.push('<li><b>' + esc(refs(f.s)) + '</b><span>' + (f.turn ? '<em>' + esc(f.turn) + '</em>' : '') + '<b>' + (f.t || '') + '</b> — ' + (f.d || '') + '</span></li>');
         });
-        h.push('</ol>');
+        h.push('</ol></div>');
       }
       if (b.keys && b.keys.length) {
-        h.push('<span class="cp-lab">핵심어</span><div class="cp-keys">' + b.keys.map(function (k) {
+        h.push('<div class="cp-blk"><span class="cp-lab">핵심어</span><div class="cp-keys">' + b.keys.map(function (k) {
           return '<span><span class="cp-en">' + k[0] + '</span> ' + (k[1] || '') + '</span>';
-        }).join('') + '</div>');
+        }).join('') + '</div></div>');
       }
       if (b.tips && b.tips.length) {
-        h.push('<span class="cp-lab">읽다가 막히기 쉬운 곳</span><ul class="cp-tips">' + b.tips.map(function (t) {
+        h.push('<div class="cp-blk"><span class="cp-lab">읽다가 막히기 쉬운 곳</span><ul class="cp-tips">' + b.tips.map(function (t) {
           return '<li><b>' + t[0] + '</b> ' + t[1] + '</li>';
-        }).join('') + '</ul>');
+        }).join('') + '</ul></div>');
       }
       if (b.ask && b.ask.length) {
-        h.push('<span class="cp-lab">다 읽은 뒤에 스스로 답해 보기</span><div class="cp-ask">' + b.ask.map(function (a, k) {
+        h.push('<div class="cp-blk"><span class="cp-lab">다 읽은 뒤에 스스로 답해 보기</span><div class="cp-ask">' + b.ask.map(function (a, k) {
           return '<p>Q' + (k + 1) + '. ' + a[0] + '</p><div class="cp-line"></div>';
-        }).join('') + '<p style="font-size:8.5pt;color:#5B6278">예시 답은 맨 뒤 정답에 있어요.</p></div>');
+        }).join('') + '<p style="font-size:8.5pt;color:#5B6278">예시 답은 맨 뒤 정답에 있어요.</p></div></div>');
       }
     }
 
     /* 2. 지문 */
-    h.push(sec(++n, '지문', '문장 번호는 해석·문제의 번호와 같아요'));
+    open(++n, '지문', '문장 번호는 해석·문제의 번호와 같아요', '', true);
     var dialog = D.sentences.some(function (s) { return s.sp; });
     var fig = D.figure && D.figure.html ? '<div class="cp-fig">' + D.figure.html + '</div>' : '';
     var figAt = fig ? (+D.figure.after || D.sentences.length) : -1;
@@ -291,14 +300,14 @@
     }
 
     /* 3. 문장별 해석 */
-    h.push(sec(++n, '문장별 해석', ''));
+    open(++n, '문장별 해석', '');
     D.sentences.forEach(function (s, k) {
       h.push('<div class="cp-pair"><span class="cp-n">' + (k + 1) + '</span><div><p class="cp-e">' + (s.sp ? '<b class="cp-sp">' + esc(s.nm || s.sp) + '</b> ' : '') + s.en + '</p><p class="cp-k">' + (s.ko || '') + '</p></div></div>');
     });
 
     /* 4. 단어 정리 */
     if (D.vocab && D.vocab.length) {
-      h.push(sec(++n, '단어 정리', D.vocab.length + '개'));
+      open(++n, '단어 정리', D.vocab.length + '개', '', true);
       h.push('<div class="cp-vocs">' + D.vocab.map(function (v, k) {
         return '<div class="cp-vrow"><span class="cp-i">' + (k + 1) + '</span><span class="cp-w">' + esc(v.w) + '</span><span class="cp-p">' + esc(v.p || '') + '</span><span>' + esc(v.m) + '</span></div>';
       }).join('') + '</div>');
@@ -314,7 +323,7 @@
           (x.k ? '<span class="cp-kk">' + x.k + '</span>' : '') +
           (x.s ? ' <span class="cp-s">(' + esc(refs(x.s)) + ')</span>' : '') + '</div>';
       };
-      h.push(sec(++n, '마인드맵', '글의 구조를 한눈에'));
+      open(++n, '마인드맵', '글의 구조를 한눈에', '', true);
       if (M.sub) h.push('<p class="cp-map-sub">' + M.sub + '</p>');
       h.push('<div class="cp-map"><div class="cp-col">' + (M.left || []).map(function (x) { return node(x); }).join('') + '</div>' +
         node(M.core, 'core') +
@@ -343,18 +352,18 @@
       });
     }
     if (Q.length) {
-      h.push(sec(++n, '확인 문제', Q.length + '문항 · 정답은 맨 뒤에', 'newpage'));
+      open(++n, '확인 문제', Q.length + '문항 · 정답은 맨 뒤에', 'newpage');
       qblock(Q, '');
     }
     if (CH.length) {
-      h.push(sec(++n, '도전 문제', '고난도 ' + CH.length + '문항 · 변형 문제 · 정답은 맨 뒤에', 'newpage'));
+      open(++n, '도전 문제', '고난도 ' + CH.length + '문항 · 변형 문제 · 정답은 맨 뒤에', 'newpage');
       qblock(CH, '도전 ');
     }
 
     /* 7. 문장 배열 */
     var O = D.order || [];
     if (O.length) {
-      h.push(sec(++n, '문장 배열', '덩어리를 바른 순서로 써 보세요'));
+      open(++n, '문장 배열', '덩어리를 바른 순서로 써 보세요');
       O.forEach(function (o, k) {
         var c = o.c || [];
         var idx = shuffle(c, (o.s || k + 1) * 7 + c.length);
@@ -381,7 +390,7 @@
       });
     }
     if (Q.length || CH.length || (b && b.ask) || O.length) {
-      h.push(sec('✓', '정답과 해설', '', 'newpage'));
+      open('✓', '정답과 해설', '', 'newpage');
       if (Q.length) akey(Q, '');
       if (CH.length) {
         h.push('<span class="cp-lab">도전 문제</span>');
@@ -396,6 +405,8 @@
         O.forEach(function (o, k) { h.push('<div class="cp-ex"><span class="cp-n">' + (o.s || k + 1) + '번</span><p class="cp-en">' + esc((o.c || []).join(' ')) + '</p></div>'); });
       }
     }
+
+    if (opened) h.push('</section>');
 
     /* 끝 표시 */
     var share = document.querySelector('.promo .share');
