@@ -47,6 +47,39 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
   } catch (e) {}
 })();
+/* 코코스 중등 독해 지문 → 같은 회차 문법 학습지(study/grammar-m<학년>-<회>/) 바로 가기(2026-11-06).
+   문법 페이지가 실제로 있고, 그 페이지가 이 지문(../reading-m…/<번호>/)을 예문 출처로 링크할 때만 확인 퀴즈 위에 보인다. */
+(function () {
+  try {
+    var me = document.currentScript;
+    if (!me || !me.src || window.__cocosGramLink) return;
+    window.__cocosGramLink = true;
+    var root = new URL('..', me.src);
+    var rel = decodeURIComponent(location.pathname).replace(root.pathname, '').replace(/^\/+|\/+$/g, '').split('/');
+    var m = rel[0] === 'study' && rel.length === 3 && /^reading-m(\d)-(\d{2})$/.exec(rel[1]);
+    if (!m) return;
+    var url = new URL('study/grammar-m' + m[1] + '-' + m[2] + '/', root).href;
+    var go = function () {
+      var sec = document.getElementById('quiz');
+      if (!sec || document.getElementById('more-gram')) return;
+      fetch(url).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+        if (!t || t.indexOf("'../" + rel[1] + '/' + rel[2] + "/'") < 0) return;
+        var g = /chips:\s*\[[^\]]*?'[^']*',\s*'[^·']*·\s*([^·']+)/.exec(t);
+        var box = document.createElement('div');
+        box.id = 'more-gram';
+        box.style.cssText = 'display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 14px;padding:10px 14px;border-radius:10px;background:var(--paper,#F6F4EE);font-size:14px;line-height:1.5';
+        box.innerHTML = '<span style="font-weight:600">이 지문의 문법' + (g ? '(' + g[1].trim() + ')' : '') + '을 더 연습하려면</span>';
+        var a = document.createElement('a');
+        a.href = url; a.textContent = '문법 학습지 →';
+        a.style.cssText = 'padding:4px 12px;border-radius:999px;border:1px solid var(--accent,#2F5DA8);color:var(--accent,#2F5DA8);text-decoration:none;font-weight:600;background:var(--card,#fff)';
+        box.appendChild(a);
+        var head = sec.querySelector('.sec-head');
+        (head && head.nextSibling) ? sec.insertBefore(box, head.nextSibling) : sec.appendChild(box);
+      }).catch(function () {});
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+  } catch (e) {}
+})();
 /* 단어 정리 '단어 전체 듣기'(assets/vocab-listen.js)를 함께 불러온다(2026-10-22). */
 (function () {
   try {

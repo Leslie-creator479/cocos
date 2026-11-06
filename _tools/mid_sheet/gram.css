@@ -1,0 +1,71 @@
+/* ==== GRAM:START (코코스 중등 문법, 2026-11-06) ==== */
+#hook h2::before{content:"🤔";background:#FFF3C4}
+#rule h2::before{content:"📌";background:var(--pink-soft)}
+#examples h2::before{content:"📖";background:var(--accent-soft)}
+#fix h2::before{content:"🔧";background:var(--lilac-soft)}
+#write h2::before{content:"✍️";background:var(--ex-soft)}
+#review h2::before{content:"🔁";background:var(--mint-soft)}
+#reading h2::before{content:"🔗";background:var(--accent-soft)}
+.g-card{background:var(--card);border:2px solid var(--line);border-radius:22px;box-shadow:0 5px 0 var(--line);padding:18px clamp(16px,3.5vw,24px);display:flex;flex-direction:column;gap:12px}
+.g-list{display:flex;flex-direction:column;gap:14px}
+.g-en{font-family:var(--serif-en);font-size:18px;font-weight:600;line-height:1.6;margin:0}
+.g-en u{text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--pink)}
+.g-ko{font-family:var(--sans);font-size:15px;color:var(--muted);margin:0}
+.g-n{display:inline-flex;align-items:center;justify-content:center;min-width:1.7em;height:1.7em;border-radius:50%;background:var(--accent-soft);color:var(--accent-ink);font-weight:700;font-size:12.5px;margin-right:8px;vertical-align:2px}
+.ox{display:flex;gap:10px}
+.ox button{flex:1;max-width:140px;border:2px solid var(--line);background:var(--card);border-radius:14px;padding:8px 0;font-family:var(--round);font-size:22px;line-height:1.1}
+.ox button[data-v="1"]{color:var(--accent-ink)}
+.ox button[data-v="0"]{color:var(--pink-ink)}
+.ox button.right{border-color:var(--ok);background:var(--ok-soft)}
+.ox button.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.ox button:disabled{cursor:default}
+.g-fix{font-family:var(--serif-en);font-size:16.5px;font-weight:600;color:var(--ok);margin:0}
+.g-fix::before{content:"고친 문장  ";font-family:var(--sans);font-size:13px;font-weight:700;color:var(--muted)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.r-card{background:var(--card);border:2px solid var(--line);border-radius:18px;box-shadow:0 4px 0 var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.r-card .lab{font-family:var(--round);font-size:18px;color:var(--accent-ink)}
+.r-card .lab small{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-left:6px}
+.r-card p{margin:0;font-size:15px;line-height:1.65}
+.r-card .ex{font-family:var(--serif-en);font-weight:600;background:var(--paper);border-radius:10px;padding:8px 10px;line-height:1.55}
+.r-card .ex small{display:block;font-family:var(--sans);font-weight:400;font-size:13.5px;color:var(--muted)}
+.r-card .w{display:flex;flex-wrap:wrap;gap:5px}
+.r-card .w span{font-family:var(--serif-en);font-weight:700;font-size:13.5px;background:var(--mint-soft);color:var(--mint-ink);border-radius:999px;padding:2px 10px}
+.r-card.key{background:#FFF3C4;border-color:color-mix(in srgb,var(--sun) 55%,var(--line))}
+.r-tbl{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:2px solid var(--line);border-radius:18px;overflow:hidden;font-size:14.5px}
+.r-tbl th,.r-tbl td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.6}
+.r-tbl tr:last-child td{border-bottom:0}
+.r-tbl th{background:var(--accent-soft);color:var(--accent-ink);font-weight:700}
+.r-tbl td:first-child{font-weight:700;white-space:nowrap}
+.r-tbl i{font-family:var(--serif-en);font-style:normal;font-weight:700}
+.r-tt{font-family:var(--round);font-size:19px;margin:6px 0 10px;color:var(--ink)}
+.r-wrap{overflow-x:auto;border-radius:18px}
+.r-tips{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.65}
+.r-tips i,.fb i,.g-ko i,.r-card p i{font-family:var(--serif-en);font-style:normal;font-weight:700}
+.ex-row{display:flex;gap:10px;align-items:flex-start}
+.ex-row .play{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--accent);background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+.ex-row .play[aria-pressed="true"]{background:var(--card);color:var(--accent-ink)}
+.ex-body{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.ex-tag{align-self:flex-start;font-size:12.5px;font-weight:700;border-radius:999px;padding:2px 10px;background:var(--pink-soft);color:var(--pink-ink)}
+.ex-tag.past{background:var(--paper);color:var(--muted);border:1.5px solid var(--line)}
+.ex-note{font-size:14.5px;line-height:1.65;margin:0;background:var(--paper);border-radius:12px;padding:8px 12px}
+.lv{font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px;margin-left:auto;background:var(--paper);border:1.5px solid var(--line);color:var(--muted)}
+.lv[data-lv="표준"]{color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.lv[data-lv="심화"]{color:var(--pink-ink);border-color:color-mix(in srgb,var(--pink) 35%,transparent)}
+.g-in{display:flex;gap:8px;flex-wrap:wrap}
+.g-in input{flex:1 1 260px;min-width:0;font-family:var(--serif-en);font-size:17px;font-weight:600;border:2px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--paper);color:var(--ink)}
+.g-in input:focus{outline:none;border-color:var(--accent)}
+.g-in input.ok{border-color:var(--ok);background:var(--ok-soft)}
+.g-in input.no{border-color:var(--bad);background:var(--bad-soft)}
+.g-cond{margin:0;padding:10px 14px 10px 30px;background:var(--paper);border-radius:12px;font-size:14.5px;line-height:1.7}
+.g-cond i{font-family:var(--serif-en);font-style:normal;font-weight:700}
+.g-cnt{font-size:13px;color:var(--muted)}
+.g-cnt.ok{color:var(--ok);font-weight:700}
+.g-check{margin:0;padding-left:20px;font-size:14.5px;line-height:1.7}
+.g-model{font-family:var(--serif-en);font-size:17px;font-weight:700;margin:0}
+.gl{display:flex;flex-direction:column;gap:12px}
+.gl a{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:18px;box-shadow:0 4px 0 var(--line);padding:14px 16px}
+.gl a b{font-family:var(--round);font-weight:400;font-size:18px;color:var(--accent-ink)}
+.gl a small{color:var(--muted);font-size:14px}
+.gl a:hover{border-color:var(--accent)}
+@media print{.ox button,.play,.g-in button{display:none}}
+/* ==== GRAM:END ==== */
