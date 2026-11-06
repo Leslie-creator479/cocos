@@ -123,8 +123,8 @@ footer{background:var(--night-2);color:var(--on-night-muted);font-size:12.5px;pa
 <p class="kicker">School Guide · 성남중학교</p>
 <h1>성남중 영어 내신,<br><span class="gold">코코스가 정리했습니다</span></h1>
 <p class="lead">시험 일정, 시험 범위, 지난 시험 분석, 평가 구성을 한 페이지에 모았어요. 분석은 시험지와 교과서, 코코스 내용정리 자료를 문항마다 맞춰 보고 확인한 내용만 실었어요.</p>
-<div class="next"><div><p class="next-k">다음 시험</p><p class="next-t">2학기 기말고사</p><p class="next-d">12월 3주 예정 · 정확한 날짜는 학교 공지 후</p></div><p class="dday" style="font-size:22px">12월</p></div>
-<p class="src">일정은 학교 공시(2026학년도 2학기 교수·학습 및 평가 운영 계획) 기준이에요.</p>
+<div class="next"><div><p class="next-k">다음 시험</p><p class="next-t">2학기 기말고사</p><p class="next-d">12월 14일(월) ~ 15일(화)</p></div><p class="dday" id="dday">D-</p></div>
+<p class="src">일정은 학교알리미 학사일정·평가 계획 기준이에요.</p>
 </div></section>
 <main>
 <section class="sec"><div class="wrap">
@@ -142,7 +142,7 @@ footer{background:var(--night-2);color:var(--on-night-muted);font-size:12.5px;pa
 <li data-end="2026-10-06"><span class="tl-d">10.6(화)</span><b>2학기 중간고사</b></li>
 <li data-end="2026-11-06"><span class="tl-d">11월 1주</span><b>수행평가 · 영어 에세이</b></li>
 <li data-end="2026-11-13"><span class="tl-d">11월 2주</span><b>수행평가 · 영어 프레젠테이션</b></li>
-<li data-end="2026-12-18"><span class="tl-d">12월 3주 예정</span><b>2학기 기말고사</b></li>
+<li data-end="2026-12-15"><span class="tl-d">12.14(월) ~ 12.15(화)</span><b>2학기 기말고사</b></li>
 </ol>
 <p class="note">학교 평가 계획에 적힌 시기예요. 학교 사정에 따라 바뀔 수 있으니 최종 일정은 학교 안내를 확인해 주세요.</p>
 </div></section>
@@ -239,7 +239,7 @@ footer{background:var(--night-2);color:var(--on-night-muted);font-size:12.5px;pa
   </div>
 </footer>
 <script>
-(function(){var now=new Date();
+(function(){var now=new Date();var t=new Date(now);t.setHours(0,0,0,0);var d=Math.round((new Date(2026,11,14)-t)/864e5),el=document.getElementById('dday');el.textContent=d>0?'D-'+d:(t<=new Date(2026,11,15)?'시험 중':'끝남');
 var up=false;document.querySelectorAll('#tl li').forEach(function(li){var e=new Date(li.dataset.end+'T23:59:59');if(e<now)li.classList.add('done');else if(!up){li.classList.add('up');up=true;}});
 document.querySelectorAll('.tabs').forEach(function(tb){var sec=tb.closest('section');tb.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){
 tb.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});sec.querySelectorAll('.panel').forEach(function(p){p.hidden=p.dataset.p!==b.dataset.t});});});});
