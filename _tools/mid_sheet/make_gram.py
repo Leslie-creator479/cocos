@@ -19,6 +19,9 @@ base = os.path.join(ROOT, 'study/reading-m2-01/4/index.html')
 if '--base' in args:
     i = args.index('--base'); base = args[i + 1]; del args[i:i + 2]
 data, title, out = open(args[0], encoding='utf8').read().strip(), args[1], args[2]
+# 밑줄은 낱말에만: <u>ⓐ has wanted</u> → ⓐ <u>has wanted</u> (원장님 지적 2026-11-06, 다른 학습지와 같은 꼴)
+data, _n = re.subn(r'<u>\s*([ⓐⓑⓒⓓⓔ①②③④⑤⑥⑦⑧⑨⑩㉠㉡㉢㉣㉤])\s*([^<]+)</u>', r'\1 <u>\2</u>', data)
+if _n: print(f'밑줄 밖으로 뺀 원문자 {_n}곳')
 t = open(base, encoding='utf8').read()
 assert 'id="cocos-lock"' not in t, '잠기지 않은 공개 학습지를 틀로 주세요'
 head = t[t.index('<title>'):t.index('<div class="wrap">')]
