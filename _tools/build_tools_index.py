@@ -29,8 +29,11 @@ def label(slug):
         return int(m.group(1)), f"{SCH.get(m.group(4), m.group(4))} {m.group(5)}학년", term
     if slug.startswith('edu-voca-'):  # 교육과정 기본 어휘 공개 단어게임(2026-11-04)
         return 0, {'edu-voca-mid': '중학 기본 영단어 1,200'}.get(slug, slug), '교육과정 기본 어휘'
-    if slug in ('mid-public',):  # 안내 블로그 원고(tools/blog/, 2026-11-04)
-        return 0, {'mid-public': '중등 공개 학습지(독해·문법) 안내'}[slug], '학원 안내'
+    if slug in ('mid-public', 'mid-public-grammar'):  # 안내 블로그 원고(tools/blog/, 2026-11-04 독해, 2026-11-08 문법)
+        return 0, {'mid-public': '중등 공개 학습지(독해·문법) 안내', 'mid-public-grammar': '코코스 중등 문법 안내'}[slug], '학원 안내'
+    m = re.match(r'grammar-m(\d)-(\d+)$', slug)  # 코코스 중등 문법 편 블로그 원고(2026-11-06)
+    if m:
+        return 0, f'중{m.group(1)} {int(m.group(2))}회', '코코스 중등 문법'
     m = re.match(r'reading-m(\d)-(\d+)$', slug)  # 코코스 중등 독해 회차 블로그 원고
     if m:
         return 0, f'중{m.group(1)} {int(m.group(2))}회', '코코스 중등 독해'

@@ -20,6 +20,9 @@ sys.path.insert(0, HERE)
 from reading_blog import load_data, strip, TPL, GUIDE, BASE  # 같은 원고 틀·안내 글
 
 KIT = os.path.join(HERE, 'gram_blog')
+# 문법 안내 글(중학 영어 문법 무료 학습지 공개, 원고 tools/blog/mid-public-grammar/). 원장님이 블로그에 올리면 주소를 넣는다.
+# 비어 있으면 독해 안내 글(GUIDE)을 가리킨다.
+GRAM_GUIDE = ''
 NUMS = '①②③④⑤⑥'
 
 
@@ -27,8 +30,8 @@ def body_of(cfg, D, U, img):
     H, R = D['hook'], D['rule']
     b = [["p", f"[대표 이미지: {img(1, 'cover')}]"]] + [["p", h] for h in cfg['hook']]
     b += [["p", cfg.get('intro', '이번 편도 학원이 직접 쓴 독해 지문 문장으로 만들었어요. 먼저 아래 문장이 맞는지 틀리는지 골라 보고, 학습지에서 개념 정리·문제·서술형 연습까지 이어서 풀어 보세요.')],
-          ["p", "학습지 사용법은 지난 글 '중학 영어 독해·문법 무료 학습지 공개'에 정리해 두었어요."],
-          ["link", "▶ 학습지 사용법 안내 글", cfg.get('guide', GUIDE)],
+          ["p", "문법 학습지를 어떻게 만들었고 어떻게 쓰면 좋은지는 지난 글 '중학 영어 문법 무료 학습지 공개'에 정리해 두었어요." if GRAM_GUIDE else "학습지 사용법은 지난 글 '중학 영어 독해·문법 무료 학습지 공개'에 정리해 두었어요."],
+          ["link", "▶ 문법 학습지 안내 글" if GRAM_GUIDE else "▶ 학습지 사용법 안내 글", cfg.get('guide', GRAM_GUIDE or GUIDE)],
           ["link", f"▶ {cfg['_name']} 학습지 바로가기", U]]
     b += [["b", "■ 먼저 풀어 보세요: 맞는 문장일까, 틀린 문장일까?"], ["p", f"[이미지: {img(2, 'ox')}]"]]
     b += [["p", f"{i + 1}. {strip(it['en'])}"] for i, it in enumerate(H['items'])]
