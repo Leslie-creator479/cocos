@@ -29,6 +29,16 @@ C = json.load(open(src, encoding='utf8'))
 for k in ('name', 'title', 'tags', 'body'):
     assert C.get(k), f'원고.json에 {k}가 없음'
 groups = C.get('groups') or []
+# 대표 이미지 자리 바로 뒤에 원장님께 드리는 안내(「네이버는 … 대표 …」)가 섞여 들어오면 뺀다(2026-11-08, 연재 1편에서 실제로 샘)
+body = []
+for i, b in enumerate(C['body']):
+    prev = C['body'][i - 1] if i else None
+    if prev and prev[0] == 'p' and str(prev[1]).startswith('[대표 이미지') and b[0] in ('p', 'note') \
+            and '네이버' in str(b[1]) and '대표' in str(b[1]):
+        print('뺀 줄(원장님께 드리는 안내):', b[1][:40])
+        continue
+    body.append(b)
+C['body'] = body
 imgs = sum(1 for b in C['body'] if b[0] == 'p' and re.match(r'\[(대표 )?이미지', str(b[1])))
 D = {"title": C['title'], "tags": C['tags'].replace('#', ''),
      "meta": C.get('meta') or ('제목·본문·태그' + (f' · 이미지 {imgs}장' if imgs else '')),
