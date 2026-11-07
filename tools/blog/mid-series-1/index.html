@@ -1,0 +1,185 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>중등 연재 「중학교에서 고교 선택까지」 ① 제도 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview table{margin:8px 0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>중등 연재 「중학교에서 고교 선택까지」 ① 제도 블로그 원고</h1>
+    <p>네이버 블로그에 글 전체를 링크째 붙여 넣을 수 있는 원고예요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>맨 위 [대표 이미지] 자리에 대표 이미지를 올리고, ‘태그 복사’로 태그를 넣어요.</li>
+    <li>[이미지: …] 자리마다 같은 이름의 이미지를 끼우고 그 줄은 지운 뒤 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"title": "성남 예비중1 — 중1 성적은 고입에 안 들어간다고요? 2027학년도부터 달라집니다", "tags": "예비중1 성남지역중학교 수정구중학교 중원구중학교 경기도고입 고입내신 학교알리미 중등영어 코코스학원", "body": [["ser", "「중학교에서 고교 선택까지」 연재 ①"], ["p", "[대표 이미지: 대표이미지_중등1편.png]"], ["p", "고교 선택 연재를 올리는 동안 학부모님들께 가장 많이 받은 질문이 「그러면 중학교 때는 무엇을 준비해야 하나요」였습니다. 그 답을 찾다가 먼저 말씀드려야 할 것을 하나 발견했습니다."], ["p", "많은 분들이 「중1 성적은 고등학교 갈 때 안 들어간다」고 알고 계십니다. 오랫동안 맞는 말이었습니다. 경기도는 2017년부터 중학교 1학년 전체를 자유학년제로 운영했고, 성적 자체가 나오지 않았으니까요."], ["p", "그런데 달라졌습니다. 그리고 이 변화가 성남에서는 특히 중요합니다."], ["b", "■ 자료 출처와 기준"], ["p", "두 가지 자료를 썼습니다. 하나는 경기도교육청이 공개한 「고등학교 입학 내신성적 반영지침」입니다. 2027학년도 지침과 2028학년도 예고(안)이 모두 공개되어 있습니다."], ["p", "다른 하나는 학교알리미 「교과별 학업성취 사항」입니다. 2026년 4월에 공시된 2025학년도 자료로, 성남 수정·중원구 1구역 중학교 스무 곳 가운데 성격이 다른 하늘꿈중을 빼고 열아홉 곳을 모았습니다."], ["p", "용어를 하나 미리 말씀드립니다. 경기도교육청이 2026학년도 학업성적관리 시행지침을 개정하면서 「지필평가」를 「정기시험」으로 바꿨습니다. 같은 시험이고 이름만 바뀐 것입니다."], ["b", "■ 반영 학기가 1학년 2학기부터입니다"], ["p", "경기도 일반고 입학전형의 내신 반영 학기는 1학년 2학기부터 3학년 2학기까지, 다섯 학기입니다. 1학년 1학기는 빠집니다. 지침에 이렇게 적혀 있습니다."], ["ser", "「자유학기제 시행 학기의 교과활동상황 성적은 고입전형을 위한 내신성적에 반영하지 않는다」"], ["p", "자유학기라서 빠지는 것이지 1학년이라서 빠지는 것이 아닙니다. 그래서 자유학기가 아닌 1학년 2학기는 들어갑니다."], ["p", "[이미지: chart_q1.png]"], ["note", "경기도 일반고 기준입니다. 빗금 친 칸이 자유학기, 주황색이 중1 2학기입니다."], ["p", "배점을 보겠습니다. 일반고 기준으로 총점 200점 가운데 교과활동상황이 150점이고, 그중 일반교과가 120점, 체육·예술이 30점입니다. 일반교과 120점을 학기별로 나누면 1학년 2학기 12점, 2학년 1·2학기 각 24점, 3학년 1·2학기 각 30점입니다."], ["p", "성취도는 A가 5점, B가 4점, C가 3점, D가 2점, E가 1점으로 환산됩니다. 한 과목에서 A와 E는 네 배 차이입니다. 일반교과 기준이고, 체육·예술은 따로 계산합니다."], ["p", "정리하면 중1 2학기는 총점 200점 가운데 12점, 6%입니다. 결정적이지는 않습니다. 그러나 0도 아닙니다. 그리고 지금까지 많은 분들이 0이라고 알고 계셨습니다."], ["b", "■ 성남에서 특히 중요한 이유"], ["p", "성남 1구역 중학교 열아홉 곳의 공시 자료를 전부 열어 보았습니다. 열아홉 곳 모두 중1 1학기 칸이 비어 있습니다. 한 곳도 예외가 없습니다. 1구역 전체가 1학기를 자유학기로 쓰고 2학기에 시험을 보기 때문입니다."], ["p", "그러니까 성남 1구역에서는 아이가 중학교에 들어가 처음 치르는 시험, 그 성적이 곧바로 고입 내신에 들어가는 첫 성적입니다. 3월에 입학해서 11월이나 12월입니다. 연습 삼아 보는 시험이 아닙니다."], ["p", "경기도교육청이 2024년에 중1 2학기 정기시험을 되살렸고, 그 학생들이 고등학교에 진학하는 2027학년도부터 반영이 시작됩니다. 10년 만입니다."], ["b", "■ 다만 이 두 가지는 정확히 알아 두십시오"], ["p", "첫째, 지금 공개된 것은 2027학년도 지침과 2028학년도 예고(안)입니다. 지금 초등학교 6학년이 고등학교에 가는 해의 지침은 아직 나오지 않았습니다. 다만 두 해 연속 같은 기준이고, 경기도가 중1 2학기 시험을 되살린 것이 이 반영을 염두에 둔 것이니 방향은 분명합니다. 지침이 공개되면 이 글을 갱신하겠습니다."], ["p", "둘째, 전형마다 다릅니다. 위 내용은 일반고 기준입니다. 외국어고·국제고 같은 특목고와 자사고는 반영 학기가 학교마다 다르고 중1이 들어가지 않는 곳도 있습니다. 그쪽을 생각하신다면 해당 학교 모집요강을 따로 확인하셔야 합니다."], ["p", "과장해서 겁드릴 생각은 없습니다. 12점은 12점입니다. 다만 「아예 안 들어간다」와 「12점 들어간다」는 다른 이야기고, 그 12점이 걸린 시험이 아이 인생의 첫 시험이라는 것도 사실입니다."], ["b", "■ 그러면 그 첫 시험은 어떻게 생겼을까요"], ["p", "열아홉 곳의 중1 2학기 영어 등급 분포입니다. 한 줄 한 줄이 한 학교입니다."], ["p", "[이미지: chart_p2.png]"], ["note", "파란색이 A(90점 이상), 주황색이 E(60점 미만)입니다. 학교 이름은 넣지 않았습니다."], ["p", "열아홉 곳 평균으로 E등급이 23.8%입니다. 넷 중 하나가 60점을 넘기지 못합니다. 중학교에 들어가 처음 보는 시험에서요. 성취도 환산으로 치면 1점입니다."], ["p", "학교별로는 가장 높은 곳이 평균 89.3점, 가장 낮은 곳이 67.6점입니다. 21.7점 차이입니다. E등급도 5.4%인 곳부터 39.0%인 곳까지 일곱 배 넘게 벌어져 있습니다."], ["p", "다만 이 차이를 학교의 수준으로 읽으시면 안 됩니다. 평균 점수에는 아이들의 실력만 들어 있는 것이 아니라 그 학교가 시험을 얼마나 어렵게 내느냐가 함께 들어 있습니다. 중학교는 배정받아 가는 곳이라 고를 수 있는 것도 아니고요. 이 이야기는 3편에서 다시 다루겠습니다."], ["p", "학교 이름을 넣지 않은 것도 그래서입니다. 줄을 세우려고 만든 그림이 아니라, 폭이 이만큼 넓다는 것을 보시라고 만든 그림입니다."], ["p", "우리 학교 숫자가 궁금하시면 학교별로 한 장씩 따로 만들어 두었습니다. 글 끝에 적어 두었습니다."], ["b", "■ 그리고 영어가 유독 그렇습니다"], ["p", "같은 시기 다섯 과목을 A등급과 E등급으로 나누어 보았습니다."], ["p", "[이미지: chart_p1.png]"], ["note", "위쪽이 90점 이상, 아래쪽이 60점 미만입니다. 열아홉 곳 평균입니다."], ["p", "영어는 A가 38.9%로 다섯 과목 가운데 가장 많은데, E도 23.8%로 수학 다음으로 많습니다. 위도 두껍고 아래도 두껍습니다. 국어는 A 31.5%에 E 15.5%로 가운데에 몰려 있고, 수학은 A 31.3%에 E 30.0%로 아래쪽만 두껍습니다."], ["p", "중1 2학기에 첫 영어 시험을 볼 때, 그 아이들 뒤에는 이미 초등학교 6년이 있습니다. 영어는 그 6년이 쌓이기도 하고 비어 있기도 한 과목입니다. 중학교에 와서 벌어지는 것이 아니라 벌어진 채로 들어가는 셈입니다."], ["p", "이것은 성남만의 일이 아닙니다. 종로학원이 전국 3,277개 중학교 공시를 분석한 결과에서도 영어가 A등급 비율 30.4%로 가장 높고 E등급 비율 29.6%로 수학 다음이었습니다. 위아래가 동시에 두꺼운 것이 영어라는 과목의 성질입니다. 다만 전국 수치는 중1부터 중3까지 1학기를 합산한 것이라 앞의 성남 수치와 잣대가 다릅니다. 그대로 견주지는 마십시오."], ["p", "다만 왜 영어만 위아래가 동시에 두꺼운지까지는 공시 숫자로 단정하기 어렵습니다. 아이들의 실력과 그 학교가 시험을 어떻게 냈는지가 한 숫자에 섞여 있기 때문입니다. 이 문제는 3편에서 다시 말씀드리겠습니다."], ["b", "■ 그래서 무엇을 하면 되나"], ["p", "· 중1 1학기에는 비교할 숫자가 없습니다. 자유학기라 성적이 없는 것이지 실력이 멈춰 있는 것이 아닙니다. 그 아홉 달 동안 아이가 어디쯤인지 알 길이 없다는 뜻이기도 합니다."], ["p", "· 첫 성적표를 받으시면 점수만 보지 마시고 그 학교 분포와 함께 보셔야 합니다. 같은 75점이 어느 학교에서는 위쪽이고 어느 학교에서는 아래쪽입니다. 그 읽는 법은 3편에서 다루겠습니다."], ["p", "· 「중학교 가서 하면 되지」가 숫자로는 잘 받쳐지지 않습니다. 그렇다고 초등학교에서 다 끝내 놓아야 한다는 말은 아닙니다. 다만 첫 시험이 이미 고입에 들어가는 시험이라는 것은 알고 계시는 편이 낫습니다."], ["b", "■ 숫자를 읽을 때 주의할 점"], ["p", "· 이 자료는 학교의 서열이 아닙니다. 중학교는 배정받아 가는 곳입니다."], ["p", "· 평균이 낮은 학교의 아이들이 공부를 못하는 것이 아닙니다. 시험 난이도가 섞여 있습니다."], ["p", "· 2025학년도 자료입니다. 올해 1학기 자료는 이미 공시되어 있어 중2·중3은 두 해를 맞대어 볼 수 있습니다."], ["p", "· 작은 학교는 한두 명으로 비율이 크게 흔들립니다. 열아홉 곳 중 졸업생이 가장 많은 곳은 283명, 가장 적은 곳은 37명입니다."], ["b", "■ 다음 편에서는"], ["p", "첫 시험이 정확히 언제 오는지, 자유학기 동안에는 정말 아무 평가도 없는지를 열아홉 곳 자료로 확인해 보겠습니다."], ["ser", "「중학교에서 고교 선택까지」 이후 글"], ["p", "▸ 2편 — 자유학기라 시험이 없다고요? 19개 중학교 첫 시험이 언제인지 확인했습니다"], ["p", "▸ 3편 — 70점이면 중간은 한다고요? 중간은 80점입니다"], ["p", "이 연재는 지난 「고교 선택의 기준」 연재와 이어집니다. 중학교 3년이 고등학교 선택으로 어떻게 이어지는지를 공시 자료로 확인해 보는 글입니다."], ["p", "열아홉 곳 전체 자료를 한 번에 보실 수 있도록 A4 일곱 쪽짜리 자료집으로 정리해 두었습니다. 그리고 학교별로 한 장씩 따로 만들어 두었습니다 — 3개년 성적 흐름, 학기별 분포, 졸업생 진로가 그 학교 것만 들어 있습니다. 아이가 다니는 학교(예비중1이면 배정이 예상되는 학교) 이름과 받으실 이메일 주소를 비밀댓글로 남겨 주시면 그 학교 자료를 자료집과 함께 보내 드립니다. 아직 어느 학교가 될지 모르시면 학교 이름 없이 이메일만 남겨 주셔도 됩니다. 자료집을 먼저 보내 드리고, 배정이 나면 그 학교 자료를 따로 보내 드리겠습니다. 1월 중등 설명회가 열리면 문자로 안내를 받고 싶으신 분은 전화번호도 함께 남겨 주세요(선택). 설명회 안내에만 쓰겠습니다. 비밀댓글은 글쓴이만 볼 수 있습니다."]]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function listHTML(){
+  var h='';
+  D.groups.forEach(function(g,i){
+    if(i)h+='<p><br></p>';
+    h+='<p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){h+='<p>'+a(it[1],it[0])+'</p>'});
+  });
+  return h;
+}
+function listText(){
+  var t='';
+  D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
+  return t;
+}
+function tableHTML(rows){
+  var h='<table style="border-collapse:collapse;width:100%">';
+  rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c){
+    h+=i?'<td style="border:1px solid #c8ccd8;padding:6px 10px">'+esc(c)+'</td>'
+        :'<th style="border:1px solid #1F3864;background:#1F3864;color:#fff;padding:6px 10px;text-align:left">'+esc(c)+'</th>'});h+='</tr>'});
+  return h+'</table><p><br></p>';
+}
+function bodyHTML(){
+  var h='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')h+='<p><br></p><p><b>'+esc(b[1])+'</b></p>';
+    else if(b[0]==='link')h+='<p>'+a(b[2],b[1])+'</p>';
+    else if(b[0]==='br')h+='<p><br></p>';
+    else if(b[0]==='ser')h+='<p><b><span style="color:#1F3864">'+esc(b[1])+'</span></b></p>';
+    else if(b[0]==='hot')h+='<p><b><span style="color:#E25100">'+esc(b[1])+'</span></b></p>';
+    else if(b[0]==='note')h+='<p><span style="color:#767171">'+esc(b[1])+'</span></p>';
+    else if(b[0]==='table')h+=tableHTML(b[1]);
+    else h+='<p>'+esc(b[1])+'</p>';
+  });
+  return h;
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='table')t+='\n'+b[1].map(function(r){return r.join(' | ')}).join('\n')+'\n\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent='제목·본문·태그 · 이미지 4장';
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+
+var stP=$('st-post');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+</script>
+
+
+
+</body></html>
