@@ -1,9 +1,13 @@
 {
   "where": "원장님 구글 드라이브 '내 드라이브' 교과서_도전문제_검토전_2026-11-07.zip (검토 전, 그대로 올리지 말 것)",
   "items": [
-    "textbook/ce1min/s1/1", "textbook/ce1min/s1/2", "textbook/ce1min/s1/3", "textbook/ce1min/s1/4",
-    "textbook/ce1min/s2/1", "textbook/ce1min/s2/2", "textbook/ce1min/s2/3", "textbook/ce1min/s2/4", "textbook/ce1min/s2/5",
-    "textbook/ce1oh/2/1", "textbook/ce1oh/2/2", "textbook/ce1oh/2/3", "textbook/ce1oh/3/1", "textbook/ce1oh/4/1",
-    "textbook/ce1park/1/1", "textbook/ce1park/2/1", "textbook/ce1park/3/1"
+    "textbook/ce1oh/2/1",
+    "textbook/ce1oh/2/2",
+    "textbook/ce1oh/2/3",
+    "textbook/ce1oh/3/1",
+    "textbook/ce1oh/4/1",
+    "textbook/ce1park/1/1",
+    "textbook/ce1park/2/1",
+    "textbook/ce1park/3/1"
   ]
 }
