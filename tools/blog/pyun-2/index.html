@@ -1,0 +1,205 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>교육과정 편제표 연재 ② 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview table{margin:8px 0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>교육과정 편제표 연재 ② 블로그 원고</h1>
+    <p>네이버 블로그에 글 전체를 링크째 붙여 넣을 수 있는 원고예요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>[대표 이미지] 자리에 대표 이미지를 올리고, ‘태그 복사’로 태그를 넣어요.</li>
+    <li>목록에서 한 줄을 눌러 링크가 제대로 열리는지 확인하고 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  <section class="exam" id="list">
+    <div class="exam-head">
+      <div><h2>바로가기만</h2><p class="meta" id="list-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-list">링크 포함 복사</button>
+        <button type="button" class="btn" id="copy-url">자료실 링크 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-list" role="status" aria-live="polite"></p>
+    <div class="preview" id="pv-list" aria-label="붙여 넣을 목록 미리보기"></div>
+  </section>
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"title": "성남 예비고1 — 1학년은 어느 고등학교를 가도 같습니다 (그럼 어디서 갈리나)", "tags": "성남예비고1 고교선택 교육과정편제표 성남지역고등학교 수정구고등학교 중원구고등학교 고1내신 고교학점제 코코스학원", "meta": "제목·본문·태그 · 이미지 4장", "url": "https://cocosedu.kr/naesin/", "count": 2, "groups": [{"g": "바로가기", "items": [["성남 고등학교 영어 내신 비교", "https://cocosedu.kr/naesin/#compare"], ["학교별 영어 내신 가이드", "https://cocosedu.kr/naesin/"]]}], "listMeta": "바로가기 2개 · 학교별 내신 가이드", "body": [["b", "「교육과정 편제표」 연재 ②"], ["p", "[대표 이미지: 대표이미지_편제2편.png]"], ["p", "1편에서 편제표를 어디서 받아야 하는지 말씀드렸습니다. 이제 받은 표를 펼쳐 놓고 어디부터 봐야 하는지 말씀드리겠습니다."], ["p", "아홉 장을 나란히 놓으면 가장 먼저 눈에 들어오는 것이 있습니다. 1학년 칸이 거의 똑같습니다."], ["b", "■ 1학년에 무엇을 배울지는 학교가 정하지 않습니다"], ["p", "2022 개정 교육과정에서 1학년은 공통과목을 이수합니다. 공통국어1·2, 공통수학1·2, 공통영어1·2, 통합사회1·2, 통합과학1·2, 한국사1·2, 그리고 과학탐구실험1·2입니다. 여기에 체육과 예술, 정보가 붙습니다."], ["p", "성남이든 서울이든 어느 고등학교에 가도 1학년 국어·수학·영어·사회·과학·한국사는 이 과목들입니다. 그래서 「1학년 때 어느 학교가 더 많이 배우는가」라는 질문은 성립하지 않습니다. 아홉 곳의 차이는 학점 배분에서 한두 칸 나는 정도입니다."], ["p", "[이미지: pyun2_a.png]"], ["p", "1학년은 국가가 정하고, 2학년부터 학교가 갈립니다"], ["p", "그리고 이 사실이 앞선 연재에서 아홉 곳의 성적을 견줄 수 있었던 근거입니다."], ["b", "1학년 1학기는 아홉 곳이 같은 과목을 거의 같은 학점으로 배웁니다. 그래서 그 성적만큼은 학교끼리 나란히 놓고 봐도 됩니다."], ["p", "2학년부터는 아이마다 듣는 과목이 갈려서, 같은 과목 이름이라도 누가 들었는지가 학교마다 달라집니다. 학교알리미는 2·3학년 자료도 전부 공시하지만 저희가 학교를 견줄 때 1학년 1학기를 쓰는 것은 그 때문입니다."], ["b", "■ 학교가 갈리는 것은 2학년부터입니다"], ["p", "2학년이 되면 선택과목이 시작됩니다. 「택1」·「택3」 같은 묶음이 등장하고, 그 묶음 안에 어떤 과목을 넣어 두었는지가 학교마다 달라집니다. 3학년은 선택의 폭이 더 넓어집니다."], ["p", "그래서 편제표를 볼 때 1학년 칸은 빠르게 지나가고 2·3학년 칸에서 시간을 쓰셔야 합니다."], ["p", "다만 2·3학년이 되어도 전부 선택인 것은 아닙니다. 국어·영어·수학은 학교가 미리 정해 놓습니다."], ["p", "· 3학년 1학기까지 — 아홉 곳 전부"], ["p", "· 3학년 2학기까지 — 다섯 곳"], ["p", "아이가 수학을 빼고 싶어도 뺄 수 없다는 뜻입니다. 이 사실은 4편에서 「영어 선택과목이 하나뿐인 학교」를 보실 때 다시 필요합니다."], ["b", "■ 수능 과목도 아홉 곳이 같습니다"], ["p", "예전에는 편제표를 볼 때 「3학년에 수능 과목을 얼마나 넣어 두었나」를 봤습니다. 수능에 선택과목이 있던 시절에는 그게 학교의 성향을 드러냈습니다. 그런데 2028학년도부터 수능이 바뀌면서 이 질문이 없어졌습니다."], ["b", "수능 선택과목은 전면 폐지됐습니다. 미적분Ⅱ와 기하는 수능 범위에 없습니다."], ["p", "아홉 곳을 대조해 봤습니다. 수능 과목 배치가 완전히 같습니다. 아홉 곳 전부 국어·수학·영어의 수능 범위를 학교지정으로 묶어 3학년 1학기에 끝냅니다. 한 곳도 예외가 없고 한 학기도 차이가 없습니다."], ["p", "학교가 수능 과목을 더 넣을 수도 뺄 수도 없습니다. 전부 공통이고 전부 학교지정이기 때문입니다."], ["p", "그래서 편제표를 보는 이유가 달라졌습니다. 예전에는 「그 학교에 내가 볼 수능 과목이 열려 있나」가 실질적인 질문이었는데, 이제 그 답은 아홉 곳이 같습니다. 편제표로 볼 것은 수능이 아니라 학생부입니다. 아이가 무엇을 들었고 그 과목에서 무엇을 했는지가 남는 자리 말입니다."], ["p", "이 연재의 나머지 네 편은 전부 그 이야기입니다."], ["p", "한 가지 덧붙이면, 통합사회·통합과학·한국사는 1학년 과목인데 수능은 3학년에 봅니다. 2년 공백이 생깁니다. 전국이 같은 조건이라 학교 차이는 아니지만, 1학년 때 이 과목들을 흘려보내면 3학년에 처음부터 다시 해야 한다는 뜻입니다."], ["b", "■ 1학년에서 반드시 알아야 할 것이 하나 있습니다"], ["p", "1학년 성적에서 등급이 나오지 않는 과목이 있습니다. 이건 학교 차이가 아니라 전국 공통 규칙입니다."], ["p", "[이미지: pyun2_b.png]"], ["p", "아홉 곳이 전부 같습니다"], ["p", "중학교 때는 모든 과목이 성적에 들어갔습니다. 고등학교는 다릅니다. 1학년 내신은 과학탐구실험·체육·음악·미술이 등급 밖이라, 결국 국어·수학·영어·사회·과학에서 갈립니다."], ["p", "여기서 조심할 것이 있습니다. 「이 학교는 등급이 안 나오는 과목이 있다」고 말하면 틀립니다. 아홉 곳이 전부 그렇습니다. 학교 차이는 그 과목들을 「몇 개나 열어 두었는가」에서 생깁니다."], ["b", "■ 그럼 1학년 편제에서 볼 것은 무엇인가"], ["p", "세 가지입니다."], ["p", "· 정보를 1학년에 넣었는가 — 1학년 필수로 넣은 학교는 정보·AI 쪽에 무게를 둔 것입니다"], ["p", "· 예술을 음악·미술 중 어느 쪽으로 열었는가 — 대부분 학기별로 번갈아 두는데, 한쪽만 여는 학교도 있습니다"], ["p", "· 체육을 몇 학점으로 가져가는가 — 등급은 안 나오지만 학점은 차지합니다 — 나머지 과목에 쓸 칸이 달라집니다"], ["p", "성남여고는 AI 중점학교로 지정되면서 1학년 「정보」를 필수로 돌렸습니다. 이런 것이 편제표에 드러나는 학교의 성격입니다."], ["b", "■ 2학년 선택이 어떻게 생겼는지 미리 보겠습니다"], ["p", "실제 편제표의 한 줄을 그대로 옮기면 이렇게 생겼습니다."], ["p", "[이미지: pyun2_c.png]"], ["p", "숭신고 2027학년도 입학생 편제표 · 2학년 선택 묶음 한 줄"], ["p", "열두 과목이 한 묶음에 들어 있고 그중 셋을 고르라는 뜻입니다. 셋까지는 자유롭게 고를 수 있습니다. 물리학과 화학을 둘 다 담아도 한 자리가 남습니다. 문제는 넷째부터입니다."], ["p", "· 묶음 안에 들어야 할 과목이 넷 이상 — 그중 하나는 반드시 포기해야 합니다"], ["p", "· 셋을 과학으로 채우면 — 이 묶음에서 사회도 수학도 하나를 못 고릅니다"], ["p", "· 묶음에 「있다」와 「들을 수 있다」 — 다릅니다 — 신청자가 적으면 열리지 않습니다"], ["p", "이과를 생각하는 아이라면 물리학·화학·생명과학 세 과목으로 이 칸이 끝납니다. 인공지능 수학도 세계사도 들어갈 자리가 없습니다. 반대로 사회 쪽을 둘 담으면 과학은 하나만 남습니다."], ["b", "■ 다만 이렇게 단정하면 틀립니다"], ["p", "「한 묶음에 있으니 못 듣는다」는 말은 정확하지 않습니다. 택3 묶음에서 세 과목까지는 아무 문제가 없습니다. 또 묶음 밖에서 따로 여는 길도 있습니다. 효성고는 2025학년도 입학생 표에서 고급 미적분을 본표 아래 「증배」로 따로 열어 두었습니다."], ["b", "정확한 표현은 이것입니다 — 「이 묶음에 네 과목 이상 몰려 있으면 학교에 확인해 보셔야 합니다」."], ["p", "다음 편부터는 이 묶음들을 계열별로 하나씩 뜯어보겠습니다. 3편은 이공계, 4편은 인문계입니다."], ["b", "「교육과정 편제표」 연재"], ["p", "① 편제표가 무엇이고, 어디서 받아야 하는가"], ["p", "② 1학년은 전국이 같습니다 — 갈리는 것은 2학년부터 (이 글)"], ["p", "③ 이공계로 보면 — 여섯 가지 기준"], ["p", "④ 인문계로 보면 순서가 뒤집힙니다"], ["p", "⑤ 편제에 있어도 못 듣는 네 가지 이유"], ["p", "⑥ 2027학년도 편제표는 얼마나 다를까요"], ["br"], ["b", "▶ 성남 고등학교 내신은 어떻게 다른가"], ["list"]]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function listHTML(){
+  var h='';
+  D.groups.forEach(function(g,i){
+    if(i)h+='<p><br></p>';
+    h+='<p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){h+='<p>'+a(it[1],it[0])+'</p>'});
+  });
+  return h;
+}
+function listText(){
+  var t='';
+  D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
+  return t;
+}
+function tableHTML(rows){
+  var h='<table style="border-collapse:collapse;width:100%">';
+  rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c){
+    h+=i?'<td style="border:1px solid #c8ccd8;padding:6px 10px">'+esc(c)+'</td>'
+        :'<th style="border:1px solid #1F3864;background:#1F3864;color:#fff;padding:6px 10px;text-align:left">'+esc(c)+'</th>'});h+='</tr>'});
+  return h+'</table><p><br></p>';
+}
+function bodyHTML(){
+  var h='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')h+='<p><br></p><p><b>'+esc(b[1])+'</b></p>';
+    else if(b[0]==='link')h+='<p>'+a(b[2],b[1])+'</p>';
+    else if(b[0]==='br')h+='<p><br></p>';
+    else if(b[0]==='list')h+='<p><br></p>'+listHTML()+'<p><br></p>';
+    else if(b[0]==='ser')h+='<p><b><span style="color:#1F3864">'+esc(b[1])+'</span></b></p>';
+    else if(b[0]==='hot')h+='<p><b><span style="color:#E25100">'+esc(b[1])+'</span></b></p>';
+    else if(b[0]==='note')h+='<p><span style="color:#767171">'+esc(b[1])+'</span></p>';
+    else if(b[0]==='table')h+=tableHTML(b[1]);
+    else h+='<p>'+esc(b[1])+'</p>';
+  });
+  return h;
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='list')t+='\n'+listText()+'\n';
+    else if(b[0]==='table')t+='\n'+b[1].map(function(r){return r.join(' | ')}).join('\n')+'\n\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent=D.meta||'제목·본문·태그';
+if(!D.groups||!D.groups.length){$('list').remove()}else{
+$('list-meta').textContent=D.listMeta||('바로가기 '+D.count+'개');
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+$('pv-list').innerHTML=listHTML();
+}
+
+var stP=$('st-post'),stL=$('st-list');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+if($('copy-list')){
+$('copy-list').addEventListener('click',function(e){copyRich(listHTML(),listText(),e.currentTarget,stL,$('pv-list'),'바로가기 목록을 복사했어요. 본문의 바로가기 자리에 붙여 넣으세요.')});
+$('copy-url').addEventListener('click',function(e){copyPlain(D.url,e.currentTarget,stL,'자료실 주소를 복사했어요.',null)});
+}
+</script>
+
+
+
+</body></html>

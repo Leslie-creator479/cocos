@@ -31,6 +31,11 @@ def label(slug):
         return 0, {'edu-voca-mid': '중학 기본 영단어 1,200'}.get(slug, slug), '교육과정 기본 어휘'
     if slug in ('mid-public', 'mid-public-grammar'):  # 안내 블로그 원고(tools/blog/, 2026-11-04 독해, 2026-11-08 문법)
         return 0, {'mid-public': '중등 공개 학습지(독해·문법) 안내', 'mid-public-grammar': '코코스 중등 문법 안내'}[slug], '학원 안내'
+    m = re.match(r'pyun-(\d+)$', slug)  # 고교 「교육과정 편제표」 연재 6편(2026-11-08, 원고는 다른 방에서 만들어 이 저장소에 올림)
+    if m:
+        k = int(m.group(1))
+        names = ['편제표 받는 법', '1학년은 같다', '이공계로 보면', '인문계로 보면', '편제에 있어도 못 듣는 이유', '2027학년도 편제표']
+        return 0, f"{k}편 · {names[k - 1] if k <= len(names) else ''}", '고교 「교육과정 편제표」 연재'
     m = re.match(r'mid-series-(\d+)$', slug)  # 중등 연재 「중학교에서 고교 선택까지」 3편(2026-11-08)
     if m:
         return 0, f"{m.group(1)}편 · {['제도', '첫 시험', '성적표 읽는 법'][int(m.group(1)) - 1]}", '중등 연재 「중학교에서 고교 선택까지」'
