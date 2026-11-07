@@ -59,6 +59,7 @@ lists = [
     {'t': '블로그 수록 지문 목록', 'd': '회차마다 학습지·동의어·단어게임 링크를 링크째 복사', 'href': 'blog-list/'},
     {'t': '교과서 지문 목록', 'd': '교과서 과별 학습지·동의어 링크 복사', 'href': 'textbook-list/'},
     {'t': '학생용 자료실', 'd': '학생에게 보내는 주소 cocosedu.kr/library', 'href': '../library/'},
+    {'t': '도전 문제 진행표', 'd': '교과서·모의고사 지문별로 고난도 문제가 들어갔는지 한눈에', 'href': 'challenge-status/'},
 ]
 n_drafts = sum(len(g['items']) for s in sections for g in s['groups'])
 
