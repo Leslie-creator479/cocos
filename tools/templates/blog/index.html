@@ -182,11 +182,11 @@ function copyPlain(str,btn,status,note,node){
 }
 
 $('post-meta').textContent=D.meta||'제목·본문·태그';
-if(!D.groups||!D.groups.length){$('list').remove()}else{
-$('list-meta').textContent=D.listMeta||('바로가기 '+D.count+'개');
 $('title-val').textContent=D.title;
 $('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
 $('pv-body').innerHTML=bodyHTML();
+if(!D.groups||!D.groups.length){$('list').remove()}else{
+$('list-meta').textContent=D.listMeta||('바로가기 '+D.count+'개');
 $('pv-list').innerHTML=listHTML();
 }
 
