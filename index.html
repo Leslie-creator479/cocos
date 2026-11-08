@@ -508,6 +508,30 @@ footer .legal{display:flex;flex-direction:column;gap:6px;text-align:right}
 .steps5 p{font-size:14px;color:var(--muted);line-height:1.75}
 .adm-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:clamp(40px,4vw,56px);padding-top:28px;border-top:1px solid var(--line)}
 .adm-cta p{font-size:15px;color:var(--ink)}
+/* 학부모님이 받는 것 · 이럴 땐 어떻게 하나요? (2026-11-08) */
+.adm-more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:24px clamp(40px,6vw,96px);margin-top:clamp(64px,7vw,104px);padding-top:clamp(36px,4vw,52px);border-top:1px solid var(--ink)}
+.adm-more .cap{display:block;color:var(--gold-deep);margin-bottom:14px}
+.adm-more h3{font-size:clamp(26px,2.6vw,36px);font-weight:600;letter-spacing:-.03em;line-height:1.25}
+.adm-more .lead{margin-top:14px;color:var(--muted);font-size:14.5px;max-width:24em}
+@media (max-width:860px){.adm-more{grid-template-columns:1fr}}
+.gets{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.gets li{display:grid;grid-template-columns:112px minmax(0,1fr);gap:4px 24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.gets .when{font-size:12.5px;letter-spacing:.08em;color:var(--gold-deep);font-weight:500}
+.gets p{font-size:16px;color:var(--ink);line-height:1.7}
+.gets a,.faq details a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold)}
+.gets a:hover,.faq details a:hover{color:var(--gold-deep)}
+.gets-note{margin-top:12px;font-size:13px;color:var(--muted)}
+@media (max-width:480px){.gets li{grid-template-columns:1fr}}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:baseline;padding:18px 0;font-size:16.5px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--latin);font-weight:300;font-size:26px;line-height:1;color:var(--gold-deep);flex:none;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--gold-deep)}
+.faq summary:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.faq details p{padding:0 40px 20px 0;color:var(--muted);font-size:15px;line-height:1.8}
+@media (max-width:480px){.faq details p{padding-right:0}}
 @media (max-width:1000px){.steps5{grid-template-columns:1fr;gap:28px}.steps5::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto}.steps5 li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:0 20px;padding:0}.steps5 li > *:not(.dot){grid-column:2}.steps5 .dot{grid-row:1 / span 3}.steps5 .no{margin-top:4px}.worry{grid-template-columns:1fr}}
 
 /* 휴대폰 메뉴 (2026-10-18) */
@@ -1094,10 +1118,49 @@ section[id],#course{scroll-margin-top:80px}
       <ol class="steps5">
         <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M21 33l7 7 15-16"/></svg></span><span class="no"></span><h3>입학 테스트</h3><p>입학 상담으로 학업 성취도를 확인한 뒤 수준에 맞는 테스트를 봅니다. 1차 결과로 레벨이 분명하지 않으면 2차 테스트로 한 번 더 정확히 확인합니다.</p></li>
         <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h28a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H22l-8 7v-7H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z"/><path d="M46 24h10a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-2v7l-7-7H34a4 4 0 0 1-4-4v-2"/><path d="M13 21h18M13 27h11"/></svg></span><span class="no"></span><h3>테스트 결과 상담</h3><p>점수만 알려 드리지 않습니다. 틀린 문항과 풀이 과정에서 문제점을 찾아, 강점과 약점, 앞으로 집중하고 보완할 점을 학생·학부모님께 설명해 드립니다.</p></li>
-        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg></span><span class="no"></span><h3>오리엔테이션 수업</h3><p>교재 준비, 현재 진도, 과제 방법은 학원이 미리 안내해 드리고, 첫 수업 전에 담당 선생님을 만나 아이의 기본 개념과 부족한 부분을 함께 확인합니다. 첫 수업부터 바로 적응하도록 돕는 코코스의 입학 프로그램입니다.</p></li>
+        <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18c-6-5-14-6-24-5v36c10-1 18 0 24 5 6-5 14-6 24-5V13c-10-1-18 0-24 5z"/><path d="M32 18v36"/><path d="M14 22h10M14 29h10M40 22h10M40 29h10"/></svg></span><span class="no"></span><h3>오리엔테이션 수업</h3><p>첫 수업 전에 담당 선생님을 만나 교재와 진도, 과제 방법을 안내받고, 아이의 기본 개념과 부족한 부분을 함께 확인합니다. 시간과 방식은 담당 선생님이 정해 연락드립니다.</p></li>
         <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4"/><path d="M22 28l5 5 10-11M22 44h20"/></svg></span><span class="no"></span><h3>정규 수업</h3><p>첫 수업 뒤에는 담당 선생님이 정한 방식으로 수업 이해도와 앞으로의 계획을 안내해 드립니다.</p></li>
         <li><span class="dot"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="14" width="44" height="40" rx="3"/><path d="M10 24h44M22 8v10M42 8v10"/><path d="M24 39l6 6 11-12"/></svg></span><span class="no"></span><h3>2주 후 안부 연락</h3><p>수업을 시작하고 2주가 지나면 학원이 학부모님께 연락드려, 아이가 학원에 잘 적응했는지, 바라시는 점은 없는지 여쭙습니다. 수업에 관한 말씀은 담당 선생님께 그대로 전해 드립니다.</p></li>
       </ol>
+
+      <div class="adm-more" id="for-parents">
+        <div>
+          <span class="cap">For Parents</span>
+          <h3>학부모님이 받는 것</h3>
+          <p class="lead">입학한 뒤 학원이 학부모님께 드리는 것입니다.</p>
+        </div>
+        <div>
+          <ul class="gets">
+            <li><span class="when">입학 2주 후</span><p>학원이 먼저 안부 연락을 드립니다.</p></li>
+            <li><span class="when">매일</span><p>등원부터 그날 수업 결과까지 문자나 학원친구 앱으로 알려 드립니다.</p></li>
+            <li><span class="when">정기적으로</span><p>중등부는 매달 성적표를, 고등부는 <a href="#suneung">모의고사 분석 리포트</a>를 드립니다.</p></li>
+            <li><span class="when">시험 5주 전</span><p>학교별 내신대비를 시작합니다.</p></li>
+            <li><span class="when">시험 범위 · 시험 뒤</span><p>시험 범위 <a href="library/">학습지</a>와 <a href="naesin/">학교별 시험 분석</a>을 홈페이지에 올립니다.</p></li>
+          </ul>
+          <p class="gets-note">내신대비 시기는 학교 시험 일정에 따라 달라질 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="adm-more" id="faq">
+        <div>
+          <span class="cap">Questions</span>
+          <h3>이럴 땐 어떻게 하나요?</h3>
+          <p class="lead">학부모님이 자주 물으시는 것을 모았습니다. 여기 없는 것은 전화나 네이버 톡톡으로 편하게 물어 주세요.</p>
+        </div>
+        <div class="faq">
+          <details><summary>담당 선생님은 어떻게 정해지나요?</summary><p>코코스는 학교·학년별 담당제입니다. 한 선생님이 아이 학교의 내신을 계속 맡습니다.</p></details>
+          <details><summary>성적이 떨어지면 어떻게 하나요?</summary><p>담당 선생님이 정한 방식으로 상담해 드립니다. 고등부는 모의고사 분석 리포트를 따로 요청하시면 그때 뽑아 드립니다.</p></details>
+          <details><summary>반이 아이와 맞지 않으면요?</summary><p>분기마다 모든 학생이 반 배정 고사를 봅니다. 그 사이에도 학교 시험 같은 공식 시험에서 성적이 크게 달라지면, 학생·학부모님과 이야기한 뒤 담당 선생님이 반 이동을 정합니다.</p></details>
+          <details><summary>결석하면 어떻게 아나요?</summary><p>출결은 그날 수업 알림 문자와 학원친구 앱에 함께 표시됩니다. 보강이 필요할 때는 영상 대신 선생님이 직접 만나 수업합니다.</p></details>
+          <details><summary>선생님께 직접 말씀드리기 어려운 일이 있으면요?</summary><p>학원 전화(<a href="tel:031-752-3334">031-752-3334</a>)로 원장 상담을 요청해 주세요. 원장에게 바로 전해집니다.</p></details>
+          <details><summary>그만두거나 잠시 쉬고 싶을 때는요?</summary><p>담당 선생님께 먼저 말씀해 주세요. 교습비 반환은 학원법이 정한 기준을 따릅니다.</p></details>
+          <details><summary>교습비는 언제 내나요?</summary><p>매월 1일부터 5일 사이에 그 달 교습비를 미리 내 주시면 됩니다.</p></details>
+          <details><summary>방학에는 어떻게 하나요?</summary><p>따로 고르는 특강이 아니라 방학 집중 기간으로 운영합니다. 겨울방학 6주, 여름방학 3주 동안 하루 수업이 3시간에서 3시간 30분으로 늘어납니다. 방학 교습비는 상담 때 안내해 드립니다.</p></details>
+          <details><summary>단어 시험은 얼마나 보나요?</summary><p>학년과 레벨에 따라 다릅니다. 고등부는 보통 단어장 두 가지로, 정해진 범위(90개·60개)에서 각각 50개씩 시험을 봅니다.</p></details>
+          <details><summary>학원 차량이 있나요?</summary><p>등원 차량은 없고, 하원 차량이 밤 8시 30분과 10시 수업이 끝날 때 두 번 운행합니다. 원하는 학생은 누구나 탈 수 있습니다.</p></details>
+        </div>
+      </div>
+
       <div class="adm-cta">
         <p>입학 테스트와 상담은 예약제로 진행합니다.</p>
         <a class="btn" href="tel:031-752-3334">031-752-3334 입학 테스트 예약</a>
@@ -1309,7 +1372,7 @@ section[id],#course{scroll-margin-top:80px}
       <div class="contact">
         <a class="row-link" href="tel:031-752-3334"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9l-9 3c-1.5 15 9 33 25 41l6.5-6.5-8-8-6.5 4c-5-3.5-8.5-8.5-10.5-14l5-4.5z"/><path d="M40 10a14 14 0 0 1 14 14M40 18a6 6 0 0 1 6 6"/></svg>Call</span><b>031-752-3334</b><span>전화 상담 · 레벨 테스트 예약</span></a>
         <a class="row-link" href="https://talk.naver.com/W46F3W" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h40v26H30l-10 9v-9h-8z"/><path d="M22 29h2M31 29h2M40 29h2"/></svg>Talk</span><b>네이버 톡톡</b><span>채팅으로 상담 문의 · 답변은 운영 시간에 드려요</span></a>
-        <div class="row-link"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M32 18v14l9 6"/></svg>Hours</span><b>운영 시간</b><span>평일 오후 3시 ~ 밤 10시 · 토요일 오전 11시 ~ 오후 4시</span></div>
+        <div class="row-link"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><path d="M32 18v14l9 6"/></svg>Hours</span><b>운영 시간</b><span>평일 오후 3시 ~ 밤 10시 · 토요일 오전 11시 ~ 오후 4시<br>상담은 주로 수요일과 토요일에 잡습니다</span></div>
         <a class="row-link" href="https://map.naver.com/p/entry/place/38464695" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 58s-16-16-16-30a16 16 0 0 1 32 0c0 14-16 30-16 30z"/><circle cx="32" cy="28" r="6"/></svg>Visit</span><b>오시는 길</b><span>경기도 성남시 중원구 광명로 124, 2층 (수진역 성일중고 사거리) · 네이버 지도에서 길찾기</span></a>
         <a class="row-link" href="https://blog.naver.com/cocosedu" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 52l4-14 26-26 10 10-26 26z"/><path d="M38 16l10 10"/><path d="M8 58h48"/></svg>Blog</span><b>코코스학원 블로그</b><span>학원 소식과 온라인 학습지</span></a>
         <a class="row-link" href="https://www.instagram.com/cocos_sujin/" target="_blank" rel="noopener"><span class="cap"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="44" height="44" rx="12"/><circle cx="32" cy="32" r="10"/><circle cx="45" cy="19" r="1.6"/></svg>Instagram</span><b>@cocos_sujin</b><span>학원 일상과 소식</span></a>
