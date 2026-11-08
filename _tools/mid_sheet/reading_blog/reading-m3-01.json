@@ -1,0 +1,118 @@
+{
+  "slug": "reading-m3-01",
+  "theme": "빼빼로데이 특집 · 간식의 과학",
+  "title": "중3 영어 독해 지문 무료 학습지 1회 | 빼빼로데이 특집 · 간식에 숨은 과학과 역사 5편 | 가주어 it·간접의문문·관계대명사 what·분사구문·과거완료 | 코코스학원",
+  "tags": "중3영어독해 중학영어독해 영어독해지문 중3영어 빼빼로데이 가주어it 간접의문문 관계대명사what 분사구문 과거완료 무료학습지",
+  "hook": [
+    "이번 주 수요일(11월 11일)은 빼빼로데이! 그런데 껌을 삼키면 정말 7년 동안 배 속에 남을까요? 케첩이 한때 약과 관련이 있었다는 사실은요?",
+    "코코스 중등 독해 중3 1회는 빼빼로데이를 맞아 '간식에 숨은 과학과 역사'를 골랐어요. 팝콘·껌·곰 젤리·아이스크림·케첩, 늘 먹던 간식에 숨은 '진짜?' 이야기 다섯 편을 영어 지문으로 만들었어요."
+  ],
+  "sources": "지문에 나온 사실은 메이요 클리닉, 사이언티픽 아메리칸, 존스홉킨스 메디슨, 클리블랜드 클리닉, 스미스소니언, 하리보 공식 연혁, 미국 팝콘 협회 자료로 확인했어요.",
+  "passages": {
+    "1": {
+      "emoji": "🍿",
+      "name": "팝콘",
+      "tag": "펑! 터지는 비밀",
+      "q": "팝콘은 왜<br>펑 하고 터질까?",
+      "did": "팝콘 알 속에는 작은 물이 숨어 있어요.<br>약 180도가 되면 껍질이 펑!",
+      "ex": "<i>It</i> was fun <i>to watch</i> the kernels jump in the pan.",
+      "rule": "<b>It + be + 형용사 + to부정사</b> = ~하는 것은 (형용사)하다",
+      "story": [
+        "가족 영화의 밤, 팝콘을 튀기던 유나가 아빠에게 묻습니다. '팝콘은 왜 터져요?'",
+        "딱딱한 알 속에서 무슨 일이 일어나기에 하얀 꽃처럼 펑 터지는 걸까요? 끝까지 안 터지고 남는 알의 비밀도 지문에서 찾아보세요."
+      ],
+      "gram_title": "가주어 it ~ to부정사",
+      "gram": [
+        "It is hard to believe, but there is a tiny drop of water inside this seed. (믿기 어렵지만, 이 씨앗 안에는 작은 물방울이 있다.)",
+        "It is not easy to make every kernel pop! (모든 알을 터지게 하는 것은 쉽지 않다!)",
+        "it은 '그것'으로 해석하지 않고 뒤의 to부정사가 진짜 주어예요. It was Friday night처럼 시간을 말하는 it과 구별해 보세요."
+      ],
+      "words": "kernel(알갱이), steam(수증기), pressure(압력), starch(녹말), escape(빠져나가다)",
+      "key": "popcorn"
+    },
+    "2": {
+      "emoji": "🫧",
+      "name": "껌",
+      "tag": "7년의 오해",
+      "q": "껌을 삼키면<br>7년 동안 남을까?",
+      "did": "삼킨 껌은 소화되지 않지만<br>보통 며칠이면 몸 밖으로 나가요.",
+      "ex": "Many people wonder <i>if it is true</i>.",
+      "rule": "<b>의문사/if + 주어 + 동사</b> = ~인지, 무엇이 ~하는지",
+      "story": [
+        "'껌 삼키면 7년 동안 배 속에 남는다!' 어릴 때 한 번쯤 들어 본 말이죠.",
+        "정말 그럴까요? 우리 몸이 껌을 어떻게 처리하는지, 그리고 그래도 껌을 삼키면 안 되는 진짜 이유를 지문에서 확인해 보세요."
+      ],
+      "gram_title": "간접의문문 (의문사/if + 주어 + 동사)",
+      "gram": [
+        "Let’s find out what really happens. (실제로 무슨 일이 일어나는지 알아보자.)",
+        "Nobody knows where the seven-year story came from. (7년 이야기가 어디서 왔는지 아무도 모른다.)",
+        "문장 속에 들어간 질문은 '의문사 + 주어 + 동사' 순서예요(where did the story come from → where the story came from). 의문사가 없으면 if(~인지)를 써요."
+      ],
+      "words": "swallow(삼키다), digest(소화하다), intestine(장), on purpose(일부러), block(막다)",
+      "key": "gum"
+    },
+    "3": {
+      "emoji": "🐻",
+      "name": "곰 젤리",
+      "tag": "100년 전 부엌에서",
+      "q": "곰 젤리는 언제<br>처음 만들어졌을까?",
+      "did": "곰 젤리의 시작은 약 100년 전 독일,<br>작은 부엌 하나였어요.",
+      "ex": "<i>What</i> I like most is that a world-famous candy started in a tiny kitchen.",
+      "rule": "<b>What + 주어 + 동사</b> = ~하는 것",
+      "story": [
+        "기자가 사탕 역사를 연구하는 홀 박사를 인터뷰합니다. 곰 젤리를 처음 만든 사람은 누구이고, 회사 이름은 어떻게 지었을까요?",
+        "왜 하필 '곰' 모양이었는지, 세계적인 간식이 얼마나 작게 시작했는지 인터뷰로 읽어 보세요."
+      ],
+      "gram_title": "관계대명사 what (= the thing that)",
+      "gram": [
+        "What he had at first was a small kitchen, a bag of sugar, and a few simple tools. (그가 처음에 가진 것은 작은 부엌, 설탕 한 자루, 그리고 간단한 도구 몇 개였다.)",
+        "What I like most is that a world-famous candy started in a tiny kitchen. (내가 가장 좋아하는 점은 세계적인 사탕이 작은 부엌에서 시작했다는 것이다.)",
+        "what은 '~하는 것'이라는 뜻으로 앞에 꾸밀 명사가 없어요. What do you like most?처럼 묻는 말(무엇)과 구별해 보세요."
+      ],
+      "words": "company(회사), clever(영리한), shape(모양), festival(축제), chewy(쫄깃한)",
+      "key": "gummy"
+    },
+    "4": {
+      "emoji": "🍦",
+      "name": "아이스크림",
+      "tag": "머리가 띵!",
+      "q": "아이스크림을 먹으면<br>왜 머리가 띵할까?",
+      "did": "차가운 건 입에 닿았는데<br>아픈 곳은 이마! 이유가 있어요.",
+      "ex": "<i>Getting the signal</i>, your brain feels the pain in your forehead.",
+      "rule": "<b>동사-ing / 과거분사, 주어 + 동사</b> = ~할 때, ~해서",
+      "story": [
+        "공원에서 아이스크림을 먹다 머리가 띵해진 Jun에게 Sora 이모가 답장을 보냈어요.",
+        "차가운 건 입에 닿았는데 왜 이마가 아플까요? 금방 낫게 하는 간단한 방법도 편지 속에 있어요."
+      ],
+      "gram_title": "분사구문",
+      "gram": [
+        "Reading your letter, I smiled. (= When I read your letter, I smiled.)",
+        "Cooled suddenly, the blood vessels there become narrow. (갑자기 차가워지면 그곳 혈관이 좁아진다 → 수동이라 과거분사)",
+        "접속사와 주어를 빼고 동사를 -ing(능동)나 과거분사(수동)로 쓴 꼴이에요. Drinking a little warm water also helps처럼 -ing가 주어인 동명사와 구별해 보세요."
+      ],
+      "words": "roof of the mouth(입천장), blood vessel(혈관), narrow(좁은), nerve(신경), forehead(이마)",
+      "key": "icecream"
+    },
+    "5": {
+      "emoji": "🍅",
+      "name": "케첩",
+      "tag": "약이었던 과거",
+      "q": "케첩은 원래<br>약이었다?",
+      "did": "처음 케첩엔 토마토가 없었고,<br>토마토는 한때 알약으로 팔렸어요.",
+      "ex": "British cooks <i>had created</i> their own ketchups.",
+      "rule": "<b>had + 과거분사</b> = (그때보다 앞서) ~했었다",
+      "story": [
+        "감자튀김에 빠질 수 없는 케첩, 그런데 처음 케첩에는 토마토가 들어 있지 않았어요.",
+        "생선 소스에서 시작해 '토마토 알약' 소동을 거쳐 오늘의 소스가 되기까지, 케첩의 놀라운 여행을 따라가 보세요. 1회에서 가장 긴 심화 지문이에요."
+      ],
+      "gram_title": "과거완료 (had + 과거분사)",
+      "gram": [
+        "Long before Americans put ketchup on their food, people in southern China and Southeast Asia had made a salty sauce from fish. (미국인들이 케첩을 뿌려 먹기 훨씬 전에, 사람들은 생선으로 짠 소스를 만들었었다.)",
+        "By around 1850, the tomato pill boom had ended. (1850년 무렵에는 토마토 알약 유행이 끝나 있었다.)",
+        "과거의 어느 때보다 더 먼저 일어난 일은 had + 과거분사로 써요. some of the pills had no tomato처럼 had 뒤에 명사가 오면 '가지고 있었다'예요."
+      ],
+      "words": "trader(상인), recipe(요리법), claim(주장), doubt(의심하다), disappear(사라지다)",
+      "key": "ketchup"
+    }
+  }
+}
