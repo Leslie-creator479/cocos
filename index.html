@@ -611,6 +611,27 @@ section[id],#course{scroll-margin-top:80px}
 #suneung .go{margin-top:28px}#suneung .go a{color:var(--on-night)}
 @media (max-width:900px){#suneung .sn-flow{grid-template-columns:1fr 1fr}#suneung .sn-pts{grid-template-columns:1fr}}
 @media (max-width:640px){#suneung .sn-two,#suneung .sn-vs,#suneung .sn-flow{grid-template-columns:1fr}#suneung .sn-clinic b{font-size:13.5px}#suneung .sn-mon{font-size:11px}}
+#suneung .sn-rep{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;max-width:1000px}
+#suneung .sn-rep-txt p{font-size:15px;margin:0 0 12px}
+#suneung .sn-rep-txt ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:6px}
+#suneung .sn-rep-txt li{font-size:14.5px;color:var(--on-night);padding-left:22px;position:relative}
+#suneung .sn-rep-txt li::before{content:"✓";position:absolute;left:0;color:var(--gold)}
+#suneung .sn-rep-txt li.no{color:var(--on-night-muted)}#suneung .sn-rep-txt li.no::before{content:"✕";color:var(--on-night-muted)}
+#suneung .sn-paper{margin:0;background:#FBFAF7;color:#1a1a1a;border-radius:10px;padding:20px 20px 16px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+#suneung .sn-paper .rp-wm{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%) rotate(-20deg);font-size:96px;font-weight:800;color:rgba(154,59,47,.09);letter-spacing:.2em;pointer-events:none}
+#suneung .sn-paper figcaption{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #1a1a1a;padding-bottom:8px;margin-bottom:6px;gap:8px}
+#suneung .sn-paper figcaption b{color:#1a1a1a;font-size:15px}#suneung .sn-paper figcaption span{font-size:12px;color:#6b6b6b}
+#suneung .sn-paper .rp-lb{font-size:12px;color:#6b6b6b;font-weight:600;margin:12px 0 6px}
+#suneung .sn-paper .rp-bars{display:flex;align-items:flex-end;gap:6px;height:64px;border-bottom:1px solid #d8d4cc}
+#suneung .sn-paper .rp-bars i{flex:1;background:#9db8ae;border-radius:2px 2px 0 0}#suneung .sn-paper .rp-bars i.cur{background:#2f5d50}
+#suneung .sn-paper .rp-mt{display:grid;grid-template-columns:72px 1fr 34px;gap:8px;align-items:center;font-size:12px;color:#1a1a1a;margin:4px 0}
+#suneung .sn-paper .rp-mt em{display:block;height:7px;background:#e4ece8;border-radius:4px;overflow:hidden}
+#suneung .sn-paper .rp-mt em i{display:block;height:100%;background:#7fa89b}#suneung .sn-paper .rp-mt em i.lo{background:#c98b7e}
+#suneung .sn-paper .rp-mt b{color:#6b6b6b;font-weight:500;text-align:right}
+#suneung .sn-paper table{width:100%;border-collapse:collapse;font-size:12px;color:#1a1a1a}
+#suneung .sn-paper th{font-weight:600;color:#6b6b6b;text-align:left;border-bottom:1px solid #d8d4cc;padding:4px}
+#suneung .sn-paper td{border-bottom:1px solid #eee9e1;padding:4px}
+@media (max-width:760px){#suneung .sn-rep{grid-template-columns:1fr}}
 </style>
 
 
@@ -1079,13 +1100,41 @@ section[id],#course{scroll-margin-top:80px}
       </div>
 
       <div class="sn-blk">
+        <span class="cap">For Parents · 학부모님께 드리는 것</span>
+        <h3>여덟 회차가 쌓이면, 분석 리포트를 드립니다</h3>
+        <div class="sn-rep">
+          <div class="sn-rep-txt">
+            <p>응시가 여덟 회차쯤 쌓이면 분석 리포트를 드립니다. 대략 2~3개월에 한 번이고, 그 사이에 따로 요청하시면 그때 뽑아 드립니다.</p>
+            <p>한 회차만 보면 그날 컨디션이 섞입니다. 여덟 회차를 모아서 봐야 <b>실제로 약한 유형</b>과 <b>그날만 틀린 것</b>이 갈립니다.</p>
+            <ul><li>회차별 점수 흐름</li><li>영역·유형별 정답률</li><li>이번 회차에 틀린 문항</li><li class="no">평균과 등수는 넣지 않습니다</li></ul>
+            <p class="sn-note">다른 학생과 견주는 자료가 아니라, 우리 아이가 무엇을 반복해서 틀리는지 보는 자료입니다.</p>
+          </div>
+          <figure class="sn-paper" aria-label="분석 리포트 예시 그림">
+            <span class="rp-wm">예시</span>
+            <figcaption><b>모의고사 분석 리포트</b><span>학생 ○○○ · 예시</span></figcaption>
+            <p class="rp-lb">최근 8회 점수 흐름</p>
+            <div class="rp-bars"><i style="height:64%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:61%"></i><i style="height:67%"></i><i style="height:72%"></i><i style="height:63%"></i><i class="cur" style="height:69%"></i></div>
+            <p class="rp-lb">유형별 정답률 · 8회 누적</p>
+            <div class="rp-mt"><span>빈칸 추론</span><em><i class="lo" style="width:28%"></i></em><b>28%</b></div>
+            <div class="rp-mt"><span>글의 순서</span><em><i class="lo" style="width:44%"></i></em><b>44%</b></div>
+            <div class="rp-mt"><span>문장 넣기</span><em><i class="lo" style="width:50%"></i></em><b>50%</b></div>
+            <div class="rp-mt"><span>어법</span><em><i style="width:63%"></i></em><b>63%</b></div>
+            <div class="rp-mt"><span>제목·주제</span><em><i style="width:75%"></i></em><b>75%</b></div>
+            <p class="rp-lb">이번 회차에 틀린 문항</p>
+            <table><tr><th>번호</th><th>유형</th><th>정답</th><th>고른 답</th></tr><tr><td>31</td><td>빈칸 추론</td><td>①</td><td>③</td></tr><tr><td>33</td><td>빈칸 추론 ★</td><td>③</td><td>⑤</td></tr><tr><td>37</td><td>글의 순서 ★</td><td>②</td><td>③</td></tr></table>
+          </figure>
+        </div>
+        <p class="sn-note">그림은 리포트 구성을 보여 드리기 위한 예시이고, 이름·점수·응답은 모두 지어낸 것입니다. 실제 리포트는 상담과 안내문으로만 전해 드립니다.</p>
+      </div>
+
+      <div class="sn-blk">
         <span class="cap">How It Works · 채점과 기록</span>
-        <h3>학생은 평소처럼 마킹만 합니다</h3>
+        <h3>답안지 한 장이 기록이 되기까지</h3>
         <ol class="sn-flow">
           <li><b>OMR 마킹</b>학생은 평소대로 답안지에 마킹합니다.</li>
-          <li><b>스캔해서 읽기</b>반별로 스캔해 마킹을 읽습니다. 사람이 옮겨 적지 않아 옮겨 적다 생기는 실수가 없습니다.</li>
+          <li><b>스캔해서 읽기</b>반별로 스캔해 마킹을 읽습니다. 답을 손으로 옮겨 적는 과정이 없습니다.</li>
           <li><b>정답·배점·유형과 대조</b>문항마다 정답·배점·유형·영역이 등록돼 있어, 점수와 함께 어떤 유형을 틀렸는지가 남습니다.</li>
-          <li class="hi"><b>이상한 답안지는 사람이 확인</b>연하게 칠한 답, 밀려 쓴 답, 두 개 칠한 답, 안 칠한 번호는 점수를 내지 않고 멈춥니다. 실물을 보고 판단하고, 고친 경우 그 이유를 기록합니다.</li>
+          <li class="hi"><b>이상한 답안지는 사람이 확인</b>연하게 칠한 답, 두 개 칠한 답, 안 칠한 번호, 밀려 썼을 수 있을 만큼 점수가 낮은 답안지는 점수를 내지 않고 멈춥니다. 실물을 보고 판단하고, 고친 경우 그 이유를 기록합니다.</li>
           <li><b>학생별·수업용 분석</b>학생마다 약한 영역·유형과 회차별 흐름을, 수업용으로는 많이 틀린 문항과 유형을 정리합니다.</li>
           <li><b>안 본 학생도 기록</b>결석이나 미응시가 기록으로 남아, 나중에 보게 한 뒤 채워 넣습니다.</li>
         </ol>
@@ -1097,7 +1146,7 @@ section[id],#course{scroll-margin-top:80px}
         <div class="sn-pts">
           <div><h4>같은 시험지끼리만 비교</h4><p>시험지마다 난이도가 달라서, 반이나 학년이 아니라 같은 시험지를 본 학생끼리만 비교합니다.</p></div>
           <div><h4>점수가 아니라 응답을 보관</h4><p>학생이 문항마다 고른 답을 남기고 점수는 볼 때마다 계산합니다. 배점이나 기준을 고치면 지난 회차도 같은 기준으로 다시 계산됩니다.</p></div>
-          <div><h4>틀린 채점을 잡는 장치</h4><p>배점 합계를 매번 검산하고, 정답률이 지나치게 낮은 문항은 정답키를 다시 확인합니다. 같은 답안지가 두 번 들어오면 멈춥니다. 실제로 이 장치로 정답키 오류와 밀려 쓴 답안지를 잡아냈습니다.</p></div>
+          <div><h4>틀린 채점을 잡는 장치</h4><p>배점 합계를 매번 검산하고, 정답률이 지나치게 낮은 문항은 정답키를 다시 확인합니다. 같은 답안지가 두 번 들어오면 멈춥니다. 연하게 칠해 빈칸으로 읽힌 답안지를 이 장치로 걸러내, 실물을 확인하고 바로잡은 적이 있습니다.</p></div>
         </div>
       </div>
 
