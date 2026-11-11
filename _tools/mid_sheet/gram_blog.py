@@ -22,7 +22,7 @@ from reading_blog import load_data, strip, TPL, GUIDE, BASE  # 같은 원고 틀
 KIT = os.path.join(HERE, 'gram_blog')
 # 문법 안내 글(중학 영어 문법 무료 학습지 공개, 원고 tools/blog/mid-public-grammar/). 원장님이 블로그에 올리면 주소를 넣는다.
 # 비어 있으면 독해 안내 글(GUIDE)을 가리킨다.
-GRAM_GUIDE = ''
+GRAM_GUIDE = 'https://blog.naver.com/cocosedu/224468729593'
 NUMS = '①②③④⑤⑥'
 
 
