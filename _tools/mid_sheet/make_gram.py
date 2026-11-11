@@ -35,6 +35,12 @@ tail = tail.replace('시험 범위 지문마다 해석·단어·마인드맵·�
                     '코코스가 직접 쓴 독해 지문과 그 지문으로 배우는 문법 학습지를 매주 새로 올려요.')
 tail = tail.replace('../../../', '../../')  # 지문 학습지(3단)와 달리 문법 페이지는 study/grammar-m…/(2단)
 has_review = re.search(r'\breview\s*:\s*\[\s*\{', data) is not None
+# 섹션 안내 문구는 문법마다 다르다: DATA의 exIntro·orderIntro가 있으면 그 문구를 쓴다(없으면 1회 현재완료 문구, 2026-11-11)
+def _opt(key, default):
+    m = re.search(key + r"\s*:\s*'((?:[^'\\]|\\.)*)'", data)
+    return m.group(1) if m else default
+ex_intro = _opt('exIntro', '독해 지문에 실제로 나온 문장이에요. ▶를 누르면 읽어 줘요. 같은 일기 안에서 과거형과 현재완료가 어떻게 나뉘는지 보세요.')
+order_intro = _opt('orderIntro', '해석을 보고 어구를 순서대로 눌러 영어 문장을 완성하세요. 기간·때를 나타내는 말(for ~, since ~)은 문장 끝에 두세요.')
 
 def sec(id_, h, p, inner, extra=''):
     return (f'  <section id="{id_}" aria-labelledby="h-{id_}">\n    <div class="sec-head"><div><h2 id="h-{id_}">{h}</h2><p{p[1]}>{p[0]}</p></div>{extra}</div>\n'
@@ -48,11 +54,11 @@ body = ('<div class="wrap">\n  <header>\n'
         '    <nav class="jump" aria-label="바로가기">' + ''.join(f'<a href="#{a}">{b}</a>' for a, b in nav) + '</nav>\n  </header>\n\n')
 body += sec('hook', '먼저 풀어 보기', ('', ' id="hook-intro"'), '<div class="g-list" id="hook-list"></div>')
 body += sec('rule', '한눈에 정리', ('개념을 먼저 짧게 정리했어요. 표의 함께 쓰는 말을 꼭 기억하세요.', ''), '<div class="r-grid" id="rule-cards"></div>\n    <div id="rule-table" style="margin-top:16px"></div>\n    <ul class="r-tips" id="rule-tips" style="margin-top:14px"></ul>')
-body += sec('examples', '지문 속 문장', ('독해 지문에 실제로 나온 문장이에요. ▶를 누르면 읽어 줘요. 같은 일기 안에서 과거형과 현재완료가 어떻게 나뉘는지 보세요.', ''), '<div class="g-list" id="ex-list"></div>')
+body += sec('examples', '지문 속 문장', (ex_intro, ''), '<div class="g-list" id="ex-list"></div>')
 body += sec('quiz', '단계별 문제', ('기본 → 표준 → 심화 순서예요. 한 번 고르면 바로 채점돼요.', ''), '<div class="qs" id="qs"></div>', '<div class="score" id="score"></div>')
 body += sec('fix', '틀린 곳 고쳐 쓰기', ('어법상 틀린 곳이 하나씩 있어요. 고친 문장 전체를 써서 확인해 보세요.', ''), '<div class="g-list" id="fix-list"></div>')
 body += sec('write', '조건 영작', ('학교 서술형처럼 조건에 맞춰 써 보세요. 단어 수는 쓰는 동안 아래에 세어 줘요.', ''), '<div class="g-list" id="write-list"></div>\n    <div class="g-card" style="margin-top:14px"><span class="b-lab">서술형 감점 체크</span><ul class="g-check" id="write-check"></ul></div>')
-body += sec('order', '문장 배열', ('해석을 보고 어구를 순서대로 눌러 영어 문장을 완성하세요. 기간·때를 나타내는 말(for ~, since ~)은 문장 끝에 두세요.', ''), '<div class="ord" id="ord"></div>')
+body += sec('order', '문장 배열', (order_intro, ''), '<div class="ord" id="ord"></div>')
 if has_review:
     body += sec('review', '지난 문법 복습', ('지난 편에서 배운 문법을 다시 꺼내 봐요. 잊을 때쯤 다시 풀면 오래 기억에 남아요.', ''), '<div class="qs" id="rv"></div>', '<div class="score" id="rv-score"></div>')
 body += sec('reading', '독해로 이어 보기', ('이 문법이 나온 독해 지문을 함께 읽어 보세요.', ''), '<div class="gl" id="links"></div>')
