@@ -1,6 +1,11 @@
 {
  "title": "중등 문법 블로그 발행함",
  "badge": "중등 문법",
- "url": "",
- "posts": []
+ "url": "https://claude.ai/artifact/BW2ESjxUu7di4gFHvxwReZ",
+ "posts": [
+  {
+   "page": "tools/blog/grammar-m3-01/index.html",
+   "name": "중3 1회 간접의문문"
+  }
+ ]
 }

@@ -11,7 +11,7 @@
 
 설정 파일: slug, grammar(문법 이름, 예 '현재완료'), title·tags(없으면 자동), hook(도입 줄들), cover_q(표지 큰 질문, <br> 가능),
 cover_wrong·cover_right(표지의 틀린 문장·맞는 문장), uses_title(쓰임 카드 제목), reading(짝 독해 {"t": 이름, "u": 'study/…/4/'}),
-outro.
+outro, uses_pick(쓰임 카드가 4개를 넘을 때 이미지에 넣을 카드 번호, 0부터), uses_lab(이미지 카드 제목을 짧게 바꿀 때).
 """
 import argparse, html, json, os, re, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -117,6 +117,10 @@ def images(cfg, D, outdir):
     cards.append(f'''<section class="card gc g-ox" id="c2"><div class="sheet"><p class="no2">STEP 1 · 먼저 풀어 보기</p>
   <h2>맞는 문장일까,<br>틀린 문장일까?</h2><ol class="oxl">{rows}</ol><p class="hint">정답은 블로그 글 맨 아래, 학습지에서는 바로 채점!</p>{foot}</div></section>''')
     uses = [c for c in R['cards'] if not c.get('key')]
+    if cfg.get('uses_pick'):  # 쓰임 카드가 4개를 넘으면 이미지에 넣을 카드만 고른다(0부터, 2026-11-11 중3 간접의문문 5개)
+        uses = [uses[i] for i in cfg['uses_pick']]
+    if cfg.get('uses_lab'):  # 이미지 카드 제목을 짧게(두 줄이면 넘침)
+        uses = [dict(c, lab=l) for c, l in zip(uses, cfg['uses_lab'])]
     key = next((c for c in R['cards'] if c.get('key')), None)
     cols = ['t-blue', 't-pink', 't-mint', 't-lilac']
     ub = ''.join(f'''<div class="u {cols[i % 4]}"><b>{c['lab']}</b><small>{c.get('sub', '')}</small><p class="w">{' · '.join(c.get('w', []))}</p><p class="ex">{c.get('ex', '')}</p></div>''' for i, c in enumerate(uses[:4]))

@@ -1,0 +1,208 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>코코스 중등 문법 중3 1회 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>코코스 중등 문법 중3 1회 · 간접의문문 블로그 원고</h1>
+    <p>네이버 블로그에 글 전체를 링크째 붙여 넣을 수 있는 원고예요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>[대표 이미지] 자리에 대표 이미지를 올리고, ‘태그 복사’로 태그를 넣어요.</li>
+    <li>목록에서 한 줄을 눌러 링크가 제대로 열리는지 확인하고 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  <section class="exam" id="list">
+    <div class="exam-head">
+      <div><h2>바로가기만</h2><p class="meta" id="list-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-list">링크 포함 복사</button>
+        <button type="button" class="btn" id="copy-url">문법 학습지 링크 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-list" role="status" aria-live="polite"></p>
+    <div class="preview" id="pv-list" aria-label="붙여 넣을 목록 미리보기"></div>
+  </section>
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"url": "https://cocosedu.kr/study/grammar-m3-01/", "title": "중3 영어 문법 무료 학습지 1회 | 간접의문문 | Do you know where is it?이 틀리는 이유 | 코코스학원", "tags": "중3영어문법 간접의문문 간접의문문문제 중학영어문법 영어서술형 중3영어 영어문법학습지 무료학습지 코코스학원", "count": 2, "groups": [{"g": "바로가기", "items": [["코코스 중등 문법 중3 1회 · 간접의문문 학습지", "https://cocosedu.kr/study/grammar-m3-01/"], ["독해 1회 2번 · 껌을 삼키면 7년 동안 배 속에 남을까?", "https://cocosedu.kr/study/reading-m3-01/2/"]]}], "body": [["p", "[대표 이미지: 문법1회_01_cover.png]"], ["p", "‘그거 어디 있는지 알아?’를 Do you know where is it?이라고 쓰면 서술형에서 감점이에요. Where is it?은 맞는데, 앞에 Do you know가 붙으면 왜 틀린 문장이 될까요?"], ["p", "이번 편은 빼빼로데이 특집으로 나간 코코스 중등 독해 중3 1회(간식에 숨은 과학과 역사) 2번, ‘껌을 삼키면 7년 동안 배 속에 남을까?’ 지문 속 문장으로 간접의문문을 정리했어요. 기말고사 서술형에 자주 나오는 do / does / did 빼기, if, Do you think 문장의 의문사 자리까지 한 번에 잡아 두세요."], ["p", "이번 편도 학원이 직접 쓴 독해 지문 문장으로 만들었어요. 먼저 아래 문장이 맞는지 틀리는지 골라 보고, 학습지에서 개념 정리·문제·서술형 연습까지 이어서 풀어 보세요."], ["p", "학습지 사용법은 지난 글 '중학 영어 독해·문법 무료 학습지 공개'에 정리해 두었어요."], ["link", "▶ 학습지 사용법 안내 글", "https://blog.naver.com/cocosedu/224465333543"], ["link", "▶ 코코스 중등 문법 중3 1회 · 간접의문문 학습지 바로가기", "https://cocosedu.kr/study/grammar-m3-01/"], ["b", "■ 먼저 풀어 보세요: 맞는 문장일까, 틀린 문장일까?"], ["p", "[이미지: 문법1회_02_ox.png]"], ["p", "1. Nobody knows where the seven-year story came from."], ["p", "2. Nobody knows where did the seven-year story come from."], ["p", "3. Do you know where is it?"], ["p", "4. Many people wonder if it is true."], ["p", "5. Do you think where the trash can is?"], ["p", "정답은 글 맨 아래에 있어요. 학습지에서는 누르면 바로 채점되고 고친 문장도 보여 줘요."], ["b", "■ 오늘의 문법 · 간접의문문"], ["p", "📌 꼴 · 의문사 + 주어 + 동사 / if(whether) + 주어 + 동사"], ["p", "질문(의문문)이 다른 문장의 한 부분, 주로 know, wonder, ask, tell, find out 같은 동사의 목적어로 들어간 것을 간접의문문이라고 해요. 평서문처럼 ‘주어 + 동사’ 순서로 쓰고, 문장 끝 부호는 바깥 문장을 따라요."], ["p", "📌 느낌 · 질문을 하나의 덩어리로"], ["p", "직접 묻는 질문은 동사(조동사)가 주어 앞에 와요. 질문이 문장 속에 들어가면 더 이상 묻는 꼴이 아니라 ‘무엇이 ~인지, 어디로 ~하는지’라는 하나의 덩어리가 돼요. 그래서 평서문 순서로 돌아가요."], ["p", "[이미지: 문법1회_03_uses.png]"], ["p", "① be동사·조동사가 있는 질문 (동사를 주어 뒤로) — 함께 쓰는 말: is / are / was, can, should, will"], ["p", "예) Next time, ask yourself where your gum should go. (다음번에는 껌이 어디로 가야 하는지 스스로에게 물어보세요. (지문 15번))"], ["p", "② do / does / did가 있는 질문 (do / does / did를 빼고 시제는 동사에)"], ["p", "예) Nobody knows where the seven-year story came from. (7년 이야기가 어디에서 나왔는지는 아무도 모릅니다. (지문 11번))"], ["p", "③ 의문사가 주어인 질문 (순서 그대로)"], ["p", "예) Let’s find out what really happens. (실제로 무슨 일이 일어나는지 알아봅시다. (지문 4번))"], ["p", "④ 의문사가 없는 질문 (if / whether + 주어 + 동사 (~인지)) — 함께 쓰는 말: if, whether"], ["p", "예) Many people wonder if it is true. (많은 사람들이 그것이 사실인지 궁금해합니다. (지문 3번))"], ["p", "⑤ Do you think ~?로 내용 묻기 (의문사를 문장 맨 앞으로)"], ["p", "예) Where do you think the gum goes? (너는 껌이 어디로 간다고 생각하니?)"], ["b", "■ 직접 묻는 질문과 문장 속 질문 구별하기"], ["p", "[이미지: 문법1회_04_compare.png]"], ["p", "· be동사·조동사: 직접 묻는 질문 (의문문) — Where is the gum?Where should your gum go? / 문장 속 질문 (간접의문문) — I know where the gum is.Ask yourself where your gum should go."], ["p", "· do / does / did: 직접 묻는 질문 (의문문) — Where did the story come from? / 문장 속 질문 (간접의문문) — Nobody knows where the story came from."], ["p", "· 의문사가 주어: 직접 묻는 질문 (의문문) — What really happens? / 문장 속 질문 (간접의문문) — Let’s find out what really happens. (순서 그대로)"], ["p", "· 의문사 없음: 직접 묻는 질문 (의문문) — Is it true? / 문장 속 질문 (간접의문문) — I wonder if it is true. (if 대신 whether도 돼요)"], ["p", "· 학교 시험에서는 Do you know ~?와 Do you think ~?를 구별해요. Do you know ~?는 ‘아는지’를 묻는 질문이라 의문사가 뒤에 남고(Do you know where he lives?), Do you think(believe, suppose) ~?로 장소·때 같은 내용을 물을 때는 의문사가 맨 앞으로 가요(Where do you think he lives?)."], ["p", "· do / does / did를 빼면 시제와 3인칭 단수 -s는 동사로 옮겨요: What did he buy? → what he bought, Where does she live? → where she lives. what he buy, where she live처럼 동사원형을 그대로 두면 서술형에서 감점이에요."], ["p", "· 끝 부호는 바깥 문장을 따라요: I don’t know where he is.는 마침표, Do you know where he is?는 물음표예요. 의문사가 없는 질문을 넣을 때는 if나 whether를 꼭 넣어요(I wonder if it is true.)."], ["b", "■ 서술형에서 자주 감점되는 문장"], ["p", "1. Do you know where does she live? (너는 그녀가 어디에 사는지 아니?)"], ["p", "2. Tell me what did you eat for lunch. (점심으로 무엇을 먹었는지 나에게 말해 줘.)"], ["p", "3. Nobody knows when did the story begin. (그 이야기가 언제 시작되었는지 아무도 모른다.)"], ["p", "어디가 틀렸을까요? 고친 문장은 맨 아래 정답에 있어요. 학습지 '틀린 곳 고쳐 쓰기'에서는 직접 써 보면 대문자·마침표까지 확인해 줘요."], ["p", "[이미지: 문법1회_05_check.png]"], ["p", "✅ 서술형 감점 체크"], ["p", "· 의문사(또는 if / whether) 뒤를 ‘주어 + 동사’ 순서로 썼나요?"], ["p", "· do / does / did를 빼고, 동사를 시제·주어에 맞게 바꿨나요? (did come → came, does live → lives)"], ["p", "· 의문사가 없는 질문에 if나 whether를 넣었나요?"], ["p", "· Do you think(believe) ~?로 내용을 묻는 질문이면 의문사를 문장 맨 앞으로 보냈나요?"], ["p", "· 조건(꼭 쓸 말·단어 수·줄임말)을 지켰나요?"], ["p", "· 끝 부호를 바깥 문장에 맞췄나요? (I don’t know ~. / Do you know ~?) 첫 글자 대문자·철자도 확인했나요?"], ["b", "■ 독해 지문으로 이어 읽기"], ["p", "이번 편 예문은 코코스 중등 독해 중3 1회 2번 껌 지문에서 가져왔어요. 직접 묻는 질문(So does the gum stay inside you for years?)과 문장 속 질문(Nobody knows where the seven-year story came from.)이 한 지문 안에서 어떻게 다른지 직접 찾아보세요."], ["link", "▶ 독해 1회 2번 · 껌을 삼키면 7년 동안 배 속에 남을까?", "https://cocosedu.kr/study/reading-m3-01/2/"], ["b", "■ 정답"], ["p", "먼저 풀어 보기: 1번 O · 2번 X · 3번 X · 4번 O · 5번 X"], ["p", "2. Nobody knows where the seven-year story came from."], ["p", "3. Do you know where it is?"], ["p", "5. Where do you think the trash can is?"], ["p", "자주 감점되는 문장: 1. Do you know where she lives? / 2. Tell me what you ate for lunch. / 3. Nobody knows when the story began."], ["br"], ["p", "다음 편도 독해 지문 속 문장으로 찾아올게요. 링크와 PDF는 친구에게 자유롭게 공유해도 좋아요."]]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function listHTML(){
+  var h='';
+  D.groups.forEach(function(g,i){
+    if(i)h+='<p><br></p>';
+    h+='<p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){h+='<p>'+a(it[1],it[0])+'</p>'});
+  });
+  return h;
+}
+function listText(){
+  var t='';
+  D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
+  return t;
+}
+/*naver-blog-format-2026-11c*/
+function tableHTML(rows){
+  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
+  var h='<table border="1" style="border-collapse:collapse;width:100%">';
+  rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
+    h+=i?'<td style="color:#000000;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
+        :'<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</th>'});h+='</tr>'});
+  return h+'</table>';
+}
+function bodyHTML(){
+  var out=[],kinds=[],IT=/^\s*(?:[①-⑳]|[·•‧∙]\s|-\s|\d{1,2}[.)]\s)/,IMG=/^\[(대표 )?이미지(?:\s*[:：]\s*(.+?))?\]$/,g=0;
+  function big(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(String(t).replace(/^■\s*/,''))+'</b></span></p>'}
+  function slot(l){return '<p><span style="color:#E25100"><b>◆ '+esc(l)+' — 여기에 그림을 붙이고 이 줄은 지우세요</b></span></p>'}
+  D.body.forEach(function(b){
+    var k=b[0],t=b[1],m=k==='p'&&IMG.exec(String(t).trim());
+    if(k==='br')return;
+    kinds.push(m?'img':(k==='p'&&IT.test(t))?'item':(k==='hot'&&/^[①-⑳]/.test(t))?'s':k);
+    if(m){out.push(slot(m[1]?'대표 이미지':'그림 '+(++g)+(m[2]?' ('+m[2]+')':'')));return}
+    if(k==='b'||k==='ser')out.push(big(t));
+    else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><span style="color:#000000"><b>'+esc(t)+'</b></span></p>'
+      :'<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>');
+    else if(k==='note')out.push('<p><span style="font-size:13px;color:#767171">'+esc(t)+'</span></p>');
+    else if(k==='link')out.push('<p>'+a(b[2],t)+'</p>');
+    else if(k==='list')out.push(listHTML().replace(/<p><b>/g,'<p><span style="color:#000000"><b>').replace(/<\/b><\/p>/g,'</b></span></p>'));
+    else if(k==='table')out.push(tableHTML(t));
+    else out.push('<p><span style="color:#000000">'+esc(t)+'</span></p>');
+  });
+  // 한 줄 띄우기 예외(2026-11-11 원장님): 보기 ①~⑤·목록(· • - 1.) 줄은 앞줄(본문·작은 소제목·목록)에 붙인다
+  var h='';out.forEach(function(x,i){if(i)h+=(kinds[i]==='item'&&/^(p|s|item)$/.test(kinds[i-1]))?'':'<p><br></p>';h+=x});
+  return h+'<p><br></p>';
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='list')t+='\n'+listText()+'\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent='제목·본문·태그 · 이미지 5장';
+$('list-meta').textContent='바로가기 '+D.count+'개 · 문법 학습지와 짝 독해 지문';
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+$('pv-list').innerHTML=listHTML();
+
+var stP=$('st-post'),stL=$('st-list');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+$('copy-list').addEventListener('click',function(e){copyRich(listHTML(),listText(),e.currentTarget,stL,$('pv-list'),'바로가기 목록을 복사했어요. 본문의 바로가기 자리에 붙여 넣으세요.')});
+$('copy-url').addEventListener('click',function(e){copyPlain(D.url,e.currentTarget,stL,'문법 학습지 주소를 복사했어요.',null)});
+</script>
+
+
+
+</body></html>

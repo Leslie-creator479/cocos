@@ -1,0 +1,33 @@
+{
+  "slug": "grammar-m3-01",
+  "grammar": "간접의문문",
+  "title": "중3 영어 문법 무료 학습지 1회 | 간접의문문 | Do you know where is it?이 틀리는 이유 | 코코스학원",
+  "tags": "중3영어문법 간접의문문 간접의문문문제 중학영어문법 영어서술형 중3영어 영어문법학습지 무료학습지 코코스학원",
+  "hook": [
+    "‘그거 어디 있는지 알아?’를 Do you know where is it?이라고 쓰면 서술형에서 감점이에요. Where is it?은 맞는데, 앞에 Do you know가 붙으면 왜 틀린 문장이 될까요?",
+    "이번 편은 빼빼로데이 특집으로 나간 코코스 중등 독해 중3 1회(간식에 숨은 과학과 역사) 2번, ‘껌을 삼키면 7년 동안 배 속에 남을까?’ 지문 속 문장으로 간접의문문을 정리했어요. 기말고사 서술형에 자주 나오는 do / does / did 빼기, if, Do you think 문장의 의문사 자리까지 한 번에 잡아 두세요."
+  ],
+  "cover_q": "Where is it?은 맞는데<br><i>Do you know</i>가 붙으면?",
+  "cover_wrong": "Do you know where is it?",
+  "cover_right": "Do you know where it is?",
+  "uses_title": "간접의문문, 이것만은 꼭",
+  "compare_title": "직접 묻기일까, 문장 속 질문일까?",
+  "reading": {
+    "t": "독해 1회 2번 · 껌을 삼키면 7년 동안 배 속에 남을까?",
+    "u": "study/reading-m3-01/2/"
+  },
+  "reading_line": "이번 편 예문은 코코스 중등 독해 중3 1회 2번 껌 지문에서 가져왔어요. 직접 묻는 질문(So does the gum stay inside you for years?)과 문장 속 질문(Nobody knows where the seven-year story came from.)이 한 지문 안에서 어떻게 다른지 직접 찾아보세요.",
+  "cover_sub": "껌 지문 속 문장으로 배우는 간접의문문 · 서술형 대비",
+  "uses_pick": [
+    0,
+    1,
+    3,
+    4
+  ],
+  "uses_lab": [
+    "① be동사·조동사",
+    "② do / does / did",
+    "④ 의문사가 없을 때",
+    "⑤ Do you think ~?"
+  ]
+}
