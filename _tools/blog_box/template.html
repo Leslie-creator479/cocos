@@ -195,7 +195,12 @@ function blockHTML(b){
  return b.k==='tbl' ? tblHTML(b.rows) : (NV[b.k]||NV.p)(b.t);
 }
 function bodyHTML(bs){
- return bs.map(blockHTML).join('<p><br></p>')+'<p><br></p>';
+ // 한 줄 띄우기 예외(2026-11-11 원장님): 보기 ①~⑤·목록(· • - 1.) 줄은 앞줄에 붙인다(제목 줄 뒤는 띄움)
+ var IT=/^\s*(?:[①-⑳]|[·•‧∙]\s|-\s|\d{1,2}[.)]\s)/,h='';
+ bs.forEach(function(b,i){var a=bs[i-1];
+  if(i) h+=(b.k==='p'&&IT.test(b.t)&&a&&(a.k==='p'||a.k==='s'))?'':'<p><br></p>';
+  h+=blockHTML(b);});
+ return h+'<p><br></p>';
 }
 function bodyText(bs){
  return bs.map(function(b){
