@@ -507,7 +507,85 @@ var DATA = {
     { s: 6, c: ['This delay', 'has caused us', 'considerable', 'inconvenience.'] },
     { s: 7, c: ['Therefore,', 'please provide', 'a clear and specific', 'delivery date.'] },
     { s: 8, c: ['We expect', 'this issue', 'to be addressed promptly,', 'so that we can reorganize', 'our schedule', 'to receive the delivery', 'without any confusion.'] }
-  ]
+  ],
+  challenge: [
+  { type: '목적 · 고난도', p: '윗글의 목적으로 가장 적절한 것은?', en: true,
+    o: ['To demand compensation for the trouble a late delivery has caused the family',
+        'To report that a store manager gave customers false information about delivery times',
+        'To complain that the bookshelves do not suit the style of the family’s new home',
+        'To ask the store to deliver the bookshelves on a weekend when someone can be at home',
+        'To press the store to commit to a firm arrival date for an overdue order'],
+    a: 4,
+    e: '글쓴이는 약속된 날(<i>which was last weekend</i>)에 책장이 오지 않았다고 한 뒤 <i>Therefore, please provide a clear and specific delivery date.</i>라고 요청해요. ‘기한이 지난 주문에 대해 확실한 도착 날짜를 약속하라고 촉구하려고’로 바꿔 쓴 ⑤가 정답이에요. ① <i>considerable inconvenience</i>를 겪었다고는 했지만 보상을 요구하지는 않았어요(불편 → 보상으로 지나치게 이어 붙인 함정). ② manager·four weeks는 원문 낱말이지만, 매니저가 거짓 정보를 줬다고 탓하는 글이 아니에요. ③ 오히려 <i>furniture that perfectly matched our new home</i>을 찾아 기뻐했어요. ④ 주말 배송을 요청한 것이 아니라, 날짜를 알려 주면 자신들이 일정을 맞추겠다고 했어요(<i>so that we can reorganize our schedule</i>).' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'When we bought the bookshelves, the manager said it would take four weeks for delivery, which was last weekend. We had ______________; however, no one came with the bookshelves that day. This delay has caused us considerable inconvenience.',
+    o: ['cleared our schedules so that someone could be home to take in the delivery',
+        'set our plans to visit the store and check on the order',
+        'informed the store that no one would be available that weekend',
+        'moved our plans to another weekend to receive the delivery',
+        'ensured that the bookshelves would perfectly match our new home'],
+    a: 0,
+    h: '빈칸 뒤의 however와 This delay가 앞에 어떤 내용이 있어야 자연스러운지 생각해 보세요.',
+    e: '원문은 <i>set our plans to ensure someone would be available to receive the delivery</i>(누군가 배송을 받을 수 있도록 확실히 계획을 세웠다)예요. ‘누군가 집에서 배송을 받을 수 있도록 일정을 비워 두었다’로 바꿔 쓴 ①이 정답이에요. 뒤의 <i>however, no one came with the bookshelves that day</i>와 <i>This delay has caused us considerable inconvenience</i>가 이어지려면 배송을 받을 준비를 해 두었어야 해요. ② set our plans는 원문 낱말이지만, 매장에 가서 확인하려 했다면 ‘그런데 아무도 오지 않았다’와 맞지 않아요. ③ 아무도 집에 없다고 알렸다면 배송이 오지 않은 것을 매장 탓의 불편으로 따질 수 없어요. ④ 다른 주말로 계획을 옮겼다면 그날 오지 않은 것이 불편할 까닭이 없어요. ⑤ ensure·perfectly match는 원문 낱말이지만 가구가 어울리는지는 배송과 관계없어요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'The writer, upset that the store <u>  (A)  </u> its delivery commitment, asks for a firm date and a <u>  (B)  </u> resolution so that the family can plan around it.',
+    o: ['revised — swift', 'addressed — considerable', 'broke — flexible', 'broke — swift', 'addressed — swift'],
+    a: 3,
+    e: '(A) 매니저가 말한 4주 뒤(<i>which was last weekend</i>)에 <i>no one came with the bookshelves that day</i>였으므로 매장은 배송 약속을 ‘어겼어요(broke)’. ① revised(고쳤다)는 매장이 새 날짜를 알려 왔다는 뜻이 되는데, 글쓴이는 아무 연락 없이 배송이 오지 않아 이제 날짜를 알려 달라고 하는 것이므로 맞지 않아요. (B) <i>We expect this issue to be addressed promptly</i>이므로 ‘신속한(swift)’ 해결이에요. ⑤ addressed는 원문 낱말이지만 원문에서 처리되기를 바라는 것은 앞으로의 일이에요. 매장이 이미 약속을 ‘처리했다’면 편지를 쓸 까닭이 없어요. ② considerable도 원문 낱말이지만 원문에서는 불편이 ‘상당했다’는 말이라 해결을 꾸밀 수 없어요. ③ flexible(융통성 있는)은 <i>a clear and specific delivery date</i>를 바라는 것과 맞지 않아요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'I was truly ①<u>thrilled</u> to find furniture that perfectly matched our new home. When we bought the bookshelves, the manager said it would take four weeks for delivery, which was last weekend. We had laid our plans to ensure someone would be available to ②<u>decline</u> the delivery; however, no one came with the bookshelves that day. This delay has caused us considerable ③<u>trouble</u>. Therefore, please ④<u>supply</u> an ⑤<u>explicit</u> and specific delivery date.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 1,
+    e: '② decline(거절하다)은 원문에서 <b>receive</b>(받다)였어요. 글쓴이는 배송을 ‘받을’ 사람이 집에 있도록 계획을 세워 두었는데 <i>however, no one came with the bookshelves that day</i>, 즉 그날 아무도 오지 않아 <i>This delay</i>가 불편을 끼쳤다고 해요. 배송을 거절하려고 기다렸다면 오지 않은 것이 불편할 까닭이 없어요. ① thrilled(=excited, 몹시 들뜬), ③ trouble(=inconvenience, 불편), ④ supply(=provide, 제공하다), ⑤ explicit(=clear, 명확한)은 원문 낱말을 같은 뜻으로 바꾼 것이라 적절해요. 지문의 laid our plans도 원문 set our plans를 바꾼 말이에요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'About a month ago, my wife and I ⓐ<u>have purchased</u> a set of bookshelves from your store. I was truly ⓑ<u>exciting</u> to find furniture ⓒ<u>what</u> perfectly matched our new home. When we bought the bookshelves, the manager said it would take four weeks for delivery, which was last weekend. We had set our plans ⓓ<u>to ensure</u> someone would be available to receive the delivery; however, no one came with the bookshelves that day. This delay ⓔ<u>has caused</u> us considerable inconvenience.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 2,
+    e: '틀린 것은 ⓐ, ⓑ, ⓒ 세 개예요. ⓐ About a month ago처럼 분명한 과거 시점을 나타내는 말은 현재완료와 함께 쓸 수 없으므로 과거형 <b>purchased</b>여야 해요(원문 <i>my wife and I purchased a set of bookshelves</i>). ⓑ 주어 I가 들뜬 감정을 ‘느끼는’ 것이므로 과거분사 <b>excited</b>여야 해요. exciting은 ‘(남을) 들뜨게 하는’이에요. ⓒ 앞에 선행사 furniture가 있으므로 what이 아니라 관계대명사 <b>that</b>(또는 which)이어야 해요. ⓓ ‘~하기 위해’라는 목적을 나타내는 to부정사라 맞아요. ⓔ 지연이 지금까지 불편을 끼쳐 온 것이고 과거 시점을 나타내는 말이 없으므로 현재완료 has caused가 맞아요(주어 This delay가 단수라 has).' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'To the Customer Service Team, About a month ago, my wife and I purchased a set of bookshelves from your store. I was truly excited to find furniture that perfectly matched our new home. ① When we bought the bookshelves, the manager said it would take four weeks for delivery, which was last weekend. ② The manager also kindly showed us a few other pieces that would suit our living room. ③ We had set our plans to ensure someone would be available to receive the delivery; however, no one came with the bookshelves that day. ④ This delay has caused us considerable inconvenience. ⑤ Therefore, please provide a clear and specific delivery date. We expect this issue to be addressed promptly, so that we can reorganize our schedule to receive the delivery without any confusion.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 1,
+    e: '②는 지어낸 문장이에요. The manager와 ‘집에 어울리는 가구’라는 말로 앞 문장들과 이어지는 듯하지만, 편지는 약속한 날 오지 않은 배송과 새 배송 날짜 요청을 다루므로 매니저가 다른 가구를 보여 준 일은 흐름에서 벗어나요. ②를 빼면 4주 뒤인 <i>last weekend</i>에 맞춰 <i>We had set our plans</i>로 바로 이어져요. ①도 매니저가 나오지만 배송 예정일을 알려 주는 문장이라 뒤의 <i>that day</i>를 위해 꼭 필요해요.' },
+
+  { type: '순서 · 변형', p: '주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?',
+    q: '<span class="box">To the Customer Service Team, About a month ago, my wife and I purchased a set of bookshelves from your store. I was truly excited to find furniture that perfectly matched our new home.</span>(A) When we bought the bookshelves, the manager said it would take four weeks for delivery, which was last weekend.<br><br>(B) Such a letdown has caused us considerable inconvenience. Therefore, please provide a clear and specific delivery date. We expect this issue to be addressed promptly, so that we can reorganize our schedule to receive the delivery without any confusion.<br><br>(C) We had set our plans to ensure someone would be available to receive the delivery; however, no one came with the bookshelves that day.',
+    o: ['(A) — (C) — (B)', '(B) — (A) — (C)', '(B) — (C) — (A)', '(C) — (A) — (B)', '(C) — (B) — (A)'],
+    a: 0,
+    h: '각 단락의 날짜 표현과 Such a ~가 가리킬 내용이 어디에 있는지 찾아보세요.',
+    e: '주어진 글은 책장을 산 이야기로 끝나요. (A) 그 책장을 살 때 매니저가 배송에 4주가 걸린다고 했고 그날이 <i>last weekend</i>였다는 정보가 먼저 와야, (C)의 <i>that day</i>(그날)와 <i>the delivery</i>가 무엇인지 알 수 있어요. (C) 계획을 세웠는데 아무도 오지 않았다는 일이 있어야 (B)의 Such a letdown(그런 실망스러운 일, 원문 <i>This delay</i>)이 가리킬 대상이 생겨요. 따라서 (A) — (C) — (B)예요. (C)를 맨 앞에 두면 that day가 가리킬 날이 없고, (B)를 (C) 앞에 두면 아직 실망스러운 일이 나오지 않았어요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'This delay has caused us considerable inconvenience. Therefore, please provide a clear and specific delivery date. We expect this issue to be addressed promptly, so that we can plan our days around the delivery <u>instead of waiting in the dark</u>.',
+    o: ['rather than waiting at home late into the night for the driver',
+        'rather than being kept from learning why the delivery failed',
+        'rather than having to receive the bookshelves with no lights on',
+        'rather than receiving furniture that no longer suits our home',
+        'rather than staying unsure of when the bookshelves will actually arrive'],
+    a: 4,
+    h: '여기서 ‘어둠’은 빛이 아니라 무엇이 없는 상태일지 생각해 보세요.',
+    e: '‘어둠 속에서 기다리다’는 실제로 불이 꺼진 곳이 아니라 ‘아무것도 모른 채’ 기다린다는 비유예요. 원문에서 이 자리는 <i>so that we can reorganize our schedule to receive the delivery without any confusion</i>이었고, 바로 앞에서 <i>please provide a clear and specific delivery date</i>라고 했으므로 글쓴이가 모르는 것은 책장이 ‘언제’ 오는지예요. 그래서 ⑤가 정답이에요. ①·③은 dark를 밤이나 불 꺼진 곳으로 읽은 문자 그대로의 해석이에요. ② 배송이 왜 안 왔는지 이유를 알려 달라는 말은 없고, 글쓴이가 바란 것은 날짜예요. ④ 가구가 집에 어울리는지는 글 앞부분의 이야기이고 문제가 된 적이 없어요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 글쓴이가 책장을 산 날은 배송 예정일보다 약 4주 앞선 때였다.<br>(b) 배송 예정일에 집에 아무도 없어서 글쓴이는 책장을 받지 못했다.<br>(c) 글쓴이는 새집과 잘 어울리는 가구를 찾아 무척 기뻐했었다.<br>(d) 글쓴이는 이번 주말까지는 반드시 책장을 배송해 달라고 요구한다.<br>(e) 글쓴이는 새 배송 날짜를 알게 되면 그에 맞춰 일정을 다시 짤 생각이다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 2,
+    e: '일치하는 것은 (a), (c), (e) 세 개예요. (a) <i>the manager said it would take four weeks for delivery, which was last weekend</i>이므로 산 날은 예정일보다 4주 앞서요. (c) <i>I was truly excited to find furniture that perfectly matched our new home</i>과 같아요. (e) <i>so that we can reorganize our schedule to receive the delivery without any confusion</i>과 같아요. (b) 오히려 <i>We had set our plans to ensure someone would be available</i>, 즉 받을 사람을 확실히 두었는데 <i>no one came with the bookshelves that day</i>였어요. (d) 특정 기한을 정해 요구한 것이 아니라 <i>a clear and specific delivery date</i>를 알려 달라고 했어요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['서윤: 매니저가 배송 기간을 일부러 짧게 말해서 책장을 팔았던 거야.',
+        '수아: 글쓴이는 매장을 더는 믿지 못해서 주문을 취소할 생각을 하고 있어.',
+        '태오: 글쓴이는 배송이 늦어진 이유를 자세히 설명해 달라고 요구하고 있어.',
+        '도현: 글쓴이가 굳이 ‘명확하고 구체적인’ 날짜를 달라고 하는 건, 지난번처럼 일정을 맞춰 두고 헛되이 기다리는 일을 또 겪지 않으려는 거야.',
+        '민서: 새집과 잘 어울리던 책장이 이제는 별로 마음에 들지 않게 된 거야.'],
+    a: 3,
+    e: '글쓴이는 <i>We had set our plans to ensure someone would be available to receive the delivery</i>였는데 <i>no one came with the bookshelves that day</i>를 겪었고, 그래서 <i>a clear and specific delivery date</i>를 달라며 <i>so that we can reorganize our schedule to receive the delivery without any confusion</i>이라고 해요. 지난번의 헛된 기다림을 되풀이하지 않으려는 것이라는 도현의 추론이 맞아요. 서윤: 매니저가 일부러 그랬다는 근거가 없어요. 수아: 취소가 아니라 배송 날짜를 요청하고 있어요. 태오: 이유가 아니라 날짜를 요구해요. 민서: 책장이 싫어졌다는 말은 없어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
