@@ -1,6 +1,11 @@
 {
  "title": "안내·연재 블로그 발행함",
  "badge": "안내·연재",
- "url": "",
- "posts": []
+ "url": "https://claude.ai/artifact/BxMLS63YV9vDNNneEMF5Vo",
+ "posts": [
+  {
+   "page": "tools/blog/grammar-class/index.html",
+   "name": "고등부 문법 수업 소개"
+  }
+ ]
 }
