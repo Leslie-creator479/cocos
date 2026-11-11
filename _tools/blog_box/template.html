@@ -1,0 +1,457 @@
+<title>__TITLE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+/* 세로 한 줄 — 위에서 아래로 따라가는 작업 순서 */
+:root{
+  --bg:#ffffff; --ink:#1a1a1a; --muted:#767171; --line:#e6e2dc;
+  --surface:#f5f7fa; --navy:#1f3864; --orng:#e25100; --orng-soft:#fdf1ea;
+  --ok:#1e7a46; --ok-soft:#e7f4ec;
+  --font:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#13161c; --ink:#eceef2; --muted:#9aa0ab; --line:#2b313b;
+  --surface:#1b1f27; --navy:#8fb3e6; --orng:#f08350; --orng-soft:#2e2018;
+  --ok:#5cc28a; --ok-soft:#16251d; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#13161c; --ink:#eceef2; --muted:#9aa0ab; --line:#2b313b;
+  --surface:#1b1f27; --navy:#8fb3e6; --orng:#f08350; --orng-soft:#2e2018;
+  --ok:#5cc28a; --ok-soft:#16251d; color-scheme:dark;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+ font-size:15px;line-height:1.65}
+.wrap{max-width:900px;margin:0 auto;
+ padding-left:max(16px,env(safe-area-inset-left,0px));
+ padding-right:max(16px,env(safe-area-inset-right,0px));
+ padding-block:36px 72px}
+h1{margin:0;font-size:28px;font-weight:800;letter-spacing:-.6px;
+ text-wrap:balance}
+header p{margin:8px 0 0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{display:inline-flex;align-items:center;font-size:13px;font-weight:700;
+ border-radius:999px;padding:4px 12px;background:var(--surface)}
+.chip.o{background:var(--orng-soft);color:var(--orng)}
+a.chip{color:inherit;text-decoration:none}
+a.chip:hover{background:var(--orng-soft);color:var(--orng)}
+a.chip:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.post{scroll-margin-top:16px}
+section{margin-top:34px}
+h2{font-size:20px;margin:0 0 12px;letter-spacing:-.3px}
+.guide{display:grid;gap:8px;margin:0;padding:0;list-style:none;
+ counter-reset:g}
+.guide li{counter-increment:g;display:grid;grid-template-columns:26px 1fr;
+ gap:12px;align-items:start;background:var(--surface);border-radius:12px;
+ padding:12px 14px;font-size:14px}
+.guide li::before{content:counter(g);width:24px;height:24px;border-radius:50%;
+ background:var(--ink);color:var(--bg);font:700 12px/24px var(--mono);
+ text-align:center}
+.post{border:1px solid var(--line);border-radius:18px;padding:22px;
+ margin-top:18px}
+.post h3{margin:0;font-size:19px;letter-spacing:-.3px;text-wrap:balance}
+.big{display:grid;gap:10px;margin-top:16px}
+.big button.wide{width:100%;padding:14px 16px;font-size:15px;
+ background:var(--surface);color:var(--ink)}
+.big button.hero{background:var(--orng);color:#fff;font-size:16px;
+ padding:16px}
+.big button.done{background:var(--ok);color:#fff}
+.ghead{font-size:13px;font-weight:700;color:var(--muted);margin-top:6px}
+.gimgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));
+ gap:10px}
+.gcard{border:1px dashed var(--orng);border-radius:12px;padding:10px;
+ background:var(--orng-soft);display:grid;gap:7px;justify-items:center;
+ align-content:start;min-width:0}
+.gcard img{width:100%;height:88px;object-fit:cover;object-position:top center;
+ border-radius:6px;border:1px solid var(--line);background:var(--surface)}
+.gcard b{font-size:13px}
+.gcard .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.gcard button{padding:7px 12px;font-size:13px}
+.seq{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px;
+ counter-reset:q}
+.seq>li{counter-increment:q;display:grid;grid-template-columns:30px 1fr;
+ gap:12px;align-items:start}
+.seq>li::before{content:counter(q);width:26px;height:26px;margin-top:11px;
+ border-radius:50%;background:var(--surface);color:var(--muted);
+ font:700 12px/26px var(--mono);text-align:center}
+.seq>li.im::before{background:var(--orng);color:#fff}
+.row{display:grid;grid-template-columns:118px minmax(0,1fr) auto;gap:12px;
+ align-items:center;border:1px solid var(--line);border-radius:12px;
+ padding:11px 13px;min-width:0}
+.k{font-weight:700;font-size:14px}
+.k small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.v{font-size:13.5px;color:var(--muted);overflow:hidden;
+ text-overflow:ellipsis;white-space:nowrap;min-width:0}
+button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:10px;
+ padding:9px 15px;cursor:pointer;background:var(--orng);color:#fff;
+ white-space:nowrap}
+button:hover{filter:brightness(.93)}
+button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+button.done{background:var(--ok)}
+button.g{background:var(--surface);color:var(--ink);font-size:13px;
+ padding:7px 11px}
+.imrow{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;
+ align-items:center;border:1px dashed var(--orng);border-radius:12px;
+ padding:11px 13px;background:var(--orng-soft);min-width:0}
+.imrow img{width:132px;height:auto;display:block;border-radius:8px;
+ border:1px solid var(--line);background:var(--surface)}
+.imrow b{display:block;font-size:14px}
+.mono{font-family:var(--mono);font-size:11.5px;color:var(--muted);
+ overflow-wrap:anywhere;display:block;margin-top:2px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+details summary{cursor:pointer;font-size:13px;font-weight:700;
+ color:var(--muted);margin-top:20px}
+.paper{margin-top:10px;border:1px solid var(--line);border-radius:12px;
+ padding:20px;background:var(--bg)}
+.paper .ttl{font-size:19px;font-weight:700;margin-bottom:12px}
+.paper p{margin:0 0 6px}
+.paper img{width:100%;height:auto;border-radius:6px;margin:10px 0;display:block}
+.paper table{border-collapse:collapse;width:100%;margin:10px 0;font-size:13.5px}
+.paper th{background:var(--navy);color:#fff;padding:7px 9px;text-align:left}
+.paper td{border-bottom:1px solid var(--line);padding:7px 9px}
+.tbwrap{overflow-x:auto}
+.tip{margin-top:12px;font-size:13.5px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));
+ transform:translateX(-50%);background:var(--ink);color:var(--bg);
+ padding:10px 18px;border-radius:999px;font-size:14px;font-weight:700;
+ opacity:0;pointer-events:none;transition:opacity .2s;
+ max-width:calc(100% - 32px);text-align:center;z-index:20}
+.toast.on{opacity:1}
+@media (max-width:620px){
+ h1{font-size:23px}
+ .post{padding:16px 14px}
+ .row{grid-template-columns:minmax(0,1fr) auto}
+ .v{display:none}
+ .imrow{grid-template-columns:92px minmax(0,1fr)}
+ .imrow img{width:92px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+ <h1>__H1__</h1>
+ <p>본문은 한 번에 들어갑니다. 그림만 자리마다 따로 붙이시면 됩니다.</p>
+ <div class="chips" id="hchips"></div>
+</header>
+
+<section>
+ <h2>올리는 순서</h2>
+ <ol class="guide">
+  <li><span>네이버 블로그에서 <b>글쓰기</b>를 엽니다.</span></li>
+  <li><span><b>제목 복사</b> → 제목 칸에 <b>Ctrl + V</b>.</span></li>
+  <li><span><b>글 전체 복사</b> → 본문 칸에 <b>Ctrl + V</b>.
+   그림 자리에 <b style="color:var(--orng)">◆ 주황색 줄</b>이 들어갑니다.</span></li>
+  <li><span>주황색 줄을 하나씩 찾아 그 줄을 클릭하고,
+   아래 <b>그림 넣기</b>에서 같은 이름의 <b>복사</b>를 눌러 <b>Ctrl + V</b>.
+   그림이 들어가면 <b>주황색 줄을 지우십시오.</b></span></li>
+  <li><span><b>발행</b> → 카테고리를 고르고 태그 칸에
+   <b>태그 복사</b> → <b>Ctrl + V</b>.</span></li>
+ </ol>
+ <p class="tip">네이버는 본문에 한꺼번에 넣은 그림을 걸러 냅니다. 그래서 그림은
+ 한 장씩 복사해 붙이는 쪽이 확실합니다. 본문을 통째로 붙이는 것이 어려우시면
+ 글 카드 아래 「한 칸씩 넣기」를 펴십시오 — 본문을 그림 자리에서 끊어 놓은
+ 목록이 들어 있습니다.</p>
+</section>
+
+<section id="posts"></section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+var POSTS = __POSTS__;
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+ .replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+var NV = {
+ h:  function(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(t)+'</b></span></p>';},
+ ser:function(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(t)+'</b></span></p>';},
+ hot:function(t){return '<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>';},
+ s:  function(t){return '<p><b>'+esc(t)+'</b></p>';},
+ note:function(t){return '<p><span style="font-size:13px;color:#767171">'+esc(t)+'</span></p>';},
+ p:  function(t){return '<p>'+esc(t)+'</p>';}
+};
+function tblHTML(rows){
+ // 열마다 가장 긴 칸이 14자를 넘으면 그 열만 왼쪽, 아니면 가운데
+ var al=[];
+ for(var j=0;j<rows[0].length;j++){
+  var mx=0;
+  for(var i=1;i<rows.length;i++) mx=Math.max(mx,(rows[i][j]||'').length);
+  al.push(mx>14?'l':'c');
+ }
+ function ta(j){return (al[j]==='l')?'left':'center';}
+ var o='<table border="1" style="border-collapse:collapse;width:100%">';
+ rows.forEach(function(r,i){
+  o+='<tr>'+r.map(function(c,j){
+   return i===0 ? '<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+ta(j)+'">'+esc(c)+'</th>'
+                : '<td style="padding:6px 8px;text-align:'+ta(j)+'">'+esc(c)+'</td>';}).join('')+'</tr>';});
+ return o+'</table>';
+}
+function blockHTML(b){
+ if(b.k==='a') return '<p><a href="'+esc(b.u)+'" target="_blank" rel="noopener">'+esc(b.t)+'</a></p>';
+ if(b.k==='raw') return b.h;
+ return b.k==='tbl' ? tblHTML(b.rows) : (NV[b.k]||NV.p)(b.t);
+}
+function bodyHTML(bs){
+ return bs.map(blockHTML).join('<p><br></p>')+'<p><br></p>';
+}
+function bodyText(bs){
+ return bs.map(function(b){
+  if(b.k==='tbl') return b.rows.map(function(r){return r.join(' · ');}).join('\r\n');
+  if(b.k==='a') return b.t===b.u?b.u:b.t+'\r\n'+b.u;
+  return b.t;
+ }).join('\r\n')+'\r\n';
+}
+
+var toastEl=document.getElementById('toast'),tt;
+function toast(m){toastEl.textContent=m;toastEl.classList.add('on');
+ clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove('on');},2600);}
+
+function copyRich(h,t){
+ var ok=false;
+ var ta=document.createElement('textarea');
+ ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';
+ ta.style.top='-1000px';ta.style.opacity='0';
+ document.body.appendChild(ta);ta.select();
+ function onCopy(e){try{e.clipboardData.setData('text/html',h);
+  e.clipboardData.setData('text/plain',t);e.preventDefault();ok=true;}catch(_){}}
+ document.addEventListener('copy',onCopy);
+ try{document.execCommand('copy');}catch(_){}
+ document.removeEventListener('copy',onCopy);
+ document.body.removeChild(ta);
+ if(ok) return Promise.resolve();
+ if(navigator.clipboard&&window.ClipboardItem){
+  return navigator.clipboard.write([new ClipboardItem({
+   'text/html':new Blob([h],{type:'text/html'}),
+   'text/plain':new Blob([t],{type:'text/plain'})})]);}
+ if(navigator.clipboard) return navigator.clipboard.writeText(t);
+ return Promise.reject(new Error('no clipboard'));
+}
+
+function copyImage(src){
+ if(!(navigator.clipboard&&window.ClipboardItem))
+  return Promise.reject(new Error('no'));
+ try{
+  var item=new ClipboardItem({'image/png':fetch(src).then(function(r){
+   if(!r.ok) throw new Error('fetch');return r.blob();})});
+  return navigator.clipboard.write([item]);
+ }catch(_){
+  return fetch(src).then(function(r){return r.blob();}).then(function(b){
+   return navigator.clipboard.write([new ClipboardItem({'image/png':b})]);});
+ }
+}
+
+function toDataURI(src){
+ return fetch(src).then(function(r){return r.blob();}).then(function(b){
+  return new Promise(function(res,rej){
+   var fr=new FileReader();
+   fr.onload=function(){res(fr.result);};fr.onerror=rej;
+   fr.readAsDataURL(b);});});
+}
+function slotHTML(label){
+ return '<p><span style="color:#E25100"><b>◆ '+esc(label)+
+  ' — 여기에 그림을 붙이고 이 줄은 지우세요</b></span></p>';
+}
+function wholeHTML(p){
+ var h=p.thumb?slotHTML('대표 이미지')+'<p><br></p>':'',g=0;
+ p.parts.forEach(function(pt){
+  if(pt.body.length) h+=bodyHTML(pt.body);
+  if(pt.img){g++;h+=slotHTML('그림 '+g)+'<p><br></p>';}
+ });
+ return h;
+}
+function wholeText(p){
+ return p.parts.map(function(pt){return bodyText(pt.body);}).join('\r\n');
+}
+
+var dl=null;
+if(window.claude&&window.claude.use){
+ window.claude.use('downloads').then(function(a){
+  dl=a;
+  var xs=document.querySelectorAll('.dlb');
+  for(var i=0;i<xs.length;i++) xs[i].hidden=false;
+ },function(){});
+}
+
+function mkBtn(label,cls){
+ var b=document.createElement('button');b.type='button';b.textContent=label;
+ if(cls) b.className=cls;return b;
+}
+function flash(b,label,msg){
+ var old=b.textContent;
+ b.textContent=label;b.classList.add('done');toast(msg);
+ setTimeout(function(){b.textContent=old;b.classList.remove('done');},2400);
+}
+
+function copyRow(label,sub,preview,h,t,msg){
+ var li=document.createElement('li');
+ var r=document.createElement('div');r.className='row';
+ r.innerHTML='<div class="k">'+esc(label)+'<small>'+esc(sub)+'</small></div>'+
+  '<div class="v"></div>';
+ r.querySelector('.v').textContent=preview;
+ var b=mkBtn('복사');
+ b.addEventListener('click',function(){
+  copyRich(h,t).then(function(){flash(b,'복사됨 ✓',msg);},
+   function(){toast('복사가 막혔습니다. 아래 미리보기에서 끌어 선택해 Ctrl + C 해 주세요.');});
+ });
+ r.appendChild(b);li.appendChild(r);return li;
+}
+
+function imgCard(src,shown,label){
+ var d=document.createElement('div');d.className='gcard';
+ d.innerHTML='<img src="'+src+'" alt="'+esc(label)+'" loading="lazy">'+
+  '<b>'+esc(label)+'</b><div class="acts"></div>';
+ var acts=d.querySelector('.acts');
+ var cb=mkBtn('복사');
+ cb.addEventListener('click',function(){
+  copyImage(src).then(function(){
+   flash(cb,'복사됨 ✓',label+'을 복사했습니다. 주황색 줄 자리에 Ctrl + V');
+  },function(){
+   toast('그림 복사가 막혔습니다. PNG 받기로 내려받아 사진 아이콘으로 올려 주십시오.');
+  });
+ });
+ acts.appendChild(cb);
+ var db=mkBtn('↓ PNG','g dlb');db.hidden=true;
+ db.addEventListener('click',function(){
+  if(!dl) return;
+  fetch(src).then(function(r){return r.blob();}).then(function(b){
+   return dl.save({filename:shown,data:b});
+  }).then(function(){toast('저장했습니다: '+shown);},function(e){
+   if(e&&e.code==='declined') return;
+   toast('그림 위에서 오른쪽 버튼 → 이미지를 다른 이름으로 저장을 써 주십시오.');
+  });
+ });
+ acts.appendChild(db);
+ return d;
+}
+
+function imgRow(src,shown,title,where){
+ var li=document.createElement('li');li.className='im';
+ var d=document.createElement('div');d.className='imrow';
+ d.innerHTML='<img src="'+src+'" alt="'+esc(title)+'" loading="lazy">'+
+  '<div><b>'+esc(title)+'</b>'+
+  (where?'<div style="font-size:13px;color:var(--muted);margin-top:3px">'+esc(where)+'</div>':'')+
+  '<span class="mono">'+esc(shown)+'</span><div class="acts"></div></div>';
+ var acts=d.querySelector('.acts');
+ var cb=mkBtn('그림 복사');
+ cb.addEventListener('click',function(){
+  copyImage(src).then(function(){
+   flash(cb,'복사됨 ✓','그림을 복사했습니다. 글쓰기 창에서 Ctrl + V');
+  },function(){
+   toast('그림 복사가 막혔습니다. PNG 받기로 내려받아 사진 아이콘으로 올려 주십시오.');
+  });
+ });
+ acts.appendChild(cb);
+ var db=mkBtn('↓ PNG 받기','g dlb');db.hidden=true;
+ db.addEventListener('click',function(){
+  if(!dl) return;
+  fetch(src).then(function(r){return r.blob();}).then(function(b){
+   return dl.save({filename:shown,data:b});
+  }).then(function(){toast('저장했습니다: '+shown);},function(e){
+   var c=e&&e.code;
+   if(c==='declined') return;
+   toast(c==='rate_limited'?'잠시 뒤 다시 눌러 주세요.'
+    :'그림 위에서 오른쪽 버튼 → 이미지를 다른 이름으로 저장을 써 주십시오.');
+  });
+ });
+ acts.appendChild(db);
+ li.appendChild(d);return li;
+}
+
+var host=document.getElementById('posts');
+var hch=document.getElementById('hchips');
+POSTS.forEach(function(p){
+ var c=document.createElement('a');c.className='chip link';
+ c.href='#s'+p.no;c.textContent=p.no+'. '+p.full;hch.appendChild(c);
+
+ var card=document.createElement('article');card.className='post';
+ card.id='s'+p.no;
+ var nimg=p.parts.filter(function(x){return x.img;}).length;
+ card.innerHTML='<h3>'+esc(p.title)+'</h3>'+
+  '<div class="chips"><span class="chip o">'+esc(p.badge)+'</span>'+
+  '<span class="chip">그림 '+nimg+'장'+(p.thumb?' + 대표 이미지':'')+'</span>'+
+  '<span class="chip">본문 '+p.parts.length+'칸</span></div>';
+
+ var top=document.createElement('div');top.className='big';
+ var tb=mkBtn('제목 복사','wide');
+ tb.addEventListener('click',function(){
+  copyRich(esc(p.title),p.title).then(function(){
+   flash(tb,'복사됨 ✓','제목을 복사했습니다. 제목 칸에 Ctrl + V');},
+   function(){toast('복사가 막혔습니다.');});
+ });
+ var wb=mkBtn('글 전체 복사','wide hero');
+ wb.addEventListener('click',function(){
+  copyRich(wholeHTML(p),wholeText(p)).then(function(){
+   flash(wb,'복사됨 ✓','본문 칸에 Ctrl + V — 그림 자리에 주황색 줄이 들어갑니다');
+  },function(){
+   toast('복사가 막혔습니다. 아래 「한 칸씩 넣기」를 펴서 차례로 넣어 주십시오.');
+  });
+ });
+ var gb=mkBtn('태그 복사','wide');
+ gb.addEventListener('click',function(){
+  copyRich(esc(p.tags),p.tags).then(function(){
+   flash(gb,'복사됨 ✓','태그를 복사했습니다. 발행 창 태그 칸에 Ctrl + V');},
+   function(){toast('복사가 막혔습니다.');});
+ });
+ top.appendChild(tb);top.appendChild(wb);
+
+ var gh=document.createElement('div');gh.className='ghead';
+ gh.textContent='그림 넣기 — 붙여 넣은 뒤 주황색 줄을 지우십시오';
+ top.appendChild(gh);
+ var gw=document.createElement('div');gw.className='gimgs';
+ var shots=p.thumb?[{src:p.thumb_src,shown:p.thumb,label:'대표 이미지'}]:[];
+ var gn=0;
+ p.parts.forEach(function(pt){
+  if(pt.img){gn++;shots.push({src:pt.src,shown:pt.img,label:'그림 '+gn});}
+ });
+ shots.forEach(function(it){gw.appendChild(imgCard(it.src,it.shown,it.label));});
+ if(!shots.length){gh.hidden=true;gw.hidden=true;}
+ top.appendChild(gw);
+
+ top.appendChild(gb);
+ card.appendChild(top);
+
+ var ol=document.createElement('ol');ol.className='seq';
+ if(p.thumb) ol.appendChild(imgRow(p.thumb_src,p.thumb,'대표 이미지','글 맨 위에 넣으십시오'));
+ ol.appendChild(copyRow('제목','제목 칸',p.title,esc(p.title),p.title,
+  '제목을 복사했습니다. 제목 칸에 Ctrl + V'));
+ var n=0,g=0;
+ p.parts.forEach(function(pt){
+  if(pt.body.length){
+   n++;
+   var first=pt.body[0].k==='tbl'?'(표)':pt.body[0].t;
+   ol.appendChild(copyRow('본문 '+n,n===1?'대표 이미지 아래':'그림 '+g+' 아래',
+    first,bodyHTML(pt.body),bodyText(pt.body),
+    '본문 '+n+'을 복사했습니다. 그림 아래 빈 줄을 클릭하고 Ctrl + V'));
+  }
+  if(pt.img){
+   g++;
+   ol.appendChild(imgRow(pt.src,pt.img,'그림 '+g,'본문 '+n+' 바로 아래'));
+  }
+ });
+ ol.appendChild(copyRow('태그','발행 창의 태그 칸',p.tags,esc(p.tags),p.tags,
+  '태그를 복사했습니다. 발행 창 태그 칸에 Ctrl + V'));
+ var one=document.createElement('details');
+ one.innerHTML='<summary>그림이 안 따라올 때 — 한 칸씩 넣기</summary>';
+ one.appendChild(ol);card.appendChild(one);
+
+ var det=document.createElement('details');
+ det.innerHTML='<summary>글 전체 미리보기 (그림 포함)</summary>';
+ var paper=document.createElement('div');paper.className='paper';
+ var ph='<div class="ttl">'+esc(p.title)+'</div>'+
+  (p.thumb?'<img src="'+p.thumb_src+'" alt="">':'');
+ p.parts.forEach(function(pt){
+  if(pt.body.length){
+   ph+=pt.body.map(function(b){
+    return b.k==='tbl'?'<div class="tbwrap">'+tblHTML(b.rows)+'</div>':blockHTML(b);
+   }).join('');
+  }
+  if(pt.img) ph+='<img src="'+pt.src+'" alt="">';
+ });
+ ph+='<p style="color:var(--muted);font-size:13.5px;margin-top:14px">'+esc(p.tags)+'</p>';
+ paper.innerHTML=ph;det.appendChild(paper);card.appendChild(det);
+ host.appendChild(card);
+});
+</script>

@@ -96,6 +96,9 @@ def main():
     # 단어게임 '지문 속 빈칸' 보기 후보 정리(_tools/fix_game_pool.py, 빈칸 정보 없는 단어가 보기로 뽑혀 게임이 멈추던 문제, 2026-10-24)
     import fix_game_pool
     fix_game_pool.run(check=check, quiet=True)
+    # 블로그 원고 페이지의 '글 전체 복사'를 네이버 서식(19px 소제목·인용구·◆ 그림 자리)으로 맞춤(_tools/blog_style.py, 원장님 결정 2026-11-11)
+    import blog_style
+    blog_style.run(check=check, quiet=True)
     opened, closed, changed, failed = [], [], [], []
     for page, path in pages():
         s = open(path, encoding='utf8').read()

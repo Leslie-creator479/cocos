@@ -38,8 +38,9 @@
 
 ## 5. 블로그 원고
 - 설정 `_tools/mid_sheet/gram_blog/<slug>.json`(본보기 `grammar-m2-01.json`): grammar, title(`<학년> 영어 문법 무료 학습지 <회>회 | <문법> | <질문형 한 줄> | 코코스학원`), tags, hook 2줄(첫 줄은 틀린 문장으로 시작, 둘째 줄은 그 주 독해 회차·행사와 이어서), cover_q·cover_wrong·cover_right·cover_sub, uses_title, compare_title, reading(짝 지문 이름·주소), reading_line.
-- `python3 _tools/mid_sheet/gram_blog.py <설정> -o $W/blog` → 이미지 5장이 모두 'OK'(넘침이면 문구를 줄임)·눈으로 확인 → `build_tools_index.py` → `seo.py` → 커밋·푸시. 원고 페이지 https://cocosedu.kr/tools/blog/<slug>/ , 이미지는 저장소에 올리지 않고 보낸다.
+- `python3 _tools/mid_sheet/gram_blog.py <설정> -o $W/blog` → 이미지 5장이 모두 'OK'(넘침이면 문구를 줄임)·눈으로 확인 → `build_tools_index.py` → `seo.py` → 커밋·푸시. 원고 페이지 https://cocosedu.kr/tools/blog/<slug>/ 는 원고 저장용이고, 이미지는 저장소에 올리지 않는다.
 
+- **발행함에 넣기(원장님 결정 2026-11-11, 네이버 서식 + 그림 한 장씩 복사)**: `_tools/blog_box/grammar.json`의 posts 맨 앞에 이번 글을 넣는다(`{"page": "tools/blog/<slug>/index.html", "name": "<학년> <회>회 <짧은 이름>", "imgdir": "$W/blog"}`, posts는 최근 3편까지만 남김) → `python3 _tools/blog_box.py _tools/blog_box/grammar.json -o $W/box.html` → Artifact `read`(설정의 url) → Artifact 발행(file_path `$W/box.html`, url 설정의 url, files `$W/box.files.json` 내용). 설정의 url이 비어 있으면 url 없이 icon `blog`, capabilities `{"downloads": true}`로 처음 발행하고 받은 주소를 url에 적는다. 발행한 뒤 설정에서 imgdir를 지우고 커밋한다. 원장님께 드리는 원고 주소는 이 발행함 주소다(홈페이지 원고 페이지는 원고 저장용). Artifact 도구가 없거나 발행이 실패하면 예전처럼 홈페이지 원고 주소를 드리고 이미지를 SendUserFile로 보내며 보고에 그 사실을 적는다.
 ## 6. 마무리·보고
 - `gram_log.json`에 `{slug, grade, round, grammar, passage, title, published}`를 더하고, CLAUDE.md의 `study/grammar-m…` 줄에 한 줄(문법·짝 지문·검토에서 고친 것). 커밋·푸시.
-- 보고(SendUserMessage): 편·문법·짝 독해 지문, 질문형 제목, 학습지 주소, 블로그 원고 주소·제목·태그, 검토에서 고친 것, 고친 발음. 이미지 5장 SendUserFile(status proactive). 보류했으면 이유.
+- 보고(SendUserMessage): 편·문법·짝 독해 지문, 질문형 제목, 학습지 주소, 블로그 발행함 주소·제목·태그, 검토에서 고친 것, 고친 발음. 이미지는 발행함에 들어 있으므로 따로 보내지 않는다(발행함에 못 넣었을 때만 SendUserFile). 보류했으면 이유.

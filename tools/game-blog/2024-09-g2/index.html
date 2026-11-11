@@ -119,16 +119,33 @@ function listText(){
   D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
   return t;
 }
+/*naver-blog-format-2026-11*/
+function tableHTML(rows){
+  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
+  var h='<table border="1" style="border-collapse:collapse;width:100%">';
+  rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
+    h+=i?'<td style="padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
+        :'<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</th>'});h+='</tr>'});
+  return h+'</table>';
+}
 function bodyHTML(){
-  var h='';
+  var out=[],IMG=/^\[(대표 )?이미지(?:\s*[:：]\s*(.+?))?\]$/,g=0;
+  function big(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(String(t).replace(/^■\s*/,''))+'</b></span></p>'}
+  function slot(l){return '<p><span style="color:#E25100"><b>◆ '+esc(l)+' — 여기에 그림을 붙이고 이 줄은 지우세요</b></span></p>'}
   D.body.forEach(function(b){
-    if(b[0]==='b')h+='<p><br></p><p><b>'+esc(b[1])+'</b></p>';
-    else if(b[0]==='link')h+='<p>'+a(b[2],b[1])+'</p>';
-    else if(b[0]==='br')h+='<p><br></p>';
-    else if(b[0]==='list')h+='<p><br></p>'+listHTML()+'<p><br></p>';
-    else h+='<p>'+esc(b[1])+'</p>';
+    var k=b[0],t=b[1],m=k==='p'&&IMG.exec(String(t).trim());
+    if(k==='br')return;
+    if(m){out.push(slot(m[1]?'대표 이미지':'그림 '+(++g)+(m[2]?' ('+m[2]+')':'')));return}
+    if(k==='b'||k==='ser')out.push(big(t));
+    else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><b>'+esc(t)+'</b></p>'
+      :'<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>');
+    else if(k==='note')out.push('<p><span style="font-size:13px;color:#767171">'+esc(t)+'</span></p>');
+    else if(k==='link')out.push('<p>'+a(b[2],t)+'</p>');
+    else if(k==='list')out.push(listHTML());
+    else if(k==='table')out.push(tableHTML(t));
+    else out.push('<p>'+esc(t)+'</p>');
   });
-  return h;
+  return out.join('<p><br></p>')+'<p><br></p>';
 }
 function bodyText(){
   var t='';

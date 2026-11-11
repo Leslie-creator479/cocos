@@ -35,8 +35,9 @@
 - `_tools/mid_sheet/reading_blog/<slug>.json`을 쓴다(본보기 `reading-m2-01.json`): theme, hook(도입 1~2문장, 호기심 질문으로), sources(사실 확인 출처 한 줄), 지문마다 emoji·name·tag·key·q·did·ex·rule·story·gram_title·gram·words. 안내 글 링크는 도구가 자동으로 넣는다.
 - `python3 _tools/mid_sheet/reading_blog.py _tools/mid_sheet/reading_blog/<slug>.json -o $W/blog` → '자동으로 채운 칸'이 없어야 한다. 이미지 6장을 열어 보고(넘침·잘림 없음) → `build_tools_index.py` → `seo.py` → 커밋·푸시.
 
+- **발행함에 넣기(원장님 결정 2026-11-11, 네이버 서식 + 그림 한 장씩 복사)**: `_tools/blog_box/reading.json`의 posts 맨 앞에 이번 글을 넣는다(`{"page": "tools/blog/<slug>/index.html", "name": "<학년> <회>회 <짧은 이름>", "imgdir": "$W/blog"}`, posts는 최근 3편까지만 남김) → `python3 _tools/blog_box.py _tools/blog_box/reading.json -o $W/box.html` → Artifact `read`(설정의 url) → Artifact 발행(file_path `$W/box.html`, url 설정의 url, files `$W/box.files.json` 내용). 설정의 url이 비어 있으면 url 없이 icon `blog`, capabilities `{"downloads": true}`로 처음 발행하고 받은 주소를 url에 적는다. 발행한 뒤 설정에서 imgdir를 지우고 커밋한다. 원장님께 드리는 원고 주소는 이 발행함 주소다(홈페이지 원고 페이지는 원고 저장용). Artifact 도구가 없거나 발행이 실패하면 예전처럼 홈페이지 원고 주소를 드리고 이미지를 SendUserFile로 보내며 보고에 그 사실을 적는다.
 ## 6. 마무리·보고
 - 계획표: 그 회차 `status: "done"`, `published: "<날짜>"`, 바꾼 소재는 notes. `done` 목록에도 slug·topics를 더한다(다음 계획에서 소재가 겹치지 않게).
 - 저장소 CLAUDE.md의 `study/reading-m…` 줄에 회차 한 줄(주제·지문·단계·문법·사실 확인에서 고친 것)을 더한다. 커밋·푸시.
 - **남은 todo가 2개 이하**면: 다음 12주 계획 초안을 같은 규칙(학년 순환, 주제 하나, 기본2·표준2·심화1, 학년 문법, 사실 확인 가능한 소재, `done`과 겹치지 않게, **그 주에 걸리는 기념일·시즌에 맞춘 주제**: 계획표 `calendar`를 보고 블로그가 올라가는 월요일부터 한 주 안에 날이 있으면 그 날과 이어지는 재미있는 소재로, 없으면 `reserve` 주제나 계절 소재로. 설날·추석·수능처럼 해마다 날짜가 바뀌는 날은 웹으로 확인하고, 각 회차에 `event`를 적는다)으로 만들어 `plan` 뒤에 `status: "draft"`로 넣고 커밋한다(예약 작업은 draft를 쓰지 않는다. 원장님이 확인하면 todo로 바꾼다).
-- **보고**(원장님이 자리에 없으므로 SendUserMessage로): 회차·주제, 지문 5개 표(단계·종류·단어 수·%·문법), 목차·원고 주소, 블로그 제목·태그, 검토·사실 확인에서 고친 것, 고친 발음. 이미지 6장은 SendUserFile(status proactive). 남은 todo가 2개 이하면 맨 위에 **'회차 계획 추가 필요'**와 draft 계획 요약. 보류했으면 그 이유와 다음 주 계획.
+- **보고**(원장님이 자리에 없으므로 SendUserMessage로): 회차·주제, 지문 5개 표(단계·종류·단어 수·%·문법), 목차 주소·블로그 발행함 주소, 블로그 제목·태그, 검토·사실 확인에서 고친 것, 고친 발음. 이미지는 발행함에 들어 있으므로 따로 보내지 않는다(발행함에 못 넣었을 때만 SendUserFile). 남은 todo가 2개 이하면 맨 위에 **'회차 계획 추가 필요'**와 draft 계획 요약. 보류했으면 그 이유와 다음 주 계획.
