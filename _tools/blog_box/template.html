@@ -169,9 +169,9 @@ var NV = {
  h:  function(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(t)+'</b></span></p>';},
  ser:function(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(t)+'</b></span></p>';},
  hot:function(t){return '<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>';},
- s:  function(t){return '<p><b>'+esc(t)+'</b></p>';},
+ s:  function(t){return '<p><span style="color:#000000"><b>'+esc(t)+'</b></span></p>';},
  note:function(t){return '<p><span style="font-size:13px;color:#767171">'+esc(t)+'</span></p>';},
- p:  function(t){return '<p>'+esc(t)+'</p>';}
+ p:  function(t){return '<p><span style="color:#000000">'+esc(t)+'</span></p>';}
 };
 function tblHTML(rows){
  // 열마다 가장 긴 칸이 14자를 넘으면 그 열만 왼쪽, 아니면 가운데
@@ -186,7 +186,7 @@ function tblHTML(rows){
  rows.forEach(function(r,i){
   o+='<tr>'+r.map(function(c,j){
    return i===0 ? '<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+ta(j)+'">'+esc(c)+'</th>'
-                : '<td style="padding:6px 8px;text-align:'+ta(j)+'">'+esc(c)+'</td>';}).join('')+'</tr>';});
+                : '<td style="color:#000000;padding:6px 8px;text-align:'+ta(j)+'">'+esc(c)+'</td>';}).join('')+'</tr>';});
  return o+'</table>';
 }
 function blockHTML(b){

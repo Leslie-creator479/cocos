@@ -42,7 +42,7 @@ def list_block(D):
     for i, g in enumerate(D.get('groups') or []):
         if i:
             h.append('<p><br></p>')
-        h.append('<p><b>[' + html.escape(g['g']) + ']</b></p>')
+        h.append('<p><span style="color:#000000"><b>[' + html.escape(g['g']) + ']</b></span></p>')
         t.append('[' + g['g'] + ']')
         for it in g['items']:
             h.append('<p><a href="%s" target="_blank" rel="noopener">%s</a></p>' % (html.escape(it[1]), html.escape(it[0])))

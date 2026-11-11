@@ -18,13 +18,13 @@ seo.py가 돌 때마다 자동으로 함께 돈다(다른 도구·스킬이 옛 
 import os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MARK = '/*naver-blog-format-2026-11*/'
+MARK = '/*naver-blog-format-2026-11b*/'
 NEW = MARK + r"""
 function tableHTML(rows){
   var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
   var h='<table border="1" style="border-collapse:collapse;width:100%">';
   rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
-    h+=i?'<td style="padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
+    h+=i?'<td style="color:#000000;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
         :'<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</th>'});h+='</tr>'});
   return h+'</table>';
 }
@@ -37,13 +37,13 @@ function bodyHTML(){
     if(k==='br')return;
     if(m){out.push(slot(m[1]?'대표 이미지':'그림 '+(++g)+(m[2]?' ('+m[2]+')':'')));return}
     if(k==='b'||k==='ser')out.push(big(t));
-    else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><b>'+esc(t)+'</b></p>'
+    else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><span style="color:#000000"><b>'+esc(t)+'</b></span></p>'
       :'<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>');
     else if(k==='note')out.push('<p><span style="font-size:13px;color:#767171">'+esc(t)+'</span></p>');
     else if(k==='link')out.push('<p>'+a(b[2],t)+'</p>');
-    else if(k==='list')out.push(listHTML());
+    else if(k==='list')out.push(listHTML().replace(/<p><b>/g,'<p><span style="color:#000000"><b>').replace(/<\/b><\/p>/g,'</b></span></p>'));
     else if(k==='table')out.push(tableHTML(t));
-    else out.push('<p>'+esc(t)+'</p>');
+    else out.push('<p><span style="color:#000000">'+esc(t)+'</span></p>');
   });
   return out.join('<p><br></p>')+'<p><br></p>';
 }
@@ -53,6 +53,9 @@ FUNC = re.compile(r'function (bodyHTML|tableHTML)\(.*?\n\}\n', re.S)
 
 def patch(s):
     new = NEW.lstrip('\n')
+    for old in ('/*naver-blog-format-2026-11*/',):
+        if old in s and MARK not in s:
+            s = s.replace(old, MARK)
     if MARK in s:
         i = s.index(MARK)
         j = s.index('\n}\n', s.index('function bodyHTML', i)) + 3
