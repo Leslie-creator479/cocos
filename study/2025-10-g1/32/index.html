@@ -509,7 +509,85 @@ var DATA = {
     { s: 4, c: ['Rhesus monkeys', 'can tell one from two,', 'two from three,', 'three from four,', 'four from five ...', 'but start to fail', 'from five upwards.'] },
     { s: 5, c: ['Rats that learned', 'to press a lever', 'a given number of times,', 'from four up to twenty-four,', 'became markedly', 'less and less precise in their responses', 'as the number increased:', 'by the top end of the range', 'they would merely produce', 'a spread of numbers', 'around the target.'] },
     { s: 6, c: ['It is a common observation', 'that when testing', 'the accuracy of', 'animals’ number sense,', 'the size of the numbers', 'matters.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['Smart Monkeys, Slow Rats: Ranking Animals by Their Math Skills',
+        'Training Animals to Count Precisely up to Twenty-Four',
+        'The Approximate Number System: Why Every Species Counts Differently',
+        'Sharp for Small, Fuzzy for Large: Where Animal Counting Starts to Blur',
+        'How Making More Errors Helps Animals Handle Bigger Numbers'],
+    a: 3,
+    e: '글은 동물의 수 판단이 <i>discrimination becoming less accurate as the quantities get bigger</i>라는 패턴을 보이고 이것이 <i>the same in every species tested</i>라고 해요. ‘작은 수에는 또렷, 큰 수에는 흐릿’으로 바꿔 쓴 ④가 정답이에요. ① 원숭이·쥐는 예시일 뿐 둘의 능력을 비교하지 않아요. ② 쥐는 수가 커질수록 덜 정확해졌으니 반대예요. ③ The Approximate Number System은 원문 낱말이지만, 글은 그 패턴이 모든 종에서 같다고 했어요. ⑤ 수가 커져서 실수가 늘어나는 것이지, 실수가 큰 수를 다루게 돕는 것이 아니에요(인과가 뒤집힘).' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'What it does not provide is precision. It shows — and this is the same in every species tested — a characteristic pattern of errors, with discrimination becoming less accurate as the quantities get bigger. Rhesus monkeys can tell one from two, two from three, three from four, four from five ... but ______________. Rats that learned to press a lever a given number of times, from four up to twenty-four, became markedly less and less precise in their responses as the number increased.',
+    o: ['become more precise as the quantities get bigger',
+        'can tell five from six just as easily',
+        'are far less accurate than rats, which could handle numbers up to twenty-four',
+        'make more mistakes with small numbers than with large ones',
+        'begin to lose their accuracy once the numbers go past five'],
+    a: 4,
+    h: '빈칸 앞 문장이 ‘모든 종에서 같다’고 한 패턴을 원숭이에게 그대로 적용해 보세요.',
+    e: '원문은 <i>start to fail from five upwards</i>(5 위로는 실패하기 시작한다)예요. 앞 문장의 <i>discrimination becoming less accurate as the quantities get bigger</i>가 <i>the same in every species tested</i>이므로, 원숭이도 5를 넘으면 정확성을 잃기 시작한다는 ⑤가 정답이에요. ① more precise·as the quantities get bigger는 원문 표현을 그대로 쓰되 less를 more로 뒤집은 함정이에요. ② but과 맞지 않고 패턴과도 반대예요. ③ rats·twenty-four는 글에 나오는 말이지만, 쥐도 <i>became markedly less and less precise in their responses as the number increased</i>였으니 24까지 다룰 수 있었다는 말이 틀려요. 원숭이와 쥐의 능력을 비교하지도 않았어요. ④ 작은 수일수록 실수가 많다는 것은 패턴과 반대예요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'The tendency to lose accuracy with larger quantities is <u>  (A)  </u> across the species tested, showing that animals’ number sense works by <u>  (B)  </u> rather than by exact counting.',
+    o: ['uniform — estimation', 'varied — estimation', 'uniform — precision', 'varied — repetition', 'rare — precision'],
+    a: 0,
+    e: '(A) 수량이 커질수록 덜 정확해지는 패턴은 <i>this is the same in every species tested</i>이므로 종을 가리지 않고 ‘한결같은(uniform)’ 것이에요. (B) 동물의 수 판단은 <i>the approximate number system</i>이고 <i>What it does not provide is precision</i>이므로 정확한 세기가 아니라 ‘어림(estimation)’으로 작동해요. ③ ⑤ precision은 원문 낱말이지만, 글은 이 체계가 정확성을 ‘주지 않는다’고 했으니 (B)에 넣으면 거꾸로예요. ② ④ varied는 모든 종에서 같다는 말과 반대예요. ⑤ rare도 공통된 관찰(<i>a common observation</i>)과 맞지 않아요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'The ①<u>specialized</u> term often used to describe animals’ judgement of numbers is the approximate number system. What it does not ②<u>offer</u> is precision. It shows — and this is the same in every species tested — a characteristic pattern of errors, with discrimination becoming less accurate as the quantities get bigger. Rhesus monkeys can tell one from two, two from three, three from four, four from five ... but start to ③<u>falter</u> from five upwards. Rats that were ④<u>trained</u> to press a lever a given number of times, from four up to twenty-four, became markedly less and less precise in their responses as the number increased: by the ⑤<u>lower</u> end of the range they would merely produce a spread of numbers around the target. It is a common observation that when testing the accuracy of animals’ number sense, the size of the numbers matters.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 4,
+    e: '⑤ lower(아래쪽의)는 원문에서 <b>top</b>이었어요. 쥐는 <i>became markedly less and less precise in their responses as the number increased</i>, 즉 수가 커질수록 덜 정확해졌으므로, 목표 주변으로 흩어진 숫자를 내놓는 것은 범위의 ‘위쪽’ 끝(24번에 가까운 쪽)이어야 해요. ① specialized(=technical, 전문적인), ② offer(=provide), ③ falter(=fail, 흔들리다), ④ trained(learned를 ‘훈련받은’으로 바꿈)는 원문 뜻과 같아 모두 적절해요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'What it does not ⓐ<u>provide</u> is precision. It shows — and this is the same in every species tested — a characteristic pattern of errors, with discrimination ⓑ<u>becoming</u> less ⓒ<u>accurately</u> as the quantities get bigger. … Rats that learned to press a lever a ⓓ<u>giving</u> number of times, from four up to twenty-four, became markedly less and less precise in their responses as the number increased: by the top end of the range they would ⓔ<u>merely</u> produce a spread of numbers around the target.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '틀린 것은 ⓒ, ⓓ 두 개예요. ⓒ become 뒤에는 보어로 형용사가 와야 하므로 <b>accurate</b>여야 해요(원문 <i>becoming less accurate</i>). ⓓ 횟수가 ‘주어진’ 것이므로 수동의 뜻을 가진 과거분사 <b>given</b>이어야 해요(원문 <i>a given number of times</i>). ⓐ 관계대명사 What 절 안에서 조동사 does 뒤의 동사원형이라 맞아요. ⓑ ‘with + 명사 + 분사’ 구문에서 discrimination이 ‘~해지는’ 능동 관계라 현재분사가 맞아요. ⓔ 동사 produce를 꾸미는 부사라 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'The technical term often used to describe animals’ judgement of numbers is the approximate number system. ① What it does not provide is precision. ② It shows — and this is the same in every species tested — a characteristic pattern of errors, with discrimination becoming less accurate as the quantities get bigger. ③ Rhesus monkeys can tell one from two, two from three, three from four, four from five ... but start to fail from five upwards. ④ Rats are widely used in laboratory studies because they learn simple tasks, such as pressing a lever, very quickly. ⑤ Rats that learned to press a lever a given number of times, from four up to twenty-four, became markedly less and less precise in their responses as the number increased: by the top end of the range they would merely produce a spread of numbers around the target. It is a common observation that when testing the accuracy of animals’ number sense, the size of the numbers matters.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    e: '④는 지어낸 문장이에요. ⑤와 똑같이 Rats·learn·pressing a lever를 써서 쥐 실험을 소개하는 것처럼 보이지만, 쥐가 왜 실험에 많이 쓰이는지는 ‘수량이 커질수록 판별이 덜 정확해진다’는 글의 흐름과 관계가 없어요. ④를 빼면 원숭이 예시(③)에서 쥐 예시(⑤)로 바로 이어져요.' },
+
+  { type: '순서 · 변형', p: '주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?',
+    q: '<span class="box">The technical term often used to describe animals’ judgement of numbers is the approximate number system. What it does not provide is precision.</span>(A) It shows — and this is the same in every species tested — a characteristic pattern of errors, with discrimination becoming less accurate as the quantities get bigger.<br><br>(B) Rats tell the same story. Those that learned to press a lever a given number of times, from four up to twenty-four, became markedly less and less precise in their responses as the number increased: by the top end of the range they would merely produce a spread of numbers around the target. It is a common observation that when testing the accuracy of animals’ number sense, the size of the numbers matters.<br><br>(C) Rhesus monkeys, for one, follow this pattern: they can tell one from two, two from three, three from four, four from five ... but start to fail from five upwards.',
+    o: ['(A) — (C) — (B)', '(B) — (A) — (C)', '(B) — (C) — (A)', '(C) — (A) — (B)', '(C) — (B) — (A)'],
+    a: 0,
+    h: '(B)의 the same story와 (C)의 this pattern이 각각 무엇을 전제로 하는 말인지 보세요.',
+    e: '(A)의 It은 주어진 글의 <i>the approximate number system</i>을 가리키며 ‘수가 커질수록 덜 정확해지는 패턴’을 처음 제시해요. (C)의 for one(한 예로)·this pattern(원문에는 없는 말)은 (A)가 제시한 패턴의 첫 예로 원숭이를 들고, (B)의 Rats tell the same story(원문에는 없는 연결 말)는 앞에서 원숭이가 보인 것과 같은 모습을 쥐도 보인다는 뜻이라 (C) 뒤에 와요. (B)는 <i>the size of the numbers matters</i>라는 정리로 끝나므로 맨 뒤가 자연스러워요. (C)가 (A)보다 먼저 오면 this pattern이 가리킬 패턴이 아직 없고(주어진 글은 정확하지 않다는 말뿐이고, 원숭이는 5까지는 정확했어요), (B)가 먼저 오면 the same story가 가리킬 말이 없어요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'Rhesus monkeys can tell one from two, two from three, three from four, four from five ... but start to fail from five upwards. Rats that learned to press a lever a given number of times, from four up to twenty-four, became markedly less and less precise in their responses as the number increased: by the top end of the range they were <u>throwing darts that landed near the bullseye but rarely on it</u>.',
+    o: ['they pressed the lever at random, with no relation to the target number',
+        'they performed better as the target number grew larger',
+        'their responses were roughly, but not exactly, right',
+        'they knew the exact target but lost interest in the task',
+        'they made the same mistakes that rhesus monkeys made with numbers below five'],
+    a: 2,
+    e: '밑줄 친 ‘과녁 한가운데 근처에는 떨어지지만 거의 맞히지는 못하는 다트를 던졌다’는 원문 <i>they would merely produce a spread of numbers around the target</i>(단지 목표 주변에 퍼진 숫자들을 내놓았다)를 비유로 바꾼 것이에요. 목표 근처이긴 하지만 정확하지는 않았다는 ③이 정답이에요. ① near the bullseye(목표 근처)이므로 목표와 아무 관계가 없다는 것은 지나친 해석이에요. ② <i>less and less precise … as the number increased</i>와 반대예요. ④ 흥미를 잃었다는 내용은 글에 없어요. ⑤ 원숭이는 5까지는 구별할 수 있었으므로 5 아래에서 실수했다는 말이 틀려요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 동물이 수를 판단하는 능력을 가리킬 때 ‘어림 수 짐작 능력’이라는 전문 용어가 흔히 쓰인다.<br>(b) 수량이 커질수록 판별이 부정확해지는 현상은 실험된 종 가운데 일부에서만 나타났다.<br>(c) 붉은털원숭이는 4와 5까지는 구별했지만 5를 넘어서면서 틀리기 시작했다.<br>(d) 쥐는 목표 횟수가 작을 때보다 클 때 레버를 더 정확한 횟수로 눌렀다.<br>(e) 쥐가 누르도록 학습한 레버 횟수는 1회부터 24회까지였다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '일치하는 것은 (a), (c) 두 개예요. (a) <i>The technical term often used to describe animals’ judgement of numbers is the approximate number system</i>과 같아요. (c) <i>four from five ... but start to fail from five upwards</i>와 같아요. (b) <i>this is the same in every species tested</i>이므로 ‘일부에서만’이 틀려요. (d) <i>less and less precise in their responses as the number increased</i>와 반대예요. (e) <i>from four up to twenty-four</i>이므로 1회가 아니라 4회부터예요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['지안: 붉은털원숭이가 7과 8을 잘 구별하지 못한다면, 원숭이의 수 감각이 다른 종보다 떨어진다는 뜻이야.',
+        '현우: 쥐를 더 오래 훈련시키면 24번도 한 번도 틀리지 않고 정확히 누를 수 있게 될 거야.',
+        '서윤: 쥐에게 6번 누르기를 시킬 때보다 22번 누르기를 시킬 때, 실제로 누른 횟수가 목표 주변에 더 넓게 흩어지겠네.',
+        '민재: 어림 수 짐작 능력은 작은 수일수록 실수가 많아지는 체계라고 할 수 있어.',
+        '다온: 쥐가 목표 주변의 숫자를 내놓았다는 건 쥐가 수를 전혀 가늠하지 못한다는 증거야.'],
+    a: 2,
+    h: '각 학생의 말이 글의 어느 문장에 기대고 있는지, 그 문장과 방향이 같은지부터 따져 보세요.',
+    e: '쥐는 <i>became markedly less and less precise in their responses as the number increased</i>였고, 범위의 위쪽 끝에서는 <i>a spread of numbers around the target</i>을 내놓았어요. 그러니 목표가 6일 때보다 22일 때 누른 횟수가 더 넓게 흩어질 것이라고 한 단계 추론할 수 있어요(서윤). 지안은 7과 8을 헷갈리는 것이 원숭이만의 약점이라고 봤지만, 이 패턴은 <i>the same in every species tested</i>예요. 현우의 ‘훈련하면 정확해진다’는 글에 근거가 없어요. 민재는 큰 수일수록 실수가 많아진다는 글과 반대예요. 다온은 <i>around the target</i>(목표 주변)을 놓쳤어요. 목표 근처의 수를 냈다는 것은 대략은 가늠한다는 뜻이고, 그래서 이 체계를 <i>approximate</i>(어림)라고 불러요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */

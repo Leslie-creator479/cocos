@@ -511,7 +511,85 @@ var DATA = {
     { s: 5, c: ['Although the error', 'was swiftly corrected,', 'the correction', 'was just as swiftly', 'forgotten.'] },
     { s: 6, c: ['The myth', 'had taken', 'hold.'] },
     { s: 7, c: ['Popeye,', 'who gained superhuman strength', 'from the leafy greens', 'and defended himself with iron fists,', 'contributed to its endurance', 'and even today,', 'some nearly 150 years later,', 'parents the world over', 'use this tale', 'to try to persuade their children', 'into eating the healthy vegetable.'], keep: true }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['A Small Slip, a Long Life: Why Fixing an Error Doesn’t End a Belief',
+        'Dried or Fresh? The Surprising Nutritional Power of Spinach',
+        'Popeye’s Iron Fists: How Cartoons Shape Children’s Eating Habits',
+        'Myths Are Only Stories: Why No One Believes in Spinach’s Iron Anymore',
+        'How a Popular Legend Led a Scientist to Miscalculate'],
+    a: 0,
+    e: '글은 Bunge의 단순한 계산 착오에서 시작된 통념이 <i>Although the error was swiftly corrected, the correction was just as swiftly forgotten</i>, 즉 바로잡힌 뒤에도 약 150년 동안 이어졌다고 해요. ‘작은 실수, 긴 생명: 오류를 고쳐도 믿음은 끝나지 않는다’로 바꿔 쓴 ①이 정답이에요. ② 말린 시금치·신선한 시금치는 소재일 뿐 영양의 힘을 다룬 글이 아니에요. ③ Popeye는 통념이 오래간 데 기여한 한 예라 범위가 좁아요. ④ Myths·only stories는 원문 낱말이지만 <i>Myths aren’t only stories</i>와 반대이고, 통념은 <i>persists today</i>라고 했어요. ⑤ 계산 착오가 통념을 낳은 것이지 통념이 착오를 낳은 것이 아니에요(인과가 뒤집힘).' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'For example, a well-known myth that persists today is the supposed high iron content in spinach. This is a legend that dates back to 1890 and originates from a simple miscalculation by physiologist Gustav von Bunge. He accurately determined that 100 grams of spinach contained 35 milligrams of iron but ______________. Although the error was swiftly corrected, the correction was just as swiftly forgotten.',
+    o: ['accurately determined the same figure for fresh leafy greens as well',
+        'misplaced a decimal point while copying his figures, making them ten times too high',
+        'tested spinach that had been grown in soil unusually rich in iron',
+        'had measured only the stems, which hold far less iron than the leaves',
+        'had tested leaves that had lost their water and so held far more iron than fresh ones of the same weight'],
+    a: 4,
+    h: '빈칸 앞 accurately와 but의 관계, 그리고 빈칸 뒤 the error가 무엇을 가리켜야 하는지 함께 보세요.',
+    e: '원문은 <i>he was analyzing dried spinach, which held ten times more iron than the same amount of fresh leafy greens</i>예요. 수치(35밀리그램)는 <i>accurately</i> 정확했지만 분석한 것이 말린 시금치, 즉 수분이 빠져 같은 무게의 신선한 잎보다 철분이 훨씬 많은 시금치였다는 ⑤가 정답이에요. ① accurately determined는 원문 그대로지만, 신선한 시금치도 같은 값이었다면 오류 자체가 없어요. ② ‘열 배’와 ‘단순한 착오’에 끌리기 쉽지만, 소수점을 잘못 찍어 수치가 열 배 부풀었다면 <i>He accurately determined</i>(정확하게 밝혀냈다)와 모순돼요. 글에서 수치 자체는 정확했어요. ③ ④ 흙이나 줄기 이야기는 글에 없어요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'The belief in spinach’s high iron content shows that once a(n) <u>  (A)  </u> idea gains popularity, even a <u>  (B)  </u> correction may do little to dislodge it.',
+    o: ['accurate — prompt', 'flawed — delayed', 'scientific — delayed', 'accurate — public', 'flawed — prompt'],
+    a: 4,
+    e: '(A) 이 통념은 <i>a simple miscalculation</i>에서 비롯되었으므로 ‘결함 있는(flawed)’ 생각이에요. (B) <i>the error was swiftly corrected</i>이므로 ‘신속한(prompt)’ 정정이 있었는데도 <i>The myth had taken hold</i>, 통념은 자리를 잡았어요. ① ④ accurate는 원문 accurately를 빌린 함정인데, 정확했던 것은 Bunge의 측정값이지 시금치에 철분이 많다는 생각이 아니에요. ② ③ delayed는 swiftly와 반대예요. ③ scientific은 과학자에게서 나왔다는 점만 맞을 뿐 ‘잘못된 생각’이라는 요점을 놓쳐요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'Myths aren’t only stories. For example, a well-known myth that ①<u>lingers</u> today is the ②<u>proven</u> high iron content in spinach. This is a legend that dates back to 1890 and originates from a simple ③<u>slip</u> by physiologist Gustav von Bunge. He accurately determined that 100 grams of spinach contained 35 milligrams of iron but he was analyzing dried spinach, which held ten times more iron than the same amount of fresh leafy greens. Although the error was ④<u>promptly</u> corrected, the correction was just as swiftly forgotten. The myth had taken hold. Popeye, who gained superhuman strength from the leafy greens and ⑤<u>protected</u> himself with iron fists, contributed to its endurance and even today, some nearly 150 years later, parents the world over use this tale to try to persuade their children into eating the healthy vegetable.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 1,
+    e: '② proven(증명된)은 원문에서 <b>supposed</b>(~라고 여겨지는)였어요. 이 높은 철분 함량은 <i>a simple miscalculation</i>에서 비롯된 통념(myth)이므로 ‘증명된’ 함량이라고 하면 글 전체와 맞지 않아요. ① lingers(=persists, 계속 남아 있다), ③ slip(=miscalculation, 실수), ④ promptly(=swiftly), ⑤ protected(=defended)는 원문 낱말을 같은 뜻으로 바꾼 것이라 모두 적절해요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'He accurately determined that 100 grams of spinach ⓐ<u>contained</u> 35 milligrams of iron but he was analyzing dried spinach, which held ⓑ<u>ten times more</u> iron than the same amount of fresh leafy greens. ⓒ<u>Despite</u> the error was swiftly corrected, the correction was just as swiftly forgotten. The myth had taken hold. Popeye, who gained superhuman strength from the leafy greens and defended himself with iron fists, ⓓ<u>contributing</u> to ⓔ<u>its</u> endurance and even today, some nearly 150 years later, parents the world over use this tale to try to persuade their children into eating the healthy vegetable.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '틀린 것은 ⓒ, ⓓ 두 개예요. ⓒ 뒤에 주어(the error)와 동사(was corrected)를 갖춘 절이 오므로 전치사 Despite가 아니라 접속사 <b>Although</b>(또는 Though)여야 해요. ⓓ 주어 Popeye 뒤의 <i>who gained … and defended himself with iron fists</i>는 관계사절이라, 문장의 동사가 따로 있어야 해요. 그래서 <b>contributed</b>여야 해요. and 뒤에 <i>parents the world over use this tale</i>라는 완전한 절이 이어지므로, and 앞도 주어 Popeye의 동사를 갖춘 절이어야 하고 분사구문으로 볼 수 없어요. ⓐ 주절 동사 determined(과거)에 맞춘 과거형이라 맞아요. ⓑ ‘배수사 + 비교급 + than’으로 맞아요. ⓔ 단수 명사 the myth를 가리키므로 its가 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'Myths aren’t only stories. For example, a well-known myth that persists today is the supposed high iron content in spinach. ① This is a legend that dates back to 1890 and originates from a simple miscalculation by physiologist Gustav von Bunge. ② He accurately determined that 100 grams of spinach contained 35 milligrams of iron but he was analyzing dried spinach, which held ten times more iron than the same amount of fresh leafy greens. ③ Dried leafy greens, in fact, can be stored for months, which made them a common food before refrigerators existed. ④ Although the error was swiftly corrected, the correction was just as swiftly forgotten. ⑤ The myth had taken hold. Popeye, who gained superhuman strength from the leafy greens and defended himself with iron fists, contributed to its endurance and even today, some nearly 150 years later, parents the world over use this tale to try to persuade their children into eating the healthy vegetable.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    e: '③은 지어낸 문장이에요. ② 끝의 dried·leafy greens를 그대로 이어 쓰지만, 말린 채소의 저장성이라는 엉뚱한 화제로 빠져 ‘계산 착오에서 시작된 통념이 오래 살아남았다’는 흐름과 관계가 없어요. ③을 빼면 ②에서 설명한 착오가 ④의 <i>the error was swiftly corrected</i>로 바로 이어져요(the error = 말린 시금치를 분석한 착오).' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">The figure he reported, 35 milligrams of iron per 100 grams, was itself correct, yet it came from spinach that had been dried, which holds ten times more iron than the same amount of fresh leaves.</span>Myths aren’t only stories. ( ① ) For example, a well-known myth that persists today is the supposed high iron content in spinach. ( ② ) This is a legend that dates back to 1890 and originates from a simple miscalculation by physiologist Gustav von Bunge. ( ③ ) Although the error was swiftly corrected, the correction was just as swiftly forgotten. ( ④ ) The myth had taken hold. ( ⑤ ) Popeye, who gained superhuman strength from the leafy greens and defended himself with iron fists, contributed to its endurance and even today, some nearly 150 years later, parents the world over use this tale to try to persuade their children into eating the healthy vegetable.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    h: '주어진 문장의 he가 가리킬 사람이 처음 나오는 곳, 그리고 글에서 the error라는 말이 나오기 전에 그 오류가 무엇이었는지 설명되어야 하는지 생각해 보세요.',
+    e: '주어진 문장은 원문 <i>He accurately determined that 100 grams of spinach contained 35 milligrams of iron but he was analyzing dried spinach, which held ten times more iron than the same amount of fresh leafy greens.</i>를 바꿔 쓴 것이에요. he는 ③ 앞에서 처음 나오는 <i>physiologist Gustav von Bunge</i>를 가리키고, 주어진 문장은 그 <i>simple miscalculation</i>이 무엇이었는지 풀어 줘요. 그래야 ③ 뒤 <i>the error was swiftly corrected</i>의 the error가 ‘말린 시금치를 분석한 착오’를 가리키게 돼요. ①·②에 넣으면 he가 가리킬 사람이 없고, ④·⑤에 넣으면 오류가 바로잡히고 통념이 자리 잡은 뒤에 다시 오류의 내용을 설명하게 되어 흐름이 거꾸로예요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: '<u>Myths aren’t only stories.</u> For example, a well-known myth that persists today is the supposed high iron content in spinach. This is a legend that dates back to 1890 and originates from a simple miscalculation by physiologist Gustav von Bunge.',
+    o: ['Some myths take the form of mistaken beliefs that people accept as facts.',
+        'Myths are usually invented on purpose to teach children good habits.',
+        'Every myth begins as a children’s tale and only later comes to be treated as a fact.',
+        'Myths spread mainly through cartoons and other popular stories.',
+        'A myth can survive only if scientists fail to correct it.'],
+    a: 0,
+    h: '바로 뒤 For example이 드는 ‘통념’이 꾸며 낸 이야기인지, 사실에 관한 주장인지 보세요.',
+    e: '밑줄 친 문장 바로 뒤에 For example로 <i>the supposed high iron content in spinach</i>가 나와요. 이는 꾸며 낸 이야기가 아니라 과학자의 계산 착오에서 나와 사실처럼 받아들여진 주장이므로, ‘통념은 사실로 여겨지는 잘못된 믿음의 모습을 띠기도 한다’는 ①이 정답이에요. ② 부모들이 이 이야기를 이용하긴 하지만, 통념이 일부러 만들어졌다는 말은 없어요. ③ 순서가 거꾸로예요. 이 통념은 과학자의 계산 착오에서 시작되었고, 아이들에게 들려주는 Popeye 이야기는 나중에 통념이 오래가도록 도왔을 뿐이에요. ‘모든 통념’으로 넓힌 것도 지나친 일반화예요. ④ Popeye는 통념의 지속에 기여한 한 예일 뿐이에요(글의 다른 부분). ⑤ 오류가 <i>swiftly corrected</i>되었는데도 통념이 살아남았으니 반대예요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 시금치의 철분에 관한 통념은 19세기 말 한 과학자의 계산 착오에서 비롯되었다.<br>(b) Bunge가 밝혀낸 철분 수치 자체는 정확했다.<br>(c) 같은 양으로 비교하면, 말린 시금치의 철분은 신선한 시금치의 열 배였다.<br>(d) Bunge의 오류가 바로잡히기까지는 오랜 시간이 걸렸다.<br>(e) 시금치를 먹고 힘을 내는 Popeye는 시금치 철분 통념이 오래 이어지는 데 한몫했다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 3,
+    e: '일치하는 것은 (a), (b), (c), (e) 네 개예요. (a) <i>dates back to 1890 and originates from a simple miscalculation by physiologist Gustav von Bunge</i>와 같아요. (b) <i>He accurately determined that 100 grams of spinach contained 35 milligrams of iron</i>과 같아요. (c) <i>dried spinach, which held ten times more iron than the same amount of fresh leafy greens</i>와 같아요. (e) Popeye가 <i>contributed to its endurance</i>라고 했어요. (d) <i>the error was swiftly corrected</i>이므로 오류는 빠르게 바로잡혔어요. 오래 남은 것은 오류가 아니라 통념이에요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['은서: Bunge가 신선한 시금치로 다시 쟀다면 철분이 35밀리그램보다 더 많이 나왔겠지.',
+        '준혁: Popeye 만화를 만든 사람들은 Bunge의 오류를 알면서도 일부러 이용한 거야.',
+        '채원: 이 글은 시금치가 사실 건강에 좋지 않은 채소라는 걸 알려 주려는 거야.',
+        '동현: 오류를 바로잡았다는 소식이 시금치 이야기만큼 널리 퍼졌다면, 통념이 이렇게 오래가지는 않았을 거야.',
+        '소율: 통념이 생긴 건 과학자들이 Bunge의 오류를 너무 늦게 고쳤기 때문이야.'],
+    a: 3,
+    e: '글은 오류가 빠르게 고쳐졌지만 <i>the correction was just as swiftly forgotten</i>, 그 정정이 잊혔기 때문에 <i>The myth had taken hold</i>라고 해요. 그러니 정정 소식이 널리 알려졌다면 통념이 이렇게 오래가지 않았을 것이라고 한 단계 추론할 수 있어요(동현). 은서는 반대예요. 말린 시금치가 신선한 것보다 열 배 많은 철분을 가졌으니 신선한 시금치는 훨씬 적게 나와요. 준혁의 ‘일부러 이용했다’는 근거가 없어요. 채원은 글이 <i>the healthy vegetable</i>이라고 부른 것과 어긋나요. 소율은 <i>swiftly corrected</i>와 반대예요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
