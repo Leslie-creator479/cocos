@@ -18,7 +18,7 @@ seo.py가 돌 때마다 자동으로 함께 돈다(다른 도구·스킬이 옛 
 import os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MARK = '/*naver-blog-format-2026-11c*/'
+MARK = '/*naver-blog-format-2026-11d*/'
 NEW = MARK + r"""
 function tableHTML(rows){
   var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
@@ -29,13 +29,13 @@ function tableHTML(rows){
   return h+'</table>';
 }
 function bodyHTML(){
-  var out=[],kinds=[],IT=/^\s*(?:[①-⑳]|[·•‧∙]\s|-\s|\d{1,2}[.)]\s)/,IMG=/^\[(대표 )?이미지(?:\s*[:：]\s*(.+?))?\]$/,g=0;
+  var out=[],kinds=[],txt=[],IT=/^\s*(?:[①-⑳]|[·•‧∙]\s|-\s|\d{1,2}[.)]\s)/,IMG=/^\[(대표 )?이미지(?:\s*[:：]\s*(.+?))?\]$/,g=0;
   function big(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(String(t).replace(/^■\s*/,''))+'</b></span></p>'}
   function slot(l){return '<p><span style="color:#E25100"><b>◆ '+esc(l)+' — 여기에 그림을 붙이고 이 줄은 지우세요</b></span></p>'}
   D.body.forEach(function(b){
     var k=b[0],t=b[1],m=k==='p'&&IMG.exec(String(t).trim());
     if(k==='br')return;
-    kinds.push(m?'img':(k==='p'&&IT.test(t))?'item':(k==='hot'&&/^[①-⑳]/.test(t))?'s':k);
+    txt.push(t);kinds.push(m?'img':(k==='p'&&IT.test(t))?'item':(k==='hot'&&/^[①-⑳]/.test(t))?'s':k);
     if(m){out.push(slot(m[1]?'대표 이미지':'그림 '+(++g)+(m[2]?' ('+m[2]+')':'')));return}
     if(k==='b'||k==='ser')out.push(big(t));
     else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><span style="color:#000000"><b>'+esc(t)+'</b></span></p>'
@@ -47,7 +47,15 @@ function bodyHTML(){
     else out.push('<p><span style="color:#000000">'+esc(t)+'</span></p>');
   });
   // 한 줄 띄우기 예외(2026-11-11 원장님): 보기 ①~⑤·목록(· • - 1.) 줄은 앞줄(본문·작은 소제목·목록)에 붙인다
-  var h='';out.forEach(function(x,i){if(i)h+=(kinds[i]==='item'&&/^(p|s|item)$/.test(kinds[i-1]))?'':'<p><br></p>';h+=x});
+  // 목록 줄(· • - / 1. 2.)은 이어진 것끼리 <ul>/<ol>로 묶어 네이버 목록(두 줄 넘으면 내어쓰기)이 되게 한다(2026-11-12)
+  var UL=/^\s*[·•‧∙-]\s+/,OL=/^\s*\d{1,2}[.)]\s+/,h='',i=0;
+  while(i<out.length){
+    if(i)h+=(kinds[i]==='item'&&/^(p|s|item)$/.test(kinds[i-1]))?'':'<p><br></p>';
+    var t=kinds[i]==='item'?String(txt[i]):'',re=UL.test(t)?UL:OL.test(t)?OL:null;
+    if(re){var tag=re===UL?'ul':'ol',o='<'+tag+'>';
+      while(i<out.length&&kinds[i]==='item'&&re.test(String(txt[i]))){o+='<li><span style="color:#000000">'+esc(String(txt[i]).replace(re,''))+'</span></li>';i++}
+      h+=o+'</'+tag+'>';continue}
+    h+=out[i];i++}
   return h+'<p><br></p>';
 }
 """
@@ -56,7 +64,7 @@ FUNC = re.compile(r'function (bodyHTML|tableHTML)\(.*?\n\}\n', re.S)
 
 def patch(s):
     new = NEW.lstrip('\n')
-    for old in ('/*naver-blog-format-2026-11*/', '/*naver-blog-format-2026-11b*/'):
+    for old in ('/*naver-blog-format-2026-11*/', '/*naver-blog-format-2026-11b*/', '/*naver-blog-format-2026-11c*/'):
         if old in s and MARK not in s:
             s = s.replace(old, MARK)
     if MARK in s:
