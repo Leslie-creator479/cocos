@@ -119,7 +119,7 @@ function listText(){
   D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
   return t;
 }
-/*naver-blog-format-2026-11d*/
+/*naver-blog-format-2026-11e*/
 function tableHTML(rows){
   var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
   var h='<table border="1" style="border-collapse:collapse;width:100%">';
@@ -155,6 +155,7 @@ function bodyHTML(){
     if(re){var tag=re===UL?'ul':'ol',o='<'+tag+'>';
       while(i<out.length&&kinds[i]==='item'&&re.test(String(txt[i]))){o+='<li><span style="color:#000000">'+esc(String(txt[i]).replace(re,''))+'</span></li>';i++}
       h+=o+'</'+tag+'>';continue}
+    if(kinds[i]==='item'&&/^\s*[①-⑳]/.test(String(txt[i]))){h+='<p style="padding-left:1.3em;text-indent:-1.3em"><span style="color:#000000">'+esc(String(txt[i]))+'</span></p>';i++;continue}
     h+=out[i];i++}
   return h+'<p><br></p>';
 }
