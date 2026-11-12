@@ -18,13 +18,13 @@ seo.py가 돌 때마다 자동으로 함께 돈다(다른 도구·스킬이 옛 
 import os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MARK = '/*naver-blog-format-2026-11f*/'
+MARK = '/*naver-blog-format-2026-11h*/'
 NEW = MARK + r"""
 function tableHTML(rows){
   var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
   var h='<table border="1" style="border-collapse:collapse;width:100%">';
   rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
-    h+=i?'<td style="color:#000000;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
+    h+=i?'<td style="color:#000000;font-weight:normal;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
         :'<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</th>'});h+='</tr>'});
   return h+'</table>';
 }
@@ -40,11 +40,11 @@ function bodyHTML(){
     if(k==='b'||k==='ser')out.push(big(t));
     else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><span style="color:#000000"><b>'+esc(t)+'</b></span></p>'
       :'<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>');
-    else if(k==='note')out.push('<p><span style="font-size:13px;color:#767171">'+esc(t)+'</span></p>');
-    else if(k==='link')out.push('<p>'+a(b[2],t)+'</p>');
-    else if(k==='list')out.push(listHTML().replace(/<p><b>/g,'<p><span style="color:#000000"><b>').replace(/<\/b><\/p>/g,'</b></span></p>'));
+    else if(k==='note')out.push('<p><span style="font-size:13px;color:#767171;font-weight:normal">'+esc(t)+'</span></p>');
+    else if(k==='link')out.push('<p><span style="font-weight:normal">'+a(b[2],t)+'</span></p>');
+    else if(k==='list')out.push(listHTML().replace(/<p><b>/g,'<p><span style="color:#000000"><b>').replace(/<\/b><\/p>/g,'</b></span></p>').replace(/<p><a /g,'<p><span style="font-weight:normal"><a ').replace(/<\/a><\/p>/g,'</a></span></p>'));
     else if(k==='table')out.push(tableHTML(t));
-    else out.push('<p><span style="color:#000000">'+esc(t)+'</span></p>');
+    else out.push('<p><span style="color:#000000;font-weight:normal">'+esc(t)+'</span></p>');
   });
   // 한 줄 띄우기 예외(2026-11-11 원장님): 보기 ①~⑤·목록(· • - 1.) 줄은 앞줄(본문·작은 소제목·목록)에 붙인다
   // 목록 줄(· • - / 1. 2.)은 이어진 것끼리 <ul>/<ol>로 묶어 네이버 목록(두 줄 넘으면 내어쓰기)이 되게 한다(2026-11-12)
@@ -53,7 +53,7 @@ function bodyHTML(){
     if(i)h+=(kinds[i]==='item'&&/^(p|s|item)$/.test(kinds[i-1]))?'':'<p><br></p>';
     var t=kinds[i]==='item'?String(txt[i]):'',re=UL.test(t)?UL:OL.test(t)?OL:null;
     if(re){var tag=re===UL?'ul':'ol',o='<'+tag+'>';
-      while(i<out.length&&kinds[i]==='item'&&re.test(String(txt[i]))){o+='<li><span style="color:#000000">'+esc(String(txt[i]).replace(re,''))+'</span></li>';i++}
+      while(i<out.length&&kinds[i]==='item'&&re.test(String(txt[i]))){o+='<li><span style="color:#000000;font-weight:normal">'+esc(String(txt[i]).replace(re,''))+'</span></li>';i++}
       h+=o+'</'+tag+'>';continue}
     h+=out[i];i++}
   return h+'<p><br></p>';
@@ -64,7 +64,7 @@ FUNC = re.compile(r'function (bodyHTML|tableHTML)\(.*?\n\}\n', re.S)
 
 def patch(s):
     new = NEW.lstrip('\n')
-    for old in ('/*naver-blog-format-2026-11*/', '/*naver-blog-format-2026-11b*/', '/*naver-blog-format-2026-11c*/', '/*naver-blog-format-2026-11d*/', '/*naver-blog-format-2026-11e*/'):
+    for old in ('/*naver-blog-format-2026-11*/', '/*naver-blog-format-2026-11b*/', '/*naver-blog-format-2026-11c*/', '/*naver-blog-format-2026-11d*/', '/*naver-blog-format-2026-11e*/', '/*naver-blog-format-2026-11f*/', '/*naver-blog-format-2026-11g*/'):
         if old in s and MARK not in s:
             s = s.replace(old, MARK)
     if MARK in s:

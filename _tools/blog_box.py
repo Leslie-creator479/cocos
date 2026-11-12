@@ -45,7 +45,7 @@ def list_block(D):
         h.append('<p><span style="color:#000000"><b>[' + html.escape(g['g']) + ']</b></span></p>')
         t.append('[' + g['g'] + ']')
         for it in g['items']:
-            h.append('<p><a href="%s" target="_blank" rel="noopener">%s</a></p>' % (html.escape(it[1]), html.escape(it[0])))
+            h.append('<p><span style="font-weight:normal"><a href="%s" target="_blank" rel="noopener">%s</a></span></p>' % (html.escape(it[1]), html.escape(it[0])))
             t.append(it[0] + '\r\n' + it[1])
     return {'k': 'raw', 'h': ''.join(h), 't': '\r\n'.join(t)}
 
