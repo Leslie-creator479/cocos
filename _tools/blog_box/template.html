@@ -205,7 +205,6 @@ function bodyHTML(bs){
   if(re){var tag=re===UL?'ul':'ol',o='<'+tag+'>';
    while(i<bs.length&&bs[i].k==='p'&&re.test(bs[i].t)){o+=li(bs[i].t,re);i++;}
    h+=o+'</'+tag+'>';continue;}
-  if(b.k==='p'&&/^\s*[①-⑳]/.test(b.t)){h+='<p style="padding-left:1.3em;text-indent:-1.3em"><span style="color:#000000">'+esc(b.t)+'</span></p>';i++;continue;}
   h+=blockHTML(b);i++;}
  return h+'<p><br></p>';
 }

@@ -18,7 +18,7 @@ seo.py가 돌 때마다 자동으로 함께 돈다(다른 도구·스킬이 옛 
 import os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MARK = '/*naver-blog-format-2026-11e*/'
+MARK = '/*naver-blog-format-2026-11f*/'
 NEW = MARK + r"""
 function tableHTML(rows){
   var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
@@ -55,7 +55,6 @@ function bodyHTML(){
     if(re){var tag=re===UL?'ul':'ol',o='<'+tag+'>';
       while(i<out.length&&kinds[i]==='item'&&re.test(String(txt[i]))){o+='<li><span style="color:#000000">'+esc(String(txt[i]).replace(re,''))+'</span></li>';i++}
       h+=o+'</'+tag+'>';continue}
-    if(kinds[i]==='item'&&/^\s*[①-⑳]/.test(String(txt[i]))){h+='<p style="padding-left:1.3em;text-indent:-1.3em"><span style="color:#000000">'+esc(String(txt[i]))+'</span></p>';i++;continue}
     h+=out[i];i++}
   return h+'<p><br></p>';
 }
@@ -65,7 +64,7 @@ FUNC = re.compile(r'function (bodyHTML|tableHTML)\(.*?\n\}\n', re.S)
 
 def patch(s):
     new = NEW.lstrip('\n')
-    for old in ('/*naver-blog-format-2026-11*/', '/*naver-blog-format-2026-11b*/', '/*naver-blog-format-2026-11c*/', '/*naver-blog-format-2026-11d*/'):
+    for old in ('/*naver-blog-format-2026-11*/', '/*naver-blog-format-2026-11b*/', '/*naver-blog-format-2026-11c*/', '/*naver-blog-format-2026-11d*/', '/*naver-blog-format-2026-11e*/'):
         if old in s and MARK not in s:
             s = s.replace(old, MARK)
     if MARK in s:
