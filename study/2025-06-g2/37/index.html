@@ -510,7 +510,85 @@ var DATA = {
     { s: 5, c: ['But is our analysis', 'of the situation', 'clearly expressed', 'in just one statement?'] },
     { s: 7, c: ['The conclusion is about', 'universities and free education,', 'while the reason', 'introduces some new ideas:', 'economic benefit', 'and a well-educated population.'] },
     { s: 8, c: ['While the link', 'between these two ideas', 'and the conclusion', 'might seem obvious,', 'the purpose of reasoning', 'is to avoid', 'assuming the ‘obvious’', 'by carefully working through', 'the connections between the various ideas', 'in the initial statement', 'of our reason.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['Free University for All: How Education Fuels the Economy',
+        'The Art of Logic: How Humans Reach Every Decision',
+        'Cut the Chain: Why the Best Reasons Fit in One Line',
+        'Behind Every ‘Because’: Spelling Out the Hidden Steps of an Argument',
+        'Obvious Links: Why a Good Reason Speaks for Itself'],
+    a: 3,
+    e: '글은 <i>A reason for a conclusion is very unlikely to consist in a single claim.</i>로 시작해 이유를 <i>a chain of more precise premises</i>로 나누어야 한다고 하고, <i>the purpose of reasoning is to avoid assuming the ‘obvious’</i>로 맺어요. ‘because(이유) 뒤에 숨은 단계들을 하나하나 밝혀 말하기’로 바꿔 쓴 ④가 정답이에요. ① 대학 무상 교육과 경제는 예시의 소재일 뿐이에요. ② 사람의 모든 결정으로 범위가 너무 넓어요. ③ 좋은 이유일수록 한 줄로 끝나야 한다는 것은 이유를 전제로 나누라는 글과 반대예요. ⑤ obvious·reason 같은 원문 낱말을 썼지만, 명백해 보이는 연결을 그대로 믿지 말라는 글의 논지와 반대예요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'A reason for a conclusion is very unlikely to ______________. No matter how we might state it in short-hand, it is, analytically, a complex interaction of many ideas and implications. The reason must be broken down into a chain of more precise premises.',
+    o: ['be broken down into a chain of premises',
+        'involve any ideas beyond the conclusion itself',
+        'support a conclusion about education',
+        'boil down to one simple assertion',
+        'be stated in short-hand by a careful thinker'],
+    a: 3,
+    h: '빈칸 뒤 No matter how ~ 문장이 이유의 ‘말하는 모양’과 ‘실제 모습’을 어떻게 대비하는지 보세요.',
+    e: '원문은 <i>consist in a single claim</i>(단 하나의 주장에 존재하다)이에요. ④는 이것을 ‘하나의 단순한 주장으로 요약되다(boil down to)’로 바꿔 쓴 표현이고, 뒤의 <i>it is, analytically, a complex interaction of many ideas and implications</i>와 이어져요. ① broken down·chain·premises는 원문 낱말이지만 ‘전제로 나뉠 가능성이 낮다’가 되어 <i>The reason must be broken down</i>과 반대예요. ② ‘결론 밖의 생각이 들어올 가능성이 낮다’가 되어 <i>the reason introduces some new ideas</i>와 어긋나요. ③ 교육은 예시의 소재일 뿐이에요. ⑤ short-hand는 원문 낱말이지만, <i>No matter how we might state it in short-hand</i>는 우리가 이유를 짧게 줄여 말한다는 것을 전제하므로 반대예요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Even a reason that appears <u>  (A)  </u> usually bundles together several distinct ideas, so sound reasoning requires laying out how they connect rather than simply <u>  (B)  </u> those connections.',
+    o: ['complex — trusting', 'obvious — tracing', 'self-contained — tracing', 'complex — examining', 'self-contained — trusting'],
+    a: 4,
+    e: '(A) 겉으로는 하나의 주장처럼 보이는 이유도 실은 <i>a complex interaction of many ideas and implications</i>이므로 ‘그 자체로 완결된 듯한’ <b>self-contained</b>, (B) 추론의 목적은 <i>to avoid assuming the ‘obvious’</i>이므로 rather than 뒤 피해야 할 일에는 연결을 ‘그냥 믿는’ <b>trusting</b>이 와야 해요. 둘 다 원문에 없는 낱말이에요. ② obvious는 원문 낱말로 (A)에는 들어갈 수 있지만, (B) tracing(추적하다)은 피해야 할 일이 아니라 해야 할 일이에요. ①④ complex도 원문 낱말이지만 Even(~조차)과 함께 쓰면 ‘복잡해 보이는 이유조차 여러 생각을 묶고 있다’가 되어 겉모습과 실제의 대비가 사라져요. ③④ (B) tracing·examining은 반대예요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'A reason for a conclusion is very unlikely to consist in a single claim. No matter how we might state it in brief, it is, ①<u>on the surface</u>, a complex interaction of many ideas and implications. The reason must be broken down into a chain of more precise premises. For example, the claim that ‘university education should be free for all Australians’ might be supported by the reason that ‘the economy ②<u>profits</u> from a well-educated Australian population’. But is our analysis of the situation clearly expressed in just one ③<u>assertion</u>? Hardly. The conclusion is about universities and free education, while the reason introduces some new ideas: economic benefit and a well-educated population. While the link between these two ideas and the conclusion might seem obvious, the ④<u>aim</u> of reasoning is to avoid assuming the ‘obvious’ by carefully ⑤<u>examining</u> the connections between the various ideas in the initial statement of our reason.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 0,
+    e: '① <b>on the surface</b>(겉으로 보기에)는 틀려요. 원문은 <i>it is, analytically, a complex interaction of many ideas and implications</i>(분석적으로는 많은 생각과 함의의 복잡한 상호작용이다)예요. 짧게 줄여 말한 이유는 겉으로는 하나의 주장처럼 보이지만 ‘분석해 보면’ 복잡하다는 대비라, ‘겉으로 보기에’ 복잡하다고 하면 앞의 No matter how ~ in brief, 그리고 첫 문장의 <i>a single claim</i>과 맞지 않아요. 나머지는 원문을 같은 뜻으로 바꾼 말이에요. ② profits = <i>benefits</i>, ③ assertion = <i>statement</i>, ④ aim = <i>purpose</i>, ⑤ examining = <i>working through</i>.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'A reason for a conclusion is very unlikely ⓐ<u>to consist</u> in a single claim. No matter how we might state it in short-hand, it is, ⓑ<u>analytically</u>, a complex interaction of many ideas and implications. … For example, the claim that ‘university education should be free for all Australians’ might be ⓒ<u>supported</u> by the reason that ‘the economy benefits from a well-educated Australian population’. … The conclusion is about universities and free education, while the reason ⓓ<u>introducing</u> some new ideas: economic benefit and a well-educated population. While the link between these two ideas and the conclusion might seem ⓔ<u>obviously</u>, the purpose of reasoning is to avoid assuming the ‘obvious’ by carefully working through the connections between the various ideas in the initial statement of our reason.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    h: '밑줄마다 그 낱말이 문장에서 어떤 자리(동사·보어·수식어 등)를 채우는지 먼저 정해 보세요.',
+    e: '틀린 것은 ⓓ·ⓔ 2개예요. ⓓ while이 이끄는 절에 주어 the reason만 있고 동사가 없으므로 <b>introduces</b>여야 해요(원문 <i>while the reason introduces some new ideas</i>). ⓔ seem은 보어로 형용사를 쓰므로 <b>obvious</b>여야 해요(원문 <i>might seem obvious</i>). 맞는 것: ⓐ ‘be unlikely to + 동사원형’이에요. ⓑ 콤마 사이에 끼어 문장 전체를 꾸미는 부사(분석적으로)예요. ⓒ 주장(the claim)은 이유에 의해 ‘뒷받침되는’ 쪽이라 수동태 be supported가 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'A reason for a conclusion is very unlikely to consist in a single claim. No matter how we might state it in short-hand, it is, analytically, a complex interaction of many ideas and implications. ① The reason must be broken down into a chain of more precise premises. ② For example, the claim that ‘university education should be free for all Australians’ might be supported by the reason that ‘the economy benefits from a well-educated Australian population’. ③ Many Australian universities also attract large numbers of international students. ④ But is our analysis of the situation clearly expressed in just one statement? Hardly. ⑤ The conclusion is about universities and free education, while the reason introduces some new ideas: economic benefit and a well-educated population.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    e: '③은 글에 없는 문장으로, Australian·universities 같은 예시의 낱말을 쓰지만 ‘유학생이 많이 온다’는, 이유를 따져 보는 일과 상관없는 이야기로 빠져요. 글은 하나처럼 보이는 이유를 전제들로 나누어 따져 봐야 한다는 흐름이에요. ① 전제로 나눠야 한다는 주장 → ② 대학 무상 교육 예시 → ④ <i>But is our analysis of the situation clearly expressed in just one statement?</i>로 그 이유가 한 문장으로 충분한지 묻고 → ⑤ 결론과 이유가 서로 다른 생각을 담고 있다는 분석으로 이어져요. ④는 ② 예시 바로 뒤에 와야 the situation이 그 예시를 가리켜요.' },
+
+  { type: '순서 · 변형', p: '주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?',
+    q: '<span class="box">A reason for a conclusion is very unlikely to consist in a single claim. No matter how we might state it in short-hand, it is, analytically, a complex interaction of many ideas and implications. The reason must be broken down into a chain of more precise premises.</span>(A) But can our analysis of this case really be captured in just one statement? Hardly. The conclusion is about universities and free education, while the reason introduces some new ideas: economic benefit and a well-educated population.<br><br>(B) For example, the claim that ‘university education should be free for all Australians’ might be supported by the reason that ‘the economy benefits from a well-educated Australian population’.<br><br>(C) While the link between the two new ideas and the conclusion might seem obvious, the purpose of reasoning is to avoid assuming the ‘obvious’ by carefully working through the connections between the various ideas in the initial statement of our reason.',
+    o: ['(A) — (C) — (B)', '(B) — (A) — (C)', '(B) — (C) — (A)', '(C) — (A) — (B)', '(C) — (B) — (A)'],
+    a: 1,
+    e: '주어진 글은 이유를 더 정확한 전제들로 나누어야 한다는 주장이에요. (B)의 <i>For example</i>가 대학 무상 교육 예시를 들고, (A)의 <b>this case</b>(이 경우)가 그 예시를 받아 ‘한 문장으로 담기는가? 거의 아니다’라고 한 뒤, 이유에 새로 들어온 두 생각(경제적 이익, 잘 교육받은 인구)을 짚어요. (C)의 <b>the two new ideas</b>는 (A)에서 처음 소개된 그 두 생각을 가리키므로 맨 뒤예요. 원문은 <i>But is our analysis of the situation clearly expressed in just one statement?</i>, <i>While the link between these two ideas and the conclusion might seem obvious</i>예요. (A)나 (C)를 맨 앞에 두면 this case와 the two new ideas가 가리킬 말이 없고, (B) 다음에 (C)를 두면 the two new ideas가 아직 소개되지 않은 생각을 가리키게 돼요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'For example, the claim that ‘university education should be free for all Australians’ might be supported by the reason that ‘the economy benefits from a well-educated Australian population’. But <u>can a single sentence really carry the whole weight of our analysis</u>? Hardly. The conclusion is about universities and free education, while the reason introduces some new ideas: economic benefit and a well-educated population.',
+    o: ['Can everything our reasoning involves be clearly stated in one claim?',
+        'Can a long sentence be read without making the reader tired?',
+        'Should students pay less for their university education?',
+        'Is it ever possible to express any idea in words at all?',
+        'Does a well-educated population make the economy stronger?'],
+    a: 0,
+    e: '원문은 <i>But is our analysis of the situation clearly expressed in just one statement?</i>(그 상황에 대한 우리의 분석이 단 하나의 진술로 명확하게 표현되는가?)예요. ‘한 문장이 분석의 무게 전체를 정말 짊어질 수 있을까?’는 우리 분석 전체를 한 주장으로 분명히 나타낼 수 있느냐는 물음이라 ①이 정답이에요. 뒤의 <i>Hardly.</i>는 그럴 수 없다는 답이에요. ② weight를 글자 그대로 ‘읽기 힘든 무게’로 읽은 것이에요. ③⑤ 예시의 내용(대학 무상 교육, 교육받은 인구와 경제)일 뿐 밑줄의 뜻이 아니에요. ④ 말로는 어떤 생각도 나타낼 수 없다는 것은 지나친 확대예요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 이유를 짧게 줄여 말하더라도, 분석해 보면 그 안에는 여러 생각과 함의가 얽혀 있다.<br>(b) 예시에서 이유는 결론에 이미 들어 있던 개념만으로 이루어져 있다.<br>(c) 필자는 이유와 결론 사이의 연결이 명백해 보일 수도 있다는 점을 인정한다.<br>(d) 예시에서 ‘잘 교육받은 인구가 경제에 이익이 된다’는 말은 대학 무상 교육이라는 주장을 받치는 근거로 쓰인다.<br>(e) 필자는 대학 교육이 모든 호주인에게 무료여야 한다고 주장한다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 2,
+    h: '필자 자신의 판단인지, 설명을 위해 가져온 말인지를 구별하며 원문과 맞춰 보세요.',
+    e: '일치하는 것은 (a)(c)(d) 3개예요. (a) <i>No matter how we might state it in short-hand, it is, analytically, a complex interaction of many ideas and implications</i>, (c) <i>the link between these two ideas and the conclusion might seem obvious</i>, (d) <i>the claim that ‘university education should be free for all Australians’ might be supported by the reason that ‘the economy benefits from a well-educated Australian population’</i>. (b) 이유는 <i>some new ideas: economic benefit and a well-educated population</i>를 새로 들여와요. (e) 무상 교육은 이유의 구조를 보여 주려고 든 예시(<i>might be supported by the reason</i>)일 뿐, 필자가 그 주장에 찬성한다는 말은 없어요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['서윤: 이유를 여러 전제로 나누면 주장이 약해 보이니까, 설득하려면 한 문장으로 짧게 말하는 게 나아.',
+        '도현: 필자는 결국 대학 무상 교육이 경제에 도움이 되지 않는다는 것을 보여 주려는 거야.',
+        '하린: 이유에 결론에 없던 새 개념이 들어 있다면, 그 이유는 결론과 아무 관계가 없는 셈이야.',
+        '민재: 이유와 결론의 연결이 명백해 보인다면 굳이 따져 보지 않아도 되니 추론의 수고를 덜 수 있어.',
+        '예준: 예시의 이유를 따지려면 무상 교육이 어떻게 교육받은 인구를 늘리고, 그 인구가 어떻게 경제에 이익이 되는지를 하나씩 밝혀 봐야 해.'],
+    a: 4,
+    e: '결론(대학 무상 교육)과 이유(경제가 잘 교육받은 인구로 이익을 본다) 사이에는 <i>some new ideas: economic benefit and a well-educated population</i>가 끼어 있어요. 필자는 <i>carefully working through the connections between the various ideas</i>를 추론이 할 일로 보므로, 무상 교육 → 교육받은 인구 → 경제 이익으로 이어지는 연결을 하나씩 밝혀야 한다는 예준의 추론이 맞아요. 서윤: <i>The reason must be broken down into a chain of more precise premises</i>와 반대예요. 도현: 필자는 그 주장이 옳은지 그른지 판단하지 않아요. 하린: 새 생각이 들어 있다는 것은 연결을 따져 보라는 뜻이지 관계가 없다는 뜻이 아니에요. 민재: 추론의 목적은 오히려 <i>to avoid assuming the ‘obvious’</i>예요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
