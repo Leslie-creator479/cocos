@@ -516,7 +516,86 @@ var DATA = {
     { s: 7, c: ['In smaller stations,', 'separate platforms should be used', 'and traffic routed', 'so that', 'the two lines of movement', 'do not cross.'] },
     { s: 8, c: ['In some instances,', 'separate stations', 'are', 'in use.'] },
     { s: 9, c: ['Clear and concise', 'direction and routing signs', 'and other means', 'of channelization', 'are desirable.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['Grand Central Terminal: A Model of Multilevel Station Design',
+        'Clear Signs First: Why Station Design Begins with Directions',
+        'Slow Travelers: The Price of Poorly Divided Station Routes',
+        'Two Crowds, Two Courses: Why a Station Should Not Mix Its Passengers',
+        'Direct Access for All: One Shared Route for Every Passenger'],
+    a: 3,
+    e: '글은 천천히 움직이며 도움이 필요한 도시 간 여행객과 길을 알고 서두르는 통근객을 맞세운 뒤 <i>These two types of traffic should be kept separate to avoid conflict and confusion.</i>이라고 주장하고, 층·승강장·별도의 역·표지로 나누는 방법을 들어요. ‘두 무리, 두 길: 역이 승객을 섞지 말아야 하는 까닭’이 이를 바꿔 쓴 제목이에요. ① Grand Central Terminal은 큰 역의 예시일 뿐이에요. ② 표지는 마지막에 덧붙인 방법 하나라 범위가 좁고, 설계가 표지에서 시작한다는 말도 없어요. ③ 도시 간 여행객이 느린 것은 절차에 익숙하지 않고 짐이 있는 등 그들의 사정 때문이고, 그래서 동선을 나눠야 한다는 것이에요. 느림을 동선을 잘못 나눈 결과로 본 것은 인과가 거꾸로예요. ⑤ direct access는 원문 낱말이지만 통근객이 원하는 것이고, 글은 모두가 한 길을 쓰자는 것과 반대예요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'These two types of traffic should be kept separate to avoid conflict and confusion. In some large stations such as Grand Central Terminal in New York City, commuter and intercity trains arrive and depart on different levels. In smaller stations, separate platforms should be used and traffic routed so that the two lines of movement do not cross. In some instances, separate stations are in use. Clear and concise direction and routing signs and ______________ are desirable.',
+    o: ['other ways of keeping each flow in its own lane',
+        'other means of bringing the two groups onto a single route',
+        'shared waiting areas offering information, food, and a comfortable seat',
+        'other means of cutting delays for connecting trains',
+        'waiting rooms where commuters can stay a little longer'],
+    a: 0,
+    e: '원문은 <i>other means of channelization</i>(흐름을 유도하는 다른 수단)이에요. 앞의 문장들이 모두 두 흐름을 나누는 방법(층, 승강장, 별도의 역)이고, 빈칸도 방향·동선 표지와 나란히 놓인 ‘흐름을 각자의 길로 이끄는 방법’이어야 하므로 ①이 정답이에요. ② means는 원문 낱말이지만 두 무리를 한 길로 모으는 것은 글의 주장과 반대예요. ③ information, food, a comfortable place는 원문 낱말이지만 도시 간 여행객의 필요를 말한 부분이고, 두 무리가 함께 쓰는(shared) 대기 공간은 흐름을 나누는 수단이 아니라 오히려 섞는 것이에요. ④ delayed, connections도 원문 낱말이지만 열차 지연을 줄이는 이야기는 없어요. ⑤ 통근객은 <i>usually in a hurry</i>라서 오래 머물 곳이 필요한 사람들이 아니에요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'To avoid <u>  (A)  </u> between intercity travelers and commuters, stations should give the two groups <u>  (B)  </u> paths through their layout and signs.',
+    o: ['delays — shared', 'confusion — combined', 'clashes — crowded', 'waiting — direct', 'clashes — distinct'],
+    a: 4,
+    h: '(A)는 두 무리가 섞이면 생기는 일이고, (B)는 그것을 막으려면 두 무리의 길이 어떠해야 하는지예요.',
+    e: '(A) 원문 <i>to avoid conflict and confusion</i>의 conflict를 ‘충돌(clashes)’로 바꿨어요. (B) <i>These two types of traffic should be kept separate</i>이고 두 동선이 <i>do not cross</i> 하도록 해야 하니 ‘서로 구별되는(distinct)’ 길이에요. ② confusion은 원문 낱말이라 (A)로는 뜻이 맞지만, 두 무리의 길을 합친다(combined)는 것은 반대예요. ③ (A)는 맞지만 길을 붐비게(crowded) 한다는 것은 목적과 맞지 않아요. ① delays(delayed)와 ④ direct는 원문에 나온 말이지만, 지연이나 기다림을 피하려는 것이 아니라 두 흐름이 부딪치는 것을 막으려는 것이에요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'The usual intercity traveler moves slowly through the station area. The passenger may not be familiar with the ①<u>procedures</u>, have baggage to handle and check or retrieve, have a long wait for connections or delayed trains, and may require information, food, and a comfortable place to sit. Commuters, on the other hand, are familiar with the route through the station, have little or no luggage, and are usually in a hurry. They want direct access to or from local streets and transport. These two types of traffic should be kept separate to ②<u>prevent</u> conflict and confusion. In some large stations such as Grand Central Terminal in New York City, commuter and intercity trains arrive and depart on different levels. In smaller stations, ③<u>shared</u> platforms should be used and traffic ④<u>steered</u> so that the two lines of movement do not cross. In some ⑤<u>cases</u>, separate stations are in use. Clear and concise direction and routing signs and other means of channelization are desirable.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 2,
+    e: '③ shared(함께 쓰는)는 원문에서 <b>separate</b>(별도의)였어요. 작은 역에서 승강장을 쓰는 목적이 <i>so that the two lines of movement do not cross</i>(두 동선이 교차하지 않도록)이므로 두 무리가 승강장을 ‘함께 쓰면’ 앞뒤가 맞지 않아요. 큰 역은 층을, 작은 역은 승강장을 나눈다는 흐름이에요. ① procedures(=routine, 절차), ② prevent(=avoid, 막다), ④ steered(=routed, 이끌다), ⑤ cases(=instances, 경우)는 원문 낱말을 같은 뜻으로 바꾼 것이라 적절해요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'The passenger may not be familiar with the routine, have baggage to handle and check or retrieve, have a long wait for connections or ⓐ<u>delayed</u> trains, and may require information, food, and a comfortable place to sit. Commuters, on the other hand, are familiar with the route through the station, have ⓑ<u>few</u> or no luggage, and are usually in a hurry. They ⓒ<u>wanting</u> direct access to or from local streets and transport. … In some large stations such as Grand Central Terminal in New York City, commuter and intercity trains ⓓ<u>are arrived</u> and depart on different levels. In smaller stations, separate platforms should be used and traffic ⓔ<u>routed</u> so that the two lines of movement do not cross.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 2,
+    h: '밑줄마다 앞뒤 말과 어떻게 이어지는지 하나씩 확인하고, 확실히 틀린 것만 세어 보세요.',
+    e: '틀린 것은 ⓑ, ⓒ, ⓓ 세 개예요. ⓑ luggage는 셀 수 없는 명사라 few가 아니라 <b>little</b>이 와야 해요(원문 <i>little or no luggage</i>). ⓒ 주어 They 뒤에 문장의 동사가 없으므로 분사 wanting이 아니라 동사 <b>want</b>여야 해요(원문 <i>They want direct access</i>). ⓓ arrive는 목적어를 갖지 않는 자동사라 수동태로 쓸 수 없으므로 <b>arrive</b>여야 해요(원문 <i>arrive and depart</i>). ⓐ 열차가 ‘지연된’ 것이므로 과거분사 delayed가 맞아요. ⓔ 앞의 should be가 반복되어 생략된 꼴(traffic (should be) routed)이고, 교통이 ‘유도되는’ 것이므로 과거분사 routed가 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'The usual intercity traveler moves slowly through the station area. ① The passenger may not be familiar with the routine, have baggage to handle and check or retrieve, have a long wait for connections or delayed trains, and may require information, food, and a comfortable place to sit. ② Commuters, on the other hand, are familiar with the route through the station, have little or no luggage, and are usually in a hurry. ③ They want direct access to or from local streets and transport. ④ Many cities have invested in local transport to make the daily commute easier. ⑤ These two types of traffic should be kept separate to avoid conflict and confusion. In some large stations such as Grand Central Terminal in New York City, commuter and intercity trains arrive and depart on different levels.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    e: '④는 지어낸 문장이에요. 앞 문장의 local transport와 통근 이야기를 이어받아 그럴듯하지만, 글은 역 안에서 두 종류 승객의 흐름을 어떻게 나눌지를 말하는데 ④는 도시의 교통 투자로 화제를 돌려요. ④를 빼면 두 종류의 승객 설명(①~③) 뒤에 <i>These two types of traffic</i>로 둘을 묶어 받는 ⑤가 바로 이어져요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">Those who make the same trip every day, by contrast, know their way through the station, carry little or nothing, and are usually pressed for time.</span>The usual intercity traveler moves slowly through the station area. ( ① ) The passenger may not be familiar with the routine, have baggage to handle and check or retrieve, have a long wait for connections or delayed trains, and may require information, food, and a comfortable place to sit. ( ② ) They want direct access to or from local streets and transport. ( ③ ) These two types of traffic should be kept separate to avoid conflict and confusion. ( ④ ) In some large stations such as Grand Central Terminal in New York City, commuter and intercity trains arrive and depart on different levels. ( ⑤ ) In smaller stations, separate platforms should be used and traffic routed so that the two lines of movement do not cross.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 1,
+    h: '각 자리에 넣어 본 뒤, 바로 다음 문장의 주어와 대명사가 누구를 가리키게 되는지 확인해 보세요.',
+    e: '주어진 문장은 원문 <i>Commuters, on the other hand, are familiar with the route through the station, have little or no luggage, and are usually in a hurry.</i>를 바꿔 쓴 것이에요(<b>Those who make the same trip every day</b> = 통근객, <b>by contrast</b> = on the other hand). 도시 간 여행객 설명이 끝난 뒤에 대조로 와야 하고, ② 뒤 <i>They want direct access</i>의 They는 복수인 통근객을 가리켜야 하므로 ②에 들어가요. 이 문장이 빠지면 They가 단수인 <i>The passenger</i>(도시 간 여행객)를 가리키게 되어 끊겨요. ①에 넣으면 뒤의 The passenger가 길을 잘 아는 통근객이 되어 <i>may not be familiar with the routine</i>과 맞지 않아요. ③ 이후는 They 문제가 그대로 남아요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'In some large stations such as Grand Central Terminal in New York City, commuter and intercity trains arrive and depart on different levels. In smaller stations, separate platforms should be used and traffic routed so that the two lines of movement do not cross. In some instances, <u>the two crowds do not even share a roof</u>.',
+    o: ['Some stations have platforms that are open to the sky.',
+        'Commuters and intercity travelers are kept on different floors of one building.',
+        'Each group is given its own platform within a smaller station.',
+        'Commuters are not allowed to enter the main station at all.',
+        'Commuters and intercity travelers sometimes use entirely different stations.'],
+    a: 4,
+    e: '밑줄은 원문 <i>In some instances, separate stations are in use.</i>(어떤 경우에는 별도의 역이 사용된다)를 ‘두 무리가 지붕조차 함께 쓰지 않는다’는 비유로 바꾼 것이에요. 한 건물(지붕) 안에서 층이나 승강장을 나누는 데서 더 나아가 아예 다른 역을 쓴다는 뜻이므로 ⑤가 정답이에요. ① roof를 글자 그대로 받아들인 해석이에요. ② 층을 나누는 것은 앞 문장의 큰 역 예시이고, 한 건물 안이라 지붕을 함께 써요. ③ 작은 역의 승강장 이야기로 역시 한 지붕 아래예요. ④ 별도의 역을 쓴다는 것이지 통근객의 출입을 막는다는 말은 없어요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) 도시 간 여행객 가운데에는 역에서 짐을 맡기거나 되찾아야 하는 사람도 있다.<br>(b) 통근객은 대개 역에 오래 머물며 정보와 음식을 얻으려 한다.<br>(c) Grand Central Terminal에서는 통근 열차와 도시 간 열차가 시간대를 나누어 같은 층을 쓴다.<br>(d) 통근객은 역을 지나는 경로에 익숙하다.<br>(e) 글쓴이는 통근객에게는 지역 도로와 교통수단으로 곧장 이어지는 길이 필요하지 않다고 본다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '일치하는 것은 (a), (d) 두 개예요. (a) 도시 간 여행객은 <i>have baggage to handle and check or retrieve</i> 할 수도 있다(may)고 했으니 그런 사람도 있어요. (d) <i>Commuters, on the other hand, are familiar with the route through the station</i>과 같아요. (b) 정보·음식을 필요로 하는 것은 도시 간 여행객이고, 통근객은 <i>usually in a hurry</i>예요. (c) Grand Central Terminal에서는 두 열차가 <i>arrive and depart on different levels</i>, 즉 다른 층을 써요. 시간대 이야기는 없어요. (e) 통근객은 <i>They want direct access to or from local streets and transport.</i>이므로 반대예요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['지호: 역의 절차에 익숙하지 않은 도시 간 여행객은 길을 잘 아는 통근객보다 안내 정보에 더 기대겠구나.',
+        '서윤: 통근객이 서두르는 까닭은 역 안의 동선이 복잡해서 길을 자주 헤매기 때문이야.',
+        '민재: Grand Central Terminal처럼 큰 역이라면 승강장만 나눠도 충분하니 층까지 나눌 필요는 없어.',
+        '하은: 두 종류의 승객을 나누는 목적은 도시 간 여행객에게 더 편안한 자리를 마련해 주는 데 있어.',
+        '도현: 흐름을 잘 나눈 역이라면 표지판의 안내는 간결하기보다 자세할수록 좋아.'],
+    a: 0,
+    h: '각 말이 글의 어느 문장에 기대고 있는지 찾고, 글에 없는 까닭이나 목적을 덧붙이지 않았는지 보세요.',
+    e: '도시 간 여행객은 <i>may not be familiar with the routine</i>이고 <i>may require information</i>인 반면, 통근객은 <i>are familiar with the route through the station</i>이에요. 그러니 도시 간 여행객이 안내 정보에 더 기댈 것이라고 추론할 수 있어요(지호). 서윤: 통근객은 오히려 길을 잘 알아요. 민재: 큰 역의 예시는 <i>arrive and depart on different levels</i>이고, 승강장을 나누는 것은 <i>In smaller stations</i>의 방법이에요. 하은: 나누는 목적은 <i>to avoid conflict and confusion</i>이에요. 도현: 글은 <i>Clear and concise</i> 표지가 바람직하다고 했어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
