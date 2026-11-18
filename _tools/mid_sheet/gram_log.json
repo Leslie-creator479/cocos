@@ -20,6 +20,16 @@
       "title": "Do you know where is it?은 왜 틀릴까?",
       "published": "2026-11-11",
       "status": "done"
+    },
+    {
+      "slug": "grammar-m1-01",
+      "grade": "중1",
+      "round": 1,
+      "grammar": "조동사 should·must·have to",
+      "passage": "study/reading-m1-01/4/",
+      "title": "don’t have to는 왜 ‘하면 안 된다’가 아닐까?",
+      "published": "2026-11-18",
+      "status": "done"
     }
   ]
 }

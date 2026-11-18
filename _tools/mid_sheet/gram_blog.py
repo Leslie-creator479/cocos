@@ -119,13 +119,14 @@ def images(cfg, D, outdir):
     uses = [c for c in R['cards'] if not c.get('key')]
     if cfg.get('uses_pick'):  # 쓰임 카드가 4개를 넘으면 이미지에 넣을 카드만 고른다(0부터, 2026-11-11 중3 간접의문문 5개)
         uses = [uses[i] for i in cfg['uses_pick']]
+    # uses_form: 이미지의 꼴 줄을 짧게(두 줄이면 넘침, 2026-11-18 중1 조동사)
     if cfg.get('uses_lab'):  # 이미지 카드 제목을 짧게(두 줄이면 넘침)
         uses = [dict(c, lab=l) for c, l in zip(uses, cfg['uses_lab'])]
     key = next((c for c in R['cards'] if c.get('key')), None)
     cols = ['t-blue', 't-pink', 't-mint', 't-lilac']
     ub = ''.join(f'''<div class="u {cols[i % 4]}"><b>{c['lab']}</b><small>{c.get('sub', '')}</small><p class="w">{' · '.join(c.get('w', []))}</p><p class="ex">{c.get('ex', '')}</p></div>''' for i, c in enumerate(uses[:4]))
     cards.append(f'''<section class="card gc g-uses" id="c3"><div class="sheet"><p class="no2">STEP 2 · 한눈에 정리</p>
-  <h2>{cfg.get('uses_title', cfg['grammar'])}</h2>{f'<p class="form">{key["sub"]}</p>' if key else ''}<div class="ug">{ub}</div>{foot}</div></section>''')
+  <h2>{cfg.get('uses_title', cfg['grammar'])}</h2>{f'<p class="form">{cfg.get("uses_form", key["sub"])}</p>' if key else ''}<div class="ug">{ub}</div>{foot}</div></section>''')
     T = R.get('table')
     if T:
         tr = ''.join(f'<tr><th>{r[0]}</th><td>{r[1]}</td><td>{r[2]}</td></tr>' for r in T['rows'])
