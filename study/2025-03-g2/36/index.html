@@ -514,7 +514,85 @@ var DATA = {
     { s: 6, c: ['Even countries', 'with extremely productive', 'agricultural sectors', 'are not fully self-sufficient', 'in all food items.'] },
     { s: 7, c: ['The United States,', 'for example,', 'depends on imports', 'for its supply', 'of coffee, tea, bananas', 'and other tropical products.'] },
     { s: 8, c: ['In general,', 'the problem', 'of assuring adequate food supplies', 'is solved', 'by relying on', 'both domestic production and imports.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['A Full Plate from Many Fields: Food Security Beyond Self-Sufficiency',
+        'Coffee, Tea, and Bananas: America’s Favorite Tropical Imports',
+        'The Global History of Farming and Trade',
+        'Food Self-Sufficiency: The Only Road to Food Security',
+        'Why Climate Differences Make Every Country Grow the Same Crops'],
+    a: 0,
+    e: '글은 식량 안보가 자급자족을 필요로 하지 않으며, 국내 생산과 수입을 함께 활용해 이루어진다는 내용이에요. <i>food security does not require food self-sufficiency</i>, <i>relying on both domestic production and imports</i>를 ‘여러 들판에서 채운 가득한 접시: 자급자족을 넘어선 식량 안보’로 바꾼 ①이 정답이에요. ② 미국의 열대 산물은 예시일 뿐이에요. ③ 농업과 무역의 역사 전반으로 범위가 너무 넓어요. ④ food self-sufficiency, food security라는 원문 표현을 썼지만 글의 논지와 정반대예요. ⑤ 글은 기후 조건이 나라마다 달라서(<i>conditions that tend to vary around the world</i>) 모든 것을 기를 수 없다는 것인데, 기후 차이가 같은 작물을 기르게 한다고 원인과 결과의 관계를 잘못 이었어요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'However, food security does not require food self-sufficiency because countries can import food items not easily produced within the country. Agricultural products are, after all, highly sensitive to climatic, soil and other conditions that tend to vary around the world. Even countries with extremely productive agricultural sectors ______________. The United States, for example, depends on imports for its supply of coffee, tea, bananas and other tropical products. In general, the problem of assuring adequate food supplies is solved by relying on both domestic production and imports.',
+    o: ['are fully self-sufficient in all food items',
+        'depend on imports for most of the food they consume',
+        'still fall short of producing every kind of food their people eat',
+        'attach little importance to achieving food security',
+        'can grow tropical products under any kind of climate'],
+    a: 2,
+    h: '빈칸 바로 뒤 for example 문장이 어떤 일반적인 주장의 예가 되는지 거꾸로 생각해 보세요.',
+    e: '원문은 <i>are not fully self-sufficient in all food items</i>(모든 식품에서 완전히 자급자족할 수 있는 것은 아니다)예요. ③은 이것을 ‘여전히 국민이 먹는 모든 종류의 식품을 다 생산하지는 못한다’로 바꿔 쓴 표현이고, 농업이 매우 발달한 미국도 커피·차·바나나를 수입에 의존한다는 바로 뒤의 예와 이어져요. ① fully self-sufficient in all food items라는 원문 낱말을 그대로 썼지만 not을 뺀 반대 함정이에요. ② 미국의 예는 열대 산물에 한정되므로 ‘대부분의 식량’을 수입한다는 것은 지나쳐요. ④ <i>attach great importance to achieving food security</i>와 반대예요. ⑤ 농산물은 기후 조건에 <i>highly sensitive</i>하다고 했으니 반대예요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Food security is about having <u>  (A)  </u> supplies of food for a country’s people, not about where that food <u>  (B)  </u>.',
+    o: ['productive — sells', 'domestic — originates', 'ample — originates', 'tropical — travels', 'ample — spoils'],
+    a: 2,
+    e: '(A) 식량 안보의 첫 문제는 <i>insuring that adequate amounts of food are available to the resident population</i>이므로 ‘충분한’ <b>ample</b>, (B) 식량 안보는 <i>does not require food self-sufficiency</i>이고 <i>relying on both domestic production and imports</i>로 해결되므로, 식량이 국내산인지 수입산인지 ‘어디에서 오는지’는 상관없다는 뜻의 <b>originates</b>예요. 둘 다 원문에 없는 낱말이에요. ② domestic은 원문 낱말이지만 ‘국내산 공급’을 가져야 한다면 ‘어디에서 오는지와 상관없다’는 뒷부분과 모순이에요. ① productive, ④ tropical도 원문 낱말을 쓴 함정이에요. ⑤ spoils(상하다)는 근거가 없어요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'The governments of virtually every country on the planet attach great importance to achieving food security and ①<u>a diverse range of</u> mechanisms have been developed to realize this goal. The first issue governments face in achieving national food security is the problem of insuring that adequate amounts of food are available to the ②<u>local</u> population. Some governments have set ③<u>targets</u> of food self-sufficiency, which means most if not all of the food available in a country comes from the domestic farming system. However, food security does not ④<u>demand</u> food self-sufficiency because countries can import food items ⑤<u>abundantly</u> produced within the country. Agricultural products are, after all, highly sensitive to climatic, soil and other conditions that tend to vary around the world.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 4,
+    e: '⑤ <b>abundantly</b>(풍부하게)는 틀려요. 원문은 <i>food items not easily produced within the country</i>(자국 내에서 쉽게 생산되지 않는 식품)예요. 바로 뒤에서 농산물이 나라마다 다른 기후·토양 조건에 민감하다고 이유를 대므로, 수입하는 것은 국내에서 ‘기르기 어려운’ 식품이어야 하고 ‘풍부하게 생산되는’ 식품을 수입한다는 것은 흐름에 맞지 않아요. 나머지는 원문을 같은 뜻으로 바꾼 말이에요. ① a diverse range of = <i>a wide variety of</i>, ② local = <i>resident</i>, ③ targets = <i>goals</i>, ④ demand = <i>require</i>.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'The governments of virtually every country on the planet attach great importance to achieving food security and a wide variety of mechanisms have ⓐ<u>been developed</u> to realize this goal. The first issue governments face in achieving national food security is the problem of insuring ⓑ<u>what</u> adequate amounts of food are available to the resident population. Some governments have ⓒ<u>set</u> goals of food self-sufficiency, which means most if not all of the food available in a country comes from the domestic farming system. However, food security does not require food self-sufficiency ⓓ<u>because of</u> countries can import food items not easily produced within the country. … In general, the problem of ⓔ<u>assuring</u> adequate food supplies is solved by relying on both domestic production and imports.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    e: '틀린 것은 ⓑ·ⓓ 2개예요. ⓑ 뒤의 adequate amounts of food are available to the resident population은 빠진 성분이 없는 완전한 절이고 insuring의 목적어가 되는 명사절이므로 what이 아니라 접속사 <b>that</b>이어야 해요(원문 <i>insuring that adequate amounts of food are available</i>). ⓓ 뒤에 주어(countries)와 동사(can import)가 있는 절이 오므로 전치사 because of가 아니라 접속사 <b>because</b>여야 해요(원문 <i>because countries can import</i>). 맞는 것: ⓐ 메커니즘이 ‘개발된’ 것이라 수동태 현재완료가 맞아요. ⓒ set의 과거분사는 set이라 현재완료 have set이 맞아요. ⓔ 전치사 of 뒤의 동명사라 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'Some governments have set goals of food self-sufficiency, which means most if not all of the food available in a country comes from the domestic farming system. ① However, food security does not require food self-sufficiency because countries can import food items not easily produced within the country. ② Agricultural products are, after all, highly sensitive to climatic, soil and other conditions that tend to vary around the world. ③ Even countries with extremely productive agricultural sectors are not fully self-sufficient in all food items. ④ The United States, for example, depends on imports for its supply of coffee, tea, bananas and other tropical products. ⑤ Arabica coffee, the most common kind, is believed to have originated in the highlands of Ethiopia in East Africa. In general, the problem of assuring adequate food supplies is solved by relying on both domestic production and imports.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 4,
+    e: '⑤는 글에 없는 문장으로, 바로 앞에 나온 커피(coffee)를 받아 이어지는 것처럼 보이지만 ‘가장 흔한 커피 품종인 아라비카가 동아프리카 에티오피아 고원에서 처음 생겨났다고 여겨진다’는 작물의 기원 이야기라, 국내 생산과 수입을 함께 활용해 식량 안보를 이룬다는 글의 논지에서 벗어나요. ⑤를 빼면 미국의 예 다음에 <i>In general</i>로 결론이 바로 이어져요. ① 자급자족이 꼭 필요하지 않다는 반론, ② 기후·토양 조건에 민감함(수입이 필요한 이유), ③ 생산성 높은 나라도 완전 자급은 못 함, ④ 미국의 예는 한 흐름이에요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">The United States, a country with just such a highly productive farm sector, depends on imports for its supply of coffee, tea, bananas and other tropical products.</span>The governments of virtually every country on the planet attach great importance to achieving food security and a wide variety of mechanisms have been developed to realize this goal. The first issue governments face in achieving national food security is the problem of insuring that adequate amounts of food are available to the resident population. Some governments have set goals of food self-sufficiency, which means most if not all of the food available in a country comes from the domestic farming system. ( ① ) However, food security does not require food self-sufficiency because countries can import food items not easily produced within the country. ( ② ) Agricultural products are, after all, highly sensitive to climatic, soil and other conditions that tend to vary around the world. ( ③ ) Even countries with extremely productive agricultural sectors are not fully self-sufficient in all food items. ( ④ ) In general, the problem of assuring adequate food supplies is solved by relying on both domestic production and imports. ( ⑤ )',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    h: '주어진 문장 속 지시하는 말이 가리킬 내용이 바로 앞에 나와 있어야 하는 곳을 찾아보세요.',
+    e: '주어진 문장은 원문 <i>The United States, for example, depends on imports for its supply of coffee, tea, bananas and other tropical products.</i>를 바꿔 쓴 것이에요. ‘<b>a country with just such a highly productive farm sector</b>’(바로 그런 생산성 높은 농업 부문을 가진 나라)는 바로 앞에서 생산성이 아주 높은 농업 부문을 말했어야 쓸 수 있는 말이므로, <i>Even countries with extremely productive agricultural sectors are not fully self-sufficient in all food items.</i> 바로 뒤인 ④에 들어가야 해요. 그러면 농업 강국도 완전 자급은 못 한다 → 미국의 예 → <i>In general</i> 결론으로 이어져요. ①②③ 그 앞에는 생산성 높은 농업 부문이 아직 나오지 않아 just such가 가리킬 것이 없어요. ⑤ 결론 뒤에 예가 덧붙는 것은 어색하고, 바로 앞 문장에 생산성 높은 농업 부문이 없어요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'The first issue governments face in achieving national food security is the problem of insuring that adequate amounts of food are available to the resident population. Some governments have set goals of food self-sufficiency, which means <u>a nation’s table is filled mostly, if not wholly, from its own fields</u>. However, food security does not require food self-sufficiency because countries can import food items not easily produced within the country.',
+    o: ['The country counts mainly on its own farms to supply the food available to its people.',
+        'Families eat only the vegetables they grow in their own gardens.',
+        'The country imports the foods that it cannot easily grow at home.',
+        'The country is banned by law from buying any food from abroad.',
+        'Most of the country’s food is bought from farms in other nations.'],
+    a: 0,
+    e: '밑줄은 원문 <i>most if not all of the food available in a country comes from the domestic farming system</i>(한 국가에서 구할 수 있는 식량의 전부는 아니더라도 대부분이 국내 농업 시스템에서 나온다)를 ‘한 나라의 식탁이 전부는 아니더라도 대부분 자기 들판에서 채워진다’는 비유로 바꾼 것이에요. ①이 정답이에요. ② 식탁·들판을 글자 그대로 가정의 텃밭으로 읽은 것이에요. ③ 바로 뒤 문장의 수입 이야기라 밑줄의 뜻이 아니에요. ④ 법으로 금지한다는 것은 지나친 확대 해석이에요. ⑤ 반대예요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) According to the passage, every government has adopted food self-sufficiency as its goal.<br>(b) The passage names making enough food available to residents as the first issue in achieving national food security.<br>(c) The passage concludes that relying on imports alone is the usual way to secure adequate food supplies.<br>(d) The passage explains that countries import food mainly because imported food is cheaper than food grown at home.<br>(e) The passage mentions that many different mechanisms have been developed to achieve food security.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 1,
+    h: '진술마다 범위·조건을 나타내는 말이 원문과 꼭 같은지 하나씩 확인하세요.',
+    e: '일치하는 것은 (b)(e) 2개예요. (b) <i>The first issue governments face in achieving national food security is the problem of insuring that adequate amounts of food are available to the resident population.</i> (e) <i>a wide variety of mechanisms have been developed to realize this goal</i>. (a) 원문은 <i>Some governments</i>(일부 정부)라 ‘모든 정부’는 범위를 바꾼 것이에요. (c) 원문은 <i>relying on both domestic production and imports</i>(국내 생산과 수입 둘 다)라 ‘수입만’이 틀려요. (d) 글이 드는 수입의 이유는 값이 아니라 <i>food items not easily produced within the country</i>, 곧 기후·토양 조건 때문에 자국에서 쉽게 생산되지 않는 식품이라는 점이에요. 값에 대한 이야기는 글에 없어요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['주원: 미국이 커피를 수입한다는 건 미국의 식량 안보가 약하다는 뜻이야.',
+        '나연: 식량 자급자족은 어떤 정부도 목표로 삼아 본 적이 없는 생각이야.',
+        '가은: 식량을 수입하는 나라는 결코 식량 안보를 이룰 수 없어.',
+        '태오: 추운 기후의 나라라도 기르기 힘든 열대 과일은 수입해서 식량 안보를 이룰 수 있겠네.',
+        '민재: 농업 기술이 충분히 발전하면 모든 나라가 모든 식품을 스스로 길러 완전히 자급자족하게 될 거야.'],
+    a: 3,
+    e: '글은 <i>food security does not require food self-sufficiency because countries can import food items not easily produced within the country</i>라 하고, 그 이유로 농산물이 기후·토양 조건에 민감하다고 해요. 그러니 추운 나라가 기르기 힘든 열대 과일을 수입해도 식량 안보를 이룰 수 있다고 이어서 추론할 수 있어 태오가 맞아요. 주원·가은: 수입에 의존하는 것은 식량 안보를 해치지 않고 오히려 <i>relying on both domestic production and imports</i>가 일반적인 해결책이에요. 나연: <i>Some governments have set goals of food self-sufficiency</i>와 반대예요. 민재: 매우 생산적인 나라도 <i>not fully self-sufficient in all food items</i>이고 농산물은 기후에 민감하므로 근거가 없어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
