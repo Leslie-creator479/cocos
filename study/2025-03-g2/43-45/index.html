@@ -560,7 +560,80 @@ var DATA = {
     { s: 27, en: "“I’m just here to remind you of that.”", ko: "“난 단지 그걸 네게 상기시켜 주기 위해 여기 있는 거야.”", c: ["“I’m just here","to remind you","of that.”"] },
     { s: 28, keep: true, c: ["Eva’s face softened,","as she realized","she had been","too hard on herself."] },
     { s: 29, c: ["She said to herself,","“What matters","is doing my best,","not being perfect.”"] }
-  ]
+  ],
+  challenge: [
+  { type: '심경 변화 · 고난도', p: '코치의 제안을 처음 들었을 때부터 다음 경기가 끝난 뒤까지 Eva의 심경 변화로 가장 적절한 것은?', en: true,
+    o: ['worn out and irritated → assured and grateful',
+        'hesitant and insecure → indifferent and detached',
+        'proud and confident → anxious and regretful',
+        'envious and resentful → relieved and content',
+        'hesitant and insecure → assured and grateful'],
+    a: 4,
+    e: '코치가 남아서 연습하자고 하자 Eva는 <i>Eva hesitated.</i>, 망설였고, 이어서 <i>I’m afraid of making mistakes</i>라며 실수를 두려워하는 불안한 마음을 털어놓았어요(hesitant and insecure). 다음 경기에서는 <i>Eva didn’t score but led the team successfully.</i>, 자신 있게 팀을 이끌었고 경기 뒤 <i>Thanks for believing in me, Coach.</i>라며 고마워했어요(assured and grateful). ① 뒤쪽은 맞지만, Eva가 <i>I’m pretty tired</i>라고 하긴 했어도 코치에게 짜증을 낸(irritated) 장면은 없어요. ② 앞쪽은 맞지만, 경기 뒤 코치에게 달려가 고마움을 전했으므로 무관심하고 거리를 둔다(indifferent and detached)고 볼 수 없어요. ③ 자신감은 오히려 나중에 생긴 감정이라 순서가 뒤집혔어요. ④ 누군가를 부러워하거나 원망한 장면은 없어요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: '… Ms. Blake smiled back. “You’ve always had it in you. I’m just here to remind you of that.” Eva’s face softened, as she realized ______________. She said to herself, “What matters is doing my best, not being perfect.”',
+    o: ['her coach had been too hard on her during practice',
+        'she had been demanding far more of herself than she needed to',
+        'she would have to score again to keep her coach’s trust',
+        'she had finally become as perfect a player as she wanted to be',
+        'she had always been more talented than her teammates'],
+    a: 1,
+    e: '원문은 <i>she had been too hard on herself</i>(자기 자신에게 너무 엄격했다)예요. 바로 뒤에서 Eva가 <i>What matters is doing my best, not being perfect.</i>라고 다짐하므로, 완벽해야 한다며 스스로에게 지나치게 많은 것을 요구해 왔다는 것을 깨달은 것이에요. 이를 바꿔 쓴 ②가 정답이에요. ① too hard on은 원문 표현이지만 엄격했던 사람을 코치로 바꿔 놓았어요. 코치는 오히려 Eva를 믿어 주었어요. ③ 다시 득점해야 한다는 생각은 Eva가 버린 생각과 반대예요. ④ perfect는 원문 낱말이지만, Eva는 완벽해서가 아니라 완벽하지 않아도 된다는 것을 깨달았어요. ⑤ <i>You’ve always had it in you.</i>는 Eva에게 그럴 능력이 늘 있었다는 뜻이지, 팀원들보다 재능이 뛰어나다는 비교가 아니에요(지나친 확대 해석).' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'Having come to equate <u>  (A)  </u> with her worth as a player, Eva learned through her coach’s <u>  (B)  </u> that playing wholeheartedly mattered more.',
+    o: ['flawlessness — encouragement', 'passion — encouragement', 'flawlessness — criticism', 'teamwork — encouragement', 'passion — criticism'],
+    a: 0,
+    h: '(A)는 Eva가 무엇을 잣대로 스스로를 평가하며 불안해했는지, (B)는 코치가 Eva를 어떤 태도로 대했는지 떠올려 보세요.',
+    e: '(A) Eva는 <i>I’m afraid of making mistakes</i>라며 실수 없이 잘해야 한다는 생각에 사로잡혀 있었고, 코치는 <i>You don’t have to be perfect.</i>라고 일러 주었어요. Eva가 선수로서의 가치를 ‘흠 없음(flawlessness)’과 같은 것으로 여겼던 것이에요. (B) 코치는 Eva의 어깨에 손을 얹고 <i>The way you play, the energy you bring — that’s what makes you special.</i>라며 북돋워 주었으므로 ‘격려(encouragement)’예요. ②·⑤ passion은 원문 낱말이지만, 열정은 Eva가 깨닫게 된 중요한 것이지 Eva가 처음에 자신의 가치로 여겨 불안해한 기준이 아니에요. ③·⑤ criticism(비판)은 코치가 따뜻하게 믿어 준 태도와 반대예요. ④ 팀워크를 자신의 가치로 여겼다는 내용은 없어요. 요약문: 선수로서의 가치를 흠 없음과 같은 것으로 여기게 되었던 Eva는 코치의 격려를 통해 온 마음을 다해 경기하는 것이 더 중요하다는 것을 배웠다.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: '… Ms. Blake asked, “Do you ①<u>recollect</u> the final game last year?” “Yeah, I remember.” Eva ②<u>thought back to</u> the game where she ③<u>netted</u> three goals. “I was quite ④<u>ordinary</u> back then.” “You still are,” replied Ms. Blake. “Well, now I’m so ⑤<u>anxious</u> I can’t score a goal or even pass the ball properly. I’m afraid of making mistakes,” said Eva.',
+    o: ['①', '②', '③', '④', '⑤'], a: 3,
+    e: '④ ordinary(평범한)는 원문에서 <b>good</b>(잘하는)이었어요. Eva는 세 골을 넣었던 결승전을 떠올리며 ‘그땐 잘했다’고 말하고, 이어서 <i>Well, now I’m so worried</i>…라며 ‘지금은’ 걱정된다고 대비시키므로, 그때는 잘했다는 말이 와야 해요. 코치의 <i>You still are</i>(너 아직도 그래)도 ‘아직도 잘한다’는 격려라야 자연스러워요. 평범했다고 하면 세 골을 넣은 기억과도, 코치의 격려와도 맞지 않아요. ① recollect(=remember), ② thought back to(=recalled), ③ netted(=scored), ⑤ anxious(=worried)는 원문 낱말을 같은 뜻의 말로 바꾼 것이라 모두 적절해요. ③ net을 명사로만 알면 어색해 보이지만 ‘(골을) 넣다’라는 동사로도 써요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'They practiced ⓐ<u>to pass</u> the ball together. Ms. Blake noticed that Eva’s movements were ⓑ<u>slow</u> and ⓒ<u>what</u> her focus seemed elsewhere. ⓓ<u>Breaking</u> the silence, Ms. Blake asked, “Do you remember the final game last year?” … “Yes. The way you play, the energy you bring — that’s what makes you special. Not the goals ⓔ<u>scoring</u> or the trophies won.”',
+    o: ['1개', '2개', '3개', '4개', '5개'], a: 2,
+    h: '밑줄마다 앞뒤 낱말과 어떻게 이어지는지 하나씩 따로 확인하세요.',
+    e: '틀린 것은 ⓐ, ⓒ, ⓔ 세 개예요. ⓐ practice는 동명사를 목적어로 쓰므로 <b>passing</b>이어야 해요(원문 <i>They practiced passing the ball together.</i>). ⓒ 뒤에 her focus seemed elsewhere라는 완전한 절이 오고, noticed의 목적어인 that절 두 개가 and로 이어진 것이므로 <b>that</b>이어야 해요(원문 <i>and that her focus seemed elsewhere</i>). ⓔ 골은 ‘넣어진’ 것이므로 the goals를 꾸미는 과거분사 <b>scored</b>여야 해요(원문 <i>Not the goals scored or the trophies won.</i>). 바로 뒤의 the trophies won과도 나란해요. ⓑ be동사 were의 보어 자리라 형용사 slow가 맞아요. ⓓ Ms. Blake가 침묵을 ‘깨는’ 것이므로 능동의 분사구문 Breaking이 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'Ms. Blake walked along the edge of the soccer field, watching Eva pack up her things after practice. She paused for a moment, then called out, “Hey, Eva! How about staying a little longer? We can work on some drills — just the two of us.” ① Drills like these are often used by coaches to sharpen a single skill, such as passing. ② Eva hesitated. ③ “I don’t know, Coach. I’m pretty tired.” ④ Ms. Blake gave her a warm smile. “Just ten minutes. It’ll be fun. I promise.” ⑤ Finally, Eva agreed, though she still seemed reluctant.',
+    o: ['①', '②', '③', '④', '⑤'], a: 0,
+    e: '①은 지어낸 문장이에요. 바로 앞의 drills를 이어받고 뒤에 나올 패스 연습(passing)까지 끌어와 자연스러워 보이지만, 글은 망설이는 Eva와 그를 붙잡는 코치의 이야기인데 ①은 코치들이 반복 연습을 쓰는 일반적인 방법을 설명하며 이야기 밖으로 벗어나요. ①을 빼면 <i>We can work on some drills — just the two of us.</i>라는 제안에 <i>Eva hesitated.</i>가 바로 이어져요. ②는 Eva의 망설임, ③은 피곤하다는 Eva의 대답, ④는 코치의 설득, ⑤는 마지못한 수락이라 흐름에 맞아요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">Eva’s eyes found her coach’s. “Do you honestly believe that?”</span>Ms. Blake stepped closer and placed a reassuring hand on Eva’s shoulder. ( ① ) She suggested, “You don’t have to be perfect. Soccer isn’t about perfection — it’s about passion. And you’ve always had plenty of that.” ( ② ) Ms. Blake said firmly, “Yes. The way you play, the energy you bring — that’s what makes you special. …” ( ③ ) Eva nodded thoughtfully. ( ④ ) The next game, Ms. Blake watched from the sidelines as Eva played. ( ⑤ )',
+    o: ['①', '②', '③', '④', '⑤'], a: 1,
+    h: '주어진 문장의 that이 누구의 어떤 말을 가리키는지, 그리고 앞뒤 대화가 어떻게 주고받아지는지 살펴보세요.',
+    e: '주어진 문장(‘Eva의 눈이 코치의 눈과 마주쳤다. “정말 그렇게 믿으세요?”’)은 원문 <i>Eva’s gaze met Ms. Blake’s. “Do you really think so?”</i>를 바꿔 쓴 것이에요(Do you really think so? → <b>Do you honestly believe that?</b>). believe that의 that은 코치가 방금 한 말, 곧 완벽할 필요 없고 너는 늘 열정이 넘쳤다는 말을 가리키고, ② 뒤의 <i>Ms. Blake said firmly, “Yes.</i>는 바로 이 질문에 대한 대답이에요. 주어진 문장이 빠지면 코치의 “Yes.”가 무엇에 대한 대답인지 알 수 없게 되므로 ②가 정답이에요. ①은 코치가 아직 아무 말도 하기 전이라 that이 가리킬 말이 없어요. ③·④·⑤는 “Yes.”라는 대답이 이미 나온 뒤라 질문이 늦어요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'The next game, Ms. Blake watched from the sidelines as Eva played. <u>Eva seemed to stand a few inches taller on the field.</u> Eva didn’t score but led the team successfully.',
+    o: ['She had grown taller since the final game last year.',
+        'She scored more goals than she had in last year’s final.',
+        'She no longer needed her coach’s support from the sidelines.',
+        'She was chosen to lead the team as its new captain.',
+        'She showed a self-assurance that she had not shown before.'],
+    a: 4,
+    e: '원문은 <i>There was a new confidence that hadn’t been there before.</i>(이전에는 없었던 새로운 자신감이 있었다)예요. ‘몇 인치 더 커 보였다’는 어깨를 펴고 당당해진 모습을 나타내는 비유이므로, 전에 없던 자신감을 보였다는 ⑤가 정답이에요. ① 키가 실제로 자랐다는 것은 비유를 글자 그대로 읽은 해석이에요. ② <i>Eva didn’t score</i>, 이번 경기에서 Eva는 골을 넣지 못했어요. ③ 코치는 여전히 사이드라인에서 지켜보았고, 경기 뒤 Eva는 코치에게 고마움을 전했으므로 더는 코치가 필요 없다는 것은 지나친 확대 해석이에요. ④ <i>led the team successfully</i>는 경기에서 팀을 잘 이끌었다는 뜻이지 주장으로 뽑혔다는 뜻이 아니에요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) Ms. Blake가 Eva에게 말을 건 것은 연습이 끝나 Eva가 짐을 싸고 있을 때였다.<br>(b) Ms. Blake는 Eva에게 20분만 더 남아서 연습하자고 했다.<br>(c) 함께 패스 연습을 하던 중 Ms. Blake는 Eva의 정신이 딴 데 가 있는 듯하다고 느꼈다.<br>(d) Eva는 이제 골은커녕 패스도 제대로 못 할까 봐 걱정된다고 털어놓았다.<br>(e) 다음 경기가 끝난 뒤 Eva가 스스로에게 한 다짐은 앞으로 실수를 하나도 하지 않겠다는 것이었다.',
+    o: ['1개', '2개', '3개', '4개', '5개'], a: 2,
+    e: '일치하는 것은 (a), (c), (d) 세 개예요. (a) 코치는 <i>watching Eva pack up her things after practice</i>, 연습 뒤 짐을 싸는 Eva를 보다가 말을 걸었어요. (c) 코치는 Eva의 움직임이 느리고 <i>her focus seemed elsewhere</i>, 정신이 다른 곳에 있는 듯하다는 것을 알아차렸어요. (d) <i>now I’m so worried I can’t score a goal or even pass the ball properly</i>와 같아요. (b) 코치가 말한 것은 <i>Just ten minutes.</i>, 10분이에요(숫자가 바뀜). (e) Eva의 다짐은 <i>What matters is doing my best, not being perfect.</i>, 완벽함이 아니라 최선을 다하는 것이었으므로 반대예요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['다인: Eva가 피곤하다고 한 건 핑계였고, 사실은 코치와 단둘이 있는 게 불편했던 거야.',
+        '건우: Eva가 다음 경기에서 골을 못 넣은 걸 보면, 코치의 말은 Eva의 경기에 별 도움이 되지 않았어.',
+        '채원: Ms. Blake는 Eva가 작년만큼 골을 넣지 못하면 다음 경기에 내보내지 않으려 했을 거야.',
+        '소율: Ms. Blake가 꾸짖지 않고 지난 결승전 이야기부터 꺼낸 건, Eva가 잊고 있던 자기 모습을 스스로 떠올리게 하려는 뜻이었겠네.',
+        '민재: Eva는 완벽하지 않아도 된다는 걸 깨닫고 앞으로는 따로 남아 연습하지 않기로 했을 거야.'],
+    a: 3,
+    e: 'Ms. Blake는 Eva의 움직임이 느린 것을 보고도 나무라지 않고 <i>Do you remember the final game last year?</i>라고 물었고, 나중에 <i>You’ve always had it in you. I’m just here to remind you of that.</i>, 자신은 Eva에게 원래 있던 것을 일깨워 주려고 있을 뿐이라고 했어요. 그러니 결승전 이야기를 꺼낸 것은 Eva가 잊고 있던 자기 모습을 떠올리게 하려는 뜻이었다고 한 단계 추론할 수 있어요(소율). 다인: 피곤하다는 말이 핑계였다거나 코치가 불편했다는 근거는 없어요. 건우: Eva는 골은 못 넣었지만 <i>led the team successfully</i>, 팀을 잘 이끌었어요. 채원: 코치는 득점한 골이나 따낸 트로피가 아니라 <i>the love you have for the game</i>이 Eva를 특별하게 만든다고 했으므로 반대예요. 민재: 완벽하지 않아도 된다는 깨달음은 최선을 다하자는 다짐으로 이어졌지, 연습을 그만두기로 했다는 내용은 없어요(지나친 확대 해석).' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
