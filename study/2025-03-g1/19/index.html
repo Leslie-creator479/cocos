@@ -469,7 +469,81 @@ var DATA = {
     { s: 7, c: ['“You scared me,”', 'I say,', 'feeling much better.'] },
     { s: 8, c: ['The rabbit pauses', 'for a moment,', 'then hops away,', 'disappearing back', 'into the shadows.'] },
     { s: 10, c: ['I start', 'to feel', 'at ease.'] }
-  ]
+  ],
+  challenge: [
+  { type: '심경 변화 · 고난도', p: '윗글에 드러난 ‘I’의 심경 변화로 가장 적절한 것은?', en: true,
+    o: ['calm → alarmed', 'fearful → disappointed', 'indifferent → amused', 'annoyed → sympathetic', 'apprehensive → amused'],
+    a: 4,
+    e: '처음에는 <i>“Who’s there?” I ask, my voice shaking with fear.</i>, <i>my heart is beating fast</i>처럼 그림자의 정체를 몰라 불안해하고 두려워해요(apprehensive). 정체가 토끼로 밝혀지자 <i>A laugh escapes my lips</i>, <i>I’m left smiling.</i>처럼 웃음이 나며 재미있어해요(amused). ① 앞뒤가 거꾸로예요. ② 처음의 두려움은 맞지만, 토끼가 사라진 뒤 실망한 것이 아니라 미소 지으며 편안해져요(<i>I start to feel at ease.</i>). ③ 처음부터 무관심했던 것이 아니라 목소리가 떨릴 만큼 겁을 먹었어요. ④ 짜증이나 동정을 드러내는 말은 없어요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'The shed is cold and damp, the air thick with the smell of old wood and earth. It’s dark, and ______________. “Who’s there?” I ask, my voice shaking with fear.',
+    o: ['I can see a rabbit staring at me with curious eyes',
+        'whatever is stirring in the shadows is impossible for me to identify',
+        'I start to feel at ease in the quiet darkness',
+        'I recognize the familiar voice of my little brother',
+        'the shadows are too faint to frighten me'],
+    a: 1,
+    e: '원문은 <i>I can’t make out what’s moving in the shadows</i>(그림자 속에서 움직이는 무언가를 알아볼 수 없다)예요. 이를 ‘그림자 속에서 꿈틀거리는 것이 무엇인지 도무지 알아낼 수 없다’로 바꿔 쓴 ②가 정답이고, 그래서 바로 뒤에서 <i>“Who’s there?”</i>라고 묻게 돼요. ① rabbit·curious eyes는 원문 낱말이지만 토끼는 나중에 빛 속으로 들어온 뒤에야 보여요. ③ at ease도 원문 표현이지만 글 맨 끝의 마음이고, 이 순간에는 목소리가 떨릴 만큼 겁을 먹었어요. ④ 아는 목소리를 알아들었다면 누구냐고 겁에 질려 물을 까닭이 없어요. ⑤ 두렵지 않다는 말은 <i>my voice shaking with fear</i>와 어긋나요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'The narrator’s <u>  (A)  </u> in the dark shed proves <u>  (B)  </u> once the moving shadow turns out to be just a rabbit.',
+    o: ['curiosity — groundless', 'dread — justified', 'dread — groundless', 'ease — justified', 'excitement — justified'],
+    a: 2,
+    e: '(A) ‘나’는 <i>my voice shaking with fear</i>, <i>my heart is beating fast</i>처럼 큰 두려움(dread)을 느껴요. (B) 그런데 그림자의 정체가 토끼로 밝혀져 <i>feeling much better</i>, <i>I start to feel at ease.</i>로 끝나므로 그 두려움은 ‘근거 없는(groundless)’ 것이었어요. ① 호기심 어린 눈(<i>curious eyes</i>)을 한 것은 ‘나’가 아니라 토끼예요. ② 토끼였으니 두려워할 까닭이 없었으므로 두려움이 ‘정당했다(justified)’고 할 수 없어요. ④ ease는 원문 낱말이지만 편안함은 마지막에야 찾아온 마음이에요. ⑤ 헛간에서 ‘나’가 신이 났다는 말은 없어요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'The shadow moves closer, and my heart is beating fast — until the figure steps into a faint beam of light breaking through a crack in the wall. A rabbit. A laugh escapes my lips as it stares at me with wide, curious eyes. “You scared me,” I say, feeling much ①<u>worse</u>. The rabbit ②<u>halts</u> for a moment, then ③<u>bounds</u> away, disappearing back into the shadows. I ④<u>remain</u> smiling. I ⑤<u>begin</u> to feel at ease.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 0,
+    e: '① worse(더 나쁜)는 원문에서 <b>better</b>(나은)였어요. 정체가 토끼임을 알고 <i>A laugh escapes my lips</i>처럼 웃음이 터진 뒤이고, 글이 <i>I start to feel at ease.</i>로 끝나므로 기분이 ‘훨씬 나빠졌다’는 것은 흐름과 맞지 않아요. ② halts(=pauses, 멈추다), ③ bounds(=hops, 깡충 뛰다), ④ remain(=be left, 남다), ⑤ begin(=start, 시작하다)은 원문을 같은 뜻의 말로 바꾼 것이라 모두 적절해요.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'The shadow moves closer, and my heart is beating ⓐ<u>fast</u> — until the figure ⓑ<u>steps</u> into a faint beam of light breaking through a crack in the wall. A rabbit. A laugh ⓒ<u>escapes</u> my lips as it stares at me with wide, ⓓ<u>curiously</u> eyes. “You scared me,” I say, feeling much better. The rabbit pauses for a moment, then hops away, disappearing back into the shadows. I’m ⓔ<u>left</u> smiling.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 0,
+    h: '밑줄마다 그 낱말이 꾸미거나 이어지는 말이 무엇인지 먼저 찾고, 그 자리에 맞는 품사와 꼴인지 따져 보세요.',
+    e: '틀린 것은 ⓓ 하나예요. ⓓ 명사 eyes를 꾸미는 자리이므로 형용사 <b>curious</b>여야 해요(원문 <i>with wide, curious eyes</i>). ⓐ fast는 형용사와 부사의 꼴이 같아 진행형 동사 is beating을 꾸미는 부사로 맞아요(fastly라는 말은 없어요). ⓑ 주어 the figure가 단수이므로 steps가 맞아요. ⓒ escape는 ‘(웃음·말 등이) ~에서 새어 나오다’라는 뜻일 때 목적어를 바로 받으므로 escapes my lips가 맞아요. ⓔ ‘~한 채로 남겨지다’는 be left -ing이므로 I’m left smiling이 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'The shed is cold and damp, the air thick with the smell of old wood and earth. It’s dark, and I can’t make out what’s moving in the shadows. ① “Who’s there?” I ask, my voice shaking with fear. ② My grandfather built this shed out of old wood with his own hands many years ago. ③ The shadow moves closer, and my heart is beating fast — until the figure steps into a faint beam of light breaking through a crack in the wall. ④ A rabbit. A laugh escapes my lips as it stares at me with wide, curious eyes. ⑤ “You scared me,” I say, feeling much better. The rabbit pauses for a moment, then hops away, disappearing back into the shadows.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 1,
+    e: '②는 지어낸 문장이에요. shed·old wood라는 같은 낱말(<i>the smell of old wood and earth</i>)을 쓰지만, 글은 어둠 속 그림자에 겁먹었다가 정체를 알고 안도하는 순간을 그리는데 ②는 헛간을 지은 할아버지의 지난 이야기로 긴장된 흐름을 끊어요. ②를 빼면 <i>“Who’s there?”</i>라고 묻는 ①에서 그림자가 다가오는 ③으로 바로 이어져요.' },
+
+  { type: '문장 삽입 · 변형', p: '글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?',
+    q: '<span class="box">After a brief pause, it darts off and melts back into the darkness.</span>It’s dark, and I can’t make out what’s moving in the shadows. ( ① ) “Who’s there?” I ask, my voice shaking with fear. ( ② ) The shadow moves closer, and my heart is beating fast — until the figure steps into a faint beam of light breaking through a crack in the wall. ( ③ ) A rabbit. A laugh escapes my lips as it stares at me with wide, curious eyes. “You scared me,” I say, feeling much better. ( ④ ) Alone again, I’m left smiling. ( ⑤ ) I start to feel at ease.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 3,
+    h: '주어진 문장이 그리는 일이 일어나기 전에 와야 할 문장과, 그 일이 일어난 뒤에야 말이 되는 문장을 나눠 보세요.',
+    e: '주어진 문장은 원문 <i>The rabbit pauses for a moment, then hops away, disappearing back into the shadows.</i>를 바꿔 쓴 것으로, The rabbit을 <b>it</b>으로 바꿔 단서를 줄였고, 본문의 <i>I’m left smiling.</i> 앞에는 <b>Alone again</b>을 덧붙였어요. 토끼를 알아보고 웃으며 말을 건넨 뒤(<i>“You scared me,” I say, feeling much better.</i>) 토끼가 잠시 멈췄다가 떠나야 ‘나’가 다시 혼자 남겨지므로 ④에 들어가요. ⑤에 넣으면 토끼가 떠나기도 전에 ‘다시 혼자’가 되었다고 하게 돼요. ①·②에 넣으면 어둠 속으로 사라진 것이 그 뒤에 다가오고(<i>The shadow moves closer</i>), ③에 넣으면 사라진 토끼가 그 뒤에 ‘나’를 바라보게 되어(<i>as it stares at me</i>) 흐름이 맞지 않아요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'It’s dark, and I can’t make out what’s moving in the shadows. “Who’s there?” I ask, my voice shaking with fear. The shadow moves closer, and my heart is beating fast — until <u>a thin finger of light pulls the mask off the figure</u>. A rabbit. A laugh escapes my lips as it stares at me with wide, curious eyes.',
+    o: ['Someone shines a flashlight straight at the narrator’s face.',
+        'The figure turns out to be a person wearing a mask.',
+        'The narrator shuts both eyes to escape the frightening sight.',
+        'The light makes the cold, damp shed feel warm and safe.',
+        'A faint ray of light finally lets the narrator see what the moving shape is.'],
+    a: 4,
+    e: '밑줄 친 ‘가느다란 빛줄기가 그 형체의 가면을 벗겨 낸다’는 원문 <i>until the figure steps into a faint beam of light breaking through a crack in the wall</i>를 비유로 바꾼 표현이에요. 형체가 희미한 빛 속에 들어서자 곧바로 <i>A rabbit.</i>이라고 정체를 알아보므로, ‘희미한 빛 덕분에 움직이던 것이 무엇인지 마침내 보게 된다’는 ⑤가 정답이에요. ① 빛은 누가 비춘 것이 아니라 벽 틈으로 새어 들어온 것이에요. ② mask를 문자 그대로 읽은 해석으로, 정체는 사람이 아니라 토끼예요. ③ 눈을 감았다면 토끼를 알아볼 수 없어요. ④ 빛 때문에 헛간이 따뜻해졌다는 말은 없어요(지나친 해석).' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?',
+    q: '(a) ‘나’는 그림자 속에 누가 있는지 소리 내어 물었다.<br>(b) 그림자가 다가오는 동안 ‘나’의 심장은 빠르게 뛰었다.<br>(c) ‘나’의 웃음은 토끼가 ‘나’를 바라보는 동안 터져 나왔다.<br>(d) ‘나’는 토끼를 붙잡으려고 그림자 쪽으로 다가갔다.<br>(e) 헛간 안 공기에는 오래된 나무와 흙냄새가 짙게 배어 있었다.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 3,
+    e: '일치하는 것은 (a), (b), (c), (e) 네 개예요. (a) <i>“Who’s there?” I ask</i>와 같아요. (b) <i>The shadow moves closer, and my heart is beating fast</i>와 같아요. (c) <i>A laugh escapes my lips as it stares at me</i>와 같아요. (e) <i>the air thick with the smell of old wood and earth</i>와 같아요. (d) 다가온 것은 ‘나’가 아니라 그림자(<i>The shadow moves closer</i>)이고, 토끼는 스스로 그림자 속으로 사라졌어요(<i>hops away, disappearing back into the shadows</i>).' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['은서: 토끼는 ‘나’를 놀래 주려고 일부러 그림자 속에서 다가왔어.',
+        '태윤: ‘나’는 헛간에 토끼가 산다는 걸 처음부터 알고 있었어.',
+        '수아: ‘나’가 토끼에게 “You scared me”라고 과거형으로 말한 데서, 겁먹었던 순간은 이미 지나갔음을 알 수 있어.',
+        '준서: 벽 틈으로 들어온 빛이 밝아서 헛간 안이 훤히 보였어.',
+        '예린: 토끼가 떠나자 ‘나’는 다시 혼자가 되어 불안해졌어.'],
+    a: 2,
+    h: '각 사람의 말을 뒷받침하는 문장이 글에 실제로 있는지, 반대로 그 말과 어긋나는 문장은 없는지 하나씩 찾아보세요.',
+    e: '글 전체는 현재형으로 그려지는데, ‘나’는 토끼에게 <i>“You scared me,”</i>라고 과거형으로 말하고 바로 <i>feeling much better</i>라고 해요. 놀라게 한 일을 이미 지난 일로 말하고 기분도 한결 나아졌으므로, 겁먹었던 순간이 지나갔다고 추론할 수 있어요(수아). 은서: 토끼가 일부러 놀래 주려 했다는 근거는 없어요. 태윤: 알고 있었다면 <i>“Who’s there?”</i>라고 겁에 질려 묻지 않았을 거예요. 준서: 빛은 <i>a faint beam of light</i>, 곧 희미한 빛줄기였어요. 예린: 토끼가 떠난 뒤 ‘나’는 <i>I’m left smiling. I start to feel at ease.</i>처럼 오히려 편안해졌어요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
