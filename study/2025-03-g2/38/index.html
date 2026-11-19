@@ -513,7 +513,89 @@ var DATA = {
     { s: 5, c: ['It is what is left over', 'after cycles', 'of experimental testing', 'have eliminated', 'false theories.'] },
     { s: 6, c: ['As scientists continually test', 'their hypotheses', 'and modify their models', 'to account for', 'new and surprising data,', 'a kind of “learning loop” emerges', 'that statisticians call', 'Bayesian updating.'] },
     { s: 7, c: ['Based on Bayes’ Rule,', 'developed by', 'eighteenth-century English statistician', 'and philosopher Thomas Bayes,', 'Bayesian updating refers to', 'a mathematical process', 'whereby an accepted theory', 'or predictive model', 'gets increasingly accurate', 'through the repetitive testing', 'of competing variants of that theory.'] }
-  ]
+  ],
+  challenge: [
+  { type: '제목 · 고난도', p: '윗글의 제목으로 가장 적절한 것은?', en: true,
+    o: ['Thomas Bayes: The Life of an Eighteenth-Century Thinker',
+        'From Facts to Doubts: How Testing Undermines Scientific Certainty',
+        'Born of Imagination, Refined by Evidence: How Science Builds Knowledge',
+        'A Rule-Based Procedure: Why Science Leaves No Room for Creativity',
+        'Bayesian Updating: The Formula Every Statistician Must Memorize'],
+    a: 2,
+    e: '글은 과학이 <i>very much a creative process</i>라서 추론이 머릿속에서 ‘지어지지만’, <i>until the hypothesis is tested against reality, it is not yet truly knowledge</i>이고 검증을 되풀이하며 이론이 <i>gets increasingly accurate</i>된다고 말해요. ‘상상에서 태어나 증거로 다듬어진다’로 바꿔 쓴 ③이 정답이에요. ① Thomas Bayes는 베이즈 정리를 만든 사람으로 잠깐 나올 뿐이에요. ② 검증이 확실성을 무너뜨린다는 것은 방향이 반대예요. 검증은 거짓 이론을 걸러 지식을 남겨요. ④ rule-based procedure라는 원문 표현을 썼지만 글은 오히려 창의적인 과정임을 강조해요. ⑤ 베이지안 업데이팅은 소재일 뿐이고, 공식을 외워야 한다는 말은 없어요.' },
+
+  { type: '빈칸 · 변형', p: '빈칸에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'A conjecture is a philosophical invention, cooked up rather mystically by the mind through the mental computation we call careful contemplation. However, until the hypothesis ______________, it is not yet truly knowledge; it is just information that represents speculation. Knowledge is information that has demonstrated its usefulness. It is what is left over after cycles of experimental testing have eliminated false theories.',
+    o: ['has been checked against the real world',
+        'has been tested in the mind through careful contemplation',
+        'has passed a test of logical consistency on paper',
+        'has been accepted by most other scientists',
+        'has been expressed as a mathematical formula'],
+    a: 0,
+    e: '원문은 <i>is tested against reality</i>(현실에 비추어 검증되다)예요. ①은 이것을 ‘현실 세계에 맞춰 확인되다’로 바꿔 쓴 표현이에요. However로 앞 문장(머릿속 숙고로 만든 추론)과 대비되고, 뒤에서 지식은 <i>what is left over after cycles of experimental testing have eliminated false theories</i>라고 했으니, 지식이 되려면 머릿속이 아니라 실제 실험으로 확인되어야 해요. ② 원문 낱말(contemplation)과 test를 섞었지만, 머릿속 숙고는 However 앞의 추론이 만들어지는 과정일 뿐이에요. ③ 종이 위의 논리 검사도 현실에 비춘 검증이 아니에요. ④ 마지막 문장의 <i>an accepted theory</i>도 계속 검증을 받으므로, 받아들여졌다는 것만으로 지식이 되는 것은 아니에요. ⑤ 수학 공식은 베이지안 업데이팅 이야기에서 가져온 함정이에요.' },
+
+  { type: '요약문 · 변형', p: '윗글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?', en: true,
+    q: 'In science, a conjecture born of the mind remains mere <u>  (A)  </u> until repeated testing <u>  (B)  </u> its worth, a cycle that steadily sharpens our theories.',
+    o: ['knowledge — verifies',
+        'speculation — eliminates',
+        'guesswork — ignores',
+        'guesswork — verifies',
+        'certainty — questions'],
+    a: 3,
+    e: '(A) 검증 전의 가설은 <i>information that represents speculation</i>, 즉 추측에 불과하므로 ‘어림짐작’ <b>guesswork</b>, (B) 지식은 <i>information that has demonstrated its usefulness</i>이므로 검증이 그 가치를 ‘입증해 주어야’ 하니 <b>verifies</b>예요. 둘 다 원문에 없는 낱말이에요. ① knowledge는 원문 낱말이지만 검증 전 상태를 ‘지식’이라 하면 원문 <i>it is not yet truly knowledge</i>와 어긋나요. ② speculation도 원문 낱말이지만 짝인 eliminates가 ‘가치를 없앤다’는 뜻이 되어 틀려요. ③ ignores, ⑤ certainty는 글의 흐름과 반대예요.' },
+
+  { type: '어휘 · 변형', p: '다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?',
+    q: 'It is important to ①<u>acknowledge</u> that although science is a rule-based procedure, it is very much a creative process. A conjecture is a philosophical ②<u>creation</u>, cooked up rather mystically by the mind through the mental computation we call careful contemplation. However, until the hypothesis is tested against reality, it is not yet ③<u>genuinely</u> knowledge; it is just information that represents speculation. Knowledge is information that has demonstrated its usefulness. It is what is left over after cycles of experimental testing have eliminated ④<u>mistaken</u> theories. As scientists continually test their hypotheses and ⑤<u>preserve</u> their models to account for new and surprising data, a kind of “learning loop” emerges that statisticians call Bayesian updating.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 4,
+    e: '⑤ <b>preserve</b>(그대로 보존하다)는 틀려요. 원문은 <i>modify their models to account for new and surprising data</i>(새롭고 놀라운 데이터를 설명하기 위해 모델을 수정한다)예요. 새롭고 놀라운 데이터를 설명하려면 모델을 고쳐야 하고, 그래야 ‘학습 루프’와 ‘업데이팅’이 일어나요. 모델을 그대로 두면 아무것도 새로 배우지 못해요. 나머지는 원문을 같은 뜻으로 바꾼 말이에요. ① acknowledge = <i>recognize</i>, ② creation = <i>invention</i>, ③ genuinely = <i>truly</i>, ④ mistaken = <i>false</i>.' },
+
+  { type: '어법 · 개수', p: '밑줄 친 ⓐ~ⓔ 중 어법상 틀린 것의 개수는?',
+    q: 'However, until the hypothesis is tested against reality, it is not yet truly knowledge; it is just information that ⓐ<u>represents</u> speculation. Knowledge is information that has demonstrated its usefulness. It is what is left over after cycles of experimental testing ⓑ<u>has</u> eliminated false theories. As scientists continually test their hypotheses and modify their models ⓒ<u>to account</u> for new and surprising data, a kind of “learning loop” emerges that statisticians call Bayesian updating. … Bayesian updating refers to a mathematical process whereby an accepted theory or predictive model gets ⓓ<u>increasingly</u> accurate through the repetitive testing of ⓔ<u>competing</u> variants of that theory.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 0,
+    e: '틀린 것은 ⓑ 1개예요. ⓑ after가 이끄는 절의 주어는 복수 <i>cycles</i>(of experimental testing은 꾸며 주는 말)이므로 <b>have</b>(원문 <i>after cycles of experimental testing have eliminated false theories</i>). 맞는 것: ⓐ 선행사가 단수 information이라 represents가 맞아요. ⓒ ‘~을 설명하기 위해’라는 목적을 나타내는 to부정사예요. ⓓ 형용사 accurate를 꾸미는 부사라 맞아요. ⓔ 변형들이 서로 ‘경쟁하는’ 것이므로 능동의 현재분사가 맞아요.' },
+
+  { type: '무관한 문장 · 변형', p: '다음 글에서 전체 흐름과 관계 없는 문장은?',
+    q: 'It is important to recognize that although science is a rule-based procedure, it is very much a creative process. ① A conjecture is a philosophical invention, cooked up rather mystically by the mind through the mental computation we call careful contemplation. ② However, until the hypothesis is tested against reality, it is not yet truly knowledge; it is just information that represents speculation. ③ Knowledge is information that has demonstrated its usefulness. ④ It is what is left over after cycles of experimental testing have eliminated false theories. ⑤ Experimental testing can also be costly, and laboratories often have to compete for limited research funding. As scientists continually test their hypotheses and modify their models to account for new and surprising data, a kind of “learning loop” emerges that statisticians call Bayesian updating.',
+    o: ['①', '②', '③', '④', '⑤'],
+    a: 4,
+    h: '글이 처음부터 끝까지 무엇이 어떻게 되어 가는 과정을 설명하는지 생각해 보세요.',
+    e: '⑤는 글에 없는 문장으로, ④의 experimental testing을 이어받아 그럴듯해 보이지만 ‘실험의 비용과 연구비 경쟁’이라는 다른 이야기로 빠져요. 글은 창의적으로 떠올린 추론이 현실의 검증을 거쳐 지식이 되고, 그 검증과 수정이 되풀이되며 ‘학습 루프’가 생긴다는 흐름이에요. ④ <i>It is what is left over after cycles of experimental testing have eliminated false theories.</i> 다음에는 그 검증이 되풀이되는 과정(<i>As scientists continually test their hypotheses</i>)이 바로 이어져야 자연스러워요.' },
+
+  { type: '순서 · 변형', p: '주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?',
+    q: '<span class="box">It is important to recognize that although science is a rule-based procedure, it is very much a creative process. A conjecture is a philosophical invention, cooked up rather mystically by the mind through the mental computation we call careful contemplation. However, until the hypothesis is tested against reality, it is not yet truly knowledge; it is just information that represents speculation.</span>(A) It is what is left over after cycles of experimental testing have eliminated false theories. As scientists continually test their hypotheses and modify their models to account for new and surprising data, a kind of “learning loop” emerges that statisticians call Bayesian updating.<br><br>(B) Based on Bayes’ Rule, developed by eighteenth-century English statistician and philosopher Thomas Bayes, this updating refers to a mathematical process whereby an accepted theory or predictive model gets increasingly accurate through the repetitive testing of competing variants of that theory.<br><br>(C) Knowledge is information that has demonstrated its usefulness.',
+    o: ['(A) — (C) — (B)', '(B) — (A) — (C)', '(B) — (C) — (A)', '(C) — (A) — (B)', '(C) — (B) — (A)'],
+    a: 3,
+    e: '주어진 글은 검증 전의 가설은 <i>not yet truly knowledge</i>라고 끝나므로, 그렇다면 지식이란 무엇인지 정의하는 (C)가 이어져요. (A)의 <i>It is what is left over</i>의 It은 (C)의 Knowledge를 가리키며, 검증 뒤에 남은 것이 지식이라는 설명을 덧붙이고 ‘베이지안 업데이팅’이라는 이름을 처음 꺼내요. (B)의 <b>this updating</b>(이 업데이팅)은 (A) 끝의 Bayesian updating을 가리켜야 하므로 맨 뒤에 와요. 원문의 <i>Bayesian updating refers to</i>를 this updating으로 바꿔 썼어요. (A)가 주어진 글 바로 뒤에 오면 It이 검증되지 않은 가설을 가리키게 되어 ‘검증 뒤 남은 것’이라는 말과 어긋나고, (B)가 (A)보다 앞서면 this updating이 가리킬 말이 없어요.' },
+
+  { type: '함축 의미 · 변형', p: '밑줄 친 부분이 다음 글에서 의미하는 바로 가장 적절한 것은?', en: true,
+    q: 'It is important to recognize that although science is a rule-based procedure, it is very much a creative process. A conjecture is <u>a dish the mind cooks up from a recipe that no one can fully write down</u>, through the mental computation we call careful contemplation. However, until the hypothesis is tested against reality, it is not yet truly knowledge; it is just information that represents speculation.',
+    o: ['It is a conclusion that has already passed experimental tests.',
+        'It is an idea formed by a mental process that cannot be fully explained.',
+        'It is an idea that must be written down before it can be tested.',
+        'It is a guess too unreliable for scientists to take seriously.',
+        'It is a model that grows more accurate with each round of testing.'],
+    a: 1,
+    h: '밑줄 부분이 원문 둘째 문장의 어느 표현을 바꿔 쓴 것인지 찾아보세요.',
+    e: '원문은 <i>A conjecture is a philosophical invention, cooked up rather mystically by the mind</i>(추론은 사고를 통해 다소 신비롭게 만들어진 철학적 발명이다)예요. ‘누구도 다 적어 낼 수 없는 조리법으로 마음이 지어낸 요리’는 <i>rather mystically</i>(다소 신비롭게), 즉 어떻게 만들어졌는지 다 설명할 수 없는 마음속 과정으로 생겨난 생각이라는 뜻이라 ②가 정답이에요. 첫 문장의 <i>it is very much a creative process</i>와도 이어져요. ① 추론은 아직 검증 전이에요(<i>until the hypothesis is tested against reality</i>). ③ write down을 글자 그대로 읽어 ‘글로 적어 두어야 한다’고 한 것이에요. ④ 글은 추론을 버리라고 하지 않고 검증하라고 해요. ⑤ 글 뒷부분의 베이지안 업데이팅 내용이에요.' },
+
+  { type: '내용 일치 · 개수', p: '윗글의 내용과 일치하는 것의 개수는?', en: true,
+    q: '(a) The writer describes a conjecture as a product of the mind’s careful contemplation.<br>(b) According to the writer, a hypothesis becomes knowledge once it has been carefully contemplated.<br>(c) Scientists change their models so that the models can explain unexpected data.<br>(d) The name “Bayesian updating” for the learning loop comes from statisticians.<br>(e) The writer believes that following rules is what makes science a creative process.',
+    o: ['1개', '2개', '3개', '4개', '5개'],
+    a: 2,
+    e: '일치하는 것은 (a)(c)(d) 3개예요. (a) <i>cooked up rather mystically by the mind through the mental computation we call careful contemplation</i> (c) <i>modify their models to account for new and surprising data</i> (d) <i>a kind of “learning loop” emerges that statisticians call Bayesian updating</i> (b) 숙고는 추론이 만들어지는 과정일 뿐, <i>until the hypothesis is tested against reality, it is not yet truly knowledge</i>라서 검증을 거쳐야 지식이 돼요. (e) 원문은 <i>although science is a rule-based procedure, it is very much a creative process</i>로, 규칙 기반 절차‘이지만’ 창의적이라는 양보 관계예요. 규칙을 따르는 것이 창의성을 만든다는 인과는 없어요.' },
+
+  { type: '추론 · 고난도', p: '윗글을 바르게 이해한 사람은?',
+    o: ['민서: 과학은 규칙에 기반한 절차라서 규칙만 잘 따르면 창의성 없이도 가설을 세울 수 있어.',
+        '시후: 지금 받아들여진 이론도 경쟁하는 변형들과 계속 검증되니 다 끝난 답으로 볼 순 없겠어.',
+        '준우: 베이지안 업데이팅은 통계학 안에서만 쓰이고 과학자들의 실제 연구와는 관계가 없어.',
+        '예린: 철학적으로 깊이 숙고한 추론이라면 현실에서 검증하지 않아도 지식으로 인정돼.',
+        '다온: 실험에서 거짓으로 밝혀진 이론도 정보이긴 하니 지식이라고 부를 수 있어.'],
+    a: 1,
+    h: '학생의 말마다 글의 어느 문장과 맞닿는지 찾고, 정도·범위까지 글과 맞는지 따져 보세요.',
+    e: '베이지안 업데이팅은 <i>an accepted theory or predictive model gets increasingly accurate through the repetitive testing of competing variants of that theory</i>예요. 이미 받아들여진 이론도 경쟁하는 변형들과 거듭 검증되며 더 정확해지므로, 지금의 이론을 완전히 끝난 답으로 볼 수 없다는 시후의 추론이 맞아요. 민서: 원문은 <i>it is very much a creative process</i>예요. 준우: 학습 루프는 <i>As scientists continually test their hypotheses</i>에서 생겨나요. 예린: <i>until the hypothesis is tested against reality, it is not yet truly knowledge</i>와 어긋나요. 다온: 지식은 <i>information that has demonstrated its usefulness</i>이고 검증이 <i>eliminated false theories</i>한 뒤 남은 것이에요.' }
+]
 };
 /* ==== DATA:END ==== */
 /* ==== AUDIO:START ==== */
