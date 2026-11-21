@@ -6,7 +6,7 @@
   강조(hot)          주황 19px 굵게, <blockquote>로 감싸 네이버 인용구가 된다
                      (①~⑳로 시작하는 hot은 번호 붙은 작은 소제목으로 보고 굵게만)
   설명(note)         13px 회색
-  표(table)          border=1, 머리줄 남색, 열마다 가장 긴 칸이 14자를 넘으면 왼쪽·아니면 가운데
+  표(table)          border=1, 머리줄 남색, 모두 가운데 정렬(원장님 결정 2026-11-14)
   그림 자리          [대표 이미지: x.png]·[이미지: x.png] → ◆ 주황 줄('여기에 그림을 붙이고 이 줄은 지우세요')
   블록 사이           <p><br></p> 한 줄씩(br 블록은 따로 넣지 않는다)
 
@@ -21,7 +21,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MARK = '/*naver-blog-format-2026-11h*/'
 NEW = MARK + r"""
 function tableHTML(rows){
-  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
+  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push('center')}
   var h='<table border="1" style="border-collapse:collapse;width:100%">';
   rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
     h+=i?'<td style="color:#000000;font-weight:normal;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'

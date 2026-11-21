@@ -174,12 +174,12 @@ var NV = {
  p:  function(t){return '<p><span style="color:#000000;font-weight:normal">'+esc(t)+'</span></p>';}
 };
 function tblHTML(rows){
- // 열마다 가장 긴 칸이 14자를 넘으면 그 열만 왼쪽, 아니면 가운데
+ // 표는 모두 가운데 정렬(원장님 결정 2026-11-14, 예전 14자 규칙은 쓰지 않음)
  var al=[];
  for(var j=0;j<rows[0].length;j++){
   var mx=0;
   for(var i=1;i<rows.length;i++) mx=Math.max(mx,(rows[i][j]||'').length);
-  al.push(mx>14?'l':'c');
+  al.push('c');  // 표는 모두 가운데(원장님 결정 2026-11-14)
  }
  function ta(j){return (al[j]==='l')?'left':'center';}
  var o='<table border="1" style="border-collapse:collapse;width:100%">';

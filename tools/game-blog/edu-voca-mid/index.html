@@ -121,7 +121,7 @@ function listText(){
 }
 /*naver-blog-format-2026-11h*/
 function tableHTML(rows){
-  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push(mx>14?'left':'center')}
+  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push('center')}
   var h='<table border="1" style="border-collapse:collapse;width:100%">';
   rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
     h+=i?'<td style="color:#000000;font-weight:normal;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
