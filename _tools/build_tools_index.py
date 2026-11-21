@@ -39,6 +39,8 @@ def label(slug):
     m = re.match(r'mid-series-(\d+)$', slug)  # 중등 연재 「중학교에서 고교 선택까지」 3편(2026-11-08)
     if m:
         return 0, f"{m.group(1)}편 · {['제도', '첫 시험', '성적표 읽는 법'][int(m.group(1)) - 1]}", '중등 연재 「중학교에서 고교 선택까지」'
+    if slug.startswith('mid-school-'):  # 성남 중학교 학교별 자료 블로그 글(2026-11-21 동광중 견본부터, 한 학교 한 편)
+        return 0, slug[len('mid-school-'):], '성남 중학교 학교별 자료'
     m = re.match(r'grammar-m(\d)-(\d+)$', slug)  # 코코스 중등 문법 편 블로그 원고(2026-11-06)
     if m:
         return 0, f'중{m.group(1)} {int(m.group(2))}회', '코코스 중등 문법'

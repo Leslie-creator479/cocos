@@ -1,0 +1,222 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>성남 중학교 학교별 자료 · 동광중 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview table{margin:8px 0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>성남 중학교 학교별 자료 · 동광중 블로그 원고</h1>
+    <p>네이버 블로그에 글 전체를 링크째 붙여 넣을 수 있는 원고예요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>[대표 이미지] 자리에 대표 이미지를 올리고, ‘태그 복사’로 태그를 넣어요.</li>
+    <li>[이미지: …] 자리마다 같은 이름의 이미지를 끼우고 그 줄은 지운 뒤 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  <section class="exam" id="list">
+    <div class="exam-head">
+      <div><h2>바로가기만</h2><p class="meta" id="list-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-list">링크 포함 복사</button>
+        <button type="button" class="btn" id="copy-url">자료실 링크 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-list" role="status" aria-live="polite"></p>
+    <div class="preview" id="pv-list" aria-label="붙여 넣을 목록 미리보기"></div>
+  </section>
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"title": "동광중학교 성적 3년 치 공시로 읽기 | 우리 아이 점수는 학교에서 어디쯤일까 | 성남 코코스학원", "tags": "동광중 동광중학교 성남동광중 동광중학교성적 동광중영어 중원구중학교 성남중학교 예비중1 학교알리미 코코스학원", "meta": "제목·본문·태그 · 이미지 3장", "url": "", "count": 0, "groups": [], "listMeta": "", "body": [["p", "[대표 이미지: 대표이미지_동광중.png]"], ["ser", "성남 중학교 학교별 자료 · 동광중학교"], ["p", "동광중학교 학부모님께 드리는 글입니다. 학교알리미에 공시된 동광중 성적 자료 3년 치(2024~2026학년도)를 한자리에 모았습니다. 국어·영어·수학·과학 네 과목입니다."], ["p", "중학교 성적표에는 등수가 없습니다. 성취도(A~E)와 원점수만 옵니다. 그래서 「우리 아이가 학교에서 어디쯤인가」는 성적표만 봐서는 알 수 없습니다. 학교가 공시한 점수 분포를 옆에 두고 보셔야 합니다. 이 글이 그 자료입니다."], ["p", "동광중 2학기 기말고사는 11월 26일(목)부터 30일(월)까지입니다. 성적표가 나오면 이 글을 옆에 두고 보세요."], ["b", "■ 동광중 성적, 이 세 가지가 눈에 띕니다"], ["hot", "① 중2·중3 국어는 90점 이상이 열에 넷 안팎입니다"], ["p", "2025학년도부터 중2·중3 국어는 여섯 학기 가운데 다섯 학기에서 A(90점 이상)가 35~48%였습니다. 같은 학기 1구역 열아홉 곳 평균은 28~35%입니다. 다만 2024학년도에는 10%대인 학기도 있었습니다. 한 해 숫자만 보시면 안 되는 이유입니다."], ["hot", "② 영어는 80점대가 아주 얇습니다"], ["p", "영어에서 90점 이상은 1구역 평균과 비슷합니다(학년별 가장 최근 학기 34~41%). 그런데 80~89점은 6~8%밖에 되지 않습니다. 1구역 평균은 14% 안팎입니다. 세 해 열두 학기로 넓혀 봐도 열한 학기에서 80점대가 1구역 평균보다 적었습니다."], ["p", "90점 위에 많이 모여 있고, 80점대를 건너 그 아래로 바로 내려가는 모양입니다. 그래서 동광중 영어 80점대는 「위쪽 무리 바로 아래」입니다. 중2 영어 85점이면 위에서 41%와 47% 사이, 몇 점만 더 올리면 위쪽 무리에 들어가는 자리입니다."], ["p", "[이미지: chart_동광중_영어분포.png]"], ["note", "주황 막대가 80~89점입니다. 회색은 1구역 열아홉 곳 평균입니다."], ["hot", "③ 수학은 80점이면 위쪽 3분의 1 안입니다"], ["p", "수학은 80점 이상이 학년마다 30% 안팎입니다(중1 2학기 31%, 중2 1학기 30%, 중3 1학기 31%). 수학 80점은 동광중 안에서 위쪽 3분의 1 안에 드는 점수입니다. 다른 과목 80점과 같은 무게로 보시면 안 됩니다."], ["b", "■ 동광중에서 「중간」은 몇 점일까"], ["p", "연재 3편에서 1구역 열아홉 곳 전체로는 중간이 80점 근처라고 말씀드렸습니다. 학교마다 다릅니다. 동광중 중1 2학기(2025학년도)를 보면 국어·영어·과학은 가운데 학생이 70점대, 수학은 60점대입니다."], ["p", "그래서 동광중에서 영어 75점은 중간쯤입니다. 1구역 평균이나 다른 학교 이야기를 그대로 가져와 아이 점수를 낮게 보실 필요가 없습니다."], ["b", "■ 우리 아이 점수는 어디쯤일까"], ["p", "학년별 가장 최근 자료입니다. 세 숫자는 차례로 90점 이상 · 80점 이상 · 70점 이상을 받은 학생 비율(%)입니다."], ["table", [["학년·학기", "국어", "영어", "수학", "과학"], ["중1 2학기 (2025학년도)", "23 / 48 / 62", "41 / 47 / 61", "22 / 31 / 38", "23 / 48 / 68"], ["중2 1학기 (2026학년도)", "42 / 54 / 71", "41 / 47 / 63", "20 / 30 / 42", "23 / 37 / 52"], ["중3 1학기 (2026학년도)", "43 / 57 / 74", "34 / 42 / 45", "25 / 31 / 35", "23 / 34 / 51"]]], ["note", "중1 1학기는 자유학기라 성적이 나오지 않습니다."], ["p", "읽는 법은 간단합니다. 아이 성적표에서 원점수(성취도 A~E가 아니라 숫자)를 찾고, 위 표에서 학년과 과목이 만나는 칸을 보십시오. 예를 들어 중2 수학 82점이면 80점 이상 30% 안에는 들고 90점 이상 20%에는 못 들었으니, 학교 안에서 위에서 20%와 30% 사이입니다. 등수는 아니지만 폭은 알 수 있습니다."], ["b", "■ 세 해를 겹쳐 보면"], ["p", "90점 이상 비율은 해마다 꽤 흔들립니다. 한 학년이 100명이 안 되는 학교라 한두 명으로도 몇 %씩 움직이고, 그해 시험이 어려웠는지도 함께 들어 있기 때문입니다. 한 해 숫자보다 세 해의 흐름을 보세요."], ["p", "[이미지: chart_동광중_A3년.png]"], ["note", "가로축은 학년, 색은 학년도입니다. 점선은 1구역 열아홉 곳 평균(2025학년도)입니다."], ["b", "■ 동광중 졸업생은 어느 고등학교로 갔을까"], ["p", "2025학년도 졸업생 71명 가운데 일반고 45명(63.4%), 특성화고 26명(36.6%)이 진학했습니다. 특목고·자율고 진학은 없었습니다."], ["p", "특성화고는 진로를 일찍 정한 학생이 가는 학교입니다. 비율이 높다고 나쁜 것이 아닙니다. 졸업생 수가 적은 학교라 해마다 숫자가 달라질 수 있습니다."], ["b", "■ 동광중 영어 시험은 이렇게 나옵니다"], ["p", "코코스가 동광중 2학년 2학기 중간고사 영어 시험지를 직접 분석해 두었습니다. 교과서는 지학사(송미정)이고, 범위 안 본문 6개가 모두 출제됐습니다. 100점 가운데 35.6점이 교과서에 없는 새 문장으로 나왔고, 서술형은 20점이었습니다. 그리고 2학년 영어는 수행평가가 학기 성적의 절반(50%)입니다."], ["link", "동광중 영어 내신 가이드 보기 →", "https://cocosedu.kr/naesin/dongkwang-ms/"], ["note", "시험 일정·범위·지난 시험 분석·평가 구성을 한 페이지에 정리했습니다. 문제 원문과 정답은 싣지 않습니다."], ["b", "■ 이 자료를 읽을 때"], ["p", "· 중학교 성취도는 90점 이상이면 무조건 A인 고정분할입니다. 시험이 어려웠던 해에는 A가 줄어듭니다."], ["p", "· A 비율에는 시험 난이도와 그해 아이들의 실력이 함께 들어 있습니다. 공시 자료만으로는 둘을 갈라낼 수 없습니다."], ["p", "· 학교끼리 줄을 세우는 자료가 아닙니다. 중학교는 배정받아 가는 곳입니다. 1구역 평균은 기준선으로만 보세요."], ["p", "· 한 학교 안에서는 시험이 모든 아이에게 똑같이 걸립니다. 그래서 「우리 학교 안에서 어디쯤인가」는 믿고 보셔도 됩니다."], ["p", "· 작년 숫자는 작년 아이들 것입니다. 위치를 가늠하는 데 쓰시고 목표 점수를 정하는 데는 쓰지 마세요."], ["note", "출처: 학교알리미 「교과별 학업성취 사항」 2024~2026학년도 공시(2026학년도는 1학기까지), 「졸업생 진로 현황」. 성남 코코스학원이 정리했습니다."], ["b", "■ 동광중 3개년 자료, 한 장으로 드립니다"], ["p", "이 글에 다 싣지 못한 학기별 평균 점수와 등급 분포 전체를 A4 한 장(PDF)에 담아 두었습니다. 네이버 톡톡이나 전화로 「동광중 자료」라고 남겨 주시면 보내 드립니다. 성적표를 같이 놓고 설명이 필요하시면 상담도 드립니다."], ["link", "네이버 톡톡으로 「동광중 자료」 받기 →", "https://talk.naver.com/W46F3W"], ["p", "전화 031-752-3334 · 평일 오후 3시 ~ 밤 10시"], ["ser", "이어서 보시면 좋은 글"], ["p", "· 70점이면 중간은 한다고요? 1구역 열아홉 곳 성적표 읽는 법 — 연재 3편"], ["p", "· 자유학기라 시험이 없다고요? 19개 중학교 첫 시험이 언제인지 확인했습니다 — 연재 2편"], ["p", "· 성남지역 고교 선택 자료 모음 — 지금까지 올린 글 전부 (공지)"]]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function listHTML(){
+  var h='';
+  D.groups.forEach(function(g,i){
+    if(i)h+='<p><br></p>';
+    h+='<p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){h+='<p>'+a(it[1],it[0])+'</p>'});
+  });
+  return h;
+}
+function listText(){
+  var t='';
+  D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
+  return t;
+}
+/*naver-blog-format-2026-11h*/
+function tableHTML(rows){
+  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push('center')}
+  var h='<table border="1" style="border-collapse:collapse;width:100%">';
+  rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
+    h+=i?'<td style="color:#000000;font-weight:normal;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
+        :'<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</th>'});h+='</tr>'});
+  return h+'</table>';
+}
+function bodyHTML(){
+  var out=[],kinds=[],txt=[],IT=/^\s*(?:[①-⑳]|[·•‧∙]\s|-\s|\d{1,2}[.)]\s)/,IMG=/^\[(대표 )?이미지(?:\s*[:：]\s*(.+?))?\]$/,g=0;
+  function big(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(String(t).replace(/^■\s*/,''))+'</b></span></p>'}
+  function slot(l){return '<p><span style="color:#E25100"><b>◆ '+esc(l)+' — 여기에 그림을 붙이고 이 줄은 지우세요</b></span></p>'}
+  D.body.forEach(function(b){
+    var k=b[0],t=b[1],m=k==='p'&&IMG.exec(String(t).trim());
+    if(k==='br')return;
+    txt.push(t);kinds.push(m?'img':(k==='p'&&IT.test(t))?'item':(k==='hot'&&/^[①-⑳]/.test(t))?'s':k);
+    if(m){out.push(slot(m[1]?'대표 이미지':'그림 '+(++g)+(m[2]?' ('+m[2]+')':'')));return}
+    if(k==='b'||k==='ser')out.push(big(t));
+    else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><span style="color:#000000"><b>'+esc(t)+'</b></span></p>'
+      :'<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>');
+    else if(k==='note')out.push('<p><span style="font-size:13px;color:#767171;font-weight:normal">'+esc(t)+'</span></p>');
+    else if(k==='link')out.push('<p><span style="font-weight:normal">'+a(b[2],t)+'</span></p>');
+    else if(k==='list')out.push(listHTML().replace(/<p><b>/g,'<p><span style="color:#000000"><b>').replace(/<\/b><\/p>/g,'</b></span></p>').replace(/<p><a /g,'<p><span style="font-weight:normal"><a ').replace(/<\/a><\/p>/g,'</a></span></p>'));
+    else if(k==='table')out.push(tableHTML(t));
+    else out.push('<p><span style="color:#000000;font-weight:normal">'+esc(t)+'</span></p>');
+  });
+  // 한 줄 띄우기 예외(2026-11-11 원장님): 보기 ①~⑤·목록(· • - 1.) 줄은 앞줄(본문·작은 소제목·목록)에 붙인다
+  // 목록 줄(· • - / 1. 2.)은 이어진 것끼리 <ul>/<ol>로 묶어 네이버 목록(두 줄 넘으면 내어쓰기)이 되게 한다(2026-11-12)
+  var UL=/^\s*[·•‧∙-]\s+/,OL=/^\s*\d{1,2}[.)]\s+/,h='',i=0;
+  while(i<out.length){
+    if(i)h+=(kinds[i]==='item'&&/^(p|s|item)$/.test(kinds[i-1]))?'':'<p><br></p>';
+    var t=kinds[i]==='item'?String(txt[i]):'',re=UL.test(t)?UL:OL.test(t)?OL:null;
+    if(re){var tag=re===UL?'ul':'ol',o='<'+tag+'>';
+      while(i<out.length&&kinds[i]==='item'&&re.test(String(txt[i]))){o+='<li><span style="color:#000000;font-weight:normal">'+esc(String(txt[i]).replace(re,''))+'</span></li>';i++}
+      h+=o+'</'+tag+'>';continue}
+    h+=out[i];i++}
+  return h+'<p><br></p>';
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='list')t+='\n'+listText()+'\n';
+    else if(b[0]==='table')t+='\n'+b[1].map(function(r){return r.join(' | ')}).join('\n')+'\n\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent=D.meta||'제목·본문·태그';
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+if(!D.groups||!D.groups.length){$('list').remove()}else{
+$('list-meta').textContent=D.listMeta||('바로가기 '+D.count+'개');
+$('pv-list').innerHTML=listHTML();
+}
+
+var stP=$('st-post'),stL=$('st-list');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+if($('copy-list')){
+$('copy-list').addEventListener('click',function(e){copyRich(listHTML(),listText(),e.currentTarget,stL,$('pv-list'),'바로가기 목록을 복사했어요. 본문의 바로가기 자리에 붙여 넣으세요.')});
+$('copy-url').addEventListener('click',function(e){copyPlain(D.url,e.currentTarget,stL,'자료실 주소를 복사했어요.',null)});
+}
+</script>
+
+
+
+</body></html>
