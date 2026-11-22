@@ -4,8 +4,16 @@
  "url": "https://claude.ai/artifact/BxMLS63YV9vDNNneEMF5Vo",
  "posts": [
   {
+   "page": "tools/blog/mid-school-guide/index.html",
+   "name": "성적표 읽는 법(공통 글)"
+  },
+  {
    "page": "tools/blog/mid-school-dongkwang/index.html",
-   "name": "동광중 학교별 자료 (견본)"
+   "name": "동광중 (과목 차이형)"
+  },
+  {
+   "page": "tools/blog/mid-school-eunhaeng/index.html",
+   "name": "은행중 (해마다형)"
   },
   {
    "page": "tools/blog/grammar-class/index.html",
