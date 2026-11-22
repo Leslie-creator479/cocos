@@ -1,0 +1,119 @@
+{
+  "slug": "reading-m2-02",
+  "theme": "감사와 나눔의 계절",
+  "cover_sub": "추수감사절·김장 특집 영어 독해 5편",
+  "title": "중2 영어 독해 지문 무료 학습지 2회 | 추수감사절·김장 · 감사와 나눔의 계절 5편 | 분사·접속사 when/if·사역동사·to부정사·비교 표현 | 코코스학원",
+  "tags": "중2영어독해 중학영어독해 영어독해지문 중2영어 추수감사절 김장 블랙프라이데이 분사 접속사 사역동사 to부정사 비교급 무료학습지",
+  "hook": [
+    "이번 주 목요일(11월 26일)은 미국의 추수감사절, 다음 날은 블랙프라이데이예요. 그런데 미국 대통령이 해마다 칠면조를 ‘사면’한다는 사실, 알고 있었나요? 우리나라는 지금 김장철인데, 김치가 우주에 가려면 무엇이 가장 문제였을까요?",
+    "코코스 중등 독해 중2 2회는 ‘추수감사절·김장, 감사와 나눔의 계절’을 골랐어요. 칠면조 사면, 김장, 우주 김치, 1톤이 넘는 호박, 블랙프라이데이 이름의 진짜 유래까지 ‘진짜?’ 이야기 다섯 편을 영어 지문으로 만들었어요."
+  ],
+  "sources": "지문에 나온 사실은 백악관 역사협회(White House Historical Association), 유네스코 무형유산 누리집, 한국원자력연구원 우주식품 발표 자료, 기네스 세계기록, 오하이오 주립대 원예 자료, 브리태니커·History.com 자료로 확인했어요.",
+  "passages": {
+    "1": {
+      "emoji": "🦃",
+      "name": "칠면조 사면",
+      "tag": "저녁 식탁 탈출!",
+      "q": "대통령이 칠면조를<br>‘사면’한다?",
+      "did": "사면은 원래 죄를 지은 사람을 풀어 주는 말.<br>칠면조는 아무 잘못이 없는데요?",
+      "ex": "<i>The pardoned</i> turkeys go to a farm.",
+      "rule": "<b>-ing / p.p. + 명사</b> = ~하는 / ~된 (명사 꾸미기)",
+      "story": [
+        "해마다 11월이면 미국 백악관에서 아주 특별한 행사가 열립니다. 대통령이 칠면조 한 마리를 ‘사면’하는 거예요!",
+        "아무 잘못도 없는 칠면조가 왜 사면을 받을까요? 언제부터 시작됐고, 사면된 칠면조는 어디로 갈까요?"
+      ],
+      "gram_title": "분사 (현재분사·과거분사의 꾸밈)",
+      "gram": [
+        "A pardon is usually given to a person punished for a crime. (사면은 보통 죄로 벌을 받은 사람에게 주어진다.) — 뒤에서 꾸밈",
+        "The President says the birds are free, and the laughing crowd claps. (대통령이 칠면조들이 자유라고 말하면, 웃고 있는 사람들이 박수를 친다.) — 앞에서 꾸밈",
+        "-ing는 ‘~하는(능동)’, p.p.는 ‘~된(수동)’이에요. is given처럼 be동사 뒤의 p.p.는 꾸미는 말이 아니라 수동태예요."
+      ],
+      "words": "pardon(사면하다), punish(벌주다), crime(범죄), official(공식적인), tradition(전통)",
+      "key": "turkey"
+    },
+    "2": {
+      "emoji": "🥬",
+      "name": "김장 일기",
+      "tag": "함께 담그고 나눠요",
+      "q": "김장이<br>세계 문화유산?",
+      "did": "유네스코가 김장을 인류무형문화유산에 올린 까닭,<br>김치 맛 때문이 아니래요!",
+      "ex": "<i>If you help us</i>, you can eat the first bite.",
+      "rule": "<b>when / if + 주어 + 동사</b> = ~할 때 / 만약 ~하면",
+      "story": [
+        "할머니 댁 김장 날, 산더미 같은 배추 앞에서 고무장갑을 낀 나. 팔은 아팠지만 다 같이 노래하고 웃으니 즐거웠어요.",
+        "점심때 삼촌이 들려준 놀라운 이야기는 무엇이었을까요? 김장이 세계에 인정받은 진짜 까닭을 일기에서 찾아보세요."
+      ],
+      "gram_title": "접속사 when·if",
+      "gram": [
+        "When I arrived, my aunts were already washing a mountain of cabbages. (내가 도착했을 때, 이모들은 벌써 산더미 같은 배추를 씻고 있었다.)",
+        "If I join kimjang next year, I want to work faster! (내년에 김장에 함께하면, 더 빨리 일하고 싶다!)",
+        "when은 시간, if는 조건이에요. 내년 일이라도 if 뒤에는 will join이 아니라 현재형 join을 써요."
+      ],
+      "words": "cabbage(배추), spread(바르다), paste(반죽, 양념), heritage(유산), neighbor(이웃)",
+      "key": "kimjang"
+    },
+    "3": {
+      "emoji": "🚀",
+      "name": "우주 김치",
+      "tag": "가상 인터뷰",
+      "q": "김치가 우주에 가는데<br>뭐가 문제였을까?",
+      "did": "2008년, 한국인 첫 우주인과 함께<br>김치도 우주정거장에 갔어요!",
+      "ex": "The gas <i>makes the bag swell</i>.",
+      "rule": "<b>make / let + 목적어 + 동사원형</b> = ~가 …하게 만들다 / 하게 해 주다",
+      "story": [
+        "2008년 한국인 첫 우주인이 우주에 갈 때, 김치도 함께 갔어요. 그런데 김치를 우주에 보내는 일은 생각보다 훨씬 어려웠대요.",
+        "김치 봉지가 우주정거장에서 부풀어 터지면 어떤 일이 생길까요? 과학자들은 이 문제를 어떻게 풀었을까요? 학원이 꾸민 가상 인터뷰로 읽어 보세요."
+      ],
+      "gram_title": "사역동사 make·let",
+      "gram": [
+        "This made the kimchi stay safe without making gas. (이것은 김치가 가스를 만들지 않고 안전하게 있게 했다.)",
+        "Will you let other astronauts try it? (다른 우주인들도 그것을 먹어 보게 해 주실 건가요?)",
+        "make·let 뒤의 목적어 다음에는 to 없이 동사원형을 써요. they make gas의 make는 그냥 ‘만들다’예요."
+      ],
+      "words": "bacteria(세균), swell(부풀다), burst(터지다), astronaut(우주인), familiar(익숙한)",
+      "key": "space"
+    },
+    "4": {
+      "emoji": "🎃",
+      "name": "거대 호박",
+      "tag": "작은 차보다 무겁다",
+      "q": "1톤이 넘는 호박,<br>어떻게 키울까?",
+      "did": "가장 빨리 자랄 때는<br>하루에 약 20kg씩 무거워져요!",
+      "ex": "Growers work hard all summer <i>to grow</i> such a giant.",
+      "rule": "<b>to + 동사원형</b> = ~하기 위해 / ~해서 (부사처럼)",
+      "story": [
+        "할로윈 호박은 보통 10kg이 안 되지요. 그런데 오늘날 가장 무거운 호박은 1,200kg이 넘어요. 작은 자동차보다 무거워요!",
+        "농부들은 여름 내내 어떤 비밀로 이런 거인을 키울까요? 그리고 대회가 끝난 거대 호박은 어떤 ‘두 번째 삶’을 살까요?"
+      ],
+      "gram_title": "to부정사의 부사적 쓰임 (목적·감정의 원인)",
+      "gram": [
+        "They also cover it with sheets to protect it from the hot sun and cold nights. (그들은 뜨거운 햇볕과 추운 밤으로부터 그것을 보호하기 위해 천으로 덮기도 한다.) — 목적",
+        "They are happy to see a big number. (그들은 큰 숫자를 보게 되어 기쁘다.) — 감정의 원인",
+        "want to visit(방문하는 것을)은 명사처럼, homework to do(할 숙제)는 형용사처럼 쓰인 to부정사라 부사적 쓰임과 달라요."
+      ],
+      "words": "grower(재배자), seed(씨앗), gain(늘다), protect(보호하다), contest(대회)",
+      "key": "pumpkin"
+    },
+    "5": {
+      "emoji": "🛍️",
+      "name": "블랙프라이데이",
+      "tag": "이름의 진짜 유래",
+      "q": "블랙프라이데이,<br>왜 ‘검은’ 금요일?",
+      "did": "‘빨간 장부가 검게 바뀐 날’이라는 이야기,<br>사실 진짜 유래가 아니래요!",
+      "ex": "The traffic was <i>much worse</i> than on normal days.",
+      "rule": "<b>much / far / even + 비교급</b> = 훨씬 더 ~한",
+      "story": [
+        "추수감사절 다음 날, 미국의 가게들은 일찍 문을 열고 물건을 싸게 팔아요. 그런데 이렇게 즐거운 쇼핑 날을 왜 ‘검은’ 금요일이라고 부를까요?",
+        "많은 사람이 믿는 이야기와 진짜 유래는 달라요. 1960년대 필라델피아 경찰에게 이날은 어떤 날이었을까요? 2회에서 가장 긴 심화 지문이에요."
+      ],
+      "gram_title": "비교 표현 (as ~ as, 비교급 강조)",
+      "gram": [
+        "It sounds as neat as a fairy tale. (그것은 동화만큼 깔끔하게 들린다.) — as + 원급 + as",
+        "The true story is far less cheerful. (진짜 이야기는 훨씬 덜 즐겁다.) — far + 비교급",
+        "비교급은 much·far·even·a lot으로 강조하고 very로는 강조하지 못해요(very worse ✗). not as ~ as는 ‘~만큼 …하지 않은’이에요."
+      ],
+      "words": "profit(이익), loss(손해), expert(전문가), cheerful(즐거운), traffic(교통)",
+      "key": "friday"
+    }
+  }
+}
