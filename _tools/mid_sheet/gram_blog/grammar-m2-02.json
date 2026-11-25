@@ -1,0 +1,24 @@
+{
+  "slug": "grammar-m2-02",
+  "grammar": "사역동사 make·let",
+  "title": "중2 영어 문법 무료 학습지 2회 | 사역동사 make·let | make me to smile은 왜 틀릴까 | 코코스학원",
+  "tags": "중2영어문법 사역동사 make let 사역동사make 중학영어문법 영어서술형 중2영어 영어문법학습지 무료학습지 코코스학원",
+  "hook": [
+    "‘그 노래는 나를 웃게 했다’를 The song made me to smile.이라고 쓰면 틀려요. I want you to smile.에는 to가 붙는데, make 뒤에는 왜 to가 빠질까요?",
+    "이번 편은 추수감사절·김장 주간에 나간 코코스 중등 독해 중2 2회(감사와 나눔의 계절) 3번, ‘김치가 우주에 간 날’ 인터뷰 속 문장으로 사역동사를 정리했어요. 기말고사에 자주 나오는 make·let·have 뒤 동사원형, want·tell과의 구별, make = 만들다와의 구별까지 한 번에 잡아 두세요."
+  ],
+  "cover_q": "‘나를 웃게 했다’는<br><i>made me to smile</i>일까?",
+  "cover_wrong": "The song made me to smile.",
+  "cover_right": "The song made me smile.",
+  "cover_sub": "우주 김치 인터뷰 속 문장으로 배우는 사역동사 · 서술형 대비",
+  "uses_title": "사역동사, 이것만은 꼭",
+  "compare_title": "동사원형일까, to부정사일까?",
+  "reading": {
+    "t": "독해 2회 3번 · 김치가 우주에 간 날, 무엇이 문제였을까?",
+    "u": "study/reading-m2-02/3/"
+  },
+  "reading_line": "이번 편 예문은 코코스 중등 독해 중2 2회 3번 우주 김치 인터뷰에서 가져왔어요. 가스가 봉지를 부풀게 하는 일(The gas makes the bag swell.), 그런 일이 일어나게 두는 일(let that happen), 다른 우주인들도 먹어 보게 해 주는 일(let other astronauts try it)이 한 인터뷰 안에서 어떻게 쓰였는지 직접 찾아보세요.",
+  "uses_pick": [0, 1, 2, 3],
+  "uses_lab": ["① make", "② let", "③ have", "④ to부정사 동사"],
+  "uses_form": "make / let / have + 목적어 + 동사원형"
+}
