@@ -1,0 +1,222 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>숭신고 2학년 2학기 중간고사 시험 분석 블로그 원고</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — steps, then a card for the whole post and a card for the passage list, each with copy buttons above a preview of what gets pasted */
+:root{
+  --paper:#F5F6FA; --card:#FFFFFF; --ink:#1B2033; --muted:#5B6278; --line:#DDE0EA;
+  --accent:#0A7FBF; --accent-ink:#065A88; --accent-soft:#E2F3FC; --mark:#FFE766;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+    --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+    --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11131A; --card:#1A1D27; --ink:#E7E9F1; --muted:#A1A7BA; --line:#2E3242;
+  --accent:#4FBFF3; --accent-ink:#BCE5FA; --accent-soft:#10293A; --mark:#E8C93A;
+  --ok:#6FCF9B; --ok-soft:#18301F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:36px 72px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,36px);line-height:1.25}
+h2{font-size:22px;line-height:1.35}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink)}
+header{display:flex;flex-direction:column;gap:8px}
+header p{margin:0;color:var(--muted);max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.6}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent-ink);color:var(--card);font-weight:700;font-size:14px}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;gap:10px}.steps li::before{flex:none}}
+.exam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.exam-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.exam-head .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{border:1px solid var(--accent);background:var(--card);color:var(--accent-ink);border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700}
+.btn.primary{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--card)}
+.btn.done{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin:-6px 0 0}
+.preview{border:1.5px dashed var(--line);border-radius:10px;padding:16px 18px;font-size:15px;line-height:1.85;min-width:0}
+.preview.tall{max-height:520px;overflow-y:auto}
+.preview p{margin:0}
+.preview table{margin:8px 0}
+.preview a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.preview a:hover{background:var(--accent-soft)}
+.line{display:flex;flex-direction:column;gap:6px}
+.line .lab{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.line .val{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;background:var(--paper)}
+.note{font-size:14px;color:var(--muted);margin:0;border-left:3px solid var(--mark);padding-left:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">코코스학원 · 블로그 글쓰기 도우미</span>
+    <h1>숭신고 2학년 2학기 중간고사 시험 분석 블로그 원고</h1>
+    <p>네이버 블로그에 글 전체를 링크째 붙여 넣을 수 있는 원고예요.</p>
+  </header>
+
+  <ol class="steps" aria-label="사용 방법">
+    <li>‘제목 복사’로 제목을 붙여 넣고, ‘글 전체 복사’로 본문을 붙여 넣어요.</li>
+    <li>[대표 이미지] 자리에 대표 이미지를 올리고, ‘태그 복사’로 태그를 넣어요.</li>
+    <li>[이미지: …] 자리마다 같은 이름의 이미지를 끼우고 그 줄은 지운 뒤 발행해요.</li>
+  </ol>
+
+  <section class="exam" id="post">
+    <div class="exam-head">
+      <div><h2>글 전체</h2><p class="meta" id="post-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-body">글 전체 복사</button>
+        <button type="button" class="btn" id="copy-title">제목 복사</button>
+        <button type="button" class="btn" id="copy-tags">태그 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-post" role="status" aria-live="polite"></p>
+    <div class="line"><span class="lab">제목</span><div class="val" id="title-val"></div></div>
+    <div class="preview tall" id="pv-body" aria-label="붙여 넣을 본문 미리보기"></div>
+    <div class="line"><span class="lab" id="tags-lab">태그</span><div class="val" id="tags-val"></div></div>
+  </section>
+
+  <section class="exam" id="list">
+    <div class="exam-head">
+      <div><h2>바로가기만</h2><p class="meta" id="list-meta"></p></div>
+      <div class="acts">
+        <button type="button" class="btn primary" id="copy-list">링크 포함 복사</button>
+        <button type="button" class="btn" id="copy-url">자료실 링크 복사</button>
+      </div>
+    </div>
+    <p class="status" id="st-list" role="status" aria-live="polite"></p>
+    <div class="preview" id="pv-list" aria-label="붙여 넣을 목록 미리보기"></div>
+  </section>
+
+  <p class="note">붙여 넣었는데 링크가 사라졌다면, 미리보기를 마우스로 드래그해 선택한 뒤 Ctrl+C(맥은 ⌘+C)로 복사해 붙여 넣어 보세요. </p>
+</div>
+
+<script>
+var D={"title": "2026 숭신고 2학년 2학기 중간고사 영어 분석 | 출제 비율·유형·변형 문항 총정리 | 성남 코코스영어학원", "tags": "숭신고 숭신고영어 숭신고내신 고2영어내신 영어2내신 중간고사분석 내신시험분석 영어변형문제 올림포스기출 9월고2모의고사 성남동영어학원", "meta": "제목·본문·태그 · 이미지 6장", "url": "", "count": 0, "groups": [], "listMeta": "", "body": [["p", "[대표 이미지: 숭신고_고2_2학기중간_00_대표이미지.png]"], ["p", "숭신고 2학년 2학기 중간고사 영어 시험지를 문항별로 분석했어요."], ["p", "시험 범위는 교과서 능률(오선영) 영어Ⅱ 1·2과, 올림포스 전국연합학력평가 기출문제집 영어독해(고2) 30지문, 2026년 9월 고2 모의고사 8지문이었어요."], ["p", "어디서 몇 문제가 나왔는지, 어떤 유형으로 나왔는지, 지문을 어떻게 변형했는지 정리했으니 기말고사 준비에 참고해 주세요."], ["b", "■ 1. 시험 구성"], ["p", "[이미지: 숭신고_고2_2학기중간_01_시험구성_출처비율.png]"], ["p", "· 선택형 23문항 85점, 논술형 4문항 15점으로 모두 27문항 100점이에요."], ["p", "· 선택형 배점은 3.4~4.0점이고, 4.0점 문항이 5개예요."], ["p", "· 논술형은 영작 3문항(각 4점)과 서술형 1문항(3점)이에요."], ["b", "■ 2. 어디서 나왔나요? (출처별 비율)"], ["table", [["출처", "문항", "배점"], ["올림포스 기출(고2)", "17문항", "63.2점"], ["2026년 9월 고2 모의고사", "7문항", "24.9점"], ["교과서 1·2과", "3문항", "11.9점"]]], ["p", "올림포스가 100점 중 63.2점으로 가장 많았어요. 범위가 두 지문뿐인 16강·17강은 네 지문이 모두 나왔고, 12강·17강이 7.7점으로 강별 배점이 가장 높았어요."], ["p", "교과서는 1과 뒷부분(백신 보급), 2과 Galaxy Zoo, 2과 STEVE 세 곳에서만 나왔어요."], ["b", "■ 3. 어떤 유형이 나왔나요?"], ["p", "[이미지: 숭신고_고2_2학기중간_02_문제유형별_배점.png]"], ["p", "빈칸 4문항과 글의 흐름(무관·순서·삽입) 4문항이 각 14.5점으로 가장 많았어요. 요지·제목 4문항, 내용 불일치·어법·요약문 각 3문항, 어휘 2문항으로 유형이 고루 나뉘었어요."], ["p", "어법 3문항 가운데 2문항은 틀린 것·옳은 것의 개수를 세는 문항이라 밑줄 7곳을 모두 판단해야 했어요."], ["p", "논술형은 우리말 문장을 보기 어구로 영작하는 문항이 3개(12점)였어요. 세 문항 모두 교과서·부교재·모의고사의 원문 문장을 그대로 쓰면 되는 문항이었어요."], ["b", "■ 4. 시험 범위 지문, 어디가 나왔나요?"], ["p", "[이미지: 숭신고_고2_2학기중간_03_지문_출제지도.png]"], ["p", "범위 44지문 가운데 27지문이 나왔어요. 9월 모의고사는 8지문 중 37번 하나만 빠졌고, 올림포스는 30지문 중 17지문이 나왔어요."], ["p", "올림포스는 강마다 나온 번호에 규칙이 없었어요. 3·4강은 8·9번, 5강은 7번, 11강은 9번이 나왔어요. 이번에 빠진 지문도 다음 시험에서 다시 볼 수 있으니 꼭 챙겨 두세요."], ["p", "본문을 바꾼 7지문은 모두 어법·어휘·무관한 문장·순서 문항으로 나왔어요."], ["b", "■ 5. 지문 변형은 이렇게 나왔어요"], ["p", "[이미지: 숭신고_고2_2학기중간_04_지문변형_분석.png]"], ["hot", "① 어법 — 원문 표현을 틀린 형태로"], ["p", "올림포스 지문 세 개에 어법 오류를 모두 8곳 심었어요. 동명사, 관계사, 분사구문의 능동·수동, 수일치, 부사·형용사 자리가 포인트였어요."], ["hot", "② 어휘 — 반의어로 뒤집기"], ["p", "어휘 2문항은 핵심 낱말 한 곳씩을 반대 뜻으로 뒤집었어요."], ["hot", "③ 같은 뜻 다른 표현으로 바꿔 쓰기"], ["p", "어법·어휘 지문은 원문 낱말 7곳과 문장 3개를 같은 뜻의 다른 표현으로 바꿔, 원문과 달라도 맞는 보기가 섞여 있었어요."], ["hot", "④ 원문에 없는 문장·문단 넣기"], ["p", "무관한 문장 문항에는 새 문장을 하나, 순서 문항에는 두 문장짜리 새 문단을 하나 넣었어요. 같은 소재라도 논지가 다른 문장을 골라내야 했어요."], ["hot", "⑤ 빈칸 정답은 모두 바꿔 말한 표현"], ["p", "빈칸 4문항의 정답은 하나도 원문 표현이 아니었어요. 주제문을 같은 뜻의 다른 말로 바꾼 선택지였어요."], ["hot", "⑥ 요약문 새로 쓰기"], ["p", "요약 3문항과 논술형 4는 요약문을 새로 써서 냈어요."], ["hot", "⑦ 교과서는 원문 그대로"], ["p", "교과서 지문 3개는 한 글자도 바꾸지 않았어요. 대신 본문 문장을 우리말로 주고 영작하게 했어요."], ["b", "■ 6. 기말고사는 이렇게 준비해요"], ["p", "[이미지: 숭신고_고2_2학기중간_05_다음시험_대비.png]"], ["p", "1. 범위 지문을 빠짐없이 — 강마다 나온 번호에 규칙이 없어요."], ["p", "2. 어법 개수 문항 대비 — 한 지문의 밑줄 7곳을 동명사·관계사·분사·수일치·품사로 모두 점검해요."], ["p", "3. 동의어·반의어 정리 — 올림포스 지문 핵심 낱말의 반대말을 미리 정리해요."], ["p", "4. 주제문 바꿔 말하기 — 빈칸·요약 정답은 원문과 다른 표현이에요."], ["p", "5. 원문 문장 영작 — 교과서·올림포스·모의고사 주제문을 우리말에서 영어로 옮겨 봐요."], ["p", "6. 새로 쓴 문장 찾기 — 같은 소재지만 논지가 다른 문장, 덧붙은 문단을 알아보는 연습을 해요."], ["b", "■ 시험 범위 모의고사, 이렇게 공부해요"], ["p", "이번 시험에 9월 고2 모의고사가 7지문(24.9점) 나왔어요. 코코스학원 온라인 학습지로 지문별 해석·단어·변형 문제를 풀어 보고, 동의어·반의어 페이지로 어휘 변형까지 대비해 보세요."], ["link", "2026 9월 고2 학평 온라인 학습지 목차", "https://cocosedu.kr/study/2026-09-g2/"], ["link", "2026 9월 고2 동의어·반의어", "https://cocosedu.kr/syn/2026-09-g2/"], ["note", "이 글은 코코스학원이 시험지를 직접 분석해 정리한 자료예요."], ["note", "시험 문제와 지문의 저작권은 학교와 출제처에 있어 시험지 이미지와 문제 원문, 정답은 싣지 않았어요."], ["note", "내용을 복제·수정해 다른 곳에 올리거나 상업적으로 이용하는 것은 금지해요."]]};
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function a(href,text){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(text)+'</a>'}
+function listHTML(){
+  var h='';
+  D.groups.forEach(function(g,i){
+    if(i)h+='<p><br></p>';
+    h+='<p><b>['+esc(g.g)+']</b></p>';
+    g.items.forEach(function(it){h+='<p>'+a(it[1],it[0])+'</p>'});
+  });
+  return h;
+}
+function listText(){
+  var t='';
+  D.groups.forEach(function(g,i){t+=(i?'\n':'')+'['+g.g+']\n';g.items.forEach(function(it){t+=it[0]+'\n'+it[1]+'\n'})});
+  return t;
+}
+/*naver-blog-format-2026-11h*/
+function tableHTML(rows){
+  var al=[];for(var j=0;j<rows[0].length;j++){var mx=0;for(var i=1;i<rows.length;i++)mx=Math.max(mx,String(rows[i][j]||'').length);al.push('center')}
+  var h='<table border="1" style="border-collapse:collapse;width:100%">';
+  rows.forEach(function(r,i){h+='<tr>';r.forEach(function(c,j){
+    h+=i?'<td style="color:#000000;font-weight:normal;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</td>'
+        :'<th style="background:#1F3864;color:#fff;padding:6px 8px;text-align:'+al[j]+'">'+esc(c)+'</th>'});h+='</tr>'});
+  return h+'</table>';
+}
+function bodyHTML(){
+  var out=[],kinds=[],txt=[],IT=/^\s*(?:[①-⑳]|[·•‧∙]\s|-\s|\d{1,2}[.)]\s)/,IMG=/^\[(대표 )?이미지(?:\s*[:：]\s*(.+?))?\]$/,g=0;
+  function big(t){return '<p><span style="font-size:19px;color:#1F3864"><b>'+esc(String(t).replace(/^■\s*/,''))+'</b></span></p>'}
+  function slot(l){return '<p><span style="color:#E25100"><b>◆ '+esc(l)+' — 여기에 그림을 붙이고 이 줄은 지우세요</b></span></p>'}
+  D.body.forEach(function(b){
+    var k=b[0],t=b[1],m=k==='p'&&IMG.exec(String(t).trim());
+    if(k==='br')return;
+    txt.push(t);kinds.push(m?'img':(k==='p'&&IT.test(t))?'item':(k==='hot'&&/^[①-⑳]/.test(t))?'s':k);
+    if(m){out.push(slot(m[1]?'대표 이미지':'그림 '+(++g)+(m[2]?' ('+m[2]+')':'')));return}
+    if(k==='b'||k==='ser')out.push(big(t));
+    else if(k==='hot')out.push(/^[①-⑳]/.test(t)?'<p><span style="color:#000000"><b>'+esc(t)+'</b></span></p>'
+      :'<blockquote style="border-left:3px solid #E25100;padding-left:14px;margin:0"><p><span style="font-size:19px;color:#E25100"><b>'+esc(t)+'</b></span></p></blockquote>');
+    else if(k==='note')out.push('<p><span style="font-size:13px;color:#767171;font-weight:normal">'+esc(t)+'</span></p>');
+    else if(k==='link')out.push('<p><span style="font-weight:normal">'+a(b[2],t)+'</span></p>');
+    else if(k==='list')out.push(listHTML().replace(/<p><b>/g,'<p><span style="color:#000000"><b>').replace(/<\/b><\/p>/g,'</b></span></p>').replace(/<p><a /g,'<p><span style="font-weight:normal"><a ').replace(/<\/a><\/p>/g,'</a></span></p>'));
+    else if(k==='table')out.push(tableHTML(t));
+    else out.push('<p><span style="color:#000000;font-weight:normal">'+esc(t)+'</span></p>');
+  });
+  // 한 줄 띄우기 예외(2026-11-11 원장님): 보기 ①~⑤·목록(· • - 1.) 줄은 앞줄(본문·작은 소제목·목록)에 붙인다
+  // 목록 줄(· • - / 1. 2.)은 이어진 것끼리 <ul>/<ol>로 묶어 네이버 목록(두 줄 넘으면 내어쓰기)이 되게 한다(2026-11-12)
+  var UL=/^\s*[·•‧∙-]\s+/,OL=/^\s*\d{1,2}[.)]\s+/,h='',i=0;
+  while(i<out.length){
+    if(i)h+=(kinds[i]==='item'&&/^(p|s|item)$/.test(kinds[i-1]))?'':'<p><br></p>';
+    var t=kinds[i]==='item'?String(txt[i]):'',re=UL.test(t)?UL:OL.test(t)?OL:null;
+    if(re){var tag=re===UL?'ul':'ol',o='<'+tag+'>';
+      while(i<out.length&&kinds[i]==='item'&&re.test(String(txt[i]))){o+='<li><span style="color:#000000;font-weight:normal">'+esc(String(txt[i]).replace(re,''))+'</span></li>';i++}
+      h+=o+'</'+tag+'>';continue}
+    h+=out[i];i++}
+  return h+'<p><br></p>';
+}
+function bodyText(){
+  var t='';
+  D.body.forEach(function(b){
+    if(b[0]==='b')t+='\n'+b[1]+'\n';
+    else if(b[0]==='link')t+=b[1]+'\n';
+    else if(b[0]==='br')t+='\n';
+    else if(b[0]==='list')t+='\n'+listText()+'\n';
+    else if(b[0]==='table')t+='\n'+b[1].map(function(r){return r.join(' | ')}).join('\n')+'\n\n';
+    else t+=b[1]+'\n';
+  });
+  return t;
+}
+function flash(btn,status,note){
+  var old=btn.textContent;btn.textContent='복사했어요';btn.classList.add('done');status.textContent=note||'';
+  setTimeout(function(){btn.textContent=old;btn.classList.remove('done')},2200);
+}
+function copyFromSelection(node){
+  var r=document.createRange();r.selectNodeContents(node);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  return ok;
+}
+var BLOCKED='자동 복사가 막혀 있어요. 선택된 부분을 Ctrl+C(맥은 ⌘+C)로 복사해 주세요.';
+function copyRich(html,text,btn,status,preview,note){
+  if(window.ClipboardItem&&navigator.clipboard&&navigator.clipboard.write){
+    navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})])
+      .then(function(){flash(btn,status,note)})
+      .catch(function(){if(copyFromSelection(preview))flash(btn,status,note);else status.textContent=BLOCKED});
+  }else if(copyFromSelection(preview))flash(btn,status,note);
+  else status.textContent=BLOCKED;
+}
+function copyPlain(str,btn,status,note,node){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(function(){flash(btn,status,note)})
+      .catch(function(){if(node&&copyFromSelection(node))flash(btn,status,note);else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str)});
+  }else if(node&&copyFromSelection(node))flash(btn,status,note);
+  else status.textContent=node?BLOCKED:('자동 복사가 막혀 있어요. 주소: '+str);
+}
+
+$('post-meta').textContent=D.meta||'제목·본문·태그';
+$('title-val').textContent=D.title;
+$('tags-val').textContent=D.tags;$('tags-lab').textContent='태그 ('+D.tags.length+'자)';
+$('pv-body').innerHTML=bodyHTML();
+if(!D.groups||!D.groups.length){$('list').remove()}else{
+$('list-meta').textContent=D.listMeta||('바로가기 '+D.count+'개');
+$('pv-list').innerHTML=listHTML();
+}
+
+var stP=$('st-post'),stL=$('st-list');
+$('copy-body').addEventListener('click',function(e){copyRich(bodyHTML(),bodyText(),e.currentTarget,stP,$('pv-body'),'본문을 복사했어요. 네이버 블로그 본문에 붙여 넣으세요.')});
+$('copy-title').addEventListener('click',function(e){copyPlain(D.title,e.currentTarget,stP,'제목을 복사했어요.',$('title-val'))});
+$('copy-tags').addEventListener('click',function(e){copyPlain(D.tags,e.currentTarget,stP,'태그를 복사했어요. 태그 입력 칸에 붙여 넣으세요.',$('tags-val'))});
+if($('copy-list')){
+$('copy-list').addEventListener('click',function(e){copyRich(listHTML(),listText(),e.currentTarget,stL,$('pv-list'),'바로가기 목록을 복사했어요. 본문의 바로가기 자리에 붙여 넣으세요.')});
+$('copy-url').addEventListener('click',function(e){copyPlain(D.url,e.currentTarget,stL,'자료실 주소를 복사했어요.',null)});
+}
+</script>
+
+
+
+</body></html>
