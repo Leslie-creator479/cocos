@@ -11,7 +11,7 @@
 - 견본·기준판: **`study/grammar-m2-01/`**(중2 1회 현재완료, 독해 1회 4번 해달 일기). DATA 꼴·분량·말투는 이 페이지를 그대로 따른다(지우지 말 것).
 
 ## 0. 준비 (매번)
-- 저장소: `/home/claude/cocos`가 없으면 clone(안 되면 add_repo로 Leslie-creator479/cocos를 push 권한으로 붙임). `git pull --rebase origin main`. CLAUDE.md를 먼저 읽는다.
+- 저장소: `/home/claude/cocos`가 없으면 clone(안 되면 add_repo로 Leslie-creator479/cocos를 push 권한으로 붙임). `git pull --rebase origin main`. CLAUDE.md를 먼저 읽고, 지난 문법 편 기록은 `_tools/notes/mid-grammar.md`에서 본다.
 - `bash _tools/mid_sheet/setup_env.sh`.
 - 작업 폴더 `W=<스크래치패드>/gram-<slug>`. 견본 DATA를 본보기로 꺼낸다: `python3 -c "s=open('study/grammar-m2-01/index.html').read(); i=s.index('var DATA = '); open('$W/sample.js','w').write(s[i:s.index('\n};',i)+3])"`.
 - 할 일 목록(TaskCreate): 편 고르기 → 문법 고르기 → DATA 쓰기 → 검토 → 녹음·올리기 → 블로그 → 안내 파일 → 보고.
@@ -42,5 +42,5 @@
 
 - **발행함에 넣기(원장님 결정 2026-11-11, 네이버 서식 + 그림 한 장씩 복사)**: `_tools/blog_box/grammar.json`의 posts 맨 앞에 이번 글을 넣는다(`{"page": "tools/blog/<slug>/index.html", "name": "<학년> <회>회 <짧은 이름>", "imgdir": "$W/blog"}`, posts는 최근 3편까지만 남김) → `python3 _tools/blog_box.py _tools/blog_box/grammar.json -o $W/box.html` → Artifact `read`(설정의 url) → Artifact 발행(file_path `$W/box.html`, url 설정의 url, files `$W/box.files.json` 내용). 설정의 url이 비어 있으면 url 없이 icon `blog`, capabilities `{"downloads": true}`로 처음 발행하고 받은 주소를 url에 적는다. 발행한 뒤 설정에서 imgdir를 지우고 커밋한다. 원장님께 드리는 원고 주소는 이 발행함 주소다(홈페이지 원고 페이지는 원고 저장용). Artifact 도구가 없거나 발행이 실패하면 예전처럼 홈페이지 원고 주소를 드리고 이미지를 SendUserFile로 보내며 보고에 그 사실을 적는다.
 ## 6. 마무리·보고
-- `gram_log.json`에 `{slug, grade, round, grammar, passage, title, published}`를 더하고, CLAUDE.md의 `study/grammar-m…` 줄에 한 줄(문법·짝 지문·검토에서 고친 것). 커밋·푸시.
+- `gram_log.json`에 `{slug, grade, round, grammar, passage, title, published}`를 더하고, `_tools/notes/mid-grammar.md`에 한 줄(문법·짝 지문·검토에서 고친 것, 2026-11-28부터 CLAUDE.md 대신 여기). 커밋·푸시.
 - 보고(SendUserMessage): 편·문법·짝 독해 지문, 질문형 제목, 학습지 주소, 블로그 발행함 주소·제목·태그, 검토에서 고친 것, 고친 발음. 이미지는 발행함에 들어 있으므로 따로 보내지 않는다(발행함에 못 넣었을 때만 SendUserFile). 보류했으면 이유.

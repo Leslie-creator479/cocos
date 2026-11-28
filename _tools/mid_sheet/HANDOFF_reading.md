@@ -5,7 +5,7 @@
 
 ## 0. 새 방에서 처음 할 일
 1. 저장소가 없으면 `git clone https://github.com/Leslie-creator479/cocos /home/claude/cocos` → `git pull --rebase origin main`.
-2. 저장소 `CLAUDE.md`를 읽는다(특히 `study/reading-m<학년>-<회>/` 줄과 '규칙'의 선행 광고 금지·공개 저장소 규칙).
+2. 저장소 `CLAUDE.md`와 `_tools/notes/mid-reading.md`(회차별 기록)를 읽는다(특히 '규칙'의 선행 광고 금지·공개 저장소 규칙).
 3. 이 문서, `_tools/mid_sheet/reading_weekly.md`(매주 작업 순서), `_tools/mid_sheet/reading_plan.json`(회차 계획)을 읽는다.
 4. 스킬: **cocos-mid-original**(이 연재 전용), cocos-passage-mid(확인 퀴즈 15문항 표), cocos-homepage-publish(올리기 순서·학원생 비밀번호). 2026-11-05에 cocos-mid-original 수정안(매주 예약 작업·기념일 주제 규칙 추가)을 원장님께 보여 드렸다. 저장했는지 SKILL.md에 '매주 예약 작업' 칸이 있는지로 확인하고, 없으면 이 문서 내용으로 다시 수정안을 낸다.
 5. `git log --oneline -15`로 최근 작업을 본다(예약 작업이 올린 회차가 있을 수 있음).
@@ -93,4 +93,4 @@
 - 저장소는 공개: 학생 개인정보, 내부 운영(계약·급여·노무) 이야기, 학원생 비밀번호를 어디에도(파일·커밋 메시지) 쓰지 않는다.
 - force push 금지, 커밋 전 `git pull --rebase origin main`.
 - 확인 퀴즈는 다른 에이전트가 직접 풀어 검토하고 사실 확인까지 한다. **검토는 시간이 걸려도 빼지 않는다**(원장님: 품질이 제일 중요).
-- 결정이 바뀌면 CLAUDE.md·이 문서·스킬을 함께 고친다.
+- 결정이 바뀌면 CLAUDE.md(요약)·`_tools/notes/mid-reading.md`·이 문서·스킬을 함께 고친다.
