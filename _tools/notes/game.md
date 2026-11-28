@@ -13,3 +13,11 @@
 ## `game/edu-voca-mid/`
 
 **교육과정 중학 기본 영단어 1,200**(2026-11-04, 원장님 요청: 중학생·학부모 누구나 쓰는 범용 자료). 2022 개정 영어과 교육과정(교육부 고시 제2022-33호 [별책 14]) [별표 3] 기본 어휘 3,000개 중 `**`표(중학교·고등 공통과목 권장) 1,200개를 알파벳 순서로 30개씩 Day 01~40. 원문은 경기도교육청 배포 PDF(KICE 어휘 검색 프로그램 안내, 원장님이 올려 줌)에서 뽑았다. `*`표(초등 권장) 800개는 '초등' 안내처럼 보일 수 있어, 표시 없는 1,000개(고교 선택과목 권장)는 선행 광고가 될 수 있어 넣지 않는다. 우리말 뜻·품사는 코코스가 붙이고 다른 검토자가 확인했다(첫 뜻이 겹쳐 보기에서 정답이 둘로 보이지 않게, 발음이 둘인 낱말은 뜻 하나만). 대표형 especial·situate는 괄호 속 especially·situation으로, 원문 livingroom은 living room으로 썼다. 교육부 고시라 **잠그지 않고 검색에 연다**(seo.py OPEN·lock.mjs PUBLIC_GAME의 `edu-voca-…` 예외). 단어 데이터는 공개라 `_tools/edu_voca/mid1200.json`(+ `.meta.json`)에 평문으로 두고, 고치면 `python3 _tools/voca_game.py build _tools/edu_voca/mid1200.json _tools/edu_voca/mid1200.meta.json game/edu-voca-mid/index.html` → brand_links → say_audio → seo. 자료실은 중등 › **기본 어휘** 칸(library catOf `midvoca`, `#midvoca-game`, 잠금 안내 대신 공개 안내). 제목에 '중학'이 있어 중등 테마가 자동으로 입혀진다. 다음 범용 중등 자료 후보(원장님이 정하면): 원작 중등 독해 지문 학습지, 학년별 문법 학습지, 수행평가 자료
+
+## cocos-word-game 스킬에서 옮긴 이력 (2026-11-28, 원래 문장 그대로)
+스킬을 줄이면서 날짜·지난 기록만 떼어 옮겼다. 스크립트와 블로그 원고 body 형식은 `_tools/wordgame/`(README.md).
+- 원장님께는 발행함 주소를 드린다(원장님 결정 2026-11-11)
+- **발행함(원장님 결정 2026-11-11, 아래 아티팩트 게시보다 우선)**
+- 「블로그 수록 지문 목록」(`https://claude.ai/artifact/X6r3Q1W4UKT8zsbcmCt5Fs`)에는 **단어게임 분류**가 있다(2026-10-08 선생님 요청).
+- 2026년 6월 고1, 9월 고2 목차를 이렇게 찾았다.
+
